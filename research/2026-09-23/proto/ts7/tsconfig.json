@@ -1,0 +1,1 @@
+{ "compilerOptions": { "target": "es2024", "module": "esnext", "moduleResolution": "bundler", "strict": true, "noEmit": true, "types": ["vite/client", "@webgpu/types"], "lib": ["es2024", "dom", "webworker"], "skipLibCheck": true, "verbatimModuleSyntax": true, "allowImportingTsExtensions": true }, "include": ["src"] }

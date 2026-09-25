@@ -1,0 +1,11 @@
+import * as THREE from 'three/webgpu';
+const r = new THREE.WebGPURenderer({ antialias: true });
+await r.init();
+const s = new THREE.Scene();
+const c = new THREE.PerspectiveCamera(70, 1, 0.1, 1000);
+const g = new THREE.BufferGeometry();
+g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(9), 3));
+s.add(new THREE.Mesh(g, new THREE.MeshStandardNodeMaterial()));
+s.add(new THREE.DirectionalLight());
+document.body.appendChild(r.domElement);
+r.setAnimationLoop(() => r.render(s, c));

@@ -1,0 +1,16 @@
+{
+  "name": "trb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@trystero-p2p/nostr": "^0.25.4",
+    "@trystero-p2p/torrent": "^0.25.4"
+  }
+}

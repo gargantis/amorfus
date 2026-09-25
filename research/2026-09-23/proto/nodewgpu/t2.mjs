@@ -1,0 +1,21 @@
+import { create, globals } from 'webgpu';
+Object.assign(globalThis, globals);
+const gpu = create([]);
+const adapter = await gpu.requestAdapter();
+const i = adapter.info; console.log({ vendor: i.vendor, architecture: i.architecture, device: i.device, description: i.description, isFallbackAdapter: i.isFallbackAdapter, backend: i.backendType });
+const device = await adapter.requestDevice();
+const mod = device.createShaderModule({ code: `@vertex fn vs(@builtin(vertex_index) i: u32) -> @builtin(position) vec4f { var p = array(vec2f(-1,-1), vec2f(3,-1), vec2f(-1,3)); return vec4f(p[i], 0, 1); }
+@fragment fn fs() -> @location(0) vec4f { return vec4f(0.25, 0.5, 1, 1); }` });
+const pipe = device.createRenderPipeline({ layout: 'auto', vertex: { module: mod }, fragment: { module: mod, targets: [{ format: 'rgba8unorm' }] }, multisample: { count: 4 } });
+const ms = device.createTexture({ size: [8,8], sampleCount: 4, format: 'rgba8unorm', usage: GPUTextureUsage.RENDER_ATTACHMENT });
+const tex = device.createTexture({ size: [8,8], format: 'rgba8unorm', usage: GPUTextureUsage.RENDER_ATTACHMENT | GPUTextureUsage.COPY_SRC });
+const enc = device.createCommandEncoder();
+const p = enc.beginRenderPass({ colorAttachments: [{ view: ms.createView(), resolveTarget: tex.createView(), loadOp: 'clear', storeOp: 'discard', clearValue: [0,0,0,1] }] });
+p.setPipeline(pipe); p.draw(3); p.end();
+const rb = device.createBuffer({ size: 256*8, usage: GPUBufferUsage.COPY_DST | GPUBufferUsage.MAP_READ });
+enc.copyTextureToBuffer({ texture: tex }, { buffer: rb, bytesPerRow: 256 }, [8,8]);
+device.queue.submit([enc.finish()]);
+await rb.mapAsync(GPUMapMode.READ);
+console.log('pixel', [...new Uint8Array(rb.getMappedRange(0,4))]);
+console.log('features', [...adapter.features].sort().join(','));
+device.destroy(); process.exit(0);

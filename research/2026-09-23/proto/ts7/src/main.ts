@@ -1,0 +1,17 @@
+import './style.css';
+import shader from './shaders/terrain.wgsl?raw';
+import { shared } from './shared';
+import wasmUrl from './assets/mod.wasm?url';
+const dataUrl = new URL('./assets/data.bin', import.meta.url);
+const w = new Worker(new URL('./workers/mesher.ts', import.meta.url), { type: 'module' });
+w.onmessage = (e) => { (window as any).__workerResult = e.data; };
+w.postMessage(1);
+console.log(shader.length, shared(1), wasmUrl, dataUrl.href);
+document.addEventListener('click', async () => { const m = await import('./lazy'); console.log(m.lazy()); });
+(async () => { const m = await import('./lazy2'); (window as any).__lazy2 = m.lazy2(); const l = await import('./lazy'); (window as any).__lazy = l.lazy(); })();
+if (!('gpu' in navigator)) document.getElementById('nogpu')!.hidden = false;
+(window as any).__gpu = 'gpu' in navigator;
+import { V } from './vendor/bigvendor';
+(window as any).__base = import.meta.env.BASE_URL;
+(window as any).__v = V.f(1);
+(window as any).__bad = () => fetch("/data/level.json");

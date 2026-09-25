@@ -1,0 +1,1 @@
+{"name":"vt","private":true,"type":"module","scripts":{"build":"vite build"},"devDependencies":{"@playwright/test":"^1.63.0","acorn":"^8.18.0","acorn-walk":"^8.3.5","ipfs-car":"^3.1.0","kubo":"^0.43.1","parse5":"^7.3.0","pngjs":"^7.0.0","typescript":"^6.0.3","vite":"^8.3.0","wrangler":"^4.137.0"},"dependencies":{"three":"^0.185.1"}}
