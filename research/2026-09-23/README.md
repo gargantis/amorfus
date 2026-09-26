@@ -26,7 +26,8 @@ The evidence behind `PLAN.md`. Eight research passes ran in parallel on 2026-09-
 - P2P: `tp/`. Bundle-size entries (`e-*.mjs`), relay probes (`probe.mjs`, `rt*.mjs`, `pick.mjs`), two- and four-peer joins in Chromium (`bt*.mjs` with `web/` and `web2/`), a local ws-relay (`relay-server.mjs`, `peer.mjs`) and a TURN probe (`turnprobe.mjs`). Also `stun.py`, `turn.py`, and the bundle-size entries `lp/` (js-libp2p) and `trb/` (Trystero).
 - Build and IPFS: `vt/`. A Vite fixture app, `audit-dist.mjs`, headless render probes (`render*.mjs`), gateway, service-worker and CSP probes (`probe*.mjs`), prefixed/CSP static servers and `wrangler.jsonc`. `ts7/` is the TypeScript 7 typecheck fixture.
 - Headless WebGPU and renderer cost: `pw/` (a Playwright runner plus `file://` and secure-context probe pages) and `nodewgpu/` (Dawn for Node). Frame-time benchmarks: `rawbench/`, `threebench/`, `babsize/`. Bundle sizes: `rawsize/`, `threesize/`, `babsize/`, `th/entry.js`.
-- Review re-runs: `review-fidelity/` (the mesher with per-axis air limits, and quantised hints) and `review-gate/` (BroadcastChannel, Web Locks and pointer-lock behaviour in Playwright).
+- Review re-runs: `review-fidelity/` (the mesher with per-axis air limits, and quantised hints) and `review-gate/` (BroadcastChannel, Web Locks and pointer-lock behaviour in Playwright). `review-fidelity/slopecheck.mjs` was added on 2026-09-24. It measures hand-built slope terracing with no clearance caps, with the research 0.2 cap and with the plan's D-3 caps, and backs the corrected C-7 numbers.
+- Viewer: `viewer/amorfus-smoothing-bench.html` is an interactive three.js (WebGL) page that runs `sn_axis.mjs` on the plan's test scenes. It needs an http server, because module scripts don't run from `file://`: `npx serve viewer`. It is an early form of the plan's M3 smoothing gallery.
 
 ## Running them
 

@@ -1,0 +1,1058 @@
+<title>Amorfus Smoothing Bench</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #e7ebe9;
+  --panel: #f6f8f7;
+  --stage: #dfe5e3;
+  --ink: #17201c;
+  --muted: #5b6862;
+  --rule: #c7d0cb;
+  --accent: #2f6d8f;
+  --accent-ink: #ffffff;
+  --good: #2e7d4f;
+  --bad: #b3432f;
+  --chip: #eef2f0;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-label: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0f1412;
+    --panel: #161d1a;
+    --stage: #1b2320;
+    --ink: #e4ebe7;
+    --muted: #97a59e;
+    --rule: #2a3531;
+    --accent: #7fb6d6;
+    --accent-ink: #0d1a22;
+    --good: #6cc08f;
+    --bad: #e88a74;
+    --chip: #1e2724;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f1412;
+  --panel: #161d1a;
+  --stage: #1b2320;
+  --ink: #e4ebe7;
+  --muted: #97a59e;
+  --rule: #2a3531;
+  --accent: #7fb6d6;
+  --accent-ink: #0d1a22;
+  --good: #6cc08f;
+  --bad: #e88a74;
+  --chip: #1e2724;
+}
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 14px/1.45 var(--font-body);
+  padding: 16px;
+  box-sizing: border-box;
+}
+*, *::before, *::after { box-sizing: inherit; }
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(280px, 330px) 1fr;
+  gap: 16px;
+}
+.rail {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow-y: auto;
+  padding: 18px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 0;
+}
+.brand h1 {
+  font: 600 20px/1.15 var(--font-label);
+  letter-spacing: 0.01em;
+  margin: 0 0 6px;
+  text-wrap: balance;
+}
+.brand p { margin: 0; color: var(--muted); font-size: 13px; max-width: 62ch; }
+.brand code { font-family: var(--font-mono); font-size: 12px; }
+.group { display: flex; flex-direction: column; gap: 8px; }
+.group > h2 {
+  font: 600 11px/1 var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  margin: 0;
+}
+.scenes { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.chipbtn, .scenes button, .presets button {
+  font: 500 13px/1.2 var(--font-body);
+  color: var(--ink);
+  background: var(--chip);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 7px 9px;
+  text-align: left;
+  cursor: pointer;
+}
+.scenes button:hover, .presets button:hover { border-color: var(--accent); }
+.scenes button[aria-pressed="true"], .presets button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.presets { display: flex; flex-wrap: wrap; gap: 6px; }
+.param { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 10px; }
+.param label { font: 500 13px/1.3 var(--font-body); }
+.param output {
+  font: 500 12px/1 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.param input[type="range"] { grid-column: 1 / -1; width: 100%; accent-color: var(--accent); }
+.param .hint { grid-column: 1 / -1; font-size: 12px; color: var(--muted); }
+.toggle { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
+.toggle input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+.seg { display: flex; gap: 4px; }
+.seg button { flex: 1; text-align: center; }
+.note {
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.note p { margin: 0; }
+.stage {
+  position: relative;
+  background: var(--stage);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.caption {
+  padding: 14px 16px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--panel);
+}
+.caption h2 { margin: 0; font: 600 17px/1.2 var(--font-label); text-wrap: balance; }
+.caption p { margin: 0; color: var(--muted); font-size: 13px; max-width: 80ch; }
+.caption .ref { font: 500 11px/1 var(--font-mono); color: var(--accent); letter-spacing: 0.02em; }
+.canvas-wrap { position: relative; min-height: 0; }
+.status[hidden] { display: none; }
+.canvas-wrap canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.status {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  color: var(--muted); font: 500 13px/1.4 var(--font-mono);
+  text-align: center; padding: 16px;
+  pointer-events: none;
+}
+.readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  padding: 10px 16px 12px;
+  border-top: 1px solid var(--rule);
+  background: var(--panel);
+  align-items: baseline;
+}
+.readout .metric { display: flex; flex-direction: column; gap: 2px; }
+.readout .metric span:first-child {
+  font: 600 10px/1 var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+}
+.readout .metric span:last-child {
+  font: 500 14px/1.2 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.readout .primary span:last-child { font-size: 16px; }
+.pill {
+  display: inline-block;
+  font: 600 11px/1 var(--font-label);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+  vertical-align: 2px;
+}
+.pill.ok { background: color-mix(in srgb, var(--good) 18%, transparent); color: var(--good); }
+.pill.no { background: color-mix(in srgb, var(--bad) 18%, transparent); color: var(--bad); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 12px; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+@media (max-width: 820px) {
+  html, body { height: auto; }
+  .app { grid-template-columns: 1fr; height: auto; }
+  .stage { order: -1; height: 72vh; min-height: 380px; }
+  .rail { overflow: visible; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
+</style>
+
+<div class="app">
+  <aside class="rail" aria-label="Controls">
+    <div class="brand">
+      <h1>Amorfus smoothing bench</h1>
+      <p>The research prototype mesher (<code>sn_axis.mjs</code>), running live in your browser. The same code produced the numbers in PLAN.md §7. Drag to orbit, scroll to zoom.</p>
+    </div>
+
+    <div class="group">
+      <h2 id="scenes-h">Scene</h2>
+      <div class="scenes" id="scenes" role="group" aria-labelledby="scenes-h"></div>
+    </div>
+
+    <div class="group">
+      <h2 id="presets-h">Preset</h2>
+      <div class="presets" id="presets" role="group" aria-labelledby="presets-h"></div>
+    </div>
+
+    <div class="group">
+      <h2>Parameters</h2>
+      <div class="param">
+        <label for="p-k">Relaxation iterations <var>k</var></label>
+        <output id="o-k" for="p-k">6</output>
+        <input type="range" id="p-k" min="0" max="10" step="1" value="6">
+      </div>
+      <label class="toggle"><input type="checkbox" id="p-hints" checked> Generator density hints</label>
+      <label class="toggle"><input type="checkbox" id="p-guard" checked> Thin-feature guard</label>
+      <label class="toggle"><input type="checkbox" id="p-clear" checked> Edit clearance caps</label>
+      <div class="param">
+        <label for="p-hh">Clearance, horizontal</label>
+        <output id="o-hh" for="p-hh">0.15</output>
+        <input type="range" id="p-hh" min="0" max="0.5" step="0.01" value="0.15">
+      </div>
+      <div class="param">
+        <label for="p-hv">Clearance, vertical</label>
+        <output id="o-hv" for="p-hv">0.05</output>
+        <input type="range" id="p-hv" min="0" max="0.5" step="0.01" value="0.05">
+      </div>
+      <div class="param">
+        <label id="sharp-l">Sharp-block pinning</label>
+        <span></span>
+        <div class="seg" style="grid-column:1/-1" role="group" aria-labelledby="sharp-l">
+          <button class="chipbtn" id="p-sharp-axis" aria-pressed="true">Per axis</button>
+          <button class="chipbtn" id="p-sharp-vertex" aria-pressed="false">Whole vertex</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Display</h2>
+      <label class="toggle"><input type="checkbox" id="d-grid"> Block grid (the cube surface)</label>
+      <label class="toggle"><input type="checkbox" id="d-wire"> Wireframe</label>
+      <div class="legend" aria-label="Material colours">
+        <span><i style="background:#7ea35a"></i>grass</span>
+        <span><i style="background:#8d6c4b"></i>dirt</span>
+        <span><i style="background:#8f9397"></i>stone</span>
+        <span><i style="background:#d2b577"></i>placed, smooth</span>
+        <span><i style="background:#a9533d"></i>placed, sharp</span>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>Not in the prototype: the plan's <em>clearance zone</em> (§7.4), which also protects rooms built on untouched ground. The room scene shows the gap it closes.</p>
+      <p>Hints here come from analytic test terrain, not generator v1. This page renders with WebGL (three.js), so it runs where WebGPU is missing; the mesh is what's under test.</p>
+    </div>
+  </aside>
+
+  <main class="stage">
+    <div class="caption">
+      <span class="ref" id="c-ref"></span>
+      <h2 id="c-title"></h2>
+      <p id="c-text"></p>
+    </div>
+    <div class="canvas-wrap" id="wrap">
+      <canvas id="view" aria-label="3D view of the meshed scene"></canvas>
+      <div class="status" id="status">Loading three.js…</div>
+    </div>
+    <div class="readout" id="readout" aria-live="polite"></div>
+  </main>
+</div>
+
+<script>
+setTimeout(function () { if (!window.__benchStarted) { var s = document.getElementById("status"); if (s) s.textContent = "The 3D library did not load from cdn.jsdelivr.net. Reload to try again."; } }, 15000);
+</script>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// ───────── research prototype mesher: research/2026-09-23/proto/review-fidelity/sn_axis.mjs (verbatim, exports stripped) ─────────
+// Prototype: surface nets on binary occupancy with constrained relaxation.
+// Blocks: integer coords b, occupying [b, b+1]^3. Corners: integer coords c.
+// Dual cell of corner c = the 8 blocks c-1..c on each axis.
+// world(x,y,z) -> 0 air, 1 smooth solid, 2 sharp solid.
+
+// 256-entry table: 1 if the solid set or the air set of a 2x2x2 cell is not face-connected inside the cell
+const AMBIG = new Uint8Array(256);
+for (let m = 1; m < 255; m++) {
+  const comps = (set) => { const seen = new Set(); let c = 0;
+    for (let i = 0; i < 8; i++) if (set(i) && !seen.has(i)) { c++; const st = [i]; seen.add(i);
+      while (st.length) { const a = st.pop(); for (const b of [a ^ 1, a ^ 2, a ^ 4]) if (set(b) && !seen.has(b)) { seen.add(b); st.push(b); } } }
+    return c; };
+  AMBIG[m] = comps(i => (m >> i) & 1) > 1 || comps(i => !((m >> i) & 1)) > 1 ? 1 : 0;
+}
+const DEFAULTS = {
+  k: 4,            // relaxation iterations
+  lambda: 0.5,     // damped Jacobi step
+  clamp: 0.5,      // half-width of clamp box around corner
+  links: 'mesh',   // 'mesh' (mesh-edge graph) | 'gibson' (any adjacent surface cell)
+  init: 'corner',  // 'corner' | 'centroid' (naive SN on binary, edge midpoints)
+  quant: 256,      // quantize final offset to 1/quant (0 = off)
+  taubinMu: 0,     // if nonzero, alternate lambda / mu steps (Taubin)
+  apron: null,     // default k+2
+  guard: null,
+  pinAmbiguous: false,
+  hAir: null,
+  edited: null,     // (x,y,z)=>bool; edited AIR octants are forbidden to vertices (keeps dug space open)
+  relaxAll: false,
+  editedAirRule: 'axis',
+  sharpMode: 'vertex', // 'vertex' (pin whole vertex) | 'axis' (pin only axes normal to incident sharp faces) // 'axis' (per-axis half-space, conservative) | 'octant'  // with hints: relax only vertices touching edited/hint-less blocks unless true      // max intrusion into the air side per axis (asymmetric clamp); null = symmetric     // array r[n6]: clamp radius for a block with n6 same-state face neighbours (thin-feature guard)
+};
+
+// Mesh a chunk: blocks [o, o+N)^3 own faces whose lower block is inside.
+function meshChunk(world, ox, oy, oz, N, opts = {}) {
+  const o = { ...DEFAULTS, ...opts };
+  const A = o.apron ?? (o.k + 2);
+  const S = N + 2 * A;           // blocks in local grid
+  const bx0 = ox - A, by0 = oy - A, bz0 = oz - A;
+  const occ = new Uint8Array(S * S * S);
+  for (let z = 0; z < S; z++) for (let y = 0; y < S; y++) for (let x = 0; x < S; x++)
+    occ[x + S * (y + S * z)] = world(bx0 + x, by0 + y, bz0 + z);
+  if (o.edited) { o.E = new Uint8Array(S * S * S); for (let z = 0; z < S; z++) for (let y = 0; y < S; y++) for (let x = 0; x < S; x++) o.E[x + S * (y + S * z)] = o.edited(bx0 + x, by0 + y, bz0 + z) ? 1 : 0; }
+  if (o.hint) { const H = new Float64Array(S * S * S);
+    for (let z = 0; z < S; z++) for (let y = 0; y < S; y++) for (let x = 0; x < S; x++) {
+      const i = x + S * (y + S * z); let h = o.hint(bx0 + x, by0 + y, bz0 + z); // null => edited / no hint
+      if (h === null || (o.E && o.E[i]) || (h > 0) !== (occ[i] !== 0)) h = occ[i] ? 1 : -1;       // saturate; must agree with occupancy
+      H[i] = Math.max(-1, Math.min(1, h)); }
+    o.H = H; }
+  return meshGrid(occ, S, bx0, by0, bz0, A, N, o);
+}
+
+function meshGrid(occ, S, bx0, by0, bz0, A, N, o) {
+  const B = (x, y, z) => occ[x + S * (y + S * z)];
+  const solid = (x, y, z) => B(x, y, z) !== 0;
+  // corners local c in 1..S-1 have full dual cells. corner local index c <-> world bx0 + c
+  // optional blurred density (separable binomial kernel) at block centres, for init:'blur'
+  let D = null;
+  if (o.init === 'blur') {
+    const K = o.kernel || [1, 2, 1]; const ks = K.reduce((a, b) => a + b); const R = (K.length - 1) >> 1;
+    let a = new Float64Array(S * S * S); for (let i = 0; i < a.length; i++) a[i] = occ[i] ? 1 : 0;
+    for (const st of [1, S, S * S]) { const b = new Float64Array(a.length);
+      for (let i = 0; i < a.length; i++) { let v = 0; for (let j = -R; j <= R; j++) { const q = i + j * st; v += (q >= 0 && q < a.length ? a[q] : a[i]) * K[j + R]; } b[i] = v / ks; }
+      a = b; }
+    D = a;
+  }
+  const C = S + 1;
+  const cid = new Int32Array(C * C * C).fill(-1);
+  const ci = (x, y, z) => x + C * (y + C * z);
+  const vx = [], vy = [], vz = [], pinned = [], cx = [], cy = [], cz = [], hcl = [], lamv = [], boxLo = [], boxHi = [], forbid = [];
+  let V = 0;
+  for (let z = 1; z < S; z++) for (let y = 1; y < S; y++) for (let x = 1; x < S; x++) {
+    let n = 0, sharp = false, mask = 0, bit = 0;
+    for (let dz = -1; dz <= 0; dz++) for (let dy = -1; dy <= 0; dy++) for (let dx = -1; dx <= 0; dx++, bit++) {
+      const b = B(x + dx, y + dy, z + dz);
+      if (b) { n++; mask |= 1 << bit; if (b === 2) sharp = true; }
+    }
+    if (o.pinAmbiguous && AMBIG[mask]) sharp = true;
+    const pinAx = [false, false, false];
+    if (sharp && o.sharpMode === 'axis') {
+      // 12 face-adjacent pairs inside the 2x2x2 cell; pair differs in exactly one axis bit
+      for (let b = 0; b < 8; b++) for (let a = 0; a < 3; a++) { const b2 = b ^ (1 << a); if (b2 < b) continue;
+        const p = [x - 1 + (b & 1), y - 1 + ((b >> 1) & 1), z - 1 + ((b >> 2) & 1)], q = [x - 1 + (b2 & 1), y - 1 + ((b2 >> 1) & 1), z - 1 + ((b2 >> 2) & 1)];
+        const u = B(...p), w = B(...q);
+        if ((u === 2 && w === 0) || (w === 2 && u === 0)) pinAx[a] = true; }
+      sharp = false;
+    }
+    if (n === 0 || n === 8) continue;
+    cid[ci(x, y, z)] = V++;
+    cx.push(x); cy.push(y); cz.push(z); pinned.push(sharp ? 1 : 0);
+    let hv = o.clamp;
+    if (o.guard) {
+      for (let dz = -1; dz <= 0; dz++) for (let dy = -1; dy <= 0; dy++) for (let dx = -1; dx <= 0; dx++) {
+        const X = x + dx, Y = y + dy, Z = z + dz, st = solid(X, Y, Z);
+        if (X < 1 || Y < 1 || Z < 1 || X >= S - 1 || Y >= S - 1 || Z >= S - 1) continue;
+        let n6 = 0;
+        n6 += solid(X - 1, Y, Z) === st; n6 += solid(X + 1, Y, Z) === st;
+        n6 += solid(X, Y - 1, Z) === st; n6 += solid(X, Y + 1, Z) === st;
+        n6 += solid(X, Y, Z - 1) === st; n6 += solid(X, Y, Z + 1) === st;
+        if (!(o.sharpMode === 'axis' && B(X, Y, Z) === 2)) hv = Math.min(hv, o.guard[n6]);
+      }
+    }
+    hcl.push(hv);
+    { // asymmetric per-axis box
+      const lo3 = [-hv, -hv, -hv], hi3 = [hv, hv, hv];
+      let cellEdited = false;
+      if (o.E) for (let dz = -1; dz <= 0; dz++) for (let dy = -1; dy <= 0; dy++) for (let dx = -1; dx <= 0; dx++) if (o.E[(x + dx) + S * ((y + dy) + S * (z + dz))]) cellEdited = true;
+      if (o.hAir !== null && o.hAir !== undefined && (!o.hAirEditedOnly || cellEdited)) {
+        for (let a = 0; a < 3; a++) { let sn = 0, sp = 0;
+          for (let dz = -1; dz <= 0; dz++) for (let dy = -1; dy <= 0; dy++) for (let dx = -1; dx <= 0; dx++) {
+            const d = [dx, dy, dz][a]; if (solid(x + dx, y + dy, z + dz)) { if (d < 0) sn++; else sp++; } }
+          if (sp > sn) lo3[a] = -Math.min(hv, (Array.isArray(o.hAir) ? o.hAir[a] : o.hAir)); else if (sn > sp) hi3[a] = Math.min(hv, (Array.isArray(o.hAir) ? o.hAir[a] : o.hAir));
+        } }
+      if (o.E && o.editedAirRule === 'axis') {
+        for (let dz = -1; dz <= 0; dz++) for (let dy = -1; dy <= 0; dy++) for (let dx = -1; dx <= 0; dx++) {
+          const ii = (x + dx) + S * ((y + dy) + S * (z + dz));
+          if (o.E[ii] && !occ[ii]) { const dd = [dx, dy, dz]; for (let a = 0; a < 3; a++) { if (dd[a] === 0) hi3[a] = Math.min(hi3[a], o.hEdited ?? 0); else lo3[a] = Math.max(lo3[a], -(o.hEdited ?? 0)); } }
+        }
+      }
+      for (let a = 0; a < 3; a++) if (pinAx[a]) { lo3[a] = 0; hi3[a] = 0; }
+      boxLo.push(lo3); boxHi.push(hi3);
+    }
+    let sat = true, forb = 0, bit2 = 0;
+    if (o.H && o.E && o.hintedLambda !== undefined) sat = false;
+    else if (o.H && o.hintedLambda !== undefined) { sat = false;
+      for (let dz = -1; dz <= 0; dz++) for (let dy = -1; dy <= 0; dy++) for (let dx = -1; dx <= 0; dx++) { const hh = o.H[(x + dx) + S * ((y + dy) + S * (z + dz))]; if (hh === 1 || hh === -1) sat = true; } }
+    if (o.E) for (let dz = -1; dz <= 0; dz++) for (let dy = -1; dy <= 0; dy++) for (let dx = -1; dx <= 0; dx++, bit2++) {
+      const ii = (x + dx) + S * ((y + dy) + S * (z + dz)); if (o.E[ii]) { sat = true; if (!occ[ii]) forb |= 1 << bit2; } }
+    if (o.H && o.E && o.hintedLambda !== undefined && !o.relaxAll) { /* sat already reflects edited */ }
+    lamv.push(sat ? o.lambda : o.hintedLambda); forbid.push(forb);
+    let px = 0, py = 0, pz = 0;
+    if (o.init === 'centroid') {
+      // naive SN on binary samples at block centres: average of edge midpoints of sign-changing lattice edges
+      let m = 0;
+      // lattice points are block centres at corner + (+-0.5); edges along each axis
+      for (let a = 0; a < 3; a++) for (let u = -1; u <= 0; u++) for (let v = -1; v <= 0; v++) {
+        let p, q, off;
+        if (a === 0) { p = solid(x - 1, y + u, z + v); q = solid(x, y + u, z + v); off = [0, u + 0.5, v + 0.5]; }
+        if (a === 1) { p = solid(x + u, y - 1, z + v); q = solid(x + u, y, z + v); off = [u + 0.5, 0, v + 0.5]; }
+        if (a === 2) { p = solid(x + u, y + v, z - 1); q = solid(x + u, y + v, z); off = [u + 0.5, v + 0.5, 0]; }
+        if (p !== q) { px += off[0]; py += off[1]; pz += off[2]; m++; }
+      }
+      px /= m; py /= m; pz /= m;
+    }
+    if (o.H) {
+      let m = 0; const Hd = (X, Y, Z) => o.H[X + S * (Y + S * Z)];
+      for (let a = 0; a < 3; a++) for (let u = -1; u <= 0; u++) for (let v = -1; v <= 0; v++) {
+        let p, q, pa, pb;
+        if (a === 0) { p = Hd(x - 1, y + u, z + v); q = Hd(x, y + u, z + v); pa = [-0.5, u + 0.5, v + 0.5]; pb = [0.5, u + 0.5, v + 0.5]; }
+        if (a === 1) { p = Hd(x + u, y - 1, z + v); q = Hd(x + u, y, z + v); pa = [u + 0.5, -0.5, v + 0.5]; pb = [u + 0.5, 0.5, v + 0.5]; }
+        if (a === 2) { p = Hd(x + u, y + v, z - 1); q = Hd(x + u, y + v, z); pa = [u + 0.5, v + 0.5, -0.5]; pb = [u + 0.5, v + 0.5, 0.5]; }
+        if ((p > 0) !== (q > 0)) { const t = p / (p - q); px += pa[0] + t * (pb[0] - pa[0]); py += pa[1] + t * (pb[1] - pa[1]); pz += pa[2] + t * (pb[2] - pa[2]); m++; }
+      }
+      px /= m; py /= m; pz /= m;
+      const L0 = boxLo[boxLo.length - 1], H0 = boxHi[boxHi.length - 1]; px = Math.max(L0[0], Math.min(H0[0], px)); py = Math.max(L0[1], Math.min(H0[1], py)); pz = Math.max(L0[2], Math.min(H0[2], pz));
+    }
+    if (o.init === 'blur') {
+      // centroid of iso-0.5 crossings of the blurred field on the 12 lattice edges of this dual cell; clamp to cell
+      let m = 0; const Dd = (X, Y, Z) => D[X + S * (Y + S * Z)] - 0.5;
+      for (let a = 0; a < 3; a++) for (let u = -1; u <= 0; u++) for (let v = -1; v <= 0; v++) {
+        let p, q, pa, pb;
+        if (a === 0) { p = Dd(x - 1, y + u, z + v); q = Dd(x, y + u, z + v); pa = [-0.5, u + 0.5, v + 0.5]; pb = [0.5, u + 0.5, v + 0.5]; }
+        if (a === 1) { p = Dd(x + u, y - 1, z + v); q = Dd(x + u, y, z + v); pa = [u + 0.5, -0.5, v + 0.5]; pb = [u + 0.5, 0.5, v + 0.5]; }
+        if (a === 2) { p = Dd(x + u, y + v, z - 1); q = Dd(x + u, y + v, z); pa = [u + 0.5, v + 0.5, -0.5]; pb = [u + 0.5, v + 0.5, 0.5]; }
+        if ((p > 0) !== (q > 0)) { const t = p / (p - q); px += pa[0] + t * (pb[0] - pa[0]); py += pa[1] + t * (pb[1] - pa[1]); pz += pa[2] + t * (pb[2] - pa[2]); m++; }
+      }
+      if (m) { px /= m; py /= m; pz /= m; } 
+      const hb = o.clamp; px = Math.max(-hb, Math.min(hb, px)); py = Math.max(-hb, Math.min(hb, py)); pz = Math.max(-hb, Math.min(hb, pz));
+    }
+    if (forbid[forbid.length - 1] && o.editedAirRule === 'octant') { const T = [x + px, y + py, z + pz]; projectOctants(T, 0, x, y, z, forbid[forbid.length - 1], boxLo[boxLo.length - 1], boxHi[boxHi.length - 1]); px = T[0] - x; py = T[1] - y; pz = T[2] - z; }
+    if (pinned[pinned.length - 1]) { px = 0; py = 0; pz = 0; }
+    vx.push(x + px); vy.push(y + py); vz.push(z + pz);
+  }
+  // adjacency: 6 directions
+  const DIRS = [[-1, 0, 0], [1, 0, 0], [0, -1, 0], [0, 1, 0], [0, 0, -1], [0, 0, 1]];
+  const nb = new Int32Array(V * 6).fill(-1);
+  for (let v = 0; v < V; v++) {
+    const x = cx[v], y = cy[v], z = cz[v];
+    for (let d = 0; d < 6; d++) {
+      const [ex, ey, ez] = DIRS[d];
+      const X = x + ex, Y = y + ey, Z = z + ez;
+      if (X < 1 || Y < 1 || Z < 1 || X >= S || Y >= S || Z >= S) continue;
+      const w = cid[ci(X, Y, Z)];
+      if (w < 0) continue;
+      if (o.links === 'gibson') { nb[v * 6 + d] = w; continue; }
+      // mesh edge iff the 4 blocks around the block-edge (c, c+e) are not uniform
+      const lx = Math.min(x, X), ly = Math.min(y, Y), lz = Math.min(z, Z);
+      let s = 0;
+      if (ex) { for (let u = -1; u <= 0; u++) for (let t = -1; t <= 0; t++) s += solid(lx, y + u, z + t) ? 1 : 0; }
+      if (ey) { for (let u = -1; u <= 0; u++) for (let t = -1; t <= 0; t++) s += solid(x + u, ly, z + t) ? 1 : 0; }
+      if (ez) { for (let u = -1; u <= 0; u++) for (let t = -1; t <= 0; t++) s += solid(x + u, y + t, lz) ? 1 : 0; }
+      if (s !== 0 && s !== 4) nb[v * 6 + d] = w;
+    }
+  }
+  // relaxation (damped Jacobi, order independent)
+  let P = new Float64Array(V * 3), Q = new Float64Array(V * 3);
+  for (let v = 0; v < V; v++) { P[3 * v] = vx[v]; P[3 * v + 1] = vy[v]; P[3 * v + 2] = vz[v]; }
+  for (let it = 0; it < o.k; it++) {
+    const lam0 = o.taubinMu && (it & 1) ? o.taubinMu : o.lambda;
+    for (let v = 0; v < V; v++) {
+      const i3 = 3 * v;
+      const lam = o.taubinMu ? lam0 : lamv[v];
+      if (pinned[v]) { Q[i3] = P[i3]; Q[i3 + 1] = P[i3 + 1]; Q[i3 + 2] = P[i3 + 2]; continue; }
+      let sx = 0, sy = 0, sz = 0, m = 0;
+      for (let d = 0; d < 6; d++) {           // fixed neighbour order -> deterministic sums
+        const w = nb[v * 6 + d]; if (w < 0) continue;
+        sx += P[3 * w]; sy += P[3 * w + 1]; sz += P[3 * w + 2]; m++;
+      }
+      let nx = P[i3], ny = P[i3 + 1], nz = P[i3 + 2];
+      if (m) {
+        nx += lam * (sx / m - nx); ny += lam * (sy / m - ny); nz += lam * (sz / m - nz);
+      }
+      const X = cx[v], Y = cy[v], Z = cz[v], L = boxLo[v], H = boxHi[v];
+      Q[i3] = Math.min(X + H[0], Math.max(X + L[0], nx));
+      Q[i3 + 1] = Math.min(Y + H[1], Math.max(Y + L[1], ny));
+      Q[i3 + 2] = Math.min(Z + H[2], Math.max(Z + L[2], nz));
+      if (forbid[v] && o.editedAirRule === 'octant') projectOctants(Q, i3, X, Y, Z, forbid[v], L, H);
+    }
+    const t = P; P = Q; Q = t;
+  }
+  // quantize offset relative to corner, convert to world coords
+  const W = new Float64Array(V * 3);
+  for (let v = 0; v < V; v++) {
+    const c = [cx[v], cy[v], cz[v]], b0 = [bx0, by0, bz0];
+    for (let a = 0; a < 3; a++) {
+      let off = P[3 * v + a] - c[a];
+      if (o.quant) off = Math.round(off * o.quant) / o.quant;
+      W[3 * v + a] = (b0[a] + c[a]) + off;
+    }
+  }
+  // faces owned by chunk: lower block local in [A, A+N)
+  const quads = []; // [v0,v1,v2,v3, solidBlockWorld..., airBlockWorld...]
+  const faceQuads = (x, y, z, a) => {
+    // face between block (x,y,z) and (x,y,z)+e_a
+    const e = [0, 0, 0]; e[a] = 1;
+    const s0 = solid(x, y, z), s1 = solid(x + e[0], y + e[1], z + e[2]);
+    if (s0 === s1) return;
+    // corners of the face: plane coord = (x,y,z)[a]+1, other two axes span [b, b+1]
+    const u = (a + 1) % 3, w = (a + 2) % 3;
+    const base = [x, y, z]; base[a] += 1;
+    const cs = [];
+    for (const [du, dw] of [[0, 0], [1, 0], [1, 1], [0, 1]]) {
+      const p = base.slice(); p[u] += du; p[w] += dw; cs.push(cid[ci(p[0], p[1], p[2])]);
+    }
+    if (cs.some(c => c < 0)) throw new Error('missing vertex');
+    // orient so normal points from solid to air: (u,w) order gives +a normal
+    const q = s0 ? cs : [cs[0], cs[3], cs[2], cs[1]];
+    const sb = s0 ? [x, y, z] : [x + e[0], y + e[1], z + e[2]];
+    const ab = s0 ? [x + e[0], y + e[1], z + e[2]] : [x, y, z];
+    quads.push({ v: q, solid: [sb[0] + bx0, sb[1] + by0, sb[2] + bz0], air: [ab[0] + bx0, ab[1] + by0, ab[2] + bz0], sharp: B(...sb) === 2 });
+  };
+  for (let z = A; z < A + N; z++) for (let y = A; y < A + N; y++) for (let x = A; x < A + N; x++)
+    for (let a = 0; a < 3; a++) faceQuads(x, y, z, a);
+  // faces on the low boundary (lower block at A-1 on one axis) are owned by the neighbour chunk
+  return { V, W, quads, cx, cy, cz, bx0, by0, bz0, pinned, nb };
+}
+
+// Project offset d onto the union of closed octant boxes whose block is not forbidden (edited air).
+// Octant bit order matches the dual-cell loop: bit = (dx+1) + 2*(dy+1) + 4*(dz+1), dx,dy,dz in {-1,0} -> sign -,+.
+function projectOctants(Q, i3, X, Y, Z, forb, L, H) {
+  const d = [Q[i3] - X, Q[i3 + 1] - Y, Q[i3 + 2] - Z];
+  const oct = (d[0] > 0 ? 1 : 0) + (d[1] > 0 ? 2 : 0) + (d[2] > 0 ? 4 : 0);
+  if (!(forb >> oct & 1)) return;
+  let best = null, bd = Infinity;
+  for (let b = 0; b < 8; b++) { if (forb >> b & 1) continue;
+    const c = [0, 1, 2].map(a => { const pos = (b >> a) & 1; const lo = pos ? 0 : L[a], hi = pos ? H[a] : 0; return Math.min(hi, Math.max(lo, d[a])); });
+    const dd = (c[0] - d[0]) ** 2 + (c[1] - d[1]) ** 2 + (c[2] - d[2]) ** 2;
+    if (dd < bd) { bd = dd; best = c; } }
+  if (!best) best = [0, 0, 0];
+  Q[i3] = X + best[0]; Q[i3 + 1] = Y + best[1]; Q[i3 + 2] = Z + best[2];
+}
+function worldPos(m, v) { return [m.W[3 * v], m.W[3 * v + 1], m.W[3 * v + 2]]; }
+
+// signed volume of closed quad mesh (split quads into 2 triangles)
+function volume(m) {
+  let vol = 0;
+  for (const q of m.quads) {
+    const p = q.v.map(v => worldPos(m, v));
+    for (const [i, j, k] of [[0, 1, 2], [0, 2, 3]]) {
+      const [a, b, c] = [p[i], p[j], p[k]];
+      vol += (a[0] * (b[1] * c[2] - b[2] * c[1]) - a[1] * (b[0] * c[2] - b[2] * c[0]) + a[2] * (b[0] * c[1] - b[1] * c[0])) / 6;
+    }
+  }
+  return vol;
+}
+
+// directed-edge cancellation (closed 2-chain) check
+function watertight(m) {
+  const cnt = new Map();
+  const key = (a, b) => a + ',' + b;
+  for (const q of m.quads) for (let i = 0; i < 4; i++) {
+    const a = q.v[i], b = q.v[(i + 1) % 4];
+    cnt.set(key(a, b), (cnt.get(key(a, b)) || 0) + 1);
+  }
+  let bad = 0;
+  for (const [k, n] of cnt) { const [a, b] = k.split(','); if ((cnt.get(key(b, a)) || 0) !== n) bad++; }
+  return bad;
+}
+// ───────── end of prototype ─────────
+
+const G1 = [0.2, 0.25, 0.3, 0.5, 0.5, 0.5, 0.5];
+
+const PRESETS = [
+  { id: 'plan', label: 'Plan (D-3)', k: 6, hints: true, guard: true, clear: true, hh: 0.15, hv: 0.05, sharp: 'axis', init: 'corner' },
+  { id: 'research', label: 'Research final', k: 6, hints: true, guard: true, clear: true, hh: 0.2, hv: 0.2, sharp: 'axis', init: 'corner' },
+  { id: 'noclear', label: 'No clearance', k: 6, hints: true, guard: true, clear: false, hh: 0.2, hv: 0.2, sharp: 'axis', init: 'corner' },
+  { id: 'unguarded', label: 'Unguarded relax', k: 4, hints: false, guard: false, clear: false, hh: 0.2, hv: 0.2, sharp: 'vertex', init: 'corner' },
+  { id: 'naive', label: 'Naive surface nets', k: 0, hints: false, guard: false, clear: false, hh: 0.2, hv: 0.2, sharp: 'vertex', init: 'centroid' },
+  { id: 'cubes', label: 'Cubes', k: 0, hints: false, guard: false, clear: false, hh: 0.2, hv: 0.2, sharp: 'vertex', init: 'corner' },
+];
+
+// ── scene helpers (z is up, as in the prototype) ──
+const G0 = 0.3;                                   // hinted ground surface height
+const groundHint = (x, y, z) => G0 - (z + 0.5);   // occupancy: z <= -1
+const inGround = (z) => z <= -1;
+
+function lookup(m) {
+  const idx = new Map();
+  for (let v = 0; v < m.V; v++) idx.set((m.cx[v] + m.bx0) + ',' + (m.cy[v] + m.by0) + ',' + (m.cz[v] + m.bz0), v);
+  return (x, y, z) => { const v = idx.get(x + ',' + y + ',' + z); return v === undefined ? null : worldPos(m, v); };
+}
+const maxZnear = (m, r) => { let t = -1e9; for (let v = 0; v < m.V; v++) { const p = worldPos(m, v); if (Math.abs(p[0] - 0.5) <= r && Math.abs(p[1] - 0.5) <= r) t = Math.max(t, p[2]); } return t; };
+const minZnear = (m, r) => { let t = 1e9; for (let v = 0; v < m.V; v++) { const p = worldPos(m, v); if (Math.abs(p[0] - 0.5) <= r && Math.abs(p[1] - 0.5) <= r) t = Math.min(t, p[2]); } return t; };
+const f2 = (n) => (Math.round(n * 100) / 100).toFixed(2);
+const pill = (ok, yes, no) => `<span class="pill ${ok ? 'ok' : 'no'}">${ok ? yes : no}</span>`;
+
+function quadNormal(p) {
+  const d1 = [p[2][0] - p[0][0], p[2][1] - p[0][1], p[2][2] - p[0][2]];
+  const d2 = [p[3][0] - p[1][0], p[3][1] - p[1][1], p[3][2] - p[1][2]];
+  const n = [d1[1] * d2[2] - d1[2] * d2[1], d1[2] * d2[0] - d1[0] * d2[2], d1[0] * d2[1] - d1[1] * d2[0]];
+  const a = Math.hypot(n[0], n[1], n[2]) || 1;
+  return [n[0] / a, n[1] / a, n[2] / a];
+}
+function slopeError(m, n, yPred) {
+  const ideal = [-1 / n, 0, 1]; const L = Math.hypot(...ideal); ideal[0] /= L; ideal[2] /= L;
+  let s = 0, c = 0, mx = 0;
+  for (const q of m.quads) {
+    if (q.sharp) continue;
+    const p = q.v.map(v => worldPos(m, v));
+    const cx = (p[0][0] + p[2][0]) / 2, cy = (p[0][1] + p[2][1]) / 2;
+    if (Math.abs(cx) > 6 || !yPred(cy)) continue;
+    const nn = quadNormal(p); if (nn[2] < 0.3) continue;
+    const ang = Math.acos(Math.max(-1, Math.min(1, nn[0] * ideal[0] + nn[1] * ideal[1] + nn[2] * ideal[2]))) * 180 / Math.PI;
+    s += ang * ang; c++; mx = Math.max(mx, ang);
+  }
+  return c ? { rms: Math.sqrt(s / c), max: mx } : { rms: 0, max: 0 };
+}
+
+// terrain for the patch scene
+const th = (x, y) => 3 + 3.2 * Math.sin(x * 0.33) * Math.cos(y * 0.27) + 1.6 * Math.sin((x + 2 * y) * 0.16);
+const terrainF = (x, y, z) => {
+  const X = x + 0.5, Y = y + 0.5, h = th(X, Y);
+  const gx = (th(X + 0.5, Y) - th(X - 0.5, Y)), gy = (th(X, Y + 0.5) - th(X, Y - 0.5));
+  return (h - (z + 0.5)) / Math.sqrt(1 + gx * gx + gy * gy);
+};
+const topZ = (x, y) => { let z = 20; while (z > -10 && !(terrainF(x, y, z) > 0)) z--; return z; };
+
+const SCENES = [
+  {
+    id: 'bump', name: 'Placed block', ref: 'C-8 · §7.6',
+    title: 'One smooth block placed on flat ground',
+    text: 'Smoothing shrinks single blocks. The guard keeps a placed block a clear bump instead of a speck. Try Unguarded relax.',
+    N: 12, o: [-6, -6, -6], cam: [7, -9, 6], target: [0.5, 0.5, 0.3],
+    world: (x, y, z) => ((x === 0 && y === 0 && z === 0) || inGround(z) ? 1 : 0),
+    edited: (x, y, z) => x === 0 && y === 0 && z === 0, hint: groundHint,
+    metric(m, p) { const ref = p.hints ? G0 : 0; return [['Bump height', f2(maxZnear(m, 0.6) - ref), true]]; },
+  },
+  {
+    id: 'dent', name: 'Dug hole', ref: 'C-8 · §7.6',
+    title: 'One block removed from flat ground',
+    text: 'The dent stays readable as one missing block. The vertical clearance cap sets how deep it looks.',
+    N: 12, o: [-6, -6, -6], cam: [7, -9, 7], target: [0.5, 0.5, 0],
+    world: (x, y, z) => (inGround(z) && !(x === 0 && y === 0 && z === -1) ? 1 : 0),
+    edited: (x, y, z) => x === 0 && y === 0 && z === -1, hint: groundHint,
+    metric(m, p) { const ref = p.hints ? G0 : 0; return [['Dent depth', f2(ref - minZnear(m, 0.6)), true]]; },
+  },
+  {
+    id: 'float', name: 'Floating block', ref: 'C-8 · §7.4',
+    title: 'A single smooth block in the air',
+    text: 'Plain Laplacian relaxation erases it (volume 0.007 at k = 4). The guard keeps a rounded block of volume about 0.22.',
+    N: 8, o: [-4, -4, -4], cam: [3.2, -4, 2.8], target: [0.5, 0.5, 0.5],
+    world: (x, y, z) => (x === 0 && y === 0 && z === 0 ? 1 : 0),
+    edited: (x, y, z) => x === 0 && y === 0 && z === 0, hint: null,
+    metric(m) { return [['Volume', f2(volume(m)), true], ['Cube', '1.00', false]]; },
+  },
+  {
+    id: 'pillar', name: 'Pillar', ref: 'C-8 · §7.4',
+    title: 'A 1×1 column, six blocks tall',
+    text: 'Thin features collapse under unguarded smoothing. The guard holds the pillar at about 0.4 wide.',
+    N: 12, o: [-6, -6, -4], cam: [8, -10, 7], target: [0.5, 0.5, 2.5],
+    world: (x, y, z) => ((x === 0 && y === 0 && z >= 0 && z < 6) || inGround(z) ? 1 : 0),
+    edited: (x, y, z) => x === 0 && y === 0 && z >= 0 && z < 6, hint: groundHint,
+    metric(m) { const P = lookup(m); const a = P(1, 1, 3), b = P(0, 0, 3); return [['Width at mid-height', a && b ? f2(a[0] - b[0]) : '—', true]]; },
+  },
+  {
+    id: 'tunnel12', name: 'Tunnel 1×2', ref: 'C-9 · D-3',
+    title: 'A 1-wide, 2-high tunnel dug through a hill',
+    text: 'Look into the tunnel mouth at the cut. The 0.6 × 1.8 player capsule must fit. It does not without the clearance caps.',
+    N: 12, o: [-6, -6, -6], cam: [2.5, -14, 1.2], target: [0.5, 0, 1],
+    world: (x, y, z) => (x === 0 && (z === 0 || z === 1) ? 0 : (5.3 - (z + 0.5) > 0 ? 1 : 0)),
+    edited: (x, y, z) => x === 0 && (z === 0 || z === 1), hint: (x, y, z) => 5.3 - (z + 0.5),
+    metric(m) { return tunnelMetric(m, 1, 2); },
+  },
+  {
+    id: 'tunnel23', name: 'Tunnel 2×3', ref: 'C-9 · D-3',
+    title: 'A 2-wide, 3-high tunnel dug through a hill',
+    text: 'Wider openings keep their shape better. Clearance is W − 2·cap across and H − 2·cap up.',
+    N: 12, o: [-6, -6, -6], cam: [3, -14, 1.6], target: [1, 0, 1.5],
+    world: (x, y, z) => ((x === 0 || x === 1) && z >= 0 && z <= 2 ? 0 : (5.3 - (z + 0.5) > 0 ? 1 : 0)),
+    edited: (x, y, z) => (x === 0 || x === 1) && z >= 0 && z <= 2, hint: (x, y, z) => 5.3 - (z + 0.5),
+    metric(m) { return tunnelMetric(m, 2, 3); },
+  },
+  {
+    id: 'room', name: 'Room on ground', ref: 'C-9 · §7.4',
+    title: 'A 2-high room built on untouched ground',
+    text: 'Generated ground can sit up to 0.5 above its grid plane (here 0.45). The prototype has no clearance zone, so headroom shrinks. The plan’s zone fixes this.',
+    N: 12, o: [-6, -6, -5], cam: [3, -11, 3.5], target: [0.5, 0, 1],
+    world: (x, y, z) => {
+      if (z <= -1) return 1;
+      const inX = x >= -2 && x <= 2, inY = y >= -2 && y <= 2;
+      if (z === 2 && inX && inY) return 1;
+      if ((z === 0 || z === 1) && ((inY && (x === -2 || x === 2)) || (inX && y === 2))) return 1;
+      return 0;
+    },
+    edited: (x, y, z) => {
+      const inX = x >= -2 && x <= 2, inY = y >= -2 && y <= 2;
+      return (z === 2 && inX && inY) || ((z === 0 || z === 1) && ((inY && (x === -2 || x === 2)) || (inX && y === 2)));
+    },
+    hint: (x, y, z) => 0.45 - (z + 0.5),
+    metric(m) {
+      const P = lookup(m); let h = 1e9;
+      for (const x of [0, 1]) for (const y of [0, 1]) { const top = P(x, y, 2), bot = P(x, y, 0); if (top && bot) h = Math.min(h, top[2] - bot[2]); }
+      const ok = h >= 1.8;
+      return [['Headroom', (h < 1e8 ? f2(h) : '—') + pill(ok, 'fits 1.8', 'too low for 1.8'), true]];
+    },
+  },
+  {
+    id: 'slope4', name: 'Slope 1:4', ref: 'C-7 · D-4',
+    title: 'Generated slope (front) vs the same slope built by hand (back)',
+    text: 'Hints make generated slopes smooth. Hand-built blocks are binary, so the built half keeps a visible terrace, and the clearance caps make it worse. Try No clearance.',
+    N: 16, o: [-8, -8, -8], cam: [-11, -13, 12], target: [0, 0, -1],
+    ...slopeScene(4),
+  },
+  {
+    id: 'slope8', name: 'Slope 1:8', ref: 'C-7 · D-4',
+    title: 'The same comparison at 1:8',
+    text: 'Gentler slopes terrace more visibly from binary data. Front: generated. Back: hand-built.',
+    N: 16, o: [-8, -8, -8], cam: [-11, -13, 11], target: [0, 0, -1],
+    ...slopeScene(8),
+  },
+  {
+    id: 'sharp', name: 'Sharp wall', ref: '§7.4 · D-3',
+    title: 'A wall of sharp blocks on a generated slope',
+    text: 'Sharp blocks stay exact cubes. Per-axis pinning lets the ground meet the wall at its own height; whole-vertex pinning cuts a groove.',
+    N: 14, o: [-7, -7, -7], cam: [6, -12, 7], target: [0, 0, 1],
+    world: (x, y, z) => {
+      const f = (x + 0.5) / 3 - (z + 0.5) + 0.2;
+      if (f > 0) return 1;
+      if (y === 0 && x >= -5 && x <= 5) { let g = z; while (g > -8 && !((x + 0.5) / 3 - (g + 0.5) + 0.2 > 0)) g--; if (z > g && z <= g + 3) return 2; }
+      return 0;
+    },
+    edited: (x, y, z) => {
+      if (!(y === 0 && x >= -5 && x <= 5)) return false;
+      if ((x + 0.5) / 3 - (z + 0.5) + 0.2 > 0) return false;
+      let g = z; while (g > -8 && !((x + 0.5) / 3 - (g + 0.5) + 0.2 > 0)) g--; return z > g && z <= g + 3;
+    },
+    hint: (x, y, z) => ((x + 0.5) / 3 - (z + 0.5) + 0.2) / Math.hypot(1, 1 / 3),
+    metric(m) {
+      let off = 0, tot = 0;
+      for (const q of m.quads) { if (!q.sharp) continue; const p = q.v.map(v => worldPos(m, v));
+        const a = [0, 1, 2].find(i => p.every(t => Math.abs(t[i] - p[0][i]) < 1e-9));
+        for (const t of p) { tot++; if (a === undefined || Math.abs(t[a] - Math.round(t[a])) > 1e-9) off++; } }
+      return [['Sharp-face vertices off their grid plane', `${off} / ${tot}`, true]];
+    },
+  },
+  {
+    id: 'stairs', name: 'Built stairs', ref: '§9.3',
+    title: 'A staircase of placed smooth blocks',
+    text: '1-block steps smooth into ramps. The steepest edited step sets the slope limit M3 has to re-derive.',
+    N: 16, o: [-8, -8, -6], cam: [-6, -14, 9], target: [0, 0, 1],
+    world: (x, y, z) => (inGround(z) || (x >= -3 && x <= 3 && y >= -3 && y <= 3 && z >= 0 && z <= x + 3) ? 1 : 0),
+    edited: (x, y, z) => x >= -3 && x <= 3 && y >= -3 && y <= 3 && z >= 0 && z <= x + 3, hint: groundHint,
+    metric(m) {
+      let worst = 0;
+      for (const q of m.quads) { if (q.sharp) continue; const p = q.v.map(v => worldPos(m, v));
+        const cy = (p[0][1] + p[2][1]) / 2, cx = (p[0][0] + p[2][0]) / 2; if (Math.abs(cy) > 2 || cx < -3 || cx > 3.5) continue;
+        const n = quadNormal(p); if (n[2] <= 0.05) continue; worst = Math.max(worst, Math.acos(n[2]) * 180 / Math.PI); }
+      return [['Steepest walkable-side face', `${worst.toFixed(0)}°`, true], ['Provisional limit', '50°', false]];
+    },
+  },
+  {
+    id: 'sphere', name: 'Built sphere', ref: '§7.6',
+    title: 'A sphere of placed smooth blocks, radius 6',
+    text: 'Built curves smooth well even from binary data. Compare the cube preset to see the difference.',
+    N: 16, o: [-8, -8, -8], cam: [10, -12, 7], target: [0, 0, 0],
+    world: (x, y, z) => ((x + 0.5) ** 2 + (y + 0.5) ** 2 + (z + 0.5) ** 2 < 36 ? 1 : 0),
+    edited: (x, y, z) => (x + 0.5) ** 2 + (y + 0.5) ** 2 + (z + 0.5) ** 2 < 36, hint: null,
+    metric(m) { const v = volume(m), ideal = 4 / 3 * Math.PI * 216; return [['Volume', v.toFixed(0), true], ['Ideal sphere', ideal.toFixed(0), false]]; },
+  },
+  {
+    id: 'terrain', name: 'Terrain patch', ref: 'overview',
+    title: 'Generated hills with a few edits',
+    text: 'Hinted hills, a sharp brick hut, a dug tunnel, and a mound of placed smooth blocks, all meshed together.',
+    N: 28, o: [-14, -14, -6], cam: [-2, -30, 20], target: [0, 0, 3],
+    world: (x, y, z) => {
+      if (hut(x, y, z)) return 2;
+      if (mound(x, y, z)) return 1;
+      if (tunnel(x, y, z)) return 0;
+      return terrainF(x, y, z) > 0 ? 1 : 0;
+    },
+    edited: (x, y, z) => hut(x, y, z) || mound(x, y, z) || (tunnel(x, y, z) && terrainF(x, y, z) > 0),
+    hint: terrainF,
+    metric() { return []; },
+  },
+];
+
+function hut(x, y, z) {
+  if (x < -11 || x > -7 || y < -11 || y > -7) return false;
+  const base = topZ(-9, -9);
+  if (z <= base || z > base + 3) return false;
+  const edge = x === -11 || x === -7 || y === -11 || y === -7;
+  const door = y === -7 && x === -9 && z <= base + 2;
+  return (edge && !door) || z === base + 3;
+}
+function mound(x, y, z) {
+  const cx = 8, cy = -8, base = topZ(cx, cy);
+  const r = Math.max(Math.abs(x - cx), Math.abs(y - cy));
+  return r <= 2 && z > base && z <= base + (3 - r);
+}
+function tunnel(x, y, z) { return (y === 6 || y === 7) && x >= 0 && x <= 13 && (z === 2 || z === 3); }
+
+function slopeScene(n) {
+  const f = (x, z) => (x + 0.5) / n - (z + 0.5) + 0.25;
+  const built = (x, y, z) => y >= 0 && z >= -4 && f(x, z) > 0;
+  return {
+    world: (x, y, z) => (f(x, z) > 0 ? 1 : 0),
+    edited: built,
+    hint: (x, y, z) => f(x, z) / Math.hypot(1, 1 / n),
+    metric(m, p) {
+      const g = slopeError(m, n, (cy) => cy < -1), b = slopeError(m, n, (cy) => cy > 1);
+      return [['Generated half', `${g.rms.toFixed(1)}° rms`, true], ['Hand-built half', `${b.rms.toFixed(1)}° rms · ${b.max.toFixed(0)}° max`, true]];
+    },
+  };
+}
+function tunnelMetric(m, W, H) {
+  const P = lookup(m); let minW = 9, minH = 9;
+  for (let z = 0; z <= H; z++) { const a = P(W, 0, z), b = P(0, 0, z); if (a && b) minW = Math.min(minW, a[0] - b[0]); }
+  for (let x = 0; x <= W; x++) { const a = P(x, 0, H), b = P(x, 0, 0); if (a && b) minH = Math.min(minH, a[2] - b[2]); }
+  const ok = minW >= 0.6 && minH >= 1.8;
+  return [['Clearance', `${f2(minW)} × ${f2(minH)}` + pill(ok, 'fits 0.6 × 1.8', 'blocks 0.6 × 1.8'), true]];
+}
+
+// ── state ──
+const state = { scene: 'bump', preset: 'plan', k: 6, hints: true, guard: true, clear: true, hh: 0.15, hv: 0.05, sharp: 'axis', init: 'corner', grid: false, wire: false };
+try { const s = localStorage.getItem('amorfus-bench-scene'); if (s && SCENES.some(x => x.id === s)) state.scene = s; } catch (e) {}
+
+// ── three.js stage ──
+const canvas = document.getElementById('view');
+const wrap = document.getElementById('wrap');
+const statusEl = document.getElementById('status');
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+} catch (e) {
+  statusEl.textContent = 'WebGL is not available in this browser, so the 3D view cannot start.';
+  throw e;
+}
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+const scene3 = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 500);
+camera.up.set(0, 0, 1);
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
+scene3.add(new THREE.HemisphereLight(0xdfeaf2, 0x4a4238, 0.75));
+const sun = new THREE.DirectionalLight(0xfff6e8, 2.6);
+sun.position.set(-0.85, -0.35, 0.55).multiplyScalar(40); // low, raking light so terraces and seams show
+scene3.add(sun);
+const fill = new THREE.DirectionalLight(0xbfd4e6, 0.35);
+fill.position.set(0.8, 0.6, 0.3).multiplyScalar(40);
+scene3.add(fill);
+
+const surfMat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.92, metalness: 0, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+const wireMat = new THREE.MeshBasicMaterial({ color: 0x0b1a24, wireframe: true, transparent: true, opacity: 0.28 });
+const gridMat = new THREE.LineBasicMaterial({ color: 0x2f6d8f, transparent: true, opacity: 0.75 });
+let surf = null, wire = null, grid = null;
+
+function applyStageColor() {
+  const c = getComputedStyle(document.documentElement).getPropertyValue('--stage').trim() || '#dfe5e3';
+  renderer.setClearColor(new THREE.Color(c));
+  const dark = matchMedia('(prefers-color-scheme: dark)').matches && document.documentElement.dataset.theme !== 'light' || document.documentElement.dataset.theme === 'dark';
+  gridMat.color.set(dark ? 0x7fb6d6 : 0x2f6d8f);
+  wireMat.color.set(dark ? 0xe4ebe7 : 0x0b1a24);
+  wireMat.opacity = dark ? 0.22 : 0.28;
+}
+applyStageColor();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyStageColor);
+new MutationObserver(applyStageColor).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+function resize() {
+  const r = wrap.getBoundingClientRect();
+  const w = Math.max(1, Math.floor(r.width)), h = Math.max(1, Math.floor(r.height));
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+new ResizeObserver(resize).observe(wrap);
+
+// ── materials ──
+const COL = Object.fromEntries(Object.entries({ grass: '#7ea35a', dirt: '#8d6c4b', stone: '#8f9397', placed: '#d2b577', sharp: '#a9533d' })
+  .map(([k, hex]) => { const c = new THREE.Color(hex); return [k, [c.r, c.g, c.b]]; })); // THREE.Color converts sRGB hex to linear
+function quadColor(sc, q) {
+  const [x, y, z] = q.solid;
+  if (q.sharp || sc.world(x, y, z) === 2) return COL.sharp;
+  if (sc.edited && sc.edited(x, y, z)) return COL.placed;
+  if (!sc.world(x, y, z + 1)) return COL.grass;
+  for (let d = 2; d <= 3; d++) if (!sc.world(x, y, z + d)) return COL.dirt;
+  return COL.stone;
+}
+
+// ── mesh building (prototype output → three.js geometry) ──
+function buildGeometry(sc, m) {
+  const V = m.V, nrm = new Float64Array(V * 3);
+  const pos = (v) => [m.W[3 * v], m.W[3 * v + 1], m.W[3 * v + 2]];
+  for (const q of m.quads) {
+    if (q.sharp) continue;
+    const p = q.v.map(pos);
+    const d1 = [p[2][0] - p[0][0], p[2][1] - p[0][1], p[2][2] - p[0][2]], d2 = [p[3][0] - p[1][0], p[3][1] - p[1][1], p[3][2] - p[1][2]];
+    const n = [d1[1] * d2[2] - d1[2] * d2[1], d1[2] * d2[0] - d1[0] * d2[2], d1[0] * d2[1] - d1[1] * d2[0]];
+    for (const v of q.v) { nrm[3 * v] += n[0]; nrm[3 * v + 1] += n[1]; nrm[3 * v + 2] += n[2]; }
+  }
+  const P = [], N = [], C = [];
+  for (const q of m.quads) {
+    const p = q.v.map(pos);
+    const col = quadColor(sc, q);
+    const flat = quadNormal(p);
+    const vn = q.v.map((v, i) => {
+      if (q.sharp) return flat;
+      const a = [nrm[3 * v], nrm[3 * v + 1], nrm[3 * v + 2]], L = Math.hypot(...a);
+      return L > 1e-12 ? [a[0] / L, a[1] / L, a[2] / L] : flat;
+    });
+    const dA = Math.hypot(p[2][0] - p[0][0], p[2][1] - p[0][1], p[2][2] - p[0][2]);
+    const dB = Math.hypot(p[3][0] - p[1][0], p[3][1] - p[1][1], p[3][2] - p[1][2]);
+    const tris = dB < dA ? [[1, 2, 3], [1, 3, 0]] : [[0, 1, 2], [0, 2, 3]];
+    for (const t of tris) for (const i of t) { P.push(...p[i]); N.push(...vn[i]); C.push(...col); }
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(P, 3));
+  g.setAttribute('normal', new THREE.Float32BufferAttribute(N, 3));
+  g.setAttribute('color', new THREE.Float32BufferAttribute(C, 3));
+  return g;
+}
+function buildGrid(sc) {
+  const cube = meshChunk(sc.world, sc.o[0], sc.o[1], sc.o[2], sc.N, { k: 0, init: 'corner', guard: null, hAir: null, sharpMode: 'vertex', apron: 2 });
+  const seen = new Set(), P = [];
+  for (const q of cube.quads) for (let i = 0; i < 4; i++) {
+    const a = q.v[i], b = q.v[(i + 1) % 4], key = a < b ? a + ',' + b : b + ',' + a;
+    if (seen.has(key)) continue; seen.add(key);
+    P.push(...worldPos(cube, a), ...worldPos(cube, b));
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(P, 3));
+  return g;
+}
+
+function options(sc) {
+  return {
+    k: state.k, lambda: 0.5, clamp: 0.5, init: state.init, quant: 256,
+    guard: state.guard ? G1 : null,
+    hAir: state.clear ? [state.hh, state.hh, state.hv] : null,
+    hAirEditedOnly: true, editedAirRule: 'none', sharpMode: state.sharp, hintedLambda: 0,
+    hint: state.hints && sc.hint ? sc.hint : null,
+    edited: sc.edited || null,
+    apron: state.k + 3,
+  };
+}
+
+const readout = document.getElementById('readout');
+let lastSceneId = null;
+function rebuild() {
+  const sc = SCENES.find(s => s.id === state.scene);
+  const t0 = performance.now();
+  const m = meshChunk(sc.world, sc.o[0], sc.o[1], sc.o[2], sc.N, options(sc));
+  const ms = performance.now() - t0;
+  for (const obj of [surf, wire, grid]) if (obj) { scene3.remove(obj); obj.geometry.dispose(); }
+  const geo = buildGeometry(sc, m);
+  surf = new THREE.Mesh(geo, surfMat); scene3.add(surf);
+  wire = new THREE.Mesh(geo, wireMat); wire.visible = state.wire; scene3.add(wire);
+  grid = state.grid ? new THREE.LineSegments(buildGrid(sc), gridMat) : null; if (grid) scene3.add(grid);
+  if (lastSceneId !== sc.id) {
+    camera.position.set(...sc.cam); controls.target.set(...sc.target); controls.update();
+    lastSceneId = sc.id;
+  }
+  const rows = sc.metric(m, state).map(([k, v, primary]) => `<div class="metric${primary ? ' primary' : ''}"><span>${k}</span><span>${v}</span></div>`);
+  rows.push(`<div class="metric"><span>Vertices · quads</span><span>${m.V.toLocaleString()} · ${m.quads.length.toLocaleString()}</span></div>`);
+  rows.push(`<div class="metric"><span>Mesh time</span><span>${ms.toFixed(1)} ms</span></div>`);
+  readout.innerHTML = rows.join('');
+  document.getElementById('c-ref').textContent = sc.ref;
+  document.getElementById('c-title').textContent = sc.title;
+  document.getElementById('c-text').textContent = sc.text;
+  statusEl.hidden = true;
+}
+
+// ── controls wiring ──
+const scenesEl = document.getElementById('scenes');
+for (const sc of SCENES) {
+  const b = document.createElement('button');
+  b.type = 'button'; b.textContent = sc.name; b.dataset.id = sc.id;
+  b.addEventListener('click', () => { state.scene = sc.id; try { localStorage.setItem('amorfus-bench-scene', sc.id); } catch (e) {} syncUI(); schedule(); });
+  scenesEl.appendChild(b);
+}
+const presetsEl = document.getElementById('presets');
+for (const p of PRESETS) {
+  const b = document.createElement('button');
+  b.type = 'button'; b.textContent = p.label; b.dataset.id = p.id;
+  b.addEventListener('click', () => { Object.assign(state, { k: p.k, hints: p.hints, guard: p.guard, clear: p.clear, hh: p.hh, hv: p.hv, sharp: p.sharp, init: p.init, preset: p.id }); syncUI(); schedule(); });
+  presetsEl.appendChild(b);
+}
+const $ = (id) => document.getElementById(id);
+function custom() { state.preset = null; }
+$('p-k').addEventListener('input', (e) => { state.k = +e.target.value; custom(); syncUI(); schedule(); });
+$('p-hints').addEventListener('change', (e) => { state.hints = e.target.checked; custom(); syncUI(); schedule(); });
+$('p-guard').addEventListener('change', (e) => { state.guard = e.target.checked; custom(); syncUI(); schedule(); });
+$('p-clear').addEventListener('change', (e) => { state.clear = e.target.checked; custom(); syncUI(); schedule(); });
+$('p-hh').addEventListener('input', (e) => { state.hh = +e.target.value; custom(); syncUI(); schedule(); });
+$('p-hv').addEventListener('input', (e) => { state.hv = +e.target.value; custom(); syncUI(); schedule(); });
+$('p-sharp-axis').addEventListener('click', () => { state.sharp = 'axis'; custom(); syncUI(); schedule(); });
+$('p-sharp-vertex').addEventListener('click', () => { state.sharp = 'vertex'; custom(); syncUI(); schedule(); });
+$('d-grid').addEventListener('change', (e) => { state.grid = e.target.checked; schedule(); });
+$('d-wire').addEventListener('change', (e) => { state.wire = e.target.checked; if (wire) wire.visible = state.wire; });
+
+function syncUI() {
+  for (const b of scenesEl.children) b.setAttribute('aria-pressed', String(b.dataset.id === state.scene));
+  for (const b of presetsEl.children) b.setAttribute('aria-pressed', String(b.dataset.id === state.preset));
+  $('p-k').value = state.k; $('o-k').textContent = state.k;
+  $('p-hints').checked = state.hints; $('p-guard').checked = state.guard; $('p-clear').checked = state.clear;
+  $('p-hh').value = state.hh; $('o-hh').textContent = state.hh.toFixed(2);
+  $('p-hv').value = state.hv; $('o-hv').textContent = state.hv.toFixed(2);
+  $('p-hh').disabled = $('p-hv').disabled = !state.clear;
+  $('p-sharp-axis').setAttribute('aria-pressed', String(state.sharp === 'axis'));
+  $('p-sharp-vertex').setAttribute('aria-pressed', String(state.sharp === 'vertex'));
+}
+
+let pending = 0;
+function schedule() { cancelAnimationFrame(pending); pending = requestAnimationFrame(() => { try { rebuild(); } catch (e) { statusEl.hidden = false; statusEl.textContent = 'Meshing failed: ' + e.message; } }); }
+
+window.__benchStarted = true;
+resize();
+syncUI();
+rebuild();
+(function loop() { controls.update(); renderer.render(scene3, camera); requestAnimationFrame(loop); })();
+</script>

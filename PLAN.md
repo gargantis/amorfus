@@ -55,7 +55,7 @@ Conflicts are `C-n` and decisions `D-n`. Once this plan is approved, a number is
 3. The public IPFS gateways change hands on 2026-09-30 (C-4).
 4. The smoothing look and the collision clearances are unmeasured at their final constants; M3 settles them (C-8, C-9).
 5. No GPU timing has been measured on real hardware yet; M2 measures it (C-6).
-6. Hand-built gentle slopes (1:4–1:16) keep a visible terrace: 7–11° rms and up to 32° max normal error, measured (C-7).
+6. Hand-built gentle slopes keep a visible terrace, and the clearance caps that keep tunnels walkable make it worse. Measured on 1:4 and 1:8 ramps: about 17° rms, up to 39° max, under the D-3 caps (C-7).
 
 **What approval authorises:** the conflict resolutions in §3, the defaults in §1 you don't override, and milestones M0–M8.
 - It does **not** authorise publishing.
@@ -80,7 +80,7 @@ All numbers are labelled measured, projected or estimated. §4 lists everything;
 | D-1 | Reference device for the 60 fps test | **Target class:** Intel Arc 140V / Radeon 780M laptop, Windows, Chrome **and** Edge. **Floor preset:** Iris Xe 96EU (the dev laptop, in Windows Chrome). Please name the machine. If no target-class machine exists, the acceptance device is the i7-1255U laptop in Windows Chrome and Edge, and the Medium tier must pass on it; Medium's radius is then 160 (C-19). |
 | D-2 | Networks for the two-machine test | **Must pass:** same LAN; two home broadband lines on different ISPs; one player on amorf.us with the other on the same release through a local kubo/Service Worker Gateway; 4 players on ≥ 3 networks. **Best effort** (the failure message is the expected result): home broadband plus a phone hotspot, two hotspots, UDP-blocked networks. Who provides machines and people for M0 and M7? |
 | D-3 | Collision vs block-sized openings (C-9) | Collide with the smooth surface. Capsule 0.6 × 1.8. **Clearance zone:** near edited blocks, the surface may intrude into air by at most 0.15 horizontally and 0.05 vertically. That covers dug tunnels, and also rooms and gaps built on untouched ground. These values are **extrapolated, not measured**; M3 measures them and you sign off. **Cost:** the 0.05 vertical cap is close to the zero cap the research rejected as blocky (near-square inner corners in edited terrain); dents get deeper (about 0.95 on binary ground, 1.25 on hinted); edited 1-block steps reach 41–51° against a provisional 50° slope limit. Alternatives: a 1.5-high player with the measured isotropic 0.2; or vertical collision against blocks. |
-| D-4 | Accept that hand-built gentle slopes (1:4–1:16) keep a visible terrace: 7–11° rms, up to 32° max normal error, measured (C-7) | Yes for the MVP. A wider-support smoother for edited regions, or a smoothing brush, comes later. |
+| D-4 | Accept that hand-built gentle slopes keep a visible terrace (C-7). Measured on 1:4 and 1:8 ramps: 8–10° rms without clearance caps, about 13° with the research's 0.2 cap, about 17° rms (up to 39° max) with the D-3 caps. D-3 and D-4 trade against each other. | Yes for the MVP. Tune the pair in the M3 gallery. A wider-support smoother for edited regions, or a smoothing brush, comes later. |
 | D-5 | Project license | MIT. |
 | D-6 | Pinning, DNSLink, credentials | Filebase with its S3 CAR import. Update `_dnslink.amorf.us` by hand at first. Keys and tokens stay in your environment, never in the repo or CI. Your own kubo node is an optional second pin. |
 | D-7 | Git remote and push identity for this repo | Settle them **before the first push of this plan**, as proposed in the hand-off message. Host aliases, account names and key paths never appear in this public repo. |
@@ -237,7 +237,16 @@ Every minor item is *proposed — settled by approval*.
   - 1:4 to 1:16 slopes keep 7–11° rms and 13–32° max normal error, even with 6–8 relaxation iterations.
   - Removing a terrace n blocks wide takes about n² iterations.
 - **Proposed resolution:** the generator supplies a per-block density hint (int8), derived from the seed and never stored or synced. Measured on 1:2–1:16 slopes: generated terrain comes out within ≤ 0.1°.
-- **Residual:** terrain the player builds or reshapes is smoothed from binary data, so hand-built 1:4–1:16 ramps keep a visible terrace (D-4). The M3 gallery shows hand-built slopes next to generated ones.
+- **Residual:** terrain the player builds or reshapes is smoothed from binary data, so hand-built ramps keep a visible terrace (D-4).
+  - The clearance caps of C-9 make it worse, because they also stop terrace corners from rounding. Measured afterwards on hand-built 1:4 and 1:8 ramps with k = 6 and the guard:
+
+    | Clearance caps | rms | max |
+    |---|---|---|
+    | none | 7.7–9.7° | 13–20° |
+    | research 0.2 | 12.8–13.5° | 25–32° |
+    | D-3 0.15/0.05 | 16.4–16.8° | 32–39° |
+
+  - The M3 gallery shows hand-built slopes next to generated ones, and tunes D-3 against D-4.
 
 **C-8 — Smoothing fights single-block editability.**
 - **Status:** proposed — settled by M3 sign-off.
