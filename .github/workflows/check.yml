@@ -1,0 +1,40 @@
+# §13.7 CI, following the bitsy-services/wiki pattern. No secrets in CI.
+# D-17: if hosted runners cannot run the webgpu e2e project or the wgsl
+# step, CI switches to a separately named check:ci that leaves out exactly
+# those, labelled partial — the M0 CI-adapter spike decides. Until then CI
+# runs the full gate and a red run IS the spike result.
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Mesa Vulkan drivers (SwiftShader/lavapipe for WebGPU)
+        run: sudo apt-get update && sudo apt-get install -y mesa-vulkan-drivers
+      - name: Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - run: npm run check
+
+  # Determinism goldens on a second architecture (C-10): the generator must
+  # hash identically on arm64. Runs the unit suite, which includes the
+  # goldens from M1 on.
+  goldens-arm64:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm test

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Amorfus</title>
+  </head>
+  <body>
+    <canvas id="canvas" hidden></canvas>
+    <main id="fallback">
+      <h1 id="fallback-title" tabindex="-1">Loading Amorfus…</h1>
+      <p id="fallback-note">If this message does not go away, the page's scripts may be blocked.</p>
+      <noscript><p>Amorfus needs JavaScript enabled.</p></noscript>
+    </main>
+    <div id="banner" hidden></div>
+    <script src="./boot.js"></script>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

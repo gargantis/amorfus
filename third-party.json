@@ -1,0 +1,114 @@
+[
+  {
+    "host": "relay.damus.io",
+    "url": "wss://relay.damus.io",
+    "kind": "signaling",
+    "purpose": "Nostr relay used by Trystero to exchange encrypted WebRTC offers",
+    "operator": "Damus (independent relay operator)",
+    "sees": "IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes"
+  },
+  {
+    "host": "relay.primal.net",
+    "url": "wss://relay.primal.net",
+    "kind": "signaling",
+    "purpose": "Nostr relay used by Trystero to exchange encrypted WebRTC offers",
+    "operator": "Primal (independent relay operator)",
+    "sees": "IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes"
+  },
+  {
+    "host": "nos.lol",
+    "url": "wss://nos.lol",
+    "kind": "signaling",
+    "purpose": "Nostr relay used by Trystero to exchange encrypted WebRTC offers",
+    "operator": "independent relay operator (unverified)",
+    "sees": "IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes"
+  },
+  {
+    "host": "offchain.pub",
+    "url": "wss://offchain.pub",
+    "kind": "signaling",
+    "purpose": "Nostr relay used by Trystero to exchange encrypted WebRTC offers",
+    "operator": "independent relay operator",
+    "sees": "IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes"
+  },
+  {
+    "host": "nostr.bitcoiner.social",
+    "url": "wss://nostr.bitcoiner.social",
+    "kind": "signaling",
+    "purpose": "Nostr relay used by Trystero to exchange encrypted WebRTC offers",
+    "operator": "independent relay operator",
+    "sees": "IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes"
+  },
+  {
+    "host": "yabu.me",
+    "url": "wss://yabu.me/v2",
+    "kind": "signaling",
+    "purpose": "Nostr relay used by Trystero to exchange encrypted WebRTC offers",
+    "operator": "independent relay operator",
+    "sees": "IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes"
+  },
+  {
+    "host": "stun.cloudflare.com",
+    "url": "stun:stun.cloudflare.com:3478",
+    "kind": "stun",
+    "purpose": "STUN: discover this machine's public address for direct connections",
+    "operator": "Cloudflare",
+    "sees": "IP and port; about 40 binding requests per join"
+  },
+  {
+    "host": "stun.l.google.com",
+    "url": "stun:stun.l.google.com:19302",
+    "kind": "stun",
+    "purpose": "STUN: discover this machine's public address for direct connections",
+    "operator": "Google",
+    "sees": "IP and port; about 40 binding requests per join"
+  },
+  {
+    "host": "github.com",
+    "url": "https://github.com/gpuweb/gpuweb/wiki/Implementation-Status",
+    "kind": "link",
+    "purpose": "help link on the WebGPU-unavailable message, opened only on click",
+    "operator": "GitHub",
+    "sees": "IP, User-Agent; no Referer"
+  },
+  {
+    "host": "amorf.us",
+    "url": "https://amorf.us",
+    "kind": "hosting",
+    "purpose": "primary hosting origin (Cloudflare Workers static assets)",
+    "operator": "Cloudflare (DNS and hosting for the owner)",
+    "sees": "HTTP requests (never the #fragment); request logs disabled (D-16)"
+  },
+  {
+    "host": "inbrowser.link",
+    "url": "https://inbrowser.link",
+    "kind": "gateway",
+    "purpose": "public IPFS Service Worker Gateway (best-effort delivery)",
+    "operator": "IPFS Foundation (from September 2026)",
+    "sees": "CID or DNSLink name, IP; its service worker runs on the app's origin and could read saves there (D-12)"
+  },
+  {
+    "host": "delegated-ipfs.dev",
+    "url": "https://delegated-ipfs.dev",
+    "kind": "routing",
+    "purpose": "delegated routing lookup used by verify-live after a release",
+    "operator": "Interplanetary Shipyard until 2026-09-30, then undetermined",
+    "sees": "CIDs, names, IP"
+  },
+  {
+    "host": "trustless-gateway.net",
+    "url": "https://trustless-gateway.net",
+    "kind": "routing",
+    "purpose": "trustless block fetch used by verify-live after a release",
+    "operator": "Interplanetary Shipyard until 2026-09-30, then undetermined",
+    "sees": "CIDs, IP"
+  },
+  {
+    "host": "ipfs.4everland.io",
+    "url": "https://ipfs.4everland.io",
+    "kind": "gateway",
+    "purpose": "best-effort public path gateway, checked manually at release",
+    "operator": "4EVERLAND",
+    "sees": "CID, IP; shared origin"
+  }
+]

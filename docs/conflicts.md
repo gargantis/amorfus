@@ -1,0 +1,25 @@
+# Conflicts register (living)
+
+Moved here from PLAN.md §3 at M0, after the owner approved the plan on
+2026-10-05. Numbers are permanent: a settled item keeps its number and
+records what settled it. Full problem statements and evidence stay in
+[PLAN.md §3](../PLAN.md); this file tracks status.
+
+| # | Severity | Summary | Status |
+|---|---|---|---|
+| C-1 | Major | Serverless P2P cannot guarantee two machines connect | **Open** — accepted limitation. D-2 networks scope the test; M0 spike measures; bring-your-own-TURN (D-19). |
+| C-2 | Major | Signaling is permanent third-party infrastructure; pinned builds freeze it | **Open** — accepted limitation. Six curated relays; user relays; link hints; `probe:relays` gates deploy/publish. |
+| C-3 | Major | "Saves survive reloads" breaks down on IPFS origins | **Open** — accepted limitation. Stable origins + classifier + handoff sender (M6); export. |
+| C-4 | Major | Public IPFS path gateways are gone (verified 2026-09) | **Settled by approval 2026-10-05.** Acceptance = local kubo + local SWG 3.4.15; public gateways best effort. |
+| C-5 | Major | "Chrome and Edge" does not imply WebGPU; secure context required | **Settled by approval 2026-10-05.** Platform list amended into REQUIREMENTS.md; localhost rule; `dev:lan`. |
+| C-6 | Major | "60 fps on mid-range hardware" not testable as written | Open — settled by **M2 measurement** into `docs/acceptance.md` (device D-1, scenarios A/B, frame-time criteria). |
+| C-7 | Major | Block data alone cannot smooth gentle slopes | **Open** — accepted limitation for hand-built terrain (terrace stays; D-4). Generated terrain uses hints. |
+| C-8 | Major | Smoothing fights single-block editability | Open — settled by **M3 sign-off** (guard, sharp toggle, picking UX, gallery). |
+| C-9 | Major | Smooth collision shrinks block-sized openings | Open — settled by **M3 measurement** (D-3 clearance zone; gate tests). |
+| C-10 | Major | Seed+edits needs bit-exact terrain everywhere, forever | **Settled by approval 2026-10-05.** CPU float64 allowlist, goldens in Node+Chromium, canary, frozen generators. |
+| C-11 | Major | "Join via a link or code" vs offline brute-force | **Settled by approval 2026-10-05.** The code is the full 21-char secret (D-8). |
+| C-12 | Major | "Immediately" + "no seams" + "must not stall" | Open — settled by **M3/M5 measurement** (≤33 ms p95 / ≤50 ms p99; same-frame swaps). |
+| C-13..C-24 | Minor | See PLAN.md §3 Minor table | **Settled by approval 2026-10-05**, each by its stated definition or trade-off. |
+
+Update discipline: when a milestone settles an item, replace its Status with
+what settled it and the date; never renumber; never delete a row.

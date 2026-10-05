@@ -1,0 +1,14 @@
+/* Base styles. External file, not inline: the CSP-restricted gateway mount
+   (default-src 'self') rejects inline styles (§14, C-16). */
+:root { color-scheme: dark; }
+html, body { margin: 0; height: 100%; background: #101418; color: #e8e8e8;
+  font: 16px/1.5 system-ui, sans-serif; }
+#canvas { display: block; width: 100%; height: 100%; }
+#fallback { max-width: 44rem; margin: 0 auto; padding: 2rem 1rem; }
+#fallback h1 { font-size: 1.4rem; }
+#fallback a { color: #8ab4f8; }
+#fallback code { background: #1c232b; padding: 0.15rem 0.4rem; border-radius: 4px;
+  user-select: all; }
+#banner { position: fixed; top: 0; left: 0; right: 0; background: #4a3b00;
+  color: #ffe9a8; padding: 0.5rem 1rem; }
+[hidden] { display: none !important; }

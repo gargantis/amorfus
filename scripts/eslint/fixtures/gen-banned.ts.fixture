@@ -1,0 +1,11 @@
+// Lint fixture (§14): every line here must trip the determinism lint when
+// placed under src/core/gen/. It is never compiled or bundled.
+export function banned(x: number): number {
+  const a = Math.tanh(x);
+  const b = Math.pow(x, 2);
+  const c = x ** 3;
+  const d = Date.now();
+  const e = performance.now();
+  const f = Math.random();
+  return a + b + c + d + e + f;
+}
