@@ -57,3 +57,20 @@ sync is an M6 item by design.
   (~2 B/entry; flattering data — real-world sizes measured again at M6).
 - A 1e5-entry join over the loopback transport converges within the caps:
   `convergence.test.ts › a 1e5-entry join completes within the caps`.
+
+## Measured (M3, dev machine, Node 22.22, warm JIT)
+
+- meshRegion 38³ (no edits): ≈ 7.5 ms; GEN_MESH incl. generation ≈ 10 ms
+  mean over the R = 192 ring.
+- **C-12 probe:** 8-chunk corner edit, 52³ GEN_MESH serial: 181.5 ms total
+  (22.7 ms/chunk warm, generation included). On 6 workers that is ~2
+  rounds ≈ 45–60 ms edit-to-visible on this (floor-class) machine — the
+  33 ms p95 target needs the M4 edit-worker reservation and REMESH (which
+  skips generation), else the plan's escalation (accept 50/67 ms) goes to
+  the owner at M5. Status recorded in docs/conflicts.md.
+- Budget proxies at R = 192, seed [1,1]: **1.20 M triangles / 298 meshed
+  chunks / 18.9 MiB dense voxels** — under the 1.5 M / 400 / 32 MiB
+  thresholds (gate-enforced in mesh-goldens.test.ts). Required the cave
+  mask (CAVE_MASK_MIN 0.4): without it caves honeycombed 5.4 M triangles.
+- Physics limits: slope limit 50° and step-up 0.6 stay PROVISIONAL; the
+  M3 shapes allow re-derivation at M5 when the capsule controller lands.

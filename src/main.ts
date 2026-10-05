@@ -4,8 +4,10 @@ import { messageFor } from './ui/gpu-messages';
 import { showMessage } from './ui/show-message';
 import { Renderer, type Camera } from './render/renderer';
 import { TIERS } from './render/resize';
-import { meshChunkSimple } from './core/mesh/simple-mesher';
-import { generateRegion, generateChunk, heightAt } from './core/gen/v1/index';
+import { meshRegion, type MeshParams } from './core/mesh/mesher';
+import { meshGeneratedChunk } from './core/mesh/gen-mesh';
+import { setupGallery } from './ui/gallery';
+import { generateChunk, heightAt } from './core/gen/v1/index';
 import { CHUNK, packChunkKey } from './core/world/coords';
 import { makeBlock } from './core/world/block';
 
@@ -14,10 +16,11 @@ import { makeBlock } from './core/world/block';
 
 window.__amorfusBootReady?.();
 
-const hash = new URLSearchParams(location.hash.replace(/^#/, '').replace(/&/g, '&'));
+const hash = new URLSearchParams(location.hash.replace(/^#/, ''));
 const query = new URLSearchParams(location.search);
 const TEST_MODE = hash.has('test');
 const SWATCH = hash.get('scene') === 'swatch';
+const GALLERY = hash.get('scene') === 'gallery';
 const BENCH = query.get('bench') === 'flythrough';
 const SEED: [number, number] = TEST_MODE ? [42, 0] : [1, 1];
 
@@ -62,14 +65,18 @@ async function start(): Promise<void> {
 
   // ---- scene setup ----
   const h0 = heightAt(SEED, 0, 0);
-  const camera: Camera = SWATCH
+  const camera: Camera = GALLERY
+    ? { position: [64, 26, 110], yaw: 0, pitch: -0.25 }
+    : SWATCH
     ? { position: [16, 20, 42], yaw: 0, pitch: -0.35 }
     : TEST_MODE
       ? { position: [0.5, h0 + 40, 0.5], yaw: 0, pitch: -Math.PI / 2 + 0.001 }
       : { position: [0.5, h0 + 12, 0.5], yaw: 0, pitch: -0.25 };
 
   const pending: Array<[number, number, number]> = [];
-  if (SWATCH) {
+  if (GALLERY) {
+    setupGallery(renderer);
+  } else if (SWATCH) {
     buildSwatchScene(renderer);
   } else {
     const cr = Math.ceil(VIEW_RADIUS / CHUNK);
@@ -89,12 +96,7 @@ async function start(): Promise<void> {
       const [cx, cy, cz] = pending.shift()!;
       const g = generateChunk(SEED, cx, cy, cz);
       if (g.storage.kind === 'uniform') continue; // nothing to draw
-      const region = generateRegion(
-        SEED,
-        cx * CHUNK - 1, cy * CHUNK - 1, cz * CHUNK - 1,
-        CHUNK + 2, CHUNK + 2, CHUNK + 2,
-      );
-      const mesh = meshChunkSimple(region.blocks);
+      const mesh = meshGeneratedChunk(SEED, cx, cy, cz, new Map());
       if (mesh.quadCount > 0) {
         renderer.addChunk(packChunkKey(cx, cy, cz), [cx * CHUNK, cy * CHUNK, cz * CHUNK], mesh);
       }
@@ -161,32 +163,38 @@ async function start(): Promise<void> {
   worker.postMessage({ type: 'ping' });
 }
 
-/** M2 swatch scene (§15): all 6 materials on flat ground, on a slope and
- *  as a lone block — the owner signs off the look here (D-21). */
+/** M2/M3 swatch scene: all 6 materials on flat ground, on a slope, as a
+ *  smooth lone block and as a SHARP lone block — the owner signs off the
+ *  material look here (D-21) with the real mesher. */
 function buildSwatchScene(renderer: Renderer): void {
-  const P = CHUNK + 2;
-  const region = new Uint16Array(P * P * P);
+  const apron = 10;
+  const n = CHUNK + 2 * apron;
+  const blocks = new Uint16Array(n * n * n);
+  const rho = new Float32Array(n * n * n).fill(-1);
+  const shapeEdited = new Uint8Array(n * n * n).fill(1); // relaxed binary look
   const set = (x: number, y: number, z: number, v: number): void => {
-    if (x < -1 || y < -1 || z < -1 || x > CHUNK || y > CHUNK || z > CHUNK) return;
-    region[((y + 1) * P + (z + 1)) * P + (x + 1)] = v;
+    if (x < -apron || y < -apron || z < -apron || x >= CHUNK + apron || y >= CHUNK + apron || z >= CHUNK + apron) return;
+    const i = ((y + apron) * n + (z + apron)) * n + (x + apron);
+    blocks[i] = v;
+    rho[i] = 1;
   };
   for (let m = 1; m <= 6; m++) {
     const x0 = (m - 1) * 5;
     for (let x = x0; x < x0 + 5 && x < CHUNK; x++) {
-      for (let z = 0; z < CHUNK; z++) {
-        // flat ground
+      for (let z = -4; z < CHUNK + 4; z++) {
         for (let y = 0; y < 4; y++) set(x, y, z, makeBlock(m, false));
-        // a 1:2 slope at the back
         const rise = Math.max(0, Math.floor((z - 16) / 2));
         for (let y = 4; y < 4 + rise && z >= 16; y++) set(x, y, z, makeBlock(m, false));
       }
     }
-    // lone block
-    set(x0 + 2, 6, 8, makeBlock(m, false));
+    set(x0 + 2, 6, 8, makeBlock(m, false)); // smooth lone block
+    set(x0 + 2, 6, 4, makeBlock(m, true)); // sharp lone block
   }
-  const mesh = meshChunkSimple(region);
+  const mesh = meshRegion({ nx: n, ny: n, nz: n, apron, blocks, rho, shapeEdited, params: {} });
   renderer.addChunk(packChunkKey(0, 0, 0), [0, 0, 0], mesh);
 }
+
+export type { MeshParams };
 
 function installTestHooks(renderer: Renderer, camera: Camera): AmorfusTestHooks {
   const hooks: AmorfusTestHooks = {

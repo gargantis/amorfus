@@ -20,6 +20,7 @@ export const HINT_SCALE = 4;
 const SEA_LEVEL = 0;
 const CAVE_K = 32;
 const CAVE_THRESHOLD = 0.06;
+const CAVE_MASK_MIN = 0.4;
 const LATTICE = 4;
 
 const STONE = makeBlock(MATERIALS.indexOf('stone'), false);
@@ -33,6 +34,7 @@ interface NoiseSet {
   ridged: FastNoiseLite;
   fbm3d: FastNoiseLite;
   cave: FastNoiseLite;
+  caveMask: FastNoiseLite;
 }
 
 const noiseCache = new Map<string, NoiseSet>();
@@ -41,7 +43,7 @@ function noises(seed: readonly [number, number]): NoiseSet {
   const key = `${seed[0]}:${seed[1]}`;
   const cached = noiseCache.get(key);
   if (cached !== undefined) return cached;
-  const [s1, s2, s3, s4, s5] = subSeeds(seed, 5) as [number, number, number, number, number];
+  const [s1, s2, s3, s4, s5, s6] = subSeeds(seed, 6) as [number, number, number, number, number, number];
 
   const cont = new FastNoiseLite(s1);
   cont.SetNoiseType(FastNoiseLite.NoiseType.OpenSimplex2);
@@ -69,7 +71,14 @@ function noises(seed: readonly [number, number]): NoiseSet {
   cave.SetNoiseType(FastNoiseLite.NoiseType.OpenSimplex2);
   cave.SetFrequency(1); // pre-scaled (x/40, y/24, z/40)
 
-  const set = { cont, fbm2d, ridged, fbm3d, cave };
+  // Cave REGIONS: a low-frequency mask keeps most of the underground
+  // cave-free, or the tunnel honeycomb's surface area swamps the §14
+  // triangle budget (measured: 5.4 M tris at R=192 without it).
+  const caveMask = new FastNoiseLite(s6);
+  caveMask.SetNoiseType(FastNoiseLite.NoiseType.OpenSimplex2);
+  caveMask.SetFrequency(1); // pre-scaled (x/320, y/160, z/320)
+
+  const set = { cont, fbm2d, ridged, fbm3d, cave, caveMask };
   noiseCache.set(key, set);
   return set;
 }
@@ -187,6 +196,10 @@ export function generateRegion(
     (x, y, z) => n.cave.GetNoise(x / 40, y / 24, z / 40),
     x0, y0, z0, nx, ny, nz,
   );
+  const caveMask = new LatticeField(
+    (x, y, z) => n.caveMask.GetNoise(x / 320, y / 160, z / 320),
+    x0, y0, z0, nx, ny, nz,
+  );
 
   const heights = new Float64Array(nx * nz);
   for (let z = 0; z < nz; z++) {
@@ -219,7 +232,7 @@ export function generateRegion(
         let dTerrain = H - wy;
         if (Math.abs(dTerrain) < 24) dTerrain += 8 * fbm3d.at(wx, wy, wz);
         let d = dTerrain;
-        if (wy < H - 4) {
+        if (wy < H - 4 && caveMask.at(wx, wy, wz) > CAVE_MASK_MIN) {
           d = Math.min(d, CAVE_K * (Math.abs(cave.at(wx, wy, wz)) - CAVE_THRESHOLD));
         }
         const solid = d > 0;
@@ -239,6 +252,12 @@ export function generateRegion(
   }
 
   return { x0, y0, z0, nx, ny, nz, blocks, hints };
+}
+
+/** §7.1: the hint is a pure function of (seed, generatorVersion, cell),
+ *  available for every block in any region a job meshes. */
+export function hintAt(seed: readonly [number, number], x: number, y: number, z: number): number {
+  return generateRegion(seed, x, y, z, 1, 1, 1).hints[0]!;
 }
 
 export function generateChunk(

@@ -18,7 +18,7 @@ records what settled it. Full problem statements and evidence stay in
 | C-9 | Major | Smooth collision shrinks block-sized openings | Open — settled by **M3 measurement** (D-3 clearance zone; gate tests). |
 | C-10 | Major | Seed+edits needs bit-exact terrain everywhere, forever | **Settled by approval 2026-10-05.** CPU float64 allowlist, goldens in Node+Chromium, canary, frozen generators. |
 | C-11 | Major | "Join via a link or code" vs offline brute-force | **Settled by approval 2026-10-05.** The code is the full 21-char secret (D-8). |
-| C-12 | Major | "Immediately" + "no seams" + "must not stall" | Open — settled by **M3/M5 measurement** (≤33 ms p95 / ≤50 ms p99; same-frame swaps). |
+| C-12 | Major | "Immediately" + "no seams" + "must not stall" | Open — **M3 measured** 22.7 ms/chunk (52³, warm, gen incl.); 8-chunk corner edit ≈ 2 worker rounds. 33 ms p95 at risk on the floor device: M4 reserves an edit worker + REMESH drops generation; else escalate to 50/67 ms at M5 per plan. |
 | C-13..C-24 | Minor | See PLAN.md §3 Minor table | **Settled by approval 2026-10-05**, each by its stated definition or trade-off. |
 
 Update discipline: when a milestone settles an item, replace its Status with

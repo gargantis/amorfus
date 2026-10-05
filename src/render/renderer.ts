@@ -9,7 +9,12 @@ import { PoolAllocator } from './pool-allocator';
 import { computeCanvasSize, TIERS, type Tier } from './resize';
 import { frustumPlanes, aabbVisible } from './culling';
 import { createMaterialTextures } from './textures';
-import type { SimpleMesh } from '../core/mesh/simple-mesher';
+// Anything with A.1 vertex bytes, u32 indices and a quad count draws.
+export interface ChunkMesh {
+  vertexData: ArrayBuffer;
+  indexData: Uint32Array;
+  quadCount: number;
+}
 import { CHUNK } from '../core/world/coords';
 
 const POOL_BYTES = 64 * 1024 * 1024;
@@ -210,7 +215,7 @@ export class Renderer {
         : null;
   }
 
-  addChunk(chunkKey: number, origin: [number, number, number], mesh: SimpleMesh): void {
+  addChunk(chunkKey: number, origin: [number, number, number], mesh: ChunkMesh): void {
     if (mesh.quadCount === 0 || this.chunks.has(chunkKey)) return;
     const vOffset = this.vertexAlloc.alloc(mesh.vertexData.byteLength);
     const iOffset = this.indexAlloc.alloc(mesh.indexData.byteLength);

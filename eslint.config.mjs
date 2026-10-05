@@ -36,6 +36,12 @@ export default tseslint.config(
     files: ['**/*.ts'],
   })),
   {
+    files: ['**/*.ts'],
+    rules: {
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    },
+  },
+  {
     files: ['**/*.ts', '**/*.mjs', '**/*.js'],
     rules: {
       'no-restricted-syntax': [
