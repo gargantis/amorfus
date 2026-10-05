@@ -24,12 +24,20 @@ test('skeleton renders and worker probes on this mount', async ({ page }, testIn
     timeout: 60_000,
   });
 
+  // Wait for the chunks under the camera to be meshed, then read back.
+  await page.waitForFunction(() => {
+    const hud = document.getElementById('hud');
+    return hud !== null && / queue 0\b/.test(hud.textContent ?? '');
+  }, undefined, { timeout: 60_000 });
   const px = await page.evaluate(() => window.__amorfus!.readCenterPixel());
-  // test.wgsl centre: (0.25, 0.55, 0.85) → (64, 140, 217) in rgba8unorm.
-  expect(Math.abs(px[0] - 64)).toBeLessThanOrEqual(10);
-  expect(Math.abs(px[1] - 140)).toBeLessThanOrEqual(10);
-  expect(Math.abs(px[2] - 217)).toBeLessThanOrEqual(10);
+  // #test=smoke looks straight down at generated terrain around the
+  // origin: the centre pixel is a lit grass top — green-dominant, opaque,
+  // and definitely not the sky/fog clear colour (which is blue-dominant).
   expect(px[3]).toBe(255);
+  expect(px[1]).toBeGreaterThan(40); // lit
+  expect(px[1]).toBeGreaterThanOrEqual(px[0]); // g ≥ r
+  expect(px[1]).toBeGreaterThan(px[2]); // g > b rules out sky
+
 
   await page.waitForFunction(() => window.__amorfus?.workerOk === true, undefined, {
     timeout: 20_000,

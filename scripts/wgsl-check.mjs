@@ -26,31 +26,73 @@ async function compile(label, code) {
   return { module, ok: errors.length === 0 && scopeError === null, errors, scopeError };
 }
 
+// §14: every pipeline the app creates, in both sample counts. The vertex
+// layouts here mirror src/render/renderer.ts (A.1).
+const TERRAIN_BUFFERS = [
+  {
+    arrayStride: 16,
+    attributes: [
+      { shaderLocation: 0, offset: 0, format: 'uint16x4' },
+      { shaderLocation: 1, offset: 8, format: 'snorm16x2' },
+      { shaderLocation: 2, offset: 12, format: 'uint8x4' },
+    ],
+  },
+];
+
+const PIPELINES = {
+  'terrain.wgsl': {
+    render: { buffers: TERRAIN_BUFFERS, depth: true },
+  },
+  'sky.wgsl': {
+    render: { buffers: [], depth: true },
+  },
+  'test.wgsl': {
+    render: { buffers: [], depth: false },
+  },
+  'texgen.wgsl': {
+    compute: ['cs_main', 'cs_mip'],
+  },
+};
+
 async function createPipelines(label, module, code) {
-  // Pipeline table: entry points by naming convention. Render pipelines are
-  // built at both allowed sample counts (1 and 4, §8.3).
-  const hasVs = code.includes('@vertex');
-  const hasFs = code.includes('@fragment');
-  const hasCs = code.includes('@compute');
+  const base = label.split('/').pop();
+  const spec = PIPELINES[base];
   try {
-    if (hasVs && hasFs) {
+    if (spec === undefined) {
+      // Unknown shaders still get the generic treatment so a new file
+      // cannot silently skip the gate.
+      if (code.includes('@vertex') && code.includes('@fragment')) {
+        throw new Error('no pipeline descriptor registered in scripts/wgsl-check.mjs PIPELINES');
+      }
+      if (code.includes('@compute')) {
+        throw new Error('no compute descriptor registered in scripts/wgsl-check.mjs PIPELINES');
+      }
+      return true;
+    }
+    if (spec.render) {
       for (const count of [1, 4]) {
         device.pushErrorScope('validation');
         await device.createRenderPipelineAsync({
           layout: 'auto',
-          vertex: { module, entryPoint: 'vs_main' },
+          vertex: { module, entryPoint: 'vs_main', buffers: spec.render.buffers },
           fragment: { module, entryPoint: 'fs_main', targets: [{ format: 'rgba8unorm' }] },
+          primitive: { topology: 'triangle-list' },
           multisample: { count },
+          ...(spec.render.depth
+            ? { depthStencil: { format: 'depth32float', depthWriteEnabled: true, depthCompare: 'greater' } }
+            : {}),
         });
         const err = await device.popErrorScope();
         if (err) throw new Error(`sample count ${count}: ${err.message}`);
       }
     }
-    if (hasCs) {
-      device.pushErrorScope('validation');
-      await device.createComputePipelineAsync({ layout: 'auto', compute: { module, entryPoint: 'cs_main' } });
-      const err = await device.popErrorScope();
-      if (err) throw new Error(err.message);
+    if (spec.compute) {
+      for (const entryPoint of spec.compute) {
+        device.pushErrorScope('validation');
+        await device.createComputePipelineAsync({ layout: 'auto', compute: { module, entryPoint } });
+        const err = await device.popErrorScope();
+        if (err) throw new Error(`${entryPoint}: ${err.message}`);
+      }
     }
     return true;
   } catch (e) {
