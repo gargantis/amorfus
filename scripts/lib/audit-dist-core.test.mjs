@@ -63,6 +63,14 @@ describe('audit-dist', () => {
     expect(whys(await auditDist(dir, opts()))).toContain('host not in third-party.json');
   });
 
+  it('ignores URLs that only appear in JS comments (requests need strings)', async () => {
+    await writeFile(
+      join(dir, 'assets', 'a.js'),
+      '// docs: https://evil.example.com/readme\n/* see https://also-evil.example.com */\nconsole.log("x")',
+    );
+    expect((await auditDist(dir, opts())).findings).toEqual([]);
+  });
+
   it('allows allowlisted hosts', async () => {
     await writeFile(join(dir, 'assets', 'a.js'), 'const h = "wss://relay.damus.io/"');
     expect(await auditDist(dir, opts())).toHaveProperty('findings', []);

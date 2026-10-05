@@ -133,6 +133,28 @@ describe('gen-mesh and remesh', () => {
     expect(rem.indexData).toEqual(gen.indexData);
   });
 
+  it('genMeshJob returns the chunk slice exactly as generateChunk would', async () => {
+    const { genMeshJob } = await import('./gen-mesh');
+    for (const [cx, cy, cz] of [[0, 0, 0], [3, 1, 2], [0, -2, 0]] as const) {
+      const job = genMeshJob(SEED, cx, cy, cz, new Map());
+      const g = generateChunk(SEED, cx, cy, cz);
+      expect(job.storage).toEqual(g.storage);
+      expect(job.hints).toEqual(g.hints);
+    }
+  });
+
+  it('genMeshJob applies edits to the returned blocks but never to hints', async () => {
+    const { genMeshJob } = await import('./gen-mesh');
+    const edits: EditMap = new Map();
+    edit(edits, 0, 0, 0, 2, 30, 2, PLANKS);
+    const job = genMeshJob(SEED, 0, 0, 0, edits);
+    const g = generateChunk(SEED, 0, 0, 0);
+    expect(job.storage.kind).toBe('dense');
+    if (job.storage.kind !== 'dense') return;
+    expect(job.storage.blocks[localIndex(2, 30, 2)]).toBe(PLANKS);
+    expect(job.hints).toEqual(g.hints);
+  });
+
   it('REMESH reports null when a neighbour is missing', () => {
     const n = neighborhood(0, 0, 0);
     n.delete(packChunkKey(1, 0, 0));

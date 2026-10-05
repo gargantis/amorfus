@@ -5,8 +5,8 @@ import { showMessage } from './ui/show-message';
 import { Renderer, type Camera } from './render/renderer';
 import { TIERS } from './render/resize';
 import { meshRegion, type MeshParams } from './core/mesh/mesher';
-import { meshGeneratedChunk } from './core/mesh/gen-mesh';
 import { setupGallery } from './ui/gallery';
+import { Streaming } from './game/streaming';
 import { generateChunk, heightAt } from './core/gen/v1/index';
 import { CHUNK, packChunkKey } from './core/world/coords';
 import { makeBlock } from './core/world/block';
@@ -25,6 +25,9 @@ const BENCH = query.get('bench') === 'flythrough';
 const SEED: [number, number] = TEST_MODE ? [42, 0] : [1, 1];
 
 const tierName = (hash.get('tier') ?? query.get('tier') ?? 'medium') as keyof typeof TIERS;
+// §8.4 frame cap: auto (default), half refresh, or uncapped (= auto under
+// rAF; a real uncapped mode needs no vsync, which rAF cannot give).
+const FRAME_CAP = query.get('cap') ?? hash.get('cap') ?? 'auto';
 const VIEW_RADIUS = TEST_MODE ? 32 : TIERS[tierName]?.viewRadius ?? 160;
 
 async function start(): Promise<void> {
@@ -73,35 +76,15 @@ async function start(): Promise<void> {
       ? { position: [0.5, h0 + 40, 0.5], yaw: 0, pitch: -Math.PI / 2 + 0.001 }
       : { position: [0.5, h0 + 12, 0.5], yaw: 0, pitch: -0.25 };
 
-  const pending: Array<[number, number, number]> = [];
+  // §15 M4: the worker-pool streaming world.
+  let streaming: Streaming | null = null;
   if (GALLERY) {
     setupGallery(renderer);
   } else if (SWATCH) {
     buildSwatchScene(renderer);
   } else {
-    const cr = Math.ceil(VIEW_RADIUS / CHUNK);
-    for (let dz = -cr; dz <= cr; dz++) {
-      for (let dx = -cr; dx <= cr; dx++) {
-        if (dx * dx + dz * dz > cr * cr + 1) continue;
-        for (let cy = -2; cy <= 4; cy++) pending.push([dx, cy, dz]);
-      }
-    }
-    pending.sort((a, b) => a[0] * a[0] + a[2] * a[2] - (b[0] * b[0] + b[2] * b[2]));
+    streaming = new Streaming(renderer, SEED, VIEW_RADIUS, new Map());
   }
-
-  const meshBudgetMs = TEST_MODE ? 50 : 7;
-  const fillSome = (): void => {
-    const t0 = performance.now();
-    while (pending.length > 0 && performance.now() - t0 < meshBudgetMs) {
-      const [cx, cy, cz] = pending.shift()!;
-      const g = generateChunk(SEED, cx, cy, cz);
-      if (g.storage.kind === 'uniform') continue; // nothing to draw
-      const mesh = meshGeneratedChunk(SEED, cx, cy, cz, new Map());
-      if (mesh.quadCount > 0) {
-        renderer.addChunk(packChunkKey(cx, cy, cz), [cx * CHUNK, cy * CHUNK, cz * CHUNK], mesh);
-      }
-    }
-  };
 
   // ---- HUD (§8.4) ----
   const hud = document.createElement('div');
@@ -113,11 +96,17 @@ async function start(): Promise<void> {
   const intervals: number[] = [];
   let lastT = performance.now();
   let hudAt = 0;
+  let bannerShown = false;
 
   const hooks = TEST_MODE ? installTestHooks(renderer, camera) : null;
   const benchT0 = performance.now();
 
+  let frameParity = 0;
   const frame = (): void => {
+    if (FRAME_CAP === 'half' && (frameParity ^= 1) === 1) {
+      requestAnimationFrame(frame);
+      return;
+    }
     const now = performance.now();
     intervals.push(now - lastT);
     if (intervals.length > 240) intervals.shift();
@@ -132,9 +121,27 @@ async function start(): Promise<void> {
       camera.pitch = -0.2;
     }
 
-    fillSome();
+    streaming?.update(camera.position);
     const stats = renderer.render(camera);
-    if (hooks) hooks.frames += 1;
+    if (hooks) {
+      hooks.frames += 1;
+      if (streaming !== null && streaming.pool.jobsCompleted > 0) hooks.workerOk = true;
+    }
+
+    // §8.4 tier-suggestion banner: main-thread p95 over 8 ms for ~3 s.
+    if (!bannerShown && intervals.length >= 180) {
+      const sorted3s = [...intervals].sort((a, b) => a - b);
+      const p95i = sorted3s[Math.floor(0.95 * sorted3s.length)] ?? 0;
+      if (p95i > 1000 / 60 + 8 && tierName !== 'low') {
+        bannerShown = true;
+        const banner = document.getElementById('banner');
+        if (banner) {
+          banner.textContent =
+            'Struggling to keep up — a lower quality tier may help. Reload with #tier=low.';
+          banner.hidden = false;
+        }
+      }
+    }
 
     if (now > hudAt) {
       hudAt = now + 250;
@@ -144,7 +151,8 @@ async function start(): Promise<void> {
       hud.textContent =
         `frame p50 ${q(0.5).toFixed(1)} ms  p95 ${q(0.95).toFixed(1)} ms  p99 ${q(0.99).toFixed(1)} ms\n` +
         `cpu ${stats.cpuMs.toFixed(2)} ms  chunks ${stats.drawnChunks}/${renderer.chunkCount}` +
-        `  tris ${(stats.drawnTriangles / 1000).toFixed(0)}k  queue ${pending.length}\n` +
+        `  tris ${(stats.drawnTriangles / 1000).toFixed(0)}k  queue ${streaming?.pendingCount ?? 0}` +
+        `  fill ${streaming?.firstFillMs === null || streaming === null ? '…' : `${(streaming.firstFillMs / 1000).toFixed(1)}s`}\n` +
         `pools v ${(pool.vertexBytes / 1048576).toFixed(1)} MiB  i ${(pool.indexBytes / 1048576).toFixed(1)} MiB` +
         `  tier ${tierName}${BENCH ? '  BENCH 22 b/s' : ''}`;
     }
@@ -152,15 +160,6 @@ async function start(): Promise<void> {
   };
   requestAnimationFrame(frame);
 
-  // Module worker probe stays until the M4 pool replaces it (§13.2).
-  const worker = new Worker(new URL('./workers/gen-mesh.worker.ts', import.meta.url), {
-    type: 'module',
-  });
-  worker.onmessage = (ev: MessageEvent) => {
-    const data = ev.data as { type?: string; nested?: string };
-    if (data.type === 'pong' && data.nested === 'nested-import-ok' && hooks) hooks.workerOk = true;
-  };
-  worker.postMessage({ type: 'ping' });
 }
 
 /** M2/M3 swatch scene: all 6 materials on flat ground, on a slope, as a

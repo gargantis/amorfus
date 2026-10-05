@@ -67,7 +67,7 @@ export function buildGenMeshInput(
   cx: number, cy: number, cz: number,
   edits: EditsByChunk,
   opts: { forceApron?: number; params?: Partial<MeshParams> } = {},
-): { input: MeshRegionInput; apron: number } {
+): { input: MeshRegionInput; apron: number; genHints: Int8Array } {
   const bx = cx * CHUNK;
   const by = cy * CHUNK;
   const bz = cz * CHUNK;
@@ -117,6 +117,61 @@ export function buildGenMeshInput(
       params: opts.params,
     },
     apron,
+    genHints: region.hints,
+  };
+}
+
+export interface GenMeshJobResult {
+  mesh: MeshResult;
+  /** CURRENT storage for the main-thread cache: edits applied. */
+  storage: { kind: 'uniform'; value: number } | { kind: 'dense'; blocks: Uint16Array };
+  /** GENERATED hint state (edits never change hints, §7.1). */
+  hints: Int8Array | 'saturated';
+}
+
+/** §9.1 GEN_MESH: mesh the chunk AND hand back its own 32³ slice, so the
+ *  main thread caches blocks and hint state without regenerating. */
+export function genMeshJob(
+  seed: readonly [number, number],
+  cx: number, cy: number, cz: number,
+  edits: EditsByChunk,
+  opts: { forceApron?: number; params?: Partial<MeshParams> } = {},
+): GenMeshJobResult {
+  const { input, apron, genHints } = buildGenMeshInput(seed, cx, cy, cz, edits, opts);
+  const mesh = meshRegion(input);
+  const n = input.nx;
+  const blocks = new Uint16Array(CHUNK * CHUNK * CHUNK);
+  const hintsPlane = new Int8Array(CHUNK * CHUNK * CHUNK);
+  let uniform: number | null = null;
+  let uniformSet = false;
+  let allUniform = true;
+  let saturated = true;
+  for (let y = 0; y < CHUNK; y++) {
+    for (let z = 0; z < CHUNK; z++) {
+      for (let x = 0; x < CHUNK; x++) {
+        const ri = ((y + apron) * n + (z + apron)) * n + (x + apron);
+        const li = localIndex(x, y, z);
+        const v = input.blocks[ri]!;
+        blocks[li] = v;
+        if (!uniformSet) {
+          uniform = v;
+          uniformSet = true;
+        } else if (v !== uniform) {
+          allUniform = false;
+        }
+        const h = genHints[ri]!;
+        hintsPlane[li] = h;
+        if (h !== 127 && h !== -127) saturated = false;
+      }
+    }
+  }
+  return {
+    mesh,
+    storage:
+      allUniform && uniform !== null
+        ? { kind: 'uniform', value: uniform }
+        : { kind: 'dense', blocks },
+    hints: saturated ? 'saturated' : hintsPlane,
   };
 }
 

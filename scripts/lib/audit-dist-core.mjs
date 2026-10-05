@@ -50,7 +50,11 @@ export async function auditDist(dir, { allowedHosts, expectedLicensePackages }) 
       if (re.test(text)) findings.push({ file: rel, why: 'secret pattern' });
     }
 
-    for (const m of text.matchAll(URL_RE)) {
+    // A request needs a URL in CODE. For JS that means string literals —
+    // a URL in a comment is dead text (vendored licence headers carry
+    // them). HTML and CSS are scanned in full.
+    const hostScanText = ext === '.js' ? jsStringLiterals(text).join('\n') : text;
+    for (const m of hostScanText.matchAll(URL_RE)) {
       const host = m[1].toLowerCase();
       if (LOOPBACK.has(host)) {
         if (base !== 'boot.js') findings.push({ file: rel, why: 'host not in third-party.json', detail: host });
