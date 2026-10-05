@@ -35,6 +35,23 @@ test('skeleton renders and worker probes on this mount', async ({ page }, testIn
     timeout: 20_000,
   });
 
+  if (testInfo.project.name === 'webgpu-plain') {
+    // C-10: the golden-hash canary computed by the production bundle in
+    // Chromium equals the Node value (same bundle serves every mount).
+    const { readFileSync } = await import('node:fs');
+    const goldens = JSON.parse(
+      readFileSync('src/core/gen/v1/goldens.json', 'utf8'),
+    ) as Array<{ seed: [number, number]; chunk: [number, number, number]; hash: string }>;
+    for (let i = 0; i < goldens.length; i += 5) {
+      const g = goldens[i]!;
+      const browserHash = await page.evaluate(
+        ([seed, chunk]) => window.__amorfus!.genGolden(seed, chunk),
+        [g.seed, g.chunk] as [[number, number], [number, number, number]],
+      );
+      expect(`${g.chunk.join(',')}:${browserHash}`).toBe(`${g.chunk.join(',')}:${g.hash}`);
+    }
+  }
+
   expect(guards.consoleErrors).toEqual([]);
   expect(guards.failedRequests).toEqual([]);
   const allowed = [base, base.slice(0, -1)];

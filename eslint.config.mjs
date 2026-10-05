@@ -22,6 +22,7 @@ export default tseslint.config(
     ignores: [
       'node_modules/**',
       'dist/**',
+      '.cache/**',
       '.superpowers/**',
       'research/**',
       'test-results/**',
@@ -98,10 +99,24 @@ export default tseslint.config(
     },
   },
   {
+    // The determinism allowlist guards SHIPPED generator code; tests may
+    // use ordinary arithmetic to describe expectations.
     files: ['src/core/gen/**'],
+    ignores: ['src/core/gen/**/*.test.ts'],
     plugins: { local },
     rules: {
       'local/gen-exact-ops': 'error',
+    },
+  },
+  {
+    // Vendored FastNoiseLite stays byte-pristine (C-10). gen-exact-ops
+    // still applies above; only stylistic rules are relaxed. Its
+    // precision-losing literals parse to the same f64 in every engine —
+    // literal parsing is exactly specified by ECMA-262.
+    files: ['src/core/gen/v1/vendor/FastNoiseLite.js'],
+    rules: {
+      'no-case-declarations': 'off',
+      'no-loss-of-precision': 'off',
     },
   },
   {

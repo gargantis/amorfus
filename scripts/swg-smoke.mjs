@@ -21,10 +21,19 @@ async function ensureBuilt() {
   } catch {
     // fall through and build
   }
-  console.log(`swg-smoke: cloning ${REPO} at ${TAG} (cached afterwards)`);
-  await pexec('git', ['clone', '--depth', '1', '--branch', TAG, REPO, swgDir]);
-  console.log('swg-smoke: npm ci (this is the slow part)');
-  await pexec('npm', ['ci'], { cwd: swgDir, maxBuffer: 64 * 1024 * 1024 });
+  try {
+    await access(join(swgDir, 'package.json'));
+    console.log('swg-smoke: reusing existing clone');
+  } catch {
+    console.log(`swg-smoke: cloning ${REPO} at ${TAG} (cached afterwards)`);
+    await pexec('git', ['clone', '--depth', '1', '--branch', TAG, REPO, swgDir]);
+  }
+  console.log('swg-smoke: installing dependencies (this is the slow part)');
+  // The v3.4.15 tag ships no package-lock.json, so npm ci cannot run there.
+  await pexec('npm', ['install', '--no-audit', '--no-fund'], {
+    cwd: swgDir,
+    maxBuffer: 64 * 1024 * 1024,
+  });
   console.log('swg-smoke: building');
   await pexec('npm', ['run', 'build'], { cwd: swgDir, maxBuffer: 64 * 1024 * 1024 });
 }

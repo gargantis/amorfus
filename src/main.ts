@@ -3,6 +3,7 @@ import { gpuInit } from './render/gpu-init';
 import { messageFor } from './ui/gpu-messages';
 import { showMessage } from './ui/show-message';
 import testShaderSrc from './render/shaders/test.wgsl?raw';
+import { generateChunk } from './core/gen/v1/index';
 
 // M0 entry: boot checks passed (boot.js), so initialise WebGPU, draw the
 // test shader, and prove the module worker path. The world arrives in M1+.
@@ -122,6 +123,29 @@ function installTestHooks(device: GPUDevice): AmorfusTestHooks {
       buf.unmap();
       tex.destroy();
       return [bytes[0] ?? 0, bytes[1] ?? 0, bytes[2] ?? 0, bytes[3] ?? 0];
+    },
+    genGolden: async (seed, chunk) => {
+      // EXACTLY the Node goldens' construction (goldens-emit.test.ts).
+      const c = generateChunk(seed, ...chunk);
+      const parts: Uint8Array[] = [];
+      const enc = new TextEncoder();
+      if (c.storage.kind === 'uniform') parts.push(enc.encode(`uniform:${c.storage.value}`));
+      else parts.push(new Uint8Array(c.storage.blocks.buffer, c.storage.blocks.byteOffset, c.storage.blocks.byteLength));
+      parts.push(
+        c.hints === 'saturated'
+          ? enc.encode('saturated')
+          : new Uint8Array(c.hints.buffer, c.hints.byteOffset, c.hints.byteLength),
+      );
+      const total = new Uint8Array(parts.reduce((n, p) => n + p.length, 0));
+      let off = 0;
+      for (const p of parts) {
+        total.set(p, off);
+        off += p.length;
+      }
+      const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', total));
+      let hex = '';
+      for (const b of digest) hex += b.toString(16).padStart(2, '0');
+      return hex;
     },
   };
   window.__amorfus = hooks;
