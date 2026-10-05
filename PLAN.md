@@ -1,7 +1,7 @@
 # Amorfus — Plan
 
-**Status:** proposal, awaiting approval. No code has been written.
-**Date:** 2026-09-23.
+**Status:** approved by the owner on 2026-10-05, with every decision at its default and D-7 settled as "keep the existing identity structure". The conflicts register lives on as `docs/conflicts.md` from M0.
+**Date:** 2026-09-23; approved 2026-10-05.
 **Answers:** the "First deliverable" section of [REQUIREMENTS.md](REQUIREMENTS.md).
 
 How to read this:
