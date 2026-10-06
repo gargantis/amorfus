@@ -42,10 +42,17 @@ interface Transaction {
   results: Map<number, MeshResponse>;
 }
 
+export interface EditManagerOptions {
+  initialEdits?: ReadonlyMap<number, readonly import('../core/sync/lww').IndexedEntry[]>;
+  hlcSeed?: import('../core/sync/hlc').HlcStamp;
+}
+
 export class EditManager {
   readonly edits = new LwwStore();
-  readonly hlc = new Hlc();
+  readonly hlc: Hlc;
   readonly sessionId: bigint;
+  /** storage hook: fired with the chunk key of every applied edit */
+  onEdit: ((chunkKey: number) => void) | null = null;
   private streaming: Streaming;
   private renderer: Renderer;
   private seed: [number, number];
@@ -56,13 +63,24 @@ export class EditManager {
   splitSwapCount = 0;
   editToVisibleMs: number[] = [];
 
-  constructor(streaming: Streaming, renderer: Renderer, seed: [number, number]) {
+  constructor(
+    streaming: Streaming,
+    renderer: Renderer,
+    seed: [number, number],
+    options: EditManagerOptions = {},
+  ) {
     this.streaming = streaming;
     this.renderer = renderer;
     this.seed = seed;
+    this.hlc = new Hlc(options.hlcSeed);
     const rnd = new BigUint64Array(1);
     crypto.getRandomValues(rnd);
     this.sessionId = rnd[0]! | 1n;
+    if (options.initialEdits !== undefined) {
+      for (const [key, entries] of options.initialEdits) {
+        for (const e of entries) this.edits.apply(key, e.index, e);
+      }
+    }
   }
 
   /** current world value at a cell, from the streamed cache */
@@ -111,6 +129,7 @@ export class EditManager {
       rec.storage.blocks[index] = value;
     }
 
+    this.onEdit?.(key);
     this.dispatchTransaction(dirtyChunksForEdit(x, y, z), PRIORITY.LOCAL_EDIT);
     return entry;
   }

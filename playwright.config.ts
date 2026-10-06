@@ -26,6 +26,7 @@ export default defineConfig({
     { name: 'webgpu-subdomain', testMatch: /smoke\.spec\.ts/, use: { launchOptions: { args: SWIFTSHADER_ARGS } } },
     { name: 'webgpu-headers', testMatch: /smoke\.spec\.ts/, use: { launchOptions: { args: SWIFTSHADER_ARGS } } },
     { name: 'webgpu-csp', testMatch: /smoke\.spec\.ts/, use: { launchOptions: { args: SWIFTSHADER_ARGS } } },
+    { name: 'core', testMatch: /core\.spec\.ts/ },
     { name: 'no-webgpu', testMatch: /fallbacks\.spec\.ts/ },
     { name: 'no-adapter', testMatch: /fallbacks\.spec\.ts/, use: { launchOptions: { args: ['--disable-gpu'] } } },
     {

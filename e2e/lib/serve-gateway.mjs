@@ -41,7 +41,7 @@ export function parseHeadersFile(text) {
 const globToRe = (pattern) =>
   new RegExp(`^${pattern.split('*').map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*')}$`);
 
-export async function startGateway({ distDir, cid, ports = {} }) {
+export async function startGateway({ distDir, cid, cid2 = null, ports = {} }) {
   let headerRules = [];
   try {
     headerRules = parseHeadersFile(await readFile(join(distDir, '_headers'), 'utf8')).map((r) => ({
@@ -78,8 +78,8 @@ export async function startGateway({ distDir, cid, ports = {} }) {
         const url = new URL(req.url, 'http://x');
         let path = decodeURIComponent(url.pathname);
 
-        if (host === `${cid}.ipfs.localhost`) {
-          // Subdomain mount: the whole origin is this CID's root.
+        if (host === `${cid}.ipfs.localhost` || (cid2 !== null && host === `${cid2}.ipfs.localhost`)) {
+          // Subdomain mounts: each CID origin serves the dist root.
           await serveFile(res, path === '/' ? 'index.html' : path.slice(1), extraHeaders);
           return;
         }

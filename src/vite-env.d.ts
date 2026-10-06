@@ -14,7 +14,28 @@ interface AmorfusTestHooks {
   genGolden: (seed: [number, number], chunk: [number, number, number]) => Promise<string>;
 }
 
+interface AmorfusCoreHooks {
+  ready: boolean;
+  worldId: string;
+  originKind: string;
+  banner: string | null;
+  editCount: number;
+  applyEdit: (x: number, y: number, z: number, value: number) => void;
+  flush: () => Promise<void>;
+}
+
+interface AmorfusHandoffState {
+  role: 'sender' | 'receiver';
+  status: string;
+  count?: number;
+  files?: number;
+  rejected?: number;
+  nonce?: string;
+}
+
 interface Window {
   __amorfus?: AmorfusTestHooks;
+  __amorfusCore?: AmorfusCoreHooks;
+  __amorfusHandoff?: AmorfusHandoffState;
   __amorfusBootReady?: () => void;
 }

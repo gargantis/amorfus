@@ -15,6 +15,9 @@ import { pickRay } from './core/physics/pick';
 import type { TriangleSource, ChunkTriangles } from './core/physics/collision';
 import { scenarioA, summarise } from './game/scenario-a';
 import { AIR, materialOf, isSharp } from './core/world/block';
+import { WorldSession, LockBusyError } from './game/world-session';
+import { runCoreMode, runHandoffSender, runHandoffReceiver } from './game/core-mode';
+import type { PlayerSave } from './game/player-save';
 import { generateChunk, heightAt } from './core/gen/v1/index';
 import { CHUNK, packChunkKey } from './core/world/coords';
 import { makeBlock } from './core/world/block';
@@ -40,6 +43,17 @@ const FRAME_CAP = query.get('cap') ?? hash.get('cap') ?? 'auto';
 const VIEW_RADIUS = TEST_MODE ? 32 : TIERS[tierName]?.viewRadius ?? 160;
 
 async function start(): Promise<void> {
+  // Renderer-free modes first (§14 core project, §12.5 handoff).
+  if (await runHandoffSender()) return;
+  if (hash.get('test') === 'core') {
+    await runCoreMode();
+    return;
+  }
+  if (hash.get('test') === 'handoff-receiver') {
+    await runHandoffReceiver();
+    return;
+  }
+
   const init = await gpuInit();
   if (init.kind !== 'ok') {
     showMessage(messageFor(init));
@@ -85,17 +99,44 @@ async function start(): Promise<void> {
       ? { position: [0.5, h0 + 40, 0.5], yaw: 0, pitch: -Math.PI / 2 + 0.001 }
       : { position: [0.5, h0 + 12, 0.5], yaw: 0, pitch: -0.25 };
 
-  // §15 M4: the worker-pool streaming world.
+  // §15 M4/M6: the worker-pool streaming world over the persisted one.
   let streaming: Streaming | null = null;
   let editManager: EditManager | null = null;
+  let worldSession: WorldSession | null = null;
   if (GALLERY) {
     setupGallery(renderer);
   } else if (SWATCH) {
     buildSwatchScene(renderer);
   } else {
-    const s = new Streaming(renderer, SEED, VIEW_RADIUS, () => editManager?.editsByChunk() ?? new Map());
+    if (!TEST_MODE) {
+      try {
+        worldSession = await WorldSession.open({ seed: SEED });
+      } catch (err) {
+        if (err instanceof LockBusyError) {
+          const take = confirm('This world is open in another tab. Take over here?');
+          if (take) worldSession = await WorldSession.open({ seed: SEED, steal: true });
+        } else if (WorldSession.classify().kind !== 'no-storage') {
+          console.error('storage unavailable:', err);
+        }
+      }
+      const bannerText = WorldSession.banner();
+      if (bannerText !== null) {
+        const banner = document.getElementById('banner');
+        if (banner) {
+          banner.textContent = bannerText;
+          banner.hidden = false;
+        }
+      }
+    }
+    const worldSeed = worldSession?.meta.seed ?? SEED;
+    const s = new Streaming(renderer, worldSeed, VIEW_RADIUS, () => editManager?.editsByChunk() ?? new Map());
     streaming = s;
-    editManager = new EditManager(s, renderer, SEED);
+    editManager = new EditManager(s, renderer, worldSeed, {
+      ...(worldSession !== null
+        ? { initialEdits: worldSession.loaded.chunks, hlcSeed: worldSession.meta.hlc }
+        : {}),
+    });
+    if (worldSession !== null) worldSession.attach(editManager);
   }
 
   // ---- player (§9.2/§9.3); also drives scenario A ----
@@ -120,12 +161,15 @@ async function start(): Promise<void> {
       };
     },
   };
+  const savedPlayer = worldSession?.loaded.player as PlayerSave | undefined;
   let player: PlayerState = {
-    position: [0.5, h0 + 2, 0.5],
+    position: savedPlayer?.position ?? [0.5, h0 + 2, 0.5],
     velocity: [0, 0, 0],
     onGround: false,
-    flying: false,
+    flying: savedPlayer?.flying ?? false,
   };
+  if (savedPlayer?.yaw !== undefined) camera.yaw = savedPlayer.yaw;
+  if (savedPlayer?.pitch !== undefined) camera.pitch = savedPlayer.pitch;
   const input = PLAYER_MODE ? new InputManager(canvas) : null;
   const hotbar = PLAYER_MODE && !SCENARIO_A ? new Hotbar() : null;
   let overlay: HTMLDivElement | null = null;
@@ -141,7 +185,70 @@ async function start(): Promise<void> {
       '<p style="opacity:.8">WASD move · mouse look · left dig · right place · middle pick<br>' +
       '1–6/wheel material · Q sharp mode · R toggle sharp · Space jump<br>' +
       'double-tap Space or F fly (Space rises, Shift descends) · double-tap W sprint · Esc pause</p></div>';
-    overlay.onclick = () => void input.requestLock(canvas);
+    overlay.onclick = (ev) => {
+      if ((ev.target as HTMLElement).closest('#world-menu') === null) void input.requestLock(canvas);
+    };
+    // §12 world menu: export, import, save-as-copy, storage status.
+    if (worldSession !== null) {
+      const ws = worldSession;
+      const menu = document.createElement('div');
+      menu.id = 'world-menu';
+      menu.style.cssText =
+        'margin-top:1.5rem;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;font:13px system-ui;';
+      const btn = (label: string, fn: () => void): HTMLButtonElement => {
+        const b = document.createElement('button');
+        b.textContent = label;
+        b.style.cssText = 'padding:6px 10px;border-radius:6px;border:1px solid #567;background:#1c232b;color:#dde;cursor:pointer;';
+        b.onclick = (e) => {
+          e.stopPropagation();
+          fn();
+        };
+        menu.appendChild(b);
+        return b;
+      };
+      const download = async (profile: 0 | 1): Promise<void> => {
+        const bytes = await ws.exportFile(profile);
+        const blob = new Blob([bytes as BlobPart], { type: 'application/octet-stream' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `${ws.meta.name}${profile === 1 ? '-share' : ''}.amorfus`;
+        a.click();
+        URL.revokeObjectURL(a.href);
+      };
+      btn('Export backup', () => void download(0));
+      btn('Export share', () => void download(1));
+      btn('Save as copy', () => {
+        void ws.saveAsCopy(`${ws.meta.name} copy`).then(() => status(`copied`));
+      });
+      const file = document.createElement('input');
+      file.type = 'file';
+      file.accept = '.amorfus';
+      file.style.display = 'none';
+      file.onchange = () => {
+        const f = file.files?.[0];
+        if (f === undefined) return;
+        void f.arrayBuffer().then(async (buf) => {
+          const mode = (prompt('Import mode: fork / restore / merge', 'fork') ?? 'fork') as
+            | 'fork' | 'restore' | 'merge';
+          const r = await ws.importFile(new Uint8Array(buf), mode);
+          status(r.ok ? `imported (${mode}) — open it from a reload` : `import failed: ${r.reason}`);
+        });
+      };
+      btn('Import…', () => file.click());
+      const statusLine = document.createElement('div');
+      statusLine.style.cssText = 'width:100%;text-align:center;opacity:.75;margin-top:6px;';
+      const status = (t: string): void => {
+        statusLine.textContent = t;
+      };
+      const refreshStatus = (): void => {
+        statusLine.textContent = `world “${ws.meta.name}” · storage: ${ws.persistStatus}`;
+      };
+      setInterval(refreshStatus, 2000);
+      refreshStatus();
+      menu.appendChild(file);
+      menu.appendChild(statusLine);
+      overlay.firstElementChild?.appendChild(menu);
+    }
     document.body.appendChild(overlay);
     input.onPauseChange = (paused) => {
       if (overlay) overlay.style.display = paused ? 'flex' : 'none';
@@ -317,6 +424,15 @@ async function start(): Promise<void> {
     }
 
     streaming?.update(camera.position);
+    if (worldSession !== null && PLAYER_MODE) {
+      worldSession.playerState = {
+        position: player.position,
+        yaw: camera.yaw,
+        pitch: camera.pitch,
+        flying: player.flying,
+      } satisfies PlayerSave;
+      worldSession.frame(now);
+    }
     const stats = renderer.render(camera);
     if (hooks) {
       hooks.frames += 1;

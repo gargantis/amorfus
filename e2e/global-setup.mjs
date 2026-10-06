@@ -17,9 +17,13 @@ export default async function globalSetup() {
   }
   await mkdir(join(root, '.cache'), { recursive: true });
   const cid = await packDirToCar(dist, join(root, '.cache', 'e2e-dist.car'));
-  const gw = await startGateway({ distDir: dist, cid, ports: PORTS });
+  // A second, distinct cid-shaped origin for the handoff pair (§12.5): the
+  // same dist under another subdomain origin.
+  const cid2 = cid.slice(0, -1) + (cid.endsWith('a') ? 'b' : 'a');
+  const gw = await startGateway({ distDir: dist, cid, cid2, ports: PORTS });
   const state = {
     cid,
+    cid2,
     plainPort: gw.plainPort,
     cspPort: gw.cspPort,
     headersPort: gw.headersPort,

@@ -3,6 +3,7 @@ import { join } from 'node:path';
 
 export interface GatewayState {
   cid: string;
+  cid2: string;
   plainPort: number;
   cspPort: number;
   headersPort: number;
