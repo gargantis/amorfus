@@ -23,7 +23,7 @@ interface Rig {
 function makeSession(
   hub: LoopbackHub,
   id: string,
-  opts: Partial<SessionConfig> & { startClock?: number } = {},
+  opts: Partial<SessionConfig> & { startClock?: number; worldId?: Uint8Array } = {},
 ): Rig {
   const now = { t: opts.startClock ?? 1_000_000 };
   const store = new WorldStore(SEED);
@@ -34,7 +34,7 @@ function makeSession(
       name: id,
       color: 1,
       world: store,
-      worldId: WORLD_ID,
+      worldId: opts.worldId ?? WORLD_ID,
       generatorVersion: 1,
       genCanary: 0xc0ffee,
       hlc: new Hlc(),
@@ -89,6 +89,85 @@ describe('Session', () => {
     await settle(hub, [a, b], 4);
     expect(a.session.admitted()).toEqual(['B']);
     expect(warnings).toHaveLength(1);
+  });
+
+  it('clamps a forged HELLO hlc so a peer cannot poison the clock (review #5)', async () => {
+    const hub = new LoopbackHub();
+    const sender = makeSession(hub, 'B');
+    const victim = makeSession(hub, 'V');
+    const honestWallClock = victim.now.t;
+    // An honest wall clock (passes the skew check) with hlc.l far ahead.
+    const { encodeHello } = await import('./messages');
+    sender.session.transportForTest.send(
+      'V',
+      encodeHello({
+        protocolVersion: 1,
+        sessionId: 99n,
+        wallClock: honestWallClock,
+        hlc: { l: 2 ** 46, c: 0 },
+        name: 'forged',
+        color: 0,
+        world: { worldId: WORLD_ID, seed: SEED, generatorVersion: 1, genCanary: 0xc0ffee },
+      }),
+      'action',
+    );
+    hub.pump();
+    await victim.session.tick();
+    const entry = victim.session.localEdit(3, 3, 3, PLANKS);
+    expect(entry).not.toBeNull();
+    expect(entry!.l).toBeLessThanOrEqual(honestWallClock + 60_000 + 1000);
+  });
+
+  it('closes a connection that rotates originSession past the total cap (review #16)', async () => {
+    const hub = new LoopbackHub();
+    const a = makeSession(hub, 'A');
+    const b = makeSession(hub, 'B');
+    await settle(hub, [a, b], 4);
+    const { encodeEdits } = await import('./messages');
+    for (const origin of [111n, 222n]) {
+      const entries = [];
+      for (let i = 0; i < 400; i++) {
+        entries.push({ chunkKey: 4521984, index: (Number(origin) + i) % 32768, value: PLANKS, l: i + 1, c: 0, peer: origin });
+      }
+      b.session.transportForTest.send('A', encodeEdits({ originSession: origin, entries }), 'action');
+    }
+    hub.pump();
+    await a.session.tick();
+    // 800 entries in one instant across two origins: the connection-total
+    // 500 burst closes it even though each origin stayed under its own.
+    expect(a.session.admitted()).toEqual([]);
+  });
+
+  it('a worldless joiner binds to the first world HELLO (§10.3, review #2)', async () => {
+    const hub = new LoopbackHub();
+    const host = makeSession(hub, 'A');
+    const offers: Array<{ worldId: Uint8Array; seed: [number, number] }> = [];
+    const joiner = makeSession(hub, 'B', { announceWorld: false });
+    joiner.session.onWorldOffer = (w) => offers.push({ worldId: w.worldId, seed: w.seed });
+    await settle(hub, [host, joiner], 4);
+    // Both sides admit even though the joiner's local worldId differs.
+    expect(host.session.admitted()).toEqual(['B']);
+    expect(joiner.session.admitted()).toEqual(['A']);
+    expect(offers).toHaveLength(1);
+    expect([...offers[0]!.worldId]).toEqual([...WORLD_ID]);
+    // A SECOND host with a different world is refused by the joiner.
+    const other = makeSession(hub, 'C', { worldId: new Uint8Array(16).fill(9) });
+    await settle(hub, [host, joiner, other], 4);
+    expect(joiner.session.admitted()).toEqual(['A']);
+  });
+
+  it('a worldless joiner still refuses generator mismatches', async () => {
+    const hub = new LoopbackHub();
+    makeSession(hub, 'A', { genCanary: 123 });
+    const refusals: string[] = [];
+    const joiner = makeSession(hub, 'B', { announceWorld: false });
+    joiner.session.onRefused = (r) => refusals.push(r);
+    const rigs = [joiner];
+    for (let i = 0; i < 4; i++) {
+      for (const r of rigs) await r.session.tick();
+      hub.pump();
+    }
+    expect(joiner.session.admitted()).toEqual([]);
   });
 
   it('propagates a live edit', async () => {
@@ -181,6 +260,37 @@ describe('Session', () => {
     hub.pump();
     await a.session.tick();
     expect(a.session.deferredCount).toBe(4096);
+  });
+
+  it('holds bulk frames while the transport reports backpressure (review #13)', async () => {
+    const hub = new LoopbackHub();
+    let bulkOpen = false;
+    hub.canSend = (_from, _to, channel) => channel !== 'bulk' || bulkOpen;
+    const a = makeSession(hub, 'A');
+    for (let i = 0; i < 50; i++) a.session.localEdit(i % 10, 10 + Math.floor(i / 10), 5, PLANKS);
+    const b = makeSession(hub, 'B');
+    await settle(hub, [a, b], 12);
+    // digests flowed, but no CHUNK_ENTRIES could be sent yet
+    expect(b.store.edits.entryCount).toBe(0);
+    expect(a.session.admitted()).toEqual(['B']); // and nothing threw or closed
+    bulkOpen = true;
+    await settle(hub, [a, b], 12);
+    expect(b.store.edits.entryCount).toBe(a.store.edits.entryCount);
+  });
+
+  it('time-slices the inbox without losing frames (§11.4, review #3)', async () => {
+    const hub = new LoopbackHub();
+    const a = makeSession(hub, 'A', { inboxBudgetMs: 0 });
+    const b = makeSession(hub, 'B', { inboxBudgetMs: 0 });
+    await settle(hub, [a, b], 30);
+    expect(b.session.admitted()).toEqual(['A']);
+    for (let i = 0; i < 30; i++) a.session.localEdit(i, 12, 3, BRICK);
+    hub.pump(); // 30 EDITS frames land in B's inbox at once
+    await b.session.tick();
+    // budget 0 → one frame this tick, the rest wait
+    expect(b.store.edits.entryCount).toBeLessThan(30);
+    await settle(hub, [a, b], 120);
+    expect(b.store.edits.entryCount).toBe(a.store.edits.entryCount);
   });
 
   it('anti-entropy reconciles an empty joiner with an edited world', async () => {

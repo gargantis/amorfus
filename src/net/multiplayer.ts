@@ -15,22 +15,16 @@ export interface EditLike {
   sessionId: bigint;
   applyRemoteEntry(chunkKey: number, index: number, entry: Entry): boolean;
   onLocalEntry: ((chunkKey: number, index: number, entry: Entry) => void) | null;
+  /** Review #3: remote remeshing is batched; the glue flushes per tick. */
+  flushRemote?: () => void;
 }
 import { CHUNK, chunkOfCell, packChunkKey, localIndex } from '../core/world/coords';
 import { generateSecret, normalizeSecret } from './secret';
 import { encodePos, decodePos, type PosUpdate } from './pos-codec';
 import { RemoteAvatar } from './avatar';
-import genGoldens from '../core/gen/v1/goldens.json';
 
 export const PROTOCOL_VERSION = 1;
 const APP_ID = 'amorfus-v1';
-
-/** C-10: the canary is derived from the frozen generator goldens, so any
- *  generator difference shows up in the handshake. */
-export const GEN_CANARY = parseInt(
-  (genGoldens as Array<{ hash: string }>)[0]!.hash.slice(0, 8),
-  16,
-) >>> 0;
 
 export interface MultiplayerDeps {
   editManager: EditLike;
@@ -38,10 +32,16 @@ export interface MultiplayerDeps {
   worldId: Uint8Array; // 16 bytes
   name: string;
   color: number;
+  /** C-10: the canary THIS engine computed at startup (core/canary.ts) —
+   *  never a bundled constant, so divergent engines refuse each other. */
+  genCanary: number;
   /** test overrides, honoured on loopback hosts only (§14 gate rule) */
   relayOverride?: string[] | undefined;
   noIce?: boolean | undefined;
   blockNth?: number | undefined;
+  /** Review #2: a JOIN found the room playing a different world — the
+   *  callback rebuilds the local world stack and rejoins. */
+  onAdoptWorld?: ((worldId: Uint8Array, seed: [number, number]) => void) | undefined;
 }
 
 export interface PlayerPose {
@@ -70,6 +70,18 @@ export class Multiplayer {
    *  to the curated list; §10.4: an optional user TURN server. */
   extraRelays: string[] = [];
   turn: RTCIceServer | null = null;
+  private worldAdapter: SessionWorld | null = null;
+
+  /** Review #2: the caller swapped the edit state after adopting the
+   *  room's world — rebind the live session to it, no reconnect. */
+  refreshWorldBinding(): void {
+    if (this.session !== null && this.worldAdapter !== null) {
+      this.session.rebindWorld(this.worldAdapter);
+      this.deps.editManager.onLocalEntry = (chunkKey, index, entry) => {
+        this.session?.broadcastLocalEntry(chunkKey, index, entry);
+      };
+    }
+  }
   onStatus: ((text: string) => void) | null = null;
   onRekeyed: ((newSecret: string) => void) | null = null;
 
@@ -79,14 +91,15 @@ export class Multiplayer {
 
   host(): string {
     const secret = generateSecret();
-    this.start(secret);
+    this.start(secret, true);
     return secret;
   }
 
   join(code: string): boolean {
     const secret = normalizeSecret(code);
     if (secret === null) return false;
-    this.start(secret);
+    // §10.3: joining announces NO world and binds to the room's.
+    this.start(secret, false);
     return true;
   }
 
@@ -98,7 +111,7 @@ export class Multiplayer {
     return TrysteroTransport.relayHealth();
   }
 
-  private start(secret: string): void {
+  private start(secret: string, announceWorld = true): void {
     this.leave();
     this.secret = secret;
     const em = this.deps.editManager;
@@ -128,10 +141,18 @@ export class Multiplayer {
       });
     }
 
+    // Live getters: an in-place world adoption (review #2) swaps the
+    // edit state underneath without reconnecting, so the adapter must
+    // read the CURRENT store on every access.
+    const deps = this.deps;
     const world: SessionWorld = {
-      seed: this.deps.seed,
-      edits: em.edits,
-      applyRemote: (chunkKey, index, entry) => em.applyRemoteEntry(chunkKey, index, entry),
+      get seed() {
+        return deps.seed;
+      },
+      get edits() {
+        return deps.editManager.edits;
+      },
+      applyRemote: (chunkKey, index, entry) => deps.editManager.applyRemoteEntry(chunkKey, index, entry),
       localEdit: () => null, // the game applies local edits itself
       locate: (x, y, z) => {
         const { cx, cy, cz } = chunkOfCell(x, y, z);
@@ -141,6 +162,7 @@ export class Multiplayer {
         };
       },
     };
+    this.worldAdapter = world;
 
     const blocked = this.blockedPeers;
     const gated: typeof transport = Object.create(transport, {
@@ -169,9 +191,12 @@ export class Multiplayer {
         world,
         worldId: this.deps.worldId,
         generatorVersion: 1,
-        genCanary: GEN_CANARY,
+        genCanary: this.deps.genCanary,
         hlc: em.hlc,
         now: () => Date.now(),
+        announceWorld,
+        // §11.4: bulk application is time-sliced so it cannot stall frames
+        inboxBudgetMs: 6,
       },
       this.deps.blockNth !== undefined ? gated : transport,
     );
@@ -196,6 +221,12 @@ export class Multiplayer {
         yaw: pos.yaw,
       });
     };
+    session.onWorldOffer = (w) => {
+      const same =
+        w.worldId.length === this.deps.worldId.length &&
+        w.worldId.every((b, i) => b === this.deps.worldId[i]);
+      if (!same) this.deps.onAdoptWorld?.(w.worldId.slice(), [w.seed[0], w.seed[1]]);
+    };
     session.onRekey = (_from, newSecret) => {
       // §10.2: replace and retire the old secret, leave the old room.
       const normalized = normalizeSecret(newSecret);
@@ -210,7 +241,9 @@ export class Multiplayer {
       session.broadcastLocalEntry(chunkKey, index, entry);
     };
 
-    this.tickTimer = setInterval(() => void session.tick(), 100);
+    this.tickTimer = setInterval(() => {
+      void session.tick().then(() => this.deps.editManager.flushRemote?.());
+    }, 100);
     // §11.6: 20 Hz while moving, 4 Hz idle, on a timer.
     let lastSend = 0;
     this.posTimer = setInterval(() => {
@@ -248,6 +281,14 @@ export class Multiplayer {
     // give the message a moment to flush before leaving
     setTimeout(() => this.start(next), 250);
     return next;
+  }
+
+  /** leave(), but wait briefly for the transport's goodbye to flush. */
+  async leaveAndFlush(): Promise<void> {
+    const transport = this.transport;
+    this.transport = null;
+    this.leave();
+    await transport?.leaveAndFlush();
   }
 
   leave(): void {

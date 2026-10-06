@@ -17,6 +17,19 @@ explicit go-ahead at the moment you run it.
    hosted runners, wire `check:ci` that excludes exactly those, labelled
    partial; the local gate stays the definition of done.
 
+## First thing to try: the real relays
+
+The curated relay list has never carried a real session (see the final
+review note in docs/acceptance.md). Before any device work:
+
+1. `npm run probe:relays` — at least 4 of the 6 must answer.
+2. `npm run dev`, open two browser profiles (separate storage), Host in
+   one and open the copied link in the other. The joiner should reload
+   once onto the host's world and then show `2/8 players`.
+
+If step 2 fails while step 1 passes, that is new information about the
+relays or about same-machine WebRTC, not a regression the gate missed.
+
 ## Sign-offs still pending (device/eye work)
 
 - **D-1**: name the reference device, or confirm the fallback

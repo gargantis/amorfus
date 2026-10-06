@@ -89,8 +89,21 @@ export function decodeChunkEntries(blob: Uint8Array): IndexedEntry[] {
   return out;
 }
 
+/** Encoded length of an unsigned LEB128 varint. */
+function varintLen(v: number): number {
+  let n = 1;
+  while (v >= 128) {
+    v = Math.floor(v / 128);
+    n += 1;
+  }
+  return n;
+}
+
 /** Greedy split into parts, each itself a valid v1 blob over a contiguous
- *  run of the canonical order, each at most maxBytes long (§ A.2 wire). */
+ *  run of the canonical order, each at most maxBytes long (§ A.2 wire).
+ *  Linear: run sizes are tracked incrementally with an upper bound (the
+ *  peer-index varint is bounded by the run's peer count), and every run
+ *  is encoded exactly once. */
 export function splitChunkEntries(
   entries: readonly IndexedEntry[],
   maxBytes: number,
@@ -99,16 +112,29 @@ export function splitChunkEntries(
   const parts: Uint8Array[] = [];
   let start = 0;
   while (start < entries.length) {
-    // Grow the run until the encoded part would exceed maxBytes.
-    let end = start + 1;
-    let blob = encodeChunkEntries(entries.slice(start, end));
+    const peers = new Set<bigint>();
+    const baseL = entries[start]!.l;
+    let body = 0; // Σ varint(Δl) + varint(c) + varint(zigzag Δindex) + 2
+    let prevL = baseL;
+    let prevIndex = 0;
+    let end = start;
     while (end < entries.length) {
-      const next = encodeChunkEntries(entries.slice(start, end + 1));
-      if (next.length > maxBytes) break;
-      blob = next;
+      const e = entries[end]!;
+      const npeer = peers.has(e.peer) ? peers.size : peers.size + 1;
+      const n = end - start + 1;
+      const entryBody =
+        varintLen(e.l - prevL) + varintLen(e.c) + varintLen(zigzag(e.index - prevIndex)) + 2;
+      const bound =
+        1 + varintLen(npeer) + 8 * npeer + varintLen(n) + varintLen(baseL) +
+        body + entryBody + n * varintLen(npeer - 1);
+      if (bound > maxBytes && end > start) break;
+      peers.add(e.peer);
+      body += entryBody;
+      prevL = e.l;
+      prevIndex = e.index;
       end += 1;
     }
-    parts.push(blob);
+    parts.push(encodeChunkEntries(entries.slice(start, end)));
     start = end;
   }
   return parts;

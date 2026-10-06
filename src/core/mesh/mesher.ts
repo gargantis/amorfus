@@ -672,7 +672,9 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
         }
       }
     }
-    const len = Math.hypot(gx, gy, gz);
+    // sqrt of squares, not Math.hypot: hypot is implementation-
+    // approximated (C-10) and these feed the hashed mesh goldens.
+    const len = Math.sqrt(gx * gx + gy * gy + gz * gz);
     if (len > 1e-9) {
       out[0] = -gx / len;
       out[1] = -gy / len;
@@ -724,7 +726,7 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
       const ax = nacc[v * 3]!;
       const ay = nacc[v * 3 + 1]!;
       const az = nacc[v * 3 + 2]!;
-      const len = Math.hypot(ax, ay, az);
+      const len = Math.sqrt(ax * ax + ay * ay + az * az);
       if (len > 1e-9) {
         nx0 = ax / len;
         ny0 = ay / len;
@@ -814,14 +816,14 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
     const i2 = emitVertex(ring[2]!, material, sharp, fnx, fny, fnz);
     const i3 = emitVertex(ring[3]!, material, sharp, fnx, fny, fnz);
     // §7.2: triangulate on the shorter diagonal (0–2 on a tie).
-    const d02 =
-      (px(ring[0]!) - px(ring[2]!)) ** 2 +
-      (py(ring[0]!) - py(ring[2]!)) ** 2 +
-      (pz(ring[0]!) - pz(ring[2]!)) ** 2;
-    const d13 =
-      (px(ring[1]!) - px(ring[3]!)) ** 2 +
-      (py(ring[1]!) - py(ring[3]!)) ** 2 +
-      (pz(ring[1]!) - pz(ring[3]!)) ** 2;
+    const dx02 = px(ring[0]!) - px(ring[2]!);
+    const dy02 = py(ring[0]!) - py(ring[2]!);
+    const dz02 = pz(ring[0]!) - pz(ring[2]!);
+    const d02 = dx02 * dx02 + dy02 * dy02 + dz02 * dz02;
+    const dx13 = px(ring[1]!) - px(ring[3]!);
+    const dy13 = py(ring[1]!) - py(ring[3]!);
+    const dz13 = pz(ring[1]!) - pz(ring[3]!);
+    const d13 = dx13 * dx13 + dy13 * dy13 + dz13 * dz13;
     const base = qi * 6;
     if (d02 <= d13) {
       indexData[base] = i0;

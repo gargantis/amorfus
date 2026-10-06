@@ -30,11 +30,21 @@ export default defineConfig({
     {
       name: 'net',
       testMatch: /network\.spec\.ts/,
-      // Real WebRTC mesh formation can lose a pair under load (upstream
-      // trystero #195/#196; the plan schedules the 0.25.5 bump). One
-      // retry keeps the gate honest without being flaky.
-      retries: 1,
+      // No retries: against the local relay alone, mesh formation is
+      // deterministic enough (the earlier flake was public-relay latency,
+      // from a relay list the library was silently ignoring).
       use: { launchOptions: { args: ['--disable-features=WebRtcHideLocalIpsWithMdns'] } },
+    },
+    {
+      // Production-path tests: the real player loop and the real
+      // Host/Join flow, on SwiftShader with real WebRTC (final review).
+      name: 'game',
+      testMatch: /game\.spec\.ts/,
+      use: {
+        launchOptions: {
+          args: [...SWIFTSHADER_ARGS, '--disable-features=WebRtcHideLocalIpsWithMdns'],
+        },
+      },
     },
     { name: 'no-webgpu', testMatch: /fallbacks\.spec\.ts/ },
     { name: 'no-adapter', testMatch: /fallbacks\.spec\.ts/, use: { launchOptions: { args: ['--disable-gpu'] } } },

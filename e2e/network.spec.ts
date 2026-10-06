@@ -81,10 +81,12 @@ test('four pages converge, one blocked pair relies on forwarding', async ({ cont
   const pages: Page[] = [];
   for (let i = 0; i < 4; i++) pages.push(await context.newPage());
   // The last page refuses direct traffic with the FIRST peer it sees.
-  await netPage(pages[0]!);
-  await netPage(pages[1]!);
-  await netPage(pages[2]!);
-  await netPage(pages[3]!, '&blockNth=1');
+  const allGuards = [
+    await netPage(pages[0]!),
+    await netPage(pages[1]!),
+    await netPage(pages[2]!),
+    await netPage(pages[3]!, '&blockNth=1'),
+  ];
 
   // Joins are staggered: upstream #196 notes slower joins, and four
   // simultaneous meshes on one loaded machine race the signaling.
@@ -125,6 +127,10 @@ test('four pages converge, one blocked pair relies on forwarding', async ({ cont
     await p.waitForFunction(() => window.__amorfusNet!.getBlock(7, 7, 7) === 6, undefined, {
       timeout: 30_000,
     });
+  }
+  // The gate contacts nothing public (§14) — WebSockets included.
+  for (const g of allGuards) {
+    expect(g.requests.filter((u) => !u.includes('127.0.0.1') && !u.includes('localhost'))).toEqual([]);
   }
   for (const p of pages) await p.close();
 });

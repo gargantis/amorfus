@@ -87,6 +87,27 @@ describe('chunk-entries codec', () => {
     );
   });
 
+  it('splits a full chunk in linear time (review #13)', () => {
+    // 32768 entries, 16 KiB parts: the old split re-encoded the growing
+    // run once per appended entry (quadratic) on the main thread.
+    const entries: IndexedEntry[] = [];
+    for (let i = 0; i < 32768; i++) {
+      entries.push({ index: i, value: 3, l: 1000 + i, c: 0, peer: BigInt((i % 5) + 1) });
+    }
+    const t0 = performance.now();
+    const parts = splitChunkEntries(entries, 16 * 1024 - 16);
+    const ms = performance.now() - t0;
+    expect(ms).toBeLessThan(400);
+    const all: IndexedEntry[] = [];
+    for (const part of parts) {
+      expect(part.length).toBeLessThanOrEqual(16 * 1024 - 16);
+      all.push(...decodeChunkEntries(part));
+    }
+    expect(all).toEqual(entries);
+    // parts stay reasonably full (the size estimate is not wildly pessimistic)
+    expect(parts.length).toBeLessThan(40);
+  });
+
   it('rejects malformed input with CodecError and nothing else', () => {
     fc.assert(
       fc.property(fc.uint8Array({ maxLength: 64 }), (bytes) => {

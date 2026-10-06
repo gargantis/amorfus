@@ -16,6 +16,10 @@ export function watchPage(page: Page): PageGuards {
   page.on('pageerror', (e) => g.consoleErrors.push(String(e)));
   page.on('requestfailed', (r) => g.failedRequests.push(`${r.url()} (${r.failure()?.errorText})`));
   page.on('request', (r) => g.requests.push(r.url()));
+  // WebSockets never raise 'request' — and a relay contact IS a WebSocket,
+  // so without this the zero-third-party assertion could not see the one
+  // thing it exists to catch.
+  page.on('websocket', (ws) => g.requests.push(ws.url()));
   return g;
 }
 

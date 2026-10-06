@@ -23,3 +23,19 @@ records what settled it. Full problem statements and evidence stay in
 
 Update discipline: when a milestone settles an item, replace its Status with
 what settled it and the date; never renumber; never delete a row.
+
+## Notes
+
+- **2026-10-06 (final review), C-2/C-15:** the app had been passing its
+  relay list under a key the pinned Trystero ignores, so it used the
+  library's default public relays instead of the six curated ones. Fixed
+  (typed room config); the gate now asserts zero non-loopback contact,
+  WebSockets included. The disclosed list and the contacted list are the
+  same again.
+- **2026-10-06, C-10:** the generator canary is now computed by the
+  running engine at startup (it was a bundled constant, identical on
+  every engine); a mismatch disables Host, Join and share export.
+- **2026-10-06, C-12:** edit transactions fold on supersession, so the
+  edit-to-visible metric now includes any folded wait. Under software
+  rendering the gate replay shows edit p95 ≈ 0.4 s — a CPU-contention
+  number, not the D-1 figure; the 33 ms decision still needs the device.

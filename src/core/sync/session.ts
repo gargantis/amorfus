@@ -31,6 +31,7 @@ const RATE_BURST = 500;
 const ROUND_PACE_MS = 15_000;
 const PEERS_GOSSIP_MS = 5_000;
 const BULK_ENTRY_CAP = 4e6; // D-23
+const BULK_FRAMES_PER_TICK = 32; // ≈ 512 KiB per tick
 const PART_BYTES = MAX_MESSAGE_BYTES - 16;
 
 /** What the session needs from the world — WorldStore satisfies it, and
@@ -58,6 +59,12 @@ export interface SessionConfig {
   hlc: Hlc;
   now: () => number;
   maxPeers?: number;
+  /** §11.4: wall-clock budget for draining the inbox per tick; frames
+   *  beyond it wait for the next tick. Unset = drain everything. */
+  inboxBudgetMs?: number;
+  /** §10.3: a joiner without the room's world sends hasWorld = false and
+   *  BINDS to the first HELLO that carries one (review #2). */
+  announceWorld?: boolean;
 }
 
 interface PeerState {
@@ -68,6 +75,9 @@ interface PeerState {
   nextRoundAt: number;
   neighbours: Set<bigint>;
   buckets: Map<bigint, { tokens: number; at: number }>;
+  /** per-CONNECTION total: originSession is sender-controlled, so the
+   *  per-origin buckets alone could be rotated around */
+  totalBucket: { tokens: number; at: number } | null;
   bulkEntries: number;
   warned: boolean;
 }
@@ -94,6 +104,10 @@ export class Session {
    *  admitted or refused, because a lossy path can eat the first frame. */
   private helloNextAt = new Map<string, number>();
   private deferred = new Map<string, DeferredOp>();
+  private bulkOut = new Map<
+    string,
+    { frames: Array<{ key: number; bytes: Uint8Array; last: boolean }>; head: number; keys: Set<number> }
+  >();
   private digests = new Map<number, Uint8Array>();
   private dirtyChunks = new Set<number>();
   private rootCache: string | null = null;
@@ -103,6 +117,10 @@ export class Session {
 
   onRefused: ((reason: RefuseReason) => void) | null = null;
   onSkewWarning: ((sessionId: bigint) => void) | null = null;
+  /** §10.3 worldless join: fired once, with the first offered world. */
+  onWorldOffer: ((world: import('./messages').HelloWorld) => void) | null = null;
+  private adoptedWorld: import('./messages').HelloWorld | null = null;
+
   /** POS frames (pos channel, §11.6): raw 31-byte payloads. */
   onPos: ((from: string, payload: Uint8Array) => void) | null = null;
   /** REKEY (§10.2): the new secret, from a directly connected peer. */
@@ -158,12 +176,15 @@ export class Session {
         hlc: this.cfg.hlc.state(),
         name: this.cfg.name,
         color: this.cfg.color,
-        world: {
-          worldId: this.cfg.worldId,
-          seed: [this.cfg.world.seed[0], this.cfg.world.seed[1]],
-          generatorVersion: this.cfg.generatorVersion,
-          genCanary: this.cfg.genCanary,
-        },
+        world:
+          (this.cfg.announceWorld ?? true)
+            ? {
+                worldId: this.cfg.worldId,
+                seed: [this.cfg.world.seed[0], this.cfg.world.seed[1]],
+                generatorVersion: this.cfg.generatorVersion,
+                genCanary: this.cfg.genCanary,
+              }
+            : null,
       }),
       'action',
     );
@@ -233,10 +254,24 @@ export class Session {
         this.refuse(from, 'generator-mismatch');
         return;
       }
-      if (
-        !bytesEqual(w.worldId, this.cfg.worldId) ||
-        w.seed[0] !== this.cfg.world.seed[0] ||
-        w.seed[1] !== this.cfg.world.seed[1]
+      if (this.cfg.announceWorld ?? true) {
+        if (
+          !bytesEqual(w.worldId, this.cfg.worldId) ||
+          w.seed[0] !== this.cfg.world.seed[0] ||
+          w.seed[1] !== this.cfg.world.seed[1]
+        ) {
+          this.refuse(from, 'different-world');
+          return;
+        }
+      } else if (this.adoptedWorld === null) {
+        // §10.3: bind to the first HELLO that carries a world; every
+        // later HELLO must match it.
+        this.adoptedWorld = w;
+        this.onWorldOffer?.(w);
+      } else if (
+        !bytesEqual(w.worldId, this.adoptedWorld.worldId) ||
+        w.seed[0] !== this.adoptedWorld.seed[0] ||
+        w.seed[1] !== this.adoptedWorld.seed[1]
       ) {
         this.refuse(from, 'different-world');
         return;
@@ -259,12 +294,20 @@ export class Session {
       nextRoundAt: 0,
       neighbours: new Set(),
       buckets: new Map(),
+      totalBucket: null,
       bulkEntries: 0,
       warned: false,
     };
     this.peersByTransport.set(from, state);
     this.gossipDirty = true;
-    this.cfg.hlc.recv(hello.hlc, this.cfg.now());
+    // §11.3's "cannot push clocks more than 60 s ahead" must hold for
+    // HELLO too, not just EDITS: a forged hlc.l would poison our clock
+    // and get every later local edit deferred by honest peers.
+    const hlcCap = hello.wallClock + FUTURE_WINDOW_MS;
+    this.cfg.hlc.recv(
+      hello.hlc.l > hlcCap ? { l: hlcCap, c: 0 } : hello.hlc,
+      this.cfg.now(),
+    );
     if (skew > SKEW_WARN_MS && !state.warned) {
       state.warned = true;
       this.onSkewWarning?.(hello.sessionId);
@@ -330,11 +373,24 @@ export class Session {
     if (peer === undefined) return;
     const edits = decodeEdits(bytes);
 
-    // Rate cap per (connection, origin session) — §11.3; closing, never
-    // silently dropping a valid op.
+    // Rate cap per (connection, origin session) — §11.3 — AND per
+    // connection in total, since originSession is sender-controlled.
     const nowS = this.cfg.now() / 1000;
+    if (peer.totalBucket === null) peer.totalBucket = { tokens: RATE_BURST, at: nowS };
+    const total = peer.totalBucket;
+    total.tokens = Math.min(RATE_BURST, total.tokens + Math.max(0, nowS - total.at) * RATE_PER_SEC);
+    total.at = nowS;
+    if (edits.entries.length > total.tokens) {
+      this.close(from, 'rate cap exceeded (connection total)');
+      return;
+    }
+    total.tokens -= edits.entries.length;
     let bucket = peer.buckets.get(edits.originSession);
     if (bucket === undefined) {
+      if (peer.buckets.size >= 64) {
+        this.close(from, 'too many distinct origin sessions');
+        return;
+      }
       bucket = { tokens: RATE_BURST, at: nowS };
       peer.buckets.set(edits.originSession, bucket);
     }
@@ -380,6 +436,9 @@ export class Session {
   private async handleRoot(from: string, bytes: Uint8Array): Promise<void> {
     const peer = this.peersByTransport.get(from);
     if (peer === undefined) return;
+    // D-23 bounds one TRANSFER, not the connection's lifetime: a new
+    // reconciliation round starts a new transfer budget.
+    peer.bulkEntries = 0;
     peer.theirRoot = hex(decodeRoot(bytes));
     const ours = await this.root();
     if (peer.theirRoot !== ours) {
@@ -415,10 +474,52 @@ export class Session {
     for (const key of decodeWant(bytes)) this.sendChunk(from, key);
   }
 
+  /** Bulk frames are QUEUED per peer and paced by tick() under the
+   *  transport's backpressure (review #13): a large world must never be
+   *  pushed into a data channel in one synchronous burst. A chunk already
+   *  queued for a peer is not queued again. */
   private sendChunk(to: string, chunkKey: number): void {
+    let q = this.bulkOut.get(to);
+    if (q === undefined) {
+      q = { frames: [], head: 0, keys: new Set() };
+      this.bulkOut.set(to, q);
+    }
+    if (q.keys.has(chunkKey)) return;
     const entries = this.cfg.world.edits.snapshot(chunkKey);
-    for (const part of splitChunkEntries(entries, PART_BYTES)) {
-      this.transport.send(to, encodeChunkEntriesMsg(chunkKey, part), 'bulk');
+    const parts = splitChunkEntries(entries, PART_BYTES);
+    q.keys.add(chunkKey);
+    parts.forEach((part, i) => {
+      q.frames.push({
+        key: chunkKey,
+        bytes: encodeChunkEntriesMsg(chunkKey, part),
+        last: i === parts.length - 1,
+      });
+    });
+  }
+
+  private drainBulk(): void {
+    for (const [tid, q] of this.bulkOut) {
+      if (!this.peersByTransport.has(tid)) {
+        this.bulkOut.delete(tid);
+        continue;
+      }
+      let sent = 0;
+      while (
+        q.head < q.frames.length &&
+        sent < BULK_FRAMES_PER_TICK &&
+        (this.transport.canSend?.(tid, 'bulk') ?? true)
+      ) {
+        const f = q.frames[q.head]!;
+        q.head += 1;
+        this.transport.send(tid, f.bytes, 'bulk');
+        if (f.last) q.keys.delete(f.key);
+        sent += 1;
+      }
+      if (q.head >= q.frames.length) this.bulkOut.delete(tid);
+      else if (q.head > 1024) {
+        q.frames = q.frames.slice(q.head);
+        q.head = 0;
+      }
     }
   }
 
@@ -499,6 +600,19 @@ export class Session {
     }
   }
 
+  /** Review #2: after adopting the room's world, the SAME connection
+   *  keeps running over a fresh local store — reset the digest state so
+   *  anti-entropy pulls the adopted world in. */
+  rebindWorld(world: SessionWorld): void {
+    (this.cfg as { world: SessionWorld }).world = world;
+    this.digests.clear();
+    this.dirtyChunks.clear();
+    for (const key of world.edits.chunkKeys()) this.dirtyChunks.add(key);
+    this.rootCache = null;
+    this.appliedSinceRoot = true;
+    for (const peer of this.peersByTransport.values()) peer.lastSentRoot = null;
+  }
+
   async rootHex(): Promise<string> {
     return this.root();
   }
@@ -506,10 +620,14 @@ export class Session {
   // ---- the pump ----
 
   async tick(): Promise<void> {
-    // 1. Drain the inbox.
+    // 1. Drain the inbox, within the wall-clock budget when one is set
+    //    (§11.4: applying bulk data must not stall the frame loop).
     const frames = this.inbox;
     this.inbox = [];
-    for (const frame of frames) {
+    const budget = this.cfg.inboxBudgetMs;
+    const t0 = budget !== undefined ? wallNow() : 0;
+    for (let i = 0; i < frames.length; i++) {
+      const frame = frames[i]!;
       if (this.closed.has(frame.from) && decodeMessageType(frame.bytes) !== MSG.REFUSE) continue;
       try {
         await this.dispatch(frame);
@@ -517,7 +635,15 @@ export class Session {
         if (err instanceof CodecError) this.close(frame.from, `codec: ${err.message}`);
         else throw err;
       }
+      if (budget !== undefined && i + 1 < frames.length && wallNow() - t0 >= budget) {
+        // frames that arrived during the awaits above stay behind these
+        this.inbox = frames.slice(i + 1).concat(this.inbox);
+        break;
+      }
     }
+
+    // 1b. Paced bulk sends under transport backpressure.
+    this.drainBulk();
 
     // 2. Matured deferred ops (§11.3: time only defers).
     const now = this.cfg.now();
@@ -610,6 +736,10 @@ export class Session {
         throw new CodecError(`unknown message type ${type}`);
     }
   }
+}
+
+function wallNow(): number {
+  return typeof performance !== 'undefined' ? performance.now() : Date.now();
 }
 
 function bytesEqual(a: Uint8Array, b: Uint8Array): boolean {

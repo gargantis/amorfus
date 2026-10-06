@@ -7,8 +7,10 @@ values. WebGPU rendering, serverless peer-to-peer multiplayer, fully
 static hosting on [amorf.us](https://amorf.us) and IPFS.
 
 [PLAN.md](PLAN.md) is the implementation contract;
-[docs/conflicts.md](docs/conflicts.md) tracks its conflict register and
-[docs/acceptance.md](docs/acceptance.md) the measured acceptance state.
+[docs/conflicts.md](docs/conflicts.md) tracks its conflict register,
+[docs/acceptance.md](docs/acceptance.md) the measured acceptance state,
+and [docs/build-decisions.md](docs/build-decisions.md) every call the
+build made that the plan had not settled.
 
 ## Run
 

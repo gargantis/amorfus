@@ -13,7 +13,7 @@ import { Hotbar } from './ui/hotbar';
 import { stepPlayer, PLAYER, type PlayerState, type ControllerInput } from './core/physics/controller';
 import { pickRay } from './core/physics/pick';
 import type { TriangleSource, ChunkTriangles } from './core/physics/collision';
-import { scenarioA, summarise } from './game/scenario-a';
+import { createScenarioA, summarise } from './game/scenario-a';
 import { AIR, materialOf, isSharp } from './core/world/block';
 import { WorldSession, LockBusyError } from './game/world-session';
 import { Multiplayer } from './net/multiplayer';
@@ -21,12 +21,14 @@ import { formatSecret } from './net/secret';
 import thirdPartyJson from '../third-party.json';
 import { runCoreMode, runHandoffSender, runHandoffReceiver, runNetTestMode } from './game/core-mode';
 import type { PlayerSave } from './game/player-save';
-import { generateChunk, heightAt } from './core/gen/v1/index';
+import { heightAt } from './core/gen/v1/index';
+import { computeGenCanary, chunkGoldenHash } from './core/canary';
 import { CHUNK, packChunkKey } from './core/world/coords';
 import { makeBlock } from './core/world/block';
 
-// M2 entry: boot checks passed (boot.js). Initialise WebGPU, fill terrain
-// incrementally on the main thread (the worker pool arrives at M4), fly.
+// Entry: boot checks passed (boot.js). Renderer-free test modes first,
+// then WebGPU, the persisted world, the streaming pool, the player loop
+// and multiplayer.
 
 window.__amorfusBootReady?.();
 
@@ -43,7 +45,26 @@ const tierName = (hash.get('tier') ?? query.get('tier') ?? 'medium') as keyof ty
 // §8.4 frame cap: auto (default), half refresh, or uncapped (= auto under
 // rAF; a real uncapped mode needs no vsync, which rAF cannot give).
 const FRAME_CAP = query.get('cap') ?? hash.get('cap') ?? 'auto';
-const VIEW_RADIUS = TEST_MODE ? 32 : TIERS[tierName]?.viewRadius ?? 160;
+// ?radius= overrides the tier's view radius (benchmarks and the gate's
+// production-loop tests run small worlds under software rendering).
+const radiusParam = Number(query.get('radius'));
+const VIEW_RADIUS = TEST_MODE
+  ? 32
+  : Number.isFinite(radiusParam) && radiusParam >= 32 && radiusParam <= 256
+    ? radiusParam
+    : TIERS[tierName]?.viewRadius ?? 160;
+// ?scale= replays scenario A faster than real time (gate use).
+const SCENARIO_SCALE = Math.max(1, Number(query.get('scale')) || 1);
+const LOOPBACK =
+  location.hostname === 'localhost' ||
+  location.hostname.endsWith('.localhost') ||
+  location.hostname === '127.0.0.1';
+// §10.3: a join that adopted the room's world reloads with these.
+const adoptedWorldId = /^[0-9a-f]{32}$/.test(hash.get('world') ?? '') ? hash.get('world')! : null;
+const adoptedSeed = ((): [number, number] | null => {
+  const m = /^(\d{1,10}),(\d{1,10})$/.exec(hash.get('wseed') ?? '');
+  return m === null ? null : [Number(m[1]) >>> 0, Number(m[2]) >>> 0];
+})();
 
 async function start(): Promise<void> {
   // Renderer-free modes first (§14 core project, §12.5 handoff).
@@ -57,9 +78,13 @@ async function start(): Promise<void> {
     return;
   }
   if (hash.get('test') === 'net') {
-    runNetTestMode();
+    await runNetTestMode();
     return;
   }
+
+  // C-10: the generator canary, computed by THIS engine before anything
+  // can be hosted, joined or shared.
+  const canary = await computeGenCanary();
 
   const init = await gpuInit();
   if (init.kind !== 'ok') {
@@ -111,6 +136,7 @@ async function start(): Promise<void> {
   let editManager: EditManager | null = null;
   let worldSession: WorldSession | null = null;
   let multiplayer: Multiplayer | null = null;
+  let worldSeed: [number, number] = adoptedSeed ?? SEED;
   if (GALLERY) {
     setupGallery(renderer);
   } else if (SWATCH) {
@@ -118,26 +144,45 @@ async function start(): Promise<void> {
   } else {
     if (!TEST_MODE) {
       try {
-        worldSession = await WorldSession.open({ seed: SEED });
+        const openOptions = {
+          seed: adoptedSeed ?? SEED,
+          ...(adoptedWorldId !== null ? { worldId: adoptedWorldId } : {}),
+        };
+        worldSession = await WorldSession.open(openOptions);
       } catch (err) {
         if (err instanceof LockBusyError) {
           const take = confirm('This world is open in another tab. Take over here?');
-          if (take) worldSession = await WorldSession.open({ seed: SEED, steal: true });
+          if (take) {
+            worldSession = await WorldSession.open({
+              seed: adoptedSeed ?? SEED,
+              ...(adoptedWorldId !== null ? { worldId: adoptedWorldId } : {}),
+              steal: true,
+            });
+          }
         } else if (WorldSession.classify().kind !== 'no-storage') {
           console.error('storage unavailable:', err);
         }
       }
-      const bannerText = WorldSession.banner();
-      if (bannerText !== null) {
+      const bannerParts = [
+        WorldSession.banner(),
+        worldSession?.notice ?? null,
+        canary.ok
+          ? null
+          : 'This browser generates terrain differently from the reference, so hosting, joining and share export are disabled here.',
+      ].filter((t): t is string => t !== null);
+      if (bannerParts.length > 0) {
         const banner = document.getElementById('banner');
         if (banner) {
-          banner.textContent = bannerText;
+          banner.textContent = bannerParts.join(' ');
           banner.hidden = false;
         }
       }
     }
-    const worldSeed = worldSession?.meta.seed ?? SEED;
-    const s = new Streaming(renderer, worldSeed, VIEW_RADIUS, () => editManager?.editsByChunk() ?? new Map());
+    worldSeed = worldSession?.meta.seed ?? adoptedSeed ?? SEED;
+    const s = new Streaming(
+      renderer, worldSeed, VIEW_RADIUS,
+      (cx, cy, cz) => editManager?.editsForRegion(cx, cy, cz) ?? new Map(),
+    );
     streaming = s;
     editManager = new EditManager(s, renderer, worldSeed, {
       ...(worldSession !== null
@@ -171,7 +216,7 @@ async function start(): Promise<void> {
   };
   const savedPlayer = worldSession?.loaded.player as PlayerSave | undefined;
   let player: PlayerState = {
-    position: savedPlayer?.position ?? [0.5, h0 + 2, 0.5],
+    position: savedPlayer?.position ?? [0.5, heightAt(worldSeed, 0, 0) + 2, 0.5],
     velocity: [0, 0, 0],
     onGround: false,
     flying: savedPlayer?.flying ?? false,
@@ -224,7 +269,13 @@ async function start(): Promise<void> {
         URL.revokeObjectURL(a.href);
       };
       btn('Export backup', () => void download(0));
-      btn('Export share', () => void download(1));
+      btn('Export share', () => {
+        if (!canary.ok) {
+          status('share export is disabled: this browser\u2019s terrain differs from the reference');
+          return;
+        }
+        void download(1);
+      });
       btn('Save as copy', () => {
         void ws.saveAsCopy(`${ws.meta.name} copy`).then(() => status(`copied`));
       });
@@ -261,14 +312,38 @@ async function start(): Promise<void> {
     if (editManager !== null) {
       const em = editManager;
       const worldIdBytes = new Uint8Array(16);
-      const widHex = worldSession?.meta.worldId ?? '00'.repeat(16);
+      const widHex = worldSession?.meta.worldId ?? adoptedWorldId ?? '00'.repeat(16);
       for (let i = 0; i < 16; i++) worldIdBytes[i] = parseInt(widHex.slice(i * 2, i * 2 + 2), 16);
+      // Gate-only overrides (local relay, no ICE), honoured on loopback.
+      const testRelays = LOOPBACK ? (hash.get('relays') ?? '').split(',').filter((r) => r !== '') : [];
       multiplayer = new Multiplayer({
         editManager: em,
-        seed: worldSession?.meta.seed ?? SEED,
+        seed: worldSeed,
         worldId: worldIdBytes,
         name: 'player',
         color: Math.floor(Math.random() * 8),
+        genCanary: canary.canary,
+        relayOverride: testRelays.length > 0 ? testRelays : undefined,
+        noIce: LOOPBACK && hash.get('ice') === 'none',
+        // §10.3: the room plays a different world than the one open here.
+        // Create-or-open it under the room's id and rejoin: a reload
+        // rebuilds the whole world stack (streaming, edits, storage lock)
+        // on the adopted world.
+        onAdoptWorld: (roomWorldId, roomSeed) => {
+          const secret = multiplayer?.secret ?? null;
+          if (secret === null) return;
+          const hex = [...roomWorldId].map((b) => b.toString(16).padStart(2, '0')).join('');
+          void (async () => {
+            await multiplayer?.leaveAndFlush();
+            await worldSession?.flushNow();
+            const next = new URLSearchParams(location.hash.replace(/^#/, ''));
+            next.set('join', secret);
+            next.set('world', hex);
+            next.set('wseed', `${roomSeed[0]},${roomSeed[1]}`);
+            location.hash = next.toString();
+            location.reload();
+          })();
+        },
       });
       multiplayer.getPose = () => ({
         position: [...player.position] as [number, number, number],
@@ -308,7 +383,13 @@ async function start(): Promise<void> {
         if (ok && worldSession !== null) await worldSession.db.put('kv', true, 'privacy-ack');
         return ok;
       };
+      const canaryBlocks = (): boolean => {
+        if (canary.ok) return false;
+        netStatus.textContent = 'multiplayer is disabled: this browser\u2019s terrain differs from the reference';
+        return true;
+      };
       nbtn('Host world', () => {
+        if (canaryBlocks()) return;
         void privacyOk().then((ok) => {
           if (!ok || multiplayer === null) return;
           const secret = multiplayer.host();
@@ -318,6 +399,7 @@ async function start(): Promise<void> {
         });
       });
       nbtn('Join…', () => {
+        if (canaryBlocks()) return;
         void privacyOk().then((ok) => {
           if (!ok || multiplayer === null) return;
           const code = prompt('Join code (21 characters):');
@@ -394,7 +476,7 @@ async function start(): Promise<void> {
       // §10.2: a #join= link joins after the privacy sheet; §10.1: link-
       // carried relay hints (&r=) are shown and confirmed before use.
       const joinFromLink = hash.get('join');
-      if (joinFromLink !== null) {
+      if (joinFromLink !== null && !canaryBlocks()) {
         const hinted = (hash.get('r') ?? '').split(',').map((r) => r.trim()).filter((r) => r.startsWith('wss://'));
         void privacyOk().then((ok) => {
           if (!ok || multiplayer === null) return;
@@ -415,10 +497,14 @@ async function start(): Promise<void> {
 
   // scenario A metrics (§C-6)
   const scn = {
-    start: performance.now(),
+    start: null as number | null, // starts when the spawn chunk is ready
+    script: createScenarioA(),
     intervals: [] as number[],
     longTasks: 0,
     reported: false,
+    distance: 0,
+    lowestY: Infinity, // ground level reached during the walk
+    climbed: 0,
   };
   if (SCENARIO_A && typeof PerformanceObserver !== 'undefined') {
     try {
@@ -476,6 +562,19 @@ async function start(): Promise<void> {
   let bannerShown = false;
 
   const hooks = TEST_MODE ? installTestHooks(renderer, camera) : null;
+  if (LOOPBACK && PLAYER_MODE && editManager !== null && streaming !== null) {
+    const em = editManager;
+    const st = streaming;
+    window.__amorfusGame = {
+      ready: () => st.chunks.size > 0 && st.pendingCount === 0,
+      connected: () => multiplayer?.connected ?? 0,
+      secret: () => multiplayer?.secret ?? null,
+      worldId: () => worldSession?.meta.worldId ?? adoptedWorldId ?? '00'.repeat(16),
+      blockAt: (x, y, z) => em.blockAt(x, y, z),
+      edit: (x, y, z, value) => em.apply(x, y, z, value) !== null,
+      player: () => [...player.position] as [number, number, number],
+    };
+  }
   const benchT0 = performance.now();
 
   let frameParity = 0;
@@ -500,7 +599,9 @@ async function start(): Promise<void> {
     }
 
     if (PLAYER_MODE) {
-      const dt = Math.min(0.05, (now - lastT + 0.01) / 1000) || 1 / 60;
+      // The interval measured ABOVE, before lastT was advanced. Reading
+      // (now − lastT) here was always 0 and froze the player (review #1).
+      const dt = Math.min(0.05, Math.max(0.001, frameInterval / 1000));
       const spawnReady =
         source.chunkAt(
           Math.floor(player.position[0] / CHUNK),
@@ -508,22 +609,33 @@ async function start(): Promise<void> {
           Math.floor(player.position[2] / CHUNK),
         ) !== null;
       if (SCENARIO_A) {
-        const t = (now - scn.start) / 1000;
-        const act = scenarioA(t);
-        if (!act.done && spawnReady) {
-          player = stepPlayer(source, player, act.input, dt);
-          camera.yaw = act.input.yaw;
-          camera.pitch = t >= 60 ? -0.9 : -0.15;
-          if (act.edit !== null) doEdit(act.edit, 5, false);
-        }
-        if (t > 10 && !act.done) scn.intervals.push(frameInterval);
-        if (act.done && !scn.reported && editManager !== null) {
-          scn.reported = true;
-          const report = summarise(
-            scn.intervals, scn.longTasks, editManager.editToVisibleMs, editManager.splitSwapCount,
-          );
-          (window as unknown as { __scenarioA?: unknown }).__scenarioA = report;
-          console.log('scenario A:', JSON.stringify(report));
+        if (scn.start === null && spawnReady) scn.start = now;
+        if (scn.start !== null) {
+          const t = ((now - scn.start) / 1000) * SCENARIO_SCALE;
+          const act = scn.script(t);
+          if (!act.done && spawnReady) {
+            const before = player.position;
+            player = stepPlayer(source, player, act.input, dt);
+            scn.distance += Math.hypot(
+              player.position[0] - before[0],
+              player.position[2] - before[2],
+            );
+            scn.lowestY = Math.min(scn.lowestY, player.position[1]);
+            scn.climbed = Math.max(scn.climbed, player.position[1] - scn.lowestY);
+            camera.yaw = act.input.yaw;
+            camera.pitch = act.pitch;
+            if (act.edit !== null) doEdit(act.edit, 5, false);
+          }
+          if (t > 10 && !act.done) scn.intervals.push(frameInterval);
+          if (act.done && !scn.reported && editManager !== null) {
+            scn.reported = true;
+            const report = summarise(
+              scn.intervals, scn.longTasks, editManager.editToVisibleMs,
+              editManager.splitSwapCount, scn.distance, scn.climbed,
+            );
+            window.__scenarioA = report;
+            console.log('scenario A:', JSON.stringify(report));
+          }
         }
       } else if (input !== null) {
         const fi = input.frame();
@@ -587,6 +699,7 @@ async function start(): Promise<void> {
       }
     }
 
+    editManager?.flushRemote(); // batched remote remeshing (review #3)
     streaming?.update(camera.position);
     if (worldSession !== null && PLAYER_MODE) {
       worldSession.playerState = {
@@ -722,28 +835,7 @@ function installTestHooks(renderer: Renderer, camera: Camera): AmorfusTestHooks 
     frames: 0,
     workerOk: false,
     readCenterPixel: () => renderer.readCenterPixel(camera),
-    genGolden: async (seed, chunk) => {
-      const c = generateChunk(seed, ...chunk);
-      const parts: Uint8Array[] = [];
-      const enc = new TextEncoder();
-      if (c.storage.kind === 'uniform') parts.push(enc.encode(`uniform:${c.storage.value}`));
-      else parts.push(new Uint8Array(c.storage.blocks.buffer, c.storage.blocks.byteOffset, c.storage.blocks.byteLength));
-      parts.push(
-        c.hints === 'saturated'
-          ? enc.encode('saturated')
-          : new Uint8Array(c.hints.buffer, c.hints.byteOffset, c.hints.byteLength),
-      );
-      const total = new Uint8Array(parts.reduce((n, p) => n + p.length, 0));
-      let off = 0;
-      for (const p of parts) {
-        total.set(p, off);
-        off += p.length;
-      }
-      const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', total));
-      let hexStr = '';
-      for (const b of digest) hexStr += b.toString(16).padStart(2, '0');
-      return hexStr;
-    },
+    genGolden: (seed, chunk) => chunkGoldenHash(seed, chunk),
   };
   window.__amorfus = hooks;
   return hooks;

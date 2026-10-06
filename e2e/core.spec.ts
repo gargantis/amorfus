@@ -80,3 +80,19 @@ test('handoff: the sender posts worlds to the receiver origin, exact match only'
   await evil.waitForFunction(() => window.__amorfusHandoff?.status === 'refused-origin');
   await evil.close();
 });
+
+test('the request guard sees WebSocket connections (gate honesty)', async ({ page }) => {
+  const s = gatewayState();
+  const guards = watchPage(page);
+  await page.goto(`http://127.0.0.1:${s.plainPort}/#test=core`);
+  await page.waitForFunction(() => window.__amorfusCore?.ready === true);
+  // single-player core mode opens no socket at all
+  expect(guards.requests.filter((u) => u.startsWith('ws'))).toEqual([]);
+  // and when one IS opened, the guard records it
+  const wsUrl = `ws://127.0.0.1:${s.relayPort}/`;
+  await page.evaluate((u) => {
+    new WebSocket(u);
+  }, wsUrl);
+  await expect.poll(() => guards.requests.some((u) => u.startsWith(wsUrl.slice(0, -1)))).toBe(true);
+  expect(offendingRequests(guards, [`http://127.0.0.1:${s.plainPort}/`])).not.toEqual([]);
+});

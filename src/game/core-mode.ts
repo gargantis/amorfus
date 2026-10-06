@@ -9,6 +9,7 @@ import { chunkOfCell, packChunkKey, localIndex, CHUNK } from '../core/world/coor
 import { parseHandoffHash, handoffTargetAllowed, postHandoff, type HandoffFile } from '../storage/handoff';
 import { exportWorld } from '../storage/import-export';
 import { listWorlds } from '../storage/db';
+import { computeGenCanary } from '../core/canary';
 import { LwwStore as NetLww } from '../core/sync/lww';
 import { Multiplayer, type EditLike } from '../net/multiplayer';
 import type { Entry } from '../core/sync/lww';
@@ -132,7 +133,7 @@ export async function runHandoffReceiver(): Promise<void> {
 /** §14 networking tests, renderer-free (#test=net). Test overrides
  *  (local relay, no ICE, blocked pair) are honoured on loopback hosts
  *  only. */
-export function runNetTestMode(): void {
+export async function runNetTestMode(): Promise<void> {
   const loopback =
     location.hostname === 'localhost' ||
     location.hostname.endsWith('.localhost') ||
@@ -145,35 +146,66 @@ export function runNetTestMode(): void {
   const relays = hash.get('relays')?.split(',') ?? [];
   const blockNthRaw = hash.get('blockNth');
 
-  const edits = new NetLww();
-  const hlc = new Hlc();
+  const canary = await computeGenCanary();
+  // Review #2: pages carry REAL, distinct worldIds so the e2e exercises
+  // the §10.3 adoption path exactly as production joins do.
+  let edits = new NetLww();
+  let hlc = new Hlc();
   const rnd = new BigUint64Array(1);
   crypto.getRandomValues(rnd);
+  let worldId = new Uint8Array(16);
+  crypto.getRandomValues(worldId);
+  let seed: [number, number] = [1, 1];
   const editLike: EditLike = {
-    edits,
-    hlc,
+    get edits() {
+      return edits;
+    },
+    get hlc() {
+      return hlc;
+    },
     sessionId: rnd[0]! | 1n,
     applyRemoteEntry: (chunkKey, index, entry) => edits.apply(chunkKey, index, entry),
     onLocalEntry: null,
   };
-  const mp = new Multiplayer({
-    editManager: editLike,
-    seed: [1, 1],
-    worldId: new Uint8Array(16).fill(1),
-    name: `n${Math.floor(Math.random() * 100)}`,
-    color: 1,
-    relayOverride: relays.length > 0 ? relays : undefined,
-    noIce: hash.get('ice') === 'none',
-    blockNth: blockNthRaw !== null ? Number(blockNthRaw) : undefined,
-  });
-  mp.getPose = () => ({
-    position: [Math.random() * 4, 40, 0],
-    velocity: [0, 0, 0],
-    yaw: 0,
-    pitch: 0,
-    flying: true,
-    held: 1,
-  });
+  const makeMp = (): Multiplayer =>
+    new Multiplayer({
+      editManager: editLike,
+      // getters: in-place adoption swaps these variables
+      get seed() {
+        return seed;
+      },
+      get worldId() {
+        return worldId;
+      },
+      name: `n${Math.floor(Math.random() * 100)}`,
+      color: 1,
+      genCanary: canary.canary,
+      relayOverride: relays.length > 0 ? relays : undefined,
+      noIce: hash.get('ice') === 'none',
+      blockNth: blockNthRaw !== null ? Number(blockNthRaw) : undefined,
+      onAdoptWorld: (adoptedId, adoptedSeed) => {
+        // In-place adoption (review #2): the session stays connected;
+        // swap the local world state and rebind, and anti-entropy pulls
+        // the adopted world in.
+        worldId = new Uint8Array(adoptedId);
+        seed = adoptedSeed;
+        edits = new NetLww();
+        hlc = new Hlc();
+        mp.refreshWorldBinding();
+      },
+    });
+  const wire = (m: Multiplayer): void => {
+    m.getPose = () => ({
+      position: [Math.random() * 4, 40, 0],
+      velocity: [0, 0, 0],
+      yaw: 0,
+      pitch: 0,
+      flying: true,
+      held: 1,
+    });
+  };
+  const mp: Multiplayer = makeMp();
+  wire(mp);
   window.__amorfusNet = {
     host: () => mp.host(),
     join: (code: string) => mp.join(code),
@@ -198,6 +230,7 @@ export function runNetTestMode(): void {
     },
     closeLog: () => mp.session?.closeLog.map((c) => c.why) ?? [],
     rekey: () => mp.rekey(mp.session?.admitted() ?? []),
+    worldId: () => [...worldId].map((b) => b.toString(16).padStart(2, '0')).join(''),
   };
   statusLine('net test mode ready');
 }

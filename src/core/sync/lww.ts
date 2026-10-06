@@ -57,6 +57,12 @@ export class LwwStore {
     chunk.set(index, entry);
   }
 
+  /** Raw per-chunk view, UNSORTED — for cheap region-scoped reads.
+   *  Callers must not mutate it. */
+  rawChunk(chunkKey: number): ReadonlyMap<number, Entry> | undefined {
+    return this.chunks.get(chunkKey);
+  }
+
   get(chunkKey: number, index: number): Entry | undefined {
     return this.chunks.get(chunkKey)?.get(index);
   }

@@ -30,6 +30,10 @@ class LoopbackPeer implements Transport {
     this.hub.enqueue({ from: this.id, to: peerId, bytes, channel });
   }
 
+  canSend(peerId: string, channel: Channel): boolean {
+    return this.hub.canSend(this.id, peerId, channel);
+  }
+
   onMessage(cb: MessageCb): void {
     this.messageCbs.push(cb);
   }
@@ -59,6 +63,9 @@ export class LoopbackHub {
 
   /** Fault decision per frame; the simulator replaces this. */
   faults: (frame: Frame) => Fault = () => 'deliver';
+
+  /** Backpressure injection for tests; default: always ready. */
+  canSend: (from: string, to: string, channel: Channel) => boolean = () => true;
 
   join(id: string): Transport {
     if (this.members.has(id)) throw new Error(`duplicate peer id ${id}`);

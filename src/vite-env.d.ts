@@ -44,9 +44,23 @@ interface AmorfusNetHooks {
   getBlock: (x: number, y: number, z: number) => number;
   closeLog: () => string[];
   rekey: () => string;
+  worldId: () => string;
+}
+
+/** Loopback-only read/drive surface for production-path gate tests. */
+interface AmorfusGameHooks {
+  ready: () => boolean;
+  connected: () => number;
+  secret: () => string | null;
+  worldId: () => string;
+  blockAt: (x: number, y: number, z: number) => number | null;
+  edit: (x: number, y: number, z: number, value: number) => boolean;
+  player: () => [number, number, number];
 }
 
 interface Window {
+  __amorfusGame?: AmorfusGameHooks;
+  __scenarioA?: unknown;
   __amorfus?: AmorfusTestHooks;
   __amorfusNet?: AmorfusNetHooks;
   __amorfusCore?: AmorfusCoreHooks;

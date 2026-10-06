@@ -20,7 +20,17 @@ already refuses to emit a folder that breaks under an IPFS subpath
 ## Contracts that are easy to break
 
 - PLAN.md is the implementation contract; `docs/conflicts.md` is the living
-  conflict register. Check both before reopening a settled decision.
+  conflict register; `docs/build-decisions.md` records every build-time
+  ruling and what it costs if wrong. Check all three before reopening a
+  settled decision.
+- A test harness that bypasses production wiring proves nothing about the
+  product: both worst defects of the first build (a frozen player, joins
+  that always refused) passed a green gate that way. New behaviour needs a
+  test through `main.ts`, not only through a `#test=` mode.
+- The networking library's config is built in `src/net/room-config.ts` as
+  a literal typed against the library. Never spread untyped options into
+  it — an unknown key is silently ignored and the library falls back to
+  its own public relays.
 - Every asset reference goes through the module graph, relative only; no
   History API; no service worker; no localStorage/caches for world data
   (§13.3 — the lint enforces this).

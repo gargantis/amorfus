@@ -3,6 +3,9 @@
 // relaxed durability except imports and deletes (callers choose).
 import { openDB, type IDBPDatabase, type DBSchema } from 'idb';
 import { decodeChunkEntries } from '../core/codec/chunk-entries';
+import { CodecError } from '../core/codec/varint';
+import { isValidEntryShape } from '../core/sync/validate';
+import { Hlc } from '../core/sync/hlc';
 import type { IndexedEntry } from '../core/sync/lww';
 import { unpackChunkKey, packChunkKey } from '../core/world/coords';
 import type { HlcStamp } from '../core/sync/hlc';
@@ -67,6 +70,10 @@ export interface LoadedWorld {
   meta: WorldMeta;
   chunks: Map<number, IndexedEntry[]>;
   player?: unknown;
+  /** blobs that failed to decode and were skipped (never fatal) */
+  corruptChunks: number;
+  /** entries that failed the §11.3 structural check and were dropped */
+  droppedEntries: number;
 }
 
 export async function loadWorld(db: AmorfusDb, worldId: string): Promise<LoadedWorld | null> {
@@ -74,16 +81,84 @@ export async function loadWorld(db: AmorfusDb, worldId: string): Promise<LoadedW
   if (meta === undefined || meta.status !== 'ready') return null;
   const range = IDBKeyRange.bound([worldId, -Infinity, -Infinity, -Infinity], [worldId, Infinity, Infinity, Infinity]);
   const chunks = new Map<number, IndexedEntry[]>();
+  let corruptChunks = 0;
+  let droppedEntries = 0;
   let cursor = await db.transaction('chunks').store.openCursor(range);
   while (cursor !== null) {
     const [, cx, cy, cz] = cursor.key as [string, number, number, number];
-    chunks.set(packChunkKey(cx, cy, cz), decodeChunkEntries(cursor.value));
+    // §12.4: every read is untrusted (shared gateways share this origin's
+    // storage). A corrupt blob costs that chunk's edits, never the world.
+    try {
+      const key = packChunkKey(cx, cy, cz);
+      const decoded = decodeChunkEntries(cursor.value);
+      const valid = decoded.filter((e) => isValidEntryShape(key, e.index, e.value, e.l, e.peer));
+      droppedEntries += decoded.length - valid.length;
+      if (valid.length > 0) chunks.set(key, valid);
+    } catch (err) {
+      if (!(err instanceof CodecError) && !(err instanceof RangeError)) throw err;
+      corruptChunks += 1;
+    }
     cursor = await cursor.continue();
   }
   const player = await db.get('players', [worldId, 'local']);
-  const out: LoadedWorld = { meta, chunks };
+  const out: LoadedWorld = { meta, chunks, corruptChunks, droppedEntries };
   if (player !== undefined) out.player = player;
   return out;
+}
+
+/** §11.2 at open: entries stamped beyond now + 60 s (a fast clock during
+ *  offline play) are REPLACED with fresh local stamps in the same
+ *  relative order — no honest peer can have accepted them. Also reports
+ *  the largest stamp, so the HLC can be seeded at or above it
+ *  ("opening a world sets l ≥ the largest stored l"). Mutates `chunks`. */
+export function repairLoadedWorld(
+  chunks: Map<number, IndexedEntry[]>,
+  nowMs: number,
+): { repaired: number; repairedChunks: number[]; maxStamp: { l: number; c: number } } {
+  const limit = nowMs + 60_000;
+  const offenders: IndexedEntry[] = [];
+  const touched = new Set<number>();
+  for (const [key, entries] of chunks) {
+    for (const e of entries) {
+      if (e.l > limit) {
+        offenders.push(e);
+        touched.add(key);
+      }
+    }
+  }
+  offenders.sort(
+    (a, b) => a.l - b.l || a.c - b.c || (a.peer < b.peer ? -1 : a.peer > b.peer ? 1 : 0),
+  );
+  if (offenders.length > 0) {
+    const hlc = new Hlc();
+    const rnd = new BigUint64Array(1);
+    crypto.getRandomValues(rnd);
+    const peer = rnd[0]! | 1n;
+    for (const e of offenders) {
+      const stamp = hlc.send(nowMs);
+      e.l = stamp.l;
+      e.c = stamp.c;
+      e.peer = peer;
+    }
+    for (const key of touched) {
+      chunks.get(key)!.sort(
+        (a, b) =>
+          a.l - b.l || a.c - b.c ||
+          (a.peer < b.peer ? -1 : a.peer > b.peer ? 1 : 0) || a.index - b.index,
+      );
+    }
+  }
+  let maxL = 0;
+  let maxC = 0;
+  for (const entries of chunks.values()) {
+    for (const e of entries) {
+      if (e.l > maxL || (e.l === maxL && e.c > maxC)) {
+        maxL = e.l;
+        maxC = e.c;
+      }
+    }
+  }
+  return { repaired: offenders.length, repairedChunks: [...touched], maxStamp: { l: maxL, c: maxC } };
 }
 
 export async function listWorlds(db: AmorfusDb): Promise<WorldMeta[]> {

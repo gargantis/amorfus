@@ -24,6 +24,14 @@ describe('dirtyChunksForEdit', () => {
     expect(keys).toContain(packChunkKey(-1, 0, 1));
   });
 
+  it('includes the −side neighbour at the exact-touch alignment (review #9)', () => {
+    // v = 9: box [0, 19]; chunk −1's corner range [−32, 0] touches at 0,
+    // exactly as the +side single-point touch does.
+    expect(dirtyChunksForEdit(9, 16, 16)).toContain(packChunkKey(-1, 0, 0));
+    // v = 10: box [1, 20] no longer touches chunk −1.
+    expect(dirtyChunksForEdit(10, 16, 16)).toHaveLength(1);
+  });
+
   it('the reach is asymmetric: −9 vs +10', () => {
     // at local 22: 22+10 = 32 → touches the +x neighbour's corner range
     expect(dirtyChunksForEdit(22, 16, 16)).toHaveLength(2);

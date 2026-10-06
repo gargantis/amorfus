@@ -72,6 +72,58 @@ describe('db round trips (P7)', () => {
   });
 });
 
+describe('world open hygiene (review #6)', () => {
+  it('loadWorld drops structurally invalid entries (§12.4 untrusted read)', async () => {
+    const db = await freshDb();
+    const id = 'd'.repeat(32);
+    await saveWorldMeta(db, meta(id));
+    // A blob with a non-canonical value (0x1ff is canonical; 0x3ff is not
+    // encodable via makeBlock, craft at codec level: value=0x3ff > 9 bits)
+    const bad = encodeChunkEntries([
+      { index: 1, value: 0x1ff, l: 10, c: 0, peer: 1n },
+    ]);
+    // hand-corrupt the value bytes: set value to 0xffff
+    const corrupted = bad.slice();
+    corrupted[corrupted.length - 2] = 0xff;
+    corrupted[corrupted.length - 1] = 0xff;
+    await saveChunkBlob(db, id, K1, corrupted);
+    const loaded = await loadWorld(db, id);
+    expect(loaded).not.toBeNull();
+    expect(loaded!.chunks.get(K1) ?? []).toEqual([]);
+  });
+
+  it('loadWorld survives a corrupt blob without losing the world', async () => {
+    const db = await freshDb();
+    const id = 'e'.repeat(32);
+    await saveWorldMeta(db, meta(id));
+    await saveChunkBlob(db, id, K1, new Uint8Array([9, 9, 9]));
+    await saveChunkBlob(db, id, K2, encodeChunkEntries([e(0, 1, 5)]));
+    const loaded = await loadWorld(db, id);
+    expect(loaded).not.toBeNull();
+    expect(loaded!.chunks.has(K1)).toBe(false);
+    expect(loaded!.chunks.get(K2)).toHaveLength(1);
+  });
+
+  it('repairLoadedWorld restamps entries beyond now + 60 s (§11.2)', async () => {
+    const { repairLoadedWorld } = await import('./db');
+    const now = 1_000_000;
+    const chunks = new Map([
+      [K1, [e(1, 3, now + 10_000_000), e(2, 5, now + 10_000_001)]],
+      [K2, [e(0, 1, now - 5)]],
+    ]);
+    const result = repairLoadedWorld(chunks, now);
+    expect(result.repaired).toBe(2);
+    for (const entries of chunks.values()) {
+      for (const en of entries) expect(en.l).toBeLessThanOrEqual(now + 60_000);
+    }
+    // relative order of the two repaired entries preserved
+    const k1 = chunks.get(K1)!;
+    const a = k1.find((x) => x.index === 1)!;
+    const b = k1.find((x) => x.index === 2)!;
+    expect(a.l < b.l || (a.l === b.l && a.c < b.c)).toBe(true);
+  });
+});
+
 describe('version handling (§12.1)', () => {
   it('opening an older version where a newer exists → VersionError', async () => {
     const name = `amorfus-ver-${process.pid}-${dbCounter++}`;

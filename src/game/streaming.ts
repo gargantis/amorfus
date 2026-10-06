@@ -3,15 +3,16 @@
 // hint state on the main thread (the REMESH inputs), budgets GPU uploads
 // per frame, and unloads beyond R + 32.
 import { MeshWorkerPool, PRIORITY, serializeEdits } from './worker-pool';
+import type { JobStatus } from './worker-pool';
 import type { MeshResponse } from '../workers/gen-mesh.worker';
 import type { Renderer } from '../render/renderer';
 import { pickUploadBatch, type UploadItem } from '../render/upload-budget';
 import { CHUNK, packChunkKey } from '../core/world/coords';
 import type { NeighborChunk } from '../core/mesh/assemble';
 import type { EditsByChunk } from '../core/mesh/gen-mesh';
+import { chunkBandFor } from './streaming-band';
 
-const CY_MIN = -2;
-const CY_MAX = 4;
+
 const UPLOAD_BYTES_PER_FRAME = 2 * 1024 * 1024;
 const UPLOAD_MS_PER_FRAME = 1.5;
 
@@ -33,7 +34,7 @@ export class Streaming {
   readonly pool: MeshWorkerPool;
   private renderer: Renderer;
   private seed: [number, number];
-  private editsProvider: () => EditsByChunk;
+  private editsProvider: (cx: number, cy: number, cz: number) => EditsByChunk;
   private states = new Map<number, 'queued' | 'ready'>();
   readonly chunks = new Map<number, ChunkRecord>();
   private uploads: PendingUpload[] = [];
@@ -46,7 +47,7 @@ export class Streaming {
     renderer: Renderer,
     seed: [number, number],
     viewRadius: number,
-    editsProvider: () => EditsByChunk = () => new Map(),
+    editsProvider: (cx: number, cy: number, cz: number) => EditsByChunk = () => new Map(),
   ) {
     this.renderer = renderer;
     this.seed = seed;
@@ -62,7 +63,8 @@ export class Streaming {
   update(cameraPos: readonly [number, number, number]): void {
     const ccx = Math.floor(cameraPos[0] / CHUNK);
     const ccz = Math.floor(cameraPos[2] / CHUNK);
-    const cameraChunk = ccx * 1e6 + ccz;
+    const ccy = Math.floor(cameraPos[1] / CHUNK);
+    const cameraChunk = (ccx * 4096 + ccz) * 64 + (ccy + 16);
     if (cameraChunk !== this.lastCameraChunk) {
       this.lastCameraChunk = cameraChunk;
       this.replan(ccx, ccz, cameraPos);
@@ -73,13 +75,41 @@ export class Streaming {
     }
   }
 
+  private requestChunk(cx: number, cy: number, cz: number, key: number, dist: number): void {
+    this.pool.request(
+      key,
+      () => ({
+        type: 'gen_mesh' as const,
+        key,
+        seed: this.seed,
+        cx,
+        cy,
+        cz,
+        // Built at DISPATCH time with only the region's edits (review #3/#7).
+        edits: serializeEdits(this.editsProvider(cx, cy, cz)),
+      }),
+      dist <= 1 ? PRIORITY.PHYSICS : PRIORITY.FRUSTUM,
+      dist,
+      (res, status) => this.onMesh(cx, cy, cz, key, dist, res, status),
+    );
+  }
+
+  /** Review #7: an edit touched a chunk we track but have not meshed —
+   *  make sure a fresh job runs (the old one was invalidated). */
+  requeueIfKnown(key: number): void {
+    if (this.states.get(key) !== 'queued') return;
+    const { cx, cy, cz } = unpackFull(key);
+    this.requestChunk(cx, cy, cz, key, 0);
+  }
+
   private replan(ccx: number, ccz: number, cameraPos: readonly [number, number, number]): void {
     const cr = Math.ceil(this.viewRadius / CHUNK);
+    const [cyLo, cyHi] = chunkBandFor(cameraPos[1]);
     const wanted = new Set<number>();
     for (let dz = -cr; dz <= cr; dz++) {
       for (let dx = -cr; dx <= cr; dx++) {
         if (dx * dx + dz * dz > cr * cr + 1) continue;
-        for (let cy = CY_MIN; cy <= CY_MAX; cy++) {
+        for (let cy = cyLo; cy <= cyHi; cy++) {
           let key: number;
           try {
             key = packChunkKey(ccx + dx, cy, ccz + dz);
@@ -90,21 +120,7 @@ export class Streaming {
           if (this.states.has(key)) continue;
           this.states.set(key, 'queued');
           const dist = dx * dx + dz * dz;
-          this.pool.request(
-            key,
-            {
-              type: 'gen_mesh',
-              key,
-              seed: this.seed,
-              cx: ccx + dx,
-              cy,
-              cz: ccz + dz,
-              edits: serializeEdits(this.editsProvider()),
-            },
-            dist <= 1 ? PRIORITY.PHYSICS : PRIORITY.FRUSTUM,
-            dist,
-            (res, stale) => this.onMesh(res, stale),
-          );
+          this.requestChunk(ccx + dx, cy, ccz + dz, key, dist);
         }
       }
     }
@@ -131,8 +147,18 @@ export class Streaming {
     });
   }
 
-  private onMesh(res: MeshResponse, stale: boolean): void {
-    if (stale || !this.states.has(res.key)) return; // unloaded or superseded
+  private onMesh(
+    cx: number, cy: number, cz: number, key: number, dist: number,
+    res: MeshResponse | null, status: JobStatus,
+  ): void {
+    if (!this.states.has(key)) return; // unloaded
+    if (status === 'cancelled') return;
+    if (status === 'stale' || res === null) {
+      // Invalidated mid-flight (an edit landed): run again with the
+      // current edit state (review #7).
+      this.requestChunk(cx, cy, cz, key, dist);
+      return;
+    }
     if (res.storage !== undefined && res.hints !== undefined) {
       this.chunks.set(res.key, {
         storage: res.storage,
@@ -174,6 +200,16 @@ export class Streaming {
       }
     }
   }
+}
+
+function unpackFull(key: number): { cx: number; cy: number; cz: number } {
+  const CY_SPAN = 24;
+  const CX_SPAN = 2 ** 19;
+  const cy = (key % CY_SPAN) - 8;
+  const rest = Math.floor(key / CY_SPAN);
+  const cz = (rest % CX_SPAN) - 2 ** 18;
+  const cx = Math.floor(rest / CX_SPAN) - 2 ** 18;
+  return { cx, cy, cz };
 }
 
 function unpack(key: number): { cx: number; cz: number } {

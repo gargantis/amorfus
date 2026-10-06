@@ -6,6 +6,7 @@
 // across rooms and keeps it ~123 s after leaving.
 import { joinRoom, getRelaySockets, selfId } from '@trystero-p2p/nostr';
 import type { Transport, Channel } from './transport';
+import { buildRoomConfig } from './room-config';
 import thirdParty from '../../third-party.json';
 
 export interface TrysteroOptions {
@@ -50,11 +51,11 @@ export class TrysteroTransport implements Transport {
   constructor(opts: TrysteroOptions) {
     this.epoch = opts.epoch >>> 0;
     this.room = joinRoom(
-      {
+      buildRoomConfig({
         appId: opts.appId,
-        ...(opts.relayUrls !== undefined ? { relayUrls: opts.relayUrls } : {}),
-        rtcConfig: opts.rtcConfig ?? { iceServers: STUN_SERVERS },
-      },
+        relayUrls: opts.relayUrls ?? CURATED_RELAYS,
+        iceServers: opts.rtcConfig?.iceServers ?? STUN_SERVERS,
+      }),
       opts.roomId,
     );
     const action = this.room.makeAction<Uint8Array>('amf', {
@@ -120,7 +121,19 @@ export class TrysteroTransport implements Transport {
     framed[2] = (this.epoch >> 16) & 0xff;
     framed[3] = (this.epoch >> 24) & 0xff;
     framed.set(bytes, 4);
-    dc.send(framed);
+    try {
+      dc.send(framed);
+    } catch {
+      // buffer full or closing: the session's pacing + anti-entropy retry
+    }
+  }
+
+  /** Backpressure for the session's paced bulk queue (review #13). */
+  canSend(peerId: string, channel: Channel): boolean {
+    if (channel === 'action') return true;
+    const pair = this.channels.get(peerId);
+    const dc = channel === 'bulk' ? pair?.bulk : pair?.pos;
+    return dc !== undefined && dc.readyState === 'open' && dc.bufferedAmount < 1024 * 1024;
   }
 
   onMessage(cb: (from: string, bytes: Uint8Array, channel: Channel) => void): void {
@@ -141,6 +154,16 @@ export class TrysteroTransport implements Transport {
 
   leave(): void {
     void this.room.leave();
+  }
+
+  /** Leave and wait (bounded) for the goodbye to flush, so peers drop us
+   *  promptly instead of waiting out an ICE timeout — used right before a
+   *  reload. */
+  async leaveAndFlush(maxMs = 600): Promise<void> {
+    await Promise.race([
+      this.room.leave().catch(() => void 0),
+      new Promise<void>((resolve) => setTimeout(resolve, maxMs)),
+    ]);
   }
 
   /** "n/6 signaling relays reachable" (§10.4). */
