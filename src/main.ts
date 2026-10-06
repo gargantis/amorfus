@@ -16,7 +16,10 @@ import type { TriangleSource, ChunkTriangles } from './core/physics/collision';
 import { scenarioA, summarise } from './game/scenario-a';
 import { AIR, materialOf, isSharp } from './core/world/block';
 import { WorldSession, LockBusyError } from './game/world-session';
-import { runCoreMode, runHandoffSender, runHandoffReceiver } from './game/core-mode';
+import { Multiplayer } from './net/multiplayer';
+import { formatSecret } from './net/secret';
+import thirdPartyJson from '../third-party.json';
+import { runCoreMode, runHandoffSender, runHandoffReceiver, runNetTestMode } from './game/core-mode';
 import type { PlayerSave } from './game/player-save';
 import { generateChunk, heightAt } from './core/gen/v1/index';
 import { CHUNK, packChunkKey } from './core/world/coords';
@@ -51,6 +54,10 @@ async function start(): Promise<void> {
   }
   if (hash.get('test') === 'handoff-receiver') {
     await runHandoffReceiver();
+    return;
+  }
+  if (hash.get('test') === 'net') {
+    runNetTestMode();
     return;
   }
 
@@ -103,6 +110,7 @@ async function start(): Promise<void> {
   let streaming: Streaming | null = null;
   let editManager: EditManager | null = null;
   let worldSession: WorldSession | null = null;
+  let multiplayer: Multiplayer | null = null;
   if (GALLERY) {
     setupGallery(renderer);
   } else if (SWATCH) {
@@ -249,6 +257,155 @@ async function start(): Promise<void> {
       menu.appendChild(statusLine);
       overlay.firstElementChild?.appendChild(menu);
     }
+    // ---- §10 network panel ----
+    if (editManager !== null) {
+      const em = editManager;
+      const worldIdBytes = new Uint8Array(16);
+      const widHex = worldSession?.meta.worldId ?? '00'.repeat(16);
+      for (let i = 0; i < 16; i++) worldIdBytes[i] = parseInt(widHex.slice(i * 2, i * 2 + 2), 16);
+      multiplayer = new Multiplayer({
+        editManager: em,
+        seed: worldSession?.meta.seed ?? SEED,
+        worldId: worldIdBytes,
+        name: 'player',
+        color: Math.floor(Math.random() * 8),
+      });
+      multiplayer.getPose = () => ({
+        position: [...player.position] as [number, number, number],
+        velocity: [...player.velocity] as [number, number, number],
+        yaw: camera.yaw,
+        pitch: camera.pitch,
+        flying: player.flying,
+        held: 1,
+      });
+
+      const net = document.createElement('div');
+      net.id = 'net-menu';
+      net.style.cssText =
+        'margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;font:13px system-ui;';
+      const netStatus = document.createElement('div');
+      netStatus.style.cssText = 'width:100%;text-align:center;opacity:.8;margin-top:4px;';
+      const nbtn = (label: string, fn: () => void): HTMLButtonElement => {
+        const b = document.createElement('button');
+        b.textContent = label;
+        b.style.cssText =
+          'padding:6px 10px;border-radius:6px;border:1px solid #567;background:#15202b;color:#dde;cursor:pointer;';
+        b.onclick = (e) => {
+          e.stopPropagation();
+          fn();
+        };
+        net.appendChild(b);
+        return b;
+      };
+      // §10.4: the disclosure sheet appears before the FIRST Host or Join.
+      const privacyOk = async (): Promise<boolean> => {
+        if (worldSession !== null && (await worldSession.db.get('kv', 'privacy-ack')) === true) return true;
+        const list = (thirdPartyJson as Array<{ kind: string; host: string; operator: string; sees: string }>)
+          .filter((e) => e.kind === 'signaling' || e.kind === 'stun')
+          .map((e) => `• ${e.host} (${e.operator}) sees: ${e.sees}`)
+          .join('\n');
+        const ok = confirm(`Hosting or joining contacts these third parties:\n\n${list}\n\nContinue?`);
+        if (ok && worldSession !== null) await worldSession.db.put('kv', true, 'privacy-ack');
+        return ok;
+      };
+      nbtn('Host world', () => {
+        void privacyOk().then((ok) => {
+          if (!ok || multiplayer === null) return;
+          const secret = multiplayer.host();
+          const link = `${location.href.split('#')[0]}#join=${secret}`;
+          netStatus.textContent = `code ${formatSecret(secret)} — link copied`;
+          void navigator.clipboard?.writeText(link).catch(() => void 0);
+        });
+      });
+      nbtn('Join…', () => {
+        void privacyOk().then((ok) => {
+          if (!ok || multiplayer === null) return;
+          const code = prompt('Join code (21 characters):');
+          if (code === null) return;
+          if (!multiplayer.join(code)) netStatus.textContent = 'that code is not valid';
+        });
+      });
+      nbtn('New invite link', () => {
+        if (multiplayer?.session === null || multiplayer === null) return;
+        const next = multiplayer.rekey(multiplayer.session?.admitted() ?? []);
+        netStatus.textContent = `rekeyed — new code ${formatSecret(next)}`;
+      });
+      nbtn('Leave', () => {
+        multiplayer?.leave();
+        netStatus.textContent = 'left the room';
+      });
+      multiplayer.onStatus = (t) => {
+        netStatus.textContent = t;
+      };
+      setInterval(() => {
+        if (multiplayer === null || multiplayer.secret === null) return;
+        const rh = multiplayer.relayHealth();
+        netStatus.textContent =
+          `${multiplayer.connected + 1}/8 players · ${rh.open}/${rh.total || 6} relays` +
+          (multiplayer.secret !== null ? ` · code ${formatSecret(multiplayer.secret)}` : '');
+      }, 2000);
+      net.appendChild(netStatus);
+      overlay.firstElementChild?.appendChild(net);
+
+      // §10.4/D-12: TURN and user relays, persisted only where the
+      // classifier row allows AND no foreign service worker controls us.
+      const mayPersist =
+        worldSession !== null &&
+        worldSession.originClass.secretsMayPersist &&
+        navigator.serviceWorker?.controller == null;
+      const settings = document.createElement('div');
+      settings.style.cssText = 'width:100%;display:grid;gap:4px;margin-top:6px;';
+      const mkInput = (placeholder: string, kvKey: string, apply: (v: string) => void): void => {
+        const el = document.createElement('input');
+        el.placeholder = placeholder;
+        el.style.cssText = 'font:12px monospace;padding:4px;background:#101820;color:#dde;border:1px solid #345;border-radius:4px;';
+        el.onclick = (e) => e.stopPropagation();
+        el.onchange = () => {
+          apply(el.value);
+          if (mayPersist && worldSession !== null) void worldSession.db.put('kv', el.value, kvKey);
+        };
+        if (worldSession !== null) {
+          void worldSession.db.get('kv', kvKey).then((v) => {
+            if (typeof v === 'string' && v !== '' && mayPersist) {
+              el.value = v;
+              apply(v);
+            }
+          });
+        }
+        settings.appendChild(el);
+      };
+      mkInput('extra relays: wss://…, wss://…', 'user-relays', (v) => {
+        if (multiplayer !== null) {
+          multiplayer.extraRelays = v.split(',').map((r) => r.trim()).filter((r) => r.startsWith('wss://'));
+        }
+      });
+      mkInput('TURN: turn:host:port,user,credential', 'turn-server', (v) => {
+        const [urls, username, credential] = v.split(',').map((x) => x.trim());
+        if (multiplayer !== null) {
+          multiplayer.turn =
+            urls !== undefined && urls.startsWith('turn') && username !== undefined && credential !== undefined
+              ? { urls, username, credential }
+              : null;
+        }
+      });
+      net.appendChild(settings);
+
+      // §10.2: a #join= link joins after the privacy sheet; §10.1: link-
+      // carried relay hints (&r=) are shown and confirmed before use.
+      const joinFromLink = hash.get('join');
+      if (joinFromLink !== null) {
+        const hinted = (hash.get('r') ?? '').split(',').map((r) => r.trim()).filter((r) => r.startsWith('wss://'));
+        void privacyOk().then((ok) => {
+          if (!ok || multiplayer === null) return;
+          if (hinted.length > 0) {
+            const accept = confirm(`This link also suggests signaling relays:\n${hinted.join('\n')}\n\nUse them for this session?`);
+            if (accept) multiplayer.extraRelays = [...multiplayer.extraRelays, ...hinted];
+          }
+          multiplayer.join(joinFromLink);
+        });
+      }
+    }
+
     document.body.appendChild(overlay);
     input.onPauseChange = (paused) => {
       if (overlay) overlay.style.display = paused ? 'flex' : 'none';
@@ -412,14 +569,20 @@ async function start(): Promise<void> {
           -Math.cos(camera.yaw) * Math.cos(camera.pitch),
         ];
         const hit = pickRay(source, camera.position, dir, PLAYER.reach);
+        const verts: number[] = [];
         if (hit !== null) {
-          const verts: number[] = [];
           cubeLines(verts, hit.solidBlock, camera.position, [1, 0.95, 0.4, 1]);
           cubeLines(verts, hit.airBlock, camera.position, [1, 1, 1, 0.35]);
-          renderer.setLines(new Float32Array(verts));
-        } else {
-          renderer.setLines(new Float32Array(0));
         }
+        // remote avatars (§11.6): wireframe player boxes, not solid
+        if (multiplayer !== null) {
+          for (const avatar of multiplayer.avatars.values()) {
+            const sample = avatar.sample(performance.now());
+            if (sample === null) continue;
+            avatarLines(verts, sample.position, camera.position, [0.4, 0.9, 1, 1]);
+          }
+        }
+        renderer.setLines(new Float32Array(verts));
       }
     }
 
@@ -505,6 +668,29 @@ function buildSwatchScene(renderer: Renderer): void {
 }
 
 export type { MeshParams };
+
+/** A remote player's 0.6×1.8 wireframe box (§11.6: avatars are not solid). */
+function avatarLines(
+  out: number[],
+  feet: readonly [number, number, number],
+  cam: readonly [number, number, number],
+  color: [number, number, number, number],
+): void {
+  const r = 0.3;
+  const x0 = feet[0] - r - cam[0];
+  const y0 = feet[1] - cam[1];
+  const z0 = feet[2] - r - cam[2];
+  const C = [
+    [x0, y0, z0], [x0 + 2 * r, y0, z0], [x0 + 2 * r, y0, z0 + 2 * r], [x0, y0, z0 + 2 * r],
+    [x0, y0 + 1.8, z0], [x0 + 2 * r, y0 + 1.8, z0], [x0 + 2 * r, y0 + 1.8, z0 + 2 * r], [x0, y0 + 1.8, z0 + 2 * r],
+  ] as const;
+  const E = [
+    [0, 1], [1, 2], [2, 3], [3, 0],
+    [4, 5], [5, 6], [6, 7], [7, 4],
+    [0, 4], [1, 5], [2, 6], [3, 7],
+  ] as const;
+  for (const [a, b] of E) out.push(...C[a]!, ...color, ...C[b]!, ...color);
+}
 
 /** 12 cube edges as camera-relative line-list vertices. */
 function cubeLines(

@@ -53,6 +53,8 @@ export class EditManager {
   readonly sessionId: bigint;
   /** storage hook: fired with the chunk key of every applied edit */
   onEdit: ((chunkKey: number) => void) | null = null;
+  /** network hook (M7): fired with every LOCAL entry for broadcast */
+  onLocalEntry: ((chunkKey: number, index: number, entry: Entry) => void) | null = null;
   private streaming: Streaming;
   private renderer: Renderer;
   private seed: [number, number];
@@ -108,6 +110,31 @@ export class EditManager {
     return out;
   }
 
+  /** A remote entry (M7): LWW-apply, refresh the voxel cache, and remesh
+   *  at P1. Returns true when the entry won. */
+  applyRemoteEntry(chunkKey: number, index: number, entry: Entry): boolean {
+    const won = this.edits.apply(chunkKey, index, entry);
+    if (!won) return false;
+    const rec = this.streaming.chunks.get(chunkKey);
+    if (rec !== undefined) {
+      if (rec.storage.kind === 'uniform') {
+        const blocks = new Uint16Array(CHUNK ** 3).fill(rec.storage.value);
+        rec.storage = { kind: 'dense', blocks };
+      }
+      rec.storage.blocks[index] = entry.value;
+    }
+    this.onEdit?.(chunkKey);
+    const { cx, cy, cz } = unpackKey(chunkKey);
+    const lx = index % CHUNK;
+    const lz = Math.floor(index / CHUNK) % CHUNK;
+    const ly = Math.floor(index / (CHUNK * CHUNK));
+    this.dispatchTransaction(
+      dirtyChunksForEdit(cx * CHUNK + lx, cy * CHUNK + ly, cz * CHUNK + lz),
+      PRIORITY.REMOTE_EDIT,
+    );
+    return won;
+  }
+
   /** A local edit (§6.3 no-op rule applies). Returns the entry or null. */
   apply(x: number, y: number, z: number, value: number): Entry | null {
     const current = this.blockAt(x, y, z);
@@ -130,6 +157,7 @@ export class EditManager {
     }
 
     this.onEdit?.(key);
+    this.onLocalEntry?.(key, index, entry);
     this.dispatchTransaction(dirtyChunksForEdit(x, y, z), PRIORITY.LOCAL_EDIT);
     return entry;
   }

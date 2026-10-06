@@ -2,7 +2,7 @@
 // No timers of its own: the driver calls tick(), so tests and the
 // convergence simulator own time completely.
 import type { Transport, Channel } from '../../net/transport';
-import { WorldStore } from '../world/world-store';
+import type { LwwStore } from './lww';
 import type { Hlc } from './hlc';
 import type { Entry } from './lww';
 import { isCanonical } from '../world/block';
@@ -33,12 +33,25 @@ const PEERS_GOSSIP_MS = 5_000;
 const BULK_ENTRY_CAP = 4e6; // D-23
 const PART_BYTES = MAX_MESSAGE_BYTES - 16;
 
+/** What the session needs from the world — WorldStore satisfies it, and
+ *  the game supplies an adapter over its streamed caches. */
+export interface SessionWorld {
+  readonly seed: readonly [number, number];
+  readonly edits: LwwStore;
+  applyRemote(chunkKey: number, index: number, entry: Entry): boolean;
+  localEdit(
+    x: number, y: number, z: number,
+    value: number, stamp: { l: number; c: number }, peer: bigint,
+  ): Entry | null;
+  locate(x: number, y: number, z: number): { chunkKey: number; index: number };
+}
+
 export interface SessionConfig {
   protocolVersion: number;
   sessionId: bigint;
   name: string;
   color: number;
-  world: WorldStore;
+  world: SessionWorld;
   worldId: Uint8Array;
   generatorVersion: number;
   genCanary: number;
@@ -90,6 +103,10 @@ export class Session {
 
   onRefused: ((reason: RefuseReason) => void) | null = null;
   onSkewWarning: ((sessionId: bigint) => void) | null = null;
+  /** POS frames (pos channel, §11.6): raw 31-byte payloads. */
+  onPos: ((from: string, payload: Uint8Array) => void) | null = null;
+  /** REKEY (§10.2): the new secret, from a directly connected peer. */
+  onRekey: ((from: string, newSecret: string) => void) | null = null;
   /** Why each connection closed — for tests and the M7 failure UX. */
   readonly closeLog: Array<{ peer: string; why: string }> = [];
 
@@ -149,6 +166,16 @@ export class Session {
         },
       }),
       'action',
+    );
+  }
+
+  /** Broadcast an entry the game already applied locally (M7 glue). */
+  broadcastLocalEntry(chunkKey: number, index: number, entry: Entry): void {
+    this.markDirty(chunkKey);
+    this.broadcastEdits(
+      [{ chunkKey, index, value: entry.value, l: entry.l, c: entry.c, peer: entry.peer }],
+      this.cfg.sessionId,
+      null,
     );
   }
 
@@ -453,6 +480,25 @@ export class Session {
     return this.rootCache;
   }
 
+  /** Send a POS payload to every admitted peer on the pos channel. */
+  sendPos(payload: Uint8Array): void {
+    const framed = new Uint8Array(1 + payload.byteLength);
+    framed[0] = MSG.POS;
+    framed.set(payload, 1);
+    for (const tid of this.peersByTransport.keys()) this.transport.send(tid, framed, 'pos');
+  }
+
+  /** §10.2 REKEY: directly (never forwarded) to the ticked peers. */
+  sendRekey(newSecret: string, toTransportIds: readonly string[]): void {
+    const body = new TextEncoder().encode(newSecret);
+    const framed = new Uint8Array(1 + body.byteLength);
+    framed[0] = MSG.REKEY;
+    framed.set(body, 1);
+    for (const tid of toTransportIds) {
+      if (this.peersByTransport.has(tid)) this.transport.send(tid, framed, 'action');
+    }
+  }
+
   async rootHex(): Promise<string> {
     return this.root();
   }
@@ -549,6 +595,17 @@ export class Session {
       case MSG.CHUNK_ENTRIES:
         this.handleChunkEntries(frame.from, frame.bytes);
         break;
+      case MSG.POS:
+        if (this.peersByTransport.has(frame.from)) {
+          this.onPos?.(frame.from, frame.bytes.subarray(1));
+        }
+        break;
+      case MSG.REKEY: {
+        if (!this.peersByTransport.has(frame.from)) break;
+        const text = new TextDecoder().decode(frame.bytes.subarray(1));
+        this.onRekey?.(frame.from, text);
+        break;
+      }
       default:
         throw new CodecError(`unknown message type ${type}`);
     }

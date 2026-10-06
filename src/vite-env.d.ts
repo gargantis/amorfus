@@ -33,8 +33,22 @@ interface AmorfusHandoffState {
   nonce?: string;
 }
 
+interface AmorfusNetHooks {
+  host: () => string;
+  join: (code: string) => boolean;
+  leave: () => void;
+  connected: () => number;
+  secret: () => string | null;
+  avatars: () => number;
+  applyEdit: (x: number, y: number, z: number, value: number) => void;
+  getBlock: (x: number, y: number, z: number) => number;
+  closeLog: () => string[];
+  rekey: () => string;
+}
+
 interface Window {
   __amorfus?: AmorfusTestHooks;
+  __amorfusNet?: AmorfusNetHooks;
   __amorfusCore?: AmorfusCoreHooks;
   __amorfusHandoff?: AmorfusHandoffState;
   __amorfusBootReady?: () => void;

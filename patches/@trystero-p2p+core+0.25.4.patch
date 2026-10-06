@@ -1,0 +1,62 @@
+diff --git a/node_modules/@trystero-p2p/core/dist/action-wire.mjs b/node_modules/@trystero-p2p/core/dist/action-wire.mjs
+index 06dc2fb..e8dac4c 100644
+--- a/node_modules/@trystero-p2p/core/dist/action-wire.mjs
++++ b/node_modules/@trystero-p2p/core/dist/action-wire.mjs
+@@ -47,6 +47,10 @@ const createActionWireManager = ({ getPeer, getPeerIds, canReceiveFromPeer, thro
+ 	const actionsCache = {};
+ 	const pendingTransmissions = {};
+ 	const pendingActionPayloads = {};
++	/* amorfus patch (PLAN §10.1): cap pending reassembly at ~64 KiB/peer */
++	const pendingBytes = {};
++	const pendingByteCap = 64 * 1024;
++	const debugPending = (globalThis.__amfPendingBytes ??= {});
+ 	const iterate = (targets, f, { includePending = false } = {}) => (targets ? Array.isArray(targets) ? targets : [targets] : getPeerIds(includePending)).flatMap((id) => {
+ 		const peer = getPeer(id, includePending);
+ 		if (!peer) {
+@@ -143,6 +147,9 @@ const createActionWireManager = ({ getPeer, getPeerIds, canReceiveFromPeer, thro
+ 		const buffer = new Uint8Array(data);
+ 		const type = decodeBytes(buffer.subarray(typeIndex, nonceIndex)).replaceAll("\0", "");
+ 		const action = actions[type];
++		/* amorfus patch (PLAN §10.1): drop payloads of unregistered types —
++		   stock trystero keeps them forever in pendingActionPayloads */
++		if (!action) return;
+ 		if (!canReceiveFromPeer(id, Boolean(action?.options.receiveWhilePending))) return;
+ 		const nonce = (buffer[nonceIndex] ?? 0) << 8 | (buffer[33] ?? 0);
+ 		const tag = buffer[tagIndex] ?? 0;
+@@ -156,7 +163,18 @@ const createActionWireManager = ({ getPeer, getPeerIds, canReceiveFromPeer, thro
+ 		pendingTransmissions[id][type] ??= {};
+ 		const target = pendingTransmissions[id][type][nonce] ??= { chunks: [] };
+ 		if (isMeta) target.meta = fromJson(decodeBytes(payload));
+-		else target.chunks.push(payload);
++		else {
++			/* amorfus patch (PLAN §10.1): account and cap per-peer buffering */
++			pendingBytes[id] = (pendingBytes[id] ?? 0) + payload.byteLength;
++			debugPending[id] = pendingBytes[id];
++			if (pendingBytes[id] > pendingByteCap) {
++				delete pendingTransmissions[id];
++				pendingBytes[id] = 0;
++				debugPending[id] = 0;
++				return;
++			}
++			target.chunks.push(payload);
++		}
+ 		action?.onProgress(progress / oneByteMax, id, target.meta);
+ 		if (!isLast) return;
+ 		const full = new Uint8Array(target.chunks.reduce((a, c) => a + c.byteLength, 0));
+@@ -164,6 +182,8 @@ const createActionWireManager = ({ getPeer, getPeerIds, canReceiveFromPeer, thro
+ 			full.set(c, a);
+ 			return a + c.byteLength;
+ 		}, 0);
++		pendingBytes[id] = Math.max(0, (pendingBytes[id] ?? 0) - full.byteLength);
++		debugPending[id] = pendingBytes[id];
+ 		delete pendingTransmissions[id][type][nonce];
+ 		const payloadValue = isBinary ? full : isJson ? fromJson(decodeBytes(full)) : decodeBytes(full);
+ 		if (action) {
+@@ -181,6 +201,7 @@ const createActionWireManager = ({ getPeer, getPeerIds, canReceiveFromPeer, thro
+ 		handleData,
+ 		clearPeer: (id) => {
+ 			delete pendingTransmissions[id];
++			delete pendingBytes[id];
+ 		}
+ 	};
+ };

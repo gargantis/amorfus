@@ -9,6 +9,9 @@ import { chunkOfCell, packChunkKey, localIndex, CHUNK } from '../core/world/coor
 import { parseHandoffHash, handoffTargetAllowed, postHandoff, type HandoffFile } from '../storage/handoff';
 import { exportWorld } from '../storage/import-export';
 import { listWorlds } from '../storage/db';
+import { LwwStore as NetLww } from '../core/sync/lww';
+import { Multiplayer, type EditLike } from '../net/multiplayer';
+import type { Entry } from '../core/sync/lww';
 
 function statusLine(text: string): void {
   const el = document.getElementById('fallback-title');
@@ -123,4 +126,78 @@ export async function runHandoffReceiver(): Promise<void> {
   const popup = open(url, 'amorfus-handoff');
   statusLine(popup === null ? 'popup blocked' : 'receiver waiting for the sender popup…');
   await Promise.resolve();
+}
+
+
+/** §14 networking tests, renderer-free (#test=net). Test overrides
+ *  (local relay, no ICE, blocked pair) are honoured on loopback hosts
+ *  only. */
+export function runNetTestMode(): void {
+  const loopback =
+    location.hostname === 'localhost' ||
+    location.hostname.endsWith('.localhost') ||
+    location.hostname === '127.0.0.1';
+  if (!loopback) {
+    statusLine('net test mode is loopback-only');
+    return;
+  }
+  const hash = new URLSearchParams(location.hash.replace(/^#/, ''));
+  const relays = hash.get('relays')?.split(',') ?? [];
+  const blockNthRaw = hash.get('blockNth');
+
+  const edits = new NetLww();
+  const hlc = new Hlc();
+  const rnd = new BigUint64Array(1);
+  crypto.getRandomValues(rnd);
+  const editLike: EditLike = {
+    edits,
+    hlc,
+    sessionId: rnd[0]! | 1n,
+    applyRemoteEntry: (chunkKey, index, entry) => edits.apply(chunkKey, index, entry),
+    onLocalEntry: null,
+  };
+  const mp = new Multiplayer({
+    editManager: editLike,
+    seed: [1, 1],
+    worldId: new Uint8Array(16).fill(1),
+    name: `n${Math.floor(Math.random() * 100)}`,
+    color: 1,
+    relayOverride: relays.length > 0 ? relays : undefined,
+    noIce: hash.get('ice') === 'none',
+    blockNth: blockNthRaw !== null ? Number(blockNthRaw) : undefined,
+  });
+  mp.getPose = () => ({
+    position: [Math.random() * 4, 40, 0],
+    velocity: [0, 0, 0],
+    yaw: 0,
+    pitch: 0,
+    flying: true,
+    held: 1,
+  });
+  window.__amorfusNet = {
+    host: () => mp.host(),
+    join: (code: string) => mp.join(code),
+    leave: () => mp.leave(),
+    connected: () => mp.connected,
+    secret: () => mp.secret,
+    avatars: () => mp.avatars.size,
+    applyEdit: (x: number, y: number, z: number, value: number): void => {
+      const { cx, cy, cz } = chunkOfCell(x, y, z);
+      const key = packChunkKey(cx, cy, cz);
+      const index = localIndex(x - cx * CHUNK, y - cy * CHUNK, z - cz * CHUNK);
+      const stamp = hlc.send(Date.now());
+      const entry: Entry = { value, l: stamp.l, c: stamp.c, peer: editLike.sessionId };
+      edits.apply(key, index, entry);
+      mp.session?.broadcastLocalEntry(key, index, entry);
+    },
+    getBlock: (x: number, y: number, z: number): number => {
+      const { cx, cy, cz } = chunkOfCell(x, y, z);
+      const key = packChunkKey(cx, cy, cz);
+      const index = localIndex(x - cx * CHUNK, y - cy * CHUNK, z - cz * CHUNK);
+      return edits.get(key, index)?.value ?? -1;
+    },
+    closeLog: () => mp.session?.closeLog.map((c) => c.why) ?? [],
+    rekey: () => mp.rekey(mp.session?.admitted() ?? []),
+  };
+  statusLine('net test mode ready');
 }

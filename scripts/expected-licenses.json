@@ -1,1 +1,1 @@
-["wgpu-matrix", "idb"]
+["wgpu-matrix", "idb", "@trystero-p2p/core", "@trystero-p2p/nostr", "@noble/secp256k1"]
