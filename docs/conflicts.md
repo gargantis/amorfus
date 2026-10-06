@@ -15,7 +15,7 @@ records what settled it. Full problem statements and evidence stay in
 | C-6 | Major | "60 fps on mid-range hardware" not testable as written | Open — settled by **M2 measurement** into `docs/acceptance.md` (device D-1, scenarios A/B, frame-time criteria). |
 | C-7 | Major | Block data alone cannot smooth gentle slopes | **Open** — accepted limitation for hand-built terrain (terrace stays; D-4). Generated terrain uses hints. |
 | C-8 | Major | Smoothing fights single-block editability | Open — settled by **M3 sign-off** (guard, sharp toggle, picking UX, gallery). |
-| C-9 | Major | Smooth collision shrinks block-sized openings | Open — settled by **M3 measurement** (D-3 clearance zone; gate tests). |
+| C-9 | Major | Smooth collision shrinks block-sized openings | **Settled by M5 measurement (2026-10-05):** the three D-3 gate tests pass in the physics battery (tunnel walk-through, roof at hint phases, 1-wide gap); clearance caps 0.15/0.05 as planned. Feel still part of the owner's gallery sign-off. |
 | C-10 | Major | Seed+edits needs bit-exact terrain everywhere, forever | **Settled by approval 2026-10-05.** CPU float64 allowlist, goldens in Node+Chromium, canary, frozen generators. |
 | C-11 | Major | "Join via a link or code" vs offline brute-force | **Settled by approval 2026-10-05.** The code is the full 21-char secret (D-8). |
 | C-12 | Major | "Immediately" + "no seams" + "must not stall" | Open — **M3 measured** 22.7 ms/chunk (52³, warm, gen incl.); 8-chunk corner edit ≈ 2 worker rounds. 33 ms p95 at risk on the floor device: M4 reserves an edit worker + REMESH drops generation; else escalate to 50/67 ms at M5 per plan. |

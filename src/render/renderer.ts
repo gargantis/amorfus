@@ -5,6 +5,7 @@
 import { mat4, vec3 } from 'wgpu-matrix';
 import terrainSrc from './shaders/terrain.wgsl?raw';
 import skySrc from './shaders/sky.wgsl?raw';
+import linesSrc from './shaders/lines.wgsl?raw';
 import { PoolAllocator } from './pool-allocator';
 import { computeCanvasSize, TIERS, type Tier } from './resize';
 import { frustumPlanes, aabbVisible } from './culling';
@@ -52,6 +53,11 @@ export class Renderer {
 
   private terrainPipeline!: GPURenderPipeline;
   private skyPipeline!: GPURenderPipeline;
+  private linesPipeline!: GPURenderPipeline;
+  private linesBuf!: GPUBuffer;
+  private linesBind!: GPUBindGroup;
+  private linesVerts = new Float32Array(0);
+  private linesCount = 0;
   private frameBuf!: GPUBuffer;
   private skyBuf!: GPUBuffer;
   private originBuf!: GPUBuffer;
@@ -164,6 +170,39 @@ export class Renderer {
         depthCompare: 'greater-equal',
       },
       multisample: { count: sampleCount },
+    });
+
+    r.linesPipeline = await device.createRenderPipelineAsync({
+      layout: 'auto',
+      vertex: {
+        module: device.createShaderModule({ code: linesSrc }),
+        entryPoint: 'vs_main',
+        buffers: [
+          {
+            arrayStride: 28,
+            attributes: [
+              { shaderLocation: 0, offset: 0, format: 'float32x3' },
+              { shaderLocation: 1, offset: 12, format: 'float32x4' },
+            ],
+          },
+        ],
+      },
+      fragment: {
+        module: device.createShaderModule({ code: linesSrc }),
+        entryPoint: 'fs_main',
+        targets: [{ format }],
+      },
+      primitive: { topology: 'line-list' },
+      depthStencil: { format: 'depth32float', depthWriteEnabled: false, depthCompare: 'greater-equal' },
+      multisample: { count: sampleCount },
+    });
+    r.linesBuf = device.createBuffer({
+      size: 28 * 4096,
+      usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST,
+    });
+    r.linesBind = device.createBindGroup({
+      layout: r.linesPipeline.getBindGroupLayout(0),
+      entries: [{ binding: 0, resource: { buffer: r.frameBuf } }],
     });
 
     r.terrainBind = device.createBindGroup({
@@ -360,6 +399,12 @@ export class Renderer {
     pass.setPipeline(target === undefined ? this.skyPipeline : this.offscreenSky());
     pass.setBindGroup(0, this.skyBind);
     pass.draw(3);
+    if (target === undefined && this.linesCount > 0) {
+      pass.setPipeline(this.linesPipeline);
+      pass.setBindGroup(0, this.linesBind);
+      pass.setVertexBuffer(0, this.linesBuf);
+      pass.draw(this.linesCount);
+    }
     pass.end();
     this.device.queue.submit([encoder.finish()]);
     if (target !== undefined) depthTexture.destroy();
@@ -432,6 +477,17 @@ export class Renderer {
   private offscreenSky(): GPURenderPipeline {
     if (this.offscreenSkyPipe === null) throw new Error('call prepareOffscreen first');
     return this.offscreenSkyPipe;
+  }
+
+  /** Overlay line segments, camera-relative: [x,y,z,r,g,b,a] per vertex. */
+  setLines(verts: Float32Array): void {
+    this.linesCount = Math.min(4096, Math.floor(verts.length / 7));
+    if (this.linesCount > 0) {
+      this.device.queue.writeBuffer(
+        this.linesBuf, 0,
+        verts.buffer as ArrayBuffer, verts.byteOffset, this.linesCount * 28,
+      );
+    }
   }
 
   /** §14: offscreen render-to-texture readback of the centre pixel. */

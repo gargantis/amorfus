@@ -7,6 +7,14 @@ import { TIERS } from './render/resize';
 import { meshRegion, type MeshParams } from './core/mesh/mesher';
 import { setupGallery } from './ui/gallery';
 import { Streaming } from './game/streaming';
+import { EditManager } from './game/edits';
+import { InputManager } from './game/input';
+import { Hotbar } from './ui/hotbar';
+import { stepPlayer, PLAYER, type PlayerState, type ControllerInput } from './core/physics/controller';
+import { pickRay } from './core/physics/pick';
+import type { TriangleSource, ChunkTriangles } from './core/physics/collision';
+import { scenarioA, summarise } from './game/scenario-a';
+import { AIR, materialOf, isSharp } from './core/world/block';
 import { generateChunk, heightAt } from './core/gen/v1/index';
 import { CHUNK, packChunkKey } from './core/world/coords';
 import { makeBlock } from './core/world/block';
@@ -22,6 +30,7 @@ const TEST_MODE = hash.has('test');
 const SWATCH = hash.get('scene') === 'swatch';
 const GALLERY = hash.get('scene') === 'gallery';
 const BENCH = query.get('bench') === 'flythrough';
+const SCENARIO_A = query.get('bench') === 'scenario-a';
 const SEED: [number, number] = TEST_MODE ? [42, 0] : [1, 1];
 
 const tierName = (hash.get('tier') ?? query.get('tier') ?? 'medium') as keyof typeof TIERS;
@@ -78,13 +87,116 @@ async function start(): Promise<void> {
 
   // §15 M4: the worker-pool streaming world.
   let streaming: Streaming | null = null;
+  let editManager: EditManager | null = null;
   if (GALLERY) {
     setupGallery(renderer);
   } else if (SWATCH) {
     buildSwatchScene(renderer);
   } else {
-    streaming = new Streaming(renderer, SEED, VIEW_RADIUS, new Map());
+    const s = new Streaming(renderer, SEED, VIEW_RADIUS, () => editManager?.editsByChunk() ?? new Map());
+    streaming = s;
+    editManager = new EditManager(s, renderer, SEED);
   }
+
+  // ---- player (§9.2/§9.3); also drives scenario A ----
+  const PLAYER_MODE = streaming !== null && !TEST_MODE && !BENCH;
+  const source: TriangleSource = {
+    chunkAt: (cx, cy, cz): ChunkTriangles | null => {
+      if (streaming === null) return null;
+      let key: number;
+      try {
+        key = packChunkKey(cx, cy, cz);
+      } catch {
+        return null;
+      }
+      const rec = streaming.chunks.get(key);
+      if (rec === undefined) return null;
+      return {
+        origin: [cx * CHUNK, cy * CHUNK, cz * CHUNK],
+        positions: rec.positions,
+        indexData: rec.indexData,
+        pickRecords: rec.pickRecords,
+        pickOffsets: rec.pickOffsets,
+      };
+    },
+  };
+  let player: PlayerState = {
+    position: [0.5, h0 + 2, 0.5],
+    velocity: [0, 0, 0],
+    onGround: false,
+    flying: false,
+  };
+  const input = PLAYER_MODE ? new InputManager(canvas) : null;
+  const hotbar = PLAYER_MODE && !SCENARIO_A ? new Hotbar() : null;
+  let overlay: HTMLDivElement | null = null;
+  if (PLAYER_MODE && !SCENARIO_A && input !== null) {
+    overlay = document.createElement('div');
+    overlay.style.cssText =
+      'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;' +
+      'background:#101418cc;z-index:20;cursor:pointer;';
+    overlay.innerHTML =
+      '<div style="max-width:30rem;font:15px/1.6 system-ui;color:#dde;text-align:center;">' +
+      '<h2>Click to play</h2>' +
+      '<p>The browser will ask to lock your mouse pointer the first time.</p>' +
+      '<p style="opacity:.8">WASD move · mouse look · left dig · right place · middle pick<br>' +
+      '1–6/wheel material · Q sharp mode · R toggle sharp · Space jump<br>' +
+      'double-tap Space or F fly (Space rises, Shift descends) · double-tap W sprint · Esc pause</p></div>';
+    overlay.onclick = () => void input.requestLock(canvas);
+    document.body.appendChild(overlay);
+    input.onPauseChange = (paused) => {
+      if (overlay) overlay.style.display = paused ? 'flex' : 'none';
+    };
+  }
+
+  // scenario A metrics (§C-6)
+  const scn = {
+    start: performance.now(),
+    intervals: [] as number[],
+    longTasks: 0,
+    reported: false,
+  };
+  if (SCENARIO_A && typeof PerformanceObserver !== 'undefined') {
+    try {
+      new PerformanceObserver((list) => {
+        scn.longTasks += list.getEntries().length;
+      }).observe({ entryTypes: ['longtask'] });
+    } catch {
+      // longtask unsupported: reported as 0, noted in the report
+    }
+  }
+
+  const doEdit = (kind: 'dig' | 'place', material: number, sharp: boolean): void => {
+    if (editManager === null) return;
+    const eye: [number, number, number] = [
+      player.position[0], player.position[1] + PLAYER.eye, player.position[2],
+    ];
+    const dir: [number, number, number] = [
+      -Math.sin(camera.yaw) * Math.cos(camera.pitch),
+      Math.sin(camera.pitch),
+      -Math.cos(camera.yaw) * Math.cos(camera.pitch),
+    ];
+    const hit = pickRay(source, eye, dir, PLAYER.reach);
+    if (hit === null) return;
+    if (kind === 'dig') {
+      // §9.3 guard: the voxel store must still agree.
+      const v = editManager.blockAt(...hit.solidBlock);
+      if (v !== null && materialOf(v) !== AIR) editManager.apply(...hit.solidBlock, AIR);
+    } else {
+      const v = editManager.blockAt(...hit.airBlock);
+      if (v === null || materialOf(v) !== AIR) return;
+      // §9.3: placement that would intersect any player's box is refused.
+      const [bx, by, bz] = hit.airBlock;
+      const px = player.position[0];
+      const py = player.position[1];
+      const pz = player.position[2];
+      const r = PLAYER.radius;
+      const intersects =
+        bx + 1 > px - r && bx < px + r &&
+        bz + 1 > pz - r && bz < pz + r &&
+        by + 1 > py && by < py + PLAYER.height;
+      if (!intersects) editManager.apply(bx, by, bz, makeBlock(material, sharp));
+    }
+  };
 
   // ---- HUD (§8.4) ----
   const hud = document.createElement('div');
@@ -108,7 +220,8 @@ async function start(): Promise<void> {
       return;
     }
     const now = performance.now();
-    intervals.push(now - lastT);
+    const frameInterval = now - lastT;
+    intervals.push(frameInterval);
     if (intervals.length > 240) intervals.shift();
     lastT = now;
 
@@ -119,6 +232,88 @@ async function start(): Promise<void> {
       camera.position[1] = heightAt(SEED, camera.position[0], camera.position[2]) + 18;
       camera.yaw = Math.sin(t * 0.25) * 0.4;
       camera.pitch = -0.2;
+    }
+
+    if (PLAYER_MODE) {
+      const dt = Math.min(0.05, (now - lastT + 0.01) / 1000) || 1 / 60;
+      const spawnReady =
+        source.chunkAt(
+          Math.floor(player.position[0] / CHUNK),
+          Math.floor(player.position[1] / CHUNK),
+          Math.floor(player.position[2] / CHUNK),
+        ) !== null;
+      if (SCENARIO_A) {
+        const t = (now - scn.start) / 1000;
+        const act = scenarioA(t);
+        if (!act.done && spawnReady) {
+          player = stepPlayer(source, player, act.input, dt);
+          camera.yaw = act.input.yaw;
+          camera.pitch = t >= 60 ? -0.9 : -0.15;
+          if (act.edit !== null) doEdit(act.edit, 5, false);
+        }
+        if (t > 10 && !act.done) scn.intervals.push(frameInterval);
+        if (act.done && !scn.reported && editManager !== null) {
+          scn.reported = true;
+          const report = summarise(
+            scn.intervals, scn.longTasks, editManager.editToVisibleMs, editManager.splitSwapCount,
+          );
+          (window as unknown as { __scenarioA?: unknown }).__scenarioA = report;
+          console.log('scenario A:', JSON.stringify(report));
+        }
+      } else if (input !== null) {
+        const fi = input.frame();
+        camera.yaw = fi.yaw;
+        camera.pitch = fi.pitch;
+        if (fi.locked && spawnReady) {
+          const ci: ControllerInput = {
+            move: fi.move, yaw: fi.yaw, jump: fi.jump, sprint: fi.sprint,
+            descend: fi.descend, toggleFly: fi.toggleFly,
+          };
+          player = stepPlayer(source, player, ci, dt);
+          if (fi.remove) doEdit('dig', fi.material, fi.sharpMode);
+          if (fi.place) doEdit('place', fi.material, fi.sharpMode);
+          if (fi.pickMaterial || fi.toggleSharpTarget) {
+            const eye: [number, number, number] = [
+              player.position[0], player.position[1] + PLAYER.eye, player.position[2],
+            ];
+            const dir: [number, number, number] = [
+              -Math.sin(fi.yaw) * Math.cos(fi.pitch), Math.sin(fi.pitch), -Math.cos(fi.yaw) * Math.cos(fi.pitch),
+            ];
+            const hit = pickRay(source, eye, dir, PLAYER.reach);
+            if (hit !== null && editManager !== null) {
+              const v = editManager.blockAt(...hit.solidBlock);
+              if (v !== null && materialOf(v) !== AIR) {
+                if (fi.pickMaterial) input.setMaterial(materialOf(v));
+                else editManager.apply(...hit.solidBlock, makeBlock(materialOf(v), !isSharp(v)));
+              }
+            }
+          }
+        }
+        hotbar?.update(fi.material, fi.sharpMode);
+      }
+      camera.position = [
+        player.position[0],
+        player.position[1] + PLAYER.eye,
+        player.position[2],
+      ];
+
+      // target outline + placement ghost (§9.3)
+      {
+        const dir: [number, number, number] = [
+          -Math.sin(camera.yaw) * Math.cos(camera.pitch),
+          Math.sin(camera.pitch),
+          -Math.cos(camera.yaw) * Math.cos(camera.pitch),
+        ];
+        const hit = pickRay(source, camera.position, dir, PLAYER.reach);
+        if (hit !== null) {
+          const verts: number[] = [];
+          cubeLines(verts, hit.solidBlock, camera.position, [1, 0.95, 0.4, 1]);
+          cubeLines(verts, hit.airBlock, camera.position, [1, 1, 1, 0.35]);
+          renderer.setLines(new Float32Array(verts));
+        } else {
+          renderer.setLines(new Float32Array(0));
+        }
+      }
     }
 
     streaming?.update(camera.position);
@@ -194,6 +389,30 @@ function buildSwatchScene(renderer: Renderer): void {
 }
 
 export type { MeshParams };
+
+/** 12 cube edges as camera-relative line-list vertices. */
+function cubeLines(
+  out: number[],
+  cell: readonly [number, number, number],
+  cam: readonly [number, number, number],
+  color: [number, number, number, number],
+): void {
+  const x = cell[0] - cam[0];
+  const y = cell[1] - cam[1];
+  const z = cell[2] - cam[2];
+  const C = [
+    [x, y, z], [x + 1, y, z], [x + 1, y, z + 1], [x, y, z + 1],
+    [x, y + 1, z], [x + 1, y + 1, z], [x + 1, y + 1, z + 1], [x, y + 1, z + 1],
+  ] as const;
+  const E = [
+    [0, 1], [1, 2], [2, 3], [3, 0],
+    [4, 5], [5, 6], [6, 7], [7, 4],
+    [0, 4], [1, 5], [2, 6], [3, 7],
+  ] as const;
+  for (const [a, b] of E) {
+    out.push(...C[a]!, ...color, ...C[b]!, ...color);
+  }
+}
 
 function installTestHooks(renderer: Renderer, camera: Camera): AmorfusTestHooks {
   const hooks: AmorfusTestHooks = {

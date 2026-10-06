@@ -49,6 +49,20 @@ const PIPELINES = {
   'test.wgsl': {
     render: { buffers: [], depth: false },
   },
+  'lines.wgsl': {
+    render: {
+      buffers: [
+        {
+          arrayStride: 28,
+          attributes: [
+            { shaderLocation: 0, offset: 0, format: 'float32x3' },
+            { shaderLocation: 1, offset: 12, format: 'float32x4' },
+          ],
+        },
+      ],
+      depth: true,
+    },
+  },
   'texgen.wgsl': {
     compute: ['cs_main', 'cs_mip'],
   },

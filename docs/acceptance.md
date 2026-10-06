@@ -74,3 +74,19 @@ sync is an M6 item by design.
   mask (CAVE_MASK_MIN 0.4): without it caves honeycombed 5.4 M triangles.
 - Physics limits: slope limit 50° and step-up 0.6 stay PROVISIONAL; the
   M3 shapes allow re-derivation at M5 when the capsule controller lands.
+
+## Measured (M5, dev machine, SwiftShader harness run)
+
+- The full §14 physics battery passes: all three D-3 gate tests (dig a
+  1×2 tunnel and walk through; walk under a roof placed 2 above untouched
+  ground at phases 0/0.2/0.45; walk through a 1-wide gap between a placed
+  and a natural wall), 1-rise climb, 2-rise and sharp-wall blocks, hitching
+  sprint-fly never inside solid, terminal-velocity landing, cross-border
+  collision, unready-chunks-solid.
+- Slope limit 50° and step-up 0.6 are RE-DERIVED and confirmed, with the
+  wall-split slide rule (steep contacts slide against their horizontal
+  normal only) — without it the C-9 residual 41–51° faces were climbable.
+- Scenario A harness validated end-to-end under SwiftShader:
+  **splitSwaps = 0** (§9.4 contract). Frame percentiles under software
+  rasterisation (p50 ≈ 0.7 s at Medium/R160) measure SwiftShader, not the
+  game — the C-6 numbers come from the owner's D-1 device run.

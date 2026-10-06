@@ -33,7 +33,7 @@ export class Streaming {
   readonly pool: MeshWorkerPool;
   private renderer: Renderer;
   private seed: [number, number];
-  private edits: EditsByChunk;
+  private editsProvider: () => EditsByChunk;
   private states = new Map<number, 'queued' | 'ready'>();
   readonly chunks = new Map<number, ChunkRecord>();
   private uploads: PendingUpload[] = [];
@@ -42,11 +42,16 @@ export class Streaming {
   private startTime = performance.now();
   firstFillMs: number | null = null;
 
-  constructor(renderer: Renderer, seed: [number, number], viewRadius: number, edits: EditsByChunk) {
+  constructor(
+    renderer: Renderer,
+    seed: [number, number],
+    viewRadius: number,
+    editsProvider: () => EditsByChunk = () => new Map(),
+  ) {
     this.renderer = renderer;
     this.seed = seed;
     this.viewRadius = viewRadius;
-    this.edits = edits;
+    this.editsProvider = editsProvider;
     this.pool = new MeshWorkerPool();
   }
 
@@ -94,7 +99,7 @@ export class Streaming {
               cx: ccx + dx,
               cy,
               cz: ccz + dz,
-              edits: serializeEdits(this.edits),
+              edits: serializeEdits(this.editsProvider()),
             },
             dist <= 1 ? PRIORITY.PHYSICS : PRIORITY.FRUSTUM,
             dist,
