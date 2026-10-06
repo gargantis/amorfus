@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { createHash } from 'node:crypto';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { meshGeneratedChunk, type EditsByChunk } from './gen-mesh';
 import { generateChunk } from '../gen/v1/index';
@@ -38,7 +38,14 @@ function hashCase(c: (typeof CASES)[number]): string {
   return h.digest('hex');
 }
 
+// D-24 freeze guard: once src/core/gen/v1/FROZEN exists (first public
+// release), re-emission is forbidden — a changed hash is a determinism
+// bug, never something to re-emit.
 it.runIf(process.env.AMORFUS_EMIT_GOLDENS === '1')('emits mesh goldens', () => {
+  if (existsSync(new URL('../gen/v1/FROZEN', import.meta.url).pathname) ||
+      existsSync(new URL('./FROZEN', import.meta.url).pathname)) {
+    throw new Error('generator v1 is FROZEN (D-24): goldens must not be re-emitted');
+  }
   const out = CASES.map((c) => ({ ...c, hash: hashCase(c) }));
   writeFileSync(
     fileURLToPath(new URL('./mesh-goldens.json', import.meta.url)),

@@ -49,3 +49,16 @@ test('shows the right failure message for this project', async ({ page }, testIn
       throw new Error(`unexpected project ${testInfo.project.name}`);
   }
 });
+
+
+test('the document shell passes axe in core mode (M8 accessibility pass)', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'no-adapter', 'one project is enough');
+  const s = gatewayState();
+  // The four fallback pages run axe above; this covers the running page
+  // shell. The in-game overlay needs a GPU and real pointer lock — its
+  // axe pass is part of the owner's device run (release runbook).
+  await page.goto(`http://127.0.0.1:${s.plainPort}/#test=core`);
+  await page.waitForFunction(() => window.__amorfusCore?.ready === true);
+  const axe = await new AxeBuilder({ page }).analyze();
+  expect(axe.violations).toEqual([]);
+});

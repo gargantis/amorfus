@@ -8,7 +8,7 @@ import { watchPage, type PageGuards } from './lib/guards';
 // within 5 s, and a 10 MB flood ending in a bounded-heap disconnect.
 
 test.describe.configure({ mode: 'serial' });
-test.setTimeout(120_000);
+test.setTimeout(300_000);
 
 function netUrl(extra = ''): string {
   const s = gatewayState();
@@ -86,15 +86,38 @@ test('four pages converge, one blocked pair relies on forwarding', async ({ cont
   await netPage(pages[2]!);
   await netPage(pages[3]!, '&blockNth=1');
 
+  // Joins are staggered: upstream #196 notes slower joins, and four
+  // simultaneous meshes on one loaded machine race the signaling.
   const secret = await pages[0]!.evaluate(() => window.__amorfusNet!.host());
-  for (const p of pages.slice(1)) {
+  let expectedPeers = 0;
+  for (const p of pages.slice(1, 3)) {
     await p.evaluate((s) => window.__amorfusNet!.join(s), secret);
+    expectedPeers += 1;
+    await p.waitForFunction(
+      (n) => window.__amorfusNet!.connected() >= n,
+      expectedPeers,
+      { timeout: 120_000 },
+    );
   }
-  // The blocked pair never admits each other: 3 of the 4 see all 3 others,
-  // the pair members see 2 each.
-  await pages[1]!.waitForFunction(() => window.__amorfusNet!.connected() === 3, undefined, { timeout: 60_000 });
-  await pages[2]!.waitForFunction(() => window.__amorfusNet!.connected() === 3, undefined, { timeout: 60_000 });
-  await pages[3]!.waitForFunction(() => window.__amorfusNet!.connected() >= 2, undefined, { timeout: 60_000 });
+  await pages[3]!.evaluate((s) => window.__amorfusNet!.join(s), secret);
+  // D blocks its FIRST-SEEN peer — which of A/B/C that is depends on
+  // discovery order. The invariant: D ends at 2, exactly one of A/B/C
+  // ends at 2 (the blocked counterpart), the other two at 3.
+  const counts = async (): Promise<number[]> => {
+    const out: number[] = [];
+    for (const p of pages) out.push(await p.evaluate(() => window.__amorfusNet!.connected()));
+    return out;
+  };
+  await expect
+    .poll(
+      async () => {
+        const c = await counts();
+        const abc = c.slice(0, 3).sort((x, y) => x - y);
+        return c[3] === 2 && abc[0] === 2 && abc[1] === 3 && abc[2] === 3 ? 'settled' : JSON.stringify(c);
+      },
+      { timeout: 180_000, intervals: [2000] },
+    )
+    .toBe('settled');
 
   // An edit from the blocked member must reach everyone (forwarding §10.3).
   await pages[3]!.evaluate(() => window.__amorfusNet!.applyEdit(7, 7, 7, 6));

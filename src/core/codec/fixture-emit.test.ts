@@ -1,12 +1,19 @@
 import { it } from 'vitest';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { encodeAmorfusFile, type AmorfusFile } from './container';
 
 // Not a test: emits the v1 golden fixture. Runs only with
 // AMORFUS_EMIT_GOLDENS=1 and only while format v1 is being created —
 // never to "fix" a failing fixture (that is a compatibility break).
+// D-24 freeze guard: once src/core/gen/v1/FROZEN exists (first public
+// release), re-emission is forbidden — a changed hash is a determinism
+// bug, never something to re-emit.
 it.runIf(process.env.AMORFUS_EMIT_GOLDENS === '1')('emits the v1 container fixture', async () => {
+  if (existsSync(new URL('../gen/v1/FROZEN', import.meta.url).pathname) ||
+      existsSync(new URL('./FROZEN', import.meta.url).pathname)) {
+    throw new Error('generator v1 is FROZEN (D-24): goldens must not be re-emitted');
+  }
   const file: AmorfusFile = {
     profile: 0,
     meta: {

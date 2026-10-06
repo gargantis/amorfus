@@ -358,6 +358,7 @@ async function start(): Promise<void> {
       const mkInput = (placeholder: string, kvKey: string, apply: (v: string) => void): void => {
         const el = document.createElement('input');
         el.placeholder = placeholder;
+        el.setAttribute('aria-label', placeholder);
         el.style.cssText = 'font:12px monospace;padding:4px;background:#101820;color:#dde;border:1px solid #345;border-radius:4px;';
         el.onclick = (e) => e.stopPropagation();
         el.onchange = () => {

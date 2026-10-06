@@ -1,6 +1,6 @@
 import { it } from 'vitest';
 import { createHash } from 'node:crypto';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { generateChunk } from './index';
 
@@ -8,7 +8,14 @@ import { generateChunk } from './index';
 // regenerates goldens.json, and must only ever be used when the generator
 // version is being created — never to "fix" a failing golden (C-10: a
 // changed hash on an existing generator version is a determinism bug).
+// D-24 freeze guard: once src/core/gen/v1/FROZEN exists (first public
+// release), re-emission is forbidden — a changed hash is a determinism
+// bug, never something to re-emit.
 it.runIf(process.env.AMORFUS_EMIT_GOLDENS === '1')('emits golden hashes', () => {
+  if (existsSync(new URL('../gen/v1/FROZEN', import.meta.url).pathname) ||
+      existsSync(new URL('./FROZEN', import.meta.url).pathname)) {
+    throw new Error('generator v1 is FROZEN (D-24): goldens must not be re-emitted');
+  }
   const seeds: Array<[number, number]> = [
     [0xdeadbeef, 0x12345678],
     [1, 2],

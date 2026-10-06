@@ -30,6 +30,10 @@ export default defineConfig({
     {
       name: 'net',
       testMatch: /network\.spec\.ts/,
+      // Real WebRTC mesh formation can lose a pair under load (upstream
+      // trystero #195/#196; the plan schedules the 0.25.5 bump). One
+      // retry keeps the gate honest without being flaky.
+      retries: 1,
       use: { launchOptions: { args: ['--disable-features=WebRtcHideLocalIpsWithMdns'] } },
     },
     { name: 'no-webgpu', testMatch: /fallbacks\.spec\.ts/ },

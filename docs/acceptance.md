@@ -90,3 +90,14 @@ sync is an M6 item by design.
   **splitSwaps = 0** (§9.4 contract). Frame percentiles under software
   rasterisation (p50 ≈ 0.7 s at Medium/R160) measure SwiftShader, not the
   game — the C-6 numbers come from the owner's D-1 device run.
+
+## Owner-pending checklist (as of M8 prep)
+
+Everything the build could not do by itself, in one place:
+docs/release-runbook.md. In short: D-1 device naming + scenario A/B runs
+in Chrome and Edge (closes C-6, C-12 escalation decision), the
+#scene=swatch and #scene=gallery sign-offs (D-21, D-3/D-4/C-8), the D-2
+network spike and matrix, CI first run (D-17 spike), the Filebase /
+DNSLink / amorf.us first actions, the SWG drive step, the generator
+FREEZE marker at first public release (D-24), and the second-CID handoff
+rehearsal.
