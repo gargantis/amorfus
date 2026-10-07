@@ -244,6 +244,9 @@ export class Session {
 
   private handleHello(from: string, hello: Hello): void {
     if (this.peersByTransport.has(from)) return; // repeat HELLO
+    // The inbox is read a tick late, so this HELLO can outlive its sender;
+    // no second leave would ever remove a peer admitted now.
+    if (!this.transport.peers().includes(from)) return;
     if (hello.protocolVersion !== this.cfg.protocolVersion) {
       this.refuse(from, 'protocol-mismatch');
       return;

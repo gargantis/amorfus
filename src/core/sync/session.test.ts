@@ -63,6 +63,32 @@ describe('Session', () => {
     expect(b.session.admitted()).toEqual(['A']);
   });
 
+  // The inbox is read on the next tick, so a HELLO can outlive its sender.
+  // Admitting it left a player nothing ever removed: the host of a real
+  // join counted the joiner's pre-reload connection for good.
+  it('does not admit a peer whose HELLO is read after it left', async () => {
+    const hub = new LoopbackHub();
+    const a = makeSession(hub, 'A');
+    makeSession(hub, 'B');
+    hub.pump(); // B's HELLO now waits in A's inbox
+    hub.remove('B');
+    await settle(hub, [a], 4);
+    expect(a.session.admitted()).toEqual([]);
+  });
+
+  it('does not admit a peer that leaves while its HELLO waits behind another frame', async () => {
+    const hub = new LoopbackHub();
+    const a = makeSession(hub, 'A');
+    const c = makeSession(hub, 'C');
+    makeSession(hub, 'B');
+    hub.pump(); // A's inbox: HELLO from C, then HELLO from B
+    const ticking = a.session.tick(); // suspends after C's HELLO
+    hub.remove('B');
+    await ticking;
+    await settle(hub, [a, c], 4);
+    expect(a.session.admitted()).toEqual(['C']);
+  });
+
   it.each([
     ['protocol-mismatch', { protocolVersion: 2 }],
     ['generator-mismatch', { generatorVersion: 9 }],

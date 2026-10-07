@@ -230,6 +230,19 @@ code still existed, a test was written and watched to fail first.
     compile error, and every network and game test asserts zero
     non-loopback contact, WebSockets included.
 
+**Found by the first real two-install session**
+
+18. *The host kept counting a joiner that had left.* Messages wait in an
+    inbox until the next tick, so the HELLO a joiner sends just before it
+    reloads onto the host's world was read after its leave and admitted
+    it again — for good, since no second leave comes. Each such ghost
+    held one of the eight places. A HELLO is now honoured only while the
+    transport still lists its sender, and the gate asserts that both
+    sides of a real join end at exactly one player. *Cost if wrong:* a
+    transport that delivered a peer's HELLO before announcing the peer
+    would have that HELLO ignored; the peer is admitted when it answers
+    our own HELLO, sent once the transport announces it.
+
 **Decided not to fix now**
 
 - *Deterministic admission* (the plan's rule for who is refused when a

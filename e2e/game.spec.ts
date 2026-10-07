@@ -136,6 +136,14 @@ test('a second install joins by link, adopts the host world, and sees its edits'
     )
     .toBe(0);
 
+  // The joiner connected twice: once on its own world, once after
+  // reloading onto the host's. The first connection has left, so each
+  // side counts exactly one player — not a leftover of the first.
+  await expect
+    .poll(async () => a.evaluate(() => window.__amorfusGame!.connected()), { timeout: 30_000, intervals: [1000] })
+    .toBe(1);
+  expect(await b.evaluate(() => window.__amorfusGame!.connected())).toBe(1);
+
   expect(errorsA).toEqual([]);
   // Real Host and Join, and still nothing public was contacted.
   expect(nonLoopback(contactsA)).toEqual([]);
