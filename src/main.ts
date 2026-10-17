@@ -6,6 +6,7 @@ import { Renderer, type Camera } from './render/renderer';
 import { TIERS } from './render/resize';
 import { meshRegion, type MeshParams } from './core/mesh/mesher';
 import { setupGallery } from './ui/gallery';
+import { setupBordersSpike } from './ui/borders-spike';
 import { Streaming } from './game/streaming';
 import { EditManager } from './game/edits';
 import { InputManager } from './game/input';
@@ -37,6 +38,8 @@ const query = new URLSearchParams(location.search);
 const TEST_MODE = hash.has('test');
 const SWATCH = hash.get('scene') === 'swatch';
 const GALLERY = hash.get('scene') === 'gallery';
+// SPIKE material-borders (throwaway): a look-judging page, not product wiring.
+const BORDERS_SPIKE = hash.get('scene') === 'borders';
 const BENCH = query.get('bench') === 'flythrough';
 const SCENARIO_A = query.get('bench') === 'scenario-a';
 const SEED: [number, number] = TEST_MODE ? [42, 0] : [1, 1];
@@ -139,6 +142,8 @@ async function start(): Promise<void> {
   let worldSeed: [number, number] = adoptedSeed ?? SEED;
   if (GALLERY) {
     setupGallery(renderer);
+  } else if (BORDERS_SPIKE) {
+    setupBordersSpike(renderer, camera, hash);
   } else if (SWATCH) {
     buildSwatchScene(renderer);
   } else {

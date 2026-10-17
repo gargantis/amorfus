@@ -19,6 +19,11 @@ export interface MeshParams {
   capHorizontal: number; // D-3 clearance caps
   capVertical: number;
   forceZeroOffsets: boolean; // test-only cube-reproduction switch (§14)
+  // SPIKE material-borders (throwaway): pack per-corner material counts,
+  // and for faces on a border their corner index and which neighbours
+  // match, into the reserved vertex bits so the shader can draw the border
+  // as a contour. Off by default, so the goldens are untouched.
+  materialBorders: boolean;
 }
 
 export const DEFAULT_PARAMS: MeshParams = {
@@ -28,6 +33,7 @@ export const DEFAULT_PARAMS: MeshParams = {
   capHorizontal: 0.15,
   capVertical: 0.05,
   forceZeroOffsets: false,
+  materialBorders: false,
 };
 
 export interface MeshRegionInput {
@@ -632,6 +638,21 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
     nacc[dd * 3 + 2] = nacc[dd * 3 + 2]! + nzz;
   }
 
+  // SPIKE material-borders (throwaway): smooth faces per material at each
+  // corner, accumulated per corner like the normals above so every quad
+  // sharing a corner sees the same counts (at most 12 faces meet there).
+  const mcount = p.materialBorders ? new Uint8Array(vertCount * 8) : null;
+  if (mcount !== null) {
+    for (let q = 0; q < quadTotal; q++) {
+      if ((qmeta[q]! & 8) !== 0) continue; // sharp quads stay crisp
+      const m = qmat[q]!;
+      for (let c = 0; c < 4; c++) {
+        const slot = qa[q * 4 + c]! * 8 + m;
+        mcount[slot] = mcount[slot]! + 1;
+      }
+    }
+  }
+
   mark('normals');
   // ---- pass 5: emit chunk-owned quads in pick-record order ----
   const ownedIds: number[] = [];
@@ -709,9 +730,15 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
     return ao < 0.55 ? 0.55 : ao > 1 ? 1 : ao;
   };
 
-  const emitVertex = (v: number, material: number, sharp: boolean, fnx: number, fny: number, fnz: number): number => {
+  // SPIKE material-borders (throwaway): `border` is the flags-byte payload
+  // above the sharp bit (corner index, then the same-neighbour mask);
+  // `unshared` gives a border face vertices of its own, as sharp faces have.
+  const emitVertex = (
+    v: number, material: number, sharp: boolean, fnx: number, fny: number, fnz: number,
+    border = 0, unshared = false,
+  ): number => {
     const key = v * 8 + material;
-    if (!sharp) {
+    if (!sharp && !unshared) {
       const existing = emittedSmooth[key]!;
       if (existing >= 0) return existing;
     }
@@ -758,7 +785,18 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
     const fy = ly * 256 + 128 + dq[v * 3 + 1]!;
     const fz = lz * 256 + 128 + dq[v * 3 + 2]!;
     const ao8 = Math.round(aoOf(v) * 255);
-    const flags = sharp ? 1 : 0;
+    let flags = sharp ? 1 : 0;
+    let m12 = material;
+    if (mcount !== null) {
+      // SPIKE material-borders (throwaway): id in bits 0–2 of byte 12, then
+      // one 4-bit count per material 1..7. A sharp vertex is one-hot.
+      const cnt = (m: number): number => (sharp ? (m === material ? 1 : 0) : Math.min(15, mcount[v * 8 + m]!));
+      m12 = material | (cnt(1) << 4);
+      vertexBytes[w16 + 13] = cnt(2) | (cnt(3) << 4);
+      vertexBytes[w16 + 14] = cnt(4) | (cnt(5) << 4);
+      vertexBytes[w16 + 15] = cnt(6) | (cnt(7) << 4);
+      flags |= border << 1;
+    }
 
     vertexBytes[w16] = fx & 0xff;
     vertexBytes[w16 + 1] = (fx >> 8) & 0xff;
@@ -772,7 +810,7 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
     vertexBytes[w16 + 9] = (sxq >> 8) & 0xff;
     vertexBytes[w16 + 10] = syq & 0xff;
     vertexBytes[w16 + 11] = (syq >> 8) & 0xff;
-    vertexBytes[w16 + 12] = material;
+    vertexBytes[w16 + 12] = m12;
     w16 += 16;
 
     positions[vertexCount * 3] = lx + dq[v * 3]! / 256;
@@ -781,8 +819,22 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
 
     const out = vertexCount;
     vertexCount += 1;
-    if (!sharp) emittedSmooth[key] = out;
+    if (!sharp && !unshared) emittedSmooth[key] = out;
     return out;
+  };
+
+  // SPIKE material-borders (throwaway): does the face across one edge of
+  // this (solid, air) pair carry the same material? The surface either
+  // folds up onto the block beside the air cell, runs on to the block
+  // beside the solid one, or wraps round the same block. A sharp neighbour
+  // counts as a match so smooth ground runs right up to a sharp wall.
+  const strideOf = [SX, SY, SZ];
+  const sameAcross = (sIdx: number, aIdx: number, step: number, material: number): number => {
+    const up = aIdx + step;
+    if (solid[up] === 1) return sharpSolid[up] === 1 || materialOf(blocks[up]!) === material ? 1 : 0;
+    const on = sIdx + step;
+    if (solid[on] === 1) return sharpSolid[on] === 1 || materialOf(blocks[on]!) === material ? 1 : 0;
+    return 1;
   };
 
   let qi = 0;
@@ -811,10 +863,31 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
       else if (axis === 1) fny = s;
       else fnz = s;
     }
-    const i0 = emitVertex(ring[0]!, material, sharp, fnx, fny, fnz);
-    const i1 = emitVertex(ring[1]!, material, sharp, fnx, fny, fnz);
-    const i2 = emitVertex(ring[2]!, material, sharp, fnx, fny, fnz);
-    const i3 = emitVertex(ring[3]!, material, sharp, fnx, fny, fnz);
+    // SPIKE material-borders (throwaway): base corners r0..r3 sit at
+    // (u,v) = (0,0) (1,0) (1,1) (0,1), with u and v along the face's two
+    // tangent axes; mask bits are the −u, +u, −v, +v neighbours.
+    let mask = 15;
+    if (mcount !== null && !sharp) {
+      const lowIdx = qlower[q]!;
+      const sIdx = solidIsLower ? lowIdx : lowIdx + strideOf[axis]!;
+      const aIdx = solidIsLower ? lowIdx + strideOf[axis]! : lowIdx;
+      const tu = strideOf[axis === 0 ? 1 : 0]!;
+      const tv = strideOf[axis === 2 ? 1 : 2]!;
+      mask =
+        sameAcross(sIdx, aIdx, -tu, material) |
+        (sameAcross(sIdx, aIdx, tu, material) << 1) |
+        (sameAcross(sIdx, aIdx, -tv, material) << 2) |
+        (sameAcross(sIdx, aIdx, tv, material) << 3);
+    }
+    const unshared = mask !== 15;
+    const b0 = (forward ? 0 : 2) | (mask << 2); // corner index: bit 0 = u, bit 1 = v
+    const b1 = (forward ? 1 : 3) | (mask << 2);
+    const b2 = (forward ? 3 : 1) | (mask << 2);
+    const b3 = (forward ? 2 : 0) | (mask << 2);
+    const i0 = emitVertex(ring[0]!, material, sharp, fnx, fny, fnz, b0, unshared);
+    const i1 = emitVertex(ring[1]!, material, sharp, fnx, fny, fnz, b1, unshared);
+    const i2 = emitVertex(ring[2]!, material, sharp, fnx, fny, fnz, b2, unshared);
+    const i3 = emitVertex(ring[3]!, material, sharp, fnx, fny, fnz, b3, unshared);
     // §7.2: triangulate on the shorter diagonal (0–2 on a tie).
     const dx02 = px(ring[0]!) - px(ring[2]!);
     const dy02 = py(ring[0]!) - py(ring[2]!);

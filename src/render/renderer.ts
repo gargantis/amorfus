@@ -50,6 +50,10 @@ export class Renderer {
   private canvas: HTMLCanvasElement;
   private format: GPUTextureFormat;
   tier: Tier;
+  // SPIKE material-borders (throwaway): shader dials, only felt by meshes
+  // built with `materialBorders`.
+  borderGuard = 1;
+  borderThin = true;
 
   private terrainPipeline!: GPURenderPipeline;
   private skyPipeline!: GPURenderPipeline;
@@ -317,7 +321,7 @@ export class Renderer {
     f32.set([sun[0]!, sun[1]!, sun[2]!, 0], 40);
     const fogK = 1.4 / Math.max(32, this.tier.viewRadius - 16);
     f32.set([fogK, ...FOG_COLOUR], 44);
-    f32.set([0, performance.now() / 1000, 0, 0], 48);
+    f32.set([0, performance.now() / 1000, this.borderGuard, this.borderThin ? 1 : 0], 48);
     this.device.queue.writeBuffer(this.frameBuf, 0, buf);
 
     // Sky: inverse of proj·rotation (no translation).
@@ -526,5 +530,45 @@ export class Renderer {
     buf.destroy();
     tex.destroy();
     return [bytes[0] ?? 0, bytes[1] ?? 0, bytes[2] ?? 0, bytes[3] ?? 0];
+  }
+
+  /** SPIKE material-borders (throwaway): a whole offscreen frame as tightly
+   *  packed RGBA rows, for capturing the look where a canvas screenshot
+   *  comes back blank. No MSAA on this path. */
+  async captureFrame(camera: Camera, width: number, height: number): Promise<Uint8Array> {
+    await this.prepareOffscreen();
+    const tex = this.device.createTexture({
+      size: [width, height],
+      format: 'rgba8unorm',
+      usage: GPUTextureUsage.RENDER_ATTACHMENT | GPUTextureUsage.COPY_SRC,
+    });
+    const mainBindT = this.terrainBind;
+    const mainBindS = this.skyBind;
+    this.terrainBind = this.offscreenBindT!;
+    this.skyBind = this.offscreenBindS!;
+    try {
+      this.render(camera, { view: tex.createView(), width, height });
+    } finally {
+      this.terrainBind = mainBindT;
+      this.skyBind = mainBindS;
+    }
+    const bytesPerRow = Math.ceil((width * 4) / 256) * 256;
+    const buf = this.device.createBuffer({
+      size: bytesPerRow * height,
+      usage: GPUBufferUsage.COPY_DST | GPUBufferUsage.MAP_READ,
+    });
+    const encoder = this.device.createCommandEncoder();
+    encoder.copyTextureToBuffer({ texture: tex }, { buffer: buf, bytesPerRow }, [width, height]);
+    this.device.queue.submit([encoder.finish()]);
+    await buf.mapAsync(GPUMapMode.READ);
+    const padded = new Uint8Array(buf.getMappedRange());
+    const out = new Uint8Array(width * height * 4);
+    for (let y = 0; y < height; y++) {
+      out.set(padded.subarray(y * bytesPerRow, y * bytesPerRow + width * 4), y * width * 4);
+    }
+    buf.unmap();
+    buf.destroy();
+    tex.destroy();
+    return out;
   }
 }
