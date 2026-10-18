@@ -344,3 +344,21 @@ retries never give up; non-minimal varints are accepted on decode.
 - **Gate:** a `game` e2e test drives the real buttons and inputs through
   create, copy, rename, delete and open, reading back the open world's id,
   seed and name through loopback hooks.
+
+## After M8 — standing on slopes (2026-10-18)
+
+- **Walkable ground contacts resolve vertically, not along the normal.**
+  The owner saw the player drift downhill while idle. Reproduced in Node
+  through the real mesher and controller: gravity sinks the capsule a
+  step into the slope each frame, and the normal-direction push lands it
+  a little downhill, g·dt·sin·cos per second — 0.13 b/s on a hinted 1:4
+  slope and 0.27 b/s on a 45° bevel facet at 60 Hz, three times that at
+  20 Hz, zero on flat ground, matching the measurement to 1%. Contacts
+  within the slope limit now lift by depth/n_y and zero a falling
+  velocity; steep contacts keep the wall push and slide, so cliffs and
+  step-up behave as before. A side effect goes with it: the normal push
+  also slowed uphill walking and sped downhill walking slightly. *Cost if
+  wrong:* a vertical lift on an edge or vertex contact overshoots by a
+  hair, corrected by the next contact iteration; the §14 physics battery
+  (tunnel, roof, gap) still passes and a drift test at 60 and 20 Hz pins
+  the fix.

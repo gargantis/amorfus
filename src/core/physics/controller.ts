@@ -113,6 +113,18 @@ export function stepPlayer(
     for (let iter = 0; iter < CONTACT_ITERS; iter++) {
       const contact = deepestContact(source, px, py, pz);
       if (contact === null) break;
+      if (contact.ny >= SLOPE_NY) {
+        // Walkable ground: resolve straight up and stop the fall. Pushing
+        // out along the normal moved a standing player downhill by
+        // g·dt·sin·cos every second (0.27 b/s on a 45° facet at 60 Hz),
+        // and the slide it left in the velocity did the same within a
+        // multi-substep frame. Lifting by depth/ny restores the capsule
+        // radius exactly on a plane and keeps the input velocity whole.
+        py += Math.min((contact.depth + 1e-4) / contact.ny, MAX_PUSH);
+        if (vy < 0) vy = 0;
+        grounded = true;
+        continue;
+      }
       const push = Math.min(contact.depth + 1e-4, MAX_PUSH);
       px += contact.nx * push;
       py += contact.ny * push;
@@ -134,7 +146,6 @@ export function stepPlayer(
         vy -= ny * vn;
         vz -= nz * vn;
       }
-      if (contact.ny >= SLOPE_NY) grounded = true;
     }
 
     // Step-up (§9.3): steep contact while grounded → try lifting by up to

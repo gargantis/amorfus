@@ -86,7 +86,56 @@ function hintedGround(phase: number): MeshWorld {
   return w;
 }
 
+/** Hinted slope rising along +x at the given grade, surface y = 8 + x/grade. */
+function hintedSlope(grade: number): MeshWorld {
+  const w = new MeshWorld((x, y) => {
+    const d = 8 + x / grade - y;
+    return { v: d > 0 ? STONE : AIR, rho: Math.max(-1, Math.min(1, d / 4)) || 1 / 127 };
+  });
+  w.build(-1, 0, -1, 1, 0, 1);
+  return w;
+}
+
+/** Under the bevel rule a 1:1 staircase is one 45° plane (§7.9). */
+function bevelFacet(): MeshWorld {
+  const w = new MeshWorld((x, y) => ({ v: y < 8 + x ? STONE : AIR }), { rule: 'bevel' });
+  w.build(-1, 0, -1, 1, 0, 1);
+  return w;
+}
+
 describe('capsule controller (§9.3)', () => {
+  it('an idle player does not drift on a slope, at 60 Hz or 20 Hz', () => {
+    // Resolving ground contact along the surface normal moved a standing
+    // player downhill by g·dt·sin·cos every second (0.27 b/s on a 45°
+    // facet at 60 Hz, 0.8 at 20 Hz). Standing ground must hold still.
+    const cases: Array<[string, MeshWorld, number, number]> = [
+      ['hinted 1:4', hintedSlope(4), 8.5, 8 + 8.5 / 4 + 1.5],
+      ['hinted 1:2', hintedSlope(2), 8.5, 8 + 8.5 / 2 + 1.5],
+      ['bevel 45°', bevelFacet(), 6.5, 8 + 6.5 + 1.5],
+    ];
+    for (const [name, w, x, y0] of cases) {
+      for (const dt of [1 / 60, 1 / 20]) {
+        const settled = run(w, spawn(x, y0, 4.5), {}, 1, dt);
+        expect(settled.onGround, name).toBe(true);
+        const after = run(w, settled, {}, 5, dt);
+        const drift = Math.hypot(after.position[0] - settled.position[0], after.position[2] - settled.position[2]);
+        expect(drift, `${name} at ${Math.round(1 / dt)} Hz`).toBeLessThan(1e-3);
+        expect(Math.abs(after.position[1] - settled.position[1]), name).toBeLessThan(1e-3);
+        expect(insideSolid(w, after), name).toBe(false);
+      }
+    }
+  });
+
+  it('walks up a hinted 1:4 slope at walking speed', () => {
+    const w = hintedSlope(4);
+    const settled = run(w, spawn(2.5, 8 + 2.5 / 4 + 1.5, 4.5), {}, 1);
+    const s = run(w, settled, { move: [0, 1], yaw: -Math.PI / 2 }, 2); // +x is uphill
+    const horizontal = (s.position[0] - settled.position[0]) / 2;
+    expect(horizontal).toBeGreaterThan(PLAYER.walk * 0.97);
+    expect(s.position[1] - settled.position[1]).toBeGreaterThan(1.9); // climbed with it
+    expect(insideSolid(w, s)).toBe(false);
+  });
+
   it('stands on hinted ground and does not sink', () => {
     const w = hintedGround(0);
     const s = run(w, spawn(4.5, 9.4, 4.5), {}, 1.5);

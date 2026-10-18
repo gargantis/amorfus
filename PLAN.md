@@ -730,6 +730,7 @@ All keys use `KeyboardEvent.code`, so WASD is independent of keyboard layout.
   - A 1-block auto-step is rejected: it would defeat sharp walls.
   - Chunks that aren't ready count as solid.
   - Depenetration is bounded.
+  - Contacts with walkable ground (normal within the slope limit) resolve straight up by depth/n_y and stop the fall; only steeper contacts push along the normal and slide. Resolving ground along the normal moved a standing player downhill by g·dt·sin·cos per second (0.27 b/s on a 45° facet at 60 Hz, 0.8 at 20 Hz); found on the deployed world, 2026-10-18.
 - **Constants** (provisional, Minecraft-derived):
 
   | Walk | Sprint | Fly | Sprint-fly | Gravity | Terminal velocity | Jump v₀ | Reach |
