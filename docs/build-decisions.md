@@ -298,6 +298,20 @@ retries never give up; non-minimal varints are accepted on decode.
   and the EditManager. A mismatch between the two would show as a seam at
   every edit, so one constant feeds both. *Cost if wrong:* a few bytes per
   request.
+- **Outline corners of one-block-thick layers follow the layer's 2D rule,
+  not the 3D gradient.** The owner deployed the branch and saw the bevel
+  work "vertically but not horizontally": on a one-high terrace the
+  straight risers tilted while the plan corners stayed a zigzag. Measured
+  in Node, the concave top corner moved 0.047 sideways and the outline's
+  plan rms was 0.295 against 0.354 for raw cubes; the trilinear gradient at
+  such a corner is dominated by the uniform ground layer, and with equal
+  bevel and fillet sizes the inset cancels the fillet horizontally. The fix
+  overrides only the 48 configurations that have a uniform layer beside a
+  1-of-4 or 3-of-4 outline layer, which also fillets window corners in
+  one-thick walls. *Cost if wrong:* at those corners the riser translates
+  sideways instead of tilting, leaving a short vertical strip between
+  tilted sections; the table test and a terrace-outline test pin the
+  behaviour either way.
 - **Not done:** flipping the default, re-emitting the goldens, dropping the
   52³ path, and re-measuring the D-3 physics battery under the rule. All
   wait for the owner's look judgement.

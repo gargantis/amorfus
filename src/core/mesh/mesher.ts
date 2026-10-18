@@ -39,14 +39,84 @@ export const DEFAULT_PARAMS: MeshParams = {
   forceZeroOffsets: false,
 };
 
+const cellBit = (ox: number, oy: number, oz: number): number => ox | (oz << 1) | (oy << 2);
+
+/** The 4 blocks of layer `o` along `axis`, in (u, v) order (0,0) (1,0) (0,1)
+ *  (1,1), where (u, v) are the other two axes in x < y < z order. */
+function layerOf(mask: number, axis: number, o: number): [number, number, number, number] {
+  const at = (ox: number, oy: number, oz: number): number => (mask >> cellBit(ox, oy, oz)) & 1;
+  if (axis === 0) return [at(o, 0, 0), at(o, 1, 0), at(o, 0, 1), at(o, 1, 1)];
+  if (axis === 1) return [at(0, o, 0), at(1, o, 0), at(0, o, 1), at(1, o, 1)];
+  return [at(0, 0, o), at(1, 0, o), at(0, 1, o), at(1, 1, o)];
+}
+
+/** 2D bilinear-isosurface rule on one layer: 1 of 4 → ¼ toward the solid
+ *  block, 3 of 4 → ¼ toward the air block (both: toward the odd one); a
+ *  straight or diagonal pair, empty or full → 0. */
+function rule2d(c: [number, number, number, number]): [number, number] {
+  const n = c[0] + c[1] + c[2] + c[3];
+  if (n !== 1 && n !== 3) return [0, 0];
+  return [c[1] + c[3] === 1 ? 0.25 : -0.25, c[2] + c[3] === 1 ? 0.25 : -0.25];
+}
+
 /** §7.9 bevel table. `mask` bit = ox | oz << 1 | oy << 2 over the corner's
  *  8 blocks (the s000, s100, s001, … order). Treat occupancy as trilinear
  *  density f; the corner moves along ∇f to where f = ½:
  *  d = (½ − f)·∇f / |∇f|², which with integer half-counts p is
  *  (4 − n)(2p − n) / (2·Σ(2p − n)²). A flat half (n = 4 along one axis) and
- *  a zero gradient (blocks touching only diagonally) give 0. All values
- *  are small rationals, so the quantised output is engine-independent. */
+ *  a zero gradient (blocks touching only diagonally) give 0.
+ *
+ *  One exception, for outline corners of one-block-thick layers (a terrace
+ *  step's plan corners, a window's corners in a one-thick wall): there the
+ *  3D gradient is dominated by the uniform layer next door and the corner
+ *  would barely move in the layer's plane. When one layer along an axis is
+ *  uniform and the other is a 1-of-4 or 3-of-4 outline, that layer's 2D
+ *  rule sets the two in-plane components, and the remaining component is
+ *  the sum of the 2D rules of the other four layers. A diagonal terrace
+ *  edge then becomes a straight line in plan, as a 1:1 stair becomes a
+ *  plane in elevation. Straight edges, thick corners and flat halves are
+ *  unaffected.
+ *
+ *  Values are raw (the mesher caps them per axis) and small rationals, so
+ *  the quantised output is engine-independent. */
 export function bevelOffset(mask: number): [number, number, number] {
+  const fold = (v: number): number => (v === 0 ? 0 : v); // no −0
+  const base = [0, 0, 0];
+  const slab = [0, 0, 0];
+  const over = [false, false, false];
+  let anySlab = false;
+  for (let axis = 0; axis < 3; axis++) {
+    const u = axis === 0 ? 1 : 0;
+    const v = axis === 2 ? 1 : 2;
+    const l0 = layerOf(mask, axis, 0);
+    const l1 = layerOf(mask, axis, 1);
+    const r0 = rule2d(l0);
+    const r1 = rule2d(l1);
+    base[u]! += r0[0] + r1[0];
+    base[v]! += r0[1] + r1[1];
+    const n0 = l0[0] + l0[1] + l0[2] + l0[3];
+    const n1 = l1[0] + l1[1] + l1[2] + l1[3];
+    const uniform0 = n0 === 0 || n0 === 4;
+    const uniform1 = n1 === 0 || n1 === 4;
+    const outline0 = n0 === 1 || n0 === 3;
+    const outline1 = n1 === 1 || n1 === 3;
+    if ((uniform0 && outline1) || (uniform1 && outline0)) {
+      const r = uniform0 ? r1 : r0;
+      slab[u]! += r[0];
+      slab[v]! += r[1];
+      over[u] = true;
+      over[v] = true;
+      anySlab = true;
+    }
+  }
+  if (anySlab) {
+    return [
+      fold(over[0] ? slab[0]! : base[0]!),
+      fold(over[1] ? slab[1]! : base[1]!),
+      fold(over[2] ? slab[2]! : base[2]!),
+    ];
+  }
+
   let n = 0;
   let px = 0;
   let py = 0;
@@ -65,7 +135,6 @@ export function bevelOffset(mask: number): [number, number, number] {
   const s = gx * gx + gy * gy + gz * gz;
   if (s === 0) return [0, 0, 0];
   const k = (4 - n) / (2 * s);
-  const fold = (v: number): number => (v === 0 ? 0 : v); // no −0
   return [fold(k * gx), fold(k * gy), fold(k * gz)];
 }
 

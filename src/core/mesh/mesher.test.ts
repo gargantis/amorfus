@@ -441,11 +441,19 @@ describe('bevel rule (§7.9)', () => {
     expect(bevelOffset(0xaf)).toEqual([-0.25, 0.25, 0]); // foot of the same step
     expect(bevelOffset(0x01)).toEqual([-0.5, -0.5, -0.5]); // corner of a lone block at (0,0,0)
     expect(bevelOffset(0x81)).toEqual([0, 0, 0]); // two blocks touching only at the corner
-    // a block standing on flat ground, 5 of 8: the fillet lifts the vertex
-    const foot = bevelOffset(0x0f | 0x80);
-    expect(foot[0]).toBeCloseTo(-1 / 22, 12);
-    expect(foot[1]).toBeCloseTo(3 / 22, 12);
-    expect(foot[2]).toBeCloseTo(-1 / 22, 12);
+    // Outline corners of a one-block-thick layer follow that layer's 2D
+    // rule in its plane (the other layer is uniform), so plan corners of a
+    // one-high terrace bevel like its risers do. Vertical from the sum of
+    // the two elevation slices; these are the raw table values, capped later.
+    // foot of a block standing on flat ground, 5 of 8: in under the block, up
+    expect(bevelOffset(0x0f | 0x80)).toEqual([0.25, 0.5, 0.25]);
+    // top of a terrace's concave plan corner, 3 of 8: out into the air quadrant, down
+    expect(bevelOffset(0x07)).toEqual([0.25, -0.5, 0.25]);
+    // inner corner of a window in a one-thick wall (wall layer ox = 1, air at
+    // oy = oz = 1): toward the window in the wall plane, into the wall across it
+    expect(bevelOffset(0x02 | 0x20 | 0x08)).toEqual([0.5, 0.25, 0.25]);
+    // a straight edge of a one-high layer is not a corner: unchanged
+    expect(bevelOffset(0x03)).toEqual([0, -0.25, -0.25]);
     // solid/air symmetry: a configuration and its complement move the same
     // way (toward the solid when convex, toward the air when concave)
     for (let mask = 1; mask < 255; mask++) {
@@ -471,6 +479,21 @@ describe('bevel rule (§7.9)', () => {
     const pos = positionsOf(m).filter((p) => p[0]! > 4 && p[0]! < 24 && p[1]! > 10);
     expect(pos.length).toBeGreaterThan(500);
     for (const [x, y] of pos) expect(Math.abs(y - x - 7.5)).toBeLessThanOrEqual(1 / 256);
+  });
+
+  it('a one-high terrace with a diagonal plan edge comes out as one straight line in plan', () => {
+    // ground y < 8, terrace layer y = 8 where x + z < 20: the riser zigzags
+    // between the lattice rows x + z = 20 and 21; smoothed, both its top and
+    // its foot lie on the midline x + z = 20.5 (the plan analogue of the
+    // 1:1 staircase plane).
+    const b = build(3, (x, y, z) => ({ v: y < 8 || (y === 8 && x + z < 20) ? STONE : AIR }));
+    const m = mesh(b, BEVEL);
+    const riser = positionsOf(m).filter(
+      (p) => p[0]! > 4 && p[0]! < 16 && p[2]! > 4 && p[2]! < 16 && p[1]! > 7.5 && p[1]! < 9.5
+        && Math.abs(p[0]! + p[2]! - 20.5) < 1.5,
+    );
+    expect(riser.length).toBeGreaterThan(40);
+    for (const [x, , z] of riser) expect(Math.abs(x + z - 20.5)).toBeLessThanOrEqual(1 / 256);
   });
 
   it('cube reproduction: bevel 0 and seam 0 give exact cubes', () => {
