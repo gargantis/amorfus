@@ -40,3 +40,31 @@ already refuses to emit a folder that breaks under an IPFS subpath
 - External actions — Filebase pin, amorf.us deploy, DNSLink — each need the
   owner's explicit go-ahead. `npm run deploy` and `npm run publish:ipfs`
   assume that go-ahead was given for this run.
+
+## Branch workflow
+
+Every session works on its own branch, created before the first edit and
+kept after merging. `main` moves only by fast-forward through
+`/merge-to-main`; `/sync-with-main` brings `main` into a branch that has
+fallen behind. Questions, including prompts that start with "I want", get
+answers rather than changes. Rules:
+[.claude/rules/session-branches.md](.claude/rules/session-branches.md).
+
+## Common commands
+
+- `npm run dev` — local dev server on `http://localhost:5173`.
+- `npm run check` — the gate; see above.
+- `/merge-to-main` — fast-forward `main` to the session branch if the gate
+  passes on its tip; `/sync-with-main` — bring `main` into the branch when it
+  has fallen behind.
+
+## Where to start a session
+
+1. Check the branch. The SessionStart hook reports it: on `main`, the first
+   edit creates the session branch; on another branch, that branch is the
+   session's. See [session-branches.md](.claude/rules/session-branches.md).
+2. Skim [.claude/rules/always.md](.claude/rules/always.md).
+3. Before touching a settled decision, read PLAN.md, `docs/conflicts.md` and
+   `docs/build-decisions.md` (see "Contracts that are easy to break").
+4. Owner-only steps — pin, deploy, DNSLink, freeze — are in
+   `docs/release-runbook.md`; never run them without a go-ahead.
