@@ -315,3 +315,32 @@ retries never give up; non-minimal varints are accepted on decode.
 - **Not done:** flipping the default, re-emitting the goldens, dropping the
   52³ path, and re-measuring the D-3 physics battery under the rule. All
   wait for the owner's look judgement.
+
+## After M8 — world list (2026-10-18)
+
+- **PLAN.md §12.4's world list was never built as UI.** The session and
+  storage methods existed (list, rename, delete, save-as-copy, fork
+  import), but the only way to a second world was a join, and a copy or an
+  import could not be opened at all: nothing switched `last-world` and the
+  id was never shown. The owner asked how to create a new world; the list
+  now lives in the pause menu. *Cost if wrong:* UI only, over methods that
+  were already there.
+- **Create switches and reloads; Save as copy and Import do not.** A
+  player who makes a world wants to be in it; a copy or an import is a
+  file operation whose result appears in the list with an Open button.
+  Open flushes the current world, writes `last-world`, strips `#world=`
+  and `#wseed=` from the hash (a join's leftovers would override the
+  choice) and reloads. *Cost if wrong:* one extra click after a copy.
+- **Seed text:** two u32 numbers are the seed, a lone integer fills the
+  first slot, anything else is hashed (FNV-1a, two bases) and kept as
+  `seedText`, which the plan's `worlds` store already allowed. Empty draws
+  a random seed; the default worlds keep seed 1,1 as before. *Cost if
+  wrong:* a hashed seed cannot be typed back as numbers, but the text
+  itself is shown and re-parses to the same seed.
+- **Delete is offered only for worlds that are not open,** behind a
+  confirm(), since the open world holds the Web Lock and its flush would
+  resurrect it. Rename uses prompt(). *Cost if wrong:* two native dialogs
+  in an otherwise custom menu.
+- **Gate:** a `game` e2e test drives the real buttons and inputs through
+  create, copy, rename, delete and open, reading back the open world's id,
+  seed and name through loopback hooks.

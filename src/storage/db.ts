@@ -8,6 +8,7 @@ import { isValidEntryShape } from '../core/sync/validate';
 import { Hlc } from '../core/sync/hlc';
 import type { IndexedEntry } from '../core/sync/lww';
 import { unpackChunkKey, packChunkKey } from '../core/world/coords';
+import { MATERIALS } from '../core/world/block';
 import type { HlcStamp } from '../core/sync/hlc';
 
 export interface WorldMeta {
@@ -54,6 +55,39 @@ export async function openAmorfusDb(
 
 export async function saveWorldMeta(db: AmorfusDb, meta: WorldMeta): Promise<void> {
   await db.put('worlds', meta);
+}
+
+/** §12.4: metadata for a brand-new world on generator v1 (fresh ids, empty HLC). */
+export function newWorldMeta(name: string, seed: [number, number], seedText?: string): WorldMeta {
+  return {
+    worldId: randomWorldId(),
+    lineageId: randomWorldId(),
+    name,
+    seed,
+    ...(seedText !== undefined ? { seedText } : {}),
+    generator: { id: 'amorfus', version: 1 },
+    chunkSize: 32,
+    materials: [...MATERIALS],
+    hlc: { l: 0, c: 0 },
+    status: 'ready',
+  };
+}
+
+export async function renameWorld(db: AmorfusDb, worldId: string, name: string): Promise<void> {
+  const meta = await db.get('worlds', worldId);
+  if (meta === undefined) return;
+  meta.name = name;
+  await db.put('worlds', meta);
+}
+
+/** The world the next plain load opens (§12.4 Open). */
+export async function setLastWorld(db: AmorfusDb, worldId: string): Promise<void> {
+  await db.put('kv', worldId, 'last-world');
+}
+
+export async function getLastWorld(db: AmorfusDb): Promise<string | undefined> {
+  const v = await db.get('kv', 'last-world');
+  return typeof v === 'string' ? v : undefined;
 }
 
 export async function saveChunkBlob(

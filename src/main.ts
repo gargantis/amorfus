@@ -6,6 +6,7 @@ import { Renderer, type Camera } from './render/renderer';
 import { TIERS } from './render/resize';
 import { meshRegion, type MeshParams } from './core/mesh/mesher';
 import { setupGallery } from './ui/gallery';
+import { formatSeed, randomSeed } from './core/world/seed';
 import { Streaming } from './game/streaming';
 import { EditManager } from './game/edits';
 import { InputManager } from './game/input';
@@ -283,7 +284,10 @@ async function start(): Promise<void> {
         void download(1);
       });
       btn('Save as copy', () => {
-        void ws.saveAsCopy(`${ws.meta.name} copy`).then(() => status(`copied`));
+        void ws.saveAsCopy(`${ws.meta.name} copy`).then(() => {
+          status('copied — open it from the list below');
+          void refreshList();
+        });
       });
       const file = document.createElement('input');
       file.type = 'file';
@@ -296,7 +300,8 @@ async function start(): Promise<void> {
           const mode = (prompt('Import mode: fork / restore / merge', 'fork') ?? 'fork') as
             | 'fork' | 'restore' | 'merge';
           const r = await ws.importFile(new Uint8Array(buf), mode);
-          status(r.ok ? `imported (${mode}) — open it from a reload` : `import failed: ${r.reason}`);
+          status(r.ok ? `imported (${mode}) — open it from the list below` : `import failed: ${r.reason}`);
+          void refreshList();
         });
       };
       btn('Import…', () => file.click());
@@ -310,7 +315,101 @@ async function start(): Promise<void> {
       };
       setInterval(refreshStatus, 2000);
       refreshStatus();
+
+      // ---- §12.4 world list: New world, Open, Rename, Delete ----
+      const field = (id: string, placeholder: string, width: string): HTMLInputElement => {
+        const input = document.createElement('input');
+        input.id = id;
+        input.type = 'text';
+        input.placeholder = placeholder;
+        input.style.cssText =
+          `width:${width};padding:5px 8px;border-radius:6px;border:1px solid #567;background:#0f1419;color:#dde;font:13px system-ui;`;
+        // typing here must not reach the game's key handlers
+        input.onkeydown = (e) => e.stopPropagation();
+        input.onkeyup = (e) => e.stopPropagation();
+        return input;
+      };
+      const smallBtn = (label: string, fn: () => void): HTMLButtonElement => {
+        const b = document.createElement('button');
+        b.textContent = label;
+        b.style.cssText = 'padding:3px 8px;border-radius:5px;border:1px solid #567;background:#1c232b;color:#dde;cursor:pointer;';
+        b.onclick = (e) => {
+          e.stopPropagation();
+          fn();
+        };
+        return b;
+      };
+      /** Open `worldId` on the next load: flush, point at it, drop any
+       *  #world=/#wseed= override (a join's leftovers would win), reload. */
+      const reloadInto = async (worldId: string): Promise<void> => {
+        await ws.switchTo(worldId);
+        const next = new URLSearchParams(location.hash.replace(/^#/, ''));
+        next.delete('world');
+        next.delete('wseed');
+        location.hash = next.toString();
+        location.reload();
+      };
+      const list = document.createElement('div');
+      list.id = 'world-list';
+      list.style.cssText = 'width:100%;display:grid;gap:4px;margin-top:10px;text-align:left;font:13px system-ui;';
+      const nameInput = field('new-world-name', 'name', '9rem');
+      const seedInput = field('new-world-seed', 'seed: two numbers, or any words', '15rem');
+      seedInput.value = formatSeed(randomSeed());
+      const refreshList = async (): Promise<void> => {
+        const worlds = (await ws.listAll()).sort((a, b) => a.name.localeCompare(b.name));
+        list.replaceChildren();
+        for (const w of worlds) {
+          const row = document.createElement('div');
+          row.className = 'world-row';
+          row.style.cssText = 'display:flex;gap:6px;align-items:center;flex-wrap:wrap;';
+          const isOpen = w.worldId === ws.meta.worldId;
+          const label = document.createElement('span');
+          label.className = 'world-label';
+          label.style.cssText = 'flex:1 1 auto;';
+          label.textContent = `${w.name} · seed ${formatSeed(w.seed, w.seedText)}${isOpen ? ' · open' : ''}`;
+          row.appendChild(label);
+          if (!isOpen) row.appendChild(smallBtn('Open', () => void reloadInto(w.worldId)));
+          row.appendChild(
+            smallBtn('Rename', () => {
+              const name = prompt('World name', w.name);
+              if (name === null || name.trim() === '') return;
+              void ws.renameWorld(w.worldId, name.trim()).then(refreshList).then(refreshStatus);
+            }),
+          );
+          if (!isOpen) {
+            row.appendChild(
+              smallBtn('Delete', () => {
+                if (!confirm(`Delete “${w.name}” and all its edits? This cannot be undone.`)) return;
+                void ws.deleteOther(w.worldId).then(refreshList);
+              }),
+            );
+          }
+          list.appendChild(row);
+        }
+        if (nameInput.value === '') nameInput.value = `World ${worlds.length + 1}`;
+      };
+      const create = document.createElement('div');
+      create.style.cssText = 'display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:6px;';
+      const createLabel = document.createElement('span');
+      createLabel.textContent = 'New world:';
+      create.append(
+        createLabel,
+        nameInput,
+        seedInput,
+        smallBtn('Random', () => {
+          seedInput.value = formatSeed(randomSeed());
+        }),
+      );
+      const createBtn = smallBtn('Create', () => {
+        void ws.createWorld(nameInput.value, seedInput.value).then(reloadInto);
+      });
+      createBtn.id = 'new-world-create';
+      create.appendChild(createBtn);
+      void refreshList();
+
       menu.appendChild(file);
+      menu.appendChild(list);
+      menu.appendChild(create);
       menu.appendChild(statusLine);
       overlay.firstElementChild?.appendChild(menu);
     }
@@ -576,6 +675,8 @@ async function start(): Promise<void> {
       connected: () => multiplayer?.connected ?? 0,
       secret: () => multiplayer?.secret ?? null,
       worldId: () => worldSession?.meta.worldId ?? adoptedWorldId ?? '00'.repeat(16),
+      seed: () => [worldSeed[0], worldSeed[1]],
+      worldName: () => worldSession?.meta.name ?? '',
       blockAt: (x, y, z) => em.blockAt(x, y, z),
       edit: (x, y, z, value) => em.apply(x, y, z, value) !== null,
       player: () => [...player.position] as [number, number, number],

@@ -151,3 +151,69 @@ test('a second install joins by link, adopts the host world, and sees its edits'
   await ctxA.close();
   await ctxB.close();
 });
+
+// §12.4 world list through the real pause menu: New world (seed text),
+// Open, Rename, Delete, Save as copy. Every step is a real click; the
+// hooks only read back which world is open.
+test('the world list creates, opens, renames and deletes worlds through the real menu', async ({ browser }) => {
+  const s = gatewayState();
+  const base = `http://127.0.0.1:${s.plainPort}/?radius=32&tier=low`;
+  const ctx = await browser.newContext();
+  const page = await ctx.newPage();
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  // Rename asks with prompt(), Delete with confirm().
+  page.on('dialog', (d) => void (d.type() === 'prompt' ? d.accept('Renamed') : d.accept()));
+  await page.setViewportSize({ width: 640, height: 360 });
+  const contacts = trackContacts(page);
+  await page.goto(base);
+
+  const ready = () => window.__amorfusGame?.ready() === true;
+  await pollPage(page, ready, (v) => v, 180_000);
+  const first = await page.evaluate(() => window.__amorfusGame!.worldId());
+  expect(await page.evaluate(() => window.__amorfusGame!.seed())).toEqual([1, 1]);
+  const rows = page.locator('#world-list .world-row');
+  // Match on the label only: a row's full text runs its buttons together
+  // ("RenameDelete" contains "Renamed").
+  const rowNamed = (name: string) =>
+    rows.filter({ has: page.locator('.world-label', { hasText: new RegExp(`^${name} · `) }) });
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first().locator('.world-label')).toHaveText(/^My world · seed 1,1 · open$/);
+
+  // New world with a typed seed: the page reloads into it.
+  await page.fill('#new-world-name', 'Second');
+  await page.fill('#new-world-seed', '7,7');
+  await page.locator('#new-world-create').click();
+  const second = await pollPage(page, () => window.__amorfusGame?.worldId() ?? '', (v) => v !== '' && v !== first, 180_000);
+  await pollPage(page, ready, (v) => v, 180_000);
+  expect(await page.evaluate(() => window.__amorfusGame!.seed())).toEqual([7, 7]);
+  expect(await page.evaluate(() => window.__amorfusGame!.worldName())).toBe('Second');
+  await expect(rows).toHaveCount(2);
+
+  // Save as copy lists the copy and stays on the open world.
+  await page.locator('#world-menu button', { hasText: 'Save as copy' }).click();
+  await expect(rows).toHaveCount(3);
+  expect(await page.evaluate(() => window.__amorfusGame!.worldId())).toBe(second);
+
+  // Rename the first world from its row; delete the copy from its row.
+  await rowNamed('My world').locator('button', { hasText: 'Rename' }).click();
+  await expect(rowNamed('Renamed')).toHaveCount(1);
+  await expect(rowNamed('My world')).toHaveCount(0);
+  await rowNamed('Second copy').locator('button', { hasText: 'Delete' }).click();
+  await expect(rows).toHaveCount(2);
+  // the open world offers neither Open nor Delete
+  await expect(rowNamed('Second').locator('button', { hasText: 'Delete' })).toHaveCount(0);
+  await expect(rowNamed('Second').locator('button', { hasText: 'Open' })).toHaveCount(0);
+
+  // Open the first world again: reload, same id as before, its own seed.
+  await rowNamed('Renamed').locator('button', { hasText: 'Open' }).click();
+  await pollPage(page, () => window.__amorfusGame?.worldId() ?? '', (v) => v === first, 180_000);
+  await pollPage(page, ready, (v) => v, 180_000);
+  expect(await page.evaluate(() => window.__amorfusGame!.seed())).toEqual([1, 1]);
+  expect(await page.evaluate(() => window.__amorfusGame!.worldName())).toBe('Renamed');
+  await expect(rows).toHaveCount(2);
+
+  expect(errors).toEqual([]);
+  expect(nonLoopback(contacts)).toEqual([]);
+  await ctx.close();
+});

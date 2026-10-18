@@ -56,6 +56,9 @@ interface AmorfusGameHooks {
   connected: () => number;
   secret: () => string | null;
   worldId: () => string;
+  /** §12.4: the open world's seed and name, for the world-list gate test */
+  seed: () => [number, number];
+  worldName: () => string;
   blockAt: (x: number, y: number, z: number) => number | null;
   edit: (x: number, y: number, z: number, value: number) => boolean;
   player: () => [number, number, number];

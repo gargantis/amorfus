@@ -47,7 +47,9 @@ stable origins: saves there survive releases. A pinned-CID origin keeps
 saves with that version — move on through the handoff or Export/Import
 (backup keeps everything; share strips identity and play times, and can
 only be forked). The pause menu shows the storage status, including
-whether the browser granted persistence.
+whether the browser granted persistence, and lists your worlds: create one
+from a seed (two numbers, or any words), open, rename or delete them.
+Copies and imports appear in that list.
 
 ### Privacy
 

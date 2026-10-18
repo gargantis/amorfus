@@ -11,7 +11,10 @@ import {
   repairLoadedWorld,
   listWorlds,
   deleteWorld,
-  randomWorldId,
+  newWorldMeta,
+  renameWorld,
+  setLastWorld,
+  getLastWorld,
   type AmorfusDb,
   type WorldMeta,
   type LoadedWorld,
@@ -20,6 +23,7 @@ import { FlushPolicy } from '../storage/flush-policy';
 import { exportWorld, importAmorfus, type ImportMode, type ImportResult } from '../storage/import-export';
 import { encodeChunkEntries } from '../core/codec/chunk-entries';
 import { classifyOrigin, bannerFor, type OriginClass } from '../storage/classify-origin';
+import { parseSeedText } from '../core/world/seed';
 import type { LwwStore } from '../core/sync/lww';
 import type { Hlc } from '../core/sync/hlc';
 
@@ -94,25 +98,18 @@ export class WorldSession {
       meta = await db.get('worlds', options.worldId);
     } else {
       // Prefer the world played last; fall back to any saved world.
-      const last = await db.get('kv', 'last-world');
-      if (typeof last === 'string') meta = await db.get('worlds', last);
+      const last = await getLastWorld(db);
+      if (last !== undefined) meta = await db.get('worlds', last);
       if (meta === undefined || meta.status !== 'ready') {
         const worlds = await listWorlds(db);
         meta = worlds[0];
       }
     }
     if (meta === undefined) {
+      // §10.3: a joiner CREATES the room's world under the room's id.
       meta = {
-        // §10.3: a joiner CREATES the room's world under the room's id.
-        worldId: options.worldId ?? randomWorldId(),
-        lineageId: randomWorldId(),
-        name: options.worldId !== undefined ? 'Joined world' : 'My world',
-        seed: options.seed,
-        generator: { id: 'amorfus', version: 1 },
-        chunkSize: 32,
-        materials: ['air', 'grass', 'dirt', 'stone', 'sand', 'planks', 'brick', 'reserved7'],
-        hlc: { l: 0, c: 0 },
-        status: 'ready',
+        ...newWorldMeta(options.worldId !== undefined ? 'Joined world' : 'My world', options.seed),
+        ...(options.worldId !== undefined ? { worldId: options.worldId } : {}),
       };
       await saveWorldMeta(db, meta);
     }
@@ -120,7 +117,7 @@ export class WorldSession {
     // One writer per world (§12.1 Web Locks); second tab → take-over offer.
     const loaded = (await loadWorld(db, meta.worldId))!;
     const session = new WorldSession(db, loaded, originClass);
-    await db.put('kv', meta.worldId, 'last-world');
+    await setLastWorld(db, meta.worldId);
 
     // §11.2 at open: clock-ahead repair, and the HLC seeded at or above
     // the largest stored stamp (review #6, #12).
@@ -239,6 +236,28 @@ export class WorldSession {
   async rename(name: string): Promise<void> {
     this.meta.name = name;
     await saveWorldMeta(this.db, this.meta);
+  }
+
+  /** §12.4 New world: saved, not opened; the caller switches and reloads. */
+  async createWorld(name: string, seedText: string): Promise<string> {
+    const parsed = parseSeedText(seedText);
+    const trimmed = name.trim();
+    const meta = newWorldMeta(trimmed === '' ? 'New world' : trimmed, parsed.seed, parsed.seedText);
+    await saveWorldMeta(this.db, meta);
+    return meta.worldId;
+  }
+
+  /** §12.4 Open: flush this world, then make `worldId` the one the next
+   *  load opens. The caller reloads the page. */
+  async switchTo(worldId: string): Promise<void> {
+    await this.flushNow();
+    await setLastWorld(this.db, worldId);
+  }
+
+  /** §12.4 Rename, for any listed world including the open one. */
+  async renameWorld(worldId: string, name: string): Promise<void> {
+    await renameWorld(this.db, worldId, name);
+    if (worldId === this.meta.worldId) this.meta.name = name;
   }
 
   async listAll(): Promise<WorldMeta[]> {
