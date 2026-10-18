@@ -68,3 +68,53 @@ test('skeleton renders and worker probes on this mount', async ({ page }, testIn
   }
   expect(offendingRequests(guards, allowed)).toEqual([]);
 });
+
+// §7.9: the bevel rule reaches the renderer through the real path —
+// main.ts flag → Streaming → worker → GEN_MESH → faceted vertices. On
+// binary ground the rule leaves every flat-face corner on the lattice,
+// so a large share of surface vertices sit at integer coordinates; the
+// hinted default puts almost none there. One mount is enough.
+test('the bevel rule meshes the streamed world through the production loop', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'webgpu-plain', 'the rule is mount-independent');
+  const s = gatewayState();
+  const base = mountUrl(testInfo.project.name, s);
+  const guards = watchPage(page);
+
+  await page.goto(base + '#test=smoke&rule=bevel');
+  await page.waitForFunction(() => (window.__amorfus?.frames ?? 0) >= 60, undefined, {
+    timeout: 60_000,
+  });
+  await page.waitForFunction(() => {
+    const hud = document.getElementById('hud');
+    return hud !== null && / queue 0\b/.test(hud.textContent ?? '');
+  }, undefined, { timeout: 60_000 });
+
+  const stats = await page.evaluate(() => window.__amorfus!.vertexStats());
+  expect(stats.total).toBeGreaterThan(1000);
+  expect(stats.integerFraction).toBeGreaterThan(0.2);
+  expect(stats.rule).toBe('bevel');
+
+  // the centre pixel is still a lit, opaque grass top
+  const px = await page.evaluate(() => window.__amorfus!.readCenterPixel());
+  expect(px[3]).toBe(255);
+  expect(px[1]).toBeGreaterThan(40);
+  expect(px[1]).toBeGreaterThanOrEqual(px[0]);
+  expect(px[1]).toBeGreaterThan(px[2]);
+
+  // and the default rule, same scene, stays off the lattice. A hash-only
+  // navigation would keep the loaded module (and its rule), so reload.
+  await page.goto(base + '#test=smoke');
+  await page.reload();
+  await page.waitForFunction(() => (window.__amorfus?.frames ?? 0) >= 30, undefined, { timeout: 60_000 });
+  await page.waitForFunction(() => {
+    const hud = document.getElementById('hud');
+    return hud !== null && / queue 0\b/.test(hud.textContent ?? '');
+  }, undefined, { timeout: 60_000 });
+  const plain = await page.evaluate(() => window.__amorfus!.vertexStats());
+  expect(plain.rule).toBe('hints');
+  expect(plain.integerFraction).toBeLessThan(0.1);
+
+  expect(guards.consoleErrors).toEqual([]);
+  expect(guards.failedRequests).toEqual([]);
+  expect(offendingRequests(guards, [base, base.slice(0, -1)])).toEqual([]);
+});

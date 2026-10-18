@@ -39,6 +39,10 @@ const SWATCH = hash.get('scene') === 'swatch';
 const GALLERY = hash.get('scene') === 'gallery';
 const BENCH = query.get('bench') === 'flythrough';
 const SCENARIO_A = query.get('bench') === 'scenario-a';
+// §7.9: the bevel smoothing rule, selectable per load until the owner
+// picks a default. Every GEN_MESH and REMESH job carries it.
+const MESH_RULE: MeshParams['rule'] = (hash.get('rule') ?? query.get('rule')) === 'bevel' ? 'bevel' : 'hints';
+const MESH_PARAMS: Partial<MeshParams> | undefined = MESH_RULE === 'bevel' ? { rule: 'bevel' } : undefined;
 const SEED: [number, number] = TEST_MODE ? [42, 0] : [1, 1];
 
 const tierName = (hash.get('tier') ?? query.get('tier') ?? 'medium') as keyof typeof TIERS;
@@ -138,7 +142,7 @@ async function start(): Promise<void> {
   let multiplayer: Multiplayer | null = null;
   let worldSeed: [number, number] = adoptedSeed ?? SEED;
   if (GALLERY) {
-    setupGallery(renderer);
+    setupGallery(renderer, MESH_RULE);
   } else if (SWATCH) {
     buildSwatchScene(renderer);
   } else {
@@ -182,12 +186,14 @@ async function start(): Promise<void> {
     const s = new Streaming(
       renderer, worldSeed, VIEW_RADIUS,
       (cx, cy, cz) => editManager?.editsForRegion(cx, cy, cz) ?? new Map(),
+      MESH_PARAMS,
     );
     streaming = s;
     editManager = new EditManager(s, renderer, worldSeed, {
       ...(worldSession !== null
         ? { initialEdits: worldSession.loaded.chunks, hlcSeed: worldSession.meta.hlc }
         : {}),
+      ...(MESH_PARAMS !== undefined ? { meshParams: MESH_PARAMS } : {}),
     });
     if (worldSession !== null) worldSession.attach(editManager);
   }
@@ -561,7 +567,7 @@ async function start(): Promise<void> {
   let hudAt = 0;
   let bannerShown = false;
 
-  const hooks = TEST_MODE ? installTestHooks(renderer, camera) : null;
+  const hooks = TEST_MODE ? installTestHooks(renderer, camera, () => vertexStatsOf(streaming)) : null;
   if (LOOPBACK && PLAYER_MODE && editManager !== null && streaming !== null) {
     const em = editManager;
     const st = streaming;
@@ -830,15 +836,40 @@ function cubeLines(
   }
 }
 
-function installTestHooks(renderer: Renderer, camera: Camera): AmorfusTestHooks {
+function installTestHooks(
+  renderer: Renderer,
+  camera: Camera,
+  vertexStats: AmorfusTestHooks['vertexStats'],
+): AmorfusTestHooks {
   const hooks: AmorfusTestHooks = {
     frames: 0,
     workerOk: false,
     readCenterPixel: () => renderer.readCenterPixel(camera),
     genGolden: (seed, chunk) => chunkGoldenHash(seed, chunk),
+    vertexStats,
   };
   window.__amorfus = hooks;
   return hooks;
+}
+
+/** §7.9 e2e probe over the streamed chunks' CPU vertex copies: the bevel
+ *  rule leaves every flat-face corner on the integer lattice, the hinted
+ *  rule almost none. */
+function vertexStatsOf(streaming: Streaming | null): ReturnType<AmorfusTestHooks['vertexStats']> {
+  let total = 0;
+  let integer = 0;
+  if (streaming !== null) {
+    for (const rec of streaming.chunks.values()) {
+      const pos = rec.positions;
+      for (let i = 0; i + 2 < pos.length; i += 3) {
+        total += 1;
+        if (Number.isInteger(pos[i]!) && Number.isInteger(pos[i + 1]!) && Number.isInteger(pos[i + 2]!)) {
+          integer += 1;
+        }
+      }
+    }
+  }
+  return { total, integerFraction: total > 0 ? integer / total : 0, rule: MESH_RULE };
 }
 
 void start();

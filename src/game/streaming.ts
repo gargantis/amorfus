@@ -10,6 +10,7 @@ import { pickUploadBatch, type UploadItem } from '../render/upload-budget';
 import { CHUNK, packChunkKey } from '../core/world/coords';
 import type { NeighborChunk } from '../core/mesh/assemble';
 import type { EditsByChunk } from '../core/mesh/gen-mesh';
+import type { MeshParams } from '../core/mesh/mesher';
 import { chunkBandFor } from './streaming-band';
 
 
@@ -41,6 +42,7 @@ export class Streaming {
   private viewRadius: number;
   private lastCameraChunk = Number.NaN;
   private startTime = performance.now();
+  private meshParams: Partial<MeshParams> | undefined;
   firstFillMs: number | null = null;
 
   constructor(
@@ -48,11 +50,14 @@ export class Streaming {
     seed: [number, number],
     viewRadius: number,
     editsProvider: (cx: number, cy: number, cz: number) => EditsByChunk = () => new Map(),
+    /** mesher overrides every GEN_MESH job carries (§7.9 rule) */
+    meshParams?: Partial<MeshParams>,
   ) {
     this.renderer = renderer;
     this.seed = seed;
     this.viewRadius = viewRadius;
     this.editsProvider = editsProvider;
+    this.meshParams = meshParams;
     this.pool = new MeshWorkerPool();
   }
 
@@ -87,6 +92,7 @@ export class Streaming {
         cz,
         // Built at DISPATCH time with only the region's edits (review #3/#7).
         edits: serializeEdits(this.editsProvider(cx, cy, cz)),
+        ...(this.meshParams !== undefined ? { params: this.meshParams } : {}),
       }),
       dist <= 1 ? PRIORITY.PHYSICS : PRIORITY.FRUSTUM,
       dist,

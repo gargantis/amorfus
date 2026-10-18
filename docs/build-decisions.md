@@ -262,3 +262,42 @@ nonsense seed rather than being refused; share files keep per-session
 peer ids (no play times leak, but edits stay groupable by session);
 storage listeners are added per attach without removal; handshake
 retries never give up; non-minimal varints are accepted on decode.
+
+## After M8 — bevel smoothing rule (2026-10-17)
+
+- **A second position rule, `bevel`, sits beside the hinted surface nets
+  and is off by default.** The owner asked for a non-curving alternative:
+  corners move only to bevel edges and straighten material seams, faces
+  stay flat. It was built as a per-job parameter rather than a
+  replacement so the goldens, the D-3 measurements and the product look
+  stay as signed off until the gallery and `#rule=bevel` have been judged
+  (PLAN.md §7.9). *Cost if wrong:* one branch in pass 1, one skipped
+  pass, one flag bit; removing either rule is a deletion.
+- **The offset is a 256-entry table, not the surface-nets zero-crossing
+  mean.** The trilinear-isosurface rule gives exact small rationals and a
+  closed form; on binary data the two agree at step edges and differ at
+  corners and feet. *Cost if wrong:* a different table is a one-function
+  change, pinned by the table test.
+- **Flat shading comes from screen derivatives in the fragment shader,
+  selected by vertex flag bit 1,** rather than from unshared per-face
+  vertices. Vertices stay shared, so the pool budget is untouched; the
+  derivative is computed unconditionally because WGSL demands uniform
+  control flow for it. *Cost if wrong:* per-face vertices would roughly
+  double vertex bytes under the rule.
+- **The bevel rule always takes the 38³ region.** Everything it reads is
+  within 3 blocks, and REMESH at 52³ is tested to reproduce the 38³ job
+  byte for byte. *Cost if wrong:* a seam, which the partition test at
+  apron 3 would show.
+- **Seams shift only when exactly one of the four surface blocks differs,
+  and never beside a sharp block.** Three materials at a corner stay
+  blocky by design; the alternative (summing per-material pulls) cancels
+  or picks a side arbitrarily. *Cost if wrong:* a visible stair-step at
+  three-material corners.
+- **Mesh params travel in every worker request** (`params` on GEN_MESH and
+  REMESH), chosen once in main.ts from `#rule=` and shared by Streaming
+  and the EditManager. A mismatch between the two would show as a seam at
+  every edit, so one constant feeds both. *Cost if wrong:* a few bytes per
+  request.
+- **Not done:** flipping the default, re-emitting the goldens, dropping the
+  52³ path, and re-measuring the D-3 physics battery under the rule. All
+  wait for the owner's look judgement.

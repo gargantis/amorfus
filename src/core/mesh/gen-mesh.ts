@@ -73,9 +73,10 @@ export function buildGenMeshInput(
   const bz = cz * CHUNK;
 
   // Apron decision: any shape edit within reach (FULL_APRON) of the chunk
-  // forces the 52³ region (§7.5).
+  // forces the 52³ region (§7.5). The bevel rule (§7.9) is local — table,
+  // guard, caps and AO all read within 3 blocks — so it never needs it.
   let apron = opts.forceApron ?? SHORT_APRON;
-  if (opts.forceApron === undefined) {
+  if (opts.forceApron === undefined && opts.params?.rule !== 'bevel') {
     const reach = collectEdits(
       edits,
       bx - FULL_APRON, by - FULL_APRON, bz - FULL_APRON,

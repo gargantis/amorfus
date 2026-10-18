@@ -579,9 +579,21 @@ A static gallery page with sliders for k, G, the clearance caps and hints on/off
 - generated slopes from 1:2 to 1:16, **next to hand-built 1:4 and 1:8 ramps**;
 - a block dug out of a slope;
 - a sphere;
-- a sharp wall on a slope.
+- a sharp wall on a slope;
+- built 1:2 and 1:3 stairs and a material-seam patchwork (§7.9, added 2026-10-17).
 
 You approve the constants there. The invariants in §14 pin down the mechanics; they cannot judge taste.
+
+### 7.9 Alternative rule: bevel (selectable, added 2026-10-17)
+
+A second position rule on the same topology, chosen per mesh job by `MeshParams.rule` and off by default (`'hints'`). It does not curve anything: faces stay flat facets, and corners move only to bevel edges and to straighten material seams.
+
+- **Position:** treat the corner's 8 occupancies as a trilinear density `f` and move along `∇f` to where `f = ½`: `d = (½ − f)·∇f / |∇f|²`, capped per axis at `bevel` (default 0.25). A 256-entry table of small rationals; a flat half (4 solid blocks on one side of a face plane) and a zero gradient (blocks touching only at a corner) give 0, so flat ground stays exactly on the lattice. A step's top edge moves 0.25 in and down, its foot 0.25 out and up: a 1:1 staircase becomes one 45° plane, a 1:n staircase keeps 45° risers between treads at `atan(0.5/(n − 0.5))`. Terraces on gentle built slopes are therefore the look, not a defect (C-7 is inherent to any local binary rule).
+- **Seams:** on a flat half whose 4 solid blocks are not sharp, if exactly one differs in material from the other three, the corner shifts `seam` (default 0.25) along each in-plane axis toward that block. Convex and concave sides agree on the direction, so the shared corner stays crack-free; 2+2 and 2+1+1 corners do not move.
+- **Hints and relaxation:** ignored. `ρ` is unused; pass 3 is skipped. The constraint box of §7.4 (thin-feature guard, D-3 clearance caps, sharp pinning) applies unchanged, so the §14 tunnel and guard invariants hold under both rules.
+- **Shading:** every vertex carries flag bit 1 (*faceted*); the terrain shader then takes the triangle's normal from screen derivatives of position. Vertices stay shared per (corner, material), so the vertex count is unchanged.
+- **Apron:** the rule reads within 3 blocks (table 1, guard 2, caps 2, AO 2), so GEN_MESH always takes the 38³ region and REMESH at 52³ reproduces it byte for byte. The 52³ path and the saturated-chunk fallback become dead weight if the rule is made default.
+- **Selecting it:** `#rule=bevel` on any load (world, `#test=smoke`, gallery); the gallery also has a toggle and sliders for `bevel` and `seam`. Making it the default means flipping `DEFAULT_PARAMS.rule`, re-emitting the mesh goldens (legitimate until the D-24 freeze), and measuring the D-3 physics battery under it.
 
 ---
 

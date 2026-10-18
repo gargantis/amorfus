@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { meshRegion, type MeshParams } from './mesher';
+import { meshRegion, bevelOffset, type MeshParams } from './mesher';
 import { CHUNK } from '../world/coords';
 import { makeBlock, AIR } from '../world/block';
 
@@ -9,6 +9,8 @@ import { makeBlock, AIR } from '../world/block';
 
 const STONE = makeBlock(3, false);
 const SHARP_BRICK = makeBlock(6, true);
+const GRASS = makeBlock(1, false);
+const SAND = makeBlock(4, false);
 
 interface Build {
   apron: number;
@@ -403,5 +405,248 @@ describe('meshRegion invariants (§14)', () => {
       const [dx, dy, dz] = decode(ox, oy);
       expect(Math.hypot(dx, dy, dz)).toBeGreaterThan(0.5);
     }
+  });
+});
+
+// §7.9 bevel rule: no hints, no relaxation, flat shading. Each mixed
+// corner moves to where the trilinear occupancy of its 8 blocks reads
+// one half, clamped per axis; flat halves do not move at all. Material
+// seams on a flat face shift the corner in-plane toward the odd block.
+
+/** Emitted vertices as [x, y, z, material, flags]. */
+function vertsOf(m: ReturnType<typeof meshRegion>): Array<[number, number, number, number, number]> {
+  const u16 = new Uint16Array(m.vertexData);
+  const u8 = new Uint8Array(m.vertexData);
+  const out: Array<[number, number, number, number, number]> = [];
+  for (let v = 0; v < m.vertexCount; v++) {
+    out.push([
+      u16[v * 8]! / 256 - 0.5,
+      u16[v * 8 + 1]! / 256 - 0.5,
+      u16[v * 8 + 2]! / 256 - 0.5,
+      u8[v * 16 + 12]!,
+      u16[v * 8 + 3]! >> 8,
+    ]);
+  }
+  return out;
+}
+
+describe('bevel rule (§7.9)', () => {
+  const BEVEL: Partial<MeshParams> = { rule: 'bevel' };
+
+  it('table: flat halves stay, step edges move 0.25, a lone corner 0.5, a diagonal pair stays', () => {
+    // mask bit = ox | oz << 1 | oy << 2 (the s000, s100, s001, … order)
+    expect(bevelOffset(0x0f)).toEqual([0, 0, 0]); // −y half solid: flat floor
+    expect(bevelOffset(0x55)).toEqual([0, 0, 0]); // −x half solid: flat wall
+    expect(bevelOffset(0x0a)).toEqual([0.25, -0.25, 0]); // top edge of a step rising toward +x
+    expect(bevelOffset(0xaf)).toEqual([-0.25, 0.25, 0]); // foot of the same step
+    expect(bevelOffset(0x01)).toEqual([-0.5, -0.5, -0.5]); // corner of a lone block at (0,0,0)
+    expect(bevelOffset(0x81)).toEqual([0, 0, 0]); // two blocks touching only at the corner
+    // a block standing on flat ground, 5 of 8: the fillet lifts the vertex
+    const foot = bevelOffset(0x0f | 0x80);
+    expect(foot[0]).toBeCloseTo(-1 / 22, 12);
+    expect(foot[1]).toBeCloseTo(3 / 22, 12);
+    expect(foot[2]).toBeCloseTo(-1 / 22, 12);
+    // solid/air symmetry: a configuration and its complement move the same
+    // way (toward the solid when convex, toward the air when concave)
+    for (let mask = 1; mask < 255; mask++) {
+      expect(bevelOffset(255 - mask)).toEqual(bevelOffset(mask));
+    }
+    expect(bevelOffset(0)).toEqual([0, 0, 0]);
+    expect(bevelOffset(255)).toEqual([0, 0, 0]);
+  });
+
+  it('a flat floor stays exactly flat', () => {
+    const m = mesh(build(3, flatFloor(8)), BEVEL);
+    expect(m.quadCount).toBe(32 * 32);
+    for (const [x, y, z] of positionsOf(m)) {
+      expect(Number.isInteger(x)).toBe(true);
+      expect(y).toBe(8);
+      expect(Number.isInteger(z)).toBe(true);
+    }
+  });
+
+  it('a 1:1 staircase comes out as one 45° plane', () => {
+    const b = build(3, (x, y, _z) => ({ v: y < 8 + x ? STONE : AIR }));
+    const m = mesh(b, BEVEL);
+    const pos = positionsOf(m).filter((p) => p[0]! > 4 && p[0]! < 24 && p[1]! > 10);
+    expect(pos.length).toBeGreaterThan(500);
+    for (const [x, y] of pos) expect(Math.abs(y - x - 7.5)).toBeLessThanOrEqual(1 / 256);
+  });
+
+  it('cube reproduction: bevel 0 and seam 0 give exact cubes', () => {
+    const b = build(3, (x, y, z) => ({
+      v: y < 8 ? GRASS : x === 16 && y === 8 && z === 16 ? STONE : AIR,
+    }));
+    const m = mesh(b, { rule: 'bevel', bevel: 0, seam: 0 });
+    expect(m.quadCount).toBe(32 * 32 + 4);
+    for (const [x, y, z] of positionsOf(m)) {
+      expect(Number.isInteger(x)).toBe(true);
+      expect(Number.isInteger(y)).toBe(true);
+      expect(Number.isInteger(z)).toBe(true);
+    }
+  });
+
+  it('every vertex stays inside its cell, is shared (watertight) and carries the faceted flag', () => {
+    const sphere = (x: number, y: number, z: number) =>
+      ({ v: Math.hypot(x - 16, y - 16, z - 16) < 7 ? STONE : AIR });
+    const m = mesh(build(3, sphere), BEVEL);
+    expect(m.quadCount).toBeGreaterThan(100);
+    for (const [x, y, z, , flags] of vertsOf(m)) {
+      for (const c of [x, y, z]) expect(Math.abs(c - Math.round(c))).toBeLessThanOrEqual(0.5);
+      expect(flags & 2).toBe(2);
+    }
+    const edgeCount = new Map<string, number>();
+    for (let q = 0; q < m.quadCount; q++) {
+      const ring = [m.indexData[q * 6]!, m.indexData[q * 6 + 1]!, m.indexData[q * 6 + 2]!, m.indexData[q * 6 + 5]!];
+      for (let e = 0; e < 4; e++) {
+        const a = ring[e]!;
+        const bb = ring[(e + 1) % 4]!;
+        edgeCount.set(a < bb ? `${a}:${bb}` : `${bb}:${a}`, (edgeCount.get(a < bb ? `${a}:${bb}` : `${bb}:${a}`) ?? 0) + 1);
+      }
+    }
+    expect([...edgeCount.values()].filter((c) => c !== 2).length).toBe(0);
+    // the hints rule leaves the flag clear
+    for (const [, , , , flags] of vertsOf(mesh(build(3, sphere)))) expect(flags & 2).toBe(0);
+  });
+
+  it('thin features keep the guard sizes', () => {
+    const b = build(3, (x, y, z) => ({
+      v: x === 16 && y === 16 && z === 16 ? STONE : AIR,
+      edited: x === 16 && y === 16 && z === 16,
+    }));
+    const m = mesh(b, BEVEL);
+    expect(m.quadCount).toBe(6);
+    const pos = positionsOf(m);
+    for (let a = 0; a < 3; a++) {
+      const vals = pos.map((p) => p[a]!);
+      expect(Math.max(...vals) - Math.min(...vals)).toBeGreaterThanOrEqual(0.4 - 1 / 128);
+    }
+  });
+
+  it('a dug 1×2 tunnel keeps its clearance opening (D-3)', () => {
+    const b = build(3, (x, y, z) => {
+      const solid = y < 12;
+      const dug = x === 16 && (y === 8 || y === 9) && z >= 4 && z < 28;
+      return { v: solid && !dug ? STONE : AIR, edited: dug };
+    });
+    const pos = positionsOf(mesh(b, BEVEL));
+    const wall = pos.filter(
+      (p) => p[2]! > 14 && p[2]! < 18 && p[1]! > 7.4 && p[1]! < 10.6 && Math.abs(p[0]! - 16.5) < 1.2,
+    );
+    const xs = wall.map((p) => p[0]!);
+    const ys = wall.map((p) => p[1]!);
+    expect(Math.max(...xs) - Math.min(...xs)).toBeGreaterThanOrEqual(0.7 - 1 / 128);
+    expect(Math.max(...ys) - Math.min(...ys)).toBeGreaterThanOrEqual(1.9 - 1 / 128);
+    // the fillet at the tunnel's foot is capped, not free: nothing intrudes past 0.15
+    expect(Math.min(...xs)).toBeGreaterThanOrEqual(16);
+    expect(Math.max(...xs)).toBeLessThanOrEqual(17);
+  });
+
+  it('partition invariance holds at apron 3: shared vertices agree in position and normal', () => {
+    const fill = (x: number, y: number, z: number) => {
+      const d = 9 + 3 * Math.sin(x / 5) + 2 * Math.cos(z / 7) - y;
+      const dug = x >= 30 && x < 34 && y >= 8 && y < 10 && z >= 14 && z < 16;
+      return { v: d > 0 && !dug ? STONE : AIR, edited: dug };
+    };
+    const apron = 3;
+    const mk = (xOff: number) => {
+      const n = CHUNK + 2 * apron;
+      const blocks = new Uint16Array(n * n * n);
+      const rho = new Float32Array(n * n * n);
+      const shapeEdited = new Uint8Array(n * n * n);
+      for (let y = 0; y < n; y++) {
+        for (let z = 0; z < n; z++) {
+          for (let x = 0; x < n; x++) {
+            const i = (y * n + z) * n + x;
+            const r = fill(x - apron + xOff, y - apron, z - apron);
+            blocks[i] = r.v;
+            rho[i] = r.v === AIR ? -1 : 1;
+            shapeEdited[i] = r.edited ? 1 : 0;
+          }
+        }
+      }
+      return meshRegion({ nx: n, ny: n, nz: n, apron, blocks, rho, shapeEdited, params: BEVEL });
+    };
+    const a = mk(0);
+    const b = mk(32);
+    const grab = (m: ReturnType<typeof meshRegion>, xLocal: number) => {
+      const u16 = new Uint16Array(m.vertexData);
+      const i16 = new Int16Array(m.vertexData);
+      const map = new Map<string, [number, number]>();
+      for (let v = 0; v < m.vertexCount; v++) {
+        const x = u16[v * 8]! / 256 - 0.5;
+        if (Math.abs(x - xLocal) > 0.49) continue;
+        const key = `${u16[v * 8 + 1]}:${u16[v * 8 + 2]}:${(x - xLocal).toFixed(4)}:${u16[v * 8 + 3]! & 0xff}`;
+        map.set(key, [i16[v * 8 + 4]!, i16[v * 8 + 5]!]);
+      }
+      return map;
+    };
+    const edgeA = grab(a, 32);
+    const edgeB = grab(b, 0);
+    let shared = 0;
+    let normalMismatches = 0;
+    for (const [key, na] of edgeA) {
+      const nb = edgeB.get(key);
+      if (nb === undefined) continue;
+      shared += 1;
+      if (nb[0] !== na[0] || nb[1] !== na[1]) normalMismatches += 1;
+    }
+    expect(shared).toBeGreaterThan(10);
+    expect(normalMismatches).toBe(0);
+  });
+
+  it('material seams: a corner moves 0.25 toward the odd block; straight seams stay', () => {
+    const b = build(3, (x, y, z) => {
+      if (y >= 8) return { v: AIR };
+      if (y === 7 && z === 16 && x === 16) return { v: STONE }; // lone stone top in grass
+      if (y === 7 && z === 16 && (x === 20 || x === 21)) return { v: STONE }; // 2×1 strip
+      return { v: GRASS };
+    });
+    const verts = vertsOf(mesh(b, BEVEL));
+    for (const v of verts) expect(v[1]).toBe(8); // in-plane only: the floor stays flat
+    const at = (lx: number, lz: number) =>
+      verts.filter((v) => Math.abs(v[0] - lx) < 0.5 && Math.abs(v[2] - lz) < 0.5).map((v) => `${v[0]},${v[2]}`);
+    // every copy of the lattice corner (grass and stone) sits at the shifted position
+    expect(new Set(at(16, 16))).toEqual(new Set(['16.25,16.25']));
+    expect(new Set(at(17, 16))).toEqual(new Set(['16.75,16.25']));
+    expect(new Set(at(17, 17))).toEqual(new Set(['16.75,16.75']));
+    expect(new Set(at(16, 17))).toEqual(new Set(['16.25,16.75']));
+    // strip ends chamfer, the straight seam between its two blocks does not move
+    expect(new Set(at(20, 16))).toEqual(new Set(['20.25,16.25']));
+    expect(new Set(at(22, 17))).toEqual(new Set(['21.75,16.75']));
+    expect(new Set(at(21, 16))).toEqual(new Set(['21,16']));
+    expect(new Set(at(21, 17))).toEqual(new Set(['21,17']));
+    // far from any seam nothing moves
+    expect(new Set(at(8, 8))).toEqual(new Set(['8,8']));
+  });
+
+  it('material seams skip sharp blocks and three-material corners', () => {
+    const b = build(3, (x, y, z) => {
+      if (y >= 8) return { v: AIR };
+      if (y === 7 && z === 16 && x === 16) return { v: SHARP_BRICK };
+      if (y === 7 && z === 23 && x === 24) return { v: SAND };
+      if (y === 7 && z === 24 && x === 24) return { v: STONE };
+      return { v: GRASS };
+    });
+    const verts = vertsOf(mesh(b, BEVEL));
+    const near = (lx: number, lz: number) =>
+      verts.filter((v) => Math.abs(v[0] - lx) < 0.5 && Math.abs(v[2] - lz) < 0.5);
+    for (const [lx, lz] of [[16, 16], [17, 16], [17, 17], [16, 17]] as const) {
+      const vs = near(lx, lz);
+      expect(vs.length).toBeGreaterThan(0);
+      for (const v of vs) {
+        expect(v[0]).toBe(lx);
+        expect(v[2]).toBe(lz);
+      }
+    }
+    // (23,23) grass, (24,23) sand, (23,24) grass, (24,24) stone: 2+1+1 stays put
+    const three = near(24, 24);
+    expect(three.length).toBeGreaterThan(0);
+    for (const v of three) {
+      expect(v[0]).toBe(24);
+      expect(v[2]).toBe(24);
+    }
+    // but the sand block's outer corner (1 of 4) still chamfers
+    expect(new Set(near(25, 23).map((v) => `${v[0]},${v[2]}`))).toEqual(new Set(['24.75,23.25']));
   });
 });

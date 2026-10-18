@@ -44,7 +44,7 @@ class FakeWorker implements WorkerLike {
   }
 }
 
-function rig() {
+function rig(options: ConstructorParameters<typeof EditManager>[3] = {}) {
   const workers: FakeWorker[] = [];
   const pool = new MeshWorkerPool(4, () => {
     const w = new FakeWorker();
@@ -73,7 +73,7 @@ function rig() {
     removeChunk: (key: number) => removed.push(key),
     addChunk: () => void 0,
   } as unknown as Renderer;
-  const em = new EditManager(streaming, renderer, [1, 1]);
+  const em = new EditManager(streaming, renderer, [1, 1], options);
   const swaps: number[][] = [];
   em.onSwap = (keys) => swaps.push([...keys].sort((x, y) => x - y));
 
@@ -137,6 +137,17 @@ describe('EditManager transactions', () => {
     r.finishOldest(B); // returns 'cancelled'
     r.finishOldest(A);
     expect(r.swaps).toEqual([[A]]);
+  });
+
+  it('jobs carry the mesh params the manager was given (§7.9 bevel rule)', () => {
+    const r = rig({ meshParams: { rule: 'bevel' } });
+    r.em.apply(16, 16, 16, PLANKS);
+    const job = r.jobsFor(A)[0]!.job;
+    expect(job.raw['params']).toEqual({ rule: 'bevel' });
+    // and without any, the request carries none, so the worker meshes with the defaults
+    const plain = rig();
+    plain.em.apply(16, 16, 16, PLANKS);
+    expect(plain.jobsFor(A)[0]!.job.raw['params']).toBeUndefined();
   });
 
   it('jobs carry only their own region’s edits (review #3)', () => {

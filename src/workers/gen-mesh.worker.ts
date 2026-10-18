@@ -2,7 +2,7 @@
 // from (seed, edits) and meshes it; REMESH meshes a region the main
 // thread assembled. ArrayBuffers are transferred, never shared.
 import { genMeshJob, type EditsByChunk } from '../core/mesh/gen-mesh';
-import { meshRegion, type MeshRegionInput } from '../core/mesh/mesher';
+import { meshRegion, type MeshRegionInput, type MeshParams } from '../core/mesh/mesher';
 
 export interface GenMeshRequest {
   type: 'gen_mesh';
@@ -15,6 +15,8 @@ export interface GenMeshRequest {
   cz: number;
   /** edits serialized as [chunkKey, [index, value, index, value, …]][] */
   edits: Array<[number, number[]]>;
+  /** mesher overrides (§7.9 rule); absent = DEFAULT_PARAMS */
+  params?: Partial<MeshParams>;
 }
 
 export interface RemeshRequest {
@@ -32,6 +34,7 @@ export interface RemeshRequest {
   blocks: Uint16Array;
   rho: Float32Array;
   shapeEdited: Uint8Array;
+  params?: Partial<MeshParams>;
 }
 
 export type WorkerRequest = GenMeshRequest | RemeshRequest;
@@ -75,7 +78,9 @@ function deserializeEdits(flat: Array<[number, number[]]>): EditsByChunk {
 ctx.onmessage = (ev: MessageEvent) => {
   const req = ev.data as WorkerRequest;
   if (req.type === 'gen_mesh') {
-    const job = genMeshJob(req.seed, req.cx, req.cy, req.cz, deserializeEdits(req.edits));
+    const job = genMeshJob(req.seed, req.cx, req.cy, req.cz, deserializeEdits(req.edits), {
+      ...(req.params !== undefined ? { params: req.params } : {}),
+    });
     const m = job.mesh;
     const res: MeshResponse = {
       type: 'mesh',
@@ -110,7 +115,7 @@ ctx.onmessage = (ev: MessageEvent) => {
       blocks: req.blocks,
       rho: req.rho,
       shapeEdited: req.shapeEdited,
-      params: undefined,
+      params: req.params,
     };
     const m = meshRegion(input);
     const res: MeshResponse = {

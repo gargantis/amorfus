@@ -12,6 +12,9 @@ interface AmorfusTestHooks {
   /** C-10 canary: golden hash of one generated chunk, computed by THIS
    *  bundle in THIS browser; must equal the Node value. */
   genGolden: (seed: [number, number], chunk: [number, number, number]) => Promise<string>;
+  /** §7.9: streamed surface vertices, the share of them on the integer
+   *  lattice, and the smoothing rule this load runs. */
+  vertexStats: () => { total: number; integerFraction: number; rule: 'hints' | 'bevel' };
 }
 
 interface AmorfusCoreHooks {

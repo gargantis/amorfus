@@ -41,6 +41,11 @@ relays or about same-machine WebRTC, not a regression the gate missed.
 - **M3 smoothing look**: open `#scene=gallery`; tune k / guard /
   clearance caps / hints if wanted; sign off D-3, D-4, C-8 — the
   constants live in `src/core/mesh/mesher.ts` DEFAULT_PARAMS.
+- **§7.9 bevel rule**: judge it in the gallery (toggle, bevel cap, seam
+  shift) and on the live world with `#rule=bevel`. If it wins, set
+  `DEFAULT_PARAMS.rule` to `'bevel'`, re-emit the mesh goldens
+  (`AMORFUS_EMIT_GOLDENS=1`, only before the D-24 freeze), and re-run the
+  D-3 physics battery under it before any release.
 - **D-2 networks**: the two-machine spike (M0) and the full matrix (M7)
   on the must-pass legs; record results in docs/acceptance.md. Scenario
   B (4 players, one joining 1e5 edits mid-run) on the same session.

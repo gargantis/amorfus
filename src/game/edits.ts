@@ -17,6 +17,7 @@ function serializeRegionEdits(edits: Map<number, Map<number, number>>): Array<[n
 import { Hlc } from '../core/sync/hlc';
 import { LwwStore, type Entry } from '../core/sync/lww';
 import { assembleRemeshInput } from '../core/mesh/assemble';
+import type { MeshParams } from '../core/mesh/mesher';
 import type { Streaming } from './streaming';
 import { PRIORITY } from './worker-pool';
 import type { JobStatus } from './worker-pool';
@@ -57,6 +58,8 @@ interface Transaction {
 export interface EditManagerOptions {
   initialEdits?: ReadonlyMap<number, readonly import('../core/sync/lww').IndexedEntry[]>;
   hlcSeed?: import('../core/sync/hlc').HlcStamp;
+  /** mesher overrides every remesh job carries (§7.9 rule); must match Streaming's */
+  meshParams?: Partial<MeshParams>;
 }
 
 export class EditManager {
@@ -70,6 +73,7 @@ export class EditManager {
   private streaming: Streaming;
   private renderer: Renderer;
   private seed: [number, number];
+  private meshParams: Partial<MeshParams> | undefined;
   private nextTx = 1;
   private transactions = new Map<number, Transaction>();
   private txByChunk = new Map<number, number>();
@@ -94,6 +98,7 @@ export class EditManager {
     this.streaming = streaming;
     this.renderer = renderer;
     this.seed = seed;
+    this.meshParams = options.meshParams;
     this.hlc = new Hlc(options.hlcSeed);
     const rnd = new BigUint64Array(1);
     crypto.getRandomValues(rnd);
@@ -265,7 +270,8 @@ export class EditManager {
           const assembled =
             neighbours === null
               ? null
-              : assembleRemeshInput(this.seed, cx, cy, cz, neighbours, regionEdits);
+              : assembleRemeshInput(this.seed, cx, cy, cz, neighbours, regionEdits, this.meshParams);
+          const params = this.meshParams !== undefined ? { params: this.meshParams } : {};
           if (assembled !== null) {
             return {
               type: 'remesh' as const,
@@ -276,6 +282,7 @@ export class EditManager {
               blocks: assembled.blocks,
               rho: assembled.rho,
               shapeEdited: assembled.shapeEdited,
+              ...params,
             };
           }
           return {
@@ -284,6 +291,7 @@ export class EditManager {
             seed: this.seed,
             cx, cy, cz,
             edits: serializeRegionEdits(regionEdits),
+            ...params,
           };
         },
         priority,

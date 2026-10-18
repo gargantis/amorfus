@@ -32,6 +32,7 @@ struct VsOut {
   @location(2) ao: f32,
   @location(3) @interpolate(flat) material: u32,
   @location(4) wmod: vec3f,      // world position mod 1024 for triplanar
+  @location(5) @interpolate(flat) flags: u32, // bit 0 sharp, bit 1 faceted (§7.9)
 }
 
 fn oct_decode(e: vec2f) -> vec3f {
@@ -58,6 +59,7 @@ fn vs_main(in: VsIn) -> VsOut {
   out.rel = rel;
   out.normal = oct_decode(in.oct);
   out.ao = f32(in.pos_ao.w & 0xffu) / 255.0;
+  out.flags = in.pos_ao.w >> 8u;
   out.material = in.material.x;
   out.wmod = rel + frame.cam_mod.xyz; // continuous world coords mod 1024
   return out;
@@ -65,7 +67,12 @@ fn vs_main(in: VsIn) -> VsOut {
 
 @fragment
 fn fs_main(in: VsOut) -> @location(0) vec4f {
-  let n = normalize(in.normal);
+  // §7.9 faceted vertices shade every triangle flat with its own normal,
+  // taken from the screen derivatives of the camera-relative position
+  // (computed unconditionally: derivatives need uniform control flow).
+  // Framebuffer y runs down, so dpdy × dpdx points out of a front face.
+  let facet = cross(dpdy(in.rel), dpdx(in.rel));
+  let n = normalize(select(in.normal, facet, (in.flags & 2u) != 0u));
   // Triplanar with pow(|n|,4) weights (§8.3). Gradients are computed in
   // uniform control flow; planes under 3% are skipped via sampleGrad.
   let w4 = pow(abs(n), vec3f(4.0));

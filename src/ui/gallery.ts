@@ -1,8 +1,8 @@
 // §7.8 look sign-off gallery: the M3 scenes rendered with the production
 // shader, with sliders for k, the guard scale, the clearance caps and
-// hints on/off. The owner approves the smoothing constants here (D-3,
-// D-4, C-8); the §14 invariants pin the mechanics — this page judges
-// taste.
+// hints on/off, plus the §7.9 bevel rule with its cap and seam shift.
+// The owner approves the smoothing constants here (D-3, D-4, C-8); the
+// §14 invariants pin the mechanics — this page judges taste.
 import type { Renderer } from '../render/renderer';
 import { meshRegion, DEFAULT_PARAMS, type MeshParams } from '../core/mesh/mesher';
 import { CHUNK, packChunkKey } from '../core/world/coords';
@@ -13,6 +13,7 @@ const STONE = makeBlock(3, false);
 const GRASS = makeBlock(1, false);
 const BRICK_SHARP = makeBlock(6, true);
 const PLANKS = makeBlock(5, false);
+const SAND = makeBlock(4, false);
 
 interface SceneCell {
   v: number;
@@ -110,6 +111,39 @@ const SCENES: Array<{ name: string; fn: SceneFn }> = [
       return null;
     },
   },
+  {
+    name: 'built stairs 1:2 and 1:3',
+    fn: (x, y, z) => {
+      // §7.9: under the bevel rule a 1:1 stair is a plane; these keep
+      // 45° risers between flatter treads
+      const lane = Math.floor(z / 6);
+      if (lane < 0 || lane > 1 || x < 2) return null;
+      const run = lane === 0 ? 2 : 3;
+      const h = 4 + Math.floor((x - 2) / run);
+      if (y >= 4 && y < h) return { v: STONE, edited: true };
+      return null;
+    },
+  },
+  {
+    name: 'material seams',
+    fn: (x, y, z) => {
+      // §7.9 seam shift, painted into the top layer of the shared ground:
+      // a stone wedge bounded by a 45° run and then a 1:2 stair seam, a
+      // sand disc, a lone block, a 2×1 strip, an L, a three-material
+      // corner and a sharp block that keeps its outline.
+      if (y !== 3) return null;
+      const edge = x < 6 ? 10 + x : 16 - Math.floor((x - 6) / 2);
+      if (z >= edge) return { v: STONE };
+      if ((x - 4) * (x - 4) + (z - 4) * (z - 4) < 3.3 * 3.3) return { v: SAND };
+      if (x === 10 && z === 2) return { v: STONE };
+      if (x >= 12 && x < 14 && z === 2) return { v: STONE };
+      if ((x >= 9 && x < 12 && z === 6) || (x === 9 && z >= 6 && z < 9)) return { v: STONE };
+      if (x === 13 && z === 6) return { v: SAND };
+      if (x === 13 && z === 7) return { v: STONE };
+      if (x === 2 && z === 12) return { v: BRICK_SHARP };
+      return null;
+    },
+  },
 ];
 
 function clampRho(d: number): number {
@@ -118,19 +152,25 @@ function clampRho(d: number): number {
 }
 
 export interface GalleryParams {
+  rule: MeshParams['rule']; // §7.9
   k: number;
   guardScale: number; // multiplies G[0..2]
   capH: number;
   capV: number;
+  bevel: number; // §7.9 per-axis cap
+  seam: number; // §7.9 in-plane seam shift
   hints: boolean;
 }
 
-export function setupGallery(renderer: Renderer): void {
+export function setupGallery(renderer: Renderer, rule: MeshParams['rule'] = DEFAULT_PARAMS.rule): void {
   const params: GalleryParams = {
+    rule,
     k: DEFAULT_PARAMS.k,
     guardScale: 1,
     capH: DEFAULT_PARAMS.capHorizontal,
     capV: DEFAULT_PARAMS.capVertical,
+    bevel: DEFAULT_PARAMS.bevel,
+    seam: DEFAULT_PARAMS.seam,
     hints: true,
   };
 
@@ -149,10 +189,13 @@ export function setupGallery(renderer: Renderer): void {
 
   const rebuild = (): void => {
     const meshParams: Partial<MeshParams> = {
+      rule: params.rule,
       k: params.k,
       guard: DEFAULT_PARAMS.guard.map((g, i) => (i < 3 ? Math.min(0.5, g * params.guardScale) : g)),
       capHorizontal: params.capH,
       capVertical: params.capV,
+      bevel: params.bevel,
+      seam: params.seam,
     };
     const ccount = Math.ceil((SCENES.length * SLOT) / CHUNK);
     for (let cxi = 0; cxi < ccount; cxi++) {
@@ -213,6 +256,22 @@ export function setupGallery(renderer: Renderer): void {
     panel.appendChild(row);
   };
 
+  const ruleRow = document.createElement('label');
+  const ruleBox = document.createElement('input');
+  ruleBox.type = 'checkbox';
+  ruleBox.checked = params.rule === 'bevel';
+  ruleBox.onchange = () => {
+    params.rule = ruleBox.checked ? 'bevel' : 'hints';
+    rebuild();
+  };
+  ruleRow.append(ruleBox, document.createTextNode(' bevel rule (§7.9): flat facets, no hints, no relaxation'));
+  panel.appendChild(ruleRow);
+  addSlider('bevel cap (bevel rule)', 0, 0.5, 0.01, params.bevel, (v) => {
+    params.bevel = v;
+  });
+  addSlider('seam shift (bevel rule)', 0, 0.5, 0.01, params.seam, (v) => {
+    params.seam = v;
+  });
   addSlider('k (relaxation)', 0, 10, 1, params.k, (v) => {
     params.k = v;
   });

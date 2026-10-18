@@ -13,22 +13,80 @@ import { CHUNK, localIndex } from '../world/coords';
 import { AIR, materialOf, isSharp } from '../world/block';
 
 export interface MeshParams {
+  /** §7.9: 'hints' is the surface-nets rule above; 'bevel' ignores ρ and
+   *  relaxation, moves each corner by the occupancy table, shifts material
+   *  seams in-plane, and flags every vertex for flat shading. */
+  rule: 'hints' | 'bevel';
   k: number; // relaxation iterations (§7.3)
   lambda: number; // damping
   guard: readonly number[]; // G[n6], §7.4
   capHorizontal: number; // D-3 clearance caps
   capVertical: number;
+  bevel: number; // §7.9: per-axis cap on the table offset
+  seam: number; // §7.9: in-plane shift at a material seam corner
   forceZeroOffsets: boolean; // test-only cube-reproduction switch (§14)
 }
 
 export const DEFAULT_PARAMS: MeshParams = {
+  rule: 'hints',
   k: 6,
   lambda: 0.5,
   guard: [0.2, 0.25, 0.3, 0.5, 0.5, 0.5, 0.5],
   capHorizontal: 0.15,
   capVertical: 0.05,
+  bevel: 0.25,
+  seam: 0.25,
   forceZeroOffsets: false,
 };
+
+/** §7.9 bevel table. `mask` bit = ox | oz << 1 | oy << 2 over the corner's
+ *  8 blocks (the s000, s100, s001, … order). Treat occupancy as trilinear
+ *  density f; the corner moves along ∇f to where f = ½:
+ *  d = (½ − f)·∇f / |∇f|², which with integer half-counts p is
+ *  (4 − n)(2p − n) / (2·Σ(2p − n)²). A flat half (n = 4 along one axis) and
+ *  a zero gradient (blocks touching only diagonally) give 0. All values
+ *  are small rationals, so the quantised output is engine-independent. */
+export function bevelOffset(mask: number): [number, number, number] {
+  let n = 0;
+  let px = 0;
+  let py = 0;
+  let pz = 0;
+  for (let b = 0; b < 8; b++) {
+    if (((mask >> b) & 1) === 0) continue;
+    n += 1;
+    if ((b & 1) !== 0) px += 1;
+    if ((b & 2) !== 0) pz += 1;
+    if ((b & 4) !== 0) py += 1;
+  }
+  if (n === 0 || n === 8) return [0, 0, 0];
+  const gx = 2 * px - n;
+  const gy = 2 * py - n;
+  const gz = 2 * pz - n;
+  const s = gx * gx + gy * gy + gz * gz;
+  if (s === 0) return [0, 0, 0];
+  const k = (4 - n) / (2 * s);
+  const fold = (v: number): number => (v === 0 ? 0 : v); // no −0
+  return [fold(k * gx), fold(k * gy), fold(k * gz)];
+}
+
+const BEVEL_TABLE: Float64Array = (() => {
+  const t = new Float64Array(256 * 3);
+  for (let mask = 0; mask < 256; mask++) {
+    const d = bevelOffset(mask);
+    t[mask * 3] = d[0];
+    t[mask * 3 + 1] = d[1];
+    t[mask * 3 + 2] = d[2];
+  }
+  return t;
+})();
+
+/** §7.9: the six masks whose 4 solid blocks share one face plane:
+ *  [mask, axis, half] with half = which side of the plane is solid. */
+const FLAT_HALVES: ReadonlyArray<readonly [number, number, number]> = [
+  [0x55, 0, 0], [0xaa, 0, 1],
+  [0x0f, 1, 0], [0xf0, 1, 1],
+  [0x33, 2, 0], [0xcc, 2, 1],
+];
 
 export interface MeshRegionInput {
   nx: number;
@@ -114,6 +172,18 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
       break;
     }
   }
+  const bevelMode = p.rule === 'bevel';
+  const bevelMax = p.bevel;
+  const seam = p.seam;
+  const flatHalfAxis = new Int8Array(256).fill(-1);
+  const flatHalfSide = new Int8Array(256);
+  for (const [mask, axis, half] of FLAT_HALVES) {
+    flatHalfAxis[mask] = axis;
+    flatHalfSide[mask] = half;
+  }
+  /** pin test for one cell edge: is the solid block of the pair sharp? */
+  const pinOf = (ia: number, sa: number, ib: number): boolean =>
+    sa === 1 ? sharpSolid[ia]! === 1 : sharpSolid[ib]! === 1;
 
   for (let y = 1; y < ny; y++) {
     for (let z = 1; z < nz; z++) {
@@ -157,6 +227,72 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
           }
         }
 
+        if (bevelMode) {
+          // §7.9: pins from the 12 cell edges, then the table offset,
+          // capped per axis; then the in-plane seam shift on a flat half.
+          if (s000 !== s100 && pinOf(i000, s000, i100)) pin0 = true;
+          if (s001 !== s101 && pinOf(i001, s001, i101)) pin0 = true;
+          if (s010 !== s110 && pinOf(i010, s010, i110)) pin0 = true;
+          if (s011 !== s111 && pinOf(i011, s011, i111)) pin0 = true;
+          if (s000 !== s010 && pinOf(i000, s000, i010)) pin1 = true;
+          if (s100 !== s110 && pinOf(i100, s100, i110)) pin1 = true;
+          if (s001 !== s011 && pinOf(i001, s001, i011)) pin1 = true;
+          if (s101 !== s111 && pinOf(i101, s101, i111)) pin1 = true;
+          if (s000 !== s001 && pinOf(i000, s000, i001)) pin2 = true;
+          if (s100 !== s101 && pinOf(i100, s100, i101)) pin2 = true;
+          if (s010 !== s011 && pinOf(i010, s010, i011)) pin2 = true;
+          if (s110 !== s111 && pinOf(i110, s110, i111)) pin2 = true;
+          const mask =
+            s000 | (s100 << 1) | (s001 << 2) | (s101 << 3) |
+            (s010 << 4) | (s110 << 5) | (s011 << 6) | (s111 << 7);
+          sx = clampf(BEVEL_TABLE[mask * 3]!, -bevelMax, bevelMax);
+          sy = clampf(BEVEL_TABLE[mask * 3 + 1]!, -bevelMax, bevelMax);
+          sz = clampf(BEVEL_TABLE[mask * 3 + 2]!, -bevelMax, bevelMax);
+          crossings = 1;
+          const axis = flatHalfAxis[mask]!;
+          if (seam > 0 && axis >= 0) {
+            // The 4 solid blocks of the flat half, indexed (ou, ov) along
+            // the face's tangent axes: x → (y, z), y → (x, z), z → (x, y).
+            const half = flatHalfSide[mask]!;
+            const base = i000 + (axis === 0 ? half * SX : axis === 1 ? half * SY : half * SZ);
+            const su = axis === 0 ? SY : SX;
+            const sv = axis === 2 ? SY : SZ;
+            const c0 = base;
+            const c1 = base + su;
+            const c2 = base + sv;
+            const c3 = base + su + sv;
+            if (
+              sharpSolid[c0]! === 0 && sharpSolid[c1]! === 0 &&
+              sharpSolid[c2]! === 0 && sharpSolid[c3]! === 0
+            ) {
+              const m0 = materialOf(blocks[c0]!);
+              const m1 = materialOf(blocks[c1]!);
+              const m2 = materialOf(blocks[c2]!);
+              const m3 = materialOf(blocks[c3]!);
+              // exactly one block differs from the other three
+              let odd = -1;
+              if (m1 === m2 && m2 === m3 && m0 !== m1) odd = 0;
+              else if (m0 === m2 && m2 === m3 && m1 !== m0) odd = 1;
+              else if (m0 === m1 && m1 === m3 && m2 !== m0) odd = 2;
+              else if (m0 === m1 && m1 === m2 && m3 !== m0) odd = 3;
+              if (odd >= 0) {
+                // toward the odd block's centre, within the plane
+                const du = (odd & 1) === 1 ? seam : -seam;
+                const dv = (odd & 2) === 2 ? seam : -seam;
+                if (axis === 0) {
+                  sy += du;
+                  sz += dv;
+                } else if (axis === 1) {
+                  sx += du;
+                  sz += dv;
+                } else {
+                  sx += du;
+                  sy += dv;
+                }
+              }
+            }
+          }
+        } else {
         // 12 cell edges, fully inlined, in the reference (oy, oz, ox, axis)
         // enumeration order so float summation order is frozen (§7.5).
         if (s000 !== s100) {
@@ -326,6 +462,7 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
             sz += 0.5;
             crossings += 1;
           }
+        }
         }
 
         // thin-feature guard (§7.4 rule 1): min G[n6] over non-sharp
@@ -540,8 +677,8 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
   const quadTotal = qmat.length;
   mark('quads');
 
-  // ---- pass 3: damped Jacobi over R (§7.3) ----
-  if (!p.forceZeroOffsets && p.k > 0) {
+  // ---- pass 3: damped Jacobi over R (§7.3); the bevel rule has none ----
+  if (!p.forceZeroOffsets && p.k > 0 && !bevelMode) {
     const rList: number[] = [];
     for (let v = 0; v < vertCount; v++) if (vInR[v] === 1) rList.push(v);
     if (rList.length > 0) {
@@ -758,7 +895,9 @@ export function meshRegion(input: MeshRegionInput): MeshResult {
     const fy = ly * 256 + 128 + dq[v * 3 + 1]!;
     const fz = lz * 256 + 128 + dq[v * 3 + 2]!;
     const ao8 = Math.round(aoOf(v) * 255);
-    const flags = sharp ? 1 : 0;
+    // flags: bit 0 sharp (flat vertex of its own); bit 1 faceted (§7.9: the
+    // shader shades every triangle flat from screen derivatives).
+    const flags = (sharp ? 1 : 0) | (bevelMode ? 2 : 0);
 
     vertexBytes[w16] = fx & 0xff;
     vertexBytes[w16 + 1] = (fx >> 8) & 0xff;

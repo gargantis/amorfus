@@ -167,4 +167,39 @@ describe('gen-mesh and remesh', () => {
     expect(new Uint8Array(short.vertexData)).toEqual(new Uint8Array(full.vertexData));
     expect(short.indexData).toEqual(full.indexData);
   });
+
+  it('the bevel rule takes the 38³ region even with a shape edit in reach (§7.9)', () => {
+    const g = generateChunk(SEED, 0, 0, 0);
+    expect(g.storage.kind).toBe('dense');
+    if (g.storage.kind !== 'dense') return;
+    let li = -1;
+    for (let i = 0; i < g.storage.blocks.length; i++) {
+      if (g.storage.blocks[i] !== 0) {
+        li = i;
+        break;
+      }
+    }
+    const edits: EditMap = new Map([[packChunkKey(0, 0, 0), new Map([[li, 0]])]]);
+    expect(buildGenMeshInput(SEED, 0, 0, 0, edits).apron).toBe(10);
+    expect(buildGenMeshInput(SEED, 0, 0, 0, edits, { params: { rule: 'bevel' } }).apron).toBe(3);
+  });
+
+  it('REMESH ≡ GEN_MESH under the bevel rule: the 52³ assembly equals the 38³ job', () => {
+    const params = { rule: 'bevel' as const };
+    const edits: EditMap = new Map();
+    edit(edits, 0, 0, 0, 1, 20, 1, PLANKS);
+    edit(edits, -1, 0, 0, 31, 20, 0, PLANKS);
+    edit(edits, 0, 0, 0, 2, 20, 1, SHARP_BRICK);
+    const { input, apron } = buildGenMeshInput(SEED, 0, 0, 0, edits, { params });
+    expect(apron).toBe(3);
+    const gen = meshRegion(input);
+    const assembled = assembleRemeshInput(SEED, 0, 0, 0, neighborhood(0, 0, 0, edits), edits, params);
+    expect(assembled).not.toBeNull();
+    expect(assembled!.apron).toBe(10);
+    const rem = meshRegion(assembled!);
+    expect(gen.quadCount).toBeGreaterThan(0);
+    expect(new Uint8Array(rem.vertexData)).toEqual(new Uint8Array(gen.vertexData));
+    expect(rem.indexData).toEqual(gen.indexData);
+    expect(rem.pickRecords).toEqual(gen.pickRecords);
+  });
 });
