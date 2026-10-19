@@ -1,0 +1,23 @@
+| shape [blocks] | hints: area shown, parts, wrong blocks² | mv-quad: area shown, parts, wrong blocks² |
+|---|---|---|
+| bar 1x3 [3] | 3.00 (×1.00), 1 part, 0.00 | 3.62 (×1.21), 1 part, 2.11 |
+| bar 1x4 [4] | 4.00 (×1.00), 1 part, 0.00 | 5.80 (×1.45), 1 part, 1.80 |
+| bar 1x5 [5] | 5.00 (×1.00), 1 part, 0.00 | 5.00 (×1.00), 1 part, 0.00 |
+| bar 1x6 [6] | 6.00 (×1.00), 1 part, 0.00 | 6.00 (×1.00), 1 part, 0.00 |
+| square 2 [4] | 4.00 (×1.00), 1 part, 0.00 | 4.90 (×1.22), 1 part, 1.10 |
+| square 3 [9] | 9.00 (×1.00), 1 part, 0.00 | 9.95 (×1.11), 1 part, 2.05 |
+| square 4 [16] | 16.00 (×1.00), 1 part, 0.00 | 16.99 (×1.06), 1 part, 3.38 |
+| square 5 [25] | 25.00 (×1.00), 1 part, 0.00 | 25.00 (×1.00), 1 part, 0.00 |
+| square 6 [36] | 36.00 (×1.00), 1 part, 0.00 | 36.00 (×1.00), 1 part, 0.00 |
+| rect 2x4 [8] | 8.00 (×1.00), 1 part, 0.00 | 7.32 (×0.91), 1 part, 4.09 |
+| L tromino [3] | 3.00 (×1.00), 1 part, 0.00 | 2.56 (×0.85), 1 part, 1.68 |
+| T tetromino [4] | 4.00 (×1.00), 1 part, 0.00 | 3.50 (×0.88), 1 part, 2.25 |
+| S tetromino [4] | 4.00 (×1.00), 1 part, 0.00 | 4.10 (×1.02), 1 part, 1.52 |
+| plus 5 [5] | 5.00 (×1.00), 1 part, 0.00 | 4.42 (×0.88), 1 part, 2.42 |
+| ring 3x3 [8] | 8.00 (×1.00), 1 part, 0.00 | 9.95 (×1.24), 1 part, 3.05 |
+| ring 5x5 [16] | 16.00 (×1.00), 1 part, 0.00 | 14.97 (×0.94), 1 part, 1.97 |
+| ring 7x7 [24] | 24.00 (×1.00), 1 part, 0.00 | 24.00 (×1.00), 1 part, 0.00 |
+| hollow 4x4 (2x2 hole) [12] | 12.00 (×1.00), 1 part, 0.00 | 12.08 (×1.01), 1 part, 4.50 |
+| pixel disc r2 [21] | 21.00 (×1.00), 1 part, 0.00 | 21.83 (×1.04), 1 part, 2.46 |
+| arrow [10] | 10.00 (×1.00), 3 parts, 0.00 | 12.36 (×1.24), 1 part, 4.16 |
+sheet: out/vmv-adv/shapes.png (rows: first half per approach, then second half per approach)

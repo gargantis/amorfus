@@ -1,0 +1,11 @@
+import * as core from '../../harness/core.mjs';
+import { ALL_SCENES } from '../../harness/scenes.mjs';
+import { VARIANTS } from './variants.mjs';
+const scene = ALL_SCENES.find((s) => s.name === process.argv[2]);
+const v = VARIANTS[process.argv[3]];
+const zc = Number(process.argv[4] ?? 16);
+const m = core.decodeMesh(v.raw(core.buildRegion(scene.cell, 10)));
+const rows = [];
+for (let i = 0; i < m.V; i++) if (m.corner[i * 3 + 2] === zc && m.nrm[i * 3 + 1] > 0.5) rows.push([m.corner[i * 3], m.corner[i * 3 + 1], m.pos[i * 3], m.pos[i * 3 + 1], m.nrm[i * 3], m.nrm[i * 3 + 1], m.nrm[i * 3 + 2]]);
+rows.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+for (const r of rows) if (r[0] >= 6 && r[0] <= 27) console.log(`c(${r[0]},${r[1]}) pos (${r[2].toFixed(3)}, ${r[3].toFixed(3)}) n (${r[4].toFixed(3)}, ${r[5].toFixed(3)}, ${r[6].toFixed(3)}) tilt ${(Math.atan2(-r[4], r[5]) * 180 / Math.PI).toFixed(1)}°`);

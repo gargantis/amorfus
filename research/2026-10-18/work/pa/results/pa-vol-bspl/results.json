@@ -1,0 +1,535 @@
+{
+ "approach": "pa-vol-bspl",
+ "describe": "hints geometry; fragment picks argmax material of a bspl kernel over solid block centres at p - 0.5n",
+ "scenes": {
+  "edge-0deg": {
+   "kind": "material",
+   "ms": 48.254268999999994,
+   "triangles": 2048,
+   "vertices": 1122,
+   "material": {
+    "boundaries": [
+     {
+      "label": "grass|stone 0deg",
+      "n": 640,
+      "mean": -0.37000000000000405,
+      "std": 3.0531133177191805e-15,
+      "maxDev": 3.0531133177191805e-15,
+      "rms": 0.37000000000000144,
+      "maxAbs": 0.370000000000001
+     }
+    ],
+    "area": {
+     "rendered": 288,
+     "cells": 288,
+     "ratio": 1
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "edge-1:8": {
+   "kind": "material",
+   "ms": 54.36006899999995,
+   "triangles": 2048,
+   "vertices": 1126,
+   "material": {
+    "boundaries": [
+     {
+      "label": "grass|stone 1:8",
+      "n": 736,
+      "mean": -0.00048535330926322007,
+      "std": 0.25451152970199514,
+      "maxDev": 0.4227461028763986,
+      "rms": 0.2545119924857854,
+      "maxAbs": 0.4222607495671354
+     }
+    ],
+    "area": {
+     "rendered": 279,
+     "cells": 279,
+     "ratio": 1
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "edge-1:5": {
+   "kind": "material",
+   "ms": 64.10784100000001,
+   "triangles": 2048,
+   "vertices": 1128,
+   "material": {
+    "boundaries": [
+     {
+      "label": "grass|stone 1:5",
+      "n": 768,
+      "mean": -0.04314554973040164,
+      "std": 0.2205597074156031,
+      "maxDev": 0.34013892188028816,
+      "rms": 0.22474012324637313,
+      "maxAbs": 0.3832844716106897
+     }
+    ],
+    "area": {
+     "rendered": 281,
+     "cells": 281,
+     "ratio": 1
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "edge-1:3": {
+   "kind": "material",
+   "ms": 13.328629999999976,
+   "triangles": 2048,
+   "vertices": 1132,
+   "material": {
+    "boundaries": [
+     {
+      "label": "grass|stone 1:3",
+      "n": 849,
+      "mean": -0.16206137581491864,
+      "std": 0.17235698699361182,
+      "maxDev": 0.2622660491715031,
+      "rms": 0.23658153033688106,
+      "maxAbs": 0.40378332873275147
+     }
+    ],
+    "area": {
+     "rendered": 284,
+     "cells": 284,
+     "ratio": 1
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "edge-1:2": {
+   "kind": "material",
+   "ms": 22.969311999999718,
+   "triangles": 2048,
+   "vertices": 1137,
+   "material": {
+    "boundaries": [
+     {
+      "label": "grass|stone 1:2",
+      "n": 962,
+      "mean": 0.1744133022449822,
+      "std": 0.11947067671004087,
+      "maxDev": 0.17469281074217158,
+      "rms": 0.21140776379677928,
+      "maxAbs": 0.34910611298715377
+     }
+    ],
+    "area": {
+     "rendered": 276,
+     "cells": 276,
+     "ratio": 1
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "edge-2:3": {
+   "kind": "material",
+   "ms": 11.440857000000051,
+   "triangles": 2048,
+   "vertices": 1143,
+   "material": {
+    "boundaries": [
+     {
+      "label": "grass|stone 2:3",
+      "n": 1073,
+      "mean": 0.04961138652137156,
+      "std": 0.1517770725032094,
+      "maxDev": 0.25935739821903836,
+      "rms": 0.15967958357353482,
+      "maxAbs": 0.2929510411314489
+     }
+    ],
+    "area": {
+     "rendered": 280,
+     "cells": 280,
+     "ratio": 1
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "edge-1:1": {
+   "kind": "material",
+   "ms": 9.403199999999742,
+   "triangles": 2048,
+   "vertices": 1152,
+   "material": {
+    "boundaries": [
+     {
+      "label": "grass|stone 1:1",
+      "n": 1250,
+      "mean": 0.18450183688109933,
+      "std": 0.02814169504489735,
+      "maxDev": 0.03379970414071898,
+      "rms": 0.18663569544034092,
+      "maxAbs": 0.2169933934766215
+     }
+    ],
+    "area": {
+     "rendered": 276.1064453125,
+     "cells": 276,
+     "ratio": 1.0003856714221016
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "disc-r2.4": {
+   "kind": "material",
+   "ms": 6.380227999999988,
+   "triangles": 2048,
+   "vertices": 1109,
+   "material": {
+    "boundaries": [
+     {
+      "label": "disc r=2.4",
+      "n": 628,
+      "mean": -0.041855473199520786,
+      "std": 0.18270884813034347,
+      "maxDev": 0.3477772922151793,
+      "rms": 0.18744173447200255,
+      "maxAbs": 0.3118214987398704
+     }
+    ],
+    "area": {
+     "rendered": 17.3779296875,
+     "cells": 18,
+     "ratio": 0.9654405381944444
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "disc-r4.3": {
+   "kind": "material",
+   "ms": 13.560127000000193,
+   "triangles": 2048,
+   "vertices": 1123,
+   "material": {
+    "boundaries": [
+     {
+      "label": "disc r=4.3",
+      "n": 1088,
+      "mean": -0.015022117751855664,
+      "std": 0.19012338516180916,
+      "maxDev": 0.41496329692356126,
+      "rms": 0.19071592908600019,
+      "maxAbs": 0.42998541467541695
+     }
+    ],
+    "area": {
+     "rendered": 57.40234375,
+     "cells": 58,
+     "ratio": 0.9896955818965517
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "disc-r7.6": {
+   "kind": "material",
+   "ms": 8.754044999999678,
+   "triangles": 2048,
+   "vertices": 1149,
+   "material": {
+    "boundaries": [
+     {
+      "label": "disc r=7.6",
+      "n": 1920,
+      "mean": -0.013095356680405568,
+      "std": 0.2210885863026216,
+      "maxDev": 0.4568967267303727,
+      "rms": 0.22147607401224825,
+      "maxAbs": 0.46999208341077825
+     }
+    ],
+    "area": {
+     "rendered": 180.40234375,
+     "cells": 181,
+     "ratio": 0.9966980317679558
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "line1-0deg": {
+   "kind": "material",
+   "ms": 7.890849999999773,
+   "triangles": 2048,
+   "vertices": 1143,
+   "material": {
+    "boundaries": [
+     {
+      "label": "1-wide 0deg",
+      "n": 1280,
+      "mean": 0,
+      "std": 0,
+      "maxDev": 0,
+      "rms": 0,
+      "maxAbs": 0
+     }
+    ],
+    "area": {
+     "rendered": 24,
+     "cells": 24,
+     "ratio": 1
+    },
+    "components": 1,
+    "specks": 0,
+    "width": {
+     "ideal": 1,
+     "min": 1,
+     "mean": 1,
+     "max": 1,
+     "std": 0
+    }
+   }
+  },
+  "line1-1:1": {
+   "kind": "material",
+   "ms": 10.217649000000165,
+   "triangles": 2048,
+   "vertices": 1168,
+   "material": {
+    "boundaries": [
+     {
+      "label": "1-wide 1:1",
+      "n": 2560,
+      "mean": -0.13810679320049685,
+      "std": 0.10171262942415271,
+      "maxDev": 0.20439805393674237,
+      "rms": 0.1715195187507824,
+      "maxAbs": 0.3425048471372392
+     }
+    ],
+    "area": {
+     "rendered": 14.625,
+     "cells": 24,
+     "ratio": 0.609375
+    },
+    "components": 24,
+    "specks": 0,
+    "width": {
+     "ideal": 0.7071067811865476,
+     "min": 0,
+     "mean": 0.43097527472527475,
+     "max": 0.7109375,
+     "std": 0.20425978510860074
+    }
+   }
+  },
+  "line1-1:2": {
+   "kind": "material",
+   "ms": 7.131715999999869,
+   "triangles": 2048,
+   "vertices": 1155,
+   "material": {
+    "boundaries": [
+     {
+      "label": "1-wide 1:2",
+      "n": 1920,
+      "mean": -0.05782332035565851,
+      "std": 0.2315982430311817,
+      "maxDev": 0.3974261444384389,
+      "rms": 0.2387075251266353,
+      "maxAbs": 0.44302096804214713
+     }
+    ],
+    "area": {
+     "rendered": 19.875,
+     "cells": 24,
+     "ratio": 0.828125
+    },
+    "components": 13,
+    "specks": 0,
+    "width": {
+     "ideal": 0.8944271909999159,
+     "min": 0,
+     "mean": 0.7404236388611388,
+     "max": 1.1171875,
+     "std": 0.32137806491907406
+    }
+   }
+  },
+  "line2-1:1": {
+   "kind": "material",
+   "ms": 9.627486999999746,
+   "triangles": 2048,
+   "vertices": 1195,
+   "material": {
+    "boundaries": [
+     {
+      "label": "2-wide 1:1",
+      "n": 2436,
+      "mean": 0.0006712579768037808,
+      "std": 0.028140788950075296,
+      "maxDev": 0.03381688834492668,
+      "rms": 0.028148793757532552,
+      "maxAbs": 0.03314563036812357
+     }
+    ],
+    "area": {
+     "rendered": 46.787109375,
+     "cells": 47,
+     "ratio": 0.9954704122340425
+    },
+    "components": 1,
+    "specks": 0,
+    "width": {
+     "ideal": 1.4142135623730951,
+     "min": 1.4140625,
+     "mean": 1.414374687812188,
+     "max": 1.421875,
+     "std": 0.0015301980436004648
+    }
+   }
+  },
+  "square-6": {
+   "kind": "material",
+   "ms": 13.225475999999617,
+   "triangles": 2048,
+   "vertices": 1113,
+   "material": {
+    "boundaries": [
+     {
+      "label": "square 6×6",
+      "n": 768,
+      "mean": -0.025390625,
+      "std": 0.05455946694151904,
+      "maxDev": 0.208984375,
+      "rms": 0.06017822920985075,
+      "maxAbs": 0.234375
+     }
+    ],
+    "area": {
+     "rendered": 35.390625,
+     "cells": 36,
+     "ratio": 0.9830729166666666
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "single": {
+   "kind": "material",
+   "ms": 9.586570999999822,
+   "triangles": 2048,
+   "vertices": 1093,
+   "material": {
+    "boundaries": [],
+    "area": {
+     "rendered": 0.26953125,
+     "cells": 1,
+     "ratio": 0.26953125
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "checker": {
+   "kind": "material",
+   "ms": 12.722829000000274,
+   "triangles": 2048,
+   "vertices": 1136,
+   "material": {
+    "boundaries": [],
+    "area": {
+     "rendered": 13.896484375,
+     "cells": 18,
+     "ratio": 0.7720269097222222
+    },
+    "components": 18,
+    "specks": 0
+   }
+  },
+  "junction3": {
+   "kind": "material",
+   "ms": 9.14675299999999,
+   "triangles": 2048,
+   "vertices": 1157,
+   "material": {
+    "boundaries": [
+     {
+      "label": "stone|sand 90°",
+      "n": 244,
+      "mean": 0.12999999999999903,
+      "std": 4.1217225121079863e-16,
+      "maxDev": 6.106226635438361e-16,
+      "rms": 0.12999999999999912,
+      "maxAbs": 0.12999999999999964
+     },
+     {
+      "label": "sand|grass 210°",
+      "n": 430,
+      "mean": -0.013269969006637534,
+      "std": 0.15789016686026763,
+      "maxDev": 0.3452837447667492,
+      "rms": 0.15844682662836856,
+      "maxAbs": 0.35855371377338674
+     },
+     {
+      "label": "grass|stone 330°",
+      "n": 420,
+      "mean": -0.01408762633396929,
+      "std": 0.1800622778374983,
+      "maxDev": 0.37661593632292223,
+      "rms": 0.18061252757146723,
+      "maxAbs": 0.3625283099889529
+     }
+    ],
+    "area": {
+     "rendered": 182.076171875,
+     "cells": 182,
+     "ratio": 1.0004185267857142
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "hill-materials": {
+   "kind": "material",
+   "ms": 35.688756999999896,
+   "triangles": 2592,
+   "vertices": 1440,
+   "material": {
+    "boundaries": [
+     {
+      "label": "stone disc on hill",
+      "n": 1074,
+      "mean": 0.0845000508494114,
+      "std": 0.23267717209981836,
+      "maxDev": 0.4934464135901251,
+      "rms": 0.24754580386248018,
+      "maxAbs": 0.5162343030466952
+     },
+     {
+      "label": "sand 1:2 edge on hill",
+      "n": 760,
+      "mean": -0.05908294746469361,
+      "std": 0.12643351506508518,
+      "maxDev": 0.2665444517587135,
+      "rms": 0.1395572585458344,
+      "maxAbs": 0.3256273992234071
+     }
+    ],
+    "area": {
+     "rendered": 54.66796875,
+     "cells": 51,
+     "ratio": 1.071920955882353
+    },
+    "components": 1,
+    "specks": 0
+   }
+  }
+ }
+}

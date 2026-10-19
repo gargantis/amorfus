@@ -1,0 +1,8 @@
+mf-iso hline: base min width 1.125; after ONE paint, min width ≥1.5 from it — stone paint d1 1.000 d2 1.000 d3 1.125; sand paint d1 0.813 d2 1.125 d3 1.125
+  paints that pinch the line (< 0.15) away from the paint: 0 of 96
+mf-iso dline: base min width 0.938; after ONE paint, min width ≥1.5 from it — stone paint d1 0.445 d2 0.805 d3 0.930; sand paint d1 0.938 d2 0.938 d3 0.891
+  paints that pinch the line (< 0.15) away from the paint: 0 of 96
+hints hline: base min width 1.000; after ONE paint, min width ≥1.5 from it — stone paint d1 1.000 d2 1.000 d3 1.000; sand paint d1 1.000 d2 1.000 d3 1.000
+  paints that pinch the line (< 0.15) away from the paint: 0 of 96
+hints dline: base min width 0.000; after ONE paint, min width ≥1.5 from it — stone paint d1 0.000 d2 0.000 d3 0.000; sand paint d1 0.000 d2 0.000 d3 0.000
+  paints that pinch the line (< 0.15) away from the paint: 96 of 96 e.g. [{"paint":"stone","px":12,"pz":9,"d":-3,"minWidthAway":0,"at":9.500000000000007,"parts":17},{"paint":"stone","px":12,"pz":10,"d":-2,"minWidthAway":0,"at":9.500000000000007,"parts":17},{"paint":"stone","px":12,"pz":11,"d":-1,"minWidthAway":0,"at":9.500000000000007,"parts":15},{"paint":"stone","px":12,"pz":13,"d":1,"minWidthAway":0,"at":9.500000000000007,"parts":15}]

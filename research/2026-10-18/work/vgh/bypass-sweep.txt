@@ -1,0 +1,16 @@
+scene A
+  hints   -0.45:blk -0.35:blk -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk +0.35:blk +0.45:blk
+  gs-ctx  -0.45:blk -0.35:blk -0.25:blk -0.15:UP  -0.05:UP  +0.00:UP  +0.05:UP  +0.15:UP  +0.25:blk +0.35:blk +0.45:blk
+  gh-cc8b -0.45:blk -0.35:blk -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk +0.35:blk +0.45:blk
+scene B
+  hints   -0.45:blk -0.35:blk -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk +0.35:blk +0.45:blk
+  gs-ctx  -0.45:blk -0.35:blk -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk +0.35:blk +0.45:blk
+  gh-cc8b -0.45:blk -0.35:blk -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk +0.35:blk +0.45:blk
+scene C
+  hints   -0.45:blk -0.35:blk -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk +0.35:blk +0.45:blk
+  gs-ctx  -0.45:blk -0.35:blk -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk +0.35:blk +0.45:blk
+  gh-cc8b -0.45:blk -0.35:blk -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk +0.35:blk +0.45:blk
+scene D
+  hints   -0.45:blk -0.35:blk -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:UP  +0.35:UP  +0.45:UP 
+  gs-ctx  -0.45:up? -0.35:UP  -0.25:UP  -0.15:UP  -0.05:UP  +0.00:UP  +0.05:UP  +0.15:UP  +0.25:UP  +0.35:UP  +0.45:UP 
+  gh-cc8b -0.45:blk -0.35:blk -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk +0.35:blk +0.45:UP 

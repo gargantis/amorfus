@@ -1,0 +1,4 @@
+apron 3 (38³): generate mean 3.14 / median 3.22 ms; hints mesh mean 5.62 / median 5.54 ms (min of 7)
+apron 6 (44³): generate mean 4.68 / median 4.79 ms; hints mesh mean 7.26 / median 7.16 ms (min of 7)
+apron 9 (50³): generate mean 6.90 / median 7.19 ms; hints mesh mean 9.99 / median 10.34 ms (min of 7)
+apron 10 (52³): generate mean 7.44 / median 7.28 ms; hints mesh mean 10.99 / median 12.06 ms (min of 7)

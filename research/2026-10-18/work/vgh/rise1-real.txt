@@ -1,0 +1,22 @@
+chunk -3,1,1 x=4 z=10 h=22 φ -0.04: hints up top -0.068 | gs-ctx up top -0.119 | gh-cc8b up top -0.170
+chunk -3,1,1 x=4 z=11 h=22 φ -0.07: hints up top -0.066 | gs-ctx up top -0.117 | gh-cc8b up top -0.172
+chunk -3,1,1 x=4 z=12 h=22 φ -0.09: hints up top -0.068 | gs-ctx up top -0.115 | gh-cc8b up top -0.174
+chunk -3,1,1 x=4 z=13 h=22 φ -0.20: hints up top -0.068 | gs-ctx up top -0.115 | gh-cc8b up top -0.178
+chunk -3,1,1 x=4 z=14 h=22 φ -0.29: hints up top -0.070 | gs-ctx up top -0.119 | gh-cc8b up top -0.182
+chunk -3,1,1 x=5 z=11 h=22 φ -0.08: hints up top -0.066 | gs-ctx up top -0.119 | gh-cc8b up top +0.000
+chunk -3,1,1 x=5 z=12 h=22 φ -0.09: hints up top -0.066 | gs-ctx up top -0.117 | gh-cc8b up top +0.000
+chunk -3,1,1 x=5 z=13 h=22 φ -0.20: hints up top -0.068 | gs-ctx up top -0.117 | gh-cc8b up top +0.000
+chunk -3,1,1 x=5 z=14 h=22 φ -0.29: hints up top -0.068 | gs-ctx up top -0.119 | gh-cc8b up top +0.000
+chunk -3,1,1 x=6 z=12 h=22 φ -0.08: hints up top -0.070 | gs-ctx up top -0.121 | gh-cc8b up top +0.000
+chunk -3,1,1 x=6 z=13 h=22 φ -0.17: hints up top -0.070 | gs-ctx up top -0.121 | gh-cc8b up top +0.000
+chunk -3,1,1 x=6 z=14 h=22 φ -0.24: hints up top -0.070 | gs-ctx up top -0.121 | gh-cc8b up top +0.000
+chunk -3,1,1 x=7 z=14 h=22 φ -0.20: hints up top -0.071 | gs-ctx up top -0.122 | gh-cc8b up top +0.000
+chunk -3,1,1 x=8 z=18 h=22 φ -0.22: hints up top -0.073 | gs-ctx up top -0.117 | gh-cc8b up top -0.084
+chunk 0,1,2 x=22 z=19 h=18 φ 0.20: hints up top -0.062 | gs-ctx up top -0.112 | gh-cc8b up top -0.316
+chunk 0,1,2 x=22 z=20 h=18 φ 0.12: hints up top -0.061 | gs-ctx up top -0.110 | gh-cc8b up top -0.291
+chunk 1,1,1 x=4 z=14 h=4 φ 0.07: hints up top -0.065 | gs-ctx up top -0.113 | gh-cc8b up top -0.316
+patches tested: 17; φ range -0.29 … 0.20, 0 with φ ≤ −0.40
+patches with a failed approach: {} at φ {}
+hints: patch-top height at its centre minus the block top: min -0.073, median -0.068, max -0.061; 0/17 below −0.10
+gs-ctx: patch-top height at its centre minus the block top: min -0.122, median -0.117, max -0.110; 17/17 below −0.10
+gh-cc8b: patch-top height at its centre minus the block top: min -0.316, median -0.084, max 0.000; 8/17 below −0.10

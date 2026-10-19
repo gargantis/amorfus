@@ -1,0 +1,20 @@
+team dense build (heightfield 1–8)
+   hints   min 14.5 ms  (+0.0 vs hints)  2552 tris
+   gs-ctx  min 15.8 ms  (+1.3 vs hints)  2552 tris, R 3273
+   gs-mls  min 24.4 ms  (+9.9 vs hints)  2552 tris, R 3273, fitted 1691, pts 145509
+ramp-1:4 (team)
+   hints   min 8.5 ms  (+0.0 vs hints)  2720 tris
+   gs-ctx  min 10.3 ms  (+1.9 vs hints)  2720 tris, R 1449
+   gs-mls  min 14.2 ms  (+5.7 vs hints)  2720 tris, R 1449, fitted 1176, pts 100725
+scaffold: 1-wide beams every 3 blocks, 3D
+   hints   min 67.8 ms  (+0.0 vs hints)  43880 tris
+   gs-ctx  min 82.2 ms  (+14.5 vs hints)  43880 tris, R 37308
+   gs-mls  min 481.9 ms  (+414.1 vs hints)  43880 tris, R 37308, fitted 25369, pts 3476937
+rubble: 35% random placed blocks over y 6–20
+   hints   min 66.0 ms  (+0.0 vs hints)  39632 tris
+   gs-ctx  min 88.0 ms  (+22.0 vs hints)  39632 tris, R 37404
+   gs-mls  min 711.8 ms  (+645.8 vs hints)  39632 tris, R 37404, fitted 19654, pts 3310619
+cave sponge: dug 45% of a stone mass y −8..6
+   hints   min 67.2 ms  (+0.0 vs hints)  17142 tris
+   gs-ctx  min 78.4 ms  (+11.1 vs hints)  17142 tris, R 38217
+   gs-mls  min 334.2 ms  (+267.0 vs hints)  17142 tris, R 38217, fitted 12097, pts 1913796

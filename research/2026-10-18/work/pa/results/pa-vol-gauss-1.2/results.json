@@ -1,0 +1,102 @@
+{
+ "approach": "pa-vol-gauss",
+ "describe": "hints geometry; fragment picks argmax material of a gauss kernel over solid block centres at p - 0.5n",
+ "scenes": {
+  "edge-1:8": {
+   "kind": "material",
+   "ms": 38.901917,
+   "triangles": 2048,
+   "vertices": 1126,
+   "material": {
+    "boundaries": [
+     {
+      "label": "grass|stone 1:8",
+      "n": 730,
+      "mean": 0.0018222911348882858,
+      "std": 0.15934199208969504,
+      "maxDev": 0.26151895473982384,
+      "rms": 0.15935241193057822,
+      "maxAbs": 0.26334124587471214
+     }
+    ],
+    "area": {
+     "rendered": 279,
+     "cells": 279,
+     "ratio": 1
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "disc-r4.3": {
+   "kind": "material",
+   "ms": 70.1509759999999,
+   "triangles": 2048,
+   "vertices": 1123,
+   "material": {
+    "boundaries": [
+     {
+      "label": "disc r=4.3",
+      "n": 1056,
+      "mean": -0.16362279647382585,
+      "std": 0.12537092574474534,
+      "maxDev": 0.29761249946771773,
+      "rms": 0.20613172620440887,
+      "maxAbs": 0.46123529594154355
+     }
+    ],
+    "area": {
+     "rendered": 53.638671875,
+     "cells": 58,
+     "ratio": 0.9248046875
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "line1-1:2": {
+   "kind": "material",
+   "ms": 48.51072899999963,
+   "triangles": 2048,
+   "vertices": 1155,
+   "material": {
+    "boundaries": [
+     {
+      "label": "1-wide 1:2",
+      "n": 0
+     }
+    ],
+    "area": {
+     "rendered": 0,
+     "cells": 24,
+     "ratio": 0
+    },
+    "components": 0,
+    "specks": 0,
+    "width": {
+     "ideal": 0.8944271909999159,
+     "min": 0,
+     "mean": 0,
+     "max": 0,
+     "std": 0
+    }
+   }
+  },
+  "single": {
+   "kind": "material",
+   "ms": 16.064721000000645,
+   "triangles": 2048,
+   "vertices": 1093,
+   "material": {
+    "boundaries": [],
+    "area": {
+     "rendered": 0,
+     "cells": 1,
+     "ratio": 0
+    },
+    "components": 0,
+    "specks": 0
+   }
+  }
+ }
+}

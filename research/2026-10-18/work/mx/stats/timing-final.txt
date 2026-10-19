@@ -1,0 +1,3 @@
+hints            mesh only, min of 11: mean 9.91 ms, median 10.87 ms, max 15.18 ms (apron 10)
+mx-codes         mesh only, min of 11: mean 16.05 ms, median 14.15 ms, max 25.44 ms (apron 10)
+mf-iso           mesh only, min of 11: mean 10.81 ms, median 10.37 ms, max 18.31 ms (apron 6)

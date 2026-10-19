@@ -1,0 +1,10 @@
+mf-iso: lone dot area 0.563 blocks²; ratio after one sand paint at Chebyshev distance d: d1 [1.97, 2.01] d2 [0.86, 1.78] d3 [1.00, 1.36] d4 [1.00, 1.00]
+  lone dot parts ≠ 1 after a paint: 0 of 80
+  diagonal line (base min width 0.938): 0 of 36 single paints within 3 split it; min width over all paints 0.703
+  line min width by paint distance |d| (cells off the line): 1: [0.70, 0.71] 2: [0.94, 0.94] 3: [0.88, 0.89]
+  influence radius of a single paint (farthest changed pixel from the painted block): max 2.77, median 1.61 blocks
+hints: lone dot area 1.000 blocks²; ratio after one sand paint at Chebyshev distance d: d1 [1.00, 1.00] d2 [1.00, 1.00] d3 [1.00, 1.00] d4 [1.00, 1.00]
+  lone dot parts ≠ 1 after a paint: 0 of 80
+  diagonal line (base min width 0.000): 36 of 36 single paints within 3 split it; min width over all paints 0.000
+  line min width by paint distance |d| (cells off the line): 1: [0.00, 0.00] 2: [0.00, 0.00] 3: [0.00, 0.00]
+  influence radius of a single paint (farthest changed pixel from the painted block): max 0.00, median 0.00 blocks

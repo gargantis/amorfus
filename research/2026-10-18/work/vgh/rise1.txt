@@ -1,0 +1,29 @@
+placed 1-block rise on natural ground 8+φ; cells: number of the 4 approaches (walk, sprint, walk30, walk60) that walk up; wall = vertical extent of >50° riser segments (step-up 0.6)
+φ-0.49 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 43° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 30° | gh-cc8b 0/4 wall 0.62 [8.00..8.63] max 51° walk@11.73,8.15 sprint@11.74,8.17 walk30@11.70,8.12 walk60@11.65,8.08
+φ-0.45 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 30° | gh-cc8b 0/4 wall 0.60 [8.02..8.63] max 50° walk@11.71,8.15 sprint@11.73,8.17 walk30@11.62,8.15 walk60@11.59,8.14
+φ-0.41 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 29° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 49°
+φ-0.37 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 29° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 48°
+φ-0.33 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 28° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 47°
+φ-0.29 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 27° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 46°
+φ-0.25 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 26° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 45°
+φ-0.21 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 26° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 44°
+φ-0.17 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 25° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 43°
+φ-0.13 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 24° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 41°
+φ-0.09 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 23° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 40°
+φ-0.05 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 23° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 39°
+φ-0.01 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 22° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 37°
+φ+0.03 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 44° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 21° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 36°
+φ+0.07 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 45° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 20° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 34°
+φ+0.11 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 45° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 19° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 33°
+φ+0.15 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 45° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 19° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 31°
+φ+0.19 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 45° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 18° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 29°
+φ+0.23 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 45° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 17° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 28°
+φ+0.27 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 45° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 16° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 25°
+φ+0.31 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 45° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 16° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 24°
+φ+0.35 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 45° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 17° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 22°
+φ+0.39 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 45° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 17° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 20°
+φ+0.43 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 45° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 17° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 18°
+φ+0.47 | hints 4/4 wall 0.00 [Infinity..-Infinity] max 46° | gs-ctx 4/4 wall 0.00 [Infinity..-Infinity] max 17° | gh-cc8b 4/4 wall 0.00 [Infinity..-Infinity] max 18°
+hints: phases with a failed approach: 0/25 
+gs-ctx: phases with a failed approach: 0/25 
+gh-cc8b: phases with a failed approach: 2/25 (-0.49, -0.45)

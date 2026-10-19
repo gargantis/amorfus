@@ -1,0 +1,20 @@
+scene E
+  cubes   binary:blk
+  hints   binary:blk
+  gs-ctx  binary:blk
+  gs-mls  binary:blk
+scene F
+  cubes   -0.45:blk -0.25:blk -0.05:blk +0.15:blk +0.35:blk
+  hints   -0.45:blk -0.25:blk -0.05:blk +0.15:blk +0.35:blk
+  gs-ctx  -0.45:blk -0.25:blk -0.05:blk +0.15:blk +0.35:blk
+  gs-mls  -0.45:blk -0.25:blk -0.05:blk +0.15:blk +0.35:blk
+scene G
+  cubes   binary:blk
+  hints   binary:blk
+  gs-ctx  binary:blk
+  gs-mls  binary:blk
+scene H
+  cubes   -0.45:blk -0.25:blk -0.05:blk +0.15:blk +0.35:blk
+  hints   -0.45:blk -0.25:blk -0.05:blk +0.15:blk +0.35:UP2/3
+  gs-ctx  -0.45:UP2/3 -0.25:UP2/3 -0.05:UP3/3 +0.15:UP3/3 +0.35:UP3/3
+  gs-mls  -0.45:UP3/3 -0.25:UP3/3 -0.05:UP3/3 +0.15:UP3/3 +0.35:UP3/3

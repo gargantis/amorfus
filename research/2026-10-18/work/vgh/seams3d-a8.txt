@@ -1,0 +1,1 @@
+gh-cc8b apron 8: 8/8 chunks byte-identical to apron 24 (0 differing vertices); 8-chunk corner seams: 543 shared vertices, 0 position / 0 normal / 0 AO mismatches

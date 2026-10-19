@@ -1,0 +1,6 @@
+foot of 1-high grass step: hints: stone parts 1, area 15.2 (18 placed) | mf-iso: stone parts 16, area 3.5 (18 placed) | mv-quad: stone parts 1, area 9.1 (18 placed)
+one block off the 1-high step: hints: stone parts 1, area 18.0 (18 placed) | mf-iso: stone parts 1, area 18.6 (18 placed) | mv-quad: stone parts 1, area 18.0 (18 placed)
+foot of 2-high grass step: hints: stone parts 1, area 15.2 (18 placed) | mf-iso: stone parts 4, area 0.6 (18 placed) | mv-quad: stone parts 2, area 27.5 (18 placed)
+foot of 3-high planks wall (1 thick): hints: stone parts 1, area 15.2 (18 placed) | mf-iso: stone parts 1, area 20.0 (18 placed) | mv-quad: stone parts 1, area 13.4 (18 placed)
+foot of 3-high brick wall (3 thick): hints: stone parts 1, area 15.2 (18 placed) | mf-iso: stone parts 1, area 18.0 (18 placed) | mv-quad: stone parts 1, area 13.4 (18 placed)
+plain line, no step (control): hints: stone parts 1, area 18.0 (18 placed) | mf-iso: stone parts 1, area 20.8 (18 placed) | mv-quad: stone parts 1, area 18.0 (18 placed)

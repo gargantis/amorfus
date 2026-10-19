@@ -1,0 +1,42 @@
+# gm-slope
+
+Generator material hints + slope exposures: E = 0.7·|∇D|/|D_y|·(shore fade) + max(0, D−0.3) from the Int8 D plane; 2×12-bit vertex codes; mf-iso fallback near edits; geometry = 'hints'.
+
+- **edge-0deg** grass|stone 0deg: std 0.000 max 0.000 off -0.370 · area ×1.000 · parts 1 · 296.7 ms
+- **edge-1:8** grass|stone 1:8: std 0.131 max 0.220 off 0.005 · area ×1.000 · parts 1 · 48.6 ms
+- **edge-1:5** grass|stone 1:5: std 0.054 max 0.101 off -0.044 · area ×1.000 · parts 1 · 59.8 ms
+- **edge-1:3** grass|stone 1:3: std 0.007 max 0.010 off -0.157 · area ×1.000 · parts 1 · 11.4 ms
+- **edge-1:2** grass|stone 1:2: std 0.006 max 0.007 off 0.174 · area ×1.000 · parts 1 · 10.5 ms
+- **edge-2:3** grass|stone 2:3: std 0.021 max 0.044 off 0.042 · area ×1.000 · parts 1 · 14.0 ms
+- **edge-1:1** grass|stone 1:1: std 0.000 max 0.000 off 0.195 · area ×0.999 · parts 1 · 6.7 ms
+- **disc-r2.4** disc r=2.4: std 0.130 max 0.266 off -0.293 · area ×0.772 · parts 1 · 15.6 ms
+- **disc-r4.3** disc r=4.3: std 0.129 max 0.302 off -0.190 · area ×0.913 · parts 1 · 23.9 ms
+- **disc-r7.6** disc r=7.6: std 0.148 max 0.364 off -0.109 · area ×0.972 · parts 1 · 17.0 ms
+- **line1-0deg** 1-wide 0deg: std 0.009 max 0.028 off 0.066 · area ×1.150 · parts 1 width min 1.125 mean 1.131 (ideal 1.000) · 19.8 ms
+- **line1-1:1** 1-wide 1:1: std 0.000 max 0.000 off 0.122 · area ×1.361 · parts 1 width min 0.930 mean 0.950 (ideal 0.707) · 21.1 ms
+- **line1-1:2** 1-wide 1:2: std 0.043 max 0.117 off 0.072 · area ×1.212 · parts 1 width min 0.938 mean 1.040 (ideal 0.894) · 7.9 ms
+- **line2-1:1** 2-wide 1:1: std 0.000 max 0.000 off -0.166 · area ×0.764 · parts 1 width min 1.055 mean 1.061 (ideal 1.414) · 11.0 ms
+- **square-6** square 6×6: std 0.192 max 0.468 off -0.173 · area ×0.885 · parts 1 · 8.3 ms
+- **single**  area ×0.563 · parts 1 · 6.5 ms
+- **checker**  area ×1.332 · parts 1 · 5.5 ms
+- **junction3** stone|sand 90°: std 0.000 max 0.000 off 0.130; sand|grass 210°: std 0.072 max 0.136 off -0.018; grass|stone 330°: std 0.085 max 0.152 off 0.007 · area ×1.001 · parts 1 · 6.4 ms
+- **hill-materials** stone disc on hill: std 0.142 max 0.350 off -0.133; sand 1:2 edge on hill: std 0.054 max 0.147 off -0.123 · area ×0.967 · parts 1 · 39.0 ms
+- **ramp-1:1** pos std 0.022 max 0.038 off -0.543 · shading 0.1° rms / 0.5° max · faces 3.4° / 5.0° · crease 4.0° / 8.9° · AO rough 0.103 / 0.149 · 3656 tris · 67.2 ms
+- **ramp-1:2** pos std 0.087 max 0.121 off -0.214 · shading 5.6° rms / 8.7° max · faces 11.4° / 16.9° · crease 11.6° / 32.5° · AO rough 0.076 / 0.149 · 3392 tris · 44.2 ms
+- **ramp-1:4** pos std 0.166 max 0.281 off -0.119 · shading 10.6° rms / 19.6° max · faces 13.9° / 28.4° · crease 11.4° / 42.0° · AO rough 0.041 / 0.093 · 2720 tris · 25.1 ms
+- **ramp-1:8** pos std 0.224 max 0.421 off -0.007 · shading 11.5° rms / 26.5° max · faces 12.9° / 35.3° · crease 9.4° / 42.5° · AO rough 0.029 / 0.093 · 2384 tris · 36.4 ms
+- **ramp-diag-1:2.8** pos std 0.140 max 0.260 off -0.330 · shading 8.1° rms / 15.8° max · faces 17.8° / 38.6° · crease 23.1° / 47.7° · AO rough 0.074 / 0.150 · 3680 tris · 24.5 ms
+- **mound-r6.4** pos std 0.144 max 0.387 off -0.274 · shading 7.8° rms / 20.8° max · faces 14.4° / 41.2° · crease 17.2° / 47.2° · AO rough 0.075 / 0.221 · 2546 tris · 8.0 ms
+- **pit-r5.4** pos std 0.193 max 0.596 off -0.193 · shading 9.4° rms / 32.4° max · faces 21.3° / 47.5° · crease 25.9° / 57.3° · AO rough 0.146 / 0.281 · 2404 tris · 8.9 ms
+- **terrace-disc** outline std 0.218 max 0.485 off -0.329 · 2146 tris · 8.8 ms
+- **terrace-1:2** outline std 0.133 max 0.243 off -0.087 · 2144 tris · 8.8 ms
+- **tower-r4.6** outline std 0.170 max 0.338 off -0.111 · 2480 tris · 8.7 ms
+- **hinted-slope-1:4** pos std 0.000 max 0.000 off 0.000 · shading 0.0° rms / 0.0° max · faces 0.0° / 0.0° · crease 0.0° / 0.0° · AO rough 0.041 / 0.093 · 2432 tris · 8.0 ms
+- **hinted-hill** pos std 0.010 max 0.038 off -0.005 · shading 0.8° rms / 2.8° max · faces 1.1° / 2.5° · crease 2.6° / 8.9° · AO rough 0.065 / 0.176 · 2592 tris · 8.5 ms
+- **floating-block** PASS {"extents":[0.6015625,0.6015625,0.6015625],"value":0.6015625,"pass":true} (want min extent ≥ 0.40)
+- **pillar** PASS {"value":0.3984375,"pass":true} (want width ≥ 0.40)
+- **tunnel-1x2** PASS {"width":0.75,"height":1.8984375,"value":0.9991776315789475,"pass":true} (want width ≥ 0.70, height ≥ 1.90)
+- **roof-2-high** PASS {"value":1.8984375,"pass":true} (want gap ≥ 1.90 everywhere under the roof)
+- **sharp-wall** PASS {"sharpVertices":464,"offPlane":0,"value":0,"pass":true} (want every sharp vertex on its integer plane)
+
+total mesh time 974.8 ms

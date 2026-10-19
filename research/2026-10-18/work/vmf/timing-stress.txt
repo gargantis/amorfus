@@ -1,0 +1,3 @@
+wall-grid (1-thick walls every 4, 6 high): hints mesh 20.3 ms, mf field 7.4 ms (+36%), 12128 verts, 11264 → 12032 tris (+6.8%), fans 384, flips 512
+pillars (1x1 every 2, 12 high): hints mesh 39.9 ms, mf field 14.1 ms (+35%), 24215 verts, 26624 → 26624 tris (+0.0%), fans 0, flips 170
+flat checker floor (no build): hints mesh 5.5 ms, mf field 1.7 ms (+31%), 2174 verts, 2048 → 2048 tris (+0.0%), fans 0, flips 0

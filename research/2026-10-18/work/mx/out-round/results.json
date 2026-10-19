@@ -1,0 +1,75 @@
+{
+ "approach": "mx-codes",
+ "describe": "Contour codes per surface block computed in mesh(): each crack fitted once in a 15×15 surface-followed window centred on its owner (TLS over digital-straight windows ≥ 9 cracks, else parabola ±6; |τ| ≤ 0.45), xBR saddles with margin, corners kept, one-cell chains square; ≤ 2 passages in 64 bits; GPU: 38³ r32uint texels + code buffer; fragment: column search + 1 code load; hints geometry; apron 10.",
+ "scenes": {
+  "line1-1:1": {
+   "kind": "material",
+   "ms": 65.90104000000001,
+   "triangles": 2048,
+   "vertices": 1168,
+   "material": {
+    "boundaries": [
+     {
+      "label": "1-wide 1:1",
+      "n": 2498,
+      "mean": 0.011048543456041778,
+      "std": 1.150516785185585e-15,
+      "maxDev": 2.723515857283587e-15,
+      "rms": 0.011048543456041574,
+      "maxAbs": 0.011048543456044502,
+      "sideMeans": [
+       0.011048543456041778,
+       -0.011048543456041386
+      ]
+     }
+    ],
+    "area": {
+     "rendered": 23.34375,
+     "cells": 24,
+     "ratio": 0.97265625
+    },
+    "components": 1,
+    "specks": 0,
+    "width": {
+     "ideal": 0.7071067811865476,
+     "min": 0.703125,
+     "mean": 0.7071912462537463,
+     "max": 0.7109375,
+     "std": 0.0039029719780299867
+    }
+   }
+  },
+  "single": {
+   "kind": "material",
+   "ms": 60.16065099999997,
+   "triangles": 2048,
+   "vertices": 1093,
+   "material": {
+    "boundaries": [],
+    "area": {
+     "rendered": 0.79296875,
+     "cells": 1,
+     "ratio": 0.79296875
+    },
+    "components": 1,
+    "specks": 0
+   }
+  },
+  "checker": {
+   "kind": "material",
+   "ms": 67.911247,
+   "triangles": 2048,
+   "vertices": 1136,
+   "material": {
+    "boundaries": [],
+    "area": {
+     "rendered": 18,
+     "cells": 18,
+     "ratio": 1
+    },
+    "components": 18,
+    "specks": 0
+   }
+  }
+ }
+}

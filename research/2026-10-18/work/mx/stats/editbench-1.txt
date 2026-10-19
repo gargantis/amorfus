@@ -1,0 +1,7 @@
+mesh() per dirty chunk, min of 9 interleaved runs, ms (corner×8: sum / max of the 8 chunks):
+variant     mountain            single              town                corner×8            
+hints       21.35               9.73                13.51               79.6 / 18.83        
+mx-codes    39.93               20.65               25.66               130.1 / 21.42       
+mf-iso      28.36               9.79                22.14               74.4 / 14.30        
+codepass    14.51               7.56                16.06               35.8 / 7.39         
+codes per chunk: mountain 471; single 322; town 396; corner×8 64/26/210/322/90/330/14/218

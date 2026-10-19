@@ -1,0 +1,6 @@
+38³ v1 (production)                    min of 11: mean 3.21 ms, median 3.46 ms
+38³ v1 + S,D8 planes (gm-hint)         min of 11: mean 3.82 ms, median 4.07 ms
+38³ v1 + S,D8,D16 planes (gm-slope)    min of 11: mean 4.51 ms, median 4.79 ms
+52³ v1 (production)                    min of 11: mean 9.08 ms, median 9.27 ms
+52³ v1 + S,D8 planes (gm-hint)         min of 11: mean 10.36 ms, median 10.64 ms
+52³ v1 + S,D8,D16 planes (gm-slope)    min of 11: mean 12.41 ms, median 12.97 ms

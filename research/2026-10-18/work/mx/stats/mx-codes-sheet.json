@@ -1,0 +1,138 @@
+[
+ {
+  "label": "junction3",
+  "codes": 49,
+  "surface": 1156,
+  "passes": [
+   0,
+   49,
+   0
+  ],
+  "overflow": 0,
+  "crackFits": 74,
+  "crackMiss": 0,
+  "tauFallback": 0,
+  "ownerWindows": 4,
+  "windows": 100,
+  "codeMs": 19.2,
+  "texelBytes": 219488,
+  "codeBytes": 392,
+  "frags": 200704,
+  "fetchMean": 1.044,
+  "codedFrac": 0.044,
+  "noSurface": 0,
+  "sharp": 0,
+  "oob": 0,
+  "fetchHist": [
+   0,
+   191884,
+   8820,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "label": "square-6",
+  "codes": 0,
+  "surface": 1156,
+  "passes": [
+   0,
+   0,
+   0
+  ],
+  "overflow": 0,
+  "crackFits": 24,
+  "crackMiss": 0,
+  "tauFallback": 0,
+  "ownerWindows": 0,
+  "windows": 44,
+  "codeMs": 11.93,
+  "texelBytes": 219488,
+  "codeBytes": 0,
+  "frags": 200704,
+  "fetchMean": 1,
+  "codedFrac": 0,
+  "noSurface": 0,
+  "sharp": 0,
+  "oob": 0,
+  "fetchHist": [
+   0,
+   200704,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "label": "checker",
+  "codes": 0,
+  "surface": 1156,
+  "passes": [
+   0,
+   0,
+   0
+  ],
+  "overflow": 0,
+  "crackFits": 72,
+  "crackMiss": 0,
+  "tauFallback": 0,
+  "ownerWindows": 0,
+  "windows": 48,
+  "codeMs": 17.22,
+  "texelBytes": 219488,
+  "codeBytes": 0,
+  "frags": 200704,
+  "fetchMean": 1,
+  "codedFrac": 0,
+  "noSurface": 0,
+  "sharp": 0,
+  "oob": 0,
+  "fetchHist": [
+   0,
+   200704,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "label": "hill-materials",
+  "codes": 66,
+  "surface": 1428,
+  "passes": [
+   0,
+   66,
+   0
+  ],
+  "overflow": 0,
+  "crackFits": 98,
+  "crackMiss": 7,
+  "tauFallback": 9,
+  "ownerWindows": 10,
+  "windows": 137,
+  "codeMs": 21.14,
+  "texelBytes": 219488,
+  "codeBytes": 528,
+  "frags": 200704,
+  "fetchMean": 1.111,
+  "codedFrac": 0.055,
+  "noSurface": 0,
+  "sharp": 0,
+  "oob": 0,
+  "fetchHist": [
+   0,
+   179195,
+   20742,
+   767,
+   0,
+   0,
+   0
+  ]
+ }
+]

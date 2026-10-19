@@ -1,0 +1,14 @@
+mv-quad: lone dot area 1.000 blocks²; ratio after one sand paint at Chebyshev distance d: d1 [0.39, 1.00] d2 [1.00, 1.00] d3 [1.00, 1.00] d4 [1.00, 1.00]
+  lone dot parts ≠ 1 after a paint: 0 of 80
+  diagonal line (base min width 0.672): 0 of 36 single paints within 3 split it; min width over all paints 0.352
+  line min width by paint distance |d| (cells off the line): 1: [0.35, 0.36] 2: [0.67, 0.67] 3: [0.67, 0.67]
+  influence radius of a single paint (farthest changed pixel from the painted block): max 0.98, median 0.00 blocks
+hints: lone dot area 1.000 blocks²; ratio after one sand paint at Chebyshev distance d: d1 [1.00, 1.00] d2 [1.00, 1.00] d3 [1.00, 1.00] d4 [1.00, 1.00]
+  lone dot parts ≠ 1 after a paint: 0 of 80
+  diagonal line (base min width 0.000): 36 of 36 single paints within 3 split it; min width over all paints 0.000
+  line min width by paint distance |d| (cells off the line): 1: [0.00, 0.00] 2: [0.00, 0.00] 3: [0.00, 0.00]
+  influence radius of a single paint (farthest changed pixel from the painted block): max 0.00, median 0.00 blocks
+
+real	0m7.141s
+user	0m9.299s
+sys	0m0.449s

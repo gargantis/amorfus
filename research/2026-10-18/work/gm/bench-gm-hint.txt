@@ -1,0 +1,1 @@
+gm-hint: 20.2 ms mean, 84.2 ms max per chunk (apron 6); 6099 triangles, 3326 vertices per chunk

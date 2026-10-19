@@ -1,0 +1,45 @@
+== unedited apron 6
+0,0,0 | 1,0,0 (axis x, aprons 6/6): 29 shared, 0 mismatched (0 in attrs)
+0,0,0 | 0,1,0 (axis y, aprons 6/6): 103 shared, 0 mismatched (0 in attrs)
+0,0,0 | 0,0,1 (axis z, aprons 6/10): 15 shared, 0 mismatched (0 in attrs)
+1,0,0 | 1,1,0 (axis y, aprons 6/6): 100 shared, 0 mismatched (0 in attrs)
+1,0,0 | 1,0,1 (axis z, aprons 6/10): 25 shared, 0 mismatched (0 in attrs)
+0,0,1 | 1,0,1 (axis x, aprons 10/10): 27 shared, 0 mismatched (0 in attrs)
+0,0,1 | 0,1,1 (axis y, aprons 10/10): 104 shared, 0 mismatched (0 in attrs)
+1,0,1 | 1,1,1 (axis y, aprons 10/10): 87 shared, 0 mismatched (0 in attrs)
+0,1,0 | 1,1,0 (axis x, aprons 6/6): 14 shared, 0 mismatched (0 in attrs)
+0,1,0 | 0,1,1 (axis z, aprons 6/10): 14 shared, 0 mismatched (0 in attrs)
+1,1,0 | 1,1,1 (axis z, aprons 6/10): 11 shared, 0 mismatched (0 in attrs)
+0,1,1 | 1,1,1 (axis x, aprons 10/10): 29 shared, 0 mismatched (0 in attrs)
+TOTAL 558 shared vertices, 0 mismatched, 0 with attr mismatches (unedited apron 6)
+== unedited apron 5
+0,0,0 | 1,0,0 (axis x, aprons 5/5): 29 shared, 0 mismatched (0 in attrs)
+0,0,0 | 0,1,0 (axis y, aprons 5/5): 103 shared, 0 mismatched (0 in attrs)
+0,0,0 | 0,0,1 (axis z, aprons 5/10): 15 shared, 0 mismatched (0 in attrs)
+1,0,0 | 1,1,0 (axis y, aprons 5/5): 100 shared, 0 mismatched (0 in attrs)
+1,0,0 | 1,0,1 (axis z, aprons 5/10): 25 shared, 0 mismatched (0 in attrs)
+0,0,1 | 1,0,1 (axis x, aprons 10/10): 27 shared, 0 mismatched (0 in attrs)
+0,0,1 | 0,1,1 (axis y, aprons 10/10): 104 shared, 0 mismatched (0 in attrs)
+1,0,1 | 1,1,1 (axis y, aprons 10/10): 87 shared, 0 mismatched (0 in attrs)
+0,1,0 | 1,1,0 (axis x, aprons 5/5): 14 shared, 0 mismatched (0 in attrs)
+0,1,0 | 0,1,1 (axis z, aprons 5/10): 14 shared, 0 mismatched (0 in attrs)
+1,1,0 | 1,1,1 (axis z, aprons 5/10): 11 shared, 0 mismatched (0 in attrs)
+0,1,1 | 1,1,1 (axis x, aprons 10/10): 29 shared, 0 mismatched (0 in attrs)
+TOTAL 558 shared vertices, 0 mismatched, 0 with attr mismatches (unedited apron 5)
+== unedited apron 3
+1,0,0 | 1,1,0 (axis y, aprons 3/3): 100 shared, 0 mismatched (0 in attrs)
+  mismatch c46,31,32,m1,s0: 11776|7889|8192|0.3915|0.9172|0.0738|255|-15|0|-15|-15|-6|-15|-15|-15 vs 11776|7889|8192|0.3915|0.9172|0.0738|255|-15|0|-15|-15|-4|-15|-15|-15
+  mismatch c44,32,32,m4,s0: 11287|8111|8205|0.4148|0.9063|-0.0815|255|-15|-2|-15|-15|0|-15|-15|-15 vs 11287|8111|8205|0.4148|0.9063|-0.0815|255|-15|-3|-15|-15|0|-15|-15|-15
+1,0,0 | 1,0,1 (axis z, aprons 3/10): 25 shared, 4 mismatched (4 in attrs)
+0,0,1 | 1,0,1 (axis x, aprons 10/10): 27 shared, 0 mismatched (0 in attrs)
+0,0,1 | 0,1,1 (axis y, aprons 10/10): 104 shared, 0 mismatched (0 in attrs)
+1,0,1 | 1,1,1 (axis y, aprons 10/10): 87 shared, 0 mismatched (0 in attrs)
+  mismatch c32,33,29,m1,s0: 8195|8520|7436|-0.2019|0.8953|-0.3972|241|-15|0|-15|-10|-15|-15|-15|-15 vs 8195|8520|7436|-0.2019|0.8953|-0.3972|241|-15|0|-15|-12|-15|-15|-15|-15
+  mismatch c32,34,30,m1,s0: 8195|8615|7685|-0.2994|0.9094|-0.2886|255|-15|0|-14|1|-12|-14|-14|-14 vs 8195|8615|7685|-0.2994|0.9094|-0.2886|255|-15|0|-14|0|-12|-14|-14|-14
+0,1,0 | 1,1,0 (axis x, aprons 3/3): 14 shared, 3 mismatched (3 in attrs)
+0,1,0 | 0,1,1 (axis z, aprons 3/10): 14 shared, 0 mismatched (0 in attrs)
+  mismatch c42,33,32,m4,s0: 10755|8357|8216|0.3958|0.8944|-0.2082|255|-15|-1|-15|-15|0|-15|-15|-15 vs 10755|8357|8216|0.3958|0.8944|-0.2082|255|-15|-3|-15|-15|0|-15|-15|-15
+  mismatch c43,33,32,m4,s0: 10881|8320|8318|0.4281|0.8909|-0.1517|255|-15|-3|-15|-15|0|-15|-15|-15 vs 10881|8320|8318|0.4281|0.8909|-0.1517|255|-15|-4|-15|-15|0|-15|-15|-15
+1,1,0 | 1,1,1 (axis z, aprons 3/10): 11 shared, 7 mismatched (7 in attrs)
+0,1,1 | 1,1,1 (axis x, aprons 10/10): 29 shared, 0 mismatched (0 in attrs)
+TOTAL 558 shared vertices, 18 mismatched, 18 with attr mismatches (unedited apron 3)

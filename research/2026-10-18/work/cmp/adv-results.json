@@ -1,0 +1,1190 @@
+{
+ "stripes-d3": {
+  "hints": {
+   "T": 2048,
+   "V": 1358,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 490,
+     "cells": 490,
+     "ratio": 1
+    },
+    "stone": {
+     "shown": 86,
+     "cells": 86,
+     "ratio": 1
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 86,
+     "cells": 86,
+     "specks": 0
+    }
+   }
+  },
+  "mf-iso": {
+   "T": 2096,
+   "V": 1382,
+   "mfStats": {
+    "boundaryQuads": 60,
+    "flipped": 16,
+    "fans": 24,
+    "corners": 1089
+   },
+   "area": {
+    "grass": {
+     "shown": 354.191,
+     "cells": 490,
+     "ratio": 0.723
+    },
+    "stone": {
+     "shown": 221.809,
+     "cells": 86,
+     "ratio": 2.579
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 1,
+     "cells": 86,
+     "specks": 0
+    }
+   }
+  },
+  "mv-quad": {
+   "T": 2048,
+   "V": 1863,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 493.693,
+     "cells": 490,
+     "ratio": 1.008
+    },
+    "stone": {
+     "shown": 82.307,
+     "cells": 86,
+     "ratio": 0.957
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 11,
+     "cells": 86,
+     "specks": 0
+    }
+   }
+  },
+  "mx-codes": {
+   "T": 2048,
+   "V": 1358,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 512.371,
+     "cells": 490,
+     "ratio": 1.046
+    },
+    "stone": {
+     "shown": 63.629,
+     "cells": 86,
+     "ratio": 0.74
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 23,
+     "cells": 86,
+     "specks": 18
+    }
+   }
+  }
+ },
+ "stripes-12": {
+  "hints": {
+   "T": 2048,
+   "V": 1350,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 456,
+     "cells": 456,
+     "ratio": 1
+    },
+    "stone": {
+     "shown": 120,
+     "cells": 120,
+     "ratio": 1
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 41,
+     "cells": 41,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 60,
+     "cells": 60,
+     "specks": 0
+    }
+   }
+  },
+  "mf-iso": {
+   "T": 2124,
+   "V": 1388,
+   "mfStats": {
+    "boundaryQuads": 104,
+    "flipped": 82,
+    "fans": 38,
+    "corners": 1089
+   },
+   "area": {
+    "grass": {
+     "shown": 403.742,
+     "cells": 456,
+     "ratio": 0.885
+    },
+    "stone": {
+     "shown": 172.258,
+     "cells": 120,
+     "ratio": 1.435
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 31,
+     "cells": 41,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 1,
+     "cells": 60,
+     "specks": 0
+    }
+   }
+  },
+  "mv-quad": {
+   "T": 2048,
+   "V": 1735,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 485.36,
+     "cells": 456,
+     "ratio": 1.064
+    },
+    "stone": {
+     "shown": 90.64,
+     "cells": 120,
+     "ratio": 0.755
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 9,
+     "cells": 41,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 42,
+     "cells": 60,
+     "specks": 0
+    }
+   }
+  },
+  "mx-codes": {
+   "T": 2048,
+   "V": 1350,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 469.375,
+     "cells": 456,
+     "ratio": 1.029
+    },
+    "stone": {
+     "shown": 106.625,
+     "cells": 120,
+     "ratio": 0.889
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 41,
+     "cells": 41,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 42,
+     "cells": 60,
+     "specks": 4
+    }
+   }
+  }
+ },
+ "dither-2x1": {
+  "hints": {
+   "T": 2048,
+   "V": 1368,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 448,
+     "cells": 448,
+     "ratio": 1
+    },
+    "stone": {
+     "shown": 128,
+     "cells": 128,
+     "ratio": 1
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 43,
+     "cells": 43,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 64,
+     "cells": 64,
+     "specks": 0
+    }
+   }
+  },
+  "mf-iso": {
+   "T": 2120,
+   "V": 1404,
+   "mfStats": {
+    "boundaryQuads": 78,
+    "flipped": 24,
+    "fans": 36,
+    "corners": 1089
+   },
+   "area": {
+    "grass": {
+     "shown": 399.176,
+     "cells": 448,
+     "ratio": 0.891
+    },
+    "stone": {
+     "shown": 176.824,
+     "cells": 128,
+     "ratio": 1.381
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 33,
+     "cells": 43,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 10,
+     "cells": 64,
+     "specks": 0
+    }
+   }
+  },
+  "mv-quad": {
+   "T": 2048,
+   "V": 1514,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 463.41,
+     "cells": 448,
+     "ratio": 1.034
+    },
+    "stone": {
+     "shown": 112.59,
+     "cells": 128,
+     "ratio": 0.88
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 25,
+     "cells": 43,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 44,
+     "cells": 64,
+     "specks": 0
+    }
+   }
+  },
+  "mx-codes": {
+   "T": 2048,
+   "V": 1368,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 465.838,
+     "cells": 448,
+     "ratio": 1.04
+    },
+    "stone": {
+     "shown": 110.162,
+     "cells": 128,
+     "ratio": 0.861
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 43,
+     "cells": 43,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 50,
+     "cells": 64,
+     "specks": 14
+    }
+   }
+  }
+ },
+ "dither-25": {
+  "hints": {
+   "T": 2048,
+   "V": 1345,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 512,
+     "cells": 512,
+     "ratio": 1
+    },
+    "stone": {
+     "shown": 64,
+     "cells": 64,
+     "ratio": 1
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 64,
+     "cells": 64,
+     "specks": 0
+    }
+   }
+  },
+  "mf-iso": {
+   "T": 2056,
+   "V": 1349,
+   "mfStats": {
+    "boundaryQuads": 56,
+    "flipped": 10,
+    "fans": 4,
+    "corners": 1089
+   },
+   "area": {
+    "grass": {
+     "shown": 371.277,
+     "cells": 512,
+     "ratio": 0.725
+    },
+    "stone": {
+     "shown": 204.723,
+     "cells": 64,
+     "ratio": 3.199
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 1,
+     "cells": 64,
+     "specks": 0
+    }
+   }
+  },
+  "mv-quad": {
+   "T": 2048,
+   "V": 1345,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 512,
+     "cells": 512,
+     "ratio": 1
+    },
+    "stone": {
+     "shown": 64,
+     "cells": 64,
+     "ratio": 1
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 64,
+     "cells": 64,
+     "specks": 0
+    }
+   }
+  },
+  "mx-codes": {
+   "T": 2048,
+   "V": 1345,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 525.25,
+     "cells": 512,
+     "ratio": 1.026
+    },
+    "stone": {
+     "shown": 50.75,
+     "cells": 64,
+     "ratio": 0.793
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 64,
+     "cells": 64,
+     "specks": 0
+    }
+   }
+  }
+ },
+ "lines-X": {
+  "hints": {
+   "T": 2048,
+   "V": 1177,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 533,
+     "cells": 533,
+     "ratio": 1
+    },
+    "stone": {
+     "shown": 43,
+     "cells": 43,
+     "ratio": 1
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    }
+   }
+  },
+  "mf-iso": {
+   "T": 2064,
+   "V": 1185,
+   "mfStats": {
+    "boundaryQuads": 76,
+    "flipped": 26,
+    "fans": 8,
+    "corners": 1089
+   },
+   "area": {
+    "grass": {
+     "shown": 532.348,
+     "cells": 533,
+     "ratio": 0.999
+    },
+    "stone": {
+     "shown": 43.652,
+     "cells": 43,
+     "ratio": 1.015
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 5,
+     "cells": 1,
+     "specks": 0
+    }
+   }
+  },
+  "mv-quad": {
+   "T": 2048,
+   "V": 1350,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 533,
+     "cells": 533,
+     "ratio": 1
+    },
+    "stone": {
+     "shown": 43,
+     "cells": 43,
+     "ratio": 1
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    }
+   }
+  },
+  "mx-codes": {
+   "T": 2048,
+   "V": 1177,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 536.75,
+     "cells": 533,
+     "ratio": 1.007
+    },
+    "stone": {
+     "shown": 39.25,
+     "cells": 43,
+     "ratio": 0.913
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    }
+   }
+  }
+ },
+ "lines-Xdiag": {
+  "hints": {
+   "T": 2048,
+   "V": 1217,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 532,
+     "cells": 532,
+     "ratio": 1
+    },
+    "stone": {
+     "shown": 44,
+     "cells": 44,
+     "ratio": 1
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 41,
+     "cells": 41,
+     "specks": 0
+    }
+   }
+  },
+  "mf-iso": {
+   "T": 2072,
+   "V": 1229,
+   "mfStats": {
+    "boundaryQuads": 108,
+    "flipped": 54,
+    "fans": 12,
+    "corners": 1089
+   },
+   "area": {
+    "grass": {
+     "shown": 521.301,
+     "cells": 532,
+     "ratio": 0.98
+    },
+    "stone": {
+     "shown": 54.699,
+     "cells": 44,
+     "ratio": 1.243
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 5,
+     "cells": 41,
+     "specks": 8
+    }
+   }
+  },
+  "mv-quad": {
+   "T": 2048,
+   "V": 1700,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 531.797,
+     "cells": 532,
+     "ratio": 1
+    },
+    "stone": {
+     "shown": 44.203,
+     "cells": 44,
+     "ratio": 1.005
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 1,
+     "cells": 41,
+     "specks": 0
+    }
+   }
+  },
+  "mx-codes": {
+   "T": 2048,
+   "V": 1217,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 533.404,
+     "cells": 532,
+     "ratio": 1.003
+    },
+    "stone": {
+     "shown": 42.596,
+     "cells": 44,
+     "ratio": 0.968
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 1,
+     "cells": 41,
+     "specks": 4
+    }
+   }
+  }
+ },
+ "pixel-text": {
+  "hints": {
+   "T": 2048,
+   "V": 1362,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 379,
+     "cells": 379,
+     "ratio": 1
+    },
+    "stone": {
+     "shown": 127,
+     "cells": 127,
+     "ratio": 1
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 10,
+     "cells": 10,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 21,
+     "cells": 21,
+     "specks": 0
+    }
+   }
+  },
+  "mf-iso": {
+   "T": 2104,
+   "V": 1390,
+   "mfStats": {
+    "boundaryQuads": 136,
+    "flipped": 57,
+    "fans": 28,
+    "corners": 1089
+   },
+   "area": {
+    "grass": {
+     "shown": 371.74,
+     "cells": 379,
+     "ratio": 0.981
+    },
+    "stone": {
+     "shown": 134.26,
+     "cells": 127,
+     "ratio": 1.057
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 2,
+     "cells": 10,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 4,
+     "cells": 21,
+     "specks": 0
+    }
+   }
+  },
+  "mv-quad": {
+   "T": 2048,
+   "V": 1933,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 358.502,
+     "cells": 379,
+     "ratio": 0.946
+    },
+    "stone": {
+     "shown": 147.498,
+     "cells": 127,
+     "ratio": 1.161
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 4,
+     "cells": 10,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 17,
+     "cells": 21,
+     "specks": 0
+    }
+   }
+  },
+  "mx-codes": {
+   "T": 2048,
+   "V": 1362,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 403.957,
+     "cells": 379,
+     "ratio": 1.066
+    },
+    "stone": {
+     "shown": 102.043,
+     "cells": 127,
+     "ratio": 0.803
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 10,
+     "cells": 10,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 13,
+     "cells": 21,
+     "specks": 0
+    }
+   }
+  }
+ },
+ "hill-line1-1:1": {
+  "hints": {
+   "T": 2592,
+   "V": 1454,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 552.771,
+     "cells": 552,
+     "ratio": 1.001
+    },
+    "stone": {
+     "shown": 23.229,
+     "cells": 24,
+     "ratio": 0.968
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 1,
+     "cells": 2,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 24,
+     "cells": 24,
+     "specks": 0
+    }
+   }
+  },
+  "mf-iso": {
+   "T": 2636,
+   "V": 1476,
+   "mfStats": {
+    "boundaryQuads": 96,
+    "flipped": 20,
+    "fans": 22,
+    "corners": 1361
+   },
+   "area": {
+    "grass": {
+     "shown": 541.221,
+     "cells": 552,
+     "ratio": 0.98
+    },
+    "stone": {
+     "shown": 34.779,
+     "cells": 24,
+     "ratio": 1.449
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 2,
+     "cells": 2,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 1,
+     "cells": 24,
+     "specks": 0
+    }
+   }
+  },
+  "mv-quad": {
+   "T": 2592,
+   "V": 1859,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 552.651,
+     "cells": 552,
+     "ratio": 1.001
+    },
+    "stone": {
+     "shown": 23.349,
+     "cells": 24,
+     "ratio": 0.973
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 2,
+     "cells": 2,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 1,
+     "cells": 24,
+     "specks": 0
+    }
+   }
+  },
+  "mx-codes": {
+   "T": 2592,
+   "V": 1454,
+   "mfStats": null,
+   "area": {
+    "grass": {
+     "shown": 553.406,
+     "cells": 552,
+     "ratio": 1.003
+    },
+    "stone": {
+     "shown": 22.594,
+     "cells": 24,
+     "ratio": 0.941
+    }
+   },
+   "parts": {
+    "grass": {
+     "shown": 2,
+     "cells": 2,
+     "specks": 0
+    },
+    "stone": {
+     "shown": 7,
+     "cells": 24,
+     "specks": 0
+    }
+   }
+  }
+ },
+ "step-line-foot": {
+  "hints": {
+   "T": 2112,
+   "V": 1164,
+   "mfStats": null
+  },
+  "mf-iso": {
+   "T": 2148,
+   "V": 1182,
+   "mfStats": {
+    "boundaryQuads": 18,
+    "flipped": 0,
+    "fans": 18,
+    "corners": 1122
+   }
+  },
+  "mv-quad": {
+   "T": 2112,
+   "V": 1274,
+   "mfStats": null
+  },
+  "mx-codes": {
+   "T": 2112,
+   "V": 1164,
+   "mfStats": null
+  }
+ },
+ "step-line-diag": {
+  "hints": {
+   "T": 2112,
+   "V": 1185,
+   "mfStats": null
+  },
+  "mf-iso": {
+   "T": 2124,
+   "V": 1191,
+   "mfStats": {
+    "boundaryQuads": 59,
+    "flipped": 59,
+    "fans": 6,
+    "corners": 1122
+   }
+  },
+  "mv-quad": {
+   "T": 2112,
+   "V": 1410,
+   "mfStats": null
+  },
+  "mx-codes": {
+   "T": 2112,
+   "V": 1185,
+   "mfStats": null
+  }
+ },
+ "wall-stripes": {
+  "hints": {
+   "T": 3048,
+   "V": 1869,
+   "mfStats": null
+  },
+  "mf-iso": {
+   "T": 3068,
+   "V": 1879,
+   "mfStats": {
+    "boundaryQuads": 258,
+    "flipped": 106,
+    "fans": 10,
+    "corners": 1589
+   }
+  },
+  "mv-quad": {
+   "T": 3048,
+   "V": 1887,
+   "mfStats": null
+  },
+  "mx-codes": {
+   "T": 3048,
+   "V": 1869,
+   "mfStats": null
+  }
+ },
+ "hut": {
+  "hints": {
+   "T": 2432,
+   "V": 1347,
+   "mfStats": null,
+   "area": {
+    "planks": {
+     "shown": 45.07,
+     "cells": 49,
+     "ratio": 0.92
+    },
+    "brick": {
+     "shown": 3.93,
+     "cells": 0,
+     "ratio": null
+    }
+   },
+   "parts": {
+    "planks": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "brick": {
+     "shown": 1,
+     "cells": 0,
+     "specks": 0
+    }
+   }
+  },
+  "mf-iso": {
+   "T": 2432,
+   "V": 1347,
+   "mfStats": {
+    "boundaryQuads": 43,
+    "flipped": 12,
+    "fans": 0,
+    "corners": 1281
+   },
+   "area": {
+    "planks": {
+     "shown": 41.34,
+     "cells": 49,
+     "ratio": 0.844
+    },
+    "brick": {
+     "shown": 7.66,
+     "cells": 0,
+     "ratio": null
+    }
+   },
+   "parts": {
+    "planks": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "brick": {
+     "shown": 1,
+     "cells": 0,
+     "specks": 0
+    }
+   }
+  },
+  "mv-quad": {
+   "T": 2432,
+   "V": 1347,
+   "mfStats": null,
+   "area": {
+    "planks": {
+     "shown": 45.07,
+     "cells": 49,
+     "ratio": 0.92
+    },
+    "brick": {
+     "shown": 3.93,
+     "cells": 0,
+     "ratio": null
+    }
+   },
+   "parts": {
+    "planks": {
+     "shown": 1,
+     "cells": 1,
+     "specks": 0
+    },
+    "brick": {
+     "shown": 1,
+     "cells": 0,
+     "specks": 0
+    }
+   }
+  },
+  "mx-codes": {
+   "T": 2432,
+   "V": 1347,
+   "mfStats": null,
+   "area": {
+    "planks": {
+     "shown": 46.041,
+     "cells": 49,
+     "ratio": 0.94
+    },
+    "brick": {
+     "shown": 2.959,
+     "cells": 0,
+     "ratio": null
+    }
+   },
+   "parts": {
+    "planks": {
+     "shown": 5,
+     "cells": 1,
+     "specks": 12
+    },
+    "brick": {
+     "shown": 5,
+     "cells": 0,
+     "specks": 8
+    }
+   }
+  }
+ }
+}

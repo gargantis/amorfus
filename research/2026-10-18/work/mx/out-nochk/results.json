@@ -1,0 +1,22 @@
+{
+ "approach": "mx-codes",
+ "describe": "Contour codes per surface block computed in mesh(): each crack fitted once in a 15×15 surface-followed window centred on its owner (TLS over digital-straight windows ≥ 9 cracks, else parabola ±6; |τ| ≤ 0.45), xBR saddles with margin, corners kept, one-cell chains square; ≤ 2 passages in 64 bits; GPU: 38³ r32uint texels + code buffer; fragment: column search + 1 code load; hints geometry; apron 10.",
+ "scenes": {
+  "checker": {
+   "kind": "material",
+   "ms": 77.543624,
+   "triangles": 2048,
+   "vertices": 1136,
+   "material": {
+    "boundaries": [],
+    "area": {
+     "rendered": 15.84765625,
+     "cells": 18,
+     "ratio": 0.8804253472222222
+    },
+    "components": 3,
+    "specks": 0
+   }
+  }
+ }
+}

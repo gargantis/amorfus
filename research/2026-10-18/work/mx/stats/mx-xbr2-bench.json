@@ -1,0 +1,24 @@
+[
+ {
+  "label": "bench-17",
+  "frags": 1056134,
+  "fetchFull": 31.26,
+  "fetchEarly": 17.75,
+  "earlyFrac": 0.56,
+  "noSurface": 0.008,
+  "sharp": 0,
+  "oob": 20,
+  "cacheEntries": 3200
+ },
+ {
+  "label": "bench-18",
+  "frags": 366734,
+  "fetchFull": 30.64,
+  "fetchEarly": 13.84,
+  "earlyFrac": 0.706,
+  "noSurface": 0,
+  "sharp": 0,
+  "oob": 0,
+  "cacheEntries": 681
+ }
+]

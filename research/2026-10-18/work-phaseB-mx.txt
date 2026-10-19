@@ -1,0 +1,230 @@
+####### mx promising mx-codes
+--- howItWorks
+Geometry is the production 'hints' mesh, untouched. Only the material a fragment shows changes. The boundary is reconstructed on the CPU as a contour, stored per surface block, and evaluated per fragment. This is the production-faithful successor of round 1's mx-contour, which computed its codes lazily inside fragment() and so hid the CPU cost. Code: work/mx/prod.mjs (CPU and JS emulation of the GPU), work/mx/gpu/mx.wgsl (fragment side).
+
+CPU, inside mesh() (honest cost):
+1. prep: material and 6 exposure bits for every cell of the 52³ region.
+2. For each of the 6 directions d, the surface blocks exposed toward d that a fragment of this chunk can find. A block gets a code if a surface-followed in-plane neighbour has another known material. Sharp blocks count as "unknown": they are never cut and never bleed.
+3. Cracks (unit edges between two surface blocks of different material) belong to the block on their low side. Each crack's crossing τ is fitted exactly once, in a 15×15 surface-followed window centred on its owner (axis range ±2). If the owner's window sees a different neighbour (overhangs, cliffs), the fit falls back to the high cell's window. Both are canonical, so neighbouring blocks and neighbouring chunks get bit-identical τ.
+   - Topology inside the window: xBR saddle weights decide which diagonal connects. Connect on a margin ≥ 2 with weight ≥ 3. Otherwise follow weaker evidence, unless the saddle belongs to an extended checker (≥ 12 connected saddle points within 7×7), in which case pin it.
+   - Corners are kept where two runs ≥ 3 meet. A chain made of one cell's edges stays square.
+   - The fit is a TLS line over the digital-straight run window (≥ 9 cracks), blended over 4 cracks into a weighted parabola over ±6 cracks. A crossing may only slide along its dual edge, |τ| ≤ 0.45, so every block centre keeps its own material.
+4. A coded block's boundary pieces come from the links at its 4 corners and the τ table. Pieces are clipped to the cell; edge hits are computed in a canonical edge frame, so the two cells sharing an edge quantise the same point. They are joined into ≤ 2 passages and packed into 64 bits. A passage is entry and exit on the perimeter (6+6 bits at 1/16), an optional interior point (5+5 bits at 1/32), and the materials on its left and right (3+3 bits). A lone block becomes a disc code.
+5. Texel volume: 38³ r32uint per chunk (material, sharp, exposure, has-code mask, code base) plus array<vec2u> codes, about 171 per chunk.
+6. Optional per-vertex skip bit (flags bit 2): set when an exact conservative test proves every fragment of every triangle at that vertex shows its own material without touching a code.
+
+GPU (fragment):
+1. If the interpolated skip bit is 1, show the own material with no loads.
+2. Otherwise choose the projection axis: y while |n_y| ≥ 0.5·max(|n_x|, |n_z|) (about 63°), else the dominant horizontal axis.
+3. The column is floor of the in-plane position. The surface block is searched within ±2 levels of the fragment's level (1–3 texel loads).
+4. If that block has a code for this axis, load 8 bytes and run ≤ 2 two-segment polyline side tests. Otherwise show the block's material.
+
+The WGSL version compiles in Dawn (the repo's `webgpu` package; llvmpipe here) and equals the JS emulation on 450,000 samples.
+
+--- compareTable
+| scene | cubes | hints | mx-codes | mf-iso | mx-contour |
+|---|---|---|---|---|---|
+| edge-0deg | 0.000 / 0.000 | 0.000 / 0.000 | 0.000 / 0.000 | 0.000 / 0.000 | 0.000 / 0.000 |
+| edge-1:8 | 0.299 / 0.516 | 0.299 / 0.516 | 0.042 / 0.100 | 0.131 / 0.220 | 0.048 / 0.134 |
+| edge-1:5 | 0.283 / 0.487 | 0.283 / 0.487 | 0.041 / 0.064 | 0.054 / 0.101 | 0.039 / 0.064 |
+| edge-1:3 | 0.271 / 0.481 | 0.271 / 0.481 | 0.013 / 0.025 | 0.007 / 0.010 | 0.009 / 0.015 |
+| edge-1:2 | 0.258 / 0.440 | 0.258 / 0.440 | 0.006 / 0.007 | 0.006 / 0.007 | 0.006 / 0.007 |
+| edge-2:3 | 0.276 / 0.554 | 0.276 / 0.554 | 0.012 / 0.030 | 0.021 / 0.044 | 0.009 / 0.018 |
+| edge-1:1 | 0.204 / 0.343 | 0.204 / 0.343 | 0.000 / 0.000 | 0.000 / 0.000 | 0.000 / 0.000 |
+| disc-r2.4 | 0.286 / 0.619 | 0.286 / 0.619 | 0.111 / 0.258 | 0.130 / 0.266 | 0.113 / 0.286 |
+| disc-r4.3 | 0.272 / 0.580 | 0.272 / 0.580 | 0.130 / 0.270 | 0.129 / 0.302 | 0.144 / 0.311 |
+| disc-r7.6 | 0.297 / 0.679 | 0.297 / 0.679 | 0.163 / 0.366 | 0.148 / 0.364 | 0.173 / 0.381 |
+| line1-0deg | 0.000 / 0.000 | 0.000 / 0.000 | 0.000 / 0.000 | 0.009 / 0.028 | 0.000 / 0.000 |
+| line1-1:1 | 0.204 / 0.343 CP | 0.204 / 0.343 CP | 0.000 / 0.000 | 0.000 / 0.000 A | 0.000 / 0.000 |
+| line1-1:2 | 0.258 / 0.440 CP | 0.258 / 0.440 CP | 0.007 / 0.034 | 0.043 / 0.117 | 0.007 / 0.034 |
+| line2-1:1 | 0.204 / 0.343 | 0.204 / 0.343 | 0.017 / 0.036 | 0.000 / 0.000 | 0.017 / 0.036 |
+| square-6 | 0.000 / 0.000 | 0.000 / 0.000 | 0.000 / 0.000 | 0.192 / 0.468 | 0.000 / 0.000 |
+| single | area ×1.00, 1 part | area ×1.00, 1 part | area ×0.79, 1 part | area ×0.56, 1 part A | area ×1.00, 1 part |
+| checker | area ×1.00, 18 parts | area ×1.00, 18 parts | area ×1.00, 18 parts | area ×1.33, 1 part A | area ×0.99, 3 parts |
+| junction3 | 0.296 / 0.661 | 0.296 / 0.661 | 0.034 / 0.109 | 0.085 / 0.152 | 0.029 / 0.098 |
+| hill-materials | 0.292 / 0.627 | 0.330 / 0.696 | 0.131 / 0.312 | 0.142 / 0.350 | 0.135 / 0.318 |
+| ramp-1:1 | 45.0° / 45.0° ao 0.108 | 0.1° / 0.5° ao 0.103 | 0.1° / 0.5° ao 0.103 | 0.1° / 0.5° ao 0.103 | 0.1° / 0.5° ao 0.103 |
+| ramp-1:2 | 43.0° / 63.4° ao 0.075 | 5.6° / 8.7° ao 0.076 | 5.6° / 8.7° ao 0.076 | 5.6° / 8.7° ao 0.076 | 5.6° / 8.7° ao 0.076 |
+| ramp-1:4 | 34.2° / 76.0° ao 0.041 | 10.6° / 19.6° ao 0.041 | 10.6° / 19.6° ao 0.041 | 10.6° / 19.6° ao 0.041 | 10.6° / 19.6° ao 0.041 |
+| ramp-1:8 | 30.0° / 82.9° ao 0.043 | 11.5° / 26.5° ao 0.029 | 11.5° / 26.5° ao 0.029 | 11.5° / 26.5° ao 0.029 | 11.5° / 26.5° ao 0.029 |
+| ramp-diag-1:2.8 | 46.7° / 76.4° ao 0.070 | 8.1° / 15.8° ao 0.074 | 8.1° / 15.8° ao 0.074 | 8.1° / 15.8° ao 0.074 | 8.1° / 15.8° ao 0.074 |
+| mound-r6.4 | 48.4° / 83.5° ao 0.069 | 7.8° / 20.8° ao 0.075 | 7.8° / 20.8° ao 0.075 | 7.8° / 20.8° ao 0.075 | 7.8° / 20.8° ao 0.075 |
+| pit-r5.4 | 48.3° / 81.5° ao 0.132 | 9.4° / 32.4° ao 0.146 | 9.4° / 32.4° ao 0.146 | 9.4° / 32.4° ao 0.146 | 9.4° / 32.4° ao 0.146 |
+| terrace-disc | 0.291 / 0.728 | 0.219 / 0.486 | 0.219 / 0.486 | 0.218 / 0.485 | 0.219 / 0.486 |
+| terrace-1:2 | 0.261 / 0.447 | 0.133 / 0.243 | 0.133 / 0.243 | 0.133 / 0.243 | 0.133 / 0.243 |
+| tower-r4.6 | 0.341 / 0.616 | 0.170 / 0.338 | 0.170 / 0.338 | 0.170 / 0.338 | 0.170 / 0.338 |
+| hinted-slope-1:4 | 34.2° / 76.0° ao 0.041 | 0.0° / 0.0° ao 0.041 | 0.0° / 0.0° ao 0.041 | 0.0° / 0.0° ao 0.041 | 0.0° / 0.0° ao 0.041 |
+| hinted-hill | 45.7° / 87.7° ao 0.061 | 0.8° / 2.8° ao 0.065 | 0.8° / 2.8° ao 0.065 | 0.8° / 2.8° ao 0.065 | 0.8° / 2.8° ao 0.065 |
+| floating-block | ok 1.00 | ok 0.60 | ok 0.60 | ok 0.60 | ok 0.60 |
+| pillar | ok 1.00 | ok 0.40 | ok 0.40 | ok 0.40 | ok 0.40 |
+| tunnel-1x2 | ok 1.05 | ok 1.00 | ok 1.00 | ok 1.00 | ok 1.00 |
+| roof-2-high | ok 2.00 | ok 1.90 | ok 1.90 | ok 1.90 | ok 1.90 |
+| sharp-wall | ok 0.00 | ok 0.00 | ok 0.00 | ok 0.00 | ok 0.00 |
+| mesh ms (all scenes) | 859 | 996 | 1063 | 863 | 1046 |
+
+--- benchLine
+mx-codes: 43.9 ms mean, 165.3 ms max per chunk (apron 10); 6099 triangles, 3326 vertices per chunk
+
+--- seamsResult
+MX_SEAMDIGEST=1 node harness/seams.mjs approaches/mx-codes.mjs (attrs = normal + a test-only digest of the codes of the 8 blocks around each vertex's lattice corner):
+x-border: 67 shared vertices, 0 mismatched (apron 10)
+z-border: 37 shared vertices, 0 mismatched (apron 10)
+x-border, z=1: 56 shared vertices, 0 mismatched (apron 10)
+
+node work/mx/seamcodes.mjs (my code-level test: every code both chunks compute must be bit-identical, and fragments within 1 block of the shared face must agree):
+synthetic x-border: codes coded by both 5, differing 0, coded by only one 0; fragments 5886, differing 0 (apron 10)
+synthetic z-border: codes coded by both 8, differing 0, coded by only one 0; fragments 2802, differing 0 (apron 10)
+synthetic x-border z=1: codes coded by both 5, differing 0, coded by only one 0; fragments 4216, differing 0 (apron 10)
+terrain x (-2,1,1)|(-1,1,1): codes coded by both 6, differing 0, coded by only one 0; fragments 15168, differing 0 (apron 10)
+terrain z (-1,1,1)|(-1,1,2): codes coded by both 22, differing 0, coded by only one 0; fragments 16301, differing 0 (apron 10)
+terrain y (-1,0,1)|(-1,1,1): codes coded by both 0, differing 0, coded by only one 0; fragments 11703, differing 0 (apron 10)
+terrain x (-3,1,0)|(-2,1,0): codes coded by both 2, differing 0, coded by only one 0; fragments 16151, differing 0 (apron 10)
+terrain z (-3,1,0)|(-3,1,1): codes coded by both 26, differing 0, coded by only one 0; fragments 9677, differing 0 (apron 10)
+terrain y (0,0,-3)|(0,1,-3): codes coded by both 0, differing 0, coded by only one 0; fragments 0, differing 0 (apron 10)
+terrain x (0,0,0)|(1,0,0): codes coded by both 16, differing 0, coded by only one 0; fragments 4082, differing 0 (apron 10)
+terrain y (1,0,1)|(1,1,1): codes coded by both 187, differing 0, coded by only one 0; fragments 7271, differing 0 (apron 10)
+SEAMS OK
+
+Sensitivity, with the axis window Wa 4 used earlier: apron 9 → 1, apron 8 → 42, apron 6 → 115 mismatches. With the final Wa 2, apron 9 also passes this test, but the in-plane dependency bound still needs apron 10 for this layout.
+
+--- timingResult
+node harness/timing.mjs --n 11 approaches/hints.mjs approaches/mx-codes.mjs approaches/mf-iso.mjs
+hints            mesh only, min of 11: mean 9.91 ms, median 10.87 ms, max 15.18 ms (apron 10)
+mx-codes         mesh only, min of 11: mean 16.05 ms, median 14.15 ms, max 25.44 ms (apron 10)
+mf-iso           mesh only, min of 11: mean 10.81 ms, median 10.37 ms, max 18.31 ms (apron 6)
+
+node work/mx/editbench.mjs --n 9 (REMESH-shaped 52³ inputs with team gh's edit scenarios; codepass = prep + codes + texels, without the skip bits)
+mesh() per dirty chunk, min of 9 interleaved runs, ms (corner×8: sum / max of the 8 chunks):
+variant     mountain            single              town                corner×8            
+hints       16.08               6.34                9.25                53.2 / 10.58        
+mx-codes    27.99               13.49               18.69               89.5 / 14.12        
+mf-iso      19.08               7.40                11.67               51.4 / 10.48        
+codepass    9.32                5.82                6.90                26.4 / 6.09         
+codes per chunk: mountain 413; single 318; town 362; corner×8 68/20/198/310/88/322/7/208
+
+Phase breakdown (work/mx/phase.mjs, best of 5): terrain 5.03 ms = prep 0.56 + scan 0.69 + window fill 1.26 + own-crack fits 0.66 + assembly/owner windows 1.71 + texels 0.14; edited chunks 7.91 ms. Skip bits +0.97 ms per chunk.
+
+Generation (work/mx/gentime.mjs, min of 7): 38³ 3.14 ms, 44³ 4.68, 50³ 6.90, 52³ 7.44. The hints mesher costs 5.62 ms at 38³ and 10.99 ms at 52³.
+
+--- fixes
+ - The owner's own case: a 1-wide diagonal line now renders as one continuous straight band of the ideal width. line1-1:1 scores std 0.000, 1 part, width 0.703–0.707 against an ideal 0.707 (hints: 0.204 with connectivity and pinch flags). The 1:2 line scores 0.007 (width 0.867–0.896 vs 0.894; mf-iso 0.043). The horizontal 1-wide line is exact.
+ - Straight material edges are lines, not staircases. 1:8 0.042 (hints 0.299, mf-iso 0.131), 1:5 0.041, 1:3 0.013, 1:2 0.006, 2:3 0.012, 1:1 0.000.
+ - Shapes the blocks clearly intend survive: the 6×6 square stays crisp (0.000; mf-iso rounds it to 0.192), the checker stays 18 squares at area ×1.00 (mf-iso merges it, ×1.33), and the three-material junction is a clean Y (0.034; mf-iso 0.085, hints 0.296). Stone disc and sand edge on the hill: 0.131 (mf-iso 0.142, hints 0.330).
+ - Real terrain: stair-stepped grass/dirt and grass/sand boundaries become smooth curves. This shows as contour-following streaks on the mountain, smooth arcs on hills and a smooth coast on the beach. Isolated blocks become small round dots. Geometry, collision, AO and every constraint row are unchanged (all equal to hints).
+ - Fragment cost compared with round 1's per-fragment xBR gather: from 31 texel fetches (18 with the early-out) to 1.32–1.38 loads per fragment on terrain, and 0.78–1.00 with the per-vertex skip bit.
+ - Deterministic and seam-exact: every code both chunks compute is bit-identical in 11 chunk pairs, and 0 of 93,061 fragments differ at the seams. The WGSL path equals the JS emulation on 450,000 samples.
+--- doesNotFix
+ - Surface jagginess (terrace bands, facets, AO stripes) is untouched: geometry is the hints mesh. That part belongs to the geometry and AO teams (gn-best, gs-ctx/gs-mls, gh-cc8).
+ - Low-frequency lumpiness inherited from block-centre rasterisation. Discs score 0.111 / 0.130 / 0.163 for r 2.4 / 4.3 / 7.6, while mf-iso scores 0.130 / 0.129 / 0.148, so it is better on the two larger discs. Small flats and notches are visible on the r 7.6 disc (sheet plans-a).
+ - The 2-wide diagonal band scores 0.017 (mf-iso 0.000), and the 1:3 edge 0.013 (mf-iso 0.007).
+ - Anti-aliasing: the boundary runs inside triangles, so 4× MSAA does not smooth it. The code gives an exact distance for an fwidth blend, but that is not implemented.
+ - Very shallow slopes beyond about 1:10: a 15-wide window cannot see two steps, so these get gentle waves.
+ - On slopes under about 63° the projection shows the column-top material on step risers, so dirt exposed on terrace sides disappears where hints and mf-iso show it. This is a deliberate look change, not a fix.
+--- failureModes
+ - Projection-axis switch. Material images from different axes disagree, so the switch curve can tear. With max-component switching at 45°, a dirt patch on the mountain was cut by a straight edge (work/mx/dbg/mtn-zoom-mat.png). The y-bias (y up to about 63°) removes this on terrain slopes. It remains on mixed-material cliffs above 63° and on the walls of builds.
+ - Asymmetric surface following at overhangs, cliffs and built walls: a crack's owner window and its high cell's window both see a different neighbour, and τ falls back to 0. This happens about 6.4 times per chunk on average, mostly in 3 of 16 mountain chunks, and gives small local kinks.
+ - Column search misses (no surface within ±2 levels): 0.66% of mountain-view fragments, on cave undersides and at house wall feet. They keep the quad's own material, which matched in every case seen.
+ - Generator 'dither' (checker-like grass/dirt alternation on steep slopes). Small groups connect into a ring or patch with tiny grass holes, where mf-iso makes one blob (sheet hills). Groups of 12 or more saddle points stay a crisp checker. So a painted checker of smooth blocks smaller than about 4×4 gets connected; sharp blocks are the opt-out.
+ - Heuristic look choices: lone blocks become discs (area ×0.79), 1-wide line ends taper to points (brush strokes), and corners where two runs ≥ 3 meet stay crisp. On generated terrain the last one keeps 3×3 or larger rectangular patches square-cornered.
+ - Cells crossed by more than 2 passages (0.13 per chunk) drop the least important one, a small local error.
+ - Chunk-border consistency rests on the region apron. The dependency bound is ±8 in-plane and ±5 along the axis (Wa 2), coded box in-plane [−1, 32] and axis [−3, 34], so 52³ is required for this layout. With Wa 4, aprons 9 / 8 / 6 produced 1 / 42 / 115 mismatches. No search touched the region edge in 30 real chunks.
+ - Cost: the unedited streaming path must generate 52³ instead of 38³ (+4.3 ms), plus about 6 ms of codes and skip bits per chunk. The GPU cost is unmeasured on the floor iGPU (see production).
+ - Tuning was done on 16 terrain chunks, gh's 4 edit scenarios and the synthetic scenes: corner run 3, minLine 9, blend 4, saddle margins, checker group 12, y-bias 0.5.
+--- openQuestions
+ - Real-GPU cost on the i7-1255U at 2.1 MP with 4× MSAA: the estimate is +0.3–0.7 ms per frame and was not measured.
+ - Is about +115% worker time per streamed chunk acceptable (52³ generation plus codes)? The alternatives are building the global heightfield image pass and the apron-9 layout B first, or limiting mx to edited regions.
+ - Owner taste: crisp square corners and checkers that follow the blocks (mx) versus rounding everything (mf-iso); lone blocks as discs; tapered line ends; the plan projection hiding exposed dirt on terrace risers; generator dither as small connected patches.
+ - Implement and validate layout B: 16-bit own-chunk texels, a code hash and neighbour-slot lookups, 14–27 MiB at R = 192 instead of 42–84 MiB.
+ - Anti-aliasing of the in-triangle boundary: an analytic distance plus an fwidth blend would need a second albedo sample on boundary pixels (about 2–4% of pixels).
+ - The projection-axis switch on mixed-material cliffs and building walls: a blend band, or a per-block axis choice made on the CPU?
+--- harnessIssues
+ - bench.mjs times one single-shot mesh() per chunk. For mx-codes it reported 37–56 ms mean across identical runs, while timing.mjs (interleaved min of 11) gives 14–16 ms. Its mean cannot support cost claims.
+ - seams.mjs compares only per-vertex data, so fragment-side data (per-block codes) needs a separate test. I added work/mx/seamcodes.mjs, plus a test-only per-vertex code digest (MX_SEAMDIGEST=1) so seams.mjs at least covers codes next to the shared plane. My test is the more sensitive one: it catches apron 9 at Wa 4, which seams.mjs misses.
+ - No scene exercises the projection-axis switch on steep mixed-material terrain; I found the tear visually on bench chunk (−1,1,1). No metric scores what riser fragments show on slopes, or material balance on real terrain.
+ - Round 1's mx-contour computed codes lazily inside fragment(), so its run, bench and timing numbers excluded the code pass. mx-codes replaces it; the compare table keeps mx-contour only for reference.
+ - The fragment contract returns a hard material id and there is no GPU in this environment, so per-fragment cost and the skip bit's benefit can only be logged as load and op counts (work/mx/stats).
+--- bestImages
+ - out/mx-codes/sheets/terrain-hints-mf-mx.png
+ - out/mx-codes/sheets/closeups-hints-mf-mx.png
+ - out/mx-codes/sheets/plans-a-hints-mf-mx.png
+ - out/mx-codes/sheets/plans-b-hints-mf-mx.png
+ - out/mx-codes/sheets/hills-hints-mf-mx.png
+ - out/mx-codes/sheets/built-hints-mf-mx.png
+ - out/mx-codes/img/terrain-mountain-view.png
+ - out/mx-codes/img/line1-1:1-plan.png
+--- production
+ dataPath: As prototyped and validated in WGSL (layout A):
+- CPU, after the hints mesh: codes for the surface blocks a fragment can reach (in-plane [−1, 32], axis [−3, 34]), about 171 per terrain chunk (max 336), 8 B each.
+- Per chunk, one r32uint (32 + 2·3)³ = 38³ volume (214 KB): material 3 bits, sharp 1, exposure 6, has-code(d) 6, code base 16.
+- Codes in array<vec2u>, ordered by texel and then direction (1.3 KB average).
+- Fragment: chunk-local position as an extra vec3f varying (exact, from pos_ao); projection axis from the interpolated normal; column search 1–3 texel loads; if has-code(d), index = base + popcount(mask below d), one 8-byte load, ≤ 2 polyline side tests.
+- Measured loads per fragment: mountain view 1.35, beach view 1.34. Codes are read by 15–17% of fragments.
+- With the per-vertex skip bit (an interpolated 0/1 at flags bit 2), 30% / 46% of fragments read nothing and the mean drops to 1.00 / 0.78 loads.
+- Memory at R = 192: 42 MiB (200 meshed chunks) to 84 MiB (400, the budget proxy). Too much; the layout below fixes that.
+
+Recommended production layout (B, designed and sized, not built):
+- 16-bit texels for the chunk's own 32³ (material, sharp, exposure, has-code), 64 KB.
+- A per-chunk open-addressing hash of codes keyed by (cell·8 + d), about 6 KB, ≈1.2 probes of 12–16 B.
+- A 27-entry neighbour-slot table (108 B), so border columns read the neighbour chunk's texels and codes. Those are seam-identical, as verified.
+- All of it lives in pooled storage buffers, with offsets stored next to chunk_origins[slot].
+- Total 70 KB per chunk: 14–27 MiB at R = 192 (an 8-bit variant is 7–15 MiB at about one extra load).
+- Only own blocks are coded (about 138 per chunk), which allows apron 9.
+- About 28 chunks fit the 2 MB-per-frame streaming upload cap.
+
+What can move to per-vertex attributes: only the skip bit. The surface-block lookup is per column under each pixel, not per vertex.
+ vertexFormat: The 16-byte vertex is unchanged. It uses flags bit 2 for the skip bit, interpolated as a float. Material stays the quad's own (flat), and the 3 reserved bytes stay free, so they conflict neither with mf-iso's use of them nor with anything else.
+
+Extra varyings: the chunk-local position (vec3f, rebuilt exactly from pos_ao in the vertex shader) and the skip float, 4 interpolants in total. No new per-vertex data beyond 1 bit.
+ determinism: Stored values (codes, texels, skip bits) use only + − × ÷, Math.sqrt / round / floor / abs / min / max (the generator's allowlist), comparisons and deterministic loop and sort orders, all in f64. I audited prod.mjs: no hypot, pow, ** or trig.
+- Crack fits are canonical, done once in the owner's or high cell's window.
+- Boundary points on cell edges are computed in a canonical edge frame from exact (half-integer + τ) forms, so the two cells sharing an edge quantise bit-identical points.
+- Output checksum over 4,549 codes is reproducible: 3fe2b2a4.
+- Seams: 0 differing codes and 0 of 93,061 differing fragments over 11 chunk pairs (x, z and y neighbours, real terrain plus a painted and built synthetic world). The official seams.mjs with a code digest shows 0 of 160 vertices mismatched.
+- Fragment math is f32 (exempt). WGSL equals JS on 450,000 samples.
+ apron: 10 for the prototyped layout, which is the existing 52³ edited-path region. Reach:
+- in-plane: block −1, owner −2, window ±7, so −9;
+- axis: block −3, owner ±2, window ±2, exposure ±1, so −9;
+- region valid range [−9, 40].
+The bound holds by construction at the final Wa 2, and 0 clipped searches occurred in 30 real chunks. Layout B (own blocks only) needs apron 9 (50³).
+
+Cost of the apron: today's unedited GEN_MESH path generates 38³ in 3.1 ms; 52³ costs 7.4 ms (50³: 6.9).
+ cpuCost: All numbers are interleaved min-of-N on this shared machine, JS prototype.
+- Code pass: 5.0 ms per terrain chunk (prep 0.56, scan 0.69, window fill 1.26, own-crack fits 0.66, assembly 1.71, texels 0.14) and 7.9 ms per edited chunk. Skip bits add 0.97 ms.
+- timing.mjs, mesh only at apron 10: hints 9.91 / 10.87 / 15.18 ms (mean / median / max), mx-codes 16.05 / 14.15 / 25.44 ms. That is +6.1 ms mean (+62%), +3.3 median, +10.3 worst.
+- Unedited streaming per chunk: today 8.8 ms (38³ generation + mesh). mx needs 7.4 ms generation at 52³ + 5.6 ms mesh on the 38³ core + about 6 ms codes and skip, ≈ 19 ms (+115%), or ≈ 24 ms if the mesher runs on all of 52³. That roughly doubles initial-fill worker time (PLAN: 3–5 s at R = 192).
+- Edit path (REMESH 52³, editbench min of 9): mountain 16.1 → 28.0 ms, single block 6.3 → 13.5, town 9.3 → 18.7. For the corner edit the worst of 8 chunks goes 10.6 → 14.1 ms (sum 53 → 90). That adds about 3.5 ms to the C-12 critical path with 8 parallel jobs, about 7 ms with 2 rounds on 4 workers.
+- Not implemented: a global per-direction image pass for heightfield regions to replace per-block windows (estimated 3–5×), incremental code updates per edit (only blocks within ±8 of the edit), and a TypeScript version inside the mesher sharing its arrays.
+ gpuCost: Not measured on a GPU. Dawn here only exposes llvmpipe; real Windows Chrome timing was not run unattended.
+
+Counted from mx.wgsl:
+- uncoded path: about 50–55 scalar ops + 1 texel load (+16 ops and 1 load per extra search step; 70% of fragments need 1 load, 25% need 2, 5% need 3);
+- coded path: about 105–150 ops + 2 loads;
+- terrain mix about 66 ops + 1.35 dependent 4-byte loads per fragment, or about 40–45 ops + 0.8–1.0 loads with the skip bit;
+- 4 extra interpolants; no extra triangles (+0%).
+
+Estimate for the i7-1255U Iris Xe at 2.1 MP (about 2.7 M shaded fragments per frame): +0.3–0.7 ms per frame, about 3–6% of the 12 ms Medium GPU budget. The main risk is latency from the dependent texel → code chain and divergence at boundaries. This estimate is the main open risk and needs a real-GPU measurement.
+ physics: None. Geometry, collision and picking are the hints mesh, unchanged: every geometry and constraint row equals hints. Only the displayed material changes; what you see is what you hit still holds.
+ editability: Edits stay local:
+- A code depends on blocks within ±8 in-plane and ±5 along the axis, inside the existing dirty set [b − 9, b + 10] (PLAN §7.5), so an edit dirties no extra chunks.
+- Repainting a block's material updates nearby boundaries smoothly within about 8 blocks.
+- Sharp blocks are excluded (treated as unknown) and stay crisp, which is the opt-out for crisp patterns.
+- Checkers of 4×4 or more and square corners stay crisp even with smooth blocks.
+- Edit latency: +7–12 ms per dirty chunk in this JS prototype (see cpuCost).
+--- combinesWith
+ Every sheet is three columns: left hints (grey strip), middle mf-iso (orange), right mx-codes (blue).
+
+Geometry and AO: mx-codes reads only block data, the interpolated normal and the chunk-local position. It composes with any geometry or AO rule that keeps fragments within ±2 levels of their block surface: gn-best AO, gs-ctx/gs-mls and gh-cc8 built-geometry rules, or plain hints. It needs no per-corner vertices and no quad structure, so retriangulation is fine.
+
+Against mf-iso, head to head:
+- mx-codes wins on shallow edges (1:8 0.042 vs 0.131; 1:5 0.041 vs 0.054), the 1:2 line (0.007 vs 0.043), line width (ideal vs ×1.34), square corners, the checker, the lone block (×0.79 round dot vs ×0.56), the junction (0.034 vs 0.085), the hill (0.131 vs 0.142), and built walls (no stone creeping up brick, sheet built).
+- mf-iso wins on the larger discs (0.129 / 0.148 vs 0.130 / 0.163), the 1:3 edge, the 2-wide band and generator dither (one blob). It also costs about 1 ms less CPU, needs no GPU tables or extra loads, and uses apron 6.
+- They are alternatives: both claim the same material appearance, and mf-iso uses the spare vertex bits that mx leaves free.
+
+A sensible hybrid: mx-codes for player-edited content (exact lines and crisp corners), with the survey's generator material hints, or mf-iso, for generated terrain. A per-block 'generated' bit in the texel would choose between them.
+
+The crack-fit stage could also take τ directly from continuous generator fields for unedited cells, giving exact generated boundaries through the same data path.
+--- variants
+ * Axis window Wa 4 → 2 | Surface-following range ±2 levels | 375 of 212,800 mountain-view pixels change; hill 0.127 → 0.131. Reach becomes provably inside apron 10. 0 clipped searches in 30 real chunks.
+ * CPU optimisations | Two passes (own cracks fitted in the block's own window, preallocated snapshots); memoised unbounded column search; exact early exit in assembly; scratch buffers | Code pass 11.7 → 5.0 ms per terrain chunk and about 21 → 7.9 ms per edited chunk. Output checksum unchanged.
+ * Per-vertex skip bit (flags bit 2) | Exact conservative test per triangle (one projection axis for all 3 normals, which works because the selection regions are convex cones; every column and start level shows the own material without a code) | 64.7% of triangles safe; 30% / 46% of fragments skip (mountain / beach view). Loads per fragment 1.35 → 1.00 / 0.78. CPU +0.97 ms per chunk. Renders byte-identical.
+ * WGSL fragment path | mx.wgsl compute port of the lookup, run via Dawn | Equal to the JS emulation on 450,000 samples (4 terrain chunks, 5 scenes) with identical load counts. The test caught a y/z texture-axis upload bug.

@@ -1,0 +1,5 @@
+lone block on binary ground          cubes top +1.00 footprint 1.00 | hints top +0.75 footprint 0.90 | gs-ctx top +0.75 footprint 2.97 | gh-cc8b top +0.75 footprint 1.89
+lone block on natural φ0.2           cubes top +1.00 footprint 1.00 | hints top +0.75 footprint 12.00 | gs-ctx top +0.75 footprint 12.00 | gh-cc8b top +0.75 footprint 12.00
+lone block on a 12×12 placed floor   cubes top +1.00 footprint 1.00 | hints top +0.75 footprint 0.90 | gs-ctx top +0.75 footprint 3.97 | gh-cc8b top +0.75 footprint 5.50
+2-high pillar on binary              cubes top +2.00 footprint 1.00 | hints top +1.75 footprint 0.90 | gs-ctx top +1.75 footprint 0.90 | gh-cc8b top +1.75 footprint 1.89
+work/vgh/img/look-lone-block-on-floor-noao.png

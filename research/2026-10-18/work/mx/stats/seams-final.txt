@@ -1,0 +1,3 @@
+x-border: 67 shared vertices, 0 mismatched (apron 10)
+z-border: 37 shared vertices, 0 mismatched (apron 10)
+x-border, z=1: 56 shared vertices, 0 mismatched (apron 10)

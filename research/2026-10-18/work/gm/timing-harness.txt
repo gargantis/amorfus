@@ -1,0 +1,6 @@
+hints            mesh only, min of 11: mean 11.00 ms, median 12.86 ms, max 17.42 ms (apron 10)
+gm-hint          mesh only, min of 11: mean 8.29 ms, median 8.74 ms, max 12.88 ms (apron 6)
+mf-iso           mesh only, min of 11: mean 11.98 ms, median 11.12 ms, max 21.03 ms (apron 6)
+gm-ref-hints6    mesh only, min of 11: mean 7.61 ms, median 7.54 ms, max 11.98 ms (apron 6)
+gm-ref-hints3    mesh only, min of 11: mean 5.61 ms, median 5.81 ms, max 9.96 ms (apron 3)
+gm-hint3         mesh only, min of 11: mean 6.08 ms, median 5.65 ms, max 9.61 ms (apron 3)

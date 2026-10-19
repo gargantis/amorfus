@@ -1,0 +1,15 @@
+| shallow boundary (std / maxDev, worst boundary; parts) | hints | mv-quad |
+|---|---|---|
+file://harness/metrics.mjs:104
+  for (let z = wz0; z < wz1; z++) for (let x = wx0; x < wx1; x++) if (scene.plan(x, z) === scene.feature) cells++;
+                                                                            ^
+
+TypeError: scene.plan is not a function
+    at materialMetrics (file://harness/metrics.mjs:104:77)
+    at file://work/vmv/misreads.mjs:33:15
+
+Node.js v22.22.1
+
+real	0m0.213s
+user	0m0.294s
+sys	0m0.037s

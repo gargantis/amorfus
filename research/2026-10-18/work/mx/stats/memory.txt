@@ -1,0 +1,7 @@
+per chunk (mean of 16): codes 171 (max 336; own-block codes 138), surface cells 1898, 8³ bricks near the surface 44.3 of 64
+A prototyped: r32uint 38³ 214.3 KB + codes 1.3 KB (max 2.6 KB)
+B 16-bit 32³ no margin (neighbour slots): 64.0 KB + hash 6.0 KB + slot table 108 B
+C 8-bit 32³ no margin: 32.0 KB + hash 6.0 KB
+D sparse 8³ bricks, 16-bit: 44.3 KB + brick table 128 B + hash 6.0 KB
+R = 192 with 200 meshed chunks: A 42 MiB, B 13.7 MiB, C 7.4 MiB, D 9.8 MiB
+R = 192 with 400 meshed chunks: A 84 MiB, B 27.3 MiB, C 14.8 MiB, D 19.7 MiB

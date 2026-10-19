@@ -1,0 +1,25 @@
+| scene (harness materialMetrics, feature area ×, parts) | hints | bevel | mf-iso | mf-lite |
+|---|---|---|---|---|
+| stripes-h2 | ×1.00, 7 parts | ×0.95, 7 parts | ×1.30, 1 part | ×1.18, 1 part |
+| checker16 | ×1.00, 128 parts | ×0.89, 128 parts +1 specks | ×1.40, 22 parts | ×1.36, 37 parts |
+| stripes-d3 | ×1.00, 86 parts | ×0.47, 86 parts +75 specks | ×2.58, 1 part | ×2.57, 1 part |
+| stripes-12 | ×1.00, 60 parts | ×0.92, 60 parts | ×1.44, 1 part | ×1.29, 19 parts |
+| dither-2x1 | ×1.00, 64 parts | ×0.92, 64 parts | ×1.38, 10 parts | ×1.27, 21 parts |
+| dither-25 | ×1.00, 64 parts | ×0.25, 64 parts | ×3.20, 1 part | ×3.65, 1 part |
+| lines-T | ×1.00, 1 part | ×0.98, 1 part | ×1.08, 1 part | ×0.95, 3 parts |
+| lines-X | ×1.00, 1 part | ×0.98, 1 part | ×1.02, 5 parts | ×0.99, 5 parts |
+| lines-Xdiag | ×1.00, 41 parts | ×0.53, 41 parts +19 specks | ×1.24, 5 parts +8 specks | ×1.02, 1 part |
+| lines-Tdiag | ×1.00, 21 parts | ×0.67, 21 parts +19 specks | ×1.26, 1 part | ×1.00, 1 part |
+| pixel-text | ×1.00, 21 parts | ×0.92, 21 parts +1 specks | ×1.06, 4 parts | ×0.63, 13 parts |
+| pixel-text-planks-on-stone | ×1.00, 21 parts | ×0.92, 21 parts +1 specks | ×1.06, 4 parts | ×0.63, 13 parts |
+| corner4 | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| corner3 | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| corner4-diag | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| corner3-thin | ×1.00, 1 part | ×0.98, 1 part | ×1.11, 1 part | ×1.00, 1 part |
+| hill-line1-1:1 | ×0.97, 24 parts | ×0.69, 24 parts +16 specks | ×1.45, 1 part | ×1.09, 3 parts +2 specks |
+| hill-line1-1:2 | ×0.99, 12 parts | ×0.81, 11 parts | ×1.25, 2 parts | ×1.06, 3 parts |
+| hill-edge-1:1 | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| hill-edge-1:2 | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| flat-line1-1:1 | ×1.00, 24 parts | ×0.50, 24 parts +24 specks | ×1.36, 1 part | ×1.02, 1 part |
+| flat-edge-1:1 | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| sharp-mix | ×1.05, 22 parts | ×0.53, 22 parts +20 specks | ×1.59, 3 parts | ×1.38, 3 parts |

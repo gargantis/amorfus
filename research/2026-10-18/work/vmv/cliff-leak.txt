@@ -1,0 +1,9 @@
+1-high grass step: hints stone on the top 0.00 blocks² | mv-quad stone on the top 0.00 blocks²
+2-high grass step: hints stone on the top 0.00 blocks² | mv-quad stone on the top 12.38 blocks²
+3-high grass step: hints stone on the top 0.00 blocks² | mv-quad stone on the top 12.32 blocks²
+4-high grass step: hints stone on the top 0.00 blocks² | mv-quad stone on the top 12.66 blocks²
+2-high planks wall, 1 thick: hints stone on the top 0.00 blocks² | mv-quad stone on the top 0.00 blocks²
+3-high planks wall, 1 thick: hints stone on the top 0.00 blocks² | mv-quad stone on the top 0.00 blocks²
+2-high brick wall, 3 thick: hints stone on the top 0.00 blocks² | mv-quad stone on the top 0.00 blocks²
+3-high brick wall, 3 thick: hints stone on the top 0.00 blocks² | mv-quad stone on the top 0.00 blocks²
+2-high sand step: hints stone on the top 0.00 blocks² | mv-quad stone on the top 0.00 blocks²

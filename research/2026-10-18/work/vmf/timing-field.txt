@@ -1,0 +1,8 @@
+gen a3           min of 9: mean 3.48 ms, median 3.60, max 4.16
+hints mesh a3    min of 9: mean 6.13 ms, median 5.83, max 10.36
+gen a6           min of 9: mean 5.18 ms, median 5.50, max 6.80
+hints mesh a6    min of 9: mean 8.17 ms, median 8.98, max 13.93
+mf field a6      min of 9: mean 5.02 ms, median 4.69, max 9.18
+gen a10          min of 9: mean 8.23 ms, median 8.85, max 9.94
+hints mesh a10   min of 9: mean 11.90 ms, median 13.21, max 18.44
+mf field a10     min of 9: mean 5.26 ms, median 5.38, max 10.25

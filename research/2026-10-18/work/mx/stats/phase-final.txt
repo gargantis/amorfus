@@ -1,0 +1,2 @@
+terrain (16 chunks, best of 5) per chunk: total 5.03 ms = prep 0.56 + scan 0.69 + fill 1.26 + own-crack fits 0.66 + assembly/owner windows 1.71 + texels 0.14
+edits (3 chunks, best of 5) per chunk: total 7.91 ms = prep 0.48 + scan 0.74 + fill 2.53 + own-crack fits 1.03 + assembly/owner windows 2.99 + texels 0.14

@@ -1,0 +1,5 @@
+vmf-hints-a3     mesh only, min of 9: mean 8.23 ms, median 8.18 ms, max 18.00 ms (apron 3)
+vmf-hints-a6     mesh only, min of 9: mean 11.17 ms, median 11.19 ms, max 21.09 ms (apron 6)
+vmf-iso          mesh only, min of 9: mean 18.03 ms, median 17.93 ms, max 31.91 ms (apron 6)
+vmf-hints-a10    mesh only, min of 9: mean 16.55 ms, median 19.90 ms, max 24.60 ms (apron 10)
+vmf-iso-a10      mesh only, min of 9: mean 24.21 ms, median 24.23 ms, max 36.12 ms (apron 10)

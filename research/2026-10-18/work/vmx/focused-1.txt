@@ -1,0 +1,34 @@
+X 1-wide [39 blocks]: hints 1 part (area 39.0) | mf-iso 5 parts (area 38.8) | vmx-codes 1 part (area 35.3)
+X 2-wide [76 blocks]: hints 1 part (area 76.0) | mf-iso 1 part (area 60.9) | vmx-codes 1 part (area 69.0)
+T 1-wide [35 blocks]: hints 1 part (area 35.0) | mf-iso 1 part (area 37.2) | vmx-codes 1 part (area 32.2)
+L 1-wide (90° turn) [26 blocks]: hints 1 part (area 26.0) | mf-iso 1 part (area 27.9) | vmx-codes 1 part (area 24.1)
+plus sign (5 blocks) [5 blocks]: hints 1 part (area 5.0) | mf-iso 1 part (area 3.4) | vmx-codes 1 part (area 2.3)
+X 1-wide, 1 apart crossings (#) [76 blocks]: hints 1 part (area 76.0) | mf-iso 8 parts (area 75.1) | vmx-codes 1 part (area 63.1)
+ladder (rails 3 apart, rungs every 2) [60 blocks]: hints 1 part (area 60.0) | mf-iso 8 parts (area 28.8) | vmx-codes 1 part (area 72.1)
+===
+hints paint null,null: min width 0.008 at t=10.50 (unpainted line ≈ 0.008)
+hints paint 15,16: min width 0.008 at t=10.50 (unpainted line ≈ —)
+hints paint 16,15: min width 0.008 at t=10.50 (unpainted line ≈ —)
+hints paint 15,17: min width 0.008 at t=10.50 (unpainted line ≈ —)
+hints paint 15,14: min width 0.008 at t=10.50 (unpainted line ≈ —)
+mf-iso paint null,null: min width 0.930 at t=10.00 (unpainted line ≈ 0.930)
+mf-iso paint 15,16: min width 0.461 at t=13.32 (unpainted line ≈ —)
+mf-iso paint 16,15: min width 0.461 at t=13.32 (unpainted line ≈ —)
+mf-iso paint 15,17: min width 0.813 at t=13.80 (unpainted line ≈ —)
+mf-iso paint 15,14: min width 0.461 at t=12.32 (unpainted line ≈ —)
+vmx-codes paint null,null: min width 0.703 at t=10.06 (unpainted line ≈ 0.703)
+vmx-codes paint 15,16: min width 0.750 at t=10.00 (unpainted line ≈ —)
+vmx-codes paint 16,15: min width 0.750 at t=10.00 (unpainted line ≈ —)
+vmx-codes paint 15,17: min width 0.680 at t=13.82 (unpainted line ≈ —)
+vmx-codes paint 15,14: min width 0.750 at t=10.00 (unpainted line ≈ —)
+===
+foot of 1-high grass step: hints: stone parts 1, area 15.2 (18 placed) | mf-iso: stone parts 16, area 3.5 (18 placed) | vmx-codes: stone parts 1, area 17.8 (18 placed)
+one block off the 1-high step: hints: stone parts 1, area 18.0 (18 placed) | mf-iso: stone parts 1, area 18.6 (18 placed) | vmx-codes: stone parts 1, area 17.8 (18 placed)
+foot of 2-high grass step: hints: stone parts 1, area 15.2 (18 placed) | mf-iso: stone parts 4, area 0.6 (18 placed) | vmx-codes: stone parts 1, area 17.8 (18 placed)
+foot of 3-high planks wall (1 thick): hints: stone parts 1, area 15.2 (18 placed) | mf-iso: stone parts 1, area 20.0 (18 placed) | vmx-codes: stone parts 1, area 15.7 (18 placed)
+foot of 3-high brick wall (3 thick): hints: stone parts 1, area 15.2 (18 placed) | mf-iso: stone parts 1, area 18.0 (18 placed) | vmx-codes: stone parts 1, area 15.7 (18 placed)
+plain line, no step (control): hints: stone parts 1, area 18.0 (18 placed) | mf-iso: stone parts 1, area 20.8 (18 placed) | vmx-codes: stone parts 1, area 17.8 (18 placed)
+===
+hints lone stone dot area beside a 1-high grass ledge → ledge none: 1.000 | ledge 1 long: 0.998 | ledge 3 long: 0.826 | ledge 5 long: 0.844 | ledge 7 long: 0.844 | ledge 9 long: 0.844
+mf-iso lone stone dot area beside a 1-high grass ledge → ledge none: 0.563 | ledge 1 long: 0.569 | ledge 3 long: 0.205 | ledge 5 long: 0.211 | ledge 7 long: 0.211 | ledge 9 long: 0.211
+vmx-codes lone stone dot area beside a 1-high grass ledge → ledge none: 0.788 | ledge 1 long: 0.788 | ledge 3 long: 0.788 | ledge 5 long: 0.788 | ledge 7 long: 0.788 | ledge 9 long: 0.788

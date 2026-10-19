@@ -1,0 +1,5 @@
+hints          edited chunks (52³), min of 9: mean 14.46 ms, median 18.93 ms, max 23.04 ms
+mf-iso         edited chunks (52³), min of 9: mean 21.05 ms, median 26.08 ms, max 35.08 ms
+gm-hint        edited chunks (52³), min of 9: mean 18.09 ms, median 23.98 ms, max 27.32 ms
+gm-slope       edited chunks (52³), min of 9: mean 20.03 ms, median 27.17 ms, max 30.76 ms
+gm-hint per case: 363/1177 fallback quads, 87 dup, 3 fans; 599/5648 fallback quads, 150 dup, 17 fans; 484/6095 fallback quads, 148 dup, 13 fans; 455/1235 fallback quads, 90 dup, 7 fans; 187/5125 fallback quads, 82 dup, 3 fans; 0/1580 fallback quads, 0 dup, 0 fans

@@ -1,0 +1,2 @@
+bench-17 frags 1056134 skip 0.301 loads/frag 1.004 coded 0.167 noSurface 0.66% hist(0..3 loads) 318176,468131,216767,53060
+bench-18 frags 366734 skip 0.458 loads/frag 0.78 coded 0.146 noSurface 0.00% hist(0..3 loads) 167988,124032,62006,12708

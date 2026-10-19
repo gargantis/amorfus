@@ -1,0 +1,2 @@
+apron 5: 25/53218 vertex fields differ from apron 10; 3/16 chunks with different triangles; base mesh 18.2 ms, field pass 10.4 ms per chunk
+apron 6: 0/53218 vertex fields differ from apron 10; 0/16 chunks with different triangles; base mesh 23.6 ms, field pass 14.3 ms per chunk

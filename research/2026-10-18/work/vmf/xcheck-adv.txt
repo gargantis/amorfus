@@ -1,0 +1,45 @@
+stripes-h2: attr diffs 0 (max 0.0000), tri diffs 0
+checker16: attr diffs 0 (max 0.0000), tri diffs 0
+stripes-d3: attr diffs 0 (max 0.0000), tri diffs 0
+stripes-12: attr diffs 0 (max 0.0000), tri diffs 0
+dither-2x1: attr diffs 0 (max 0.0000), tri diffs 0
+dither-25: attr diffs 0 (max 0.0000), tri diffs 0
+lines-T: attr diffs 0 (max 0.0000), tri diffs 0
+lines-X: attr diffs 0 (max 0.0000), tri diffs 0
+lines-Xdiag: attr diffs 0 (max 0.0000), tri diffs 0
+lines-Tdiag: attr diffs 0 (max 0.0000), tri diffs 0
+pixel-text: attr diffs 0 (max 0.0000), tri diffs 0
+pixel-text-planks-on-stone: attr diffs 0 (max 0.0000), tri diffs 0
+corner4: attr diffs 6 (max 0.0333), tri diffs 0
+corner3: attr diffs 0 (max 0.0000), tri diffs 0
+corner4-diag: attr diffs 0 (max 0.0000), tri diffs 0
+corner3-thin: attr diffs 0 (max 0.0000), tri diffs 0
+hill-line1-1:1: attr diffs 0 (max 0.0000), tri diffs 0
+hill-line1-1:2: attr diffs 0 (max 0.0000), tri diffs 0
+hill-edge-1:1: attr diffs 0 (max 0.0000), tri diffs 0
+hill-edge-1:2: attr diffs 0 (max 0.0000), tri diffs 0
+flat-line1-1:1: attr diffs 0 (max 0.0000), tri diffs 0
+flat-edge-1:1: attr diffs 0 (max 0.0000), tri diffs 0
+step-line-top: attr diffs 0 (max 0.0000), tri diffs 0
+step-line-foot: attr diffs 0 (max 0.0000), tri diffs 0
+step-line-cross: attr diffs 0 (max 0.0000), tri diffs 0
+step-line-diag: attr diffs 0 (max 0.0000), tri diffs 0
+wall-stripes: attr diffs 0 (max 0.0000), tri diffs 0
+planks-wall-on-grass: attr diffs 0 (max 0.0000), tri diffs 0
+through-wall: attr diffs 0 (max 0.0000), tri diffs 0
+planks-on-stone-wall: attr diffs 0 (max 0.0000), tri diffs 0
+hut: attr diffs 0 (max 0.0000), tri diffs 0
+tunnel-roof2: attr diffs 0 (max 0.0000), tri diffs 0
+tunnel1-roof2: attr diffs 0 (max 0.0000), tri diffs 0
+overhang: attr diffs 0 (max 0.0000), tri diffs 0
+sharp-mix: attr diffs 0 (max 0.0000), tri diffs 0
+terrain -2,1,1: attr diffs 0 (max 0.0000), tri diffs 0
+terrain -1,1,2: attr diffs 0 (max 0.0000), tri diffs 0
+terrain -3,1,0: attr diffs 0 (max 0.0000), tri diffs 0
+terrain 0,1,2: attr diffs 0 (max 0.0000), tri diffs 0
+terrain 1,0,0: attr diffs 0 (max 0.0000), tri diffs 0
+terrain 0,0,1: attr diffs 0 (max 0.0000), tri diffs 0
+terrain -1,0,0: attr diffs 0 (max 0.0000), tri diffs 0
+terrain 0,1,0: attr diffs 0 (max 0.0000), tri diffs 0
+terrain -1,0,-1: attr diffs 0 (max 0.0000), tri diffs 0
+MISMATCH in 1 meshes

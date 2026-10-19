@@ -362,3 +362,15 @@ retries never give up; non-minimal varints are accepted on decode.
   hair, corrected by the next contact iteration; the §14 physics battery
   (tunnel, roof, gap) still passes and a drift test at 60 and 20 Hz pins
   the fix.
+
+## After M8 — smoothing study (2026-10-18)
+
+- **The owner judged the bevel rule against its goal and asked for
+  alternatives**: "I want minimal jagginess both on the surface and also the
+  boundary between differing blocks. The bevel rule adds its own type of
+  jagginess." The study is recorded in `research/2026-10-18/` as findings
+  only; nothing is adopted, and the owner considers more work necessary.
+  Its proposals: AO evaluated at the vertex's actual position, material hints
+  from the generator's continuous fields, and synthetic crossings for edited
+  geometry; smoothing painted player content stays open. The bevel rule stays
+  selectable with `#rule=bevel`. *Cost if wrong:* none; no code changed.

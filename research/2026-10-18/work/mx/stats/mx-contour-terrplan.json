@@ -1,0 +1,14 @@
+[
+ {
+  "label": "bench-0",
+  "frags": 96169,
+  "fetchFull": 29.18,
+  "fetchEarly": 13.36,
+  "earlyFrac": 0.697,
+  "noSurface": 0,
+  "sharp": 0,
+  "oob": 0,
+  "cacheEntries": 1204,
+  "prepMs": 8.68691100000001
+ }
+]

@@ -1,0 +1,25 @@
+| scene (harness materialMetrics, feature area ×, parts) | hints | mf-iso | vmx-codes |
+|---|---|---|---|
+| stripes-h2 | ×1.00, 7 parts | ×1.30, 1 part | ×0.88, 7 parts |
+| checker16 | ×1.00, 128 parts | ×1.40, 22 parts | ×1.00, 128 parts |
+| stripes-d3 | ×1.00, 86 parts | ×2.58, 1 part | ×0.74, 23 parts +18 specks |
+| stripes-12 | ×1.00, 60 parts | ×1.44, 1 part | ×0.89, 42 parts +4 specks |
+| dither-2x1 | ×1.00, 64 parts | ×1.38, 10 parts | ×0.86, 50 parts +14 specks |
+| dither-25 | ×1.00, 64 parts | ×3.20, 1 part | ×0.79, 64 parts |
+| lines-T | ×1.00, 1 part | ×1.08, 1 part | ×0.93, 1 part |
+| lines-X | ×1.00, 1 part | ×1.02, 5 parts | ×0.91, 1 part |
+| lines-Xdiag | ×1.00, 41 parts | ×1.24, 5 parts +8 specks | ×0.97, 1 part +4 specks |
+| lines-Tdiag | ×1.00, 21 parts | ×1.26, 1 part | ×0.97, 1 part +2 specks |
+| pixel-text | ×1.00, 21 parts | ×1.06, 4 parts | ×0.80, 13 parts |
+| pixel-text-planks-on-stone | ×1.00, 21 parts | ×1.06, 4 parts | ×0.80, 13 parts |
+| corner4 | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| corner3 | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| corner4-diag | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| corner3-thin | ×1.00, 1 part | ×1.11, 1 part | ×0.99, 1 part |
+| hill-line1-1:1 | ×0.97, 24 parts | ×1.45, 1 part | ×0.94, 7 parts |
+| hill-line1-1:2 | ×0.99, 12 parts | ×1.25, 2 parts | ×0.96, 1 part |
+| hill-edge-1:1 | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| hill-edge-1:2 | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| flat-line1-1:1 | ×1.00, 24 parts | ×1.36, 1 part | ×0.97, 1 part |
+| flat-edge-1:1 | ×1.00, 1 part | ×1.00, 1 part | ×1.00, 1 part |
+| sharp-mix | ×1.05, 22 parts | ×1.59, 3 parts | ×0.98, 3 parts +1 specks |

@@ -1,0 +1,3 @@
+hints   30 single edits: farthest changed vertex (any byte) b−4 … b+5; position bytes b−3 … b+4   (dirty set covers b−9 … b+10)
+gs-ctx  30 single edits: farthest changed vertex (any byte) b−6 … b+6; position bytes b−5 … b+5   (dirty set covers b−9 … b+10)
+gs-mls  30 single edits: farthest changed vertex (any byte) b−7 … b+8; position bytes b−6 … b+7   (dirty set covers b−9 … b+10)

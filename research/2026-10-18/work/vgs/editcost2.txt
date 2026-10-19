@@ -1,0 +1,12 @@
+strip mine: 1×2 tunnels every 3 blocks (x) + cross tunnels every 8 (z), 2 levels
+   hints   min 20.0 ms  (+0.0 vs hints)  5944 tris
+   gs-ctx  min 25.0 ms  (+5.1 vs hints)  5944 tris, R 11832
+   gs-mls  min 44.9 ms  (+24.9 vs hints)  5944 tris, R 11832, fitted 3135, pts 134205
+village: 16 hollow 7×7 houses with roof/door/windows
+   hints   min 14.9 ms  (+0.0 vs hints)  9084 tris
+   gs-ctx  min 20.7 ms  (+5.8 vs hints)  9084 tris, R 8816
+   gs-mls  min 84.0 ms  (+69.1 vs hints)  9084 tris, R 8816, fitted 5982, pts 537362
+lattice tower: 1-wide beams every 4 blocks, 3D, 20 high
+   hints   min 38.0 ms  (+0.0 vs hints)  25088 tris
+   gs-ctx  min 56.4 ms  (+18.4 vs hints)  25088 tris, R 29121
+   gs-mls  min 201.7 ms  (+163.7 vs hints)  25088 tris, R 29121, fitted 14689, pts 1292074

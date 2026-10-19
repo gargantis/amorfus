@@ -1,0 +1,22 @@
+line-1:2 [24 blocks] hints: max reach 0.00 blocks, far-changed area 0.00 blocks² over 0 of 24 steps, flicker 0.00 blocks², final wrong 0.00 blocks²
+line-1:2 [24 blocks] mv-quad: max reach 3.16 blocks, far-changed area 0.88 blocks² over 2 of 24 steps, flicker 2.52 blocks², final wrong 12.00 blocks²
+   per step (step: reach / far): 1: 0/0  2: 0.97/0  3: 2.16/0.16  4: 3.16/0.72  5: 0.47/0  6: 0.47/0  7: 0/0  8: 0.91/0  9: 0/0  10: 0.91/0  11: 0/0  12: 0.91/0  13: 0/0  14: 0.91/0  15: 0/0  16: 0.91/0  17: 0/0  18: 0.91/0  19: 0/0  20: 0.91/0  21: 0/0  22: 0.91/0  23: 0/0  24: 0.91/0
+line-1:3 [24 blocks] hints: max reach 0.00 blocks, far-changed area 0.00 blocks² over 0 of 24 steps, flicker 0.00 blocks², final wrong 0.00 blocks²
+line-1:3 [24 blocks] mv-quad: max reach 4.97 blocks, far-changed area 2.55 blocks² over 3 of 24 steps, flicker 3.43 blocks², final wrong 11.50 blocks²
+   per step (step: reach / far): 1: 0/0  2: 0/0  3: 1.97/0  4: 3.16/0.52  5: 4.16/0.46  6: 4.97/1.58  7: 0.09/0  8: 0.47/0  9: 0.47/0  10: 0.09/0  11: 0.47/0  12: 0.47/0  13: 0.09/0  14: 0.47/0  15: 0.47/0  16: 0.09/0  17: 0.47/0  18: 0.47/0  19: 0.09/0  20: 0.47/0  21: 0.47/0  22: 0.09/0  23: 0.47/0  24: 0.47/0
+line-1:1 [20 blocks] hints: max reach 0.00 blocks, far-changed area 0.00 blocks² over 0 of 20 steps, flicker 0.00 blocks², final wrong 0.00 blocks²
+line-1:1 [20 blocks] mv-quad: max reach 1.97 blocks, far-changed area 0.00 blocks² over 0 of 20 steps, flicker 1.20 blocks², final wrong 10.97 blocks²
+   per step (step: reach / far): 1: 0/0  2: 0.97/0  3: 1.97/0  4: 0.47/0  5: 0.47/0  6: 0.47/0  7: 0.47/0  8: 0.47/0  9: 0.47/0  10: 0.47/0  11: 0.47/0  12: 0.47/0  13: 0.47/0  14: 0.47/0  15: 0.47/0  16: 0.47/0  17: 0.47/0  18: 0.47/0  19: 0.47/0  20: 0.47/0
+arc-r10 [29 blocks] hints: max reach 0.00 blocks, far-changed area 0.00 blocks² over 0 of 29 steps, flicker 0.00 blocks², final wrong 0.00 blocks²
+arc-r10 [29 blocks] mv-quad: max reach 7.59 blocks, far-changed area 11.74 blocks² over 26 of 29 steps, flicker 12.83 blocks², final wrong 10.48 blocks²
+   per step (step: reach / far): 1: 0/0  2: 0/0  3: 1.22/0  4: 2.28/0.11  5: 3.28/0.14  6: 4.22/0.13  7: 5.22/0.5  8: 4.03/0.07  9: 5.97/0.24  10: 3.97/0.35  11: 4.47/0.09  12: 4.16/0.27  13: 5.28/0.07  14: 6.28/0.24  15: 6.28/0.3  16: 5.78/0.16  17: 6.34/0.14  18: 5.72/0.22  19: 5.72/0.28  20: 7.34/0.41  21: 6.34/0.39  22: 6.97/1.79  23: 6.97/0.42  24: 7.16/1.96  25: 7.16/0.67  26: 7.47/0.99  27: 7.59/0.79  28: 7.59/0.73  29: 7.22/0.27
+square-grow [36 blocks] hints: max reach 0.00 blocks, far-changed area 0.00 blocks² over 0 of 36 steps, flicker 0.00 blocks², final wrong 0.00 blocks²
+square-grow [36 blocks] mv-quad: max reach 4.97 blocks, far-changed area 23.73 blocks² over 28 of 36 steps, flicker 12.61 blocks², final wrong 0.00 blocks²
+   per step (step: reach / far): 1: 0/0  2: 0/0  3: 1.22/0  4: 1.28/0  5: 2.28/0.25  6: 1.91/0  7: 2.47/0.39  8: 2.47/0.98  9: 2.22/0.13  10: 3.22/0.97  11: 3.03/0.4  12: 2.91/0.23  13: 3.41/1.23  14: 3.16/0.14  15: 2.16/0.05  16: 3.34/0.79  17: 4.34/1.1  18: 3.97/0.22  19: 4.09/2.22  20: 3.91/0.18  21: 4.59/3.66  22: 4.59/1.95  23: 3.03/0.06  24: 2.03/0.02  25: 3.97/1.34  26: 4.97/1.78  27: 2.78/0.04  28: 4.97/0.38  29: 2.97/0.06  30: 4.97/1.3  31: 4.97/1.23  32: 4.97/0.82  33: 3.97/0.06  34: 3.03/0.07  35: 2.97/0.04  36: 4.97/1.62
+outline-7 [24 blocks] hints: max reach 0.00 blocks, far-changed area 0.00 blocks² over 0 of 24 steps, flicker 0.00 blocks², final wrong 0.00 blocks²
+outline-7 [24 blocks] mv-quad: max reach 5.97 blocks, far-changed area 22.01 blocks² over 17 of 24 steps, flicker 16.21 blocks², final wrong 0.00 blocks²
+   per step (step: reach / far): 1: 0/0  2: 0/0  3: 1.97/0  4: 3.03/0.59  5: 4.03/0.94  6: 0/0  7: 0/0  8: 5.97/1.46  9: 2.78/0.27  10: 2.97/0.23  11: 5.97/2.09  12: 5.97/2.14  13: 0/0  14: 5.97/1.87  15: 2.66/0.22  16: 2.97/0.39  17: 5.97/2.87  18: 4.97/1.98  19: 0/0  20: 5.97/1.88  21: 2.66/0.26  22: 2.97/0.23  23: 5.97/2.07  24: 5.97/2.53
+
+real	0m7.335s
+user	0m9.600s
+sys	0m0.449s

@@ -1,0 +1,14 @@
+binary        2×2  floor: hints max -0.473 ctr -0.473 | gs-ctx max -0.435 ctr -0.435 | gh-cc8b max -0.252 ctr -0.252
+binary        3×3  floor: hints max -0.352 ctr -0.352 | gs-ctx max -0.301 ctr -0.301 | gh-cc8b max -0.188 ctr -0.188
+binary        4×4  floor: hints max -0.157 ctr -0.157 | gs-ctx max -0.137 ctr -0.137 | gh-cc8b max -0.001 ctr -0.001
+binary        6×6  floor: hints max -0.028 ctr -0.028 | gs-ctx max -0.024 ctr -0.024 | gh-cc8b max 0.000 ctr 0.000
+binary        8×8  floor: hints max -0.004 ctr -0.004 | gs-ctx max -0.004 ctr -0.004 | gh-cc8b max 0.000 ctr 0.000
+binary       12×12 floor: hints max 0.000 ctr 0.000 | gs-ctx max 0.000 ctr 0.000 | gh-cc8b max 0.000 ctr 0.000
+binary       16×16 floor: hints max 0.000 ctr 0.000 | gs-ctx max 0.000 ctr 0.000 | gh-cc8b max 0.000 ctr 0.000
+natural φ0.2  2×2  floor: hints max -0.446 ctr -0.446 | gs-ctx max -0.388 ctr -0.388 | gh-cc8b max -0.252 ctr -0.252
+natural φ0.2  3×3  floor: hints max -0.289 ctr -0.289 | gs-ctx max -0.273 ctr -0.273 | gh-cc8b max -0.188 ctr -0.188
+natural φ0.2  4×4  floor: hints max -0.087 ctr -0.087 | gs-ctx max -0.130 ctr -0.130 | gh-cc8b max -0.001 ctr -0.001
+natural φ0.2  6×6  floor: hints max 0.027 ctr 0.027 | gs-ctx max -0.024 ctr -0.024 | gh-cc8b max 0.000 ctr 0.000
+natural φ0.2  8×8  floor: hints max 0.047 ctr 0.047 | gs-ctx max -0.004 ctr -0.004 | gh-cc8b max 0.000 ctr 0.000
+natural φ0.2 12×12 floor: hints max 0.051 ctr 0.051 | gs-ctx max 0.000 ctr 0.000 | gh-cc8b max 0.000 ctr 0.000
+natural φ0.2 16×16 floor: hints max 0.051 ctr 0.051 | gs-ctx max 0.000 ctr 0.000 | gh-cc8b max 0.000 ctr 0.000

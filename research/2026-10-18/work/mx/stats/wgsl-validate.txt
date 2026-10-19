@@ -1,0 +1,10 @@
+terrain -1,1,1: 133296 samples, codes 336, GPU≠JS 0, mean loads/fragment GPU 1.317 JS 1.317 (code loads 0.089)
+terrain 0,0,-3: 28248 samples, codes 190, GPU≠JS 0, mean loads/fragment GPU 1.374 JS 1.374 (code loads 0.160)
+terrain -3,1,0: 122808 samples, codes 277, GPU≠JS 0, mean loads/fragment GPU 1.313 JS 1.313 (code loads 0.066)
+terrain 1,1,1: 36768 samples, codes 300, GPU≠JS 0, mean loads/fragment GPU 1.378 JS 1.378 (code loads 0.216)
+hill-materials: 31104 samples, codes 66, GPU≠JS 0, mean loads/fragment GPU 1.165 JS 1.165 (code loads 0.057)
+line1-1:1: 24576 samples, codes 76, GPU≠JS 0, mean loads/fragment GPU 1.074 JS 1.074 (code loads 0.074)
+junction3: 24576 samples, codes 49, GPU≠JS 0, mean loads/fragment GPU 1.044 JS 1.044 (code loads 0.044)
+single: 24576 samples, codes 1, GPU≠JS 0, mean loads/fragment GPU 1.001 JS 1.001 (code loads 0.001)
+checker: 24576 samples, codes 0, GPU≠JS 0, mean loads/fragment GPU 1.000 JS 1.000 (code loads 0.000)
+WGSL == JS on all samples

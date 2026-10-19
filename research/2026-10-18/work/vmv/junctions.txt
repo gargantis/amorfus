@@ -1,0 +1,7 @@
+X 1-wide [39 blocks]: hints 1 part (area 39.0) | mf-iso 5 parts (area 38.8) | mv-quad 1 part (area 39.0)
+X 2-wide [76 blocks]: hints 1 part (area 76.0) | mf-iso 1 part (area 60.9) | mv-quad 1 part (area 76.0)
+T 1-wide [35 blocks]: hints 1 part (area 35.0) | mf-iso 1 part (area 37.2) | mv-quad 1 part (area 35.0)
+L 1-wide (90° turn) [26 blocks]: hints 1 part (area 26.0) | mf-iso 1 part (area 27.9) | mv-quad 1 part (area 26.0)
+plus sign (5 blocks) [5 blocks]: hints 1 part (area 5.0) | mf-iso 1 part (area 3.4) | mv-quad 1 part (area 4.4)
+X 1-wide, 1 apart crossings (#) [76 blocks]: hints 1 part (area 76.0) | mf-iso 8 parts (area 75.1) | mv-quad 1 part (area 76.0)
+ladder (rails 3 apart, rungs every 2) [60 blocks]: hints 1 part (area 60.0) | mf-iso 8 parts (area 28.8) | mv-quad 1 part (area 69.7)

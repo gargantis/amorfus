@@ -1,0 +1,50 @@
+[
+ {
+  "label": "line1-0deg",
+  "frags": 1048576,
+  "fetchFull": 21,
+  "fetchEarly": 6.25,
+  "earlyFrac": 0.922,
+  "noSurface": 0,
+  "sharp": 0,
+  "oob": 0,
+  "cacheEntries": 1024,
+  "prepMs": 6.994485999999995
+ },
+ {
+  "label": "line1-1:1",
+  "frags": 1048576,
+  "fetchFull": 21,
+  "fetchEarly": 6.25,
+  "earlyFrac": 0.922,
+  "noSurface": 0,
+  "sharp": 0,
+  "oob": 0,
+  "cacheEntries": 1024,
+  "prepMs": 7.736648000000059
+ },
+ {
+  "label": "line1-1:2",
+  "frags": 1048576,
+  "fetchFull": 21,
+  "fetchEarly": 6.25,
+  "earlyFrac": 0.922,
+  "noSurface": 0,
+  "sharp": 0,
+  "oob": 0,
+  "cacheEntries": 1024,
+  "prepMs": 10.52490899999998
+ },
+ {
+  "label": "line2-1:1",
+  "frags": 1048576,
+  "fetchFull": 21,
+  "fetchEarly": 6.69,
+  "earlyFrac": 0.895,
+  "noSurface": 0,
+  "sharp": 0,
+  "oob": 0,
+  "cacheEntries": 1024,
+  "prepMs": 0.9411839999997937
+ }
+]

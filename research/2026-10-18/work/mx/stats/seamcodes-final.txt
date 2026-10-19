@@ -1,0 +1,12 @@
+synthetic x-border: codes coded by both 5, differing 0, coded by only one 0; fragments 5886, differing 0 (apron 10)
+synthetic z-border: codes coded by both 8, differing 0, coded by only one 0; fragments 2802, differing 0 (apron 10)
+synthetic x-border z=1: codes coded by both 5, differing 0, coded by only one 0; fragments 4216, differing 0 (apron 10)
+terrain x (-2,1,1)|(-1,1,1): codes coded by both 6, differing 0, coded by only one 0; fragments 15168, differing 0 (apron 10)
+terrain z (-1,1,1)|(-1,1,2): codes coded by both 22, differing 0, coded by only one 0; fragments 16301, differing 0 (apron 10)
+terrain y (-1,0,1)|(-1,1,1): codes coded by both 0, differing 0, coded by only one 0; fragments 11703, differing 0 (apron 10)
+terrain x (-3,1,0)|(-2,1,0): codes coded by both 2, differing 0, coded by only one 0; fragments 16151, differing 0 (apron 10)
+terrain z (-3,1,0)|(-3,1,1): codes coded by both 26, differing 0, coded by only one 0; fragments 9677, differing 0 (apron 10)
+terrain y (0,0,-3)|(0,1,-3): codes coded by both 0, differing 0, coded by only one 0; fragments 0, differing 0 (apron 10)
+terrain x (0,0,0)|(1,0,0): codes coded by both 16, differing 0, coded by only one 0; fragments 4082, differing 0 (apron 10)
+terrain y (1,0,1)|(1,1,1): codes coded by both 187, differing 0, coded by only one 0; fragments 7271, differing 0 (apron 10)
+SEAMS OK

@@ -1,0 +1,32 @@
+strip mine: 1×2 tunnels every 3 blocks (x) + cross tunnels every 8 (z), 2 levels
+   hints   min 15.9 ms  (+0.0 vs hints)  5944 tris
+   gs-ctx  min 19.0 ms  (+3.1 vs hints)  5944 tris, R 11832
+   gh-cc8b min 21.8 ms  (+5.9 vs hints)  5944 tris
+village: 16 hollow 7×7 houses with roof/door/windows
+   hints   min 12.5 ms  (+0.0 vs hints)  9084 tris
+   gs-ctx  min 19.6 ms  (+7.1 vs hints)  9084 tris, R 8816
+   gh-cc8b min 16.7 ms  (+4.2 vs hints)  9084 tris
+lattice tower: 1-wide beams every 4 blocks, 3D, 20 high
+   hints   min 35.0 ms  (+0.0 vs hints)  25088 tris
+   gs-ctx  min 51.3 ms  (+16.3 vs hints)  25088 tris, R 29121
+   gh-cc8b min 44.6 ms  (+9.6 vs hints)  25088 tris
+team dense build (heightfield 1–8)
+   hints   min 6.5 ms  (+0.0 vs hints)  2552 tris
+   gs-ctx  min 9.6 ms  (+3.0 vs hints)  2552 tris, R 3273
+   gh-cc8b min 11.0 ms  (+4.5 vs hints)  2552 tris
+ramp-1:4 (team)
+   hints   min 5.7 ms  (+0.0 vs hints)  2720 tris
+   gs-ctx  min 6.9 ms  (+1.2 vs hints)  2720 tris, R 1449
+   gh-cc8b min 7.3 ms  (+1.7 vs hints)  2720 tris
+scaffold: 1-wide beams every 3 blocks, 3D
+   hints   min 53.1 ms  (+0.0 vs hints)  43880 tris
+   gs-ctx  min 65.5 ms  (+12.4 vs hints)  43880 tris, R 37308
+   gh-cc8b min 73.0 ms  (+19.9 vs hints)  43880 tris
+rubble: 35% random placed blocks over y 6–20
+   hints   min 63.2 ms  (+0.0 vs hints)  39632 tris
+   gs-ctx  min 87.1 ms  (+23.9 vs hints)  39632 tris, R 37404
+   gh-cc8b min 97.9 ms  (+34.7 vs hints)  39632 tris
+cave sponge: dug 45% of a stone mass y −8..6
+   hints   min 61.7 ms  (+0.0 vs hints)  17142 tris
+   gs-ctx  min 78.0 ms  (+16.3 vs hints)  17142 tris, R 38217
+   gh-cc8b min 91.7 ms  (+30.0 vs hints)  17142 tris

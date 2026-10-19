@@ -1,0 +1,36 @@
+[
+ {
+  "label": "bench-0",
+  "codes": 311,
+  "surface": 6782,
+  "passes": [
+   0,
+   225,
+   86
+  ],
+  "overflow": 1,
+  "crackFits": 669,
+  "crackMiss": 1,
+  "tauFallback": 5,
+  "ownerWindows": 670,
+  "windows": 731,
+  "codeMs": 133.96,
+  "texelBytes": 219488,
+  "codeBytes": 2488,
+  "frags": 1108167,
+  "fetchMean": 1.294,
+  "codedFrac": 0.132,
+  "noSurface": 10627,
+  "sharp": 0,
+  "oob": 0,
+  "fetchHist": [
+   0,
+   831062,
+   228095,
+   49010,
+   0,
+   0,
+   0
+  ]
+ }
+]

@@ -1,0 +1,12 @@
+scene I
+  hints   -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk
+  gs-ctx  -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk
+  gs-mls  -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk
+scene J
+  hints   -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk
+  gs-ctx  -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk
+  gs-mls  -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk
+scene K
+  hints   -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk
+  gs-ctx  -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk
+  gs-mls  -0.25:blk -0.15:blk -0.05:blk +0.00:blk +0.05:blk +0.15:blk +0.25:blk

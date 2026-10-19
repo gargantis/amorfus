@@ -1,0 +1,10 @@
+surface at world (0, 32, 0); chunks cy 0..1
+chunk -1,0,-1: hints 6.0 ms, mv-quad 10.5 ms
+chunk -1,0,0: hints 13.2 ms, mv-quad 15.1 ms
+chunk -1,1,-1: hints 8.6 ms, mv-quad 42.9 ms
+chunk -1,1,0: hints 9.9 ms, mv-quad 31.4 ms
+chunk 0,0,-1: hints 8.4 ms, mv-quad 31.9 ms
+chunk 0,0,0: hints 7.4 ms, mv-quad 18.1 ms
+chunk 0,1,-1: hints 4.7 ms, mv-quad 4.9 ms
+chunk 0,1,0: hints 6.1 ms, mv-quad 12.2 ms
+8-chunk edit (min of 5): hints total 64.2 ms (max 13.2), mv-quad total 167.0 ms (max 42.9); extra per chunk mean 12.8 ms, max 34.3 ms

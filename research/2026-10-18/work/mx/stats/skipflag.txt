@@ -1,0 +1,1 @@
+surface area whose fragments could skip the lookup via a per-vertex bit: 78.9%

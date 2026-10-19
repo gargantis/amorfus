@@ -1,0 +1,29 @@
+mound-line view: frags 739983, shown≠own 25072 (3.39%), FOREIGN 0 (0.000%), far-found 5350, no-surface 0, coded 58937, replica≠target 0
+mound-line close0: frags 957915, shown≠own 70496 (7.36%), FOREIGN 0 (0.000%), far-found 18259, no-surface 0, coded 135746, replica≠target 0
+mound-line: codes 129, tauFallback 0, crackMiss 0, overflow 2
+mound-ring view: frags 739983, shown≠own 30914 (4.18%), FOREIGN 0 (0.000%), far-found 5350, no-surface 0, coded 53560, replica≠target 0
+mound-ring close0: frags 957915, shown≠own 109919 (11.47%), FOREIGN 0 (0.000%), far-found 18259, no-surface 0, coded 191635, replica≠target 0
+mound-ring: codes 111, tauFallback 8, crackMiss 8, overflow 0
+mound-band view: frags 739983, shown≠own 64332 (8.69%), FOREIGN 577 (0.078%), far-found 5350, no-surface 0, coded 145643, replica≠target 0
+mound-band close0: frags 957915, shown≠own 145887 (15.23%), FOREIGN 1641 (0.171%), far-found 18259, no-surface 0, coded 302337, replica≠target 0
+mound-band: codes 265, tauFallback 12, crackMiss 10, overflow 0
+tower-paint view: frags 800980, shown≠own 21861 (2.73%), FOREIGN 0 (0.000%), far-found 0, no-surface 5752, coded 53420, replica≠target 0
+tower-paint close0: frags 1093520, shown≠own 27190 (2.49%), FOREIGN 0 (0.000%), far-found 0, no-surface 2637, coded 114801, replica≠target 0
+tower-paint: codes 79, tauFallback 0, crackMiss 0, overflow 0
+wall-courses view: frags 1405592, shown≠own 76093 (5.41%), FOREIGN 0 (0.000%), far-found 0, no-surface 0, coded 196604, replica≠target 0
+wall-courses close0: frags 1641592, shown≠own 34824 (2.12%), FOREIGN 0 (0.000%), far-found 0, no-surface 0, coded 149638, replica≠target 0
+wall-courses close1: frags 1651158, shown≠own 157900 (9.56%), FOREIGN 0 (0.000%), far-found 0, no-surface 0, coded 302567, replica≠target 0
+wall-courses: codes 70, tauFallback 0, crackMiss 0, overflow 0
+bridge view: frags 712708, shown≠own 5760 (0.81%), FOREIGN 0 (0.000%), far-found 0, no-surface 0, coded 0, replica≠target 0
+bridge close0: frags 1427336, shown≠own 40842 (2.86%), FOREIGN 0 (0.000%), far-found 0, no-surface 7420, coded 0, replica≠target 0
+bridge: codes 0, tauFallback 0, crackMiss 0, overflow 0
+house-eaves view: frags 1069305, shown≠own 63316 (5.92%), FOREIGN 0 (0.000%), far-found 0, no-surface 21128, coded 0, replica≠target 0
+house-eaves close0: frags 1138080, shown≠own 19186 (1.69%), FOREIGN 0 (0.000%), far-found 0, no-surface 32875, coded 0, replica≠target 0
+house-eaves close1: frags 1553599, shown≠own 53491 (3.44%), FOREIGN 0 (0.000%), far-found 0, no-surface 13552, coded 0, replica≠target 0
+house-eaves: codes 0, tauFallback 0, crackMiss 0, overflow 0
+stairs-roof view: frags 980076, shown≠own 18916 (1.93%), FOREIGN 0 (0.000%), far-found 87, no-surface 4919, coded 21524, replica≠target 0
+stairs-roof close0: frags 1502207, shown≠own 44398 (2.96%), FOREIGN 0 (0.000%), far-found 539, no-surface 307, coded 54112, replica≠target 0
+stairs-roof: codes 6, tauFallback 2, crackMiss 2, overflow 0
+pillars view: frags 1395773, shown≠own 0 (0.00%), FOREIGN 0 (0.000%), far-found 51316, no-surface 108958, coded 0, replica≠target 0
+pillars close0: frags 1746634, shown≠own 0 (0.00%), FOREIGN 0 (0.000%), far-found 106261, no-surface 139345, coded 0, replica≠target 0
+pillars: codes 0, tauFallback 0, crackMiss 0, overflow 0

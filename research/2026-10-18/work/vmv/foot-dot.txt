@@ -1,0 +1,3 @@
+hints lone stone dot area beside a 1-high grass ledge → ledge none: 1.000 | ledge 1 long: 0.998 | ledge 3 long: 0.826 | ledge 5 long: 0.844 | ledge 7 long: 0.844 | ledge 9 long: 0.844
+mf-iso lone stone dot area beside a 1-high grass ledge → ledge none: 0.563 | ledge 1 long: 0.569 | ledge 3 long: 0.205 | ledge 5 long: 0.211 | ledge 7 long: 0.211 | ledge 9 long: 0.211
+mv-quad lone stone dot area beside a 1-high grass ledge → ledge none: 1.000 | ledge 1 long: 0.998 | ledge 3 long: 0.826 | ledge 5 long: 0.844 | ledge 7 long: 0.844 | ledge 9 long: 0.844

@@ -1,0 +1,10 @@
+hints paint null,null: stone parts in [9,23)² 14 (+0 specks), area 14.00
+hints paint 15,16: stone parts in [9,23)² 13 (+0 specks), area 15.00
+hints paint 16,15: stone parts in [9,23)² 13 (+0 specks), area 15.00
+hints paint 15,17: stone parts in [9,23)² 15 (+0 specks), area 15.00
+hints paint 15,14: stone parts in [9,23)² 13 (+0 specks), area 15.00
+mv-quad paint null,null: stone parts in [9,23)² 1 (+0 specks), area 13.74
+mv-quad paint 15,16: stone parts in [9,23)² 1 (+0 specks), area 18.18
+mv-quad paint 16,15: stone parts in [9,23)² 1 (+0 specks), area 18.18
+mv-quad paint 15,17: stone parts in [9,23)² 6 (+1 specks), area 14.75
+mv-quad paint 15,14: stone parts in [9,23)² 1 (+0 specks), area 18.12
