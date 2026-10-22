@@ -1,0 +1,13 @@
+{"out": "teams/local/sheets/t1-maps.png", "cols": 2, "title": "Task 1: label height change (perturbed - base), 14x2x5 A slab, n=12, perturbation at x=8..9 (d=6)", "cell": [576, 510],
+ "items": [
+  {"path": "teams/local/img/t1/map-FID-0.15-add-d6.png", "label": "FID-0.15, add a block on top (bump)\ntop face above, bottom face below; red = outward, blue = inward"},
+  {"path": "teams/local/img/t1/map-FID-0.15-novol-add-d6.png", "label": "FID-0.15 volume:false (control), add\nonly the bump's own cells change"},
+  {"path": "teams/local/img/t1/map-FID-0.15-remove-d6.png", "label": "FID-0.15, remove a top block (pit)"},
+  {"path": "teams/local/img/t1/map-FID-0.15-recolour-d6.png", "label": "FID-0.15, recolour a top block to B"},
+  {"path": "teams/local/img/t1/map-FID-0.05-add-d6.png", "label": "FID-0.05, add (bump)"},
+  {"path": "teams/local/img/t1/map-FINITE-4-add-d6.png", "label": "FINITE-4, add (bump)"},
+  {"path": "teams/local/img/t1/map-FINITE-4-recolour-d6.png", "label": "FINITE-4, recolour (lambda unchanged)"},
+  {"path": "teams/local/img/t1/map-FINITE-4-novol-add-d6.png", "label": "FINITE-4 volume:false (control), add"},
+  {"path": "teams/local/img/t1/map-CAGE-0.25-add-d6.png", "label": "CAGE-0.25, add (bump)"},
+  {"path": "teams/local/img/t1/map-CAGE-0.25-remove-d6.png", "label": "CAGE-0.25, remove (pit)"}
+ ]}

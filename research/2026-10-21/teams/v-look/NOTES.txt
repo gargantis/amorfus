@@ -1,0 +1,30 @@
+v-look (round 2 verifier) - notes. The report is the structured result; numbers cite files below.
+
+Engines: candidates = teams/look/src/mbo-look.mjs imported unchanged (read-only); others = lib/mbo.mjs.
+Regime names (src/vrun.mjs):
+  C15-V0  = BOX0-PAINT-0.15-0.02 with horizontal cap floor(0.15 n)/n, vertical 0 (n16: identical to the look team's regime; n20: 0.15/0; n24: 0.125/0)
+  C10-V0  = BOX0-PAINT-0.1-0.02, same caps
+  C15-V05, C10-V05 = same with the PLAN vertical cap floor(0.05 n)/n (n20: exactly 0.15/0.05; n24: 0.125/0.0417)
+  C15-V0-km05 / -km10 = paint fidelity 0.05 / 0.10 instead of 0.02
+Margin check: candidate results are identical at margin 1 and 0.25 (logs/margin-check.log), so n20/24 runs use margin 0.25-0.5.
+Reproduction: C15-V0@n16 equals the look team's BOX0-PAINT-0.15-0.02 exactly on tunnel, slab-line, single, pillar3 (res/C15-V0@n16.json vs teams/look/results/BOX0-PAINT-0.15-0.02.json; band sd 0.0504 both).
+
+Files
+  res/table-cand-n20.txt   constraint + paint table, candidates at n20 (and BLOCKS)
+  res/table-cand-n24.txt   C15-V0 and C10-V05 at n24
+  res/table-paint-n16.txt  2-thick paint at n16 (the look team's own resolution)
+  res/table-kmat-n16.txt   paint fidelity 0.02 / 0.05 / 0.10
+  res/table-L1-n20.txt, res/table-L1-n16.txt   listed regimes against L1
+  logs/slabline-n24.log    painted line breaks under the PLAN vertical cap at n24
+  res/closedform-check.txt render groove vs local L11 closed form and the lambda/g form
+  res/fast-C12-C13-labels.txt  pair-diff dip and T-junction angles on labels
+  res/seams-*.json         seam measurements (labels and D) per regime / n / g
+  res/seam2d-v.json        2D double bubble / FID seam at n 64-256 (copy of look's seam2d, 4x1 slab)
+  res/tvl1-s-scaling.json  prior fid-is-tvl1: radius vs s, volume on/off
+  res/local-L9@n16.json, res/local-L9b@n16.json, res/local-L12@n16.json   local L9 / L12 attacks
+  res/L10-L11-L12-summary.txt, res/L14-timing.txt, res/FID-0.25@n32.json
+  sheets/final-1-constraints.png, final-2-paint.png, final-3-seams.png, final-4-limits.png (+ quick1/quick2)
+Measurement caveats: trench gap rows start at y = 1.06 (above the allowed 0.05 floor rise), see logs/trench-recheck.log;
+  ring8 hole width uses a 1/n step and reads 0.95 for the unchanged blocks (bias -0.05);
+  LM.junction seeds at y = 0.5 so its output is meaningless for the 2-thick scenes (ignored);
+  the circle-fit angles in res/pairdiff-circlefit.txt are unreliable (small window) and are not used.

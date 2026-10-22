@@ -1,0 +1,5 @@
+regime | tunnel clearH/clearW (3 cuts) | room2 clearH/clearW min | trench minW / floor dev | single ext / diag/axis / cornerReq | pillar wMin/height | ring hole | cube2 cornerReq lab | flat max|dy| (terrain lo/hi, stairs, slab-line B, slab-halves, room/tunnel roofs) | delta (single, cube2, tunnel)
+NOVOL-1@n16 | 1.875/0.5 1.875/0.5 1.875/0.5 | 1.75/0 | 0.5 / 0 | [1, 1, 1] / 1.0781 / 0.4002 | 0.5/3 | - | 0.4002 | [None, None, 0, None, None, 0, 0] | [0.3223, 0.0872, 0.0609]
+CAGE-0.05@n16 | 1.875/0 1.875/0 1.875/0 | 1.875/0 | 0 / 0.0625 | [1.125, 1.125, 1.125] / 1.3472 / 0.1913 | 0.5/3 | - | 0.1913 | [None, None, 0.0625, None, None, 0, 0] | [0.2422, 0.1401, 0.0723]
+
+regime | scene | steps(conv) | A area ratio | A parts start->end | blocks wrong | gained/lost (blocks^2) | line width (mid / ends) | A below top layer (blocks^3) | junctions

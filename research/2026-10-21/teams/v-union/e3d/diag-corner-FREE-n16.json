@@ -1,0 +1,53 @@
+{
+ "case": "diag-corner",
+ "n": 16,
+ "regime": "FREE",
+ "xs": [],
+ "runs": [
+  {
+   "v": "ann1",
+   "steps": 118,
+   "converged": true,
+   "ms": 4286,
+   "xs": [],
+   "roots": {
+    "6": [
+     "2"
+    ]
+   },
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "ann2",
+   "steps": 113,
+   "converged": true,
+   "ms": 3784,
+   "xs": [],
+   "roots": {
+    "6": [
+     "2"
+    ]
+   },
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "ann3",
+   "steps": 110,
+   "converged": true,
+   "ms": 4003,
+   "xs": [],
+   "roots": {
+    "6": [
+     "2"
+    ]
+   },
+   "firstMerges": [
+    1
+   ]
+  }
+ ]
+}

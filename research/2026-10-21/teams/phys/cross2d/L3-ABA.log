@@ -1,0 +1,11 @@
+solver [rule (pressure-favoured split; ties -> first option)] E 7.70531 conv true t 73.6 sig 6:2 7:1 adj 0|6,0|7,6|7 contact null
+engine n 32 s 0.2 jit 0 seed 1: 41 steps sig 6:2 7:1 adj 0|6,0|7,6|7 quad 0 E 7.8015 vs exact-rasterised 7.7774 (0.31%) [exact 7.7053] p 1.584,1.197 vs 1.515,1.169 dist mean 0.0396 max 0.0742
+engine n 32 s 0.2 jit 0.001 seed 1: 55 steps sig 6:2 7:1 adj 0|6,0|7,6|7 quad 0 E 7.7952 vs exact-rasterised 7.7774 (0.23%) [exact 7.7053] p 1.461,1.149 vs 1.515,1.169 dist mean 0.0275 max 0.0660
+engine n 32 s 0.2 jit 0.001 seed 2: 52 steps sig 6:2 7:1 adj 0|6,0|7,6|7 quad 0 E 7.7908 vs exact-rasterised 7.7774 (0.17%) [exact 7.7053] p 1.620,1.313 vs 1.515,1.169 dist mean 0.0336 max 0.0742
+engine n 32 s 0.2 jit 0.001 seed 3: 54 steps sig 6:2 7:1 adj 0|6,0|7,6|7 quad 0 E 7.7901 vs exact-rasterised 7.7774 (0.16%) [exact 7.7053] p 1.607,1.295 vs 1.515,1.169 dist mean 0.0338 max 0.0742
+engine n 64 s 0.2 jit 0 seed 1: 61 steps sig 6:2 7:1 adj 0|6,0|7,6|7 quad 0 E 7.8055 vs exact-rasterised 7.8078 (-0.03%) [exact 7.7053] p 1.556,1.202 vs 1.515,1.169 dist mean 0.0147 max 0.0322
+engine n 64 s 0.2 jit 0.001 seed 1: 91 steps sig 6:2 7:1 adj 0|6,0|7,6|7 quad 0 E 7.8007 vs exact-rasterised 7.8078 (-0.09%) [exact 7.7053] p 1.561,1.198 vs 1.515,1.169 dist mean 0.0107 max 0.0322
+engine n 64 s 0.2 jit 0.001 seed 2: 64 steps sig 6:2 7:1 adj 0|6,0|7,6|7 quad 0 E 7.8058 vs exact-rasterised 7.8078 (-0.03%) [exact 7.7053] p 1.555,1.194 vs 1.515,1.169 dist mean 0.0147 max 0.0327
+engine n 64 s 0.1 jit 0 seed 1: 146 steps sig 6:2 7:1 adj 0|6,0|7,6|7 quad 0 E 7.8505 vs exact-rasterised 7.8078 (0.55%) [exact 7.7053] p 1.738,1.199 vs 1.515,1.169 dist mean 0.0704 max 0.1351
+engine n 128 s 0.2 jit 0 seed 1: 98 steps sig 6:2 7:1 adj 0|6,0|7,6|7 quad 0 E 7.8091 vs exact-rasterised 7.8191 (-0.13%) [exact 7.7053] p 1.516,1.173 vs 1.515,1.169 dist mean 0.0040 max 0.0166
+engine n 128 s 0.2 jit 0.001 seed 1: 97 steps sig 6:2 7:1 adj 0|6,0|7,6|7 quad 0 E 7.8126 vs exact-rasterised 7.8191 (-0.08%) [exact 7.7053] p 1.518,1.170 vs 1.515,1.169 dist mean 0.0041 max 0.0166

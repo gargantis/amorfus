@@ -1,0 +1,251 @@
+{
+ "note": "FINITE-4, n 12, 12x2x5 A slab, features at x=3 and x=3+s on the centre row",
+ "runs": [
+  {
+   "kind": "bump",
+   "regime": "FINITE-4",
+   "s": 2,
+   "maxResidualD0": 0.9318,
+   "at": [
+    4.292,
+    2.042,
+    2.208
+   ],
+   "cellsCompared": 116876,
+   "lambdas": {
+    "base": [
+     0.266
+    ],
+    "f1": [
+     0.1457
+    ],
+    "f2": [
+     0.1434
+    ],
+    "pair": [
+     0.0652
+    ]
+   }
+  },
+  {
+   "kind": "bump",
+   "regime": "FINITE-4",
+   "s": 3,
+   "maxResidualD0": 0.7614,
+   "at": [
+    4.708,
+    2.042,
+    4.292
+   ],
+   "cellsCompared": 135508,
+   "lambdas": {
+    "base": [
+     0.266
+    ],
+    "f1": [
+     0.1457
+    ],
+    "f2": [
+     0.1434
+    ],
+    "pair": [
+     0.0505
+    ]
+   }
+  },
+  {
+   "kind": "bump",
+   "regime": "FINITE-4",
+   "s": 4,
+   "maxResidualD0": 0.8067,
+   "at": [
+    5.292,
+    2.042,
+    1.292
+   ],
+   "cellsCompared": 146200,
+   "lambdas": {
+    "base": [
+     0.266
+    ],
+    "f1": [
+     0.1457
+    ],
+    "f2": [
+     0.1434
+    ],
+    "pair": [
+     0.0537
+    ]
+   }
+  },
+  {
+   "kind": "pit",
+   "regime": "FINITE-4",
+   "s": 2,
+   "maxResidualD0": 0.2044,
+   "at": [
+    3.458,
+    1.625,
+    2.458
+   ],
+   "cellsCompared": 116876,
+   "lambdas": {
+    "base": [
+     0.266
+    ],
+    "f1": [
+     0.266
+    ],
+    "f2": [
+     0.266
+    ],
+    "pair": [
+     0.2223
+    ]
+   }
+  },
+  {
+   "kind": "pit",
+   "regime": "FINITE-4",
+   "s": 3,
+   "maxResidualD0": 0.2044,
+   "at": [
+    3.458,
+    1.625,
+    2.458
+   ],
+   "cellsCompared": 135508,
+   "lambdas": {
+    "base": [
+     0.266
+    ],
+    "f1": [
+     0.266
+    ],
+    "f2": [
+     0.266
+    ],
+    "pair": [
+     0.2223
+    ]
+   }
+  },
+  {
+   "kind": "pit",
+   "regime": "FINITE-4",
+   "s": 4,
+   "maxResidualD0": 0.2044,
+   "at": [
+    3.458,
+    1.625,
+    2.458
+   ],
+   "cellsCompared": 146200,
+   "lambdas": {
+    "base": [
+     0.266
+    ],
+    "f1": [
+     0.266
+    ],
+    "f2": [
+     0.266
+    ],
+    "pair": [
+     0.2223
+    ]
+   }
+  },
+  {
+   "kind": "incl",
+   "regime": "FINITE-4",
+   "s": 2,
+   "maxResidualD0": 4.441e-16,
+   "at": [
+    4.458,
+    1.792,
+    2.292
+   ],
+   "cellsCompared": 116876,
+   "lambdas": {
+    "base": [
+     0.266
+    ],
+    "f1": [
+     0.266,
+     0.2717
+    ],
+    "f2": [
+     0.266,
+     0.2717
+    ],
+    "pair": [
+     0.266,
+     0.2717,
+     0.2717
+    ]
+   }
+  },
+  {
+   "kind": "incl",
+   "regime": "FINITE-4",
+   "s": 3,
+   "maxResidualD0": 1.11e-16,
+   "at": [
+    6.458,
+    2.125,
+    2.125
+   ],
+   "cellsCompared": 135508,
+   "lambdas": {
+    "base": [
+     0.266
+    ],
+    "f1": [
+     0.266,
+     0.2717
+    ],
+    "f2": [
+     0.266,
+     0.2717
+    ],
+    "pair": [
+     0.266,
+     0.2717,
+     0.2717
+    ]
+   }
+  },
+  {
+   "kind": "incl",
+   "regime": "FINITE-4",
+   "s": 4,
+   "maxResidualD0": 1.11e-16,
+   "at": [
+    7.458,
+    2.125,
+    2.125
+   ],
+   "cellsCompared": 146200,
+   "lambdas": {
+    "base": [
+     0.266
+    ],
+    "f1": [
+     0.266,
+     0.2717
+    ],
+    "f2": [
+     0.266,
+     0.2717
+    ],
+    "pair": [
+     0.266,
+     0.2717,
+     0.2717
+    ]
+   }
+  }
+ ]
+}

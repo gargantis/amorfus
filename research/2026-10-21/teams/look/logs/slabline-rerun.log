@@ -1,0 +1,20 @@
+BLOCKS slab-line: 409 ms, 0 steps, Δ 0.000, phases {"6":6,"7":2}→{"6":6,"7":2}, rss 92 MB
+FID-0.4 slab-line: 1950 ms, 3 steps, Δ 0.000, phases {"6":6,"7":2}→{"6":6,"7":2}, rss 100 MB
+FID-0.25 slab-line: 2776 ms, 7 steps, Δ 0.001, phases {"6":6,"7":2}→{"6":6,"7":2}, rss 116 MB
+FID-0.15 slab-line: 4208 ms, 12 steps, Δ 0.016, phases {"6":6,"7":2}→{"6":6,"7":2}, rss 103 MB
+FID-0.1 slab-line: 7592 ms, 20 steps, Δ 0.029, phases {"6":6,"7":2}→{"6":4,"7":2}, rss 156 MB
+FID-0.05 slab-line: 41082 ms, 150 steps (nc), Δ 0.365, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 170 MB
+FID-0.15-g0.5 slab-line: 5649 ms, 17 steps, Δ 0.031, phases {"6":6,"7":2}→{"6":4,"7":2}, rss 159 MB
+FID-0.15-g1.5 slab-line: 3714 ms, 10 steps, Δ 0.020, phases {"6":6,"7":2}→{"6":2,"7":2}, rss 106 MB
+CAGE-0.15 slab-line: 9398 ms, 39 steps, Δ 0.297, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 157 MB
+CAGE-0.25 slab-line: 13655 ms, 56 steps, Δ 0.470, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 148 MB
+CAGE-0.4 slab-line: 26139 ms, 103 steps, Δ 0.685, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 174 MB
+FINITE-2 slab-line: 1383 ms, 2 steps (nc), Δ 0.099, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 106 MB
+FINITE-4 slab-line: 1946 ms, 4 steps (nc), Δ 0.179, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 109 MB
+FINITE-8 slab-line: 2868 ms, 8 steps (nc), Δ 0.287, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 105 MB
+FREE slab-line: 30662 ms, 147 steps, Δ 0.896, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 167 MB
+BOX-FID-0.15 slab-line: 3389 ms, 12 steps, Δ 0.016, phases {"6":6,"7":2}→{"6":6,"7":2}, rss 115 MB
+BOX-NV-FID-0.15 slab-line: 12831 ms, 122 steps, Δ 0.248, phases {"6":6,"7":2}→{"6":6,"7":2}, rss 109 MB
+NV-FID-0.15 slab-line: 7960 ms, 127 steps, Δ 1.000, phases {"6":6,"7":2}→{"6":6,"7":1}, rss 105 MB
+BOX-PAINT-0.15-0.02 slab-line: 12803 ms, 45 steps, Δ 0.109, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 161 MB
+BOX-PAINT-0.15-0 slab-line: 9699 ms, 38 steps, Δ 0.118, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 169 MB

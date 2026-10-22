@@ -1,0 +1,11 @@
+cube          config-mean m2s 0.0432 s2m 0.0337 sym 0.0385 vtx 0.1578 n 36
+bevel         config-mean m2s 0.2223 s2m 0.2256 sym 0.2239 vtx 0.2045 n 36
+bevel-placed  config-mean m2s 0.2278 s2m 0.2290 sym 0.2284 vtx 0.1988 n 36
+tabNV         config-mean m2s 0.2150 s2m 0.2306 sym 0.2228 vtx 0.2082 n 36
+tabNVsn       config-mean m2s 0.2136 s2m 0.2296 sym 0.2216 vtx 0.2055 n 36
+tabV          config-mean m2s 0.1142 s2m 0.1120 sym 0.1131 vtx 0.0770 n 36
+tabK8         config-mean m2s 0.2135 s2m 0.2196 sym 0.2165 vtx 0.1905 n 36
+onD           config-mean m2s 0.0897 s2m 0.0861 sym 0.0879 vtx 0.0000 n 36
+onDx0.5       config-mean m2s 0.0509 s2m 0.0497 sym 0.0503 vtx 0.0789 n 36
+onL           config-mean m2s 0.1903 s2m 0.2197 sym 0.2050 vtx 0.2059 n 36
+onLx0.5       config-mean m2s 0.1091 s2m 0.1063 sym 0.1077 vtx 0.0756 n 36

@@ -1,0 +1,285 @@
+{
+ "regime": "FINITE-8",
+ "options": {
+  "maxSteps": 8,
+  "stopAfter": 99
+ },
+ "runs": {
+  "diag-edge": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 8,
+    "converged": false,
+    "ms": 136,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 1
+    },
+    "junction": "A",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 8,
+    "converged": false,
+    "ms": 172,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 1
+    },
+    "junction": "A",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 8,
+    "converged": false,
+    "ms": 144,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 1
+    },
+    "junction": "A",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 8,
+    "converged": false,
+    "ms": 159,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 1
+    },
+    "junction": "A",
+    "unitedA": true,
+    "unitedB": false
+   }
+  ],
+  "diag-corner": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 8,
+    "converged": false,
+    "ms": 159,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 8,
+    "converged": false,
+    "ms": 208,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 8,
+    "converged": false,
+    "ms": 185,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 8,
+    "converged": false,
+    "ms": 182,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   }
+  ],
+  "sq2-checker": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 8,
+    "converged": false,
+    "ms": 370,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 2,
+     "7": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 8,
+    "converged": false,
+    "ms": 438,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 2,
+     "7": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 8,
+    "converged": false,
+    "ms": 410,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 2,
+     "7": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 8,
+    "converged": false,
+    "ms": 428,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 2,
+     "7": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   }
+  ],
+  "slab-line": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 8,
+    "converged": false,
+    "ms": 1956,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 2
+    },
+    "junctions": "AAAAA",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 8,
+    "converged": false,
+    "ms": 2523,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 2
+    },
+    "junctions": "AAAAA",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 8,
+    "converged": false,
+    "ms": 2296,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 2
+    },
+    "junctions": "AAAAA",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 8,
+    "converged": false,
+    "ms": 2302,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 2
+    },
+    "junctions": "AAAAA",
+    "unitedA": true,
+    "unitedB": false
+   }
+  ]
+ }
+}

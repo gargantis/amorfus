@@ -1,0 +1,12 @@
+ann0.01s1 verdict both rule4 6 size 7 | steps 172 5115ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.01s2 verdict both rule4 6 size 7 | steps 181 5098ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.01s3 verdict both rule4 6 size 7 | steps 215 5816ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.01s4 verdict both rule4 6 size 7 | steps 195 5365ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.01s5 verdict both rule4 6 size 7 | steps 176 5232ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+TALLY W1-FREE-n32-g1-s0.2-amp0.01 {"both":5}
+ann0.03s1 verdict both rule4 6 size 7 | steps 189 7419ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.03s2 verdict both rule4 6 size 7 | steps 193 5394ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.03s3 verdict both rule4 6 size 7 | steps 182 5052ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.03s4 verdict both rule4 6 size 7 | steps 173 4891ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.03s5 verdict both rule4 6 size 7 | steps 169 5282ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+TALLY W1-FREE-n32-g1-s0.2-amp0.03 {"both":5}

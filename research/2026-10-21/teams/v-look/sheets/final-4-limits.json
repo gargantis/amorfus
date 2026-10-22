@@ -1,0 +1,59 @@
+{
+ "out": "teams/v-look/sheets/final-4-limits.png",
+ "cols": 3,
+ "cell": [
+  360,
+  270
+ ],
+ "title": "Where the claims break: PLAN caps at n 24, higher paint fidelity, listed regimes that keep the tunnel at n 20",
+ "items": [
+  {
+   "path": "teams/v-look/img/C15-V05@n20/slab-line-view.png",
+   "label": "slab-line, C15 caps 0.15/0.05, n20\nband holds (sd 0.055)"
+  },
+  {
+   "path": "teams/v-look/img/C15-V05@n24/slab-line-view.png",
+   "label": "slab-line, C15 caps 0.125/0.042, n24\nline drains to corners (band 0.01)"
+  },
+  {
+   "path": "teams/v-look/img/C10-V05@n24/slab-line-view.png",
+   "label": "slab-line, C10 caps 0.125/0.042, n24\nline drains to corners (band 0.03)"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0-km05@n16/big2-line-view.png",
+   "label": "big2-line, C15 paint fid. 0.05, n16\nstill one blob"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0-km10@n16/big2-line-view.png",
+   "label": "big2-line, C15 paint fid. 0.10, n16\nstill one blob"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0-km10@n16/slab-line-view.png",
+   "label": "slab-line, C15 paint fid. 0.10, n16\nband sd 0.29 (zigzag back)"
+  },
+  {
+   "path": "teams/v-look/img/NOVOL-1@n20/tunnel-slice.png",
+   "label": "tunnel, NOVOL-1 n20 (listed regime)\nclear 1.90 x 0.70 at all 3 cuts"
+  },
+  {
+   "path": "teams/v-look/img/NOVOL-1@n20/single-view.png",
+   "label": "single, NOVOL-1 n20\ndiag/axis 1.21, keeps 2/3 volume"
+  },
+  {
+   "path": "teams/v-look/img/NOVOL-1@n20/room2-slice.png",
+   "label": "room2, NOVOL-1 n20\nclear 1.80 x 1.50: fails"
+  },
+  {
+   "path": "teams/v-look/img/CAGE-0.05@n20/tunnel-slice.png",
+   "label": "tunnel, CAGE-0.05 n20 (listed regime)\nclear 1.90 x 0.90"
+  },
+  {
+   "path": "teams/v-look/img/CAGE-0.05@n20/single-view.png",
+   "label": "single, CAGE-0.05 n20\ndiag/axis 1.42 (blocks 1.74)"
+  },
+  {
+   "path": "teams/v-look/img/CAGE-0.05@n20/room2-slice.png",
+   "label": "room2, CAGE-0.05 n20\nclear 1.90 x 1.90"
+  }
+ ]
+}

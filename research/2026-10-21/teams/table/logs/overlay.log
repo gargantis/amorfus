@@ -1,0 +1,22 @@
+img/overlay/terrain-t0s-FID-0.15-z55.png 432 384 10 corners
+img/overlay/terrain-t2s-FID-0.15-z66.png 432 384 10 corners
+img/overlay/terrain-t9s-FID-0.15-z3.png 432 384 9 corners
+img/overlay/terrain-t13a-FID-0.15-z14.png 432 384 14 corners
+img/overlay/terrain-t4a-FID-0.15-z18.png 432 384 26 corners
+img/overlay/terrain-t10s-FID-0.15-z25.png 432 384 11 corners
+img/overlay/terrain-t9s-FINITE-4-z3.png 432 384 9 corners
+img/overlay/terrain-t13a-FINITE-4-z14.png 432 384 14 corners
+img/overlay/builds-b-painted-FID-0.15-z7.png 480 288 7 corners
+img/overlay/builds-b-checker-FID-0.15-z5.png 480 336 7 corners
+img/overlay/builds-b-house-FID-0.15-z7.png 432 384 9 corners
+img/overlay/builds-b-stairs-FID-0.15-z3.png 432 384 14 corners
+img/overlay/builds-b-walls-FID-0.15-z6.png 432 336 6 corners
+img/overlay/builds-b-painted-FINITE-4-z7.png 480 288 7 corners
+img/overlay/cat-stairs-FID-0.15-z1.png 240 240 12 corners
+img/overlay/cat-terrain-step-FID-0.15-z2.png 384 240 18 corners
+img/overlay/cat-ball-AB-FID-0.15-z0.png 336 336 20 corners
+img/overlay/cat-tunnel-FID-0.15-z1.png 240 288 20 corners
+img/overlay/cat-terrain-step-FINITE-4-z2.png 384 240 18 corners
+img/overlay/cat-ball-AB-FINITE-4-z0.png 336 336 20 corners
+allsurf FID-0.15 0
+allsurf FINITE-4 0

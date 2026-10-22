@@ -1,0 +1,43 @@
+{
+ "out": "teams/table/sheets/overlay-terrain.png",
+ "cols": 4,
+ "title": "Terrain windows (n12), z slice through corners; white = sim vertex, red = table (volume), orange = table (no volume), cyan = bevel",
+ "items": [
+  {
+   "path": "teams/table/img/overlay/terrain-t0s-FID-0.15-z55.png",
+   "label": "t0s\nFID-0.15-z55"
+  },
+  {
+   "path": "teams/table/img/overlay/terrain-t10s-FID-0.15-z25.png",
+   "label": "t10s\nFID-0.15-z25"
+  },
+  {
+   "path": "teams/table/img/overlay/terrain-t13a-FID-0.15-z14.png",
+   "label": "t13a\nFID-0.15-z14"
+  },
+  {
+   "path": "teams/table/img/overlay/terrain-t13a-FINITE-4-z14.png",
+   "label": "t13a\nFINITE-4-z14"
+  },
+  {
+   "path": "teams/table/img/overlay/terrain-t2s-FID-0.15-z66.png",
+   "label": "t2s\nFID-0.15-z66"
+  },
+  {
+   "path": "teams/table/img/overlay/terrain-t4a-FID-0.15-z18.png",
+   "label": "t4a\nFID-0.15-z18"
+  },
+  {
+   "path": "teams/table/img/overlay/terrain-t9s-FID-0.15-z3.png",
+   "label": "t9s\nFID-0.15-z3"
+  },
+  {
+   "path": "teams/table/img/overlay/terrain-t9s-FINITE-4-z3.png",
+   "label": "t9s\nFINITE-4-z3"
+  }
+ ],
+ "cell": [
+  432,
+  400
+ ]
+}

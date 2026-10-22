@@ -1,0 +1,1 @@
+{"regime":"FID-0.15","name":"stairs","opts":{"anchor":{"kind":"fidelity","k":0.15},"n":16},"ms":1200,"steps":21,"converged":true,"lastChanges":[16,8,0,0,0],"grid":[80,80,64],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":12,"target":49152,"lambda":0.11182856559753418,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":12,"volume":12}]}

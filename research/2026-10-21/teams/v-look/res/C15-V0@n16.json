@@ -1,0 +1,935 @@
+{
+ "regime": "C15-V0",
+ "n": 16,
+ "runs": {
+  "tunnel": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 1,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 19,
+   "converged": true,
+   "ms": 1491,
+   "lastChanges": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "cells": 614400,
+   "delta": 0.037,
+   "geoDelta": 0.037,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "3": 1
+   },
+   "lambdas": [
+    0.0851
+   ],
+   "open": {
+    "0.75": {
+     "clearH": 2,
+     "clearW": 0.75,
+     "pass": true,
+     "floorMid": 1,
+     "roofMid": 3
+    },
+    "1.5": {
+     "clearH": 2,
+     "clearW": 0.75,
+     "pass": true,
+     "floorMid": 1,
+     "roofMid": 3
+    },
+    "2.25": {
+     "clearH": 2,
+     "clearW": 0.75,
+     "pass": true,
+     "floorMid": 1,
+     "roofMid": 3
+    }
+   },
+   "lookClearCells": {
+    "0.75": {
+     "clearHeightAtW": 2,
+     "clearWidthAtH": 0.75,
+     "pass": true
+    },
+    "1.5": {
+     "clearHeightAtW": 2,
+     "clearWidthAtH": 0.75,
+     "pass": true
+    },
+    "2.25": {
+     "clearHeightAtW": 2,
+     "clearWidthAtH": 0.75,
+     "pass": true
+    }
+   },
+   "flatTop": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 576,
+    "miss": 0
+   }
+  },
+  "slab-line": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 1,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 34,
+   "converged": true,
+   "ms": 8107,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "cells": 786432,
+   "delta": 0.0772,
+   "geoDelta": 0.0122,
+   "vol": {
+    "worstPhaseRel": 0.0002
+   },
+   "phases": {
+    "6": 1,
+    "7": 2
+   },
+   "lambdas": [
+    0.1743,
+    0.1499,
+    0.1499
+   ],
+   "band": {
+    "mean": 0.6255,
+    "sd": 0.0508,
+    "min": 0.5469,
+    "max": 0.7031
+   },
+   "bandEnd0": {
+    "mean": 1.0423,
+    "sd": 0.232,
+    "min": 0.7031,
+    "max": 1.4844
+   },
+   "bandEnd1": {
+    "mean": 1.0423,
+    "sd": 0.232,
+    "min": 0.7031,
+    "max": 1.4844
+   },
+   "lookBandTop": {
+    "mean": 0.6248,
+    "sd": 0.0504,
+    "min": 0.5391,
+    "max": 0.7109
+   },
+   "paint": {
+    "area0": 6,
+    "area": 6.0469,
+    "areaRatio": 1.0078,
+    "gained": 1.1797,
+    "lost": 1.1328,
+    "parts0": 6,
+    "parts": 1,
+    "partSizes": [
+     6.047
+    ],
+    "blocksWrong": 0,
+    "blocks": 36
+   },
+   "junctions": "AAAAA",
+   "flatB": [
+    {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "colsOff": 0,
+     "cols": 510,
+     "miss": 0
+    },
+    {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "colsOff": 0,
+     "cols": 510,
+     "miss": 0
+    }
+   ],
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  },
+  "single": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 1,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 6,
+   "converged": true,
+   "ms": 57,
+   "lastChanges": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "cells": 110592,
+   "delta": 0.0625,
+   "geoDelta": 0.0625,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1776
+   ],
+   "ext": [
+    1.125,
+    1,
+    1.125
+   ],
+   "diag": 1.5156,
+   "diagOverAxis": 1.3472,
+   "corner": {
+    "inset": 0.14,
+    "Req": 0.1913
+   },
+   "edge": {
+    "faceU": 0.0625,
+    "faceV": 0,
+    "inset": 0.0183,
+    "Req": 0.0442,
+    "R": 0.2971,
+    "fitRms": 0.0093,
+    "nCurved": 52,
+    "arcDeg": 25.5
+   }
+  },
+  "pillar3": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 1,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 11,
+   "converged": true,
+   "ms": 178,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "cells": 184320,
+   "delta": 0.0703,
+   "geoDelta": 0.0703,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1425
+   ],
+   "widthMin": 0.875,
+   "widthMid": 1.125,
+   "height": 3,
+   "diagMid": 1.4219
+  },
+  "text-AZ": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 143,
+   "converged": true,
+   "ms": 72663,
+   "lastChanges": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "cells": 983040,
+   "delta": 0.1183,
+   "geoDelta": 0.0071,
+   "vol": {
+    "worstPhaseRel": 0.0014
+   },
+   "phases": {
+    "6": 2,
+    "7": 1
+   },
+   "lambdas": [
+    0.1394,
+    0.1997,
+    0.1997
+   ],
+   "paint": {
+    "area0": 19,
+    "area": 23.9766,
+    "areaRatio": 1.2619,
+    "gained": 9.1406,
+    "lost": 4.1641,
+    "parts0": 5,
+    "parts": 2,
+    "partSizes": [
+     12.391,
+     11.586
+    ],
+    "blocksWrong": 13,
+    "blocks": 63
+   },
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  },
+  "big2-line": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 150,
+   "converged": false,
+   "ms": 45221,
+   "lastChanges": [
+    64,
+    82,
+    52,
+    52
+   ],
+   "cells": 1128960,
+   "delta": 0.0497,
+   "geoDelta": 0.0109,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.0851,
+    0.1641
+   ],
+   "band": {
+    "mean": 1.4329,
+    "sd": 1.1474,
+    "min": 0,
+    "max": 2.8281
+   },
+   "bandEnd0": {
+    "mean": 0,
+    "sd": 0,
+    "min": 0,
+    "max": 0
+   },
+   "bandEnd1": {
+    "mean": 0,
+    "sd": 0,
+    "min": 0,
+    "max": 0
+   },
+   "paint": {
+    "area0": 6,
+    "area": 8.1328,
+    "areaRatio": 1.3555,
+    "gained": 5.7344,
+    "lost": 3.6016,
+    "parts0": 6,
+    "parts": 1,
+    "partSizes": [
+     8.133
+    ],
+    "blocksWrong": 10,
+    "blocks": 100
+   },
+   "junctions": "-----",
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  },
+  "big2-checker": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 54,
+   "converged": true,
+   "ms": 24516,
+   "lastChanges": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "cells": 1128960,
+   "delta": 0.0434,
+   "geoDelta": 0.0054,
+   "vol": {
+    "worstPhaseRel": 0.0001
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1394,
+    0.1997
+   ],
+   "paint": {
+    "area0": 8,
+    "area": 10.2891,
+    "areaRatio": 1.2861,
+    "gained": 4.9297,
+    "lost": 2.6406,
+    "parts0": 8,
+    "parts": 1,
+    "partSizes": [
+     10.289
+    ],
+    "blocksWrong": 8,
+    "blocks": 100
+   },
+   "paintB": {
+    "area0": 8,
+    "area": 5.7109,
+    "areaRatio": 0.7139,
+    "gained": 2.6406,
+    "lost": 4.9297,
+    "parts0": 8,
+    "parts": 1,
+    "partSizes": [
+     5.711
+    ],
+    "blocksWrong": 8,
+    "blocks": 16
+   },
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  },
+  "slab2-line": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 150,
+   "converged": false,
+   "ms": 34924,
+   "lastChanges": [
+    14,
+    22,
+    32,
+    52
+   ],
+   "cells": 432640,
+   "delta": 0.117,
+   "geoDelta": 0.011,
+   "vol": {
+    "worstPhaseRel": 0.0001
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1462,
+    0.1365
+   ],
+   "band": {
+    "mean": 0,
+    "sd": 0,
+    "min": 0,
+    "max": 0
+   },
+   "bandEnd0": {
+    "mean": 1.4779,
+    "sd": 0.3612,
+    "min": 0.3906,
+    "max": 2.0156
+   },
+   "bandEnd1": {
+    "mean": 1.4513,
+    "sd": 0.4279,
+    "min": 0.0156,
+    "max": 2.0156
+   },
+   "lookBandTop": {
+    "mean": 0,
+    "sd": 0,
+    "min": 0,
+    "max": 0
+   },
+   "paint": {
+    "area0": 6,
+    "area": 3.1094,
+    "areaRatio": 0.5182,
+    "gained": 1.1094,
+    "lost": 4,
+    "parts0": 6,
+    "parts": 2,
+    "partSizes": [
+     1.555,
+     1.555
+    ],
+    "blocksWrong": 4,
+    "blocks": 36
+   },
+   "junctions": "-----",
+   "flatB": [
+    {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "colsOff": 0,
+     "cols": 510,
+     "miss": 0
+    },
+    {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "colsOff": 0,
+     "cols": 510,
+     "miss": 0
+    }
+   ],
+   "Abelow": {
+    "start": 0,
+    "end": 2.8442
+   }
+  },
+  "checker2": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 143,
+   "converged": true,
+   "ms": 49015,
+   "lastChanges": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "cells": 432640,
+   "delta": 0.2454,
+   "geoDelta": 0.0099,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1394,
+    0.1876
+   ],
+   "paint": {
+    "area0": 18,
+    "area": 20.8125,
+    "areaRatio": 1.1563,
+    "gained": 9.7109,
+    "lost": 6.8984,
+    "parts0": 18,
+    "parts": 1,
+    "partSizes": [
+     20.813
+    ],
+    "blocksWrong": 18,
+    "blocks": 36
+   },
+   "paintB": {
+    "area0": 18,
+    "area": 15.1719,
+    "areaRatio": 0.8429,
+    "gained": 6.8906,
+    "lost": 9.7188,
+    "parts0": 18,
+    "parts": 2,
+    "partSizes": [
+     7.586,
+     7.586
+    ],
+    "blocksWrong": 18,
+    "blocks": 36
+   },
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  },
+  "slab2-dot": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 27,
+   "converged": true,
+   "ms": 4086,
+   "lastChanges": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "cells": 309760,
+   "delta": 0.0259,
+   "geoDelta": 0.0133,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1394,
+    0.2016
+   ],
+   "paint": {
+    "area0": 1,
+    "area": 2.0469,
+    "areaRatio": 2.0469,
+    "gained": 1.0469,
+    "lost": 0,
+    "parts0": 1,
+    "parts": 1,
+    "partSizes": [
+     2.047
+    ],
+    "blocksWrong": 0,
+    "blocks": 25
+   },
+   "flat": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 868,
+    "miss": 0
+   },
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  },
+  "Lturn": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 150,
+   "converged": false,
+   "ms": 43867,
+   "lastChanges": [
+    6,
+    12,
+    3,
+    4
+   ],
+   "cells": 432640,
+   "delta": 0.0868,
+   "geoDelta": 0.0101,
+   "vol": {
+    "worstPhaseRel": 0.0001
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1394,
+    0.1997
+   ],
+   "leg1": {
+    "mean": 1.6865,
+    "sd": 0.8344,
+    "min": 0,
+    "max": 2.4531
+   },
+   "leg2": {
+    "mean": 1.6301,
+    "sd": 0.8548,
+    "min": 0,
+    "max": 2.4375
+   },
+   "end1": {
+    "mean": 0,
+    "sd": 0,
+    "min": 0,
+    "max": 0
+   },
+   "end2": {
+    "mean": 0,
+    "sd": 0,
+    "min": 0,
+    "max": 0
+   },
+   "paint": {
+    "area0": 7,
+    "area": 9.1016,
+    "areaRatio": 1.3002,
+    "gained": 4.1367,
+    "lost": 2.0352,
+    "parts0": 1,
+    "parts": 1,
+    "partSizes": [
+     9.102
+    ],
+    "blocksWrong": 5,
+    "blocks": 36
+   }
+  },
+  "xdiag": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 140,
+   "converged": true,
+   "ms": 59226,
+   "lastChanges": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "cells": 576000,
+   "delta": 0.1893,
+   "geoDelta": 0.0104,
+   "vol": {
+    "worstPhaseRel": 0.0005
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1395,
+    0.1458
+   ],
+   "arm": {
+    "mean": 0.3169,
+    "sd": 0.6492,
+    "min": 0,
+    "max": 2.1094
+   },
+   "paint": {
+    "area0": 13,
+    "area": 7.0781,
+    "areaRatio": 0.5445,
+    "gained": 3.0313,
+    "lost": 8.9531,
+    "parts0": 13,
+    "parts": 4,
+    "partSizes": [
+     1.77,
+     1.77,
+     1.77,
+     1.77
+    ],
+    "blocksWrong": 9,
+    "blocks": 49
+   },
+   "phasesA": 1
+  }
+ }
+}

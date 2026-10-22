@@ -1,0 +1,22 @@
+v-local (round 2 verifier) - locality and the cheap local model. All paths relative to teams/v-local/.
+Scripts in src/, numbers in res/ and logs/, images in img/ and sheets/.
+
+fast C1 confirmed  res/e7-misc.json (C1: 4 new configs, engine vs discrete per-block sum <= 7.6e-8; vs continuum 0.0043-0.0047)
+fast C3 confirmed  res/e7-misc.json (C3: own Simpson quadrature: single 0.661, pair 0.761, line3 0.794, 2x2 0.846, 2x2x2 0.906 at sigma 0.2; vanish sigma 0.3956)
+fast C4 partly     catalogue-like configs 0.012-0.043 mean (res/e3-newcfg*.json); tunnel host 0.028-0.036 mean, p95 0.18-0.26; with far bar p95 1.0 (res/e2-farbar-n12.json, -n16.json)
+fast C5 partly     best mean sigma 0.40 (T4), 0.55 (T8, predicted 0.566), 0.80 (T16); best mean error 0.0089 -> 0.0162 -> 0.0271; multi-material optima <= 0.6 vs single-material >= 0.9 at T16 (res/e8-finiteT.json)
+fast C6 partly     volume within +-4 % per material on 15 new configs, worst cluster 5.9 % (1 block) (res/e3-newcfg.json, e3-newcfg2.json); surface mean up to 0.043; cannot follow physics mass transfer (res/e2b-drain.json, e2c-drain-notunnel.json)
+fast C8 confirmed  b1 field in a corner cell depends only on its 8 blocks for sigma <= 0.204 (0 diff in 4000 trials), not at 0.21 (9.9e-4) (res/e5-b1.json); b1 vs Gauss surface means differ <= 0.003 on new configs (res/e3-newcfg*.json)
+fast C9 partly     b1 Newton-4 2.24-7.26 ms per non-solid chunk; safeguarded line solver 3.97-20.0 ms; repo mesher 4.26-18.5 ms; mesher corners pass 1.26-8.25 ms (res/fast-t3time-rerun.json)
+fast C10 partly    seams: 558 shared corners, 0 mismatches (res/fast-t3seam-rerun.json); apron 2 0 mismatches, apron 1 149-512 (res/e5-b1.json); Newton 4 vs 16: 65/17284 reproduced (res/fast-t3newton-rerun.json) BUT 1252-1270 of 33592 terrain corners (3.7-3.8 %) are left off the rule's own D=0 surface by both solvers; line solver misplaces 461 of 616 7-solid two-material corners; Newton-4 vs line-40 disagree at 1714 (5.1 %), max 0.96 (res/e5-b1.json, e5b-bad.json, e5c-disp.json)
+fast C14 confirmed res/e7-misc.json (C14: neck A0 0, Bl-b1s20 0.364, FID-0.15 D 0.744, FINITE-4 D 0.90)
+fast C15 partly    vertex rule 1.734 reproduced; but the sigma-0.2 FIELD also fails the 0.70-wide clear-height test: 1.75-1.785 in rock tunnels; mesh 1.73-1.75; only a 1-thick doorway passes (mesh 1.92) (res/e4-constraints.json)
+local L1 confirmed res/e6a-terrace.json (novol: changes within 0-0.031 block), res/e6b-membrane-novol.json (framed membrane punctures 1-9 blocks: <= 0.21 block, no unzipping)
+local L2 confirmed res/e6a-terrace.json (far top-face change exactly -1/12 at n12, -1/16 at n16; up to 7.4 blocks away)
+local L4 confirmed at n16 with caveat: skirt d*(1/256) 0.78 at n16; at n12 a terrace touches the bump (3.54) (res/e6a-terrace.json)
+local L13 partly   FINITE-4: B inclusions exact (1e-16); bumps fail 0.76-0.93 (D0); pits fail 0.204 although each single pit leaves lambda unchanged (pair moves it 0.266 -> 0.2223) (res/e6c-superpos.json)
+look L2 confirmed + mechanism: reproduced exactly (res/look-nonlocal-wide-n12-rerun.json); persists at n16 (res/e2-farbar-n16.json); it is drainage: bar keeps 0.14 of 4 block^3, tunnel hole fills 5.40 of 6 (res/e2b-drain.json); a standing bar drains to 0 into a tunnel host under FID-0.15, kept under FID-0.25 (3.43) and without a tunnel (res/e2c-drain-notunnel.json)
+look L3 confirmed (physics): FID-0.15 volume off: single, pillar3, ring8, 5x1x5 plate -> 0 (res/e9-novol-features.json); not a general law: cheap local-lambda model keeps single (mesh 0.75) and pillars (0.79-0.96) (res/e4-constraints.json)
+prior volume-nonlocal confirmed (novol reach bounded; with volume lambda reaches 4.9-7.4 blocks: res/e6a-terrace.json, e6b-membrane-vol.json); inference "needs per-cluster pressure outside the chunk job" holds only for reproducing the physics
+Cheap model locality: field change reach 2.43 (b1) / 2.65 (Gauss) blocks; vertex changes only corners <= 1.0 from the edit (res/e1-loc.json)
+Flat ground: +3/256 thick, +6/256 each face of a 1-thick floor, -9..+8/256 on mixed-material ground (res/e4-constraints.json)

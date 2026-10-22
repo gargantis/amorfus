@@ -1,0 +1,367 @@
+{
+ "cfg": "LX-6x6",
+ "X": [
+  0,
+  0
+ ],
+ "n": 32,
+ "regime": "FINITE-4",
+ "g": 1,
+ "s_b": 0.2,
+ "runs": [
+  {
+   "v": "id",
+   "steps": 4,
+   "converged": false,
+   "ms": 310,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:6 -2,2:7 -1,-1:6 -1,1:7 1,-1:7 1,1:6 2,-2:7 2,2:6",
+   "phases": "6:3 6:3 7:3 7:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "rot90",
+   "steps": 4,
+   "converged": false,
+   "ms": 161,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:7 -2,2:6 -1,-1:7 -1,1:6 1,-1:6 1,1:7 2,-2:6 2,2:7",
+   "phases": "6:3 6:3 7:3 7:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "rot180",
+   "steps": 4,
+   "converged": false,
+   "ms": 112,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:6 -2,2:7 -1,-1:6 -1,1:7 1,-1:7 1,1:6 2,-2:7 2,2:6",
+   "phases": "6:3 6:3 7:3 7:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "rot270",
+   "steps": 4,
+   "converged": false,
+   "ms": 124,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:7 -2,2:6 -1,-1:7 -1,1:6 1,-1:6 1,1:7 2,-2:6 2,2:7",
+   "phases": "6:3 6:3 7:3 7:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "mirX",
+   "steps": 4,
+   "converged": false,
+   "ms": 134,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:7 -2,2:6 -1,-1:7 -1,1:6 1,-1:6 1,1:7 2,-2:6 2,2:7",
+   "phases": "6:3 6:3 7:3 7:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "mirY",
+   "steps": 4,
+   "converged": false,
+   "ms": 166,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:7 -2,2:6 -1,-1:7 -1,1:6 1,-1:6 1,1:7 2,-2:6 2,2:7",
+   "phases": "6:3 6:3 7:3 7:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "diag",
+   "steps": 4,
+   "converged": false,
+   "ms": 119,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:6 -2,2:7 -1,-1:6 -1,1:7 1,-1:7 1,1:6 2,-2:7 2,2:6",
+   "phases": "6:3 6:3 7:3 7:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "anti",
+   "steps": 4,
+   "converged": false,
+   "ms": 97,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:6 -2,2:7 -1,-1:6 -1,1:7 1,-1:7 1,1:6 2,-2:7 2,2:6",
+   "phases": "6:3 6:3 7:3 7:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "rev",
+   "steps": 4,
+   "converged": false,
+   "ms": 116,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:6 -2,2:7 -1,-1:6 -1,1:7 1,-1:7 1,1:6 2,-2:7 2,2:6",
+   "phases": "7:3 7:3 6:3 6:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "j1e-3s1",
+   "steps": 4,
+   "converged": false,
+   "ms": 162,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:6 -2,2:7 -1,-1:6 -1,1:7 1,-1:7 1,1:6 2,-2:7 2,2:6",
+   "phases": "6:3 6:3 7:3 7:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "j1e-3s2",
+   "steps": 4,
+   "converged": false,
+   "ms": 97,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": "none",
+   "geo": "none",
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:6 -2,2:7 -1,-1:6 -1,1:7 1,-1:7 1,1:6 2,-2:7 2,2:6",
+   "phases": "6:3 6:3 7:3 7:3",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "j1e-3s3",
+   "steps": 4,
+   "converged": false,
+   "ms": 159,
+   "rule4": 0,
+   "size": "tie",
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 2,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-2,-2:6 -2,2:7 -1,-1:6 -1,1:7 1,-1:7 1,1:6 2,-2:7 2,2:6",
+   "phases": "6:3 6:3 7:6",
+   "firstMerges": [
+    1,
+    2
+   ]
+  }
+ ],
+ "tally": {
+  "sym/rev:none/none": 9,
+  "frozen:none/none": 2,
+  "frozen:7/7": 1
+ }
+}

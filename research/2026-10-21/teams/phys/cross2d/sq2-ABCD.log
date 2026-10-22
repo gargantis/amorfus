@@ -1,0 +1,12 @@
+solver [rule (pressure-favoured split; ties -> first option)] E 11.18840 conv false t 120.0 sig 1:1 4:1 6:1 7:1 adj 0|1,0|4,0|6,0|7,1|4,1|6,1|7,4|7,6|7 contact null
+solver [forced: 4,6 adjacent] E 11.18840 conv false t 120.0 sig 1:1 4:1 6:1 7:1 adj 0|1,0|4,0|6,0|7,1|4,1|6,4|6,4|7,6|7 contact null
+solver [forced: 1,7 adjacent] E 11.18840 conv false t 120.0 sig 1:1 4:1 6:1 7:1 adj 0|1,0|4,0|6,0|7,1|4,1|6,1|7,4|7,6|7 contact null
+solver [no split (4-fold junction kept)] E 11.29164 conv false t 120.0 sig 1:1 4:1 6:1 7:1 adj 0|1,0|4,0|6,0|7,1|4,1|6,4|7,6|7 contact null
+  dist to each solver outcome: [rule (pressure-favou] 0.0670/0.1436 [forced: 4,6 adjacent] 0.0670/0.1436 [forced: 1,7 adjacent] 0.0670/0.1436 [no split (4-fold jun] 0.0045/0.0210
+engine n 32 s 0.2 jit 0 seed 1: 13 steps sig 1:1 4:1 6:1 7:1 adj 0|1,0|4,0|6,0|7,1|4,1|6,4|7,6|7 quad 1 E 11.3278 vs exact-rasterised 11.3379 (-0.09%) [exact 11.1884] p 1.359,1.359,1.359,1.359 vs 1.441,1.357,1.357,1.441 dist mean 0.0670 max 0.1436
+  dist to each solver outcome: [rule (pressure-favou] 0.0670/0.1418 [forced: 4,6 adjacent] 0.0670/0.1418 [forced: 1,7 adjacent] 0.0670/0.1418 [no split (4-fold jun] 0.0022/0.0106
+engine n 64 s 0.2 jit 0 seed 1: 17 steps sig 1:1 4:1 6:1 7:1 adj 0|1,0|4,0|6,0|7,1|4,1|6,4|7,6|7 quad 1 E 11.3749 vs exact-rasterised 11.3545 (0.18%) [exact 11.1884] p 1.387,1.387,1.387,1.387 vs 1.441,1.357,1.357,1.441 dist mean 0.0670 max 0.1418
+  dist to each solver outcome: [rule (pressure-favou] 0.0669/0.1428 [forced: 4,6 adjacent] 0.0669/0.1428 [forced: 1,7 adjacent] 0.0669/0.1428 [no split (4-fold jun] 0.0018/0.0125
+engine n 128 s 0.2 jit 0 seed 1: 23 steps sig 1:1 4:1 6:1 7:1 adj 0|1,0|4,0|6,0|7,1|4,1|6,4|7,6|7 quad 1 E 11.3987 vs exact-rasterised 11.3758 (0.20%) [exact 11.1884] p 1.400,1.400,1.400,1.400 vs 1.441,1.357,1.357,1.441 dist mean 0.0669 max 0.1428
+  dist to each solver outcome: [rule (pressure-favou] 0.0669/0.1428 [forced: 4,6 adjacent] 0.0669/0.1428 [forced: 1,7 adjacent] 0.0669/0.1428 [no split (4-fold jun] 0.0019/0.0125
+engine n 128 s 0.2 jit 0.001 seed 1: 26 steps sig 1:1 4:1 6:1 7:1 adj 0|1,0|4,0|6,0|7,1|4,1|6,4|7,6|7 quad 1 E 11.3984 vs exact-rasterised 11.3758 (0.20%) [exact 11.1884] p 1.400,1.406,1.401,1.404 vs 1.441,1.357,1.357,1.441 dist mean 0.0669 max 0.1428

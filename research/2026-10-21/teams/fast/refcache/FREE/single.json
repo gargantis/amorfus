@@ -1,0 +1,1 @@
+{"regime":"FREE","name":"single","opts":{"maxSteps":300,"n":16},"ms":223,"steps":8,"converged":true,"lastChanges":[64,32,0,0,0],"grid":[48,48,48],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":1,"target":4096,"lambda":0.16690939664840698,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":1,"volume":1}]}

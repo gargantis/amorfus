@@ -1,0 +1,10 @@
+C15-V0@n16 slab2-line: 34924 ms, 150 st nc, cells 432640, d 0.117, rss 154 MB
+C15-V0@n16 checker2: 49015 ms, 143 st, cells 432640, d 0.2454, rss 156 MB
+C15-V0@n16 slab2-dot: 4086 ms, 27 st, cells 309760, d 0.0259, rss 173 MB
+C15-V0@n16 Lturn: 43867 ms, 150 st nc, cells 432640, d 0.0868, rss 173 MB
+C15-V0@n16 xdiag: 59226 ms, 140 st, cells 576000, d 0.1893, rss 195 MB
+C10-V0@n16 slab2-line: 37389 ms, 145 st, cells 432640, d 0.1216, rss 166 MB
+C10-V0@n16 checker2: 44860 ms, 136 st, cells 432640, d 0.2603, rss 159 MB
+C10-V0@n16 slab2-dot: 2201 ms, 27 st, cells 309760, d 0.019, rss 167 MB
+C10-V0@n16 Lturn: 17273 ms, 137 st, cells 432640, d 0.0833, rss 170 MB
+C10-V0@n16 xdiag: 44969 ms, 137 st, cells 576000, d 0.1955, rss 195 MB

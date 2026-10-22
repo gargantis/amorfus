@@ -1,0 +1,5 @@
+pit-slab3: 462 ms 12 st | 6:17->17 lam 0.17789
+pit-slab5: 658 ms 12 st | 6:49->49 lam 0.19368
+pit-slab7: 940 ms 12 st | 6:97->97 lam 0.19368
+pit-bar3x2x9: 624 ms 12 st | 6:53->53 lam 0.19556
+pit-slab5-bump: 3585 ms 77 st | 6:50->50 lam 0.08375

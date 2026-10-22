@@ -1,0 +1,8 @@
+FINITE-4 recolour base 567 ms 4 steps NOT CONVERGED [{"p":1,"mat":6,"blocks":140,"volume":138,"lamRun":0.16629,"lamRender":0.26601}]
+d=1: 551 ms 4 st NC | label diffs 1728, max dist 0.208 | probe dD -0.00012 dD0 -0.00077 dLab 0 | lam 0.16629/0.28842 (base 0.16629)
+d=2: 487 ms 4 st NC | label diffs 1728, max dist 0.208 | probe dD 0 dD0 0 dLab 0 | lam 0.16629/0.28842 (base 0.16629)
+d=3: 431 ms 4 st NC | label diffs 1728, max dist 0.208 | probe dD 0 dD0 0 dLab 0 | lam 0.16629/0.28842 (base 0.16629)
+d=4: 469 ms 4 st NC | label diffs 1728, max dist 0.208 | probe dD 0 dD0 0 dLab 0 | lam 0.16629/0.28842 (base 0.16629)
+d=6: 404 ms 4 st NC | label diffs 1728, max dist 0.208 | probe dD 0 dD0 0 dLab 0 | lam 0.16629/0.28842 (base 0.16629)
+d=8: 417 ms 4 st NC | label diffs 1728, max dist 0.208 | probe dD 0 dD0 0 dLab 0 | lam 0.16629/0.28842 (base 0.16629)
+d=10: 410 ms 4 st NC | label diffs 1728, max dist 0.208 | probe dD 0 dD0 0 dLab 0 | lam 0.16629/0.28842 (base 0.16629)

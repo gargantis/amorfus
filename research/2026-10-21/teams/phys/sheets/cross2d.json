@@ -1,0 +1,107 @@
+{
+ "out": "teams/phys/sheets/cross2d.png",
+ "cols": 4,
+ "cell": [
+  300,
+  225
+ ],
+ "title": "2D engine (colours = final labels) vs exact solver films (white); dist = mean/max blocks",
+ "items": [
+  {
+   "path": "teams/phys/cross2d/pair-diff-n32-s0.2-j0-seed1.png",
+   "label": "pair-diff 2D FREE n32 s0.2 j0 seed1\ndist 0.018/0.040"
+  },
+  {
+   "path": "teams/phys/cross2d/pair-diff-n128-s0.2-j0-seed1.png",
+   "label": "pair-diff 2D FREE n128 s0.2 j0 seed1\ndist 0.002/0.014"
+  },
+  {
+   "path": "teams/phys/cross2d/row-ABB-n32-s0.2-j0-seed1.png",
+   "label": "row-ABB 2D FREE n32 s0.2 j0 seed1\nwall stuck on lattice; 0.059/0.154"
+  },
+  {
+   "path": "teams/phys/cross2d/row-ABB-n128-s0.2-j0-seed1.png",
+   "label": "row-ABB 2D FREE n128 s0.2 j0 seed1\ndist 0.003/0.011"
+  },
+  {
+   "path": "teams/phys/cross2d/line3-ABA-n32-s0.2-j0-seed1.png",
+   "label": "line3-ABA 2D FREE n32 s0.2 j0 seed1\nwalls stuck on lattice; 0.060/0.110"
+  },
+  {
+   "path": "teams/phys/cross2d/line3-ABA-n128-s0.2-j0-seed1.png",
+   "label": "line3-ABA 2D FREE n128 s0.2 j0 seed1\ndist 0.005/0.014"
+  },
+  {
+   "path": "teams/phys/cross2d/L3-ABC-n32-s0.2-j0-seed1.png",
+   "label": "L3-ABC 2D FREE n32 s0.2 j0 seed1\nB|C film forms; 0.028/0.071"
+  },
+  {
+   "path": "teams/phys/cross2d/L3-ABC-n128-s0.2-j0-seed1.png",
+   "label": "L3-ABC 2D FREE n128 s0.2 j0 seed1\ndist 0.005/0.016"
+  },
+  {
+   "path": "teams/phys/cross2d/sq2-checker-n32-s0.2-j0-seed1.png",
+   "label": "sq2-checker 2D FREE n32 s0.2 j0 seed1\nX kept (white: A-union exact)"
+  },
+  {
+   "path": "teams/phys/cross2d/sq2-checker-n32-s0.2-j0.001-seed1.png",
+   "label": "sq2-checker 2D FREE n32 s0.2 j0.001 seed1\nA pair unites"
+  },
+  {
+   "path": "teams/phys/cross2d/sq2-checker-n32-s0.2-j0.001-seed2.png",
+   "label": "sq2-checker 2D FREE n32 s0.2 j0.001 seed2\nB pair unites"
+  },
+  {
+   "path": "teams/phys/cross2d/sq2-checker-n128-s0.2-j0.001-seed1.png",
+   "label": "sq2-checker 2D FREE n128 s0.2 j0.001 seed1\nB pair; 0.005/0.017"
+  },
+  {
+   "path": "teams/phys/cross2d/sq2-ABCD-n32-s0.2-j0-seed1.png",
+   "label": "sq2-ABCD 2D FREE n32 s0.2 j0 seed1\nX kept; exact has A|D film"
+  },
+  {
+   "path": "teams/phys/cross2d/sq2-ABCD-n128-s0.2-j0-seed1.png",
+   "label": "sq2-ABCD 2D FREE n128 s0.2 j0 seed1\nX kept at n128 too"
+  },
+  {
+   "path": "teams/phys/cross2d/diag-edge-n32-s0.2-j0-seed1.png",
+   "label": "diag-edge 2D FREE n32 s0.2 j0 seed1\nunites, as exact"
+  },
+  {
+   "path": "teams/phys/cross2d/diag-edge-diff-n32-s0.2-j0-seed1.png",
+   "label": "diag-edge-diff 2D FREE n32 s0.2 j0 seed1\nengine adheres; solver separates"
+  },
+  {
+   "path": "teams/phys/cross2d/diag-edge-diff-n64-s0.1-j0-seed1.png",
+   "label": "diag-edge-diff 2D FREE n64 s0.1 j0 seed1\ns 0.1: engine separates"
+  },
+  {
+   "path": "teams/phys/cross2d/L3-ABA-n32-s0.2-j0-seed1.png",
+   "label": "L3-ABA 2D FREE n32 s0.2 j0 seed1\nA arms unite, as exact"
+  },
+  {
+   "path": "teams/phys/cross2d/checker-smallA-n32-s0.2-j0.001-seed1.png",
+   "label": "checker-smallA 2D FREE n32 s0.2 j0.001 seed1\nsingle A pair unites"
+  },
+  {
+   "path": "teams/phys/cross2d/checker-smallB-n32-s0.2-j0.001-seed1.png",
+   "label": "checker-smallB 2D FREE n32 s0.2 j0.001 seed1\nsingle B pair unites"
+  },
+  {
+   "path": "teams/phys/cross2d/slab-line-n32-s0.2-j0-seed1.png",
+   "label": "slab-line 2D FREE n32 s0.2 j0 seed1\npinned: 0.56/1.24"
+  },
+  {
+   "path": "teams/phys/cross2d/slab-line-n64-s0.2-j0-seed1.png",
+   "label": "slab-line 2D FREE n64 s0.2 j0 seed1\n0.26/0.50"
+  },
+  {
+   "path": "teams/phys/cross2d/slab-line-n64-s0.2-j0.001-seed1.png",
+   "label": "slab-line 2D FREE n64 s0.2 j0.001 seed1\n0.20/0.39"
+  },
+  {
+   "path": "teams/phys/cross2d/row-ABB-n64-s0.1-j0-seed1.png",
+   "label": "row-ABB 2D FREE n64 s0.1 j0 seed1\ns 0.1 pinned: 0.21/0.46"
+  }
+ ]
+}

@@ -1,0 +1,521 @@
+{
+ "case": "cube2-checker",
+ "n": 16,
+ "regime": "FREE",
+ "xs": [
+  {
+   "at": [
+    0.5,
+    1,
+    1
+   ],
+   "axis": 0,
+   "mats": [
+    6,
+    7
+   ],
+   "sizes": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "n": [
+    4,
+    4
+   ],
+   "rule4": 0,
+   "size": "tie"
+  },
+  {
+   "at": [
+    1.5,
+    1,
+    1
+   ],
+   "axis": 0,
+   "mats": [
+    7,
+    6
+   ],
+   "sizes": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "n": [
+    4,
+    4
+   ],
+   "rule4": 0,
+   "size": "tie"
+  },
+  {
+   "at": [
+    1,
+    0.5,
+    1
+   ],
+   "axis": 1,
+   "mats": [
+    6,
+    7
+   ],
+   "sizes": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "n": [
+    4,
+    4
+   ],
+   "rule4": 0,
+   "size": "tie"
+  },
+  {
+   "at": [
+    1,
+    1.5,
+    1
+   ],
+   "axis": 1,
+   "mats": [
+    7,
+    6
+   ],
+   "sizes": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "n": [
+    4,
+    4
+   ],
+   "rule4": 0,
+   "size": "tie"
+  },
+  {
+   "at": [
+    1,
+    1,
+    0.5
+   ],
+   "axis": 2,
+   "mats": [
+    6,
+    7
+   ],
+   "sizes": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "n": [
+    4,
+    4
+   ],
+   "rule4": 0,
+   "size": "tie"
+  },
+  {
+   "at": [
+    1,
+    1,
+    1.5
+   ],
+   "axis": 2,
+   "mats": [
+    7,
+    6
+   ],
+   "sizes": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "n": [
+    4,
+    4
+   ],
+   "rule4": 0,
+   "size": "tie"
+  }
+ ],
+ "runs": [
+  {
+   "v": "j0",
+   "steps": 123,
+   "converged": true,
+   "ms": 9117,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    12,
+    13,
+    15
+   ]
+  },
+  {
+   "v": "rev",
+   "steps": 123,
+   "converged": true,
+   "ms": 8700,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    12,
+    13,
+    15
+   ]
+  },
+  {
+   "v": "s1",
+   "steps": 152,
+   "converged": true,
+   "ms": 11915,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    11,
+    12,
+    13,
+    14
+   ]
+  },
+  {
+   "v": "s2",
+   "steps": 129,
+   "converged": true,
+   "ms": 10521,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    18,
+    19,
+    21
+   ]
+  },
+  {
+   "v": "s3",
+   "steps": 128,
+   "converged": true,
+   "ms": 10744,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    13,
+    14,
+    15
+   ]
+  },
+  {
+   "v": "s4",
+   "steps": 14,
+   "converged": true,
+   "ms": 1359,
+   "xs": [
+    "0.5,1,1:none/none",
+    "1.5,1,1:none/none",
+    "1,0.5,1:none/none",
+    "1,1.5,1:none/none",
+    "1,1,0.5:none/none",
+    "1,1,1.5:none/none"
+   ],
+   "roots": {
+    "6": [
+     "1",
+     "1",
+     "1",
+     "1"
+    ],
+    "7": [
+     "1",
+     "1",
+     "1",
+     "1"
+    ]
+   },
+   "firstMerges": []
+  },
+  {
+   "v": "s5",
+   "steps": 14,
+   "converged": true,
+   "ms": 1520,
+   "xs": [
+    "0.5,1,1:none/none",
+    "1.5,1,1:none/none",
+    "1,0.5,1:none/none",
+    "1,1.5,1:none/none",
+    "1,1,0.5:none/none",
+    "1,1,1.5:none/none"
+   ],
+   "roots": {
+    "6": [
+     "1",
+     "1",
+     "1",
+     "1"
+    ],
+    "7": [
+     "1",
+     "1",
+     "1",
+     "1"
+    ]
+   },
+   "firstMerges": []
+  },
+  {
+   "v": "ann1",
+   "steps": 118,
+   "converged": true,
+   "ms": 10260,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "ann2",
+   "steps": 120,
+   "converged": true,
+   "ms": 10661,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "ann3",
+   "steps": 113,
+   "converged": true,
+   "ms": 11449,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "annNM1",
+   "steps": 118,
+   "converged": true,
+   "ms": 43105,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    101
+   ]
+  },
+  {
+   "v": "annNM2",
+   "steps": 116,
+   "converged": true,
+   "ms": 29151,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    101
+   ]
+  },
+  {
+   "v": "annNM3",
+   "steps": 118,
+   "converged": true,
+   "ms": 30857,
+   "xs": [
+    "0.5,1,1:both/both",
+    "1.5,1,1:both/both",
+    "1,0.5,1:both/both",
+    "1,1.5,1:both/both",
+    "1,1,0.5:both/both",
+    "1,1,1.5:both/both"
+   ],
+   "roots": {
+    "6": [
+     "4"
+    ],
+    "7": [
+     "4"
+    ]
+   },
+   "firstMerges": [
+    101
+   ]
+  }
+ ]
+}

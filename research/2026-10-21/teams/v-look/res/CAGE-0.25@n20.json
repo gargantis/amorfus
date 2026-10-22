@@ -1,0 +1,61 @@
+{
+ "regime": "CAGE-0.25",
+ "n": 20,
+ "runs": {
+  "single": {
+   "regime": "CAGE-0.25",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.25
+    }
+   },
+   "n": 20,
+   "margin": 1,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 7,
+   "converged": true,
+   "ms": 508,
+   "lastChanges": [
+    48,
+    0,
+    0,
+    0
+   ],
+   "cells": 216000,
+   "delta": 0.306,
+   "geoDelta": 0.306,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1522
+   ],
+   "ext": [
+    1.2,
+    1.2,
+    1.2
+   ],
+   "diag": 1.2125,
+   "diagOverAxis": 1.0104,
+   "corner": {
+    "inset": 0.2598,
+    "Req": 0.3549
+   },
+   "edge": {
+    "faceU": 0.1,
+    "faceV": 0.1,
+    "inset": 0.0854,
+    "Req": 0.2061,
+    "R": 0.3954,
+    "fitRms": 0.0095,
+    "nCurved": 105,
+    "arcDeg": 52
+   }
+  }
+ }
+}

@@ -1,0 +1,6264 @@
+{
+ "single": {
+  "desc": "one block",
+  "n": 16,
+  "blocks": 1,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 11,
+    "converged": true,
+    "ms": 312,
+    "grid": [
+     48,
+     48,
+     48
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2548,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 101961,
+      "2": 1862
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 14,
+    "converged": true,
+    "ms": 185,
+    "grid": [
+     48,
+     48,
+     48
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2551,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 101961,
+      "2": 1862
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "pair-same": {
+  "desc": "two blocks, same material",
+  "n": 16,
+  "blocks": 2,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 38,
+    "converged": true,
+    "ms": 745,
+    "grid": [
+     64,
+     48,
+     48
+    ],
+    "lastChanges": [
+     6,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.2054,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 136239,
+      "2": 2928
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 44,
+    "converged": true,
+    "ms": 713,
+    "grid": [
+     64,
+     48,
+     48
+    ],
+    "lastChanges": [
+     6,
+     8,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.206,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 136237,
+      "2": 2930
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "pair-diff": {
+  "desc": "two blocks, different materials (double bubble)",
+  "n": 16,
+  "blocks": 2,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 27,
+    "converged": true,
+    "ms": 779,
+    "grid": [
+     64,
+     48,
+     48
+    ],
+    "lastChanges": [
+     8,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2439,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2433,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.078
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 135910,
+      "2": 3185,
+      "3": 72
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 26,
+    "converged": true,
+    "ms": 575,
+    "grid": [
+     64,
+     48,
+     48
+    ],
+    "lastChanges": [
+     10,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.246,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2408,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.078
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 135912,
+      "2": 3183,
+      "3": 72
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "line3-same": {
+  "desc": "row of three, same",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 55,
+    "converged": true,
+    "ms": 1255,
+    "grid": [
+     80,
+     48,
+     48
+    ],
+    "lastChanges": [
+     4,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.1778,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 170651,
+      "2": 3860
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 72,
+    "converged": true,
+    "ms": 1412,
+    "grid": [
+     80,
+     48,
+     48
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.178,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 170651,
+      "2": 3860
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "line3-ABA": {
+  "desc": "row A B A",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 42,
+    "converged": true,
+    "ms": 1798,
+    "grid": [
+     80,
+     48,
+     48
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2351,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.1998,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2387,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 0.969
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 0.969
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 169779,
+      "2": 4588,
+      "3": 144
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 78,
+    "converged": true,
+    "ms": 3062,
+    "grid": [
+     80,
+     48,
+     48
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2433,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2141,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2451,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.078
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 1.07
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 169883,
+      "2": 4484,
+      "3": 144
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "line3-ABC": {
+  "desc": "row A B C",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 42,
+    "converged": true,
+    "ms": 1800,
+    "grid": [
+     80,
+     48,
+     48
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2351,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.1998,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 1,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2387,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 0.969
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       7,
+       1
+      ],
+      "faceArea": 0.969
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 169779,
+      "2": 4588,
+      "3": 144
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 78,
+    "converged": true,
+    "ms": 2886,
+    "grid": [
+     80,
+     48,
+     48
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2433,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2141,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 1,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2451,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.078
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       7,
+       1
+      ],
+      "faceArea": 1.07
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 169883,
+      "2": 4484,
+      "3": 144
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "L3-same": {
+  "desc": "L tromino, same",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 56,
+    "converged": true,
+    "ms": 1272,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.1778,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 182713,
+      "2": 3830
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 46,
+    "converged": true,
+    "ms": 957,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     10,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.1788,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 182699,
+      "2": 3844
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "L3-AAB": {
+  "desc": "L tromino, two A one B",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 38,
+    "converged": true,
+    "ms": 1645,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1954,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2335,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.781
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 182158,
+      "2": 4290,
+      "3": 95
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 39,
+    "converged": true,
+    "ms": 1412,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1962,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2346,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.789
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 182152,
+      "2": 4296,
+      "3": 95
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "L3-ABC": {
+  "desc": "L tromino, three materials (triple line + air)",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 72,
+    "converged": true,
+    "ms": 3352,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2333,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2268,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 1,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2241,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.156
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       1
+      ],
+      "faceArea": 0.984
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       7,
+       1
+      ],
+      "faceArea": 0.965
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 181863,
+      "2": 4508,
+      "3": 170,
+      "4": 2
+     },
+     "quadComponents": 2,
+     "quadMaxExtent": 0,
+     "quadTop": [
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "extent": 0,
+       "at": [
+        0.875,
+        -0.125,
+        0.938
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "extent": 0,
+       "at": [
+        0.875,
+        1.125,
+        0.938
+       ]
+      }
+     ]
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 142,
+    "converged": true,
+    "ms": 6525,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2351,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2298,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 1,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2318,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.086
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       1
+      ],
+      "faceArea": 1.047
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       7,
+       1
+      ],
+      "faceArea": 1.109
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 181836,
+      "2": 4531,
+      "3": 174,
+      "4": 2
+     },
+     "quadComponents": 2,
+     "quadMaxExtent": 0,
+     "quadTop": [
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "extent": 0,
+       "at": [
+        0.875,
+        -0.125,
+        0.875
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "extent": 0,
+       "at": [
+        0.875,
+        1.125,
+        0.875
+       ]
+      }
+     ]
+    }
+   }
+  }
+ },
+ "sq2-same": {
+  "desc": "2×2 square, same",
+  "n": 16,
+  "blocks": 4,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 39,
+    "converged": true,
+    "ms": 1137,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     14,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.166,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 181879,
+      "2": 4664
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 41,
+    "converged": true,
+    "ms": 938,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1653,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 181879,
+      "2": 4664
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "sq2-AAAB": {
+  "desc": "2×2, three A one B",
+  "n": 16,
+  "blocks": 4,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 48,
+    "converged": true,
+    "ms": 2136,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.1733,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2306,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 2.277
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 181233,
+      "2": 5202,
+      "3": 108
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 55,
+    "converged": true,
+    "ms": 2330,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     6,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.1755,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2321,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 2.234
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 181237,
+      "2": 5200,
+      "3": 106
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "sq2-AABB": {
+  "desc": "2×2, halves",
+  "n": 16,
+  "blocks": 4,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 53,
+    "converged": true,
+    "ms": 1677,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1928,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1921,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.852
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 181347,
+      "2": 5098,
+      "3": 98
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 53,
+    "converged": true,
+    "ms": 1576,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     6,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1928,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1924,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.852
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 181347,
+      "2": 5098,
+      "3": 98
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "sq2-checker": {
+  "desc": "2×2 checkerboard (diagonal pairs same: ambiguous edge)",
+  "n": 16,
+  "blocks": 4,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 51,
+    "converged": true,
+    "ms": 2570,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 4,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.2231,
+      "comps": 2
+     },
+     {
+      "p": 4,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.2216,
+      "comps": 2
+     }
+    ],
+    "contacts": [
+     {
+      "a": 2,
+      "b": 4,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 4.477
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 180862,
+      "2": 5450,
+      "3": 208,
+      "4": 21,
+      "5": 2
+     },
+     "quadComponents": 1,
+     "quadMaxExtent": 1.375,
+     "quadTop": [
+      {
+       "corners": 23,
+       "phases": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "extent": 1.375,
+       "at": [
+        1,
+        0.5,
+        1
+       ]
+      }
+     ]
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 138,
+    "converged": true,
+    "ms": 7015,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 4,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1934,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1935,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.852
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 181370,
+      "2": 5077,
+      "3": 96
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "sq2-AABC": {
+  "desc": "2×2, A A / B C",
+  "n": 16,
+  "blocks": 4,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 47,
+    "converged": true,
+    "ms": 3479,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1868,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2193,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 1,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2226,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.387
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       1
+      ],
+      "faceArea": 1.379
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       7,
+       1
+      ],
+      "faceArea": 0.855
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 180905,
+      "2": 5446,
+      "3": 190,
+      "4": 2
+     },
+     "quadComponents": 2,
+     "quadMaxExtent": 0,
+     "quadTop": [
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "extent": 0,
+       "at": [
+        1,
+        -0.125,
+        1.25
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "extent": 0,
+       "at": [
+        1,
+        1.125,
+        1.25
+       ]
+      }
+     ]
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 54,
+    "converged": true,
+    "ms": 3386,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     5,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1877,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2223,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 1,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2217,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.379
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       1
+      ],
+      "faceArea": 1.387
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       7,
+       1
+      ],
+      "faceArea": 0.855
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 180919,
+      "2": 5432,
+      "3": 190,
+      "4": 2
+     },
+     "quadComponents": 2,
+     "quadMaxExtent": 0,
+     "quadTop": [
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "extent": 0,
+       "at": [
+        1,
+        -0.125,
+        1.25
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "extent": 0,
+       "at": [
+        1,
+        1.125,
+        1.25
+       ]
+      }
+     ]
+    }
+   }
+  }
+ },
+ "sq2-ABCD": {
+  "desc": "2×2, four materials (four films meet at an edge)",
+  "n": 16,
+  "blocks": 4,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 46,
+    "converged": true,
+    "ms": 2370,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 4,
+    "phasesEnd": 4,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2223,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.222,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 1,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.225,
+      "comps": 1
+     },
+     {
+      "p": 4,
+      "mat": 4,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2232,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.078
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       1
+      ],
+      "faceArea": 1.063
+     },
+     {
+      "a": 2,
+      "b": 4,
+      "mats": [
+       7,
+       4
+      ],
+      "faceArea": 1.074
+     },
+     {
+      "a": 3,
+      "b": 4,
+      "mats": [
+       1,
+       4
+      ],
+      "faceArea": 1.086
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 180757,
+      "2": 5561,
+      "3": 204,
+      "4": 19,
+      "5": 2
+     },
+     "quadComponents": 1,
+     "quadMaxExtent": 1.25,
+     "quadTop": [
+      {
+       "corners": 21,
+       "phases": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "extent": 1.25,
+       "at": [
+        1,
+        0.5,
+        1
+       ]
+      }
+     ]
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 47,
+    "converged": true,
+    "ms": 2101,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 4,
+    "phasesEnd": 4,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2231,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2225,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 1,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2232,
+      "comps": 1
+     },
+     {
+      "p": 4,
+      "mat": 4,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.222,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.078
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       1
+      ],
+      "faceArea": 1.066
+     },
+     {
+      "a": 2,
+      "b": 4,
+      "mats": [
+       7,
+       4
+      ],
+      "faceArea": 1.074
+     },
+     {
+      "a": 3,
+      "b": 4,
+      "mats": [
+       1,
+       4
+      ],
+      "faceArea": 1.078
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 180752,
+      "2": 5566,
+      "3": 204,
+      "4": 19,
+      "5": 2
+     },
+     "quadComponents": 1,
+     "quadMaxExtent": 1.25,
+     "quadTop": [
+      {
+       "corners": 21,
+       "phases": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "extent": 1.25,
+       "at": [
+        1,
+        0.5,
+        1
+       ]
+      }
+     ]
+    }
+   }
+  }
+ },
+ "diag-edge": {
+  "desc": "same material touching along an edge only",
+  "n": 16,
+  "blocks": 2,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 66,
+    "converged": true,
+    "ms": 1561,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.2058,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 183645,
+      "2": 2898
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 74,
+    "converged": true,
+    "ms": 1607,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     4,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.2064,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 183633,
+      "2": 2910
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "diag-corner": {
+  "desc": "same material touching at a corner only",
+  "n": 16,
+  "blocks": 2,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 13,
+    "converged": true,
+    "ms": 633,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     6,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2539,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2526,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 246323,
+      "2": 3724
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 13,
+    "converged": true,
+    "ms": 512,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     8,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2559,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2562,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 246347,
+      "2": 3700
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "diag-edge-diff": {
+  "desc": "different materials touching along an edge only",
+  "n": 16,
+  "blocks": 2,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 64,
+    "converged": true,
+    "ms": 2220,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2407,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2424,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.547
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 183138,
+      "2": 3313,
+      "3": 92
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 78,
+    "converged": true,
+    "ms": 2095,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2433,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2387,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.563
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 183138,
+      "2": 3313,
+      "3": 92
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "cube2-same": {
+  "desc": "2×2×2, same",
+  "n": 16,
+  "blocks": 8,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 23,
+    "converged": true,
+    "ms": 1115,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     6,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 8,
+      "volume": 8,
+      "lambda": 0.1302,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 242761,
+      "2": 7286
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 26,
+    "converged": true,
+    "ms": 984,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 8,
+      "volume": 8,
+      "lambda": 0.1314,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 242761,
+      "2": 7286
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "cube2-oneB": {
+  "desc": "2×2×2, seven A one B",
+  "n": 16,
+  "blocks": 8,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 48,
+    "converged": true,
+    "ms": 4482,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     3,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 7,
+      "volume": 7,
+      "lambda": 0.1327,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2229,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 3.109
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 241914,
+      "2": 8011,
+      "3": 122
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 69,
+    "converged": true,
+    "ms": 5170,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     6,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 7,
+      "volume": 7,
+      "lambda": 0.1332,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2244,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 3.082
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 241903,
+      "2": 8020,
+      "3": 124
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "cube2-halves": {
+  "desc": "2×2×2, A half and B half",
+  "n": 16,
+  "blocks": 8,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 63,
+    "converged": true,
+    "ms": 3398,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     10,
+     8,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1523,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1533,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 3.109
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 241784,
+      "2": 8135,
+      "3": 128
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 52,
+    "converged": true,
+    "ms": 2683,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     6,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1547,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1549,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 3.082
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 241745,
+      "2": 8174,
+      "3": 128
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "cube2-checker": {
+  "desc": "2×2×2 3D checkerboard",
+  "n": 16,
+  "blocks": 8,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 152,
+    "converged": true,
+    "ms": 14526,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 8,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1527,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 7,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1543,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 4.43
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 241318,
+      "2": 8582,
+      "3": 147
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 129,
+    "converged": true,
+    "ms": 13149,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 8,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1534,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1539,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 4.055
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 241495,
+      "2": 8406,
+      "3": 146
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "cube2-octants": {
+  "desc": "2×2×2, four materials, two layers",
+  "n": 16,
+  "blocks": 8,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 365,
+    "converged": true,
+    "ms": 51973,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 8,
+    "phasesEnd": 4,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1782,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1756,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 1,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1756,
+      "comps": 1
+     },
+     {
+      "p": 4,
+      "mat": 4,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1767,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.766
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       1
+      ],
+      "faceArea": 1.906
+     },
+     {
+      "a": 1,
+      "b": 4,
+      "mats": [
+       6,
+       4
+      ],
+      "faceArea": 1.23
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       7,
+       1
+      ],
+      "faceArea": 0.871
+     },
+     {
+      "a": 2,
+      "b": 4,
+      "mats": [
+       7,
+       4
+      ],
+      "faceArea": 1.895
+     },
+     {
+      "a": 3,
+      "b": 4,
+      "mats": [
+       1,
+       4
+      ],
+      "faceArea": 1.93
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 239972,
+      "2": 9702,
+      "3": 366,
+      "4": 7
+     },
+     "quadComponents": 5,
+     "quadMaxExtent": 0.063,
+     "quadTop": [
+      {
+       "corners": 2,
+       "phases": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "extent": 0.063,
+       "at": [
+        1.688,
+        1.063,
+        0.281
+       ]
+      },
+      {
+       "corners": 2,
+       "phases": [
+        0,
+        1,
+        2,
+        4
+       ],
+       "extent": 0.063,
+       "at": [
+        0.25,
+        1.156,
+        0.375
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        1,
+        2,
+        3,
+        4
+       ],
+       "extent": 0,
+       "at": [
+        1.063,
+        0.938,
+        0.938
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        3,
+        4
+       ],
+       "extent": 0,
+       "at": [
+        1.063,
+        0.063,
+        1.313
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        2,
+        3,
+        4
+       ],
+       "extent": 0,
+       "at": [
+        1.063,
+        1.375,
+        1.75
+       ]
+      }
+     ]
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 302,
+    "converged": true,
+    "ms": 46226,
+    "grid": [
+     64,
+     64,
+     64
+    ],
+    "lastChanges": [
+     4,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 8,
+    "phasesEnd": 4,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1753,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1784,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 1,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1757,
+      "comps": 1
+     },
+     {
+      "p": 4,
+      "mat": 4,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1765,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.23
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       1
+      ],
+      "faceArea": 1.918
+     },
+     {
+      "a": 1,
+      "b": 4,
+      "mats": [
+       6,
+       4
+      ],
+      "faceArea": 1.656
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       7,
+       1
+      ],
+      "faceArea": 1.938
+     },
+     {
+      "a": 2,
+      "b": 4,
+      "mats": [
+       7,
+       4
+      ],
+      "faceArea": 1.938
+     },
+     {
+      "a": 3,
+      "b": 4,
+      "mats": [
+       1,
+       4
+      ],
+      "faceArea": 1.102
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 239927,
+      "2": 9739,
+      "3": 375,
+      "4": 6
+     },
+     "quadComponents": 5,
+     "quadMaxExtent": 0.063,
+     "quadTop": [
+      {
+       "corners": 2,
+       "phases": [
+        1,
+        2,
+        3,
+        4
+       ],
+       "extent": 0.063,
+       "at": [
+        1,
+        0.875,
+        0.906
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "extent": 0,
+       "at": [
+        1.625,
+        0.938,
+        0.188
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        2,
+        4
+       ],
+       "extent": 0,
+       "at": [
+        0.313,
+        1.313,
+        0.438
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        1,
+        3,
+        4
+       ],
+       "extent": 0,
+       "at": [
+        0.875,
+        0.063,
+        1.25
+       ]
+      },
+      {
+       "corners": 1,
+       "phases": [
+        0,
+        2,
+        3,
+        4
+       ],
+       "extent": 0,
+       "at": [
+        1.188,
+        1.25,
+        1.75
+       ]
+      }
+     ]
+    }
+   }
+  }
+ },
+ "plus5": {
+  "desc": "plus of five, same",
+  "n": 16,
+  "blocks": 5,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 48,
+    "converged": true,
+    "ms": 2186,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     10,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 5,
+      "volume": 5,
+      "lambda": 0.1553,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 287913,
+      "2": 5414
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 47,
+    "converged": true,
+    "ms": 1733,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     18,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 5,
+      "volume": 5,
+      "lambda": 0.155,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 287915,
+      "2": 5412
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "plus5-mixed": {
+  "desc": "plus: B centre, A arms",
+  "n": 16,
+  "blocks": 5,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 118,
+    "converged": true,
+    "ms": 10038,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     6,
+     3,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 5,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1556,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.222,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 2.016
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 287291,
+      "2": 5942,
+      "3": 94
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 108,
+    "converged": true,
+    "ms": 7789,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     5,
+     5,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 5,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 4,
+      "volume": 4,
+      "lambda": 0.1567,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2226,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 2.039
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 287287,
+      "2": 5946,
+      "3": 94
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "ring8": {
+  "desc": "3×3 ring, same (a torus?)",
+  "n": 16,
+  "blocks": 8,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 109,
+    "converged": true,
+    "ms": 3859,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 8,
+      "volume": 8,
+      "lambda": 0.128,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 285943,
+      "2": 7384
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 132,
+    "converged": true,
+    "ms": 5307,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 8,
+      "volume": 8,
+      "lambda": 0.1302,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 285959,
+      "2": 7368
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "T-mixed": {
+  "desc": "T: A bar, B stem",
+  "n": 16,
+  "blocks": 5,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 61,
+    "converged": true,
+    "ms": 3581,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     6,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.1704,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1873,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.922
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 287306,
+      "2": 5921,
+      "3": 100
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 63,
+    "converged": true,
+    "ms": 3597,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.1706,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1866,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.922
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 287304,
+      "2": 5923,
+      "3": 100
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "pillar3": {
+  "desc": "1×1×3 column",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 69,
+    "converged": true,
+    "ms": 2195,
+    "grid": [
+     48,
+     80,
+     48
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.1789,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 170653,
+      "2": 3858
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 72,
+    "converged": true,
+    "ms": 2324,
+    "grid": [
+     48,
+     80,
+     48
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.178,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 170651,
+      "2": 3860
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "stairs": {
+  "desc": "built 1:1 stair, 3 steps, 2 deep",
+  "n": 16,
+  "blocks": 12,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 105,
+    "converged": true,
+    "ms": 6874,
+    "grid": [
+     80,
+     80,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 12,
+      "volume": 12,
+      "lambda": 0.119,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 383709,
+      "2": 9474
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 109,
+    "converged": true,
+    "ms": 6969,
+    "grid": [
+     80,
+     80,
+     64
+    ],
+    "lastChanges": [
+     4,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 12,
+      "volume": 12,
+      "lambda": 0.1191,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 383769,
+      "2": 9414
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "row-AAB": {
+  "desc": "row A A B (A2|B1, same as L3-AAB)",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 84,
+    "converged": true,
+    "ms": 3607,
+    "grid": [
+     80,
+     48,
+     48
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1939,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2296,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.289
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 170279,
+      "2": 4150,
+      "3": 82
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 80,
+    "converged": true,
+    "ms": 3177,
+    "grid": [
+     80,
+     48,
+     48
+    ],
+    "lastChanges": [
+     2,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1958,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.227,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.281
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 170261,
+      "2": 4168,
+      "3": 82
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "row-ABB": {
+  "desc": "row A B B (A1|B2)",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 88,
+    "converged": true,
+    "ms": 3454,
+    "grid": [
+     80,
+     48,
+     48
+    ],
+    "lastChanges": [
+     4,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2262,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1956,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.285
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 170258,
+      "2": 4171,
+      "3": 82
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 84,
+    "converged": true,
+    "ms": 2832,
+    "grid": [
+     80,
+     48,
+     48
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2296,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1951,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.289
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 170277,
+      "2": 4152,
+      "3": 82
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "L-ABB": {
+  "desc": "L: A, B corner, B (A1|B2 bent)",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 41,
+    "converged": true,
+    "ms": 2196,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     4,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2353,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1963,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.777
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 182159,
+      "2": 4289,
+      "3": 95
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 36,
+    "converged": true,
+    "ms": 1877,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     6,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.236,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1956,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.773
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 182155,
+      "2": 4294,
+      "3": 94
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "row-AAAB": {
+  "desc": "row A A A B (A3|B1, same as sq2-AAAB)",
+  "n": 16,
+  "blocks": 4,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 128,
+    "converged": true,
+    "ms": 6135,
+    "grid": [
+     96,
+     48,
+     48
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.1733,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2321,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.438
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 204735,
+      "2": 5034,
+      "3": 86
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 92,
+    "converged": true,
+    "ms": 4604,
+    "grid": [
+     96,
+     48,
+     48
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 3,
+      "volume": 3,
+      "lambda": 0.1668,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2323,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.398
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 204696,
+      "2": 5075,
+      "3": 84
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "row-AABB": {
+  "desc": "row A A B B (A2|B2, same as sq2-AABB)",
+  "n": 16,
+  "blocks": 4,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 104,
+    "converged": true,
+    "ms": 4392,
+    "grid": [
+     96,
+     48,
+     48
+    ],
+    "lastChanges": [
+     2,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.19,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1855,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.75
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 204624,
+      "2": 5135,
+      "3": 96
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 111,
+    "converged": true,
+    "ms": 4773,
+    "grid": [
+     96,
+     48,
+     48
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1915,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1895,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 1.75
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 204628,
+      "2": 5131,
+      "3": 96
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "L3-ABA": {
+  "desc": "L tromino, B in the corner, two A arms touching along an edge",
+  "n": 16,
+  "blocks": 3,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 87,
+    "converged": true,
+    "ms": 5671,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     5,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2283,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1926,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 2.059
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 182073,
+      "2": 4366,
+      "3": 104
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 60,
+    "converged": true,
+    "ms": 4235,
+    "grid": [
+     64,
+     48,
+     64
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 7,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2316,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1967,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 2.047
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 182096,
+      "2": 4343,
+      "3": 104
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "slab-dot": {
+  "desc": "5×5 slab B with one A in the middle",
+  "n": 16,
+  "blocks": 25,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 150,
+    "converged": true,
+    "ms": 25961,
+    "grid": [
+     112,
+     48,
+     112
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 7,
+      "blocks": 24,
+      "volume": 24,
+      "lambda": 0.0994,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2497,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 4.617
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 562655,
+      "2": 16316,
+      "3": 116
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 153,
+    "converged": true,
+    "ms": 26796,
+    "grid": [
+     112,
+     48,
+     112
+    ],
+    "lastChanges": [
+     3,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 7,
+      "blocks": 24,
+      "volume": 24,
+      "lambda": 0.0976,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 1,
+      "volume": 1,
+      "lambda": 0.2531,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 4.563
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 562650,
+      "2": 16323,
+      "3": 114
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "slab-line": {
+  "desc": "6×6 slab B with a 1-wide diagonal line of A (painted)",
+  "n": 16,
+  "blocks": 36,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 196,
+    "converged": true,
+    "ms": 57043,
+    "grid": [
+     128,
+     48,
+     128
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 8,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 15,
+      "volume": 15,
+      "lambda": 0.118,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 7,
+      "blocks": 15,
+      "volume": 15,
+      "lambda": 0.1184,
+      "comps": 1
+     },
+     {
+      "p": 4,
+      "mat": 6,
+      "blocks": 6,
+      "volume": 6,
+      "lambda": 0.1379,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 2,
+      "b": 4,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 7.398
+     },
+     {
+      "a": 3,
+      "b": 4,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 7.41
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 732207,
+      "2": 25399,
+      "3": 457
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 305,
+    "converged": true,
+    "ms": 76426,
+    "grid": [
+     128,
+     48,
+     128
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 8,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 6,
+      "volume": 6,
+      "lambda": 0.1342,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 7,
+      "blocks": 30,
+      "volume": 30,
+      "lambda": 0.118,
+      "comps": 2
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 14.895
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 732324,
+      "2": 25294,
+      "3": 445
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "slab-stripe": {
+  "desc": "6×6 slab B with a straight 1-wide line of A",
+  "n": 16,
+  "blocks": 36,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 163,
+    "converged": true,
+    "ms": 32683,
+    "grid": [
+     128,
+     48,
+     128
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 7,
+      "blocks": 12,
+      "volume": 12,
+      "lambda": 0.121,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 6,
+      "volume": 6,
+      "lambda": 0.1285,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 7,
+      "blocks": 18,
+      "volume": 18,
+      "lambda": 0.1183,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 5.516
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 6.285
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 733412,
+      "2": 24303,
+      "3": 348
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 241,
+    "converged": true,
+    "ms": 58055,
+    "grid": [
+     128,
+     48,
+     128
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 7,
+      "blocks": 12,
+      "volume": 12,
+      "lambda": 0.122,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 6,
+      "volume": 6,
+      "lambda": 0.1283,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 7,
+      "blocks": 18,
+      "volume": 18,
+      "lambda": 0.1193,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 5.555
+     },
+     {
+      "a": 2,
+      "b": 3,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 6.25
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 733474,
+      "2": 24239,
+      "3": 350
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "tunnel": {
+  "desc": "1×2 tunnel through stone (clearance check)",
+  "n": 16,
+  "blocks": 30,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 40,
+    "converged": true,
+    "ms": 4836,
+    "grid": [
+     80,
+     96,
+     80
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 3,
+      "blocks": 30,
+      "volume": 30,
+      "lambda": 0.1189,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 576793,
+      "2": 16102
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 38,
+    "converged": true,
+    "ms": 4506,
+    "grid": [
+     80,
+     96,
+     80
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 3,
+      "blocks": 30,
+      "volume": 30,
+      "lambda": 0.119,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 576793,
+      "2": 16102
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "ball-r2": {
+  "desc": "voxel ball r 2.2, same",
+  "n": 12,
+  "blocks": 33,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 12,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 26,
+    "converged": true,
+    "ms": 2141,
+    "grid": [
+     84,
+     84,
+     84
+    ],
+    "lastChanges": [
+     4,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 33,
+      "volume": 33,
+      "lambda": 0.0826,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 561129,
+      "2": 10658
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 12,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 24,
+    "converged": true,
+    "ms": 1682,
+    "grid": [
+     84,
+     84,
+     84
+    ],
+    "lastChanges": [
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 1,
+    "phasesEnd": 1,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 33,
+      "volume": 33,
+      "lambda": 0.0829,
+      "comps": 1
+     }
+    ],
+    "contacts": [],
+    "census": {
+     "hist": {
+      "1": 561129,
+      "2": 10658
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "ball-AB": {
+  "desc": "voxel ball r 2.2, A half, B half",
+  "n": 12,
+  "blocks": 33,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 12,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 64,
+    "converged": true,
+    "ms": 7939,
+    "grid": [
+     84,
+     84,
+     84
+    ],
+    "lastChanges": [
+     3,
+     3,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 7,
+      "blocks": 23,
+      "volume": 23,
+      "lambda": 0.0972,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 10,
+      "volume": 10,
+      "lambda": 0.1154,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 9.333
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 559618,
+      "2": 12005,
+      "3": 164
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 12,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 47,
+    "converged": true,
+    "ms": 6515,
+    "grid": [
+     84,
+     84,
+     84
+    ],
+    "lastChanges": [
+     7,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 2,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 7,
+      "blocks": 23,
+      "volume": 23,
+      "lambda": 0.0988,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 10,
+      "volume": 10,
+      "lambda": 0.1175,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 9.306
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 559630,
+      "2": 11997,
+      "3": 160
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "terrain-step": {
+  "desc": "grass over dirt, a one-block step",
+  "n": 12,
+  "blocks": 75,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 12,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 351,
+    "converged": true,
+    "ms": 77971,
+    "grid": [
+     96,
+     60,
+     84
+    ],
+    "lastChanges": [
+     10,
+     10,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 2,
+      "blocks": 45,
+      "volume": 45,
+      "lambda": 0.1102,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 1,
+      "blocks": 30,
+      "volume": 30,
+      "lambda": 0.1222,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       2,
+       1
+      ],
+      "faceArea": 18.938
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 444935,
+      "2": 20060,
+      "3": 220
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 12,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 370,
+    "converged": true,
+    "ms": 72313,
+    "grid": [
+     96,
+     60,
+     84
+    ],
+    "lastChanges": [
+     4,
+     4,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 3,
+    "phasesEnd": 2,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 2,
+      "blocks": 45,
+      "volume": 45,
+      "lambda": 0.108,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 1,
+      "blocks": 30,
+      "volume": 30,
+      "lambda": 0.1194,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       2,
+       1
+      ],
+      "faceArea": 18.826
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 444949,
+      "2": 20046,
+      "3": 220
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "checker-smallA": {
+  "desc": "unequal checkerboard: single A blocks on one diagonal, 2-block B clusters on the other",
+  "n": 16,
+  "blocks": 6,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 68,
+    "converged": true,
+    "ms": 5369,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     7,
+     3,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 4,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1824,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1881,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1896,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 2.492
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 2.48
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 285428,
+      "2": 7671,
+      "3": 228
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 53,
+    "converged": true,
+    "ms": 4938,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 4,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1788,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1888,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1872,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 2.508
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       6,
+       7
+      ],
+      "faceArea": 2.492
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 285419,
+      "2": 7676,
+      "3": 232
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ },
+ "checker-smallB": {
+  "desc": "as checker-smallA with materials swapped",
+  "n": 16,
+  "blocks": 6,
+  "runs": {
+   "1": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 1
+    },
+    "steps": 68,
+    "converged": true,
+    "ms": 5730,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     7,
+     3,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 4,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1824,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1881,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1896,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 2.492
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 2.48
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 285428,
+      "2": 7671,
+      "3": 228
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   },
+   "2": {
+    "regime": {
+     "n": 16,
+     "maxSteps": 400,
+     "jitter": 0.001,
+     "seed": 2
+    },
+    "steps": 53,
+    "converged": true,
+    "ms": 4108,
+    "grid": [
+     80,
+     48,
+     80
+    ],
+    "lastChanges": [
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    "clustersStart": 4,
+    "phasesEnd": 3,
+    "phases": [
+     {
+      "p": 1,
+      "mat": 7,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1788,
+      "comps": 1
+     },
+     {
+      "p": 2,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1888,
+      "comps": 1
+     },
+     {
+      "p": 3,
+      "mat": 6,
+      "blocks": 2,
+      "volume": 2,
+      "lambda": 0.1872,
+      "comps": 1
+     }
+    ],
+    "contacts": [
+     {
+      "a": 1,
+      "b": 2,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 2.508
+     },
+     {
+      "a": 1,
+      "b": 3,
+      "mats": [
+       7,
+       6
+      ],
+      "faceArea": 2.492
+     }
+    ],
+    "census": {
+     "hist": {
+      "1": 285419,
+      "2": 7676,
+      "3": 232
+     },
+     "quadComponents": 0,
+     "quadMaxExtent": 0,
+     "quadTop": []
+    }
+   }
+  }
+ }
+}

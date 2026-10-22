@@ -1,0 +1,22 @@
+cube2-cornerA 8 blocks; 0 X edges
+j0      64 st 5388 ms | roots {"6":["1","1"],"7":["6"]} | merges at 
+     X verdicts 
+s1      130 st 12894 ms | roots {"6":["1","1"],"7":["6"]} | merges at 
+     X verdicts 
+annNM1  112 st 19387 ms | roots {"6":["2"],"7":["6"]} | merges at 101
+     X verdicts 
+annNM2  115 st 17834 ms | roots {"6":["2"],"7":["6"]} | merges at 101
+     X verdicts 
+annNM3  111 st 18763 ms | roots {"6":["2"],"7":["6"]} | merges at 101
+     X verdicts 
+diag-corner 2 blocks; 0 X edges
+j0      11 st 521 ms | roots {"6":["1","1"]} | merges at 
+     X verdicts 
+s1      13 st 489 ms | roots {"6":["1","1"]} | merges at 
+     X verdicts 
+annNM1  113 st 9535 ms | roots {"6":["2"]} | merges at 101
+     X verdicts 
+annNM2  111 st 10146 ms | roots {"6":["2"]} | merges at 101
+     X verdicts 
+annNM3  109 st 9358 ms | roots {"6":["2"]} | merges at 101
+     X verdicts 

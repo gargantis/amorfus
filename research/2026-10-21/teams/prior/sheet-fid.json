@@ -1,0 +1,23 @@
+{
+ "out": "img/sheet-fid-tvl1.png",
+ "cols": 3,
+ "title": "2D 4x4 square, FID-k without volume (TV-L1 analogue), n=64",
+ "cell": [
+  260,
+  260
+ ],
+ "items": [
+  {
+   "path": "img/fid-square4-k0.1-n64.png",
+   "label": "square4 2D FID-0.1 novol\ncorner r 0.75 (pred 0.80)"
+  },
+  {
+   "path": "img/fid-square4-k0.15-n64.png",
+   "label": "square4 2D FID-0.15 novol\ncorner r 0.48 (pred 0.53)"
+  },
+  {
+   "path": "img/fid-square4-k0.3-n64.png",
+   "label": "square4 2D FID-0.3 novol\ncorner r 0.22 (pred 0.27)"
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"set":"t1","name":"t5b","regime":"FINITE-4","n":12,"ms":3886,"steps":4,"converged":false,"changes":25054,"premerged":1,"alive":3,"lambda":[[2,223,0.0032],[3,25,0.043],[1,95,0.0043]],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-40,"oy":57,"oz":78},"dScale":30679,"origin":[-40,57,78],"size":[9,8,9],"evalLo":[-38,59,80],"evalHi":[-33,63,85],"blocks":343}

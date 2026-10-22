@@ -1,0 +1,13 @@
+cross-check against the independent count in teams/prior/corner-classes.json (another team; read only)
+labellings: prior 21147 mine 21147
+binary classes: prior 22 mine {'brute': 22, 'burnside': 22}
+all classes: prior 738 mine 738
+all, with X line: prior 650 mine 650
+all, >4 regions: prior 280 mine (material view) 280
+surface classes: prior 551 mine 551
+surface, with X line: prior 492 mine 492
+surface, >4 regions: prior 218 mine 218
+surface classes with <=1 materials: prior 20 mine 20
+surface classes with <=2 materials: prior 132 mine 132
+surface classes with <=3 materials: prior 333 mine 333
+prior plateauLegalTopology 85 (its own definition); mine plateau (no X edge, <=4 bubbles counting clusters, no same-material diagonal contact): 76

@@ -1,0 +1,91 @@
+{
+ "out": "teams/v-look/sheets/final-2-paint.png",
+ "cols": 4,
+ "cell": [
+  330,
+  248
+ ],
+ "title": "Paint under C15 (paint fidelity 0.02): a band only on a 1-thick slab",
+ "items": [
+  {
+   "path": "teams/v-look/img/BLOCKS@n20-img/slab-line-view.png",
+   "label": "slab-line: blocks\n1-thick slab; band 0.71, sd 0.41"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/slab-line-view.png",
+   "label": "C15 n20\nband 0.62, sd 0.06, ends 1.04"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/slab-line-slice.png",
+   "label": "C15 n20, plan, top layer"
+  },
+  {
+   "path": "teams/v-look/img/FREE@n16/slab-line-view.png",
+   "label": "FREE n16"
+  },
+  {
+   "path": "teams/v-look/img/BLOCKS@n20-img/slab2-line-view.png",
+   "label": "slab2-line: blocks\nsame line on 2-thick ground"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/slab2-line-view.png",
+   "label": "C15 n20\nmiddle band 0.00, parts 6->2"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/slab2-line-slice.png",
+   "label": "C15 n20, plan, top layer"
+  },
+  {
+   "path": "teams/v-look/img/FREE@n16/slab2-line-view.png",
+   "label": "FREE n16"
+  },
+  {
+   "path": "teams/v-look/img/BLOCKS@n16/big2-line-view.png",
+   "label": "big2-line: blocks\nline 2+ blocks from edges"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n16/big2-line-view.png",
+   "label": "C15 n16\narea x1.36, parts 6->1, wrong 10"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n16/big2-line-slice.png",
+   "label": "C15 n16, plan, top layer"
+  },
+  {
+   "path": "teams/v-look/img/FREE@n12/big2-line-view.png",
+   "label": "FREE n12"
+  },
+  {
+   "path": "teams/v-look/img/BLOCKS@n20-img/checker2-view.png",
+   "label": "checker2: blocks\nchecker on 2-thick ground"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/checker2-view.png",
+   "label": "C15 n20\narea x1.13, parts 18->1, wrong 18"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/checker2-slice.png",
+   "label": "C15 n20, plan, top layer"
+  },
+  {
+   "path": "teams/v-look/img/FREE@n16/checker2-view.png",
+   "label": "FREE n16"
+  },
+  {
+   "path": "teams/v-look/img/BLOCKS@n16/text-AZ-view.png",
+   "label": "text-AZ: blocks\npixel letters A, Z"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n16/text-AZ-view.png",
+   "label": "C15 n16\narea x1.26, parts 5->2, wrong 13"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n16/text-AZ-slice.png",
+   "label": "C15 n16, plan, top layer"
+  },
+  {
+   "path": "teams/v-look/img/FREE@n12/text-AZ-view.png",
+   "label": "FREE n12"
+  }
+ ]
+}

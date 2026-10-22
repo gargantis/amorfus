@@ -1,0 +1,18 @@
+FINITE-4 single: 217 ms, 4 steps (nc), Δ 0.313, phases {"6":1}→{"6":1}, rss 78 MB
+FINITE-4 pair-same: 224 ms, 4 steps (nc), Δ 0.311, phases {"6":1}→{"6":1}, rss 95 MB
+FINITE-4 pair-diff: 106 ms, 4 steps (nc), Δ 0.265, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 92 MB
+FINITE-4 L3-ABC: 209 ms, 4 steps (nc), Δ 0.254, phases {"1":1,"6":1,"7":1}→{"1":1,"6":1,"7":1}, rss 103 MB
+FINITE-4 sq2-AABB: 128 ms, 4 steps (nc), Δ 0.256, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 110 MB
+FINITE-4 cube2-same: 201 ms, 4 steps (nc), Δ 0.218, phases {"6":1}→{"6":1}, rss 115 MB
+FINITE-4 cube2-oneB: 317 ms, 4 steps (nc), Δ 0.231, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 138 MB
+FINITE-4 stairs: 265 ms, 4 steps (nc), Δ 0.224, phases {"6":1}→{"6":1}, rss 157 MB
+FINITE-4 slab-dot: 709 ms, 4 steps (nc), Δ 0.166, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 161 MB
+FINITE-4 slab-line: 1877 ms, 4 steps (nc), Δ 0.179, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 162 MB
+FINITE-4 slab-stripe: 941 ms, 4 steps (nc), Δ 0.151, phases {"6":1,"7":2}→{"6":1,"7":2}, rss 189 MB
+FINITE-4 terrain-step: 1413 ms, 4 steps (nc), Δ 0.088, phases {"1":2,"2":1}→{"1":1,"2":1}, rss 198 MB
+FINITE-4 tunnel: 478 ms, 4 steps (nc), Δ 0.154, phases {"3":1}→{"3":1}, rss 206 MB
+FINITE-4 pillar3: 140 ms, 4 steps (nc), Δ 0.278, phases {"6":1}→{"6":1}, rss 206 MB
+FINITE-4 ring8: 371 ms, 4 steps (nc), Δ 0.247, phases {"6":1}→{"6":1}, rss 206 MB
+FINITE-4 sq2-same: 132 ms, 4 steps (nc), Δ 0.292, phases {"6":1}→{"6":1}, rss 207 MB
+FINITE-4 slab-halves: 815 ms, 4 steps (nc), Δ 0.141, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 201 MB
+FINITE-4 wall 24.11 s maxrss 202224 KB

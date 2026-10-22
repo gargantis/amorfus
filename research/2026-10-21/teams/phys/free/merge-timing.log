@@ -1,0 +1,11 @@
+sq2-checker 3D seed 1 jit 0.001 steps 51 step 24: changes 33, merged 1 | step 27: changes 27, merged 1
+sq2-checker 3D seed 2 jit 0.001 steps 138 step 26: changes 35, merged 1 | step 34: changes 140, merged 1
+sq2-checker 3D seed 3 jit 0.001 steps 137 step 37: changes 8, merged 1 | step 47: changes 55, merged 1
+sq2-checker 2D seed 1 jit 0.001 steps 66 step 7: changes 18, merged 1
+sq2-checker 2D seed 2 jit 0.001 steps 83 step 4: changes 49, merged 1
+sq2-checker 2D seed 3 jit 0.001 steps 67 step 4: changes 47, merged 1
+sq2-checker 2D seed 4 jit 0.001 steps 15 
+sq2-checker 2D seed 4 jit 0.01 steps 88 step 1: changes 199, merged 2
+slab-line 3D seed 2 jit 0.001 steps 305 step 1: changes 6335, merged 2 | step 2: changes 10032, merged 3 | step 34: changes 2000, merged 1
+slab-line 3D seed 1 jit 0.001 steps 196 step 1: changes 6334, merged 2 | step 2: changes 10080, merged 3
+DONE

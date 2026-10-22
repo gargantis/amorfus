@@ -1,0 +1,13 @@
+L10 FID-0.15 n24 cube2-same: faceTop {'maxUp': 0.0417, 'maxDown': 0, 'maxAbs': 0.0417, 'colsOff': 564, 'cols': 900, 'miss': 0} corner {'inset': 0.2675, 'Req': 0.3654} edge faceU 0.0417
+L10 FID-0.15 n24 ring8: hole open False width 0 flatTop {'maxUp': 0, 'maxDown': -0.1667, 'maxAbs': 0.1667, 'colsOff': 46, 'cols': 720, 'miss': 0}
+L12 FID-0.15 n16 tunnel {'0.75': (1.125, 0), '1.5': (1, 0), '2.25': (1.25, 0)} pillar 0.875 1.125 3 single [1.125, 1.125, 1.125] room {'1': (1.125, 0.375), '0.25': (2, 1.75), '0.5': (1.75, 1.375), '1.5': (0, 0), '1.75': (0, 0)}
+L12 FID-0.15-g0.5 n16 tunnel {'0.75': (1.125, 0), '1.5': (1, 0), '2.25': (1.25, 0)} pillar 0.875 1.125 3 single [1.125, 1.125, 1.125] room {'1': (1.125, 0.375), '0.25': (2, 1.75), '0.5': (1.75, 1.375), '1.5': (0, 0), '1.75': (0, 0)}
+L12 FID-0.15-g1.5 n16 tunnel {'0.75': (1.125, 0), '1.5': (1, 0), '2.25': (1.25, 0)} pillar 0.875 1.125 3 single [1.125, 1.125, 1.125] room {'1': (1.125, 0.375), '0.25': (2, 1.75), '0.5': (1.75, 1.375), '1.5': (0, 0), '1.75': (0, 0)}
+L11 FINITE-1 n20 single ext [1.1, 1.1, 1.1] diag 1.3875 diag/axis 1.2614 (sphere 1.0, cube 1.73) cornerReq 0.2713
+L11 FINITE-2 n20 single ext [1.2, 1.2, 1.2] diag 1.2125 diag/axis 1.0104 (sphere 1.0, cube 1.73) cornerReq 0.3202
+L11 FINITE-4 n20 single ext [1.2, 1.2, 1.2] diag 1.2125 diag/axis 1.0104 (sphere 1.0, cube 1.73) cornerReq 0.3549
+L11 CAGE-0.15 n20 single ext [1.2, 1.2, 1.2] diag 1.2125 diag/axis 1.0104 (sphere 1.0, cube 1.73) cornerReq 0.3549
+L11 CAGE-0.25 n20 single ext [1.2, 1.2, 1.2] diag 1.2125 diag/axis 1.0104 (sphere 1.0, cube 1.73) cornerReq 0.3549
+L11 CAGE-0.05 n20 single ext [1.1, 1.1, 1.1] diag 1.5625 diag/axis 1.4205 (sphere 1.0, cube 1.73) cornerReq 0.153
+L11 C15-V0 n20 single ext [1.1, 1, 1.1] diag 1.3875 diag/axis 1.2614 (sphere 1.0, cube 1.73) cornerReq 0.2121
+L11 BLOCKS n20 single ext [1, 1, 1] diag 1.7375 diag/axis 1.7375 (sphere 1.0, cube 1.73) cornerReq 0.0347

@@ -1,0 +1,412 @@
+{
+ "task": "L9",
+ "n": 16,
+ "regime": "FID-0.15 (lib/mbo.mjs, maxSteps 300)",
+ "runs": {
+  "slab5x2": {
+   "steps": 12,
+   "converged": true,
+   "far": {
+    "D0": 2.00039,
+    "lab": 2
+   },
+   "prof": [
+    {
+     "d": 0.025,
+     "D0drop": 0.20965,
+     "labDrop": 0.125
+    },
+    {
+     "d": 0.05,
+     "D0drop": 0.15259,
+     "labDrop": 0.125
+    },
+    {
+     "d": 0.075,
+     "D0drop": 0.11684,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.1,
+     "D0drop": 0.08821,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.15,
+     "D0drop": 0.05169,
+     "labDrop": 0
+    },
+    {
+     "d": 0.2,
+     "D0drop": 0.02874,
+     "labDrop": 0
+    },
+    {
+     "d": 0.25,
+     "D0drop": 0.01494,
+     "labDrop": 0
+    },
+    {
+     "d": 0.3,
+     "D0drop": 0.00688,
+     "labDrop": 0
+    },
+    {
+     "d": 0.4,
+     "D0drop": 0.00096,
+     "labDrop": 0
+    },
+    {
+     "d": 0.5,
+     "D0drop": 0.00007,
+     "labDrop": 0
+    },
+    {
+     "d": 0.75,
+     "D0drop": 0,
+     "labDrop": 0
+    }
+   ]
+  },
+  "slab5x3": {
+   "steps": 10,
+   "converged": true,
+   "far": {
+    "D0": 3.00145,
+    "lab": 3
+   },
+   "prof": [
+    {
+     "d": 0.025,
+     "D0drop": 0.20965,
+     "labDrop": 0.125
+    },
+    {
+     "d": 0.05,
+     "D0drop": 0.15259,
+     "labDrop": 0.125
+    },
+    {
+     "d": 0.075,
+     "D0drop": 0.11684,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.1,
+     "D0drop": 0.08821,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.15,
+     "D0drop": 0.05169,
+     "labDrop": 0
+    },
+    {
+     "d": 0.2,
+     "D0drop": 0.02874,
+     "labDrop": 0
+    },
+    {
+     "d": 0.25,
+     "D0drop": 0.01494,
+     "labDrop": 0
+    },
+    {
+     "d": 0.3,
+     "D0drop": 0.00688,
+     "labDrop": 0
+    },
+    {
+     "d": 0.4,
+     "D0drop": 0.00096,
+     "labDrop": 0
+    },
+    {
+     "d": 0.5,
+     "D0drop": 0.00007,
+     "labDrop": 0
+    },
+    {
+     "d": 0.75,
+     "D0drop": 0,
+     "labDrop": 0
+    }
+   ],
+   "maxDiffD0": 0,
+   "maxDiffD0_shiftRemoved": 0.00106,
+   "maxDiffLab": 0
+  },
+  "slab8x2": {
+   "steps": 15,
+   "converged": true,
+   "far": {
+    "D0": 2,
+    "lab": 2
+   },
+   "prof": [
+    {
+     "d": 0.025,
+     "D0drop": 0.20965,
+     "labDrop": 0.125
+    },
+    {
+     "d": 0.05,
+     "D0drop": 0.15259,
+     "labDrop": 0.125
+    },
+    {
+     "d": 0.075,
+     "D0drop": 0.11684,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.1,
+     "D0drop": 0.08821,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.15,
+     "D0drop": 0.05169,
+     "labDrop": 0
+    },
+    {
+     "d": 0.2,
+     "D0drop": 0.02874,
+     "labDrop": 0
+    },
+    {
+     "d": 0.25,
+     "D0drop": 0.01494,
+     "labDrop": 0
+    },
+    {
+     "d": 0.3,
+     "D0drop": 0.00688,
+     "labDrop": 0
+    },
+    {
+     "d": 0.4,
+     "D0drop": 0.00096,
+     "labDrop": 0
+    },
+    {
+     "d": 0.5,
+     "D0drop": 0.00007,
+     "labDrop": 0
+    },
+    {
+     "d": 0.75,
+     "D0drop": 0,
+     "labDrop": 0
+    }
+   ],
+   "maxDiffD0": 0,
+   "maxDiffD0_shiftRemoved": 0.00039,
+   "maxDiffLab": 0
+  },
+  "ring6-outer": {
+   "steps": 25,
+   "converged": true,
+   "far": {
+    "D0": 2,
+    "lab": 2
+   },
+   "prof": [
+    {
+     "d": 0.025,
+     "D0drop": 0.20965,
+     "labDrop": 0.125
+    },
+    {
+     "d": 0.05,
+     "D0drop": 0.15259,
+     "labDrop": 0.125
+    },
+    {
+     "d": 0.075,
+     "D0drop": 0.11684,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.1,
+     "D0drop": 0.08821,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.15,
+     "D0drop": 0.05169,
+     "labDrop": 0
+    },
+    {
+     "d": 0.2,
+     "D0drop": 0.02874,
+     "labDrop": 0
+    },
+    {
+     "d": 0.25,
+     "D0drop": 0.01494,
+     "labDrop": 0
+    },
+    {
+     "d": 0.3,
+     "D0drop": 0.00688,
+     "labDrop": 0
+    },
+    {
+     "d": 0.4,
+     "D0drop": 0.00096,
+     "labDrop": 0
+    },
+    {
+     "d": 0.5,
+     "D0drop": 0.00007,
+     "labDrop": 0
+    },
+    {
+     "d": 0.75,
+     "D0drop": 0,
+     "labDrop": 0
+    }
+   ],
+   "maxDiffD0": 0,
+   "maxDiffD0_shiftRemoved": 0.00039,
+   "maxDiffLab": 0
+  },
+  "ring6-inner": {
+   "steps": 25,
+   "converged": true,
+   "far": {
+    "D0": 2,
+    "lab": 2
+   },
+   "prof": [
+    {
+     "d": 0.025,
+     "D0drop": 0.20964,
+     "labDrop": 0.125
+    },
+    {
+     "d": 0.05,
+     "D0drop": 0.15259,
+     "labDrop": 0.125
+    },
+    {
+     "d": 0.075,
+     "D0drop": 0.11684,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.1,
+     "D0drop": 0.08821,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.15,
+     "D0drop": 0.05169,
+     "labDrop": 0
+    },
+    {
+     "d": 0.2,
+     "D0drop": 0.02874,
+     "labDrop": 0
+    },
+    {
+     "d": 0.25,
+     "D0drop": 0.01494,
+     "labDrop": 0
+    },
+    {
+     "d": 0.3,
+     "D0drop": 0.00688,
+     "labDrop": 0
+    },
+    {
+     "d": 0.4,
+     "D0drop": 0.00096,
+     "labDrop": 0
+    },
+    {
+     "d": 0.5,
+     "D0drop": 0.00007,
+     "labDrop": 0
+    },
+    {
+     "d": 0.75,
+     "D0drop": 0,
+     "labDrop": 0
+    }
+   ],
+   "maxDiffD0": 0.00001,
+   "maxDiffD0_shiftRemoved": 0.0004,
+   "maxDiffLab": 0
+  },
+  "longL": {
+   "steps": 31,
+   "converged": true,
+   "far": {
+    "D0": 2,
+    "lab": 2
+   },
+   "prof": [
+    {
+     "d": 0.025,
+     "D0drop": 0.16095,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.05,
+     "D0drop": 0.11286,
+     "labDrop": 0.0625
+    },
+    {
+     "d": 0.075,
+     "D0drop": 0.08002,
+     "labDrop": 0
+    },
+    {
+     "d": 0.1,
+     "D0drop": 0.05807,
+     "labDrop": 0
+    },
+    {
+     "d": 0.15,
+     "D0drop": 0.02923,
+     "labDrop": 0
+    },
+    {
+     "d": 0.2,
+     "D0drop": 0.01479,
+     "labDrop": 0
+    },
+    {
+     "d": 0.25,
+     "D0drop": 0.00674,
+     "labDrop": 0
+    },
+    {
+     "d": 0.3,
+     "D0drop": 0.0026,
+     "labDrop": 0
+    },
+    {
+     "d": 0.4,
+     "D0drop": 0.0002,
+     "labDrop": 0
+    },
+    {
+     "d": 0.5,
+     "D0drop": 0,
+     "labDrop": 0
+    },
+    {
+     "d": 0.75,
+     "D0drop": 0,
+     "labDrop": 0
+    }
+   ],
+   "maxDiffD0": 0.0487,
+   "maxDiffD0_shiftRemoved": 0.04909,
+   "maxDiffLab": 0.0625
+  }
+ }
+}

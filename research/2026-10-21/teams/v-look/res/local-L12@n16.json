@@ -1,0 +1,215 @@
+{
+ "task": "L12",
+ "n": 16,
+ "regime": "FID-0.15 (lib/mbo.mjs, maxSteps 300)",
+ "runs": {
+  "slab8x2x4": {
+   "steps": 11,
+   "converged": true,
+   "farSeamD0": 1.9598,
+   "farAwayD0": 2.0625,
+   "prof": [
+    {
+     "d": 0.05,
+     "seamDev": 0.32117,
+     "awayDev": 0.21509,
+     "extra": 0.10608,
+     "labSeam": 1.75,
+     "labAway": 1.875
+    },
+    {
+     "d": 0.1,
+     "seamDev": 0.16474,
+     "awayDev": 0.15071,
+     "extra": 0.01403,
+     "labSeam": 1.875,
+     "labAway": 1.9375
+    },
+    {
+     "d": 0.2,
+     "seamDev": 0.06339,
+     "awayDev": 0.09124,
+     "extra": -0.02785,
+     "labSeam": 1.9375,
+     "labAway": 2
+    },
+    {
+     "d": 0.3,
+     "seamDev": 0.02176,
+     "awayDev": 0.06938,
+     "extra": -0.04763,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 0.4,
+     "seamDev": 0.0053,
+     "awayDev": 0.06346,
+     "extra": -0.05816,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 0.5,
+     "seamDev": 0.00089,
+     "awayDev": 0.06257,
+     "extra": -0.06167,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 0.6,
+     "seamDev": 0.00005,
+     "awayDev": 0.0625,
+     "extra": -0.06245,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 0.75,
+     "seamDev": 0,
+     "awayDev": 0.06212,
+     "extra": -0.06212,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 1,
+     "seamDev": 0,
+     "awayDev": 0.04357,
+     "extra": -0.04357,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 1.25,
+     "seamDev": 0,
+     "awayDev": 0.00425,
+     "extra": -0.00425,
+     "labSeam": 2,
+     "labAway": 2.0625
+    },
+    {
+     "d": 1.5,
+     "seamDev": 0,
+     "awayDev": 0,
+     "extra": 0,
+     "labSeam": 2,
+     "labAway": 2.0625
+    },
+    {
+     "d": 2,
+     "seamDev": 0,
+     "awayDev": 0,
+     "extra": 0,
+     "labSeam": 2,
+     "labAway": 2.0625
+    }
+   ]
+  },
+  "slab8x2x8": {
+   "steps": 22,
+   "converged": true,
+   "farSeamD0": 1.9598,
+   "farAwayD0": 2.0625,
+   "prof": [
+    {
+     "d": 0.05,
+     "seamDev": 0.32117,
+     "awayDev": 0.21509,
+     "extra": 0.10608,
+     "labSeam": 1.75,
+     "labAway": 1.875
+    },
+    {
+     "d": 0.1,
+     "seamDev": 0.16474,
+     "awayDev": 0.15071,
+     "extra": 0.01403,
+     "labSeam": 1.875,
+     "labAway": 1.9375
+    },
+    {
+     "d": 0.2,
+     "seamDev": 0.06339,
+     "awayDev": 0.09124,
+     "extra": -0.02785,
+     "labSeam": 1.9375,
+     "labAway": 2
+    },
+    {
+     "d": 0.3,
+     "seamDev": 0.02176,
+     "awayDev": 0.06938,
+     "extra": -0.04763,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 0.4,
+     "seamDev": 0.0053,
+     "awayDev": 0.06346,
+     "extra": -0.05816,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 0.5,
+     "seamDev": 0.00089,
+     "awayDev": 0.06257,
+     "extra": -0.06167,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 0.6,
+     "seamDev": 0.00005,
+     "awayDev": 0.0625,
+     "extra": -0.06245,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 0.75,
+     "seamDev": 0,
+     "awayDev": 0.0625,
+     "extra": -0.0625,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 1,
+     "seamDev": 0,
+     "awayDev": 0.0625,
+     "extra": -0.0625,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 1.25,
+     "seamDev": 0,
+     "awayDev": 0.0625,
+     "extra": -0.0625,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 1.5,
+     "seamDev": 0,
+     "awayDev": 0.0625,
+     "extra": -0.0625,
+     "labSeam": 2,
+     "labAway": 2
+    },
+    {
+     "d": 2,
+     "seamDev": 0,
+     "awayDev": 0.05872,
+     "extra": -0.05872,
+     "labSeam": 2,
+     "labAway": 2
+    }
+   ]
+  }
+ }
+}

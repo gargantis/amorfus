@@ -1,0 +1,21 @@
+0,0     rule4 6  size 6     | 6:9+1 vs 0:0+0 | win n 0,0 | engine {"6":12}
+1,1     rule4 6  size 6     | 6:1+1 vs 7:15+15 | win n 4,6 | engine {"6(end both)":12}
+2,2     rule4 6  size 6     | 6:1+1 vs 7:15+15 | win n 4,12 | engine {"6(end both)":12}
+3,3     rule4 6  size 6     | 6:1+1 vs 7:15+15 | win n 4,12 | engine {"6(end both)":12}
+4,4     rule4 6  size 6     | 6:1+1 vs 7:15+15 | win n 4,12 | engine {"6(end both)":12}
+5,5     rule4 6  size 6     | 6:1+1 vs 7:15+15 | win n 3,6 | engine {"6(end both)":12}
+SUMMARY lineToBlob FREE {"xs":6,"unanimous":6,"rule4AgreeOnUnanimous":1,"sizeAgreeOnUnanimous":1}
+1,1     rule4 6  size 6     | 6:1+1 vs 7:24+24 | win n 3,6 | engine {"6(end both)":12}
+2,2     rule4 6  size 6     | 6:1+1 vs 7:24+24 | win n 4,12 | engine {"6(end both)":12}
+3,3     rule4 6  size 6     | 6:1+1 vs 7:24+24 | win n 4,12 | engine {"6(end both)":12}
+4,4     rule4 6  size 6     | 6:1+1 vs 7:24+24 | win n 4,12 | engine {"6(end both)":12}
+5,5     rule4 6  size 6     | 6:1+1 vs 7:24+24 | win n 6,10 | engine {"6(end both)":12}
+5,6     rule4 6  size mixed | 7:24+1 vs 6:1+1 | win n 10,6 | engine {"both":12}
+5,7     rule4 6  size mixed | 6:1+1 vs 7:1+24 | win n 4,8 | engine {"both":12}
+6,5     rule4 6  size mixed | 7:24+1 vs 6:1+1 | win n 10,6 | engine {"both":12}
+6,6     rule4 0  size tie   | 6:1+1 vs 7:1+1 | win n 8,8 | engine {"6(end both)":12}
+6,7     rule4 0  size tie   | 7:1+1 vs 6:1+1 | win n 6,6 | engine {"both":12}
+7,5     rule4 6  size mixed | 6:1+1 vs 7:24+1 | win n 4,8 | engine {"both":12}
+7,6     rule4 0  size tie   | 7:1+1 vs 6:1+1 | win n 6,6 | engine {"both":12}
+7,7     rule4 7  size tie   | 6:1+1 vs 7:1+1 | win n 5,4 | engine {"6(end both)":12}
+SUMMARY lineIntoChecker FREE {"xs":13,"unanimous":13,"rule4AgreeOnUnanimous":0,"sizeAgreeOnUnanimous":0}

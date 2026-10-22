@@ -1,0 +1,5 @@
+builds b-house FINITE-4 n12: 330 blocks, grid 108x96x108, 4 steps, sim 2543 ms, total 3668 ms, 69 surface corners
+builds b-stairs FINITE-4 n12: 186 blocks, grid 108x96x108, 4 steps, sim 1530 ms, total 2461 ms, 90 surface corners
+builds b-painted FINITE-4 n12: 400 blocks, grid 120x72x120, 4 steps, sim 2675 ms, total 3237 ms, 49 surface corners
+builds b-checker FINITE-4 n12: 300 blocks, grid 120x84x120, 4 steps, sim 3572 ms, total 4068 ms, 49 surface corners
+builds b-walls FINITE-4 n12: 198 blocks, grid 108x84x120, 4 steps, sim 1565 ms, total 2556 ms, 96 surface corners

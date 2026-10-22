@@ -1,0 +1,1 @@
+{"regime":"FINITE-2","name":"sq2-same","opts":{"maxSteps":2,"stopAfter":99,"n":16},"ms":60,"steps":2,"converged":false,"lastChanges":[2192,1320],"grid":[64,48,64],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":4,"target":16384,"lambda":0.11420702934265137,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":4,"volume":3.998}]}

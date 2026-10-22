@@ -1,0 +1,12 @@
+FINITE-4 n12 vol   label seam t 0.0937 depth 0.125 | D vseam 0.103,0.038,0.103
+FINITE-4 n12 novol label seam t 0.2396 depth 0.125 | D vseam 0.197,0.166,0.197
+FINITE-4 n16 vol   label seam t 0.1172 depth 0.0625 | D vseam 0.136,0.062,0.104
+FINITE-4 n16 novol label seam t 0.1797 depth 0.1875 | D vseam 0.197,0.167,0.197
+FINITE-4 n20 vol   label seam t 0.1438 depth 0.1 | D vseam 0.166,0.100,0.135
+FINITE-4 n20 novol label seam t 0.1938 depth 0.15 | D vseam 0.227,0.175,0.196
+FID-0.15 n12 vol   label seam t 0.0104 depth 0.0417 | D vseam 0.041,0.025,0.009
+FID-0.15 n12 novol label seam t 0.0937 depth 0.125 | D vseam 0.104,0.061,0.073
+FID-0.15 n16 vol   label seam t -0.0078 depth 0 | D vseam 0.041,0.024,0.009
+FID-0.15 n16 novol label seam t 0.1172 depth 0.0625 | D vseam 0.104,0.061,0.136
+FID-0.15 n20 vol   label seam t -0.0062 depth 0 | D vseam 0.040,0.025,0.040
+FID-0.15 n20 novol label seam t 0.0938 depth 0.05 | D vseam 0.134,0.056,0.102

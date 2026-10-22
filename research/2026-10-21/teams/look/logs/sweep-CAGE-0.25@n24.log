@@ -1,0 +1,6 @@
+CAGE-0.25@n24 single: 487 ms, 7 steps, Δ 0.313, phases {"6":1}→{"6":1}, rss 81 MB
+CAGE-0.25@n24 cube2-same: 2005 ms, 18 steps, Δ 0.305, phases {"6":1}→{"6":1}, rss 121 MB
+CAGE-0.25@n24 sq2-same: 1772 ms, 26 steps, Δ 0.444, phases {"6":1}→{"6":1}, rss 154 MB
+CAGE-0.25@n24 pillar3: 1865 ms, 32 steps, Δ 0.655, phases {"6":1}→{"6":1}, rss 166 MB
+CAGE-0.25@n24 pair-same: 1984 ms, 33 steps, Δ 0.655, phases {"6":1}→{"6":1}, rss 163 MB
+CAGE-0.25@n24 wall 12.66 s maxrss 168220 KB

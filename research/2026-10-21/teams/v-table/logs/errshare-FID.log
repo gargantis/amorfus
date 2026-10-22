@@ -1,0 +1,4 @@
+res/score/t1_FID-0.15_n12.json tabNV: corners 2024, mean error 0.0572
+classes 97/27/92: 3.9% of corners, 13.1% of error; per class: 97: n 49 mean 0.118, 27: n 13 mean 0.637, 92: n 16 mean 0.071
+all ambiguous-union classes: 9.5% of corners, 20.9% of error, mean 0.126 vs others 0.050
+top error classes: 2(00000011) n 256 err-share 14.4% mean 0.065; 249(01111111) n 141 err-share 11.3% mean 0.093; 1(00000001) n 176 err-share 11.3% mean 0.074; 95(00111111) n 205 err-share 11.1% mean 0.063; 27(00011000) n 13 err-share 7.2% mean 0.637; 35(00011111) n 164 err-share 5.6% mean 0.039; 97(00111122) n 49 err-share 5.0% mean 0.118; 289(01112222) n 25 err-share 4.9% mean 0.228

@@ -1,0 +1,35 @@
+{
+ "out": "teams/table/sheets/overlay-cat.png",
+ "cols": 3,
+ "title": "Catalogue (n12); white = sim vertex, red = table (volume), orange = table (no volume), cyan = bevel",
+ "items": [
+  {
+   "path": "teams/table/img/overlay/cat-ball-AB-FID-0.15-z0.png",
+   "label": "ball-AB\nFID-0.15-z0"
+  },
+  {
+   "path": "teams/table/img/overlay/cat-ball-AB-FINITE-4-z0.png",
+   "label": "ball-AB\nFINITE-4-z0"
+  },
+  {
+   "path": "teams/table/img/overlay/cat-stairs-FID-0.15-z1.png",
+   "label": "stairs\nFID-0.15-z1"
+  },
+  {
+   "path": "teams/table/img/overlay/cat-terrain-step-FID-0.15-z2.png",
+   "label": "terrain-step\nFID-0.15-z2"
+  },
+  {
+   "path": "teams/table/img/overlay/cat-terrain-step-FINITE-4-z2.png",
+   "label": "terrain-step\nFINITE-4-z2"
+  },
+  {
+   "path": "teams/table/img/overlay/cat-tunnel-FID-0.15-z1.png",
+   "label": "tunnel\nFID-0.15-z1"
+  }
+ ],
+ "cell": [
+  432,
+  400
+ ]
+}

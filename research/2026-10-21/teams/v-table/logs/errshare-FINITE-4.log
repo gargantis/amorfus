@@ -1,0 +1,4 @@
+res/score/t1_FINITE-4_n12.json tabNV: corners 3132, mean error 0.0450
+classes 97/27/92: 5.6% of corners, 13.8% of error; per class: 97: n 132 mean 0.051, 27: n 13 mean 0.603, 92: n 30 mean 0.161
+all ambiguous-union classes: 14.7% of corners, 30.2% of error, mean 0.092 vs others 0.037
+top error classes: 11(00001112) n 44 err-share 9.9% mean 0.317; 1(00000001) n 306 err-share 8.5% mean 0.039; 2(00000011) n 420 err-share 8.2% mean 0.028; 249(01111111) n 190 err-share 7.1% mean 0.053; 35(00011111) n 217 err-share 6.1% mean 0.040; 27(00011000) n 13 err-share 5.6% mean 0.603; 5(00000111) n 266 err-share 5.5% mean 0.029; 95(00111111) n 270 err-share 5.3% mean 0.028

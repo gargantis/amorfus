@@ -1,0 +1,11 @@
+{"out": "teams/local/sheets/t1-views.png", "cols": 2, "title": "Task 1: 14x2x5 A slab (n=12) before and after one block is added on top at x=8..9", "cell": [520, 300],
+ "items": [
+  {"path": "teams/local/img/t1/view-FID-0.15-base.png", "label": "FID-0.15, base slab"},
+  {"path": "teams/local/img/t1/view-FID-0.15-add-d6.png", "label": "FID-0.15, one block added (bump): skirt <= 1 block"},
+  {"path": "teams/local/img/t1/view-FID-0.05-base.png", "label": "FID-0.05, base slab (stuck at a tie, 139.24 of 140)"},
+  {"path": "teams/local/img/t1/view-FID-0.05-add-d6.png", "label": "FID-0.05, one block added: the stored deficit\nbuilds a mound 3.5-5 blocks wide"},
+  {"path": "teams/local/img/t1/view-CAGE-0.25-base.png", "label": "CAGE-0.25, base slab (136.08 of 140)"},
+  {"path": "teams/local/img/t1/view-CAGE-0.25-add-d6.png", "label": "CAGE-0.25, one block added: whole top face +0.25"},
+  {"path": "teams/local/img/t1/view-FINITE-4-add-d6.png", "label": "FINITE-4, one block added: terrace ring ~2 blocks"},
+  {"path": "teams/local/img/t1/view-FID-0.15-recolour-d6.png", "label": "FID-0.15, one top block recoloured to B\n(the inclusion bulges 0.23)"}
+ ]}

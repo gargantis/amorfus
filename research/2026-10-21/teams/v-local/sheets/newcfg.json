@@ -1,0 +1,59 @@
+{
+ "out": "teams/v-local/sheets/newcfg.png",
+ "cols": 4,
+ "title": "Configurations outside the lambda fit: physics FID-0.15 (left) vs cheap Bl-b1s20 (right)",
+ "cell": [
+  300,
+  220
+ ],
+ "items": [
+  {
+   "path": "teams/v-local/img/newcfg/slab8x3x6-groove-FID-0.15-view.png",
+   "label": "slab 8x3x6 + groove, FID-0.15"
+  },
+  {
+   "path": "teams/v-local/img/newcfg/slab8x3x6-groove-Bl-b1s20-view.png",
+   "label": "groove, Bl-b1s20: mean 0.021 max 0.36\nvolume +0.3 %"
+  },
+  {
+   "path": "teams/v-local/img/newcfg/terrain-a-FID-0.15-view.png",
+   "label": "terrain window a (gen seed 1,1), FID-0.15"
+  },
+  {
+   "path": "teams/v-local/img/newcfg/terrain-a-Bl-b1s20-view.png",
+   "label": "terrain a, Bl-b1s20: mean 0.022 max 0.53\nvolume grass +1.5 % dirt +0.5 %"
+  },
+  {
+   "path": "teams/v-local/img/newcfg2/checker3d-4-FID-0.15-view.png",
+   "label": "3D checker 4x4x4 A/B, FID-0.15"
+  },
+  {
+   "path": "teams/v-local/img/newcfg2/checker3d-4-Bl-b1s20-view.png",
+   "label": "3D checker, Bl-b1s20: mean 0.043 p95 0.08\nvolume -2.1 %"
+  },
+  {
+   "path": "teams/v-local/img/newcfg2/diag-staircase-A-FID-0.15-view.png",
+   "label": "diagonal edge-contact staircase, FID-0.15\n(physics unites: 1 cluster)"
+  },
+  {
+   "path": "teams/v-local/img/newcfg2/diag-staircase-A-Bl-b1s20-view.png",
+   "label": "staircase, Bl-b1s20: mean 0.035 max 0.25\nvolume -3.0 %"
+  },
+  {
+   "path": "teams/v-local/img/newcfg/overhang-FID-0.15-view.png",
+   "label": "overhang (1-thick roof), FID-0.15"
+  },
+  {
+   "path": "teams/v-local/img/newcfg/overhang-Bl-b1s20-view.png",
+   "label": "overhang, Bl-b1s20: mean 0.022\nvolume +1.9 %"
+  },
+  {
+   "path": "teams/v-local/img/newcfg2/wall-stripes-AB-FID-0.15-view.png",
+   "label": "1-thick wall, A/B stripes, FID-0.15"
+  },
+  {
+   "path": "teams/v-local/img/newcfg2/wall-stripes-AB-Bl-b1s20-view.png",
+   "label": "stripes, Bl-b1s20: mean 0.014\nvolume +3.7 % (worst cluster +4.1 %)"
+  }
+ ]
+}

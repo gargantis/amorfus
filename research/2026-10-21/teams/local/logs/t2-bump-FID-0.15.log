@@ -1,0 +1,5 @@
+bump-slab3: 914 ms 15 st | 6:19->18.998 lam 0.11885
+bump-slab5: 1172 ms 15 st | 6:51->51 lam 0.12533
+bump-slab7: 2063 ms 19 st | 6:99->99 lam 0.12216
+bump-bar3x2x9: 1629 ms 22 st | 6:55->55 lam 0.12189
+bump-slab5-pit: 1466 ms 23 st | 6:50->50 lam 0.1154

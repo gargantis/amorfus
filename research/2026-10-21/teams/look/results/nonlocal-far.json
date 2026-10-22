@@ -1,0 +1,170 @@
+{
+ "note": "tunnel alone / with an attached 1x3 pillar on the roof corner / with the pillar detached by a 1-block gap",
+ "runs": [
+  {
+   "regime": "FID-0.15",
+   "scene": "alone",
+   "steps": 40,
+   "ms": 4257,
+   "cells": 614400,
+   "lambdas": [
+    0.0683
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.375,
+   "roof": 2.625,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "barAttached",
+   "steps": 114,
+   "ms": 12008,
+   "cells": 1105920,
+   "lambdas": [
+    0.0725
+   ],
+   "clearCells": {
+    "clearHeightAtW": 0,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": null,
+   "roof": null,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "barDetached",
+   "steps": 40,
+   "ms": 4666,
+   "cells": 1228800,
+   "lambdas": [
+    0.0683,
+    0.1411
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.375,
+   "roof": 2.625,
+   "outerTopY": 4
+  },
+  {
+   "regime": "CAGE-0.15",
+   "scene": "alone",
+   "steps": 27,
+   "ms": 1924,
+   "cells": 614400,
+   "lambdas": [
+    0.0763
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1.75,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.125,
+   "roof": 2.875,
+   "outerTopY": 3.9479
+  },
+  {
+   "regime": "CAGE-0.15",
+   "scene": "barAttached",
+   "steps": 52,
+   "ms": 4831,
+   "cells": 1105920,
+   "lambdas": [
+    0.0763
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1.75,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.125,
+   "roof": 2.875,
+   "outerTopY": 3.9896
+  },
+  {
+   "regime": "CAGE-0.15",
+   "scene": "barDetached",
+   "steps": 27,
+   "ms": 2522,
+   "cells": 1228800,
+   "lambdas": [
+    0.0763,
+    0.1377
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1.75,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.125,
+   "roof": 2.875,
+   "outerTopY": 3.9479
+  },
+  {
+   "regime": "FINITE-4",
+   "scene": "alone",
+   "steps": 4,
+   "ms": 378,
+   "cells": 614400,
+   "lambdas": [
+    0.0397
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.25,
+   "roof": 2.75,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FINITE-4",
+   "scene": "barAttached",
+   "steps": 4,
+   "ms": 512,
+   "cells": 1105920,
+   "lambdas": [
+    0.0515
+   ],
+   "clearCells": {
+    "clearHeightAtW": 0.75,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.3125,
+   "roof": 2.6875,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FINITE-4",
+   "scene": "barDetached",
+   "steps": 4,
+   "ms": 541,
+   "cells": 1228800,
+   "lambdas": [
+    0.0397,
+    0.0974
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.25,
+   "roof": 2.75,
+   "outerTopY": 4
+  }
+ ]
+}

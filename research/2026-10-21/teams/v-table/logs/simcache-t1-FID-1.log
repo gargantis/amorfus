@@ -1,0 +1,14 @@
+t1 t0a FID-0.15 n12: grid 108x96x108, 28 steps, 18910 ms, rss 241 MB
+t1 t0b FID-0.15 n12: grid 108x96x108, 35 steps, 19380 ms, rss 294 MB
+t1 t0s FID-0.15 n12: grid 108x96x108, 97 steps, 82243 ms, rss 291 MB
+t1 t1a FID-0.15 n12: grid 108x96x108, 62 steps, 22048 ms, rss 278 MB
+t1 t1b FID-0.15 n12: grid 108x96x108, 68 steps, 51063 ms, rss 249 MB
+t1 t1s FID-0.15 n12: grid 108x96x108, 129 steps, 109761 ms, rss 255 MB
+t1 t2a FID-0.15 n12: grid 108x96x108, 59 steps, 40796 ms, rss 249 MB
+t1 t2b FID-0.15 n12: grid 108x96x108, 116 steps, 39098 ms, rss 249 MB
+t1 t2s FID-0.15 n12: grid 108x96x108, 62 steps, 48616 ms, rss 249 MB
+t1 t3a FID-0.15 n12: grid 108x96x108, 50 steps, 34375 ms, rss 249 MB
+t1 t3b FID-0.15 n12: grid 108x96x108, 58 steps, 35373 ms, rss 236 MB
+t1 t3s FID-0.15 n12: grid 108x96x108, 36 steps, 30011 ms, rss 253 MB
+t1 t4a FID-0.15 n12: grid 108x96x108, 82 steps, 28182 ms, rss 258 MB
+t1 t4b FID-0.15 n12: grid 108x96x108, 42 steps, 14208 ms, rss 258 MB

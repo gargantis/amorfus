@@ -1,0 +1,27 @@
+{
+ "out": "teams/v-local/sheets/vertexrule-mesh.png",
+ "cols": 2,
+ "title": "b1 vertex rule mesh on generated terrain (chunk 0,0,0 window, seed 1,1)",
+ "cell": [
+  520,
+  400
+ ],
+ "items": [
+  {
+   "path": "teams/v-local/img/mesh/chunk000-window-cubes.png",
+   "label": "cube corners (offset 0)"
+  },
+  {
+   "path": "teams/v-local/img/mesh/chunk000-window-b1line40.png",
+   "label": "b1 rule, line solver (40 bisections)"
+  },
+  {
+   "path": "teams/v-local/img/mesh/chunk000-window-b1line40-offmarked.png",
+   "label": "same; magenta = quads touching corners left\noff the rule's own surface (34 of 230 here)"
+  },
+  {
+   "path": "teams/v-local/img/mesh/chunk000-window-b1-nearestzero.png",
+   "label": "off corners moved to the nearest D=0 point\nof their own field (what the rule intends)"
+  }
+ ]
+}

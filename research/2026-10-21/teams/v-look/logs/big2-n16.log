@@ -1,0 +1,4 @@
+BLOCKS@n16 big2-line: 582 ms, 0 st, cells 1128960, d 0, rss 153 MB
+BLOCKS@n16 big2-checker: 518 ms, 0 st, cells 1128960, d 0, rss 165 MB
+C15-V0@n16 big2-line: 45221 ms, 150 st nc, cells 1128960, d 0.0497, rss 196 MB
+C15-V0@n16 big2-checker: 24516 ms, 54 st, cells 1128960, d 0.0434, rss 186 MB

@@ -1,0 +1,1 @@
+{"set":"t1","name":"t6s","regime":"FID-0.15","n":12,"ms":19044,"steps":34,"converged":true,"changes":8371,"premerged":2,"alive":3,"lambda":[[2,232,0.0071],[3,46,0.0588],[1,77,0.0343]],"phaseMat":[0,2,3,1,0,0],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-77,"oy":50,"oz":47},"dScale":30222,"origin":[-77,50,47],"size":[9,8,9],"evalLo":[-75,52,49],"evalHi":[-70,56,54],"blocks":355}

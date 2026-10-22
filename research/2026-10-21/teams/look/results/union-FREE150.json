@@ -1,0 +1,284 @@
+{
+ "regime": "FREE150",
+ "options": {
+  "note": "defaults: maxSteps 150 (mislabelled BLOCKS in logs/union-1.log)"
+ },
+ "runs": {
+  "diag-edge": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 36,
+    "converged": true,
+    "ms": 1309,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 1
+    },
+    "junction": "A",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 66,
+    "converged": true,
+    "ms": 2118,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 1
+    },
+    "junction": "A",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 74,
+    "converged": true,
+    "ms": 2197,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 1
+    },
+    "junction": "A",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 66,
+    "converged": true,
+    "ms": 1662,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 1
+    },
+    "junction": "A",
+    "unitedA": true,
+    "unitedB": false
+   }
+  ],
+  "diag-corner": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 11,
+    "converged": true,
+    "ms": 375,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 13,
+    "converged": true,
+    "ms": 504,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 13,
+    "converged": true,
+    "ms": 461,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 13,
+    "converged": true,
+    "ms": 424,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   }
+  ],
+  "sq2-checker": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 34,
+    "converged": true,
+    "ms": 2154,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 2,
+     "7": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 51,
+    "converged": true,
+    "ms": 3400,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 1
+    },
+    "junction": "-",
+    "unitedA": true,
+    "unitedB": true
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 138,
+    "converged": true,
+    "ms": 7871,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 1
+    },
+    "junction": "X",
+    "unitedA": true,
+    "unitedB": true
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 137,
+    "converged": true,
+    "ms": 7741,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 1
+    },
+    "junction": "X",
+    "unitedA": true,
+    "unitedB": true
+   }
+  ],
+  "slab-line": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 147,
+    "converged": true,
+    "ms": 34117,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 2
+    },
+    "junctions": "-AAA-",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 150,
+    "converged": false,
+    "ms": 42701,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 2
+    },
+    "junctions": "-AAA-",
+    "unitedA": true,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 150,
+    "converged": false,
+    "ms": 32570,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 1
+    },
+    "junctions": "-AAA-",
+    "unitedA": true,
+    "unitedB": true
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 150,
+    "converged": false,
+    "ms": 28522,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 1,
+     "7": 1
+    },
+    "junctions": "-AAA-",
+    "unitedA": true,
+    "unitedB": true
+   }
+  ]
+ }
+}

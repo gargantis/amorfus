@@ -1,0 +1,650 @@
+{
+ "rule": "minority connects (4x4 across the edge, 3 layers along), ties none, air-X connects, corner-only never",
+ "configs": {
+  "checker-A1-B1": {
+   "rule": "none",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 2,
+     "n2": 2,
+     "verdict": 0
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "none",
+    "FINITE-4": "split:none/A",
+    "CAGE-0.25": "split:none/B/both",
+    "FREE": "split:none/A/both"
+   }
+  },
+  "checker-A1-B2": {
+   "rule": "A",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 2,
+     "n2": 4,
+     "verdict": 6
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "A",
+    "FINITE-4": "A",
+    "CAGE-0.25": "A",
+    "FREE": "A"
+   }
+  },
+  "checker-A1-B4": {
+   "rule": "A",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 2,
+     "n2": 8,
+     "verdict": 6
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "A",
+    "FINITE-4": "A",
+    "CAGE-0.25": "A",
+    "FREE": "A"
+   }
+  },
+  "checker-A2-B1": {
+   "rule": "B",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 4,
+     "n2": 2,
+     "verdict": 7
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "B",
+    "FINITE-4": "B",
+    "CAGE-0.25": "B",
+    "FREE": "B"
+   }
+  },
+  "checker-A4-B1": {
+   "rule": "B",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 8,
+     "n2": 2,
+     "verdict": 7
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "B",
+    "FINITE-4": "B",
+    "CAGE-0.25": "B",
+    "FREE": "B"
+   }
+  },
+  "checker-A2-B2": {
+   "rule": "none",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 4,
+     "n2": 4,
+     "verdict": 0
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "split:none/both/B",
+    "FINITE-4": "none",
+    "CAGE-0.25": "both",
+    "FREE": "split:none/B/both"
+   }
+  },
+  "checker-A2-B4": {
+   "rule": "A",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 4,
+     "n2": 8,
+     "verdict": 6
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "none",
+    "FINITE-4": "A",
+    "CAGE-0.25": "A",
+    "FREE": "A"
+   }
+  },
+  "checker-A4-B2": {
+   "rule": "B",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 8,
+     "n2": 4,
+     "verdict": 7
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "none",
+    "FINITE-4": "B",
+    "CAGE-0.25": "B",
+    "FREE": "B"
+   }
+  },
+  "checker-A4-B4": {
+   "rule": "none",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 8,
+     "n2": 8,
+     "verdict": 0
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "none",
+    "FINITE-4": "none",
+    "CAGE-0.25": "none",
+    "FREE": "split:none/B"
+   }
+  },
+  "diag-edge": {
+   "rule": "A",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 1,
+     "cv": 1,
+     "m1": 6,
+     "m2": 0,
+     "verdict": 6
+    }
+   ],
+   "physics": {
+    "FID-0.15": "A",
+    "FID-0.05": "A",
+    "FINITE-4": "A",
+    "CAGE-0.25": "A",
+    "FREE": "A"
+   }
+  },
+  "diag-edge-3v3": {
+   "rule": "A",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 1,
+     "m1": 6,
+     "m2": 0,
+     "verdict": 6
+    }
+   ],
+   "physics": {
+    "FID-0.15": "A",
+    "FID-0.05": "A",
+    "FINITE-4": "A",
+    "CAGE-0.25": "A",
+    "FREE": "A"
+   }
+  },
+  "diag-edge-3v1": {
+   "rule": "A",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 1,
+     "m1": 6,
+     "m2": 0,
+     "verdict": 6
+    }
+   ],
+   "physics": {
+    "FID-0.15": "A",
+    "FID-0.05": "A",
+    "FINITE-4": "A",
+    "CAGE-0.25": "A",
+    "FREE": "A"
+   }
+  },
+  "diag-corner": {
+   "rule": "none",
+   "xEdges": 0,
+   "sample": [],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "none",
+    "FINITE-4": "none",
+    "CAGE-0.25": "none",
+    "FREE": "none"
+   }
+  },
+  "cube2-checker": {
+   "rule": "none",
+   "xEdges": 6,
+   "sample": [
+    {
+     "axis": 0,
+     "a": 0,
+     "cu": 1,
+     "cv": 1,
+     "m1": 6,
+     "m2": 7,
+     "n1": 4,
+     "n2": 4,
+     "verdict": 0
+    },
+    {
+     "axis": 0,
+     "a": 1,
+     "cu": 1,
+     "cv": 1,
+     "m1": 7,
+     "m2": 6,
+     "n1": 4,
+     "n2": 4,
+     "verdict": 0
+    },
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 1,
+     "cv": 1,
+     "m1": 6,
+     "m2": 7,
+     "n1": 4,
+     "n2": 4,
+     "verdict": 0
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "none",
+    "FINITE-4": "none",
+    "CAGE-0.25": "split:none/both",
+    "FREE": "both"
+   }
+  },
+  "cube2-cornerA": {
+   "rule": "none",
+   "xEdges": 0,
+   "sample": [],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "none",
+    "FINITE-4": "none",
+    "CAGE-0.25": "none",
+    "FREE": "none"
+   }
+  },
+  "cube2-edgeA": {
+   "rule": "A",
+   "xEdges": 1,
+   "sample": [
+    {
+     "axis": 2,
+     "a": 0,
+     "cu": 1,
+     "cv": 1,
+     "m1": 6,
+     "m2": 7,
+     "n1": 2,
+     "n2": 6,
+     "verdict": 6
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "A",
+    "FINITE-4": "A",
+    "CAGE-0.25": "A",
+    "FREE": "A"
+   }
+  },
+  "checker-2layer": {
+   "rule": "none",
+   "xEdges": 2,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 4,
+     "n2": 4,
+     "verdict": 0
+    },
+    {
+     "axis": 1,
+     "a": 1,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 4,
+     "n2": 4,
+     "verdict": 0
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "none",
+    "FINITE-4": "none",
+    "CAGE-0.25": "split:none/both/B",
+    "FREE": "split:none/both/A"
+   }
+  },
+  "slab-line": {
+   "rule": "A",
+   "xEdges": 5,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 1,
+     "cv": 1,
+     "m1": 6,
+     "m2": 7,
+     "n1": 3,
+     "n2": 6,
+     "verdict": 6
+    },
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 4,
+     "n2": 12,
+     "verdict": 6
+    },
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 3,
+     "cv": 3,
+     "m1": 6,
+     "m2": 7,
+     "n1": 4,
+     "n2": 12,
+     "verdict": 6
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "A",
+    "FINITE-4": "A",
+    "CAGE-0.25": "A",
+    "FREE": "A"
+   }
+  },
+  "slab-line4": {
+   "rule": "A",
+   "xEdges": 3,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 1,
+     "cv": 1,
+     "m1": 6,
+     "m2": 7,
+     "n1": 3,
+     "n2": 6,
+     "verdict": 6
+    },
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 4,
+     "n2": 12,
+     "verdict": 6
+    },
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 3,
+     "cv": 3,
+     "m1": 6,
+     "m2": 7,
+     "n1": 3,
+     "n2": 6,
+     "verdict": 6
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "A",
+    "FINITE-4": "A",
+    "CAGE-0.25": "A",
+    "FREE": "A"
+   }
+  },
+  "slab-antiline": {
+   "rule": "B",
+   "xEdges": 5,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 1,
+     "cv": 1,
+     "m1": 7,
+     "m2": 6,
+     "n1": 3,
+     "n2": 6,
+     "verdict": 7
+    },
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 7,
+     "m2": 6,
+     "n1": 4,
+     "n2": 12,
+     "verdict": 7
+    },
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 3,
+     "cv": 3,
+     "m1": 7,
+     "m2": 6,
+     "n1": 4,
+     "n2": 12,
+     "verdict": 7
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "B",
+    "FINITE-4": "B",
+    "CAGE-0.25": "B",
+    "FREE": "B"
+   }
+  },
+  "slab-line-2high": {
+   "rule": "A",
+   "xEdges": 10,
+   "sample": [
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 1,
+     "cv": 1,
+     "m1": 6,
+     "m2": 7,
+     "n1": 6,
+     "n2": 12,
+     "verdict": 6
+    },
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 2,
+     "cv": 2,
+     "m1": 6,
+     "m2": 7,
+     "n1": 8,
+     "n2": 24,
+     "verdict": 6
+    },
+    {
+     "axis": 1,
+     "a": 0,
+     "cu": 3,
+     "cv": 3,
+     "m1": 6,
+     "m2": 7,
+     "n1": 8,
+     "n2": 24,
+     "verdict": 6
+    }
+   ],
+   "physics": {
+    "FID-0.15": "none",
+    "FID-0.05": "A",
+    "FINITE-4": "A",
+    "CAGE-0.25": "A"
+   }
+  }
+ },
+ "agreement": {
+  "FID-0.15": {
+   "agree": 10,
+   "disagree": 11,
+   "tie": 0,
+   "list": [
+    "checker-A1-B2: rule A, physics none",
+    "checker-A1-B4: rule A, physics none",
+    "checker-A2-B1: rule B, physics none",
+    "checker-A4-B1: rule B, physics none",
+    "checker-A2-B4: rule A, physics none",
+    "checker-A4-B2: rule B, physics none",
+    "cube2-edgeA: rule A, physics none",
+    "slab-line: rule A, physics none",
+    "slab-line4: rule A, physics none",
+    "slab-antiline: rule B, physics none",
+    "slab-line-2high: rule A, physics none"
+   ]
+  },
+  "FID-0.05": {
+   "agree": 19,
+   "disagree": 2,
+   "tie": 1,
+   "list": [
+    "checker-A2-B4: rule A, physics none",
+    "checker-A4-B2: rule B, physics none"
+   ]
+  },
+  "FINITE-4": {
+   "agree": 21,
+   "disagree": 0,
+   "tie": 1,
+   "list": []
+  },
+  "CAGE-0.25": {
+   "agree": 20,
+   "disagree": 1,
+   "tie": 3,
+   "list": [
+    "checker-A2-B2: rule none, physics both"
+   ]
+  },
+  "FREE": {
+   "agree": 19,
+   "disagree": 1,
+   "tie": 4,
+   "list": [
+    "cube2-checker: rule none, physics both"
+   ]
+  }
+ }
+}

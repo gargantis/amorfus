@@ -1,0 +1,15 @@
+b-house FINITE-4 corners 69 2320 ms
+  D sym/vtx: cube 0.0206/0.0763 | bevel 0.0639/0.0994 | bevel-placed 0.0377/0.0634 | tabNV 0.0335/0.0295 | tabV 0.0173/0.0301 | tabK8 0.0328/0.027 | onD 0.0261/0 | onDx0.5 0.0166/0.0382 | onL 0.0238/0.0158 | onLx0.5 0.016/0.0443
+  L sym/vtx: cube 0.0177/0.0689 | bevel 0.0627/0.0978 | bevel-placed 0.0351/0.0578 | tabNV 0.0315/0.0346 | tabV 0.0155/0.0258 | tabK8 0.0309/0.0303 | onD 0.0268/0.0158 | onDx0.5 0.0154/0.0361 | onL 0.0231/0 | onLx0.5 0.0147/0.0344
+b-stairs FINITE-4 corners 90 2040 ms
+  D sym/vtx: cube 0.0662/0.1737 | bevel 0.0804/0.0838 | bevel-placed 0.1117/0.1058 | tabNV 0.0929/0.0631 | tabV 0.0426/0.0558 | tabK8 0.0892/0.0597 | onD 0.0405/0 | onDx0.5 0.041/0.0869 | onL 0.0525/0.0195 | onLx0.5 0.0448/0.0933
+  L sym/vtx: cube 0.0597/0.1648 | bevel 0.0754/0.0832 | bevel-placed 0.1058/0.1024 | tabNV 0.087/0.0563 | tabV 0.0371/0.0514 | tabK8 0.0833/0.053 | onD 0.0401/0.0195 | onDx0.5 0.0372/0.0834 | onL 0.0471/0 | onLx0.5 0.0393/0.0824
+b-painted FINITE-4 corners 49 628 ms
+  D sym/vtx: cube 0.0143/0.0113 | bevel 0.0143/0.1649 | bevel-placed 0.0143/0.1005 | tabNV 0.1324/0.19 | tabV 0.0263/0.0813 | tabK8 0.1095/0.207 | onD 0.0153/0 | onDx0.5 0.0138/0.0056 | onL 0.0142/0.0112 | onLx0.5 0.0143/0.0112
+  L sym/vtx: cube 0.0015/0.0001 | bevel 0.0015/0.1589 | bevel-placed 0.0015/0.0944 | tabNV 0.1412/0.1818 | tabV 0.0299/0.0744 | tabK8 0.1203/0.1995 | onD 0.0104/0.0112 | onDx0.5 0.0052/0.0056 | onL 0.0016/0 | onLx0.5 0.0015/0.0001
+b-checker FINITE-4 corners 49 1109 ms
+  D sym/vtx: cube 0.0289/0.0661 | bevel 0.0289/0.0661 | bevel-placed 0.0289/0.0661 | tabNV 0.2614/0.1891 | tabV 0.0553/0.0252 | tabK8 0.2614/0.1891 | onD 0.0771/0 | onDx0.5 0.0461/0.033 | onL 0.0887/0.012 | onLx0.5 0.0521/0.027
+  L sym/vtx: cube 0.0167/0.078 | bevel 0.0167/0.078 | bevel-placed 0.0167/0.078 | tabNV 0.2519/0.1771 | tabV 0.0477/0.0358 | tabK8 0.2519/0.1771 | onD 0.0683/0.012 | onDx0.5 0.0385/0.045 | onL 0.0793/0 | onLx0.5 0.0446/0.039
+b-walls FINITE-4 corners 96 1691 ms
+  D sym/vtx: cube 0.028/0.0842 | bevel 0.0732/0.0692 | bevel-placed 0.0732/0.0692 | tabNV 0.0876/0.0717 | tabV 0.034/0.0266 | tabK8 0.0832/0.0666 | onD 0.037/0 | onDx0.5 0.0267/0.0421 | onL 0.0431/0.0114 | onLx0.5 0.0292/0.0441
+  L sym/vtx: cube 0.0189/0.081 | bevel 0.0651/0.062 | bevel-placed 0.0651/0.062 | tabNV 0.0784/0.0653 | tabV 0.0258/0.025 | tabK8 0.0742/0.0602 | onD 0.0371/0.0114 | onDx0.5 0.0225/0.0447 | onL 0.0347/0 | onLx0.5 0.0212/0.0405

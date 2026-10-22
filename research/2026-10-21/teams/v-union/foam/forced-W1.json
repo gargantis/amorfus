@@ -1,0 +1,39 @@
+{
+ "cfg": "W1",
+ "X": [
+  0,
+  0
+ ],
+ "runs": [
+  {
+   "forced": null,
+   "E": 32.05165,
+   "converged": false,
+   "t": 40.004,
+   "contact": null,
+   "bubbles": "7:8 6:12 6:12",
+   "picks": "0,0:77",
+   "s": 3
+  },
+  {
+   "forced": 6,
+   "E": 34.18716,
+   "converged": false,
+   "t": 40.003,
+   "contact": null,
+   "bubbles": "7:4 7:4 6:24",
+   "picks": "0,0:66",
+   "s": 2
+  },
+  {
+   "forced": 7,
+   "E": 32.05165,
+   "converged": false,
+   "t": 40.004,
+   "contact": null,
+   "bubbles": "7:8 6:12 6:12",
+   "picks": "0,0:77",
+   "s": 2
+  }
+ ]
+}

@@ -1,0 +1,406 @@
+{
+ "regime": "C15-V0-km10",
+ "n": 16,
+ "runs": {
+  "slab-line": {
+   "regime": "C15-V0-km10",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.1,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 18,
+   "converged": true,
+   "ms": 3307,
+   "lastChanges": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "cells": 259584,
+   "delta": 0.0216,
+   "geoDelta": 0.0032,
+   "vol": {
+    "worstPhaseRel": 0.0028
+   },
+   "phases": {
+    "6": 1,
+    "7": 2
+   },
+   "lambdas": [
+    0.1911,
+    0.1997,
+    0.1997
+   ],
+   "band": {
+    "mean": 0.6859,
+    "sd": 0.2899,
+    "min": 0.2656,
+    "max": 1.0469
+   },
+   "bandEnd0": {
+    "mean": 0.8814,
+    "sd": 0.3579,
+    "min": 0.2969,
+    "max": 1.3906
+   },
+   "bandEnd1": {
+    "mean": 0.8824,
+    "sd": 0.3716,
+    "min": 0.2656,
+    "max": 1.3906
+   },
+   "lookBandTop": {
+    "mean": 0.6859,
+    "sd": 0.2901,
+    "min": 0.2734,
+    "max": 1.0547
+   },
+   "paint": {
+    "area0": 6,
+    "area": 5.9219,
+    "areaRatio": 0.987,
+    "gained": 0.2344,
+    "lost": 0.3125,
+    "parts0": 6,
+    "parts": 1,
+    "partSizes": [
+     5.922
+    ],
+    "blocksWrong": 0,
+    "blocks": 36
+   },
+   "junctions": "AAAAA",
+   "flatB": [
+    {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "colsOff": 0,
+     "cols": 510,
+     "miss": 0
+    },
+    {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "colsOff": 0,
+     "cols": 510,
+     "miss": 0
+    }
+   ],
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  },
+  "big2-line": {
+   "regime": "C15-V0-km10",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.1,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 150,
+   "converged": false,
+   "ms": 57946,
+   "lastChanges": [
+    32,
+    32,
+    64,
+    40
+   ],
+   "cells": 1128960,
+   "delta": 0.0334,
+   "geoDelta": 0.0109,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.0851,
+    0.1654
+   ],
+   "band": {
+    "mean": 1.319,
+    "sd": 0.3936,
+    "min": 0.0156,
+    "max": 1.5781
+   },
+   "bandEnd0": {
+    "mean": 0,
+    "sd": 0,
+    "min": 0,
+    "max": 0
+   },
+   "bandEnd1": {
+    "mean": 0,
+    "sd": 0,
+    "min": 0,
+    "max": 0
+   },
+   "paint": {
+    "area0": 6,
+    "area": 7.4922,
+    "areaRatio": 1.2487,
+    "gained": 3.4922,
+    "lost": 2,
+    "parts0": 6,
+    "parts": 1,
+    "partSizes": [
+     7.492
+    ],
+    "blocksWrong": 8,
+    "blocks": 100
+   },
+   "junctions": "-----",
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  },
+  "big2-checker": {
+   "regime": "C15-V0-km10",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.1,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 78,
+   "converged": true,
+   "ms": 33411,
+   "lastChanges": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "cells": 1128960,
+   "delta": 0.0395,
+   "geoDelta": 0.0109,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.0851,
+    0.1604
+   ],
+   "paint": {
+    "area0": 8,
+    "area": 9.4141,
+    "areaRatio": 1.1768,
+    "gained": 3.4453,
+    "lost": 2.0313,
+    "parts0": 8,
+    "parts": 1,
+    "partSizes": [
+     9.414
+    ],
+    "blocksWrong": 4,
+    "blocks": 100
+   },
+   "paintB": {
+    "area0": 8,
+    "area": 6.5859,
+    "areaRatio": 0.8232,
+    "gained": 2.0313,
+    "lost": 3.4453,
+    "parts0": 8,
+    "parts": 4,
+    "partSizes": [
+     2.5,
+     2.5,
+     0.793,
+     0.793
+    ],
+    "blocksWrong": 4,
+    "blocks": 16
+   },
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  },
+  "text-AZ": {
+   "regime": "C15-V0-km10",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.1,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 108,
+   "converged": true,
+   "ms": 51922,
+   "lastChanges": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "cells": 729600,
+   "delta": 0.0719,
+   "geoDelta": 0.0115,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 2,
+    "7": 1
+   },
+   "lambdas": [
+    0.1223,
+    0.1997,
+    0.1967
+   ],
+   "paint": {
+    "area0": 19,
+    "area": 22.75,
+    "areaRatio": 1.1974,
+    "gained": 5.0156,
+    "lost": 1.2656,
+    "parts0": 5,
+    "parts": 2,
+    "partSizes": [
+     11.75,
+     11
+    ],
+    "blocksWrong": 4,
+    "blocks": 63
+   },
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  },
+  "slab2-dot": {
+   "regime": "C15-V0-km10",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.1,
+     "box": {
+      "outH": 0.125,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 16,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 19,
+   "converged": true,
+   "ms": 3703,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "cells": 309760,
+   "delta": 0.0171,
+   "geoDelta": 0.0133,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1394,
+    0.2194
+   ],
+   "paint": {
+    "area0": 1,
+    "area": 1.3125,
+    "areaRatio": 1.3125,
+    "gained": 0.3125,
+    "lost": 0,
+    "parts0": 1,
+    "parts": 1,
+    "partSizes": [
+     1.313
+    ],
+    "blocksWrong": 0,
+    "blocks": 25
+   },
+   "flat": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 868,
+    "miss": 0
+   },
+   "Abelow": {
+    "start": 0,
+    "end": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,80 @@
+{
+ "regime": "C15-V0",
+ "n": 12,
+ "runs": {
+  "terrain-step": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0.0833,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 12,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 20,
+   "converged": true,
+   "ms": 2461,
+   "lastChanges": [
+    22,
+    0,
+    0,
+    0
+   ],
+   "cells": 216216,
+   "delta": 0.0282,
+   "geoDelta": 0.0065,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "1": 1,
+    "2": 1
+   },
+   "lambdas": [
+    0.2395,
+    0.1836
+   ],
+   "flatLow": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 756,
+    "miss": 0
+   },
+   "flatHigh": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 756,
+    "miss": 0
+   },
+   "grass": {
+    "area0": 30,
+    "area": 29.9722,
+    "areaRatio": 0.9991,
+    "gained": 0,
+    "lost": 0.0278,
+    "parts0": 1,
+    "parts": 1,
+    "partSizes": [
+     29.972
+    ],
+    "blocksWrong": 0,
+    "blocks": 30
+   }
+  }
+ }
+}

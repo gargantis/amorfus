@@ -1,0 +1,22 @@
+{
+ "verifier": "v-union (round 2)",
+ "scripts": ["vu.mjs (toolkit: X census, rule4 copy, size rule, engine loop with merge log, annealing)", "cfg-v.mjs (attack configs W1, L2, LX, ABACbig, ...)", "foamrun.mjs / foamrobust.mjs / foamprobe.mjs / foamdecide.mjs / forced.mjs (exact solver, phys foam2d.mjs imported read-only)", "eng2d.mjs / engmany.mjs / eng2dmix.mjs / eng3d.mjs / checker3d.mjs / lam0.mjs / xfixed2.mjs / abcd.mjs / l18rule.mjs (+ loclib copy of local's lib) / img.mjs"],
+ "key_results": {
+  "W1 (rule4 A, size B)": "engine B: FREE 12/12 (logs/eng-W1-n32.log), FINITE-4 9/9, CAGE-0.25 9/9 (logs/eng-W1-n32-otherreg.log), n64/n128/s0.1/s0.3 3/3 each (logs/eng-resolution.log), g 0.5/1.5 3/3 (logs/g-sweep-same.log), 3D n12 4/4 and 2-high 4/4 (logs/e3d-W1.log); exact solver B 8/8 orientations (logs/foam-robust-h04.log), 64/64 settings (logs/foam-robust-sweep.log)",
+  "L2 (rule4 none, size B)": "engine B FREE 12/12 (logs/eng-L2-n32.log), FINITE-4 12/12, CAGE 12/12 (logs/eng-otherreg.log); exact B 64/64; engine at g 1.5 flips to A 3/3 (logs/g-sweep-same.log)",
+  "L2-shortA (rule4 none, size B)": "engine A (larger dominoes) FREE 12/12 (logs/eng-L2-shortA-n32.log), FINITE-4 12/12, CAGE 12/12, n64/n128/s0.1 3/3; exact A in 48/64 settings, B in 16/64 (foam/robust-L2-shortA-hsweep.json); exact pre-split rates favour B 1.41449 v 1.41394 (logs/foamprobe.log); A pick follows B-line splits in the same scan (logs/foamdecide-L2-shortA.log)",
+  "LX-10x4 (rule4 none, sizes tie)": "engine B 12/12 FREE, 12/12 FINITE-4, 12/12 CAGE, n64/n128/s0.1/s0.3 3/3; exact A 64/64 but pre-split rates tie 1.41422 v 1.41421 (logs/foamprobe.log)",
+  "LX-8x2": "engine B 12/12; exact B 8/8; rule4 B",
+  "LX-6x6 (exact mirror tie)": "engine j0 none 9/9, frozen 1e-3: A1 B2; exact solver picks by orientation 4/4 split (logs/foam-robust-h04 shows LX-6x6 tally 66:4 77:4)",
+  "step-1 lambda (engine) vs decision": "higher-lambda pair connected in W1, L2, L2-shortA, LX-10x4, LX-8x2, checkerSmallA, slabLine (5 X), lineToBlob (5 X), tripleLine (7 X); tie in LX-6x6/sq2checker (logs/lam0-n32.log, logs/lam0-slab.log)",
+  "mixed X": "diag-edge-diff exact apart g 0.25-1.5; engine s0.2 adheres all g (film 2.031/1.906/1.563/1.094), s0.1 adheres g 0.25/0.5 (1.844/1.766), apart g 1/1.5 (logs/mix-diagEdgeDiff.log). L3-ABC exact B|C for g 0.6/0.9/1, A|air for g 1.1/1.3; engine B|C film at all g and both s (0.64-1.20) (logs/mix-L3ABC.log). ABACbig: A pair unites, B|C film 0, all g 0.1-1, engine and exact (logs/mix-ABACbig.log)",
+  "3D": "cube2-checker j0 both (A4 B4), frozen s1-s3 both, s4/s5 frozen at step 14 with 8 bubbles and X lines 2.125 blocks per axis (logs/e3d-cube2-checker.log, logs/cube2-checker-census.log); sq2-checker 3D layering both in s2/s3/s5 and annNM 3/3, X line 1.375 at j0 (logs/sq2-checker-3d-census.log); LX-vertical j0 none, s2 both (logs/e3d-cross.log)",
+  "corner-only": "deterministic no union (diag-corner, cube2-cornerA, cube2-corner4); prior anneal (merge on) unites at step 1 in 3/3 diag-corner, 3/3 cube2-cornerA (logs/e3d-corner-ann.log); deferred-merge anneal unites 3/3 each incl. cube2-corner4 (logs/e3d-corner.log, logs/e3d-corner4.log)",
+  "annealing protocol": "W1 both pairs merged at step 1 with A in 2 pieces at amp 0.01/0.03/0.1 (logs/eng-W1-n32.log, logs/eng-W1-n32-annlow.log); sq2-ABCD anneal seeds 6-15 resolve 10/10 (walls 0.56-0.63), frozen 0.1 seeds 1-5: X 1/5, stubs <=0.125 in 4/5 (logs/abcd-anneal.log)",
+  "x-fixed-point": "equal quadrants 0 changes in 5 and 60 steps; ABCD 3/2/2/1 89 changes within 1 block in 5 steps and cross gone by 60; 3/2/2/2 g1 still 4 phases after 60 (logs/xfixed2.log)",
+  "C8": "checker-smallA pick E 12.91609 vs forced B 12.24332 (logs/forced-checkerSmallA.log); L2-shortA pick 30.948 vs forced 29.132 (not converged, logs/forced-L2-shortA.log); W1 pick 32.05 vs forced A 34.19 (logs/forced-W1.log)",
+  "FREE late merges": "lineToBlob: A line unites at step 1, B halves at step 42 (logs/many-line.log 12/12 'end both'; eng/lineToBlob-FREE-n32-g1-s0.2.json); slab-line B halves stay 2 (eng/slabLine-FREE-n32-g1-s0.2.json)",
+  "L18": "FID-0.15 necks 0 at n12 and n20 with A imposed (logs/l18-n12.log, logs/l18-n20.log); CAGE-0.25 n12 neck 0.667 incl. B imposed; FINITE-4 n12 neck 0.417, 0.167 with B imposed (logs/l18-n12-other.log)"
+ },
+ "images": "img/v-union-sheet.png (16 labelled panels; spec img/sheet-spec.json)"
+}

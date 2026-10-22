@@ -1,0 +1,158 @@
+{
+ "note": "groove depth below the flat top (blocks), FID-0.15 seam-a5b5L4, local field D0, n = 12",
+ "maxErrDiscrete": 0.00000475,
+ "maxErrContinuous": 0.01864,
+ "contDepthAt0": 0.05384,
+ "rows": [
+  {
+   "x": -0.48,
+   "measured": 0,
+   "discreteModel": 0,
+   "continuousModel": 0
+  },
+  {
+   "x": -0.44,
+   "measured": -0.00002,
+   "discreteModel": -0.00002,
+   "continuousModel": -0.00002
+  },
+  {
+   "x": -0.4,
+   "measured": -0.00006,
+   "discreteModel": -0.00006,
+   "continuousModel": -0.00005
+  },
+  {
+   "x": -0.36,
+   "measured": -0.00019,
+   "discreteModel": -0.00019,
+   "continuousModel": -0.00016
+  },
+  {
+   "x": -0.32,
+   "measured": -0.00047,
+   "discreteModel": -0.00047,
+   "continuousModel": -0.00041
+  },
+  {
+   "x": -0.28,
+   "measured": -0.00108,
+   "discreteModel": -0.00108,
+   "continuousModel": -0.00099
+  },
+  {
+   "x": -0.24,
+   "measured": -0.00246,
+   "discreteModel": -0.00246,
+   "continuousModel": -0.00218
+  },
+  {
+   "x": -0.2,
+   "measured": -0.00448,
+   "discreteModel": -0.00448,
+   "continuousModel": -0.00441
+  },
+  {
+   "x": -0.16,
+   "measured": -0.00895,
+   "discreteModel": -0.00895,
+   "continuousModel": -0.00828
+  },
+  {
+   "x": -0.12,
+   "measured": -0.01425,
+   "discreteModel": -0.01425,
+   "continuousModel": -0.01445
+  },
+  {
+   "x": -0.08,
+   "measured": -0.02434,
+   "discreteModel": -0.02434,
+   "continuousModel": -0.02366
+  },
+  {
+   "x": -0.04,
+   "measured": -0.0352,
+   "discreteModel": -0.0352,
+   "continuousModel": -0.03661
+  },
+  {
+   "x": 0,
+   "measured": -0.0352,
+   "discreteModel": -0.0352,
+   "continuousModel": -0.05384
+  },
+  {
+   "x": 0.04,
+   "measured": -0.0352,
+   "discreteModel": -0.0352,
+   "continuousModel": -0.03661
+  },
+  {
+   "x": 0.08,
+   "measured": -0.02434,
+   "discreteModel": -0.02434,
+   "continuousModel": -0.02366
+  },
+  {
+   "x": 0.12,
+   "measured": -0.01425,
+   "discreteModel": -0.01425,
+   "continuousModel": -0.01445
+  },
+  {
+   "x": 0.16,
+   "measured": -0.00895,
+   "discreteModel": -0.00895,
+   "continuousModel": -0.00828
+  },
+  {
+   "x": 0.2,
+   "measured": -0.00448,
+   "discreteModel": -0.00448,
+   "continuousModel": -0.00441
+  },
+  {
+   "x": 0.24,
+   "measured": -0.00246,
+   "discreteModel": -0.00246,
+   "continuousModel": -0.00218
+  },
+  {
+   "x": 0.28,
+   "measured": -0.00108,
+   "discreteModel": -0.00108,
+   "continuousModel": -0.00099
+  },
+  {
+   "x": 0.32,
+   "measured": -0.00047,
+   "discreteModel": -0.00047,
+   "continuousModel": -0.00041
+  },
+  {
+   "x": 0.36,
+   "measured": -0.00019,
+   "discreteModel": -0.00019,
+   "continuousModel": -0.00016
+  },
+  {
+   "x": 0.4,
+   "measured": -0.00006,
+   "discreteModel": -0.00006,
+   "continuousModel": -0.00005
+  },
+  {
+   "x": 0.44,
+   "measured": -0.00002,
+   "discreteModel": -0.00002,
+   "continuousModel": -0.00002
+  },
+  {
+   "x": 0.48,
+   "measured": 0,
+   "discreteModel": 0,
+   "continuousModel": 0
+  }
+ ]
+}

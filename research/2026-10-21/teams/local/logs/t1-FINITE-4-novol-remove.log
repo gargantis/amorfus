@@ -1,0 +1,5 @@
+FINITE-4-novol remove base 500 ms 4 steps NOT CONVERGED [{"p":1,"mat":6,"blocks":140,"volume":130.981,"lamRun":0,"lamRender":0.08543}]
+d=1: 417 ms 4 st NC | label diffs 1212, max dist 0.375 | probe dD -0.06513 dD0 -0.06398 dLab -0.08333 | lam 0 (base 0)
+d=2: 366 ms 4 st NC | label diffs 1212, max dist 0.375 | probe dD -0.00242 dD0 0 dLab 0 | lam 0 (base 0)
+d=4: 288 ms 4 st NC | label diffs 1212, max dist 0.375 | probe dD -0.00242 dD0 0 dLab 0 | lam 0 (base 0)
+d=8: 306 ms 4 st NC | label diffs 1212, max dist 0.375 | probe dD -0.00242 dD0 0 dLab 0 | lam 0 (base 0)

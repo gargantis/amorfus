@@ -1,0 +1,6 @@
+FINITE-4@n24 single: 317 ms, 4 steps (nc), Δ 0.313, phases {"6":1}→{"6":1}, rss 82 MB
+FINITE-4@n24 cube2-same: 579 ms, 4 steps (nc), Δ 0.223, phases {"6":1}→{"6":1}, rss 128 MB
+FINITE-4@n24 sq2-same: 302 ms, 4 steps (nc), Δ 0.289, phases {"6":1}→{"6":1}, rss 123 MB
+FINITE-4@n24 pillar3: 280 ms, 4 steps (nc), Δ 0.292, phases {"6":1}→{"6":1}, rss 136 MB
+FINITE-4@n24 pair-same: 190 ms, 4 steps (nc), Δ 0.314, phases {"6":1}→{"6":1}, rss 128 MB
+FINITE-4@n24 wall 5.85 s maxrss 158468 KB

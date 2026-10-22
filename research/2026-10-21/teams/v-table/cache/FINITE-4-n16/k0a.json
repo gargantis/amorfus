@@ -1,0 +1,1 @@
+{"set":"n1","name":"k0a","regime":"FINITE-4","n":16,"ms":1334,"steps":4,"converged":false,"changes":10362,"premerged":0,"alive":3,"lambda":[[2,27,0.0299],[1,5,0.0697],[1,11,0.0715]],"phaseMat":[0,2,1,1,0],"grid":{"NX":96,"NY":80,"NZ":80,"n":16,"ox":-22,"oy":56,"oz":35},"dScale":29865,"origin":[-22,56,35],"size":[6,5,5],"evalLo":[-21,57,36],"evalHi":[-17,60,39],"blocks":43}

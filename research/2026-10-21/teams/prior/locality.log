@@ -1,0 +1,5 @@
+{"regime":{"name":"NOVOL-6","volume":false,"maxSteps":6,"stopAfter":99},"steps6":6,"steps10":6,"comparedCells":9216,"differingCells":0,"kernelRadiusSubcells":20,"reachPerStepBlocks":0.625,"changeDistanceBlocks":4}
+{"regime":{"name":"FINITE-6","maxSteps":6,"stopAfter":99},"steps6":6,"steps10":6,"comparedCells":9216,"differingCells":106,"kernelRadiusSubcells":20,"reachPerStepBlocks":0.625,"changeDistanceBlocks":4}
+{"regime":{"name":"FID-0.15","anchor":{"kind":"fidelity","k":0.15},"maxSteps":200},"steps6":200,"steps10":200,"comparedCells":9216,"differingCells":0,"kernelRadiusSubcells":20,"reachPerStepBlocks":0.625,"changeDistanceBlocks":4}
+{"regime":{"name":"FID-0.15 novol","anchor":{"kind":"fidelity","k":0.15},"volume":false,"maxSteps":200},"steps6":14,"steps10":14,"comparedCells":9216,"differingCells":0,"kernelRadiusSubcells":20,"reachPerStepBlocks":0.625,"changeDistanceBlocks":4}
+done 3.6 s

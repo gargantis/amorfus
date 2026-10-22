@@ -1,0 +1,5 @@
+FID-0.05-novol add base 7780 ms 231 steps  [{"p":1,"mat":6,"blocks":140,"volume":0,"lamRun":0,"lamRender":0}]
+d=1: 7568 ms 231 st | label diffs 0, max dist 0 | probe dD null dD0 null dLab null | lam 0 (base 0)
+d=2: 7997 ms 232 st | label diffs 0, max dist 0 | probe dD null dD0 null dLab null | lam 0 (base 0)
+d=4: 7438 ms 232 st | label diffs 0, max dist 0 | probe dD null dD0 null dLab null | lam 0 (base 0)
+d=8: 6426 ms 231 st | label diffs 0, max dist 0 | probe dD null dD0 null dLab null | lam 0 (base 0)

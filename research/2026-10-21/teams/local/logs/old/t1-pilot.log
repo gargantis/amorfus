@@ -1,0 +1,4 @@
+FID-0.15 add base 6535 ms 45 steps  [{"p":1,"mat":6,"blocks":140,"volume":140,"lamRun":0.17529,"lamRender":0.07076}]
+d=1: 2646 ms 16 st | label diffs 4160, max dist 5.594 | probe dD 0.20124 dLab 0.16667 | lam 0.13277 (base 0.17529)
+d=4: 2656 ms 16 st | label diffs 3440, max dist 3.008 | probe dD 0.00155 dLab 0 | lam 0.13277 (base 0.17529)
+12.16 s 226384 KB

@@ -1,0 +1,6 @@
+{"out": "teams/look/sheets/checker-x.png", "cols": 5, "title": "sq2-checker, FREE (300 steps), jitter 1e-3 seed 2: both pairs connected at different heights", "cell": [240, 200], "items": [
+{"path": "teams/look/img/union/checker-x/view.png", "label": "sq2-checker FREE j1e-3 s2\nview"},
+{"path": "teams/look/img/union/checker-x/plan-y0.15.png", "label": "plan cut y = 0.15"},
+{"path": "teams/look/img/union/checker-x/plan-y0.5.png", "label": "plan cut y = 0.5"},
+{"path": "teams/look/img/union/checker-x/plan-y0.85.png", "label": "plan cut y = 0.85"},
+{"path": "teams/look/img/union/checker-x/diag-section.png", "label": "section x = 1.0"}]}

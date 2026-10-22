@@ -1,0 +1,1237 @@
+{
+  "summary": "Bubble-physics study round 2: four adversarial verifiers test the claims the optimizations rest on (three at a time)",
+  "agentCount": 4,
+  "logs": [
+    "verifier v-union starts",
+    "verifier v-local starts",
+    "verifier v-look starts",
+    "verifier v-local returned",
+    "verifier v-table starts",
+    "verifier v-union returned",
+    "verifier v-look returned",
+    "verifier v-table returned"
+  ],
+  "result": {
+    "results": [
+      {
+        "verifier": "v-local",
+        "summary": "The combined claim is only partly true. A local rule exists that bounds its reach to apron 2 and keeps small features. It does not reproduce the FID-0.15 physics, it fails two of the four game constraints on its own, and its vertex solver misplaces about 3.8 % of terrain corners.\n\nWhat holds:\n- **Locality, by construction and measured.** One block edited changes the b1 field at most 2.43 blocks away (2.65 for the Gaussian version). The vertex rule changes only corners within 1 block of the edit. Apron 2 gives 0 seam mismatches; apron 1 does not.\n- **Exact corner locality of the b1 kernel.** At sigma ≤ 0.204 a corner's field depends only on its 8 blocks.\n- **Volume.** On 15 configurations outside the fitted catalogue, the local-lambda volume error is within ±4 % per material (worst cluster 5.9 %, a 1-block cluster).\n- **Physics checks of other teams.** Local's L1 and L2 reproduce, the far terrace jump scaling as 1/n (−1/12 at n12, −1/16 at n16). Look's far-bar result reproduces exactly.\n\nWhat breaks:\n- **The far-bar effect is drainage.** Under FID-0.15, a 1×1×4 bar attached to the tunnel host keeps 0.14 of its 4 block³, and the tunnel fills 5.40 of 6. The cheap model keeps both the bar and the tunnel, so per-configuration surface error reaches p95 1.0. In other words, the physics deletes thin features when the cluster has a concave sink, and a local rule cannot.\n- **Tunnel clearance.** The sigma-0.2 field itself fails the 0.70 × 1.90 clear-height test (1.75–1.785), not only the vertex rule (mesh 1.73–1.75). Only a doorway through a 1-thick wall passes.\n- **Flat ground.** It never stays at its height: +3/256 on thick ground, +6/256 on each face of a 1-thick floor, −9/256 to +8/256 on mixed-material ground.\n- **Vertex solver.** Fast's \"0.4 % Newton failures\" measured self-consistency (4 vs 16 iterations, reproduced as 65 of 17,284 corners), not correctness. Both solvers leave 3.7–3.8 % of terrain corners off their own surface, although every one of those corners has a surface inside its box. The line solver misplaces 461 of 616 seven-solid two-material corners.\n- **FINITE-T scaling.** Sigma·√T matches the best mean at T = 8 (0.55 against 0.566 predicted) and T = 16 (0.80). The one-step error doubles with each doubling of T, and multi-material and single-material configurations want different sigma.\n\nNothing was written outside teams/v-local, and no process of mine was left running. The folder is backed up.",
+        "verdicts": [
+          {
+            "claim": "combined (fast+local+look+prior): lambda is the only long-range carrier; one MBO step = per-block metaball sum; local lambda_b = a + b((27-n27)/26)^4 reproduces FID-0.15 to ~0.02 with ~2 % volume error, stays local (apron 2), keeps thin features, runs as a + - * / surface-nets vertex rule in 2-8 ms per chunk",
+            "verdict": "partly",
+            "corrected": "A local rule bounded to apron 2 that keeps small features does exist. Its field reach is ≤ 2.65 blocks; vertices change only within 1 block of an edit. It keeps a single block (mesh extent 0.75) and pillars (0.79–0.96). Volume stays within ±4 % per material on 15 configurations outside the fit. It is not a reduction of the FID-0.15 physics. The physics moves volume within a cluster: a thin 1×1×4 bar drains completely into a tunnel ≥ 3 blocks away and the tunnel closes, while the rule keeps both. On its own, the rule fails the 1×2 tunnel clearance (field 1.75–1.785, mesh 1.73–1.75 against 1.90). It also moves flat ground by up to ±9/256. Its vertex solver misplaces 3.7–3.8 % of terrain corners (class means 0.26–0.75 block off its own surface). The 2–8 ms timing applies to the Newton variant, which has that defect; the safeguarded line solver costs 4–20 ms.",
+            "evidence": [
+              "teams/v-local/res/e1-loc.json",
+              "teams/v-local/res/e2-farbar-n12.json",
+              "teams/v-local/res/e2b-drain.json",
+              "teams/v-local/res/e2c-drain-notunnel.json",
+              "teams/v-local/res/e3-newcfg.json",
+              "teams/v-local/res/e3-newcfg2.json",
+              "teams/v-local/res/e4-constraints.json",
+              "teams/v-local/res/e5-b1.json",
+              "teams/v-local/res/e5c-disp.json",
+              "teams/v-local/res/fast-t3time-rerun.json"
+            ],
+            "numbers": "Field reach: Bl-b1s20 2.43 blocks, Bl-g20 2.65; Bx-g20 (exact lambda) reaches the whole scene, 7.7–12.1 blocks. Vertex changes: ≤ 1.0 block from the edit. Volume: −3.0 % to +4.0 % per material. Surface mean against FID-0.15: 0.012–0.043. Tunnel host: mean 0.031, p95 0.17 alone; mean 0.10, p95 1.0 with the bar attached."
+          },
+          {
+            "claim": "fast C1",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-local/res/e7-misc.json",
+              "teams/v-local/src/e7-misc.mjs"
+            ],
+            "numbers": "Four configurations not in t1's list (the far-bar host, overhang, grass terrace, a terrain window), n12. Engine step-1 field against the per-block discrete sum: max 7.29e-8 to 7.59e-8. Against my own Simpson-integrated continuum kernel: 0.0043–0.0047. This is linearity of the blur. The per-cluster lambda solve within the step is not part of the identity."
+          },
+          {
+            "claim": "fast C3",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-local/res/e7-misc.json"
+            ],
+            "numbers": "Independent quadrature at h = 1/200. At sigma 0.2: single 0.6608, pair 0.761, line3 0.7944, 2×2 0.8461, 2×2×2 0.906. At sigma 0.4: single 0, pair 0.1676, 2×2×2 0.6609. Vanishing sigma 0.3956."
+          },
+          {
+            "claim": "fast C4",
+            "verdict": "partly",
+            "corrected": "Exact per-material lambda reproduces FID-0.15 to a mean of 0.012–0.027 on 15 new isolated configurations. It fails where the physics fills a concavity. On the tunnel host the mean is 0.028 (n12) or 0.036 (n16), p95 0.18–0.26, max up to 0.47. With a bar attached 4+ blocks away the physics closes the tunnel and the model does not: mean 0.10, p95 1.0. The n16 reference used margin 0.75.",
+            "evidence": [
+              "teams/v-local/res/e3-newcfg.json",
+              "teams/v-local/res/e3-newcfg2.json",
+              "teams/v-local/res/e2-farbar-n12.json",
+              "teams/v-local/res/e2-farbar-n16.json"
+            ],
+            "numbers": "Bx-g20 surface means on new configurations 0.0124–0.0389. Far-bar host lines: 0.0284 alone and 0.1038 attached at n12; 0.036 and 0.1039 at n16."
+          },
+          {
+            "claim": "fast C5",
+            "verdict": "partly",
+            "corrected": "The best single sigma over 12 catalogue configurations follows 0.2√T: 0.40 at T4, 0.55 at T8 (0.566 predicted), 0.80 at T16. But the best mean error doubles with each doubling of T (0.0089, 0.0162, 0.0271). Per-configuration optima split by material. At T16 the multi-material configurations (pair-diff, sq2-checker, L3-ABC) are best at sigma 0.6, while pair-same, line3, diag-edge and pillar3 are best at ≥ 0.9. So one sigma cannot stand for long relaxations.",
+            "evidence": [
+              "teams/v-local/res/e8-finiteT.json",
+              "teams/v-local/logs/e8-finite4.log",
+              "teams/v-local/logs/e8-finite8.log",
+              "teams/v-local/logs/e8-finite16.log"
+            ],
+            "numbers": "T4 means by sigma 0.3–0.5: 0.0232 / 0.0137 / 0.0089 / 0.015 / 0.0265. These match fast's pattern. T8 at sigma 0.5 / 0.55 / 0.6: 0.0182 / 0.0162 / 0.0211. T16 at 0.6 / 0.7 / 0.8 / 0.9: 0.0393 / 0.0306 / 0.0271 / 0.0277."
+          },
+          {
+            "claim": "fast C6",
+            "verdict": "partly",
+            "corrected": "The volume part holds beyond the catalogue. On 15 new configurations (thin walls, striped walls, overhang, floors with holes, 1×12 bar, grooved slab, grass terrace, two generated-terrain windows, checkers, a diagonal staircase, a lattice frame), per-material error is −3.0 % to +4.0 %. The worst cluster is 5.9 %, a single-block cluster. No cluster of more than 12 blocks exceeds 4 %. The surface accuracy is not uniformly about 0.02: means run 0.012–0.043 and p95 up to 0.12. The rule cannot follow the physics' within-cluster mass transfer (see look L2).",
+            "evidence": [
+              "teams/v-local/res/e3-newcfg.json",
+              "teams/v-local/res/e3-newcfg2.json"
+            ],
+            "numbers": "Bl-b1s20 volume error per material: stripes +3.69 %, floor with holes +3.03 %, wall +2.59 %, staircase −3.04 %, 3D checker −2.14 %, groove +0.33 %. Surface mean: 3D checker 0.0428, staircase 0.0353, terrain-b 0.0264, grass terrace 0.0145."
+          },
+          {
+            "claim": "fast C8",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-local/res/e5-b1.json",
+              "teams/v-local/res/e3-newcfg.json",
+              "teams/v-local/res/e3-newcfg2.json"
+            ],
+            "numbers": "Random 6×6×6 occupancies, 4,000 points in the dual cell, biased to its boundary. Max difference from dropping the outer blocks: 0 at sigma 0.15, 0.2 and 0.204 (support 0.9997). At sigma 0.21 it is 9.9e-4, at 0.25 it is 0.046. On the 15 new configurations, b1 and Gaussian surface means differ by ≤ 0.003."
+          },
+          {
+            "claim": "fast C9",
+            "verdict": "partly",
+            "corrected": "The timing reproduces. But 2–8 ms is the Newton-4 variant, which leaves 3.7 % of terrain corners off-surface. The safeguarded line solver costs 3.97–20.0 ms, as much as the whole repo mesher on cave chunks, and also leaves 3.8 % off-surface. The rule replaces the mesher's corners pass (1.26–8.25 ms), not the whole mesher. Timed in Node on a shared, loaded machine only.",
+            "evidence": [
+              "teams/v-local/res/fast-t3time-rerun.json",
+              "teams/v-local/logs/fast-t3time-rerun.log"
+            ],
+            "numbers": "Non-solid chunks: b1 Newton-4 2.24–7.26 ms, line solver 3.97–20.01 ms, b3 7.19–38.98 ms, repo mesher 4.26–18.48 ms, mesher corners pass 1.26–8.25 ms."
+          },
+          {
+            "claim": "fast C10",
+            "verdict": "partly",
+            "corrected": "Seam exactness and apron 2 are confirmed. 'Newton fails at 0.4 % of corners; the line search always converges' measures solver self-consistency, not correctness. Against the rule's own field, both solvers leave 3.7–3.8 % of terrain corners more than 0.02 block (|D|/|∇D|) from D = 0. Every one of those corners has a sign change inside its clamp box. The line solver misplaces 461 of 616 seven-solid two-material corners (grass/dirt seams), with mean displacement 0.26. Newton-4 and line-40 disagree at 5.1 % of corners (max 0.96). About 743 of the corners are inherently ambiguous: 2-solid corner-only contacts and 4-solid diagonal-edge saddles, where the gradient is zero and no single vertex can lie on the surface (inference).",
+            "evidence": [
+              "teams/v-local/res/fast-t3seam-rerun.json",
+              "teams/v-local/res/fast-t3newton-rerun.json",
+              "teams/v-local/res/e5-b1.json",
+              "teams/v-local/res/e5b-bad.json",
+              "teams/v-local/res/e5c-disp.json",
+              "teams/v-local/sheets/vertexrule-mesh.png"
+            ],
+            "numbers": "Seams: 558 shared corners, 0 mismatches. Apron 2: 0 mismatches in 3 chunks; apron 1: 149–512 mismatches, max 0.961. Newton 4 vs 16: 65 of 17,284 (reproduced). Off-surface: line-40 1,270 and Newton-4 1,252 of 33,592. More than 0.25 block off: 780 (line) and 1,099 (Newton); max 0.59 (line), 1.16 (Newton). Clamp-box hits: 1,045–1,121."
+          },
+          {
+            "claim": "fast C14",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-local/res/e7-misc.json"
+            ],
+            "numbers": "diag-edge at the shared edge. A0-g20: D −0.0243, neck 0. Bl-b1s20: neck 0.364. Bl-g20: 0.332. Bx-g20: 0.364. FID-0.15: neck 0.744 on D, 0.672 on labels. FINITE-4: 0.90 on D, 0.848 on labels. PLAN 7.2 states that diagonal-only contacts stay pinched in the mesh."
+          },
+          {
+            "claim": "fast C15",
+            "verdict": "partly",
+            "corrected": "The physics closes the tunnel (confirmed). The b1 mesh height is 1.734 (confirmed). The single block (mesh extent 0.75 through the centre) and pillars (mesh width 0.79–0.96) pass. But 'the sigma-0.2 one-step field keeps the tunnel' is wrong under the 0.70-wide clear-window test. The field fillets the tunnel's four concave edges, giving clear height 1.75–1.785. Even lambda 0 gives 1.85. In rock the mesh gives 1.73–1.75. Only a doorway through a 1-thick wall passes (mesh 1.92). Flat ground never stays at its height: +3/256 thick, +6/256 per face of a 1-thick floor, −9/256 to +8/256 on mixed-material ground.",
+            "evidence": [
+              "teams/v-local/res/e4-constraints.json",
+              "teams/v-local/res/e1-loc.json",
+              "teams/v-local/src/mesh.mjs"
+            ],
+            "numbers": "Catalogue tunnel: field 1.75 / width 0.95 / height 1.96; mesh 1.734. Thick-rock tunnel: field 1.785, mesh 1.742. Doorway in a 2-thick wall: field 1.78, mesh 1.742. Doorway in a 1-thick wall: field 1.755, mesh 1.922. Flat-ground vertex y offsets: 3/256 thick, 6/256 for a 1-thick floor, checker top −9/256, inlaid patch −8/256 to +8/256."
+          },
+          {
+            "claim": "local L1",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-local/res/e6a-terrace.json",
+              "teams/v-local/res/e6b-membrane-novol.json"
+            ],
+            "numbers": "FID-0.15-novol, bump on a 10×2×4 slab: label changes within 0 block (n12) and 0.031 block (n16), 0 far cells. My cascade attack failed: a framed 1-thick membrane punched with 1, 2, 4 and 9-block holes changed labels at most 0.21 block from the edit, kept 0.974–0.996 of its remaining blocks, and did not unzip."
+          },
+          {
+            "claim": "local L2",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-local/res/e6a-terrace.json",
+              "teams/v-local/res/e6b-membrane-vol.json"
+            ],
+            "numbers": "New geometry (10×2×4 slab, bump at x = 7). The far top-face change is exactly −1/12 at n12 (192 columns) and −1/16 at n16 (719 columns), up to 7.39 blocks away, so the amplitude scales as 1/n. Lambda moved only 0.0806 → 0.0798 at n12. Framed membrane with volume on: single-block holes change labels 4.9–6.2 blocks away."
+          },
+          {
+            "claim": "local L4",
+            "verdict": "confirmed",
+            "corrected": "This holds only where no terrace touches the change, as local stated. On my slab at n12 a terrace touched the bump and the contiguous d* at 1/256 was 3.54.",
+            "evidence": [
+              "teams/v-local/res/e6a-terrace.json"
+            ],
+            "numbers": "FID-0.15 bump skirt in D0 at n16: d* = 0.78 at 1/256, 0.72 at 1/64, 0.59 at 1/16. Volume off: d* 0.21–0.22."
+          },
+          {
+            "claim": "local L13",
+            "verdict": "partly",
+            "corrected": "Under FINITE-4, exact superposition holds for B inclusions (residual about 1e-16) and fails for bumps and pits. For pits, each single pit leaves lambda at 0.266, but the pair moves it to 0.2223. So whether lambda stays fixed cannot be predicted from single features, and caching per-feature corrections is safe only for inclusions.",
+            "evidence": [
+              "teams/v-local/res/e6c-superpos.json"
+            ],
+            "numbers": "12×2×5 slab, separations 2–4, maximum D0 residual within 1.5 blocks: inclusions 1.1e-16 to 4.4e-16; bumps 0.76–0.93 (lambda 0.266 → 0.145 single, 0.05–0.065 pair); pits 0.204."
+          },
+          {
+            "claim": "look L2",
+            "verdict": "confirmed",
+            "corrected": "The mechanism is drainage of a thin feature, not a small pressure shift. The attached bar empties into the tunnel. It happens at FID-0.15 and not at FID-0.25, and not without a concave sink.",
+            "evidence": [
+              "teams/v-local/res/look-nonlocal-wide-n12-rerun.json",
+              "teams/v-local/res/e2-farbar-n16.json",
+              "teams/v-local/res/e2b-drain.json",
+              "teams/v-local/res/e2c-drain-notunnel.json",
+              "teams/v-local/sheets/farbar.png"
+            ],
+            "numbers": "Look's script rerun gives identical numbers: clear height 1.167 → 0, lambda 0.0422 → 0.061, 4.26 block³ changed (3.99 at ≥ 2.5 blocks), detached bar 0 cells. At n16 (margin 0.75): 0.87 → 0. FID-0.15 n12: bar region 0.145 of 4 block³, tunnel hole 5.40 of 6. A standing bar on the tunnel host drains to 0 at FID-0.15 and keeps 3.43 at FID-0.25. Without a tunnel the bar stays (4.41 lying, 3.28 standing)."
+          },
+          {
+            "claim": "look L3",
+            "verdict": "confirmed",
+            "corrected": "This is true of the physics with volume off. It does not mean every non-global model must lose small features: fast's one-step rule with a local lambda keeps them.",
+            "evidence": [
+              "teams/v-local/res/e9-novol-features.json",
+              "teams/v-local/res/e4-constraints.json"
+            ],
+            "numbers": "FID-0.15 with volume off, volume / blocks: single 0, pillar3 0, ring8 0, 5×1×5 plate 0, 5×2×5 slab 0.939. With volume on all are about 1.0. The local-lambda rule gives single-block mesh extent 0.75 and pillar width 0.79–0.96."
+          },
+          {
+            "claim": "prior volume-nonlocal",
+            "verdict": "confirmed",
+            "corrected": "The inference 'volume regimes need the per-cluster pressure outside the chunk job' holds only for reproducing the physics. Fast's local lambda is an approximate local alternative (volume ±4 %) that deliberately drops the non-local effects.",
+            "evidence": [
+              "teams/v-local/res/e6a-terrace.json",
+              "teams/v-local/res/e6b-membrane-novol.json",
+              "teams/v-local/res/e6b-membrane-vol.json",
+              "teams/v-local/res/e1-loc.json"
+            ],
+            "numbers": "Volume off: changes ≤ 0.031 block (slab) and ≤ 0.21 (membrane). Volume on: changes reach 4.9–7.4 blocks. The exact-lambda one-step model also changes everywhere (Bx-g20 reach 7.7–12.1 blocks)."
+          }
+        ],
+        "newFindings": [
+          {
+            "finding": "FID-0.15's far-bar non-locality is mass transfer. A thin same-cluster feature drains completely into a concavity ≥ 3 blocks away: an attached 1×1×4 bar empties and fills a 1×2 tunnel. FID-0.25 does not do this, and neither does any configuration without a concave sink. So FID-0.15 does not keep thin features in general, and the cheap local model, which keeps them, departs from the physics exactly here.",
+            "evidence": [
+              "teams/v-local/res/e2b-drain.json",
+              "teams/v-local/res/e2c-drain-notunnel.json",
+              "teams/v-local/sheets/farbar.png"
+            ]
+          },
+          {
+            "finding": "The b1 vertex rule leaves 3.7–3.8 % of generated-terrain corners off its own D = 0 surface, although every such corner has a surface inside its clamp box. The line solver fails 75 % of 7-solid two-material corners (grass/dirt seams): 461 of 616. Displacements reach 0.59 (line) and 1.16 (Newton). The defect shows on terrain as dirt showing through at seams: 34 of 230 corners in one window. Fast's 0.4 % figure measured only agreement between 4 and 16 Newton iterations.",
+            "evidence": [
+              "teams/v-local/res/e5b-bad.json",
+              "teams/v-local/res/e5c-disp.json",
+              "teams/v-local/res/e10-meshimg.json",
+              "teams/v-local/sheets/vertexrule-mesh.png"
+            ]
+          },
+          {
+            "finding": "Any sigma-0.2 blur model fails the 0.70 × 1.90 tunnel window before any vertex rule is applied. The four concave edges of a 1×2 hole fill by about 0.075 at 0.15 from the wall, giving clear height 1.85 at lambda 0 and 1.75–1.785 with the local lambda. A clearance cap after the rule is needed regardless of solver.",
+            "evidence": [
+              "teams/v-local/res/e1-loc.json",
+              "teams/v-local/res/e4-constraints.json"
+            ]
+          },
+          {
+            "finding": "Flat ground is never left at its height by the cheap rule, unlike the repo's bevel rule. Uniform thick ground rises 3/256. A 1-thick floor thickens by 6/256 on each face. Mixed-material ground ripples −9/256 to +8/256: material seams form grooves 0.03–0.035 deep.",
+            "evidence": [
+              "teams/v-local/res/e4-constraints.json"
+            ]
+          },
+          {
+            "finding": "The FID-0.15 reference tunnel is resolution-dependent: clear height at width 0.70 is 1.21 at n12 and 0.87 at n16 (margin 0.75), and mid-height 1.50 against 1.13. Accuracy figures quoted 'against FID-0.15' at a single n carry this uncertainty.",
+            "evidence": [
+              "teams/v-local/res/e2-farbar-n12.json",
+              "teams/v-local/res/e2-farbar-n16.json"
+            ]
+          },
+          {
+            "finding": "Under FINITE-4, two pits superpose badly (D0 residual 0.204) even though each single pit leaves lambda unchanged (0.266): only the pair moves it, to 0.2223. Lambda pinning cannot be judged per feature.",
+            "evidence": [
+              "teams/v-local/res/e6c-superpos.json"
+            ]
+          },
+          {
+            "finding": "Under FID-0.15 with volume off, a 1-thick membrane framed on all sides is stable, and punctures of 1–9 blocks stay local (≤ 0.21 block). Free-edged 1-thick plates vanish. Without volume, losing thin features is an edge effect, not a cascade.",
+            "evidence": [
+              "teams/v-local/res/e6b-membrane-novol.json",
+              "teams/v-local/res/e9-novol-features.json",
+              "teams/v-local/sheets/membrane.png"
+            ]
+          }
+        ],
+        "images": [
+          {
+            "path": "teams/v-local/sheets/farbar.png",
+            "caption": "Far-bar test on look's host (tunnel at x = 1, bar 1×1×4 attached 4+ blocks away). Physics FID-0.15 at n12 and n16: the bar drains and the tunnel closes. FINITE-4 narrows it. The cheap Bl-b1s20 model (one step, local lambda) is unchanged by the bar (clear height 1.76)."
+          },
+          {
+            "path": "teams/v-local/sheets/newcfg.png",
+            "caption": "Configurations outside the lambda fit: grooved slab, terrain window, 3D checker, diagonal staircase, overhang, striped thin wall. Each pair is physics FID-0.15 (left) and cheap Bl-b1s20 (right), labelled with surface mean and volume error."
+          },
+          {
+            "path": "teams/v-local/sheets/vertexrule-mesh.png",
+            "caption": "b1 vertex-rule mesh on a generated terrain window (chunk 0,0,0, seed 1,1), four panels: cube corners; the rule with the line solver; the same with quads touching off-surface corners in magenta (34 of 230 corners); off corners moved to the nearest D = 0 point of their own field."
+          },
+          {
+            "path": "teams/v-local/sheets/membrane.png",
+            "caption": "Framed 1-thick membrane, plan at y = 1.5. With volume off (FID-0.15-novol), punctures stay local with no unzipping. With volume on, a 1-block hole changes labels up to 4.9 blocks away."
+          }
+        ],
+        "openQuestions": [
+          "Is FID-0.15's drainage of thin features into distant concavities wanted bubble behaviour for the game, or a regime to avoid (FID-0.25 does not do it)? This is the owner's look decision.",
+          "Can a corrected vertex solver place the 7-solid two-material corners on their surface at acceptable cost, for example a nearest-zero search or an offline table over corner patterns? Not built or timed. About 743 corner-only and diagonal-saddle corners cannot be fixed by any single-vertex placement (inference).",
+          "Cross-browser determinism of the vertex rule was not tested. By code reading the b1 path uses only + - * /, comparisons, clamps, Math.round and one Math.sqrt at set-up, all exactly rounded in IEEE double (inference).",
+          "The FID-0.15 reference is not converged in n (tunnel 1.21 at n12, 0.87 at n16). Which resolution should accuracy claims use?",
+          "Clearances were measured on the vertex positions and the PLAN 7.2 quad mesh. Fast's C11 shows on-surface vertices with flat quads differ from the field. A quad-level clearance cap after the rule was not tested."
+        ]
+      },
+      {
+        "verifier": "v-union",
+        "summary": "I attacked the combined X-junction claim and 15 related claims. I re-ran the engine (lib/mbo.mjs) and the exact 2D solver (teams/phys/foam2d.mjs, imported read-only) on new configurations built so that the 4x4 window count, the cluster size and the instantaneous pressure disagree: W1 (bars joining blobs against 2x2 squares), L2 and L2-shortA (a domino line crossing a single-block line), LX lines of unequal length, a line with a blob at its end, a line in a dither, mixed-material X's over g and blur, and 3D cases. Each was run in the 8 square symmetries, in reversed block order and with frozen and annealed noise, in FREE, FINITE-4 and CAGE-0.25, and at several n and s. Four parts survive: an X is never an equilibrium; a solid pair facing an air diagonal always unites; the painted diagonal line connects (its blocks' step-1 λ is about 4.7 times the halves'); and the lower-tension rule holds in the exact solver. Rule4 is refuted: in W1, L2, L2-shortA and LX-10x4 the engine contradicts it 12 of 12 times in every regime, and the exact solver contradicts it in W1 and L2. The reading of 'higher pressure' as 'smaller cluster' is refuted: in L2-shortA the larger dominoes win, and in LX-10x4 and LX-8x2 equal sizes are still decided. What the engine actually follows is its step-1 λ (9 of 9 configurations). That λ depends on corner structure within 1-2 blocks and on g, and at near-ties the engine and the exact solver disagree, so those cases are design choices, not physics. The engine also breaks the tension rule whenever the alternative is solid-solid adhesion across a corner. 'Corner-only never unites' holds only without noise. Prior's annealing protocol merges every same-material contact at step 1, so it cannot be used to test union rules. All files are in teams/v-union/ (notes-summary.json indexes them) and are backed up.",
+        "verdicts": [
+          {
+            "claim": "combined: an X is never an equilibrium",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-union/logs/foam-robust-sweep.log",
+              "teams/v-union/logs/xfixed2.log",
+              "teams/v-union/logs/cube2-checker-census.log"
+            ],
+            "numbers": "The exact solver splits every X it is given, including exact ties after the hold. The engine keeps an X only at exact symmetry (LX-6x6, jitter 0: 9/9 none) or in frozen pinned states (cube2-checker, jitter 1e-3 seeds 4 and 5: X lines 2.125 blocks per axis).",
+            "corrected": "True of the physics. The engine's persistent X's are artefacts, and they also occur in 3D for frozen seeds."
+          },
+          {
+            "claim": "combined: the lower film tension gets the central film",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/mix-diagEdgeDiff.log",
+              "teams/v-union/logs/mix-L3ABC.log",
+              "teams/v-union/logs/mix-ABACbig.log"
+            ],
+            "numbers": "Exact solver, all as the rule predicts: ABAC (12-block A pair against single B and C) gives A at g 0.1/0.3/0.6/1; air-A-air-B separates at g 0.25-1.5; ABC-air gives B|C at g 0.6/0.9/1 and A|air at g 1.1/1.3. Engine: it adheres air-A-air-B at s 0.2 for every g (films 2.031/1.906/1.563/1.094 blocks) and at s 0.1 for g 0.25/0.5. In ABC-air it forms a B|C film at g 1.1/1.3 at both s (0.64-1.06 blocks).",
+            "corrected": "This is first-order physics, and it holds in the exact solver for every mixed X tested. The engine (and so every engine picture) breaks it whenever the alternative is solid-solid adhesion across a corner. Whether different solids may adhere across a corner is therefore a design choice."
+          },
+          {
+            "claim": "combined: on a tension tie the higher-pressure pair (the smaller clusters) connects; equal sizes are a true tie",
+            "verdict": "refuted",
+            "evidence": [
+              "teams/v-union/logs/eng-L2-shortA-n32.log",
+              "teams/v-union/logs/eng-otherreg.log",
+              "teams/v-union/logs/eng-LX-10x4-n32.log",
+              "teams/v-union/logs/lam0-n32.log",
+              "teams/v-union/logs/foamprobe.log",
+              "teams/v-union/foam/robust-LX-10x4-hsweep.json",
+              "teams/v-union/logs/g-sweep-same.log"
+            ],
+            "numbers": "L2-shortA (2-block dominoes against 1-block singles): the engine picks A (the larger pair) 12/12 in each of FREE, FINITE-4 and CAGE-0.25, and 3/3 at n 64, n 128 and s 0.1. LX-10x4 (all singles, so sizes are equal): engine B 12/12 per regime; exact solver A 64/64, although its pre-split rates tie (1.41422 against 1.41421). LX-8x2: B in both methods. The higher step-1 λ pair connects in 9/9 configurations (L2-shortA: A 0.0624 against B 0.0542). L2 flips from B to A when g goes from 1 to 1.5 (3/3).",
+            "corrected": "The deciding quantity is the instantaneous pressure. It is set by the corner structure within 1-2 blocks (corners that are X junctions lower it), by g, and by neighbouring X's that resolve at the same time; it is not set by cluster size. Clear contrasts are physics: singles against halves of 15 or more blocks, 2x2 against a 12-block bar-and-blob. Near-ties are method-dependent and should be treated as design choices. In 3D a tie can resolve as 'both' by layering."
+          },
+          {
+            "claim": "combined: edge contacts with air always unite; corner-only contacts never do",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/foam-robust-h04.log",
+              "teams/v-union/logs/e3d-cross.log",
+              "teams/v-union/logs/e3d-corner.log",
+              "teams/v-union/logs/e3d-corner-ann.log",
+              "teams/v-union/logs/e3d-corner4.log"
+            ],
+            "numbers": "Air X: the solid pair unites in every run (exact diag-edge 8/8 orientations, all line air-X's, annealed runs too). Corner-only: no union in any deterministic run. Under prior's annealing it merges at step 1 in 3/3 diag-corner and 3/3 cube2-cornerA; with merging deferred, 3/3 in each case including cube2-corner4.",
+            "corrected": "The air-X part is confirmed. 'Corner never' is a property of the noiseless dynamics, so it is a rule choice."
+          },
+          {
+            "claim": "combined: the painted 1-wide line connects because its one-block bubbles have higher pressure",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-union/logs/lam0-slab.log",
+              "teams/v-union/many/slabLine-FREE-n32.json",
+              "teams/v-union/logs/many-lineInDither.log",
+              "teams/v-union/logs/many-tripleLine.log",
+              "teams/v-union/logs/many-line.log"
+            ],
+            "numbers": "Step-1 λ: line blocks 0.058-0.060 against halves 0.0125 (engine); 0.64-0.78 against 0.27 (exact). All 5 X's go to A in 12/12 variants. The line also wins in lineToBlob, in the line through a B/C dither (7 X, 12/12) and in the line flanked by single-block lines (7 X, 12/12)."
+          },
+          {
+            "claim": "combined / local L17: rule4 (window minority, ties none) matches the physics",
+            "verdict": "refuted",
+            "evidence": [
+              "teams/v-union/logs/static.log",
+              "teams/v-union/logs/eng-W1-n32.log",
+              "teams/v-union/logs/eng-W1-n32-otherreg.log",
+              "teams/v-union/logs/e3d-W1.log",
+              "teams/v-union/logs/eng-L2-n32.log",
+              "teams/v-union/logs/eng-otherreg.log",
+              "teams/v-union/logs/foam-robust-sweep.log"
+            ],
+            "numbers": "W1: rule4 says A (window 4 against 8); the engine gives B in FREE 12/12, FINITE-4 9/9 and CAGE 9/9, in 3D 4/4 and in 3D two layers high 4/4; the exact solver gives B 64/64. L2: rule4 says none (4 against 4); engine B 12/12 per regime, exact B 64/64. L2-shortA: rule4 none, engine A 12/12 per regime. LX-10x4: rule4 none, engine B 12/12 per regime. Rule4 agrees on LX-8x2, LX-6x6, slab-line, lineToBlob, the line in the dither and the flanked line.",
+            "corrected": "The window count fails whenever the cluster at the X is thin inside the window but large outside it (W1), and at near-ties. A deterministic table is still possible, but it would be a tie policy chosen by design, not a match to the physics."
+          },
+          {
+            "claim": "phys C6",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/eng-L2-shortA-n32.log",
+              "teams/v-union/logs/lam0-n32.log",
+              "teams/v-union/logs/foamprobe.log",
+              "teams/v-union/logs/foamdecide-L2-shortA.log",
+              "teams/v-union/foam/robust-L2-shortA-hsweep.json"
+            ],
+            "numbers": "W1, L2, LX-8x2, checkerSmallA and slab-line confirm it. L2-shortA: before any split the exact pressures are B 0.455 > A 0.403 and the pre-split rates favour B (1.41449 against 1.41394), yet the exact solver picks A in 48/64 settings, after splitting the B line's air-X's in the same scan. The engine picks A 12/12.",
+            "corrected": "X's split at once. On a tension tie the engine connects its higher step-1 λ pair. The gloss 'the smaller cluster; air = 0' is wrong at near-ties, and the solver's tie decisions there depend on event order."
+          },
+          {
+            "claim": "phys C7",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/eng-LX-6x6-n32.log",
+              "teams/v-union/logs/sq2-checker-3d-census.log",
+              "teams/v-union/logs/cube2-checker-census.log"
+            ],
+            "numbers": "LX-6x6, jitter 0: none 9/9. sq2-checker 3D, jitter 0: X line 1.375. cube2-checker, jitter 0: both united at steps 12-15. cube2-checker, jitter 1e-3 seeds 4 and 5: frozen at step 14 with 8 bubbles and X lines of 2.125 blocks per axis.",
+            "corrected": "In 2D the engine keeps the X at exact ties. In 3D, cube2-checker resolves at jitter 0 but freezes with all six X lines for 2 of 5 frozen-jitter seeds."
+          },
+          {
+            "claim": "phys C8",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-union/logs/forced-checkerSmallA.log",
+              "teams/v-union/logs/forced-L2-shortA.log",
+              "teams/v-union/logs/forced-W1.log"
+            ],
+            "numbers": "checker-smallA: picked outcome E 12.91609 against forced B union 12.24332 (reproduced). L2-shortA: picked 30.948 against forced 29.132 (not converged). W1: the picked outcome is also the lower one (32.05 against 34.19)."
+          },
+          {
+            "claim": "phys C11",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/mix-diagEdgeDiff.log"
+            ],
+            "numbers": "g 1: the engine adheres at s 0.2 (film 1.563) and separates at s 0.1 (0); the exact solver separates. At s 0.1 the engine adheres for g 0.25/0.5 (1.844/1.766). At s 0.2 it adheres at g 1.5 (1.094), where the first-order adhesion rate is -0.086.",
+            "corrected": "Confirmed at g 1. The blur rule is not general. For g > √2 only separation lowers the energy at the X, yet the engine still adheres at s 0.2."
+          },
+          {
+            "claim": "phys C12",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/many-line.log",
+              "teams/v-union/eng/lineToBlob-FREE-n32-g1-s0.2.json",
+              "teams/v-union/eng/slabLine-FREE-n32-g1-s0.2.json"
+            ],
+            "numbers": "lineToBlob: the A line unites at step 1 and the B halves unite at step 42 (12/12 variants). In slab-line, without the blob, the B halves stay as 2 bubbles.",
+            "corrected": "The final FREE topology is not fixed by the junction-resolved contact graph and the volumes. FREE adds later unions, and a blob touching only the line's end changes what happens to the far B halves."
+          },
+          {
+            "claim": "local L15",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/eng-L2-shortA-n32.log",
+              "teams/v-union/logs/eng-otherreg.log",
+              "teams/v-union/logs/eng-LX-10x4-n32.log"
+            ],
+            "numbers": "L2-shortA: the larger pair wins 12/12 in each of FREE, FINITE-4 and CAGE-0.25. LX-10x4 and LX-8x2 (equal sizes): with jitter 0 and with reversed order, B 9/9 per regime.",
+            "corrected": "True for the isolated 2x2-checker family that was tested; false in general. The painted-line part is confirmed."
+          },
+          {
+            "claim": "local L16",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/e3d-corner-ann.log",
+              "teams/v-union/logs/e3d-corner.log"
+            ],
+            "numbers": "Corner-only pairs unite under re-drawn noise 0.1: diag-corner 3/3 and cube2-cornerA 3/3 at step 1.",
+            "corrected": "The edge-with-air part is confirmed. Corner-only 'never' holds only for noiseless runs."
+          },
+          {
+            "claim": "local L18",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/l18-n12.log",
+              "teams/v-union/logs/l18-n20.log",
+              "teams/v-union/logs/l18-n12-other.log"
+            ],
+            "numbers": "FID-0.15 with the union imposed: necks [0,0,0,0,0] at n 12 and n 20. CAGE-0.25 at n 12: 0.667 at every X, also with B imposed. FINITE-4 at n 12: 0.417, and 0.167 with B imposed.",
+            "corrected": "The first part is confirmed. The neck widths depend on resolution: FINITE-4 at n 12 is below the claimed 0.5-1.0."
+          },
+          {
+            "claim": "look L8",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/e3d-corner-ann.log",
+              "teams/v-union/logs/sq2-checker-3d-census.log"
+            ],
+            "numbers": "Edge-in-air and checker behaviour match in FREE, FINITE and CAGE. The 0-of-60 corner-only result does not hold under re-drawn noise (3/3 and 3/3 unite).",
+            "corrected": "Valid for the protocols that were run (jitter ≤ 1e-3)."
+          },
+          {
+            "claim": "look L9",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-union/logs/sq2-checker-3d-census.log"
+            ],
+            "numbers": "Seed 2: B connected for y below 0.47 and A for y above 0.53 (reproduced). Layering also in seeds 3 and 5 and in deferred-merge anneals 3/3. Seeds 1 and 4 merged phases that ended in 2 pieces (artefact)."
+          },
+          {
+            "claim": "look L13",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-union/logs/lam0-slab.log",
+              "teams/v-union/many/slabLine-FREE-n32.json"
+            ],
+            "numbers": "Line λ is about 4.7 times the halves' λ in the engine and about 2.6 times in the exact solver; A wins 12/12 at every X.",
+            "corrected": "The 'smaller bubble wins' reading does not generalise (see L2-shortA)."
+          },
+          {
+            "claim": "prior x-rule-per-edge",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/mix-diagEdgeDiff.log",
+              "teams/v-union/logs/mix-L3ABC.log",
+              "teams/v-union/logs/mix-ABACbig.log"
+            ],
+            "numbers": "The exact solver follows the rule for ABAC, air-A-air-B and ABC-air at g ≠ 1. The engine gives the B|C film at g 1.3 and adheres air-A-air-B up to g 1.5.",
+            "corrected": "Correct as first-order physics. The engine breaks it for solid-solid adhesion. A-air-A-air ties in tension but is always decided (air pressure 0)."
+          },
+          {
+            "claim": "prior x-fixed-point",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/xfixed2.log"
+            ],
+            "numbers": "Equal quadrants: 0 changes after 5 and 60 steps (reproduced). ABCD 3/2/2/1 (λ_D 0.0956 against 0.0624): 89 changes within 1 block after 5 steps, and the cross is gone by step 60. 3/2/2/2 at g 1, where λ quantises equal: still 4 phases at the cross after 60 steps.",
+            "corrected": "The cross is a fixed point when tensions AND pressures are equal, or when the volume solve is off; equal tensions alone are not enough."
+          },
+          {
+            "claim": "prior annealed-noise-fix",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-union/logs/abcd-anneal.log",
+              "teams/v-union/logs/eng-W1-n32.log",
+              "teams/v-union/logs/eng-W1-n32-annlow.log",
+              "teams/v-union/logs/e3d-corner-ann.log"
+            ],
+            "numbers": "sq2-ABCD: anneal seeds 6-15 resolve 10/10 (walls 0.56-0.63 blocks). Frozen 0.1: X in 1/5, stubs of 0.125 blocks or less in 4/5. W1: both pairs merge at step 1 at amplitudes 0.01, 0.03 and 0.1 (5/5 each), leaving A in 2 pieces. Corner-only pairs merge at step 1 (6/6).",
+            "corrected": "It works for 4-material X's, and re-drawing the noise is what matters. With same-material phases it merges every contact at step 1, so it cannot decide union questions."
+          }
+        ],
+        "newFindings": [
+          {
+            "finding": "The exact 2D solver (foam2d) has an orientation bias of about 1.6e-3 in split rate. On an exact mirror tie (LX-6x6) its decision follows the orientation (4 of 8 symmetries each way). At near-ties its decisions come from event order: it splits the neighbouring air-X's and remeshes in the same scan before deciding the crossing. Solver tie decisions therefore need symmetry and pre-split checks.",
+            "evidence": [
+              "teams/v-union/logs/foam-robust-h04.log",
+              "teams/v-union/foam/robust-LX-6x6-hsweep.json",
+              "teams/v-union/logs/foamdecide-L2-shortA.log",
+              "teams/v-union/logs/foamprobe.log"
+            ]
+          },
+          {
+            "finding": "Engine decisions at tension-tied X's always follow the step-1 λ (9/9 configurations), and λ is set by local corner structure: a block whose corners are X junctions gains volume there and gets a low λ. This explains why singles inside a line can lose to dominoes, and why decisions change with g (L2 at g 1.5 flips to A).",
+            "evidence": [
+              "teams/v-union/logs/lam0-n32.log",
+              "teams/v-union/logs/lam0-slab.log",
+              "teams/v-union/logs/g-sweep-same.log"
+            ]
+          },
+          {
+            "finding": "The engine and the exact solver disagree on LX-10x4 (engine B 12/12 in every regime, n and s; exact A 64/64, from a pre-split dead tie). Near-tie outcomes are method-dependent, so they are design choices.",
+            "evidence": [
+              "teams/v-union/logs/eng-LX-10x4-n32.log",
+              "teams/v-union/logs/eng-resolution.log",
+              "teams/v-union/foam/robust-LX-10x4-hsweep.json"
+            ]
+          },
+          {
+            "finding": "Prior's annealing protocol makes same-material contacts merge at step 1. Both pairs at a 2D X merge (one phase then ends in 2 pieces), and corner-only pairs unite. With merging deferred, FREE rearrangement unites everything that touches. No noise protocol tried here can arbitrate union rules.",
+            "evidence": [
+              "teams/v-union/logs/eng-W1-n32.log",
+              "teams/v-union/logs/eng-W1-n32-annlow.log",
+              "teams/v-union/logs/e3d-corner-ann.log",
+              "teams/v-union/logs/e3d-corner.log"
+            ]
+          },
+          {
+            "finding": "cube2-checker with frozen jitter 1e-3, seeds 4 and 5, freezes at step 14 with 8 separate bubbles and all six X lines, and the run reports converged. This refutes phys C14's 'cube2-checker always resolved'. At jitter 0 it resolves with both pairs united.",
+            "evidence": [
+              "teams/v-union/logs/cube2-checker-census.log",
+              "teams/v-union/logs/e3d-cube2-checker.log"
+            ]
+          },
+          {
+            "finding": "In FREE, unions keep happening after the junction decision. In lineToBlob the B halves unite at step 42 once the line and blob ball up; without the blob (slab-line) they stay apart. Adding blocks that touch the line only at its end corner changes the topology of the far background.",
+            "evidence": [
+              "teams/v-union/logs/many-line.log",
+              "teams/v-union/eng/lineToBlob-FREE-n32-g1-s0.2.json"
+            ]
+          },
+          {
+            "finding": "In 3D a tied crossing can resolve as 'both' by layering. This happened in the vertical LX crossing (seed 2), in sq2-checker (3 frozen seeds and 3/3 anneals) and in cube2-checker (jitter 0). A per-edge rule that says 'ties: none' cannot express this outcome.",
+            "evidence": [
+              "teams/v-union/logs/e3d-cross.log",
+              "teams/v-union/logs/sq2-checker-3d-census.log",
+              "teams/v-union/logs/cube2-checker-census.log"
+            ]
+          },
+          {
+            "finding": "Under FID-0.15 the painted-line physics run merges A phases in bookkeeping (6:2 twice at n 12 and n 20) while 6 geometric dots remain, the C9 artefact in an anchored regime.",
+            "evidence": [
+              "teams/v-union/logs/l18-n12.log",
+              "teams/v-union/logs/l18-n20.log"
+            ]
+          }
+        ],
+        "images": [
+          {
+            "path": "teams/v-union/img/v-union-sheet.png",
+            "caption": "Contact sheet, 16 labelled panels; colours are engine labels, white lines are the exact 2D solver's films. Panels: W1 blocks and result (B 2x2 squares unite against rule4); L2 (B singles cut the domino line); L2-shortA (the larger dominoes unite); LX-10x4 (engine B against exact A); diag-edge-diff at g 1.5 (engine adheres, exact separates); L3-ABC at g 1.3 (engine B|C film, exact B and C apart); W1 under prior's anneal (both merged, A in 2 pieces); cube2-checker seed 4 frozen against jitter 0 both united; sq2-checker 3D layering at y 0.15 and 0.85; diag-corner united under annealing."
+          },
+          {
+            "path": "teams/v-union/img/W1-engine12.png",
+            "caption": "W1, 2D FREE n32, 12 steps: the 2x2 B squares unite at the X, against rule4's A; the exact films (white) agree."
+          },
+          {
+            "path": "teams/v-union/img/L2shortA-engine12.png",
+            "caption": "L2-shortA, 2D FREE n32, 12 steps: the 2-block A dominoes unite across a line of 1-block B singles, so the larger pair wins."
+          },
+          {
+            "path": "teams/v-union/img/LX104-engine12.png",
+            "caption": "LX-10x4, 2D FREE n32: the engine cuts the A line (B unites); the exact solver's films (white) show A united, a method-dependent near-tie."
+          },
+          {
+            "path": "teams/v-union/img/cube2chk-s4.png",
+            "caption": "cube2-checker, FREE n16, jitter 1e-3 seed 4, plan at y 0.5: frozen with 8 bubbles and the X kept."
+          }
+        ],
+        "openQuestions": [
+          "What does sharp-interface physics pick at near-ties such as LX-10x4 and L2-shortA, with all X's resolved simultaneously? This needs a solver without remesh-order effects, or a t→0+ asymptotic analysis of the corner-driven pressures.",
+          "Can a local proxy for the engine's step-1 λ (free-corner turning against volume gained at X corners, per cluster) predict decisions beyond the 9 configurations tested? This is untested inference.",
+          "Tie policy, which is the owner's call: at near-ties and exact ties, which pair connects? And should 3D ties be allowed to resolve as 'both' (layered)?",
+          "Should different solids adhere across a corner contact, as the engine renders them at the default blur, or separate, as physics does? The question applies to air-A-air-B and to ABC-air at g > 1.",
+          "Should FREE-like late unions (lineToBlob, step 42) be part of any game rule, given that they make the topology depend on blocks far from the X?"
+        ]
+      },
+      {
+        "verifier": "v-look",
+        "summary": "I attacked the look team's claims and the game constraints, with all paths relative to S = .. I ran the two engine-copy candidates (the look team's mbo-look.mjs, imported unchanged) at n 20 with the exact PLAN caps 0.15/0.05, at n 20 with the vertical cap at 0 as the look team defined them, and at n 24. Each ran over 11 catalogue scenes plus 18 new ones: a 2-high room, two trenches, and paint scenes on 2-thick ground (lines, an L-turn, crossings, a checker, pixel letters, a stripe joined to a patch, a line across a step). I also measured seams on labels against the render field D in five regimes at n 16/24, checked the closed forms, re-ran the 2D seam at n 256 and probed the listed regimes for L1. Claim (1) splits. The constraint half holds: tunnel, room, trench, single, pillar, flat ground (exactly flat only with vertical cap 0) and visible rounding all pass at n 20/24. The paint half is refuted. Any paint that does not span the full slab thickness pools, merges or melts. A diagonal line on 2-thick ground drains into the slab corners, or becomes one round blob when it lies 2+ blocks from the edges. A checker becomes one region, the letters A and Z become two ovals, and a stripe drains into a joined patch. With the PLAN vertical cap at n 24, even the 1-thick band breaks, and paint fidelity 0.05 or 0.10 does not fix any of this. Claim (2) is partly true: under the candidate the seam stays exactly flat on the labels. Under FID-0.15 the seam column stays put but the faces pillow up one sub-cell, so the rendered groove is blur plus a terrace. Local's closed form is the λ = 0, g = 1 special case; a λ- and g-aware version matches the rendered field to ≤1e-4. Real label grooves also form under FINITE-4 at n 24, and the Young angle is approached only in 2D (119.4° at n 256). L1 fails at n 20, where NOVOL-1 and CAGE-0.05 keep the tunnel at exactly 1.90 × 0.70; NOVOL-1 still fails the room. Local L9 fails in a long L shape, where an edge's rounding changes by one sub-cell.",
+        "verdicts": [
+          {
+            "claim": "look L1",
+            "verdict": "partly",
+            "corrected": "At n 16 no listed regime both rounds visibly and keeps the 1x2 tunnel. At n 20, where 0.05 block is exactly one sub-cell, two listed regimes keep the tunnel on labels at all three cuts: NOVOL-1 (1.90 x 0.70, tunnel shape change 0.060) and CAGE-0.05 (1.90 x 0.90, shape change 0.110). That meets L1's own refutation test. NOVOL-1 fails the 2-high room (1.80 x 1.50) and keeps 2/3 of a lone block's volume. CAGE-0.05 passes the room and trench but rounds only within its one-sub-cell cage (single diagonal/axis 1.42 vs 1.74 for blocks) and pillows flat ground by 0.05.",
+            "evidence": [
+              "teams/v-look/res/table-L1-n20.txt",
+              "teams/v-look/res/table-L1-n16.txt",
+              "teams/v-look/res/NOVOL-1@n20.json",
+              "teams/v-look/res/CAGE-0.05@n20.json",
+              "teams/v-look/sheets/final-4-limits.png"
+            ],
+            "numbers": "n20: NOVOL-1 tunnel 1.9/0.7 x3, room 1.8/1.5, single diag/axis 1.2125, volume kept 0.667; CAGE-0.05 tunnel 1.9/0.9, room 1.9/1.9, trench 0.9, single 1.4205, cube2 corner Req 0.153. n16: both 1.875 (fail). FINITE-1 n20 1.8/0.6; FID-0.2 n20 1.6/0.2"
+          },
+          {
+            "claim": "look L4",
+            "verdict": "confirmed",
+            "corrected": "The constraint and rounding numbers hold at n 20 with the exact caps, at n 24, and on new scenes. 'Flat ground exactly flat' needs vertical cap 0. With PLAN's 0.05 vertical cap, flats, treads and slab tops pillow by exactly 0.05 (within the cap) and the tunnel and room sit at the 1.90 limit. Vertical faces bulge by one sub-cell (single extent 1.1 at n 20). This verdict covers only the constraints and rounding; paint fails (see L5).",
+            "evidence": [
+              "teams/v-look/res/table-cand-n20.txt",
+              "teams/v-look/res/table-cand-n24.txt",
+              "teams/v-look/res/C15-V0@n20.json",
+              "teams/v-look/res/C10-V05@n20.json",
+              "teams/v-look/logs/trench-recheck.log",
+              "teams/v-look/sheets/final-1-constraints.png"
+            ],
+            "numbers": "n20, caps 0.15/0: tunnel 2.0 x 0.70 (3 cuts), room2 2.0 x 1.70, trench min width 0.70, floor +0, single extent [1.1,1,1.1], diagonal/axis 1.26 (C15) / 1.16 (C10) vs 1.74 for blocks, pillar min width 0.8/0.7, height 3, cube2 corner Req 0.355/0.390, all flats 0. Caps 0.15/0.05: tunnel 1.9 x 0.7, room 1.9 x 1.7, trench 0.7 with floor +0.05, flats 0.05. n24 C15-V0: tunnel 2.0 x 0.75, cube2 Req 0.325"
+          },
+          {
+            "claim": "look L5",
+            "verdict": "partly",
+            "corrected": "The straight band appears only when the painted line spans the full thickness of a 1-thick slab under vertical cap 0 (n 16/20/24), or with cap 0.05 at n 20. Even then each end swells into a bead about twice the band's width. With the PLAN vertical cap at n 24 the line drains into the two slab corners. Paint in the top layer of 2-thick ground never forms a band: the line drains into the slab corners and sinks through the slab, or becomes one round blob when it lies 2+ blocks from every edge.",
+            "evidence": [
+              "teams/v-look/res/table-cand-n20.txt",
+              "teams/v-look/logs/slabline-n24.log",
+              "teams/v-look/res/table-paint-n16.txt",
+              "teams/v-look/res/C15-V0@n16.json",
+              "teams/v-look/res/table-kmat-n16.txt",
+              "teams/v-look/sheets/final-2-paint.png"
+            ],
+            "numbers": "1-thick, C15-V0: band SD 0.051/0.061/0.061 at n16/20/24 (look 0.050, reproduced), mean 0.63/0.62/0.57, end-window width 1.04/1.04/1.13 (blocks 0.82). n24 caps 0.125/0.042: middle band 0.009 (C15) / 0.033 (C10), ends 1.72-1.77, B connected across 3-4 of 5 junctions. 2-thick slab2-line, n16 and n20, both k: middle band 0.00, A parts 6->2, area x0.48-0.52, 2.84-2.88 block^3 of A below the top layer. big2-line n16: one blob, area x1.36, 10/100 blocks wrong"
+          },
+          {
+            "claim": "look L6",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-look/res/FID-0.25@n32.json",
+              "teams/v-look/logs/L6-n32.log"
+            ],
+            "numbers": "FID-0.25 at n 32: shape change single 0.0098, cube2-same 0.0009 (threshold 0.05). Single extent 1.0625, so one sub-cell moved"
+          },
+          {
+            "claim": "look L7",
+            "verdict": "confirmed",
+            "corrected": "The 2D FREE opening converges toward 120 degrees and FID-0.15 stays flat at n 256. In 3D at n 16/24, FID-0.15 shows a one-sub-cell flat-bottomed trench around the seam. It comes from the faces pillowing up, not from a groove.",
+            "evidence": [
+              "teams/v-look/res/seam2d-v.json",
+              "teams/v-look/logs/seam2d-v.log",
+              "teams/v-look/res/seams-FID-0.15-g1@n16.json",
+              "teams/v-look/res/seams-FID-0.15-g1@n24.json"
+            ],
+            "numbers": "FREE double bubble (4x1 slab) 115.2 / 117.6 / 119.4 deg at n 64/128/256. FID-0.15 2D groove 0.0071 (n128), 0.0069 (n256). 3D label notch 0.0625 (n16), 0.0417 (n24)"
+          },
+          {
+            "claim": "look L10",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-look/res/L10-L11-L12-summary.txt",
+              "teams/v-look/res/FID-0.15@n24.json"
+            ],
+            "numbers": "FID-0.15 n24: cube2 top-face bulge 0.0417 (one sub-cell; 564 of 900 columns raised), side face +0.0417. ring8 hole closed (width 0)"
+          },
+          {
+            "claim": "look L11",
+            "verdict": "partly",
+            "corrected": "Single blocks become spheres for CAGE-r with r >= 0.15 and FINITE-T with T >= 2. CAGE-0.05 and FINITE-1 keep a rounded cube.",
+            "evidence": [
+              "teams/v-look/res/L10-L11-L12-summary.txt"
+            ],
+            "numbers": "n20 single, diagonal/axis (sphere 1.0, cube 1.73): FINITE-2 1.010, FINITE-4 1.010, CAGE-0.15 1.010, CAGE-0.25 1.010 (extent 1.2), FINITE-1 1.261, CAGE-0.05 1.421"
+          },
+          {
+            "claim": "look L12",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-look/res/L10-L11-L12-summary.txt",
+              "teams/v-look/res/closedform-check.txt"
+            ],
+            "numbers": "FID-0.15 n16 at g 0.5 / 1 / 1.5: tunnel clear (1.125, 1.0, 1.25) x 0 width, pillar 0.875/1.125/3, single 1.125, room identical. Render groove depth at x=0: 0.070 / 0.092 / 0.117"
+          },
+          {
+            "claim": "look L14",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-look/res/L14-timing.txt",
+              "teams/v-look/logs/L14-timing.log"
+            ],
+            "numbers": "terrain-step (75 blocks): FID-0.15 89 ms at n4 but shape change 0 (nothing moves), 1025 ms at n8, 2561 ms at n12, 9489 ms at n16. C15-V0 80 ms (shape change 0) at n4, 598 ms at n8, 12.9 s at n20"
+          },
+          {
+            "claim": "local L9",
+            "verdict": "partly",
+            "corrected": "The convex edge profile is identical (D0 difference <= 1e-5) in a 3-thick slab, an 8-wide slab, the outer and inner rims of a ring and a straight 2-wide bar. In a long L (8x2x2 bar plus 2x2x6 leg) the same straight edge rounds one sub-cell less along its whole length. That is a D0 difference of 0.049 (more than 1/64) within 0.15 block of the edge, not a whole-layer terrace. The cluster's pressure selects between quantised edge states.",
+            "evidence": [
+              "teams/v-look/res/local-L9@n16.json",
+              "teams/v-look/res/local-L9b@n16.json",
+              "teams/v-look/logs/local-L9b-n16.log"
+            ],
+            "numbers": "D0 drop at d = 0.025/0.05/0.1: slabs, ring, bar 0.2097/0.1526/0.0882; long L 0.1610/0.1129/0.0581 at x = 4, 5, 6; label drop 0.125 vs 0.0625; render lambda 0.085 (bar) vs 0.139 (L)"
+          },
+          {
+            "claim": "local L11",
+            "verdict": "partly",
+            "corrected": "Under the box candidate the labels are exactly flat at a seam, and the rendered groove is pure blur. Under FID-0.15 the seam column stays at the block top but the faces pillow up one sub-cell, so the rendered groove (0.092 at n16, 0.077 at n24) is blur plus terrace. The closed form sigma*PhiInv(1/(1+Phi)) is the lambda = 0, g = 1 case (local's D0). The rendered field D follows sigma*[PhiInv((1-lam)/(2-g+g*Phi)) - PhiInv((1-lam)/2)], whose depth depends on g and on the render pressure lambda (0.13-0.19), so it is not universal. Under FINITE-4 at n 24 the labels form a real V-groove.",
+            "evidence": [
+              "teams/v-look/res/closedform-check.txt",
+              "teams/v-look/res/seams-C15-V0-g1@n24.json",
+              "teams/v-look/res/seams-FINITE-4-g1@n24.json",
+              "teams/v-look/sheets/final-3-seams.png"
+            ],
+            "numbers": "C15-V0 n24, lambda 0.133: measured 0.0313/0.0205/0.0126 at x 0.04/0.08/0.12; lambda-g form 0.0314/0.0205/0.0126; L11 formula 0.0366/0.0237/0.0144. g 0.5 / 1.5 blur depth at x=0: 0.0225 / 0.105 vs L11's 0.054. FINITE-4 n24 label groove 0.162 deep, about 0.3 wide. CAGE-0.25 notch 0.042 (one sub-cell)"
+          },
+          {
+            "claim": "local L12",
+            "verdict": "confirmed",
+            "corrected": "Confirmed at n 16 on 8x2x4 and 8x2x8 slabs. The case where a seam meets a convex corner was not tested.",
+            "evidence": [
+              "teams/v-look/res/local-L12@n16.json",
+              "teams/v-look/logs/local-L12-n16.log"
+            ],
+            "numbers": "FID-0.15 D0 deviation along the seam from its far value: 0.0053 at 0.4, 0.00089 at 0.5, 0.00005 at 0.6 block from the end face (both lengths). A-face terraces of 0.0625 reach 1.0-2.0 block (whole layer)"
+          },
+          {
+            "claim": "fast C12",
+            "verdict": "partly",
+            "corrected": "On labels the pair-diff 'dip' is one sub-cell or half of one. It falls in 0.03-0.09 for FID-0.15, FINITE-4 and FREE only through quantisation. Under FID the seam column does not move and the faces pillow up. Under the box candidate the label dip is 0 while D shows 0.031-0.035. The cheap models' groove depth matches the render field, not the physics.",
+            "evidence": [
+              "teams/v-look/res/fast-C12-C13-labels.txt"
+            ],
+            "numbers": "Dip on D / labels: FID-0.15 0.050/0.031 (n16), 0.055/0.042 (n24); FINITE-4 0.068/0.031, 0.071/0.042; FREE 0.053/0.063, 0.060/0.042; C15-V0 0.031/0.000, 0.035/0.000"
+          },
+          {
+            "claim": "fast C13",
+            "verdict": "partly",
+            "corrected": "On labels FID-0.15 is an exact T and FINITE-4 is closer to a T than the D field shows. FINITE-4's exact match with the sigma-0.4 models (152.1/103.9) is a property of the render field. FREE bending toward a Y is confirmed.",
+            "evidence": [
+              "teams/v-look/res/fast-C12-C13-labels.txt"
+            ],
+            "numbers": "Labels: FID-0.15 180/90/90 (n16 and n24); FINITE-4 170.6/94.7/94.7 (n16), 164.4/97.8/97.8 (n24); FREE 141/108/111 (n16), 132.2/113.9/113.9 (n24)"
+          },
+          {
+            "claim": "prior seam-groove",
+            "verdict": "refuted",
+            "corrected": "The theory is right for free surfaces: 2D FREE reaches 119.4 deg at n 256. The grooves in the FID images are not that geometry. On labels the FID seam stays at the block top (the box candidate is exactly flat; FID-0.15 has a one-sub-cell face terrace). The visible groove is the render field's blur, with a closed form in lambda and g, and its opening is 165-171 deg instead of 120.",
+            "evidence": [
+              "teams/v-look/res/seams-FID-0.15-g1@n16.json",
+              "teams/v-look/res/seams-FID-0.15-g1@n24.json",
+              "teams/v-look/res/closedform-check.txt",
+              "teams/v-look/res/seam2d-v.json"
+            ],
+            "numbers": "FID-0.15 halves4 D opening 165.6/170.5 deg (n16, two windows); label opening 180; Young 120"
+          },
+          {
+            "claim": "prior fid-is-tvl1",
+            "verdict": "partly",
+            "corrected": "Without volume, r scales with s as predicted (80-99 %). With volume, the k = 0.15 two-cycle appears on the 2D 4x4 square only for s <= 0.2. At s = 0.3 it converges, and all 17 3D catalogue scenes converge under FID-0.15 at n 16.",
+            "evidence": [
+              "teams/v-look/res/tvl1-s-scaling.json",
+              "teams/v-look/logs/tvl1.log"
+            ],
+            "numbers": "No volume, n64, r/predicted over s 0.1/0.15/0.2/0.3: k 0.1 0.95/0.90/0.95/0.99; k 0.15 0.82/0.95/0.90/0.95; k 0.3 0.85/0.80/0.82/0.80. Volume on, k 0.15: 848/768/680 cells flipping each step at s 0.1/0.15/0.2; s 0.3 converges in 7 steps. Look team's 3D FID-0.15 runs converge in 8-41 steps"
+          },
+          {
+            "claim": "combined (1): candidates pass all constraints, round, keep flat ground flat, painted diagonal becomes one straight band",
+            "verdict": "refuted",
+            "corrected": "Constraints, rounding and flat ground (vertical cap 0) hold at n 20/24 on 29 scenes. The paint result does not generalise. With paint fidelity 0.02, any paint that does not span the full thickness relaxes like free bubbles: lines pool at slab corners or contract into blobs, dots spread, checkers merge, letters melt, a stripe drains into a joined patch, and a line crossing a step pools at the step's edge. Paint fidelity 0.05 and 0.10 still flood, and at 0.10 the 1-thick band zigzags again.",
+            "evidence": [
+              "teams/v-look/res/table-cand-n20.txt",
+              "teams/v-look/res/table-paint-n16.txt",
+              "teams/v-look/res/table-kmat-n16.txt",
+              "teams/v-look/sheets/final-2-paint.png",
+              "teams/v-look/sheets/quick1.png",
+              "teams/v-look/sheets/quick2.png"
+            ],
+            "numbers": "C15-V0 n20: slab2-dot area x2.06; slab2-stripe width 1.39 (x1.44); Lturn widths 0-2.4; cross 8/49 blocks wrong; xdiag area x0.52, 13->4 parts; checker2 18->1 parts, 18/36 blocks wrong; stripe-patch stripe width 0 everywhere, 7.0 block^3 sunk; step-line low side area x0.32, high side x1.33. n16: text-AZ 5->2 parts, 13/63 blocks wrong, area x1.26. Paint fidelity 0.05/0.10: big2-line area x1.39/x1.25 (one blob), text 9/4 of 63 wrong, slab-line band SD 0.088/0.290"
+          },
+          {
+            "claim": "combined (2): anchored seams flat on labels, groove = renderer blur (L11 closed form), true grooves only where the surface moves",
+            "verdict": "partly",
+            "corrected": "The box candidate's seam is exactly flat on labels, and its render groove matches the lambda-g closed form to <=1e-4 (|x| >= 0.04). FID-0.15 adds a one-sub-cell face terrace, so its rendered groove is blur plus terrace. L11's formula is only the lambda = 0, g = 1 case. Label grooves also form under FINITE-4 (0.16 deep at n 24). In 3D at n <= 24, FREE and CAGE show only one-sub-cell notches. The 2acos(g/2) opening is reached only in 2D at n >= 128.",
+            "evidence": [
+              "teams/v-look/res/closedform-check.txt",
+              "teams/v-look/sheets/final-3-seams.png",
+              "teams/v-look/res/seam2d-v.json",
+              "teams/v-look/logs/seams-all.log"
+            ],
+            "numbers": "Label notch / rendered groove: FID-0.15 0.062/0.092 (n16), 0.042/0.077 (n24); C15-V0 0/0.038 (n24); FINITE-4 0.162/0.160 (n24); CAGE-0.25 0.042/0.063 (n24); FREE 0.031/0.043 (n16)"
+          }
+        ],
+        "newFindings": [
+          {
+            "finding": "With nearly free paint (paint fidelity 0.02, plus volume kept), painted patterns on ground two or more blocks thick behave like free bubbles inside the solid. Each painted cluster minimises its boundary with the base material. It moves to where it touches the most air (slab corners and edges, a step's convex edge), sinks through the slab there, or contracts into a lens. This is the earlier smoothing study's 'flood and melt' failure, in a stronger form, and it happens at the look team's own n 16. The 1-thick catalogue slabs hid it.",
+            "evidence": [
+              "teams/v-look/res/table-paint-n16.txt",
+              "teams/v-look/res/table-cand-n20.txt",
+              "teams/v-look/sheets/final-2-paint.png",
+              "teams/v-look/sheets/quick1.png",
+              "teams/v-look/sheets/quick2.png"
+            ]
+          },
+          {
+            "finding": "No paint fidelity tested gives both a straight band and stable paint. At 0.02 and 0.05 the band is straight (SD 0.05 / 0.09) but paint floods. At 0.10 flooding is weaker but still present (big2-line area x1.25, one blob; text 4/63 blocks wrong) and the band zigzags back (SD 0.29). Inference: per-cell paint fidelity cannot separate 'straighten a staircase' from 'move paint by blocks'.",
+            "evidence": [
+              "teams/v-look/res/table-kmat-n16.txt",
+              "teams/v-look/sheets/final-4-limits.png"
+            ]
+          },
+          {
+            "finding": "Under PLAN's vertical cap (one sub-cell at n 24), the 1-thick painted diagonal drains into the slab corners for both k (middle band 0.01-0.03, B reconnecting across the junctions). At n 20 with the same cap it holds. The band result is therefore resolution-dependent even on 1-thick slabs.",
+            "evidence": [
+              "teams/v-look/logs/slabline-n24.log",
+              "teams/v-look/res/C15-V05@n24.json",
+              "teams/v-look/res/C10-V05@n24.json"
+            ]
+          },
+          {
+            "finding": "Paint coupling reaches across the whole connected paint cluster. A 1-wide stripe joined to a 3x3 patch drains completely into the patch (stripe width 0 along its length; top paint area x0.54; 7.0 block^3 sunk). A lone stripe instead pools at the slab edge it touches (end width 3.0). On flat ground the candidates' paint scenes did not converge in 150 steps.",
+            "evidence": [
+              "teams/v-look/res/C15-V0@n20.json",
+              "teams/v-look/res/C10-V0@n20.json",
+              "teams/v-look/logs/C15-V0-n20.log"
+            ]
+          },
+          {
+            "finding": "The render field D is not a neutral picture of the labels. It raises a 1-thick slab's flat top by 0.02-0.08 (render pressure 0.13-0.19), its seam groove depends on g and on that pressure, and small clusters render much rounder than their labels: CAGE-0.05's single block is a near-cube on labels (diagonal/axis 1.42) but a lumpy ball in the image. Judging 'visibly rounded' from images overstates rounding (the last point is inference from images).",
+            "evidence": [
+              "teams/v-look/res/closedform-check.txt",
+              "teams/v-look/res/seams-C15-V0-g1@n16.json",
+              "teams/v-look/sheets/final-4-limits.png"
+            ]
+          },
+          {
+            "finding": "Under FID-0.15 the 2-high room closes completely (clear height 0 at the back, 1.125 x 0.375 mid-room at n 16), worse than the tunnel. Under the candidate it keeps 2.0 x 1.70, but its walls bow inward to the 0.15 cap and the trench narrows to exactly 0.70 at its floor. Concave corners fill up to the cap everywhere.",
+            "evidence": [
+              "teams/v-look/res/FID-0.15@n16.json",
+              "teams/v-look/res/C15-V0@n20.json",
+              "teams/v-look/sheets/final-1-constraints.png"
+            ]
+          }
+        ],
+        "images": [
+          {
+            "path": "teams/v-look/sheets/final-1-constraints.png",
+            "caption": "Constraint scenes (tunnel, 2-high room, trench, single, stairs, terrain-step, ring8): blocks | candidate BOX0-PAINT-0.15-0.02 at n 20, caps 0.15/0 | candidate section | FREE, with label-measured constraint numbers"
+          },
+          {
+            "path": "teams/v-look/sheets/final-2-paint.png",
+            "caption": "Paint under the candidate: straight band on a 1-thick slab (with end beads); on 2-thick ground the line drains to corners or becomes one blob, the checker merges, the letters A Z melt; FREE for comparison"
+          },
+          {
+            "path": "teams/v-look/sheets/final-3-seams.png",
+            "caption": "A|B seam in a 1-thick slab, zoomed section: label cells coloured, render surface D = 0 in yellow, for FID-0.15 n16/n24, candidate n24, FINITE-4 n24, CAGE-0.25 n24, FREE n16"
+          },
+          {
+            "path": "teams/v-look/sheets/final-4-limits.png",
+            "caption": "Where the claims break: PLAN vertical cap at n 24 drains the 1-thick line; paint fidelity 0.05/0.10 still blobs; NOVOL-1 and CAGE-0.05 keep the tunnel at n 20 (NOVOL-1 fails the room)"
+          },
+          {
+            "path": "teams/v-look/sheets/quick1.png",
+            "caption": "Candidate C15 at n 20, paint on 2-thick ground: diagonal line, dot, stripe, L-turn, cross, diagonal X, 2-wide diagonal, checker (views and plans)"
+          },
+          {
+            "path": "teams/v-look/sheets/quick2.png",
+            "caption": "Candidate C15: big-ground line and checker (n 16) next to blocks, pixel text, stripe alone vs stripe joined to a patch, line across a step, terrain-step, tunnel, room section"
+          }
+        ],
+        "openQuestions": [
+          "Can paint relax only within the top surface (a 2D problem on the material map), with per-block area conservation instead of per-cluster volume? That might keep the straightened diagonal without pooling, sinking or flooding. Untested.",
+          "Does a pixel-art-aware rule (smooth only recognised digital lines, leave small shapes blocky) avoid the melt this bubble model shows? The earlier smoothing study names it as the untested middle path.",
+          "The seam case where a seam meets a convex corner (local L12) was not tested.",
+          "3D Neumann angles at n <= 24 could not be measured reliably (circle fits on a small window disagreed: 89-106 deg), so the 3D angle question is left to the 2D runs.",
+          "Is the box candidate's constraint pass worth anything if it holds only by construction (caps), when every other part of its behaviour is set by the global per-cluster pressure (non-local and slow, 150 steps not converged on paint scenes)?"
+        ]
+      },
+      {
+        "verifier": "v-table",
+        "summary": "I attacked the table claims (T3 to T12), fast C11 and prior corner-classes. I rebuilt the repo's surface-nets mesh: one vertex per mixed corner, quads per solid/air face, split on the shorter diagonal, 1/256 quantisation. I meshed it with 13 vertex placements: cube, the real repo mesher in bevel and hints modes, table's no-volume, volume and terrain-K8 tables, the on-surface physics vertex, half of it, and a new table fitted to the mesh error itself (2-fold or held-out windows). Each mesh was scored in both directions against the physics surface: the render field D, and also a label surface L with almost no blur. The test set was 47 + 29 terrain windows of seed [1,1], 22 + 10 windows of a new seed [7,13], 5 builds and fast's 36 catalogue references, all under FID-0.15 and FINITE-4 (metric checked: logs/test-metric.log). Claim (1) holds on four seeds and two other regions: 30-31 classes cover 99% and 48-61 cover 99.9%. One caveat: about 70% of these 'terrain' corners are cave walls. The vertex numbers of claim (2) reproduce (0.045-0.069 against 0.120-0.162 for bevel and 0.196-0.263 for cube). But vertex error does not predict mesh error. Under FID, bevel is better than cube on vertices and worse on the mesh. The physics vertex is not the best mesh vertex under FID. The no-volume table's mesh advantage over plain cubes under FID is only 6-17% on D and zero on the label surface. On builds the table is 2-3 times worse than cubes. Claim (3)/C11 reproduces on fast's catalogue and roughly on builds, but is refuted on generated terrain. There, on-surface vertices beat cubes by 2x under FINITE-4 (46/47 windows) and moderately under FID. The real optimum is an offset of about 0.3-0.7 times the physical one, which a patch-fitted table delivers out of sample (FID terrain 0.037-0.040 against cube 0.060-0.061 and the no-volume table 0.049-0.058). FINITE-4 terrain is converged in n already at n=12 (n12 vs n20 reference shift 0.009 vertex / 0.007 surface), so the table's advantage survives the converged reference. My 2D analysis puts the limit at a fillet radius of about 0.5 block: below it a 1-block-spaced surface-nets mesh cannot show the rounding at all. Everything is in teams/v-table/ (index: logs/notes-v-table.txt), backed up with rsync; nothing written to the repo; no processes left running.",
+        "verdicts": [
+          {
+            "claim": "combined (1) / table T3: terrain surface corners concentrated (32 classes 99%, 62 for 99.9%, 88.8% single-material, 12.3% non-Plateau, almost all same-material diagonal contacts)",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-table/logs/freq-s1-wide-repro.log (independent counter, own canonicalisation: exact repro 384,419 / 131 / 32 / 62 / 88.818% / 12.26%)",
+              "teams/v-table/logs/freq-s1-far.log, freq-s1-big.log, freq-s7-big.log, freq-sR-big.log, freq-s0-big.log, freq-s1-dense.log (seeds [1,1] far region, [7,13], [3141592653,2718281828], [0,0]; up to 3,388 chunks)",
+              "teams/v-table/logs/freq-break.log (X-edge kinds)",
+              "teams/v-table/logs/freq-mats-s1-wide.log, freq-mats-s7-big.log, freq-cave-s1-wide.log"
+            ],
+            "numbers": "Other seeds and regions: 99% needs 30-31 classes, 99.9% needs 48-61. Single-material 86.5-88.8%; non-Plateau 12.3-13.5%. Classes seen grow to about 150 with 2.7 M corners (long tail). Non-Plateau corners with no same-material diagonal on an X edge (X types air/diff or diff/diff): 0.044-0.049% of surface corners, i.e. 99.6% of non-Plateau corners do have one. Stone-only corners are 69.5-71.2% of surface corners; 99.7% of them lie below H-4, i.e. cave walls. Top-surface corners (grass/dirt/sand present) are about 29%.",
+            "corrected": "Confirmed as stated, across seeds and regions. Add that about 70% of 'terrain surface corners' are cave walls (stone only), so the shares describe caves more than the visible landscape."
+          },
+          {
+            "claim": "combined (2): no-volume per-corner table (63 KB, +0.14 ms/chunk) stands in for the physics on terrain to 0.04-0.06 vertex error vs bevel 0.136 / cube 0.208, fails on small objects (0.15)",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-table/logs/agg-FINITE-4-fit.log, agg-t8-FINITE-4.log, agg-FID-t1.log, agg-FID-fit.log, agg-t8-FID.log (mesh sym and vtx per placement)",
+              "teams/v-table/logs/agg-cat-FID.log, agg-cat-FINITE-4.log (fast's catalogue refs)",
+              "teams/v-table/logs/lookup-bench-rerun1.log, lookup-bench-rerun2.log",
+              "teams/v-table/logs/dbg-cmp output: my on-surface vertex agrees with table's vsn to 0.012 (t0a)",
+              "teams/v-table/sheets/mesh-vs-physics.png"
+            ],
+            "numbers": "Vertex error against the on-surface physics vertex (no-vol table / bevel / cube): FINITE-4 seed 1, 47 windows: 0.045 / 0.120 / 0.252. FID seed 1, 29 windows: 0.057 / 0.132 / 0.196. New seed FINITE-4, 22 windows: 0.062 / 0.128 / 0.241. New seed FID, 10 windows: 0.069 / 0.162 / 0.209.\nMesh error (symmetric, D surface), no-vol table vs cube / bevel / on-surface / patch-fit:\n- FINITE-4 seed 1: 0.054 vs 0.096 / 0.066 / 0.045 / 0.050\n- FINITE-4 new seed: 0.061 vs 0.090 / 0.076 / 0.049 / 0.046-0.049\n- FID out-of-sample seed 1: 0.049 vs 0.060 / 0.078 / 0.045 / 0.037\n- FID new seed: 0.058 vs 0.061 / 0.096 / 0.059 / 0.040\n- FID against the L surface: 0.051 vs cube 0.051\n- Builds: FID 0.054 vs cube 0.024; FINITE-4 0.107 vs cube 0.034\n- Catalogue: FID 0.149 vs cube 0.041; FINITE-4 0.205 vs cube 0.079\nLookup cost rerun: +0.233 and +0.133 ms per chunk; 63,441 bytes.",
+            "corrected": "Under FINITE-4 the no-volume table approximates terrain vertices to 0.045-0.062. It gives a terrain mesh 40% better than cube and 18-20% better than bevel, but on-surface vertices and a patch-fitted table are better again.\n\nUnder FID its vertex error is 0.057-0.069, yet its mesh is only 6-17% better than plain cubes on the render field and no better than cubes on the label surface. A table fitted to mesh error does 25-30% better (0.037-0.040).\n\nOn builds it is worse than cubes (2-3x), and on small objects about 4x worse than cubes, as claimed. Cost and size claims hold."
+          },
+          {
+            "claim": "fast C11 / combined (3): with one vertex per corner, on-surface vertices do NOT minimise mesh error; vs FID-0.15 cube corners give smaller quad-patch error (0.034) than on-surface vertices (0.113)",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-table/logs/agg-cat-FID.log, cat-FID-configmean.log, agg-cat-FINITE-4.log (fast's refcache, my two-direction triangle metric)",
+              "teams/v-table/logs/agg-FINITE-4-fit.log, agg-FID-t1.log, agg-FID-fit.log, agg-t8-FID.log, agg-t8-FINITE-4.log",
+              "teams/v-table/logs/round2d.log, res/round2d.json",
+              "teams/v-table/res/fit/fitF-FID.json, fitA-FINITE-4.json, logs/patchfit-*.log",
+              "teams/v-table/img/slice-t6s-FID-z51.5.png, img/slice-t13s-FINITE-4-fit-z17.5.png"
+            ],
+            "numbers": "Catalogue, mesh error cube vs physics on-surface vertex: FID 0.041 vs 0.067 (cube better in 34/36); FINITE-4 0.079 vs 0.088. Config-mean mesh-to-sim: cube 0.043 vs on-surface 0.090 (fast's metric: 0.034 vs 0.113). Builds: FID cube 0.024 vs on-surface 0.026 (FINITE-4 0.034 vs 0.037).\nTerrain: FINITE-4 on-surface 0.045 vs cube 0.096 (46/47 windows), new seed 0.049 vs 0.090. FID on-surface 0.047 vs cube 0.059 (16/29 windows); new seed 0.059 vs 0.061 (4/10).\nHalf the physical offset: FID terrain 0.035, beating both.\nPatch-fitted offsets as a fraction of the physical terrain offset: FID convex edge 0.042/0.136, concave edge 0.049/0.137, convex corner 0.156/0.272, concave corner 0.139/0.264. FINITE-4 0.106/0.201, 0.141/0.204, 0.202/0.303, 0.196/0.295.",
+            "corrected": "On-surface vertices do not minimise mesh error, which confirms the mechanism. But plain cubes win only for small isolated objects and builds, where the physical rounding radius is below about 0.5 block.\n\nOn generated terrain, on-surface vertices beat cubes: by 2x under FINITE-4, and modestly or not at all under FID. The minimum lies at an offset of about 0.3-0.6 times the physical one (FID) or 0.5-0.7 times (FINITE-4). A per-class table fitted to mesh error captures this out of sample."
+          },
+          {
+            "claim": "table T4: volume E2c table biased on terrain (0.107 FID / 0.082 FINITE vertex)",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-table/logs/agg-FID-t1.log, agg-FINITE-4-fit.log, agg-FID-fit.log, agg-t8-FINITE-4.log"
+            ],
+            "numbers": "Volume-table vertex error: FID 0.099, FINITE-4 0.082. Mesh error, volume vs no-volume table: FID seed 1 0.043 vs 0.049; FID new seed 0.049 vs 0.058; FINITE-4 seed 1 0.058 vs 0.054; FINITE-4 new seed 0.053 vs 0.061; builds FID 0.037 vs 0.054.",
+            "corrected": "Confirmed for vertex error. At mesh level the 'biased' volume table is as good as or better than the no-volume table in 4 of 5 terrain and build comparisons. Its under-rounding hurts little, because a 1-block mesh cannot show sub-block rounding anyway."
+          },
+          {
+            "claim": "table T5: no volume constraint reproduces terrain because terrain bubbles have pressure ~0",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-table/logs/lambda-FINITE-4-t1.log, lambda-FID-t1.log",
+              "teams/v-table/res/cmp-t1-FINITE-4-vol-vs-nv.json, logs/cmp-t1-vol-nv.log",
+              "teams/v-table/res/score/t1_FINITE-4_n12_fit.json (t0a, t11b)"
+            ],
+            "numbers": "Pressure of phases with at least 50 blocks: FINITE-4 median 0.002 (p10 -0.024, p90 0.034); FID median 0 (p10 -0.021, p90 0.033). Phases under 50 blocks: median 0.04-0.08.\nFINITE-4 volume vs no-volume terrain runs: on-surface vertex differs by 0.032 mean and the surface by 0.024 mean (below the 0.05 refute threshold). The worst windows are t0a (0.130) and t11b (0.095), which are where the no-volume table's mesh fails: t0a 0.119 vs cube 0.053.",
+            "corrected": "Pressure near 0 is measured for large terrain bubbles, so the mechanism holds on average. Where a window holds thin or small bubbles (1-high cave tunnels), the volume constraint changes the surface by about 0.1. There the no-volume table is worse than cubes."
+          },
+          {
+            "claim": "table T6: no single 2x2x2 table fits all contexts; missing input is bubble size/pressure",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-table/logs/agg-cat-FID.log, agg-cat-FINITE-4.log, agg-FID-fit.log, agg-FINITE-4-fit.log"
+            ],
+            "numbers": "Volume-table vertex error: terrain 0.082-0.099, builds 0.040-0.042, catalogue 0.070-0.077 (no single table under 0.07 everywhere). Catalogue mesh error: volume table 0.079 (FID) / 0.108 (FINITE-4), no-volume table 0.149 / 0.205, cube 0.041 / 0.079.",
+            "corrected": "True at vertex level. At mesh level the volume table is never far from the best table in any context, though cubes beat every table on small objects. The 'missing pressure' reading fits the t0a/t11b evidence; that link is inference."
+          },
+          {
+            "claim": "table T7: larger keys (K32, K64) do not pay on terrain",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-table/res/keycv-FID-0.15.json, res/keycv-FINITE-4.json, logs/keycv-summary.log (own references, own canonicalisation, 2-fold by chunk)"
+            ],
+            "numbers": "FID: K8 with fallback 0.044 / 0.035; K32 0.043 / 0.037 (coverage 33% / 30%); K64 coverage about 2%. FINITE-4: K8 0.029 / 0.031; K32 0.027 / 0.029 (coverage 39% / 36%); K64 coverage 2-4%.",
+            "corrected": "Confirmed for vertex error. Under FINITE-4, K32 with fallback gains about 6%; negligible."
+          },
+          {
+            "claim": "table T8: material identity barely moves the vertex (K8bin ~ K8)",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-table/logs/keycv-summary.log"
+            ],
+            "numbers": "K8bin vs K8 (cross-validated): FID 0.047 vs 0.044 and 0.035 vs 0.035; FINITE-4 0.037 vs 0.029 and 0.035 vs 0.031."
+          },
+          {
+            "claim": "table T9: seam vertex shifted in-plane toward the odd block (class 11: 0.146 FID / 0.237 FINITE) plus a groove",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-table/logs/classseam-summary.log, res/classseam.jsonl (E2c embedding, label seam along the diagonal, n 12/16/20)"
+            ],
+            "numbers": "Label-based seam shift, n 12/16/20:\n- FINITE-4 no volume: 0.24 / 0.18 / 0.19\n- FINITE-4 volume: 0.09 / 0.12 / 0.14\n- FID no volume: 0.09 / 0.12 / 0.09\n- FID volume: 0.01 / -0.01 / -0.01 (none; the render field D gives 0.04)",
+            "corrected": "Under FINITE-4 the shift survives on labels and at higher n: about 0.18-0.24. Under FID it is about 0.1 on labels (no-volume embedding) and about 0 with volume. The 0.146 measured on D is partly render blur. Measured in the class embedding, not in terrain windows."
+          },
+          {
+            "claim": "table T10: per-(corner, material) vertex positions would open cracks",
+            "verdict": "untested",
+            "evidence": [
+              "src/core/mesh/mesher.ts (one position per corner, attributes split per material) read only"
+            ],
+            "numbers": "The 0.806 separation was not re-measured.",
+            "corrected": "Untested numerically. The crack consequence follows from the repo topology, because adjacent quads of different materials share corner edges (inference)."
+          },
+          {
+            "claim": "table T11: 21,147 x 3 int8 = 63 KB table, +0.14 ms per chunk",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-table/logs/lookup-bench-rerun1.log, lookup-bench-rerun2.log (table's bench rerun with the complete no-volume table, loaded machine)"
+            ],
+            "numbers": "63,441 bytes; 17,006 surface patterns filled; +0.233 and +0.133 ms per chunk."
+          },
+          {
+            "claim": "table T12: same-material diagonal classes carry disproportionate error (97/27/92: 5.6% of corners, 18.8% of error)",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-table/logs/errshare-FID.log, errshare-FINITE-4.log"
+            ],
+            "numbers": "Classes 97/27/92: FID 3.9% of corners and 13.1% of error; FINITE-4 5.6% and 13.8%. Class 27 mean error 0.60-0.64. All ambiguous-union classes: FID 9.5% of corners, 20.9% of error (mean 0.126 vs 0.050); FINITE-4 14.7% and 30.2% (0.092 vs 0.037).",
+            "corrected": "The direction is confirmed; the share is smaller than claimed (13-14% rather than 18.8% for the three classes)."
+          },
+          {
+            "claim": "prior corner-classes: few classes pass Plateau checks, so most corners need a topological (T1/pop) decision before smoothing",
+            "verdict": "partly",
+            "evidence": [
+              "teams/v-table/logs/freq-*.log (counts 738/551/225/22 not redone, as instructed)"
+            ],
+            "numbers": "Generated terrain, four seeds: 86.5-87.7% of surface corners are Plateau-legal; non-Plateau 12.3-13.5%.",
+            "corrected": "True of classes, false of frequency. On generated terrain only about 13% of surface corners need a topological decision, almost all same-material diagonal contacts."
+          },
+          {
+            "claim": "(b) does the table's advantage survive a converged FINITE-4 reference (T13 says FINITE-4 not converged by n=20)?",
+            "verdict": "confirmed",
+            "evidence": [
+              "teams/v-table/logs/cmp-n1-12-20.log, cmp-n1-16-20.log, agg-n1.log (12 windows 6x5x5, seed [1,1], FINITE-4 at n 12/16/20)",
+              "teams/v-table/logs/classtab-ncompare.log, res/table-mine/"
+            ],
+            "numbers": "Terrain reference n12 vs n20: vertex 0.0094, surface 0.0067 (n16 vs n20: 0.0072 / 0.0041).\nMesh error against the n20 reference: on-surface 0.042, volume table 0.051, no-vol table 0.058, n20-built table 0.060, bevel 0.073, cube 0.102. Vertex error at n20: no-vol table 0.059, bevel 0.135, cube 0.264.\nNo-volume class table, top 25 classes: mean |n12-n20| 0.026, |n20-n24| 0.006.",
+            "corrected": "Yes. The n-dependence in T13 belongs to the volume-constrained class embedding. Terrain FINITE-4 and the no-volume table are both converged to within 0.01-0.03 at n=12, and building the table at n=20 does not help."
+          }
+        ],
+        "newFindings": [
+          {
+            "finding": "Vertex error does not rank meshes. Under FID on terrain, bevel has lower vertex error than cube (0.132 vs 0.196) but higher mesh error (0.081 vs 0.059). The exact physics vertex (0.047) loses to half of it (0.035). Fitting a table to vertex error is the wrong target whenever the physical rounding radius is below about 1 block.",
+            "evidence": [
+              "teams/v-table/logs/agg-FID-t1.log",
+              "teams/v-table/logs/agg-FID-fit.log"
+            ]
+          },
+          {
+            "finding": "A per-class table fitted to mesh error is the best table out of sample under FID and competitive under FINITE-4. FID terrain: 0.037 (held-out seed-1 windows) and 0.040 (new seed), against 0.049/0.058 for the no-volume table, 0.060/0.061 for cubes and 0.078/0.096 for bevel. FINITE-4: 0.050/0.046-0.049 against 0.054/0.061 for the no-volume table. Its offsets are 0.3-0.6x (FID) or 0.5-0.7x (FINITE-4) the physical ones. On builds it does not beat cubes (FID 0.028 vs 0.024). Same 21,147-entry layout, so same cost (inference).",
+            "evidence": [
+              "teams/v-table/res/fit/fitF-FID.json",
+              "teams/v-table/res/fit/fitA-FINITE-4.json",
+              "teams/v-table/res/fit/fitB-FINITE-4.json",
+              "teams/v-table/logs/patchfit-fitF-FID.log",
+              "teams/v-table/logs/agg-FID-fit.log",
+              "teams/v-table/logs/agg-t8-FID.log",
+              "teams/v-table/logs/agg-FINITE-4-fit.log",
+              "teams/v-table/logs/agg-t8-FINITE-4.log"
+            ]
+          },
+          {
+            "finding": "(c) What rounding a block-resolution surface-nets mesh can represent. In a 2D convex edge with fillet radius r and vertices 1 block apart:\n- r <= 0.3: the best edge-vertex offset is 0 (cube); on-surface placement is 4-7x worse.\n- r = 0.4 / 0.5 / 0.6: the best placement recovers 6% / 19% / 33% of the cube's error, with offsets 0.02 / 0.045 / 0.08 against on-surface 0.12 / 0.15 / 0.18.\n- r = 0.75: on-surface first beats cube; 52% recovered.\n- r = 1: 78%. r >= 1.25: about 90%.\nAssuming circular fillets (inference), terrain edge offsets measured on D correspond to r about 0.46 (FID) and 0.69 (FINITE-4), so FID sits at the threshold. The FID fit's edge offset (0.042) matches the 2D prediction (0.045). Rounding below about half a block cannot be shown; 1-block staircases turning into slopes can.",
+            "evidence": [
+              "teams/v-table/logs/round2d.log",
+              "teams/v-table/res/round2d.json",
+              "teams/v-table/img/round2d-chart.png",
+              "teams/v-table/logs/patchfit-fitF-FID.log"
+            ]
+          },
+          {
+            "finding": "Under FID, part of the measured rounding comes from the render blur in D. Against the label surface, the no-volume table's terrain mesh error equals the cube's (0.0514 vs 0.0509). On the catalogue the cube mesh is closest to the labels by far (0.025 vs on-surface 0.063). Under FINITE-4 the ranking is the same on D and on labels.",
+            "evidence": [
+              "teams/v-table/logs/agg-FID-fit.log",
+              "teams/v-table/logs/agg-cat-FID.log",
+              "teams/v-table/logs/agg-FINITE-4-fit.log"
+            ]
+          },
+          {
+            "finding": "The no-volume table fails where the volume constraint matters.\n- Thin 1-high cave tunnels (t0a): volume vs no-volume runs differ by 0.13, and the table's mesh is 0.119 against the cube's 0.053; it pinches the tunnel ends.\n- Builds: the table's mesh is 2-3x the cube's.\nA size or pressure input (table's optimisation 3) is needed for builds and caves, not only for small objects.",
+            "evidence": [
+              "teams/v-table/res/cmp-t1-FINITE-4-vol-vs-nv.json",
+              "teams/v-table/res/score/t1_FINITE-4_n12_fit.json",
+              "teams/v-table/img/slice-t0a-FINITE-4-z42.5.png",
+              "teams/v-table/logs/agg-FINITE-4-fit.log"
+            ]
+          },
+          {
+            "finding": "The no-volume table's seam entries (vertex at the seam point) cost a little surface accuracy compared with the same table's surface-nets vertex. My solid/air metric does not score where material seams fall, so this is a trade-off, not a defect.",
+            "evidence": [
+              "teams/v-table/logs/agg-n1.log",
+              "teams/v-table/logs/agg-FINITE-4-fit.log",
+              "teams/v-table/logs/agg-t8-FINITE-4.log"
+            ],
+            "numbers_note": "no-vol table vs its vsn-only variant: n1 0.058 vs 0.054; t1 FINITE-4 0.054 vs 0.053; t8 FINITE-4 0.061 vs 0.059"
+          }
+        ],
+        "images": [
+          {
+            "path": "teams/v-table/sheets/mesh-vs-physics.png",
+            "caption": "Contact sheet: mesh cross-sections against the physics solid (grey) for terrain t13s/t15b/t0a (FINITE-4), terrain t6s and build b-stairs (FID-0.15), and the 2D rounding chart. Colours: black cube, cyan bevel, orange no-volume table, magenta on-surface, green patch-fit (out of sample). Labels give each window's mesh error."
+          },
+          {
+            "path": "teams/v-table/img/slice-t6s-FID-z51.5.png",
+            "caption": "Terrain t6s, FID-0.15 n12, cut at z=51.5. At a 1-block step, on-surface vertices (magenta) and the table (orange) chamfer the step over a whole block. The physics stays nearly sharp, and the patch-fit (green) stays close to it. Mesh error: cube 0.036, table 0.041, on-surface 0.045, fit 0.022."
+          },
+          {
+            "path": "teams/v-table/img/slice-t13s-FINITE-4-fit-z17.5.png",
+            "caption": "Terrain t13s, FINITE-4 n12, cut at z=17.5. The physics turns a 1:1 staircase into a slope; every moved-vertex rule follows it and the cube does not. Mesh error: cube 0.127, bevel 0.045, table 0.028, on-surface 0.025, fit 0.055."
+          },
+          {
+            "path": "teams/v-table/img/slice-t0a-FINITE-4-z42.5.png",
+            "caption": "Cave window t0a, FINITE-4 n12, cut at z=42.5: a 1-high tunnel. The no-volume table (orange) pinches the tunnel ends harder than the physics does. Mesh error: table 0.119, cube 0.053."
+          },
+          {
+            "path": "teams/v-table/img/slice-b-stairs-FID-z7.5.png",
+            "caption": "Build b-stairs, FID-0.15 n12, cut at z=7.5. The physics keeps the steps; bevel (cyan) turns them into a slope. Mesh error: cube 0.038, bevel 0.087, table 0.073, on-surface 0.033, fit 0.042."
+          },
+          {
+            "path": "teams/v-table/img/round2d-chart.png",
+            "caption": "2D convex edge, fillet radius r on x (0 to 2 blocks), mesh error on y (0 to 0.04). Black: cube. Magenta: on-surface vertices. Green: best offsets. Below r of about 0.4 the cube is optimal; on-surface wins from r of about 0.75."
+          }
+        ],
+        "openQuestions": [
+          "Which surface is 'the physics' for the owner's look: the render field D (adds about 0.07 per axis of edge rounding) or the labels? Under FID the no-volume table's mesh advantage over cubes exists only on D.",
+          "Material seams are not scored by my solid/air metric. A seam-position metric is needed before choosing between seam-point vertices and surface-nets vertices at seam classes (table T9/T12).",
+          "The patch-fit was fitted to the D surface on 12-24 windows of seed [1,1]. It held out of sample on 22 + 10 windows of seed [7,13]. Rare classes reached extreme offsets (up to 0.5), which may overfit; a size or pressure bucket was not tried.",
+          "My first new-seed set (t7) mostly missed the surface (5 FINITE-4 / 2 FID windows), so set t8 is the real new-seed test. FID windows on the new seed are only 10.",
+          "T10's 0.806 per-material separation was not re-measured. Class-11 seams were measured on labels only in the class embedding, not in terrain windows (the seed-1 FID caches lack phase-to-material maps)."
+        ]
+      }
+    ],
+    "missing": []
+  },
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Verify"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "verify:v-union",
+      "phaseIndex": 1,
+      "phaseTitle": "Verify",
+      "agentId": "af2ef8ad8be7eb74e",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1792659217575,
+      "queuedAt": 1792659217546,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "v-union",
+      "promptPreview": "You are verifier 'v-union' in round 2 of a research study for amorfus, a browser voxel game (public repo at ../..; read-only for you). The owner asked to experiment with \"bubble physics\": each block is a bubble; neighbouring bubbles of different material stay separate, of the same material unite; find patterns in how clusters combine that lead to optimizations; make samp…",
+      "promptFramed": true,
+      "lastProgressAt": 1792664866668,
+      "tokens": 389544,
+      "toolCalls": 91,
+      "durationMs": 5649093,
+      "resultPreview": "{\"verifier\":\"v-union\",\"summary\":\"I attacked the combined X-junction claim and 15 related claims. I re-ran the engine (lib/mbo.mjs) and the exact 2D solver (teams/phys/foam2d.mjs, imported read-only) on new configurations built so that the 4x4 window count, the cluster size and the instantaneous pressure disagree: W1 (bars joining blobs against 2x2 squares), L2 and L2-shortA (a domino line crossing…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "verify:v-local",
+      "phaseIndex": 1,
+      "phaseTitle": "Verify",
+      "agentId": "a9ba002a19523c46a",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1792659217575,
+      "queuedAt": 1792659217546,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "v-local",
+      "promptPreview": "You are verifier 'v-local' in round 2 of a research study for amorfus, a browser voxel game (public repo at ../..; read-only for you). The owner asked to experiment with \"bubble physics\": each block is a bubble; neighbouring bubbles of different material stay separate, of the same material unite; find patterns in how clusters combine that lead to optimizations; make samp…",
+      "promptFramed": true,
+      "lastProgressAt": 1792661521558,
+      "tokens": 344733,
+      "toolCalls": 88,
+      "durationMs": 2303177,
+      "resultPreview": "{\"verifier\":\"v-local\",\"summary\":\"The combined claim is only partly true. A local rule exists that bounds its reach to apron 2 and keeps small features. It does not reproduce the FID-0.15 physics, it fails two of the four game constraints on its own, and its vertex solver misplaces about 3.8 % of terrain corners.\\n\\nWhat holds:\\n- **Locality, by construction and measured.** One block edited changes…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "verify:v-look",
+      "phaseIndex": 1,
+      "phaseTitle": "Verify",
+      "agentId": "a8936d9b53df9f370",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1792659217575,
+      "queuedAt": 1792659217546,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "v-look",
+      "promptPreview": "You are verifier 'v-look' in round 2 of a research study for amorfus, a browser voxel game (public repo at ../..; read-only for you). The owner asked to experiment with \"bubble physics\": each block is a bubble; neighbouring bubbles of different material stay separate, of the same material unite; find patterns in how clusters combine that lead to optimizations; make sampl…",
+      "promptFramed": true,
+      "lastProgressAt": 1792664956009,
+      "tokens": 367068,
+      "toolCalls": 99,
+      "durationMs": 5737628,
+      "resultPreview": "{\"verifier\":\"v-look\",\"summary\":\"I attacked the look team's claims and the game constraints, with all paths relative to S = .. I ran the two engine-copy candidates (the look team's mbo-look.mjs, imported unchanged) at n 20 with the exact PLAN caps 0.15/0.05, at n 20 with the vertical cap at 0 as …"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 4,
+      "label": "verify:v-table",
+      "phaseIndex": 1,
+      "phaseTitle": "Verify",
+      "agentId": "ac9ba4599fc89f3d2",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1792661524070,
+      "queuedAt": 1792661524067,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "v-table",
+      "promptPreview": "You are verifier 'v-table' in round 2 of a research study for amorfus, a browser voxel game (public repo at ../..; read-only for you). The owner asked to experiment with \"bubble physics\": each block is a bubble; neighbouring bubbles of different material stay separate, of the same material unite; find patterns in how clusters combine that lead to optimizations; make samp…",
+      "promptFramed": true,
+      "lastProgressAt": 1792666229008,
+      "tokens": 454969,
+      "toolCalls": 178,
+      "durationMs": 4704938,
+      "resultPreview": "{\"verifier\":\"v-table\",\"summary\":\"I attacked the table claims (T3 to T12), fast C11 and prior corner-classes. I rebuilt the repo's surface-nets mesh: one vertex per mixed corner, quads per solid/air face, split on the shorter diagonal, 1/256 quantisation. I meshed it with 13 vertex placements: cube, the real repo mesher in bevel and hints modes, table's no-volume, volume and terrain-K8 tables, the …"
+    }
+  ],
+  "totalTokens": 1556314,
+  "totalToolCalls": 456
+}

@@ -1,0 +1,15 @@
+{"kind":"anneal","seed":6,"steps":111,"xWindows":0,"wallAD":0,"wallBC":0.594}
+{"kind":"anneal","seed":7,"steps":106,"xWindows":0,"wallAD":0.594,"wallBC":0}
+{"kind":"anneal","seed":8,"steps":107,"xWindows":0,"wallAD":0.563,"wallBC":0}
+{"kind":"anneal","seed":9,"steps":106,"xWindows":0,"wallAD":0,"wallBC":0.563}
+{"kind":"anneal","seed":10,"steps":106,"xWindows":0,"wallAD":0,"wallBC":0.594}
+{"kind":"anneal","seed":11,"steps":110,"xWindows":0,"wallAD":0,"wallBC":0.625}
+{"kind":"anneal","seed":12,"steps":109,"xWindows":0,"wallAD":0,"wallBC":0.594}
+{"kind":"anneal","seed":13,"steps":106,"xWindows":0,"wallAD":0.625,"wallBC":0}
+{"kind":"anneal","seed":14,"steps":107,"xWindows":0,"wallAD":0.594,"wallBC":0}
+{"kind":"anneal","seed":15,"steps":111,"xWindows":0,"wallAD":0.563,"wallBC":0}
+{"kind":"frozen0.1","seed":1,"steps":36,"xWindows":1,"wallAD":0.094,"wallBC":0.031}
+{"kind":"frozen0.1","seed":2,"steps":19,"xWindows":0,"wallAD":0.063,"wallBC":0}
+{"kind":"frozen0.1","seed":3,"steps":42,"xWindows":0,"wallAD":0,"wallBC":0.5}
+{"kind":"frozen0.1","seed":4,"steps":17,"xWindows":0,"wallAD":0.125,"wallBC":0}
+{"kind":"frozen0.1","seed":5,"steps":26,"xWindows":0,"wallAD":0.031,"wallBC":0}

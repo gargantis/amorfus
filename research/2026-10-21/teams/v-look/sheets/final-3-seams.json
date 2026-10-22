@@ -1,0 +1,35 @@
+{
+ "out": "teams/v-look/sheets/final-3-seams.png",
+ "cols": 3,
+ "cell": [
+  480,
+  336
+ ],
+ "title": "A|B seam (x = 2) in a 1-thick slab, section z = 2: label cells by colour, render surface D = 0 in yellow",
+ "items": [
+  {
+   "path": "teams/v-look/img/seamzoom/halves4-FID-0.15@n16.png",
+   "label": "FID-0.15 n16: label notch 0.062\nrender-field groove 0.092"
+  },
+  {
+   "path": "teams/v-look/img/seamzoom/halves4-FID-0.15@n24.png",
+   "label": "FID-0.15 n24: label notch 0.042\nrender-field groove 0.077"
+  },
+  {
+   "path": "teams/v-look/img/seamzoom/halves4-C15-V0@n24.png",
+   "label": "C15-V0 n24: label notch 0.000\nrender-field groove 0.038"
+  },
+  {
+   "path": "teams/v-look/img/seamzoom/halves4-FINITE-4@n24.png",
+   "label": "FINITE-4 n24: label notch 0.162\nrender-field groove 0.160"
+  },
+  {
+   "path": "teams/v-look/img/seamzoom/halves4-CAGE-0.25@n24.png",
+   "label": "CAGE-0.25 n24: label notch 0.042\nrender-field groove 0.063"
+  },
+  {
+   "path": "teams/v-look/img/seamzoom/halves4-FREE@n16.png",
+   "label": "FREE n16: label notch 0.031\nrender-field groove 0.043"
+  }
+ ]
+}

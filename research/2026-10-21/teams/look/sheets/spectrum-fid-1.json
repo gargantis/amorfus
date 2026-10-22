@@ -1,0 +1,263 @@
+{
+"out": "teams/look/sheets/spectrum-fid-1.png",
+"cols": 7,
+"title": "Spectrum, fidelity family (views; n 16, s 0.2, g 1). Rows: configuration; columns: regime",
+"cell": [
+240,
+180
+],
+"items": [
+{
+"path": "teams/look/img/BLOCKS/single-view.png",
+"label": "single\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/single-view.png",
+"label": "single\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/single-view.png",
+"label": "single\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/single-view.png",
+"label": "single\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/single-view.png",
+"label": "single\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/single-view.png",
+"label": "single\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/single-view.png",
+"label": "single\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/pair-same-view.png",
+"label": "pair-same\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/pair-same-view.png",
+"label": "pair-same\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/pair-same-view.png",
+"label": "pair-same\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/pair-same-view.png",
+"label": "pair-same\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/pair-same-view.png",
+"label": "pair-same\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/pair-same-view.png",
+"label": "pair-same\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/pair-same-view.png",
+"label": "pair-same\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/pair-diff-view.png",
+"label": "pair-diff\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/pair-diff-view.png",
+"label": "pair-diff\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/pair-diff-view.png",
+"label": "pair-diff\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/pair-diff-view.png",
+"label": "pair-diff\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/pair-diff-view.png",
+"label": "pair-diff\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/pair-diff-view.png",
+"label": "pair-diff\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/pair-diff-view.png",
+"label": "pair-diff\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/L3-ABC-view.png",
+"label": "L3-ABC\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/L3-ABC-view.png",
+"label": "L3-ABC\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/L3-ABC-view.png",
+"label": "L3-ABC\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/L3-ABC-view.png",
+"label": "L3-ABC\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/L3-ABC-view.png",
+"label": "L3-ABC\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/L3-ABC-view.png",
+"label": "L3-ABC\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/L3-ABC-view.png",
+"label": "L3-ABC\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/sq2-AABB-view.png",
+"label": "sq2-AABB\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/sq2-AABB-view.png",
+"label": "sq2-AABB\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/sq2-AABB-view.png",
+"label": "sq2-AABB\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/sq2-AABB-view.png",
+"label": "sq2-AABB\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/sq2-AABB-view.png",
+"label": "sq2-AABB\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/sq2-AABB-view.png",
+"label": "sq2-AABB\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/sq2-AABB-view.png",
+"label": "sq2-AABB\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/cube2-same-view.png",
+"label": "cube2-same\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/cube2-same-view.png",
+"label": "cube2-same\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/cube2-same-view.png",
+"label": "cube2-same\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/cube2-same-view.png",
+"label": "cube2-same\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/cube2-same-view.png",
+"label": "cube2-same\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/cube2-same-view.png",
+"label": "cube2-same\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/cube2-same-view.png",
+"label": "cube2-same\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/cube2-oneB-view.png",
+"label": "cube2-oneB\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/cube2-oneB-view.png",
+"label": "cube2-oneB\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/cube2-oneB-view.png",
+"label": "cube2-oneB\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/cube2-oneB-view.png",
+"label": "cube2-oneB\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/cube2-oneB-view.png",
+"label": "cube2-oneB\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/cube2-oneB-view.png",
+"label": "cube2-oneB\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/cube2-oneB-view.png",
+"label": "cube2-oneB\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/stairs-view.png",
+"label": "stairs\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/stairs-view.png",
+"label": "stairs\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/stairs-view.png",
+"label": "stairs\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/stairs-view.png",
+"label": "stairs\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/stairs-view.png",
+"label": "stairs\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/stairs-view.png",
+"label": "stairs\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/stairs-view.png",
+"label": "stairs\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/slab-dot-view.png",
+"label": "slab-dot\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/slab-dot-view.png",
+"label": "slab-dot\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/slab-dot-view.png",
+"label": "slab-dot\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-dot-view.png",
+"label": "slab-dot\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/slab-dot-view.png",
+"label": "slab-dot\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/slab-dot-view.png",
+"label": "slab-dot\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/slab-dot-view.png",
+"label": "slab-dot\nFREE"
+}
+]
+}

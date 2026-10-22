@@ -1,0 +1,80 @@
+{
+ "note": "frame 9x3x9 (2 wide), membrane y=1 over x,z in 2..6; n 12 margin 0.75",
+ "regime": "FID-0.15-novol",
+ "scenes": {
+  "intact": {
+   "holesBlocks": 0,
+   "steps": 30,
+   "converged": true,
+   "ms": 2596,
+   "membraneFill": 1,
+   "membraneFillOfBlocks": 1
+  },
+  "hole1": {
+   "holesBlocks": 1,
+   "steps": 30,
+   "converged": true,
+   "ms": 2808,
+   "membraneFill": 0.9565,
+   "membraneFillOfBlocks": 0.9963
+  },
+  "hole2": {
+   "holesBlocks": 2,
+   "steps": 30,
+   "converged": true,
+   "ms": 2618,
+   "membraneFill": 0.9131,
+   "membraneFillOfBlocks": 0.9926
+  },
+  "hole2x2": {
+   "holesBlocks": 4,
+   "steps": 30,
+   "converged": true,
+   "ms": 2668,
+   "membraneFill": 0.8298,
+   "membraneFillOfBlocks": 0.9879
+  },
+  "hole3x3": {
+   "holesBlocks": 9,
+   "steps": 30,
+   "converged": true,
+   "ms": 3174,
+   "membraneFill": 0.6231,
+   "membraneFillOfBlocks": 0.9737
+  }
+ },
+ "pairs": [
+  {
+   "from": "intact",
+   "to": "hole1",
+   "blocksChanged": 1,
+   "labelCellsChanged": 1880,
+   "cellsBeyond1Block": 0,
+   "maxDist": 0.125
+  },
+  {
+   "from": "hole1",
+   "to": "hole2",
+   "blocksChanged": 1,
+   "labelCellsChanged": 1872,
+   "cellsBeyond1Block": 0,
+   "maxDist": 0.2125
+  },
+  {
+   "from": "hole2",
+   "to": "hole2x2",
+   "blocksChanged": 2,
+   "labelCellsChanged": 3600,
+   "cellsBeyond1Block": 0,
+   "maxDist": 0.2125
+  },
+  {
+   "from": "hole2x2",
+   "to": "hole3x3",
+   "blocksChanged": 5,
+   "labelCellsChanged": 8928,
+   "cellsBeyond1Block": 0,
+   "maxDist": 0.2125
+  }
+ ]
+}

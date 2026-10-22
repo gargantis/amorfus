@@ -1,0 +1,13 @@
+NV-FID-0.15 single: 124 ms, 11 steps, Δ 1.000, phases {"6":1}→{"6":1}, rss 71 MB
+NV-FID-0.15 cube2-same: 437 ms, 26 steps, Δ 0.287, phases {"6":1}→{"6":1}, rss 86 MB
+NV-FID-0.15 sq2-same: 287 ms, 31 steps, Δ 1.000, phases {"6":1}→{"6":1}, rss 96 MB
+NV-FID-0.15 pillar3: 134 ms, 23 steps, Δ 1.000, phases {"6":1}→{"6":1}, rss 110 MB
+NV-FID-0.15 tunnel: 1336 ms, 28 steps, Δ 0.116, phases {"3":1}→{"3":1}, rss 151 MB
+NV-FID-0.15 ring8: 638 ms, 39 steps, Δ 1.000, phases {"6":1}→{"6":1}, rss 155 MB
+NV-FID-0.15 stairs: 1714 ms, 85 steps, Δ 0.521, phases {"6":1}→{"6":1}, rss 163 MB
+NV-FID-0.15 terrain-step: 11318 ms, 93 steps, Δ 0.096, phases {"1":2,"2":1}→{"1":1,"2":1}, rss 163 MB
+NV-FID-0.15 slab-halves: 6541 ms, 150 steps (nc), Δ 0.900, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 176 MB
+NV-FID-0.15 slab-dot: 4757 ms, 150 steps (nc), Δ 1.000, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 186 MB
+NV-FID-0.15 slab-line: 6973 ms, 127 steps, Δ 1.000, phases {"6":6,"7":2}→{"6":6,"7":1}, rss 191 MB
+NV-FID-0.15 pair-diff: 76 ms, 13 steps, Δ 1.000, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 191 MB
+NV-FID-0.15 wall 45.95 s maxrss 186324 KB

@@ -1,0 +1,5 @@
+FINITE-4-novol recolour base 495 ms 4 steps NOT CONVERGED [{"p":1,"mat":6,"blocks":140,"volume":130.981,"lamRun":0,"lamRender":0.08543}]
+d=1: 572 ms 4 st NC | label diffs 672, max dist 0.208 | probe dD -0.0118 dD0 -0.01151 dLab 0 | lam 0/0 (base 0)
+d=2: 388 ms 4 st NC | label diffs 672, max dist 0.208 | probe dD -0.00069 dD0 0 dLab 0 | lam 0/0 (base 0)
+d=4: 405 ms 4 st NC | label diffs 672, max dist 0.208 | probe dD -0.00069 dD0 0 dLab 0 | lam 0/0 (base 0)
+d=8: 372 ms 4 st NC | label diffs 672, max dist 0.208 | probe dD -0.00069 dD0 0 dLab 0 | lam 0/0 (base 0)

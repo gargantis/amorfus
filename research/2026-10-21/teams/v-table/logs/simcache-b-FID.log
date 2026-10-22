@@ -1,0 +1,5 @@
+b b-house FID-0.15 n12: grid 108x96x108, 25 steps, 11545 ms, rss 203 MB
+b b-stairs FID-0.15 n12: grid 108x96x108, 15 steps, 3845 ms, rss 240 MB
+b b-painted FID-0.15 n12: grid 120x72x120, 14 steps, 7514 ms, rss 255 MB
+b b-checker FID-0.15 n12: grid 120x84x120, 3 steps, 2693 ms, rss 255 MB
+b b-walls FID-0.15 n12: grid 108x84x120, 29 steps, 5746 ms, rss 269 MB

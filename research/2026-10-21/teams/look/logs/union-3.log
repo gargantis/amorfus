@@ -1,0 +1,49 @@
+CAGE-0.15 diag-edge j0 s1: 555 ms 26 steps, {"6":2}→{"6":1} A
+CAGE-0.15 diag-edge j0.001 s1: 601 ms 32 steps, {"6":2}→{"6":1} A
+CAGE-0.15 diag-edge j0.001 s2: 563 ms 26 steps, {"6":2}→{"6":1} A
+CAGE-0.15 diag-edge j0.001 s3: 495 ms 28 steps, {"6":2}→{"6":1} A
+CAGE-0.15 diag-corner j0 s1: 213 ms 11 steps, {"6":2}→{"6":2} 
+CAGE-0.15 diag-corner j0.001 s1: 244 ms 13 steps, {"6":2}→{"6":2} 
+CAGE-0.15 diag-corner j0.001 s2: 248 ms 13 steps, {"6":2}→{"6":2} 
+CAGE-0.15 diag-corner j0.001 s3: 236 ms 13 steps, {"6":2}→{"6":2} 
+CAGE-0.15 sq2-checker j0 s1: 492 ms 17 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+CAGE-0.15 sq2-checker j0.001 s1: 796 ms 21 steps, {"6":2,"7":2}→{"6":2,"7":1} -
+CAGE-0.15 sq2-checker j0.001 s2: 1886 ms 49 steps, {"6":2,"7":2}→{"6":1,"7":1} X
+CAGE-0.15 sq2-checker j0.001 s3: 837 ms 21 steps, {"6":2,"7":2}→{"6":2,"7":1} -
+CAGE-0.15 slab-line j0 s1: 6752 ms 39 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+CAGE-0.15 slab-line j0.001 s1: 6717 ms 35 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+CAGE-0.15 slab-line j0.001 s2: 6217 ms 32 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+CAGE-0.15 slab-line j0.001 s3: 7465 ms 40 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+CAGE-0.25 diag-edge j0 s1: 486 ms 35 steps, {"6":2}→{"6":1} A
+CAGE-0.25 diag-edge j0.001 s1: 773 ms 45 steps, {"6":2}→{"6":1} A
+CAGE-0.25 diag-edge j0.001 s2: 597 ms 41 steps, {"6":2}→{"6":1} A
+CAGE-0.25 diag-edge j0.001 s3: 599 ms 40 steps, {"6":2}→{"6":1} A
+CAGE-0.25 diag-corner j0 s1: 218 ms 11 steps, {"6":2}→{"6":2} 
+CAGE-0.25 diag-corner j0.001 s1: 302 ms 13 steps, {"6":2}→{"6":2} 
+CAGE-0.25 diag-corner j0.001 s2: 322 ms 13 steps, {"6":2}→{"6":2} 
+CAGE-0.25 diag-corner j0.001 s3: 316 ms 13 steps, {"6":2}→{"6":2} 
+CAGE-0.25 sq2-checker j0 s1: 994 ms 32 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+CAGE-0.25 sq2-checker j0.001 s1: 1626 ms 46 steps, {"6":2,"7":2}→{"6":1,"7":2} -
+CAGE-0.25 sq2-checker j0.001 s2: 1829 ms 51 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+CAGE-0.25 sq2-checker j0.001 s3: 3773 ms 112 steps, {"6":2,"7":2}→{"6":1,"7":1} X
+CAGE-0.25 slab-line j0 s1: 9747 ms 56 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+CAGE-0.25 slab-line j0.001 s1: 36561 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+CAGE-0.25 slab-line j0.001 s2: 34493 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+CAGE-0.25 slab-line j0.001 s3: 38891 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+CAGE-0.4 diag-edge j0 s1: 579 ms 37 steps, {"6":2}→{"6":1} A
+CAGE-0.4 diag-edge j0.001 s1: 809 ms 49 steps, {"6":2}→{"6":1} A
+CAGE-0.4 diag-edge j0.001 s2: 783 ms 45 steps, {"6":2}→{"6":1} A
+CAGE-0.4 diag-edge j0.001 s3: 598 ms 36 steps, {"6":2}→{"6":1} A
+CAGE-0.4 diag-corner j0 s1: 277 ms 11 steps, {"6":2}→{"6":2} 
+CAGE-0.4 diag-corner j0.001 s1: 316 ms 13 steps, {"6":2}→{"6":2} 
+CAGE-0.4 diag-corner j0.001 s2: 317 ms 13 steps, {"6":2}→{"6":2} 
+CAGE-0.4 diag-corner j0.001 s3: 346 ms 13 steps, {"6":2}→{"6":2} 
+CAGE-0.4 sq2-checker j0 s1: 1244 ms 34 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+CAGE-0.4 sq2-checker j0.001 s1: 1614 ms 41 steps, {"6":2,"7":2}→{"6":1,"7":1} -
+CAGE-0.4 sq2-checker j0.001 s2: 4898 ms 105 steps, {"6":2,"7":2}→{"6":1,"7":1} X
+CAGE-0.4 sq2-checker j0.001 s3: 2008 ms 52 steps, {"6":2,"7":2}→{"6":1,"7":2} -
+CAGE-0.4 slab-line j0 s1: 20116 ms 103 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+CAGE-0.4 slab-line j0.001 s1: 31708 ms 137 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+CAGE-0.4 slab-line j0.001 s2: 31977 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+CAGE-0.4 slab-line j0.001 s3: 36634 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+wall 331.83 s maxrss 255492 KB

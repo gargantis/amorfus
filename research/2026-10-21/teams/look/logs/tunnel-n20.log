@@ -1,0 +1,6 @@
+FID-0.25@n20 tunnel: 2574 ms, 14 steps, Δ 0.019, phases {"3":1}→{"3":1}, rss 165 MB
+FID-0.25@n20 wall 3.41 s maxrss 161260 KB
+FID-0.15@n20 tunnel: 8569 ms, 52 steps, Δ 0.140, phases {"3":1}→{"3":1}, rss 191 MB
+FID-0.15@n20 wall 11.94 s maxrss 186688 KB
+BOX20-FID-0.15 tunnel: 2791 ms, 18 steps, Δ 0.052, phases {"3":1}→{"3":1}, rss 139 MB
+BOX20-FID-0.15 wall 3.65 s maxrss 152992 KB

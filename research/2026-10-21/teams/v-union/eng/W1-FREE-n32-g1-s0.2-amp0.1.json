@@ -1,0 +1,161 @@
+{
+ "cfg": "W1",
+ "X": [
+  0,
+  0
+ ],
+ "n": 32,
+ "regime": "FREE",
+ "g": 1,
+ "s_b": 0.2,
+ "runs": [
+  {
+   "v": "annNM0.1s1",
+   "steps": 180,
+   "converged": true,
+   "ms": 9882,
+   "rule4": 6,
+   "size": 7,
+   "verdict": "both",
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 101,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 101,
+     "pieces": 1
+    }
+   ],
+   "otherX": "",
+   "phases": "7:8 6:24[2pc]",
+   "firstMerges": [
+    101
+   ]
+  },
+  {
+   "v": "annNM0.1s2",
+   "steps": 167,
+   "converged": true,
+   "ms": 9253,
+   "rule4": 6,
+   "size": 7,
+   "verdict": "both",
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 101,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 101,
+     "pieces": 1
+    }
+   ],
+   "otherX": "",
+   "phases": "7:8 6:24[2pc]",
+   "firstMerges": [
+    101
+   ]
+  },
+  {
+   "v": "annNM0.1s3",
+   "steps": 209,
+   "converged": true,
+   "ms": 12126,
+   "rule4": 6,
+   "size": 7,
+   "verdict": "both",
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 101,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 101,
+     "pieces": 1
+    }
+   ],
+   "otherX": "",
+   "phases": "7:8 6:24[2pc]",
+   "firstMerges": [
+    101
+   ]
+  },
+  {
+   "v": "annNM0.1s4",
+   "steps": 170,
+   "converged": true,
+   "ms": 11462,
+   "rule4": 6,
+   "size": 7,
+   "verdict": "both",
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 101,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 101,
+     "pieces": 1
+    }
+   ],
+   "otherX": "",
+   "phases": "7:8 6:24[2pc]",
+   "firstMerges": [
+    101
+   ]
+  },
+  {
+   "v": "annNM0.1s5",
+   "steps": 162,
+   "converged": true,
+   "ms": 9431,
+   "rule4": 6,
+   "size": 7,
+   "verdict": "both",
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 101,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 101,
+     "pieces": 1
+    }
+   ],
+   "otherX": "",
+   "phases": "7:8 6:24[2pc]",
+   "firstMerges": [
+    101
+   ]
+  }
+ ],
+ "tally": {
+  "annNM0.1:both/7": 5
+ }
+}

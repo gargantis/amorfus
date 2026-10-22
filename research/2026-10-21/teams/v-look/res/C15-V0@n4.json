@@ -1,0 +1,80 @@
+{
+ "regime": "C15-V0",
+ "n": 4,
+ "runs": {
+  "terrain-step": {
+   "regime": "C15-V0",
+   "opts": {
+    "engine": "look",
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15,
+     "kMat": 0.02,
+     "box": {
+      "outH": 0,
+      "outV": 0,
+      "inH": 0.25,
+      "inV": 0.25
+     }
+    }
+   },
+   "n": 4,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 3,
+   "converged": true,
+   "ms": 80,
+   "lastChanges": [
+    0,
+    0,
+    0
+   ],
+   "cells": 8008,
+   "delta": 0,
+   "geoDelta": 0,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "1": 2,
+    "2": 1
+   },
+   "lambdas": [
+    0.0769,
+    0.0472,
+    0.0472
+   ],
+   "flatLow": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 84,
+    "miss": 0
+   },
+   "flatHigh": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 84,
+    "miss": 0
+   },
+   "grass": {
+    "area0": 30,
+    "area": 30,
+    "areaRatio": 1,
+    "gained": 0,
+    "lost": 0,
+    "parts0": 1,
+    "parts": 1,
+    "partSizes": [
+     30
+    ],
+    "blocksWrong": 0,
+    "blocks": 30
+   }
+  }
+ }
+}

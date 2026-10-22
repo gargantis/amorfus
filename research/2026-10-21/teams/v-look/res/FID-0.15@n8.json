@@ -1,0 +1,72 @@
+{
+ "regime": "FID-0.15",
+ "n": 8,
+ "runs": {
+  "terrain-step": {
+   "regime": "FID-0.15",
+   "opts": {
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.15
+    }
+   },
+   "n": 8,
+   "margin": 1,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 26,
+   "converged": true,
+   "ms": 1025,
+   "lastChanges": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "cells": 143360,
+   "delta": 0.0185,
+   "geoDelta": 0.0144,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "1": 1,
+    "2": 1
+   },
+   "lambdas": [
+    0.1811,
+    0.1021
+   ],
+   "flatLow": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 336,
+    "miss": 0
+   },
+   "flatHigh": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 336,
+    "miss": 0
+   },
+   "grass": {
+    "area0": 30,
+    "area": 29.9375,
+    "areaRatio": 0.9979,
+    "gained": 0,
+    "lost": 0.0625,
+    "parts0": 1,
+    "parts": 1,
+    "partSizes": [
+     29.938
+    ],
+    "blocksWrong": 0,
+    "blocks": 30
+   }
+  }
+ }
+}

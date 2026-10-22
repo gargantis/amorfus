@@ -1,0 +1,36 @@
+FINITE-4 single: n 16 grid 48x48x48 219 ms, 4 steps (not converged), 6:1->1, rss 66 MB
+FINITE-4 pair-same: n 16 grid 64x48x48 154 ms, 4 steps (not converged), 6:2->2, rss 69 MB
+FINITE-4 pair-diff: n 16 grid 64x48x48 143 ms, 4 steps (not converged), 6:1->0.999 7:1->0.999, rss 79 MB
+FINITE-4 line3-same: n 16 grid 80x48x48 93 ms, 4 steps (not converged), 6:3->3, rss 88 MB
+FINITE-4 line3-ABA: n 16 grid 80x48x48 194 ms, 4 steps (not converged), 6:1->1 7:1->1 6:1->1, rss 98 MB
+FINITE-4 line3-ABC: n 16 grid 80x48x48 143 ms, 4 steps (not converged), 6:1->1 7:1->1 1:1->1, rss 108 MB
+FINITE-4 L3-same: n 16 grid 64x48x64 133 ms, 4 steps (not converged), 6:3->3, rss 117 MB
+FINITE-4 L3-AAB: n 16 grid 64x48x64 156 ms, 4 steps (not converged), 6:2->2 7:1->1, rss 127 MB
+FINITE-4 L3-ABC: n 16 grid 64x48x64 254 ms, 4 steps (not converged), 6:1->1 7:1->1 1:1->1, rss 100 MB
+FINITE-4 sq2-same: n 16 grid 64x48x64 123 ms, 4 steps (not converged), 6:4->4, rss 101 MB
+FINITE-4 sq2-AAAB: n 16 grid 64x48x64 269 ms, 4 steps (not converged), 6:3->2.9995 7:1->1, rss 103 MB
+FINITE-4 sq2-AABB: n 16 grid 64x48x64 154 ms, 4 steps (not converged), 6:2->2 7:2->2, rss 109 MB
+FINITE-4 sq2-checker: n 16 grid 64x48x64 370 ms, 4 steps (not converged), 6:1->1 7:1->1 7:1->1 6:1->1, rss 120 MB
+FINITE-4 sq2-AABC: n 16 grid 64x48x64 230 ms, 4 steps (not converged), 6:2->2 7:1->1 1:1->1, rss 132 MB
+FINITE-4 sq2-ABCD: n 16 grid 64x48x64 180 ms, 4 steps (not converged), 6:1->1 7:1->1 1:1->1 4:1->1, rss 134 MB
+FINITE-4 diag-edge: n 16 grid 64x48x64 201 ms, 4 steps (not converged), 6:2->1.999, rss 136 MB
+FINITE-4 diag-corner: n 16 grid 64x64x64 149 ms, 4 steps (not converged), 6:1->1 6:1->1, rss 136 MB
+FINITE-4 diag-edge-diff: n 16 grid 64x48x64 157 ms, 4 steps (not converged), 6:1->1 7:1->1, rss 136 MB
+FINITE-4 cube2-same: n 16 grid 64x64x64 154 ms, 4 steps (not converged), 6:8->7.9922, rss 136 MB
+FINITE-4 cube2-oneB: n 16 grid 64x64x64 319 ms, 4 steps (not converged), 6:7->7 7:1->0.9998, rss 142 MB
+FINITE-4 cube2-halves: n 16 grid 64x64x64 253 ms, 4 steps (not converged), 6:4->4 7:4->4, rss 141 MB
+FINITE-4 cube2-checker: n 16 grid 64x64x64 659 ms, 4 steps (not converged), 6:1->1 7:1->1 7:1->1 6:1->1 7:1->1 6:1->1 6:1->1 7:1->1, rss 141 MB
+FINITE-4 cube2-octants: n 16 grid 64x64x64 749 ms, 4 steps (not converged), 6:1->1 7:1->1 1:1->1 4:1->1 1:1->1 4:1->1 6:1->1 7:1->1, rss 141 MB
+FINITE-4 plus5: n 16 grid 80x48x80 151 ms, 4 steps (not converged), 6:5->5, rss 144 MB
+FINITE-4 plus5-mixed: n 16 grid 80x48x80 413 ms, 4 steps (not converged), 6:4->4 7:1->1, rss 142 MB
+FINITE-4 ring8: n 16 grid 80x48x80 159 ms, 4 steps (not converged), 6:8->7.998, rss 142 MB
+FINITE-4 T-mixed: n 16 grid 80x48x80 204 ms, 4 steps (not converged), 6:3->3 7:2->2, rss 142 MB
+FINITE-4 pillar3: n 16 grid 48x80x48 91 ms, 4 steps (not converged), 6:3->2.998, rss 142 MB
+FINITE-4 stairs: n 16 grid 80x80x64 220 ms, 4 steps (not converged), 6:12->12, rss 135 MB
+FINITE-4 ball-r2: n 12 grid 84x84x84 295 ms, 4 steps (not converged), 6:33->32.9861, rss 135 MB
+FINITE-4 ball-AB: n 12 grid 84x84x84 521 ms, 4 steps (not converged), 7:23->22.9977 6:10->10, rss 144 MB
+FINITE-4 slab-dot: n 16 grid 112x48x112 586 ms, 4 steps (not converged), 7:24->24 6:1->0.998, rss 146 MB
+FINITE-4 slab-line: n 16 grid 128x48x128 1562 ms, 4 steps (not converged), 6:6->6.001 7:15->14.9194 7:15->14.9194, rss 152 MB
+FINITE-4 slab-stripe: n 16 grid 128x48x128 719 ms, 4 steps (not converged), 7:12->11.9678 6:6->5.9854 7:18->17.9678, rss 156 MB
+FINITE-4 terrain-step: n 16 grid 128x80x112 1235 ms, 4 steps (not converged), 2:45->45 1:30->29.9937, rss 167 MB
+FINITE-4 tunnel: n 16 grid 80x96x80 470 ms, 4 steps (not converged), 3:30->29.9941, rss 167 MB

@@ -1,0 +1,8 @@
+C1 wide+bar {"n":12,"cellsChecked":56576,"maxAbs_engine_vs_discreteSum":7.29e-8,"maxAbs_engine_vs_continuumSum":0.004517}
+C1 overhang {"n":12,"cellsChecked":37544,"maxAbs_engine_vs_discreteSum":7.29e-8,"maxAbs_engine_vs_continuumSum":0.004346}
+C1 grass-terrace {"n":12,"cellsChecked":131712,"maxAbs_engine_vs_discreteSum":7.29e-8,"maxAbs_engine_vs_continuumSum":0.004346}
+C1 terrain-a {"n":12,"cellsChecked":130464,"maxAbs_engine_vs_discreteSum":7.59e-8,"maxAbs_engine_vs_continuumSum":0.004688}
+C3 sigma 0.2 {"single":0.6608,"pair":0.761,"line3":0.7944,"sq2":0.8461,"cube2":0.906}
+C3 sigma 0.4 {"single":0,"pair":0.1676,"line3":0.2365,"sq2":0.4413,"cube2":0.6609}
+C3 vanish sigma 0.3956
+C14 {"A0-g20":{"Dedge":-0.0243,"neck":0},"Bl-b1s20":{"Dedge":0.199,"neck":0.364},"Bl-g20":{"Dedge":0.1865,"neck":0.332},"Bx-g20":{"Dedge":0.2188,"neck":0.364},"FID-0.15":{"labels":{"Dedge":0.5,"neck":0.672},"D":{"Dedge":1.1487,"neck":0.744},"phasesAlive":1},"FINITE-4":{"labels":{"Dedge":0.5,"neck":0.848},"D":{"Dedge":1.1349,"neck":0.9},"phasesAlive":1}} solidDir [ 1, -1 ]

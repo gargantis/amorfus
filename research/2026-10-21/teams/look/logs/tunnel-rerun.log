@@ -1,0 +1,18 @@
+BLOCKS tunnel: 182 ms, 0 steps, Δ 0.000, phases {"3":1}→{"3":1}, rss 90 MB
+FID-0.4 tunnel: 890 ms, 7 steps, Δ 0.002, phases {"3":1}→{"3":1}, rss 101 MB
+FID-0.25 tunnel: 1105 ms, 12 steps, Δ 0.019, phases {"3":1}→{"3":1}, rss 97 MB
+FID-0.15 tunnel: 3490 ms, 40 steps, Δ 0.122, phases {"3":1}→{"3":1}, rss 99 MB
+FID-0.1 tunnel: 5697 ms, 73 steps, Δ 0.366, phases {"3":1}→{"3":1}, rss 154 MB
+FID-0.05 tunnel: 3335 ms, 40 steps, Δ 0.400, phases {"3":1}→{"3":1}, rss 137 MB
+FID-0.15-g0.5 tunnel: 3405 ms, 40 steps, Δ 0.122, phases {"3":1}→{"3":1}, rss 142 MB
+FID-0.15-g1.5 tunnel: 3401 ms, 40 steps, Δ 0.122, phases {"3":1}→{"3":1}, rss 130 MB
+CAGE-0.15 tunnel: 1936 ms, 27 steps, Δ 0.194, phases {"3":1}→{"3":1}, rss 93 MB
+CAGE-0.25 tunnel: 2845 ms, 39 steps, Δ 0.294, phases {"3":1}→{"3":1}, rss 126 MB
+CAGE-0.4 tunnel: 2882 ms, 39 steps, Δ 0.330, phases {"3":1}→{"3":1}, rss 121 MB
+FINITE-2 tunnel: 403 ms, 2 steps (nc), Δ 0.086, phases {"3":1}→{"3":1}, rss 97 MB
+FINITE-4 tunnel: 508 ms, 4 steps (nc), Δ 0.154, phases {"3":1}→{"3":1}, rss 106 MB
+FINITE-8 tunnel: 795 ms, 8 steps (nc), Δ 0.270, phases {"3":1}→{"3":1}, rss 101 MB
+FREE tunnel: 2060 ms, 26 steps, Δ 0.400, phases {"3":1}→{"3":1}, rss 116 MB
+NV-FID-0.15 tunnel: 1396 ms, 28 steps, Δ 0.116, phases {"3":1}→{"3":1}, rss 106 MB
+BOX-FID-0.15 tunnel: 1110 ms, 12 steps, Δ 0.048, phases {"3":1}→{"3":1}, rss 97 MB
+BOX-NV-FID-0.15 tunnel: 1169 ms, 20 steps, Δ 0.109, phases {"3":1}→{"3":1}, rss 95 MB

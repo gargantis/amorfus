@@ -1,0 +1,17 @@
+terrain t7s FID-0.15 n12: 415 blocks, grid 108x96x108, 87 steps, sim 58516 ms, total 59572 ms, 55 surface corners
+terrain t8a FID-0.15 n12: 288 blocks, grid 108x96x108, 67 steps, sim 34612 ms, total 35166 ms, 45 surface corners
+terrain t8b FID-0.15 n12: 319 blocks, grid 108x96x108, 60 steps, sim 28182 ms, total 28756 ms, 53 surface corners
+terrain t8s FID-0.15 n12: 375 blocks, grid 108x96x108, 94 steps, sim 43943 ms, total 44514 ms, 55 surface corners
+terrain t9a FID-0.15 n12: 449 blocks, grid 108x96x108, 74 steps, sim 55616 ms, total 56223 ms, 58 surface corners
+terrain t9b FID-0.15 n12: 340 blocks, grid 108x96x108, 48 steps, sim 33120 ms, total 33843 ms, 66 surface corners
+terrain t9s FID-0.15 n12: 400 blocks, grid 108x96x108, 45 steps, sim 27581 ms, total 28203 ms, 58 surface corners
+terrain t10a FID-0.15 n12: 308 blocks, grid 108x96x108, 37 steps, sim 22935 ms, total 23897 ms, 67 surface corners
+terrain t10b FID-0.15 n12: 305 blocks, grid 108x96x108, 52 steps, sim 31724 ms, total 32409 ms, 44 surface corners
+terrain t10s FID-0.15 n12: 423 blocks, grid 108x96x108, 38 steps, sim 30844 ms, total 31584 ms, 54 surface corners
+terrain t11a FID-0.15 n12: 297 blocks, grid 108x96x108, 64 steps, sim 16123 ms, total 16967 ms, 84 surface corners
+terrain t11b FID-0.15 n12: 600 blocks, grid 108x96x108, 150 steps, sim 40918 ms, total 41661 ms, 67 surface corners
+terrain t11s FID-0.15 n12: 433 blocks, grid 108x96x108, 54 steps, sim 36201 ms, total 36765 ms, 52 surface corners
+terrain t12a FID-0.15 n12: 606 blocks, grid 108x96x108, 72 steps, sim 23994 ms, total 24751 ms, 57 surface corners
+terrain t12b FID-0.15 n12: 578 blocks, grid 108x96x108, 49 steps, sim 18126 ms, total 19102 ms, 69 surface corners
+terrain t13a FID-0.15 n12: 355 blocks, grid 108x96x108, 55 steps, sim 39853 ms, total 40590 ms, 71 surface corners
+terrain t13b FID-0.15 n12: 185 blocks, grid 108x96x108, 59 steps, sim 24060 ms, total 24706 ms, 56 surface corners

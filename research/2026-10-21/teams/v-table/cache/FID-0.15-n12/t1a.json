@@ -1,0 +1,1 @@
+{"set":"t1","name":"t1a","regime":"FID-0.15","n":12,"ms":22048,"steps":62,"converged":true,"changes":16573,"premerged":1,"alive":1,"lambda":[[3,485,-0.0054]],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-41,"oy":31,"oz":52},"dScale":32000,"origin":[-41,31,52],"size":[9,8,9],"evalLo":[-39,33,54],"evalHi":[-34,37,59],"blocks":485}

@@ -1,0 +1,3 @@
+slab-line CAGE-0.25 physics: 10840 ms 56 st | phases 6:6->6 7:15->14.999 7:15->15 | A comps 1 [6] | B comps 2 | A necks at X [0.688,0.688,0.688,0.688,0.688]
+slab-line CAGE-0.25 ruleA: 10240 ms 55 st | phases 6:6->5.999 7:15->14.98 7:15->14.98 | A comps 1 [5.999] | B comps 2 | A necks at X [0.688,0.688,0.688,0.688,0.688]
+slab-line CAGE-0.25 ruleB: 9507 ms 55 st | phases 6:6->6 7:30->29.991 | A comps 1 [6] | B comps 2 | A necks at X [0.688,0.688,0.688,0.688,0.688]

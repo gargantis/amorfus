@@ -1,0 +1,2350 @@
+{
+ "pair-diff": {
+  "n": 16,
+  "steps": 27,
+  "converged": true,
+  "ms": 725,
+  "V": [
+   1,
+   1
+  ],
+  "volumes": [
+   1,
+   1
+  ],
+  "exact": {
+   "r1": 0.6565,
+   "r2": 0.6565,
+   "rWall": null,
+   "a": 0.5685,
+   "length": 1.9695,
+   "wallToTip1": 0.9847,
+   "wallToTip2": 0.9847,
+   "sagitta": 0
+  },
+  "meas": {
+   "r1": 0.6535,
+   "r2": 0.6528,
+   "r1rms": 0.0133,
+   "r2rms": 0.0141,
+   "rWallSphereFit": null,
+   "wallRms": null,
+   "wallPlaneRms": 0,
+   "wallPlaneMaxDev": 0,
+   "aProjected": 0.5858,
+   "aFromOuterFits": 0.5557,
+   "length": 1.998,
+   "wallToTip1": 1,
+   "wallToTip2": 0.998,
+   "youngLaplaceFromMeasuredR": null,
+   "sectorsFromFits": {
+    "air": 116.5991,
+    "p1": 122.125,
+    "p2": 121.2758
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2439,
+    0.2433
+   ],
+   "predOuter1": 0.2431,
+   "predOuter2": 0.2431,
+   "diffRun": 0.0006,
+   "predDiffExactWall": 0,
+   "wallRadiusFromLambda": 260.7188
+  },
+  "localAngles": [
+   {
+    "slice": 1,
+    "at": [
+     1,
+     -0.0427
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 100.26,
+     "1": 129.87,
+     "2": 129.87
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     1,
+     1.0427
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 100.26,
+     "1": 129.87,
+     "2": 129.87
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     1,
+     -0.0427
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 100.26,
+     "1": 129.87,
+     "2": 129.87
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     1,
+     1.0427
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 100.26,
+     "1": 129.87,
+     "2": 129.87
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   }
+  ]
+ },
+ "row-ABB": {
+  "n": 16,
+  "steps": 88,
+  "converged": true,
+  "ms": 2457,
+  "V": [
+   1,
+   2
+  ],
+  "volumes": [
+   1,
+   2
+  ],
+  "exact": {
+   "r1": 0.6737,
+   "r2": 0.8107,
+   "rWall": 3.9875,
+   "a": 0.6293,
+   "length": 2.236,
+   "wallToTip1": 0.9143,
+   "wallToTip2": 1.3217,
+   "sagitta": 0.05
+  },
+  "meas": {
+   "r1": 0.6701,
+   "r2": 0.8052,
+   "r1rms": 0.0155,
+   "r2rms": 0.017,
+   "rWallSphereFit": null,
+   "wallRms": null,
+   "wallPlaneRms": 0,
+   "wallPlaneMaxDev": 0,
+   "aProjected": 0.6396,
+   "aFromOuterFits": 0.6107,
+   "length": 2.248,
+   "wallToTip1": 0.938,
+   "wallToTip2": 1.31,
+   "youngLaplaceFromMeasuredR": 3.9944,
+   "sectorsFromFits": {
+    "air": 115.0261,
+    "p1": 114.0447,
+    "p2": 130.9274
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2262,
+    0.1956
+   ],
+   "predOuter1": 0.2369,
+   "predOuter2": 0.1968,
+   "diffRun": 0.0305,
+   "predDiffExactWall": 0.04,
+   "wallRadiusFromLambda": 5.2279
+  },
+  "localAngles": [
+   {
+    "slice": 1,
+    "at": [
+     1.073,
+     -0.1161
+    ],
+    "miss": 0.0137,
+    "sectors": {
+     "0": 130.3,
+     "1": 90,
+     "2": 139.7
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.425,
+      "rms": 0.0102,
+      "n": 10
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     1.0499,
+     1.1245
+    ],
+    "miss": 0.0126,
+    "sectors": {
+     "0": 95.65,
+     "1": 131.42,
+     "2": 132.93
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.35,
+      "rms": 0.0111,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.484,
+      "rms": 0.011,
+      "n": 10
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     1.073,
+     -0.1161
+    ],
+    "miss": 0.0137,
+    "sectors": {
+     "0": 130.3,
+     "1": 90,
+     "2": 139.7
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.425,
+      "rms": 0.0102,
+      "n": 10
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     1.0474,
+     1.1787
+    ],
+    "miss": 0.0215,
+    "sectors": {
+     "0": 137.45,
+     "1": 116.84,
+     "2": 105.71
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0.0164,
+      "n": 10
+     }
+    ]
+   }
+  ]
+ },
+ "L-ABB": {
+  "n": 16,
+  "steps": 41,
+  "converged": true,
+  "ms": 1610,
+  "V": [
+   1,
+   2
+  ],
+  "volumes": [
+   1,
+   2
+  ],
+  "exact": {
+   "r1": 0.6737,
+   "r2": 0.8107,
+   "rWall": 3.9875,
+   "a": 0.6293,
+   "length": 2.236,
+   "wallToTip1": 0.9143,
+   "wallToTip2": 1.3217,
+   "sagitta": 0.05
+  },
+  "meas": {
+   "r1": 0.6756,
+   "r2": 0.8098,
+   "r1rms": 0.0158,
+   "r2rms": 0.0209,
+   "rWallSphereFit": 2.0547,
+   "wallRms": 0.0235,
+   "wallPlaneRms": 0.0183,
+   "wallPlaneMaxDev": 0.0501,
+   "aProjected": 0.6518,
+   "aFromOuterFits": 0.6282,
+   "length": 2.266,
+   "wallToTip1": 0.962,
+   "wallToTip2": 1.304,
+   "youngLaplaceFromMeasuredR": 4.0761,
+   "sectorsFromFits": {
+    "air": 119.2753,
+    "p1": 129.1797,
+    "p2": 111.482
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2353,
+    0.1963
+   ],
+   "predOuter1": 0.2369,
+   "predOuter2": 0.1968,
+   "diffRun": 0.039,
+   "predDiffExactWall": 0.04,
+   "wallRadiusFromLambda": 4.09
+  },
+  "localAngles": []
+ },
+ "L3-AAB": {
+  "n": 16,
+  "steps": 38,
+  "converged": true,
+  "ms": 1646,
+  "V": [
+   1,
+   2
+  ],
+  "volumes": [
+   1,
+   2
+  ],
+  "exact": {
+   "r1": 0.6737,
+   "r2": 0.8107,
+   "rWall": 3.9875,
+   "a": 0.6293,
+   "length": 2.236,
+   "wallToTip1": 0.9143,
+   "wallToTip2": 1.3217,
+   "sagitta": 0.05
+  },
+  "meas": {
+   "r1": 0.6745,
+   "r2": 0.8104,
+   "r1rms": 0.0158,
+   "r2rms": 0.0208,
+   "rWallSphereFit": 2.1572,
+   "wallRms": 0.0202,
+   "wallPlaneRms": 0.0197,
+   "wallPlaneMaxDev": 0.0564,
+   "aProjected": 0.6493,
+   "aFromOuterFits": 0.6277,
+   "length": 2.262,
+   "wallToTip1": 0.96,
+   "wallToTip2": 1.302,
+   "youngLaplaceFromMeasuredR": 4.0194,
+   "sectorsFromFits": {
+    "air": 119.2864,
+    "p1": 128.1251,
+    "p2": 112.5673
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2335,
+    0.1954
+   ],
+   "predOuter1": 0.2369,
+   "predOuter2": 0.1968,
+   "diffRun": 0.0381,
+   "predDiffExactWall": 0.04,
+   "wallRadiusFromLambda": 4.1907
+  },
+  "localAngles": []
+ },
+ "row-AAB": {
+  "n": 16,
+  "steps": 84,
+  "converged": true,
+  "ms": 2287,
+  "V": [
+   1,
+   2
+  ],
+  "volumes": [
+   1,
+   2
+  ],
+  "exact": {
+   "r1": 0.6737,
+   "r2": 0.8107,
+   "rWall": 3.9875,
+   "a": 0.6293,
+   "length": 2.236,
+   "wallToTip1": 0.9143,
+   "wallToTip2": 1.3217,
+   "sagitta": 0.05
+  },
+  "meas": {
+   "r1": 0.6701,
+   "r2": 0.8054,
+   "r1rms": 0.0158,
+   "r2rms": 0.0172,
+   "rWallSphereFit": null,
+   "wallRms": null,
+   "wallPlaneRms": 0,
+   "wallPlaneMaxDev": 0,
+   "aProjected": 0.6406,
+   "aFromOuterFits": 0.6107,
+   "length": 2.248,
+   "wallToTip1": 0.938,
+   "wallToTip2": 1.31,
+   "youngLaplaceFromMeasuredR": 3.9888,
+   "sectorsFromFits": {
+    "air": 114.9997,
+    "p1": 114.3562,
+    "p2": 130.6434
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2296,
+    0.1939
+   ],
+   "predOuter1": 0.2369,
+   "predOuter2": 0.1968,
+   "diffRun": 0.0357,
+   "predDiffExactWall": 0.04,
+   "wallRadiusFromLambda": 4.4675
+  },
+  "localAngles": [
+   {
+    "slice": 1,
+    "at": [
+     1.9526,
+     -0.1787
+    ],
+    "miss": 0.0215,
+    "sectors": {
+     "0": 137.45,
+     "1": 105.71,
+     "2": 116.84
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.0164,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     1.927,
+     1.1161
+    ],
+    "miss": 0.0137,
+    "sectors": {
+     "0": 130.3,
+     "1": 139.7,
+     "2": 90
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.425,
+      "rms": 0.0102,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     1.927,
+     -0.1161
+    ],
+    "miss": 0.0137,
+    "sectors": {
+     "0": 130.3,
+     "1": 139.7,
+     "2": 90
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.425,
+      "rms": 0.0102,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     1.927,
+     1.1161
+    ],
+    "miss": 0.0137,
+    "sectors": {
+     "0": 130.3,
+     "1": 139.7,
+     "2": 90
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.425,
+      "rms": 0.0102,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     }
+    ]
+   }
+  ]
+ },
+ "sq2-AAAB": {
+  "n": 16,
+  "steps": 48,
+  "converged": true,
+  "ms": 2322,
+  "V": [
+   1,
+   3
+  ],
+  "volumes": [
+   1,
+   3
+  ],
+  "exact": {
+   "r1": 0.6855,
+   "r2": 0.9197,
+   "rWall": 2.6922,
+   "a": 0.6595,
+   "length": 2.4329,
+   "wallToTip1": 0.8724,
+   "wallToTip2": 1.5606,
+   "sagitta": 0.082
+  },
+  "meas": {
+   "r1": 0.7028,
+   "r2": 0.9283,
+   "r1rms": 0.0142,
+   "r2rms": 0.0208,
+   "rWallSphereFit": 2.0826,
+   "wallRms": 0.0167,
+   "wallPlaneRms": 0.03,
+   "wallPlaneMaxDev": 0.0546,
+   "aProjected": 0.6992,
+   "aFromOuterFits": 0.6925,
+   "length": 2.382,
+   "wallToTip1": 0.886,
+   "wallToTip2": 1.496,
+   "youngLaplaceFromMeasuredR": 2.8941,
+   "sectorsFromFits": {
+    "air": 128.4368,
+    "p1": 119.4756,
+    "p2": 112.0872
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2306,
+    0.1733
+   ],
+   "predOuter1": 0.2328,
+   "predOuter2": 0.1735,
+   "diffRun": 0.0573,
+   "predDiffExactWall": 0.0593,
+   "wallRadiusFromLambda": 2.7868
+  },
+  "localAngles": []
+ },
+ "row-AAAB": {
+  "n": 16,
+  "steps": 128,
+  "converged": true,
+  "ms": 4128,
+  "V": [
+   1,
+   3
+  ],
+  "volumes": [
+   1,
+   3
+  ],
+  "exact": {
+   "r1": 0.6855,
+   "r2": 0.9197,
+   "rWall": 2.6922,
+   "a": 0.6595,
+   "length": 2.4329,
+   "wallToTip1": 0.8724,
+   "wallToTip2": 1.5606,
+   "sagitta": 0.082
+  },
+  "meas": {
+   "r1": 0.6868,
+   "r2": 0.9143,
+   "r1rms": 0.0141,
+   "r2rms": 0.0167,
+   "rWallSphereFit": null,
+   "wallRms": null,
+   "wallPlaneRms": 0,
+   "wallPlaneMaxDev": 0,
+   "aProjected": 0.6762,
+   "aFromOuterFits": 0.6496,
+   "length": 2.5,
+   "wallToTip1": 0.938,
+   "wallToTip2": 1.562,
+   "youngLaplaceFromMeasuredR": 2.7611,
+   "sectorsFromFits": {
+    "air": 116.3271,
+    "p1": 106.7803,
+    "p2": 136.8926
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2321,
+    0.1733
+   ],
+   "predOuter1": 0.2328,
+   "predOuter2": 0.1735,
+   "diffRun": 0.0589,
+   "predDiffExactWall": 0.0593,
+   "wallRadiusFromLambda": 2.7114
+  },
+  "localAngles": [
+   {
+    "slice": 1,
+    "at": [
+     2.7029,
+     -0.1745
+    ],
+    "miss": 0.0176,
+    "sectors": {
+     "0": 127.67,
+     "1": 115.28,
+     "2": 117.05
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.0177,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     2.7029,
+     1.1745
+    ],
+    "miss": 0.0176,
+    "sectors": {
+     "0": 127.67,
+     "1": 115.28,
+     "2": 117.05
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.0177,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     2.6949,
+     -0.205
+    ],
+    "miss": 0.019,
+    "sectors": {
+     "0": 157.05,
+     "1": 112.95,
+     "2": 90
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.0142,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     2.6982,
+     1.145
+    ],
+    "miss": 0.0227,
+    "sectors": {
+     "0": 151.83,
+     "1": 118.17,
+     "2": 90
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.0128,
+      "n": 11
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     }
+    ]
+   }
+  ]
+ },
+ "sq2-AABB": {
+  "n": 16,
+  "steps": 53,
+  "converged": true,
+  "ms": 1754,
+  "V": [
+   2,
+   2
+  ],
+  "volumes": [
+   2,
+   2
+  ],
+  "exact": {
+   "r1": 0.8271,
+   "r2": 0.8271,
+   "rWall": null,
+   "a": 0.7163,
+   "length": 2.4814,
+   "wallToTip1": 1.2407,
+   "wallToTip2": 1.2407,
+   "sagitta": 0
+  },
+  "meas": {
+   "r1": 0.8377,
+   "r2": 0.8377,
+   "r1rms": 0.0129,
+   "r2rms": 0.0128,
+   "rWallSphereFit": null,
+   "wallRms": null,
+   "wallPlaneRms": 0,
+   "wallPlaneMaxDev": 0,
+   "aProjected": 0.7677,
+   "aFromOuterFits": 0.7494,
+   "length": 2.372,
+   "wallToTip1": 1.188,
+   "wallToTip2": 1.184,
+   "youngLaplaceFromMeasuredR": 15112.407,
+   "sectorsFromFits": {
+    "air": 126.9181,
+    "p1": 116.5517,
+    "p2": 116.5302
+   }
+  },
+  "lambda": {
+   "run": [
+    0.1928,
+    0.1921
+   ],
+   "predOuter1": 0.1929,
+   "predOuter2": 0.1929,
+   "diffRun": 0.0007,
+   "predDiffExactWall": 0,
+   "wallRadiusFromLambda": 224.4843
+  },
+  "localAngles": [
+   {
+    "slice": 0,
+    "at": [
+     -0.2302,
+     1
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 100.26,
+     "1": 129.87,
+     "2": 129.87
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 0,
+    "at": [
+     1.2302,
+     1
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 100.26,
+     "1": 129.87,
+     "2": 129.87
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     0.2698,
+     1
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 100.26,
+     "1": 129.87,
+     "2": 129.87
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     1.7956,
+     1
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 158.2,
+     "1": 100.9,
+     "2": 100.9
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.0141,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0.0141,
+      "n": 9
+     }
+    ]
+   }
+  ]
+ },
+ "row-AABB": {
+  "n": 16,
+  "steps": 104,
+  "converged": true,
+  "ms": 3150,
+  "V": [
+   2,
+   2
+  ],
+  "volumes": [
+   2,
+   2
+  ],
+  "exact": {
+   "r1": 0.8271,
+   "r2": 0.8271,
+   "rWall": null,
+   "a": 0.7163,
+   "length": 2.4814,
+   "wallToTip1": 1.2407,
+   "wallToTip2": 1.2407,
+   "sagitta": 0
+  },
+  "meas": {
+   "r1": 0.8268,
+   "r2": 0.8266,
+   "r1rms": 0.0131,
+   "r2rms": 0.0135,
+   "rWallSphereFit": null,
+   "wallRms": null,
+   "wallPlaneRms": 0,
+   "wallPlaneMaxDev": 0,
+   "aProjected": 0.7464,
+   "aFromOuterFits": 0.7153,
+   "length": 2.498,
+   "wallToTip1": 1.25,
+   "wallToTip2": 1.248,
+   "youngLaplaceFromMeasuredR": null,
+   "sectorsFromFits": {
+    "air": 119.8268,
+    "p1": 120.2095,
+    "p2": 119.9638
+   }
+  },
+  "lambda": {
+   "run": [
+    0.19,
+    0.1855
+   ],
+   "predOuter1": 0.1929,
+   "predOuter2": 0.1929,
+   "diffRun": 0.0046,
+   "predDiffExactWall": 0,
+   "wallRadiusFromLambda": 35.0618
+  },
+  "localAngles": [
+   {
+    "slice": 1,
+    "at": [
+     2,
+     -0.1985
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 90.11,
+     "1": 134.95,
+     "2": 134.95
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     2,
+     1.1985
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 90.11,
+     "1": 134.95,
+     "2": 134.95
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     2,
+     -0.1985
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 90.11,
+     "1": 134.95,
+     "2": 134.95
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     2,
+     1.1985
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 90.11,
+     "1": 134.95,
+     "2": 134.95
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     }
+    ]
+   }
+  ]
+ },
+ "cube2-oneB": {
+  "n": 16,
+  "steps": 48,
+  "converged": true,
+  "ms": 3564,
+  "V": [
+   1,
+   7
+  ],
+  "volumes": [
+   1,
+   7
+  ],
+  "exact": {
+   "r1": 0.7131,
+   "r2": 1.2039,
+   "rWall": 1.749,
+   "a": 0.7091,
+   "length": 2.9655,
+   "wallToTip1": 0.7886,
+   "wallToTip2": 2.1769,
+   "sagitta": 0.1502
+  },
+  "meas": {
+   "r1": 0.7521,
+   "r2": 1.2144,
+   "r1rms": 0.0126,
+   "r2rms": 0.0219,
+   "rWallSphereFit": 1.7388,
+   "wallRms": 0.012,
+   "wallPlaneRms": 0.0483,
+   "wallPlaneMaxDev": 0.0955,
+   "aProjected": 0.7559,
+   "aFromOuterFits": 0.749,
+   "length": 2.808,
+   "wallToTip1": 0.868,
+   "wallToTip2": 1.94,
+   "youngLaplaceFromMeasuredR": 1.9755,
+   "sectorsFromFits": {
+    "air": 133.2781,
+    "p1": 111.2119,
+    "p2": 115.5096
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2229,
+    0.1327
+   ],
+   "predOuter1": 0.2238,
+   "predOuter2": 0.1325,
+   "diffRun": 0.0902,
+   "predDiffExactWall": 0.0912,
+   "wallRadiusFromLambda": 1.7686
+  },
+  "localAngles": []
+ },
+ "cube2-halves": {
+  "n": 16,
+  "steps": 63,
+  "converged": true,
+  "ms": 2821,
+  "V": [
+   4,
+   4
+  ],
+  "volumes": [
+   4,
+   4
+  ],
+  "exact": {
+   "r1": 1.0421,
+   "r2": 1.0421,
+   "rWall": null,
+   "a": 0.9025,
+   "length": 3.1264,
+   "wallToTip1": 1.5632,
+   "wallToTip2": 1.5632,
+   "sagitta": 0
+  },
+  "meas": {
+   "r1": 1.074,
+   "r2": 1.0742,
+   "r1rms": 0.0146,
+   "r2rms": 0.0146,
+   "rWallSphereFit": null,
+   "wallRms": null,
+   "wallPlaneRms": 0,
+   "wallPlaneMaxDev": 0,
+   "aProjected": 0.9949,
+   "aFromOuterFits": 0.9936,
+   "length": 2.872,
+   "wallToTip1": 1.438,
+   "wallToTip2": 1.434,
+   "youngLaplaceFromMeasuredR": 7523.9346,
+   "sectorsFromFits": {
+    "air": 135.3494,
+    "p1": 112.3089,
+    "p2": 112.3417
+   }
+  },
+  "lambda": {
+   "run": [
+    0.1523,
+    0.1533
+   ],
+   "predOuter1": 0.1531,
+   "predOuter2": 0.1531,
+   "diffRun": -0.001,
+   "predDiffExactWall": 0,
+   "wallRadiusFromLambda": null
+  },
+  "localAngles": [
+   {
+    "slice": 1,
+    "at": [
+     1,
+     0.0515
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 90.11,
+     "1": 134.95,
+     "2": 134.95
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     1,
+     1.9945
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 159.63,
+     "1": 100.18,
+     "2": 100.18
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.015,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0.015,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     1,
+     0.0515
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 90.11,
+     "1": 134.95,
+     "2": 134.95
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     1,
+     1.9485
+    ],
+    "miss": 0,
+    "sectors": {
+     "0": 90.11,
+     "1": 134.95,
+     "2": 134.95
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0124,
+      "n": 9
+     }
+    ]
+   }
+  ]
+ },
+ "T-mixed": {
+  "n": 16,
+  "steps": 61,
+  "converged": true,
+  "ms": 3026,
+  "V": [
+   2,
+   3
+  ],
+  "volumes": [
+   2,
+   3
+  ],
+  "exact": {
+   "r1": 0.8392,
+   "r2": 0.9351,
+   "rWall": 8.1854,
+   "a": 0.7627,
+   "length": 2.6653,
+   "wallToTip1": 1.1893,
+   "wallToTip2": 1.476,
+   "sagitta": 0.0356
+  },
+  "meas": {
+   "r1": 0.8405,
+   "r2": 0.9349,
+   "r1rms": 0.0131,
+   "r2rms": 0.0179,
+   "rWallSphereFit": 1.2336,
+   "wallRms": 0.0719,
+   "wallPlaneRms": 0,
+   "wallPlaneMaxDev": 0,
+   "aProjected": 0.7821,
+   "aFromOuterFits": 0.763,
+   "length": 2.624,
+   "wallToTip1": 1.188,
+   "wallToTip2": 1.436,
+   "youngLaplaceFromMeasuredR": 8.3239,
+   "sectorsFromFits": {
+    "air": 119.8912,
+    "p1": 80.4094,
+    "p2": 159.6993
+   }
+  },
+  "lambda": {
+   "run": [
+    0.1873,
+    0.1704
+   ],
+   "predOuter1": 0.1902,
+   "predOuter2": 0.1707,
+   "diffRun": 0.0169,
+   "predDiffExactWall": 0.0195,
+   "wallRadiusFromLambda": 9.4646
+  },
+  "localAngles": [
+   {
+    "slice": 0,
+    "at": [
+     -0.2742,
+     1.2679
+    ],
+    "miss": 0.0242,
+    "sectors": {
+     "0": 133.74,
+     "1": 101.63,
+     "2": 124.63
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.0157,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 0,
+    "at": [
+     1.2742,
+     1.2679
+    ],
+    "miss": 0.0242,
+    "sectors": {
+     "0": 133.74,
+     "1": 101.63,
+     "2": 124.63
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.0157,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.435,
+      "rms": 0.0139,
+      "n": 9
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     0.68,
+     1.2521
+    ],
+    "miss": 0.0078,
+    "sectors": {
+     "0": 164.29,
+     "1": 105.71,
+     "2": 90
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.0164,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     2.32,
+     1.2521
+    ],
+    "miss": 0.0078,
+    "sectors": {
+     "0": 164.29,
+     "1": 105.71,
+     "2": 90
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "line",
+      "rms": 0.0164,
+      "n": 10
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 8
+     }
+    ]
+   }
+  ]
+ },
+ "plus5-mixed": {
+  "n": 16,
+  "steps": 118,
+  "converged": true,
+  "ms": 7117,
+  "V": [
+   1,
+   4
+  ],
+  "volumes": [
+   1,
+   4
+  ],
+  "exact": {
+   "r1": 0.6945,
+   "r2": 1.0069,
+   "rWall": 2.2382,
+   "a": 0.6784,
+   "length": 2.5941,
+   "wallToTip1": 0.8431,
+   "wallToTip2": 1.751,
+   "sagitta": 0.1053
+  },
+  "meas": {
+   "r1": 0.7222,
+   "r2": 1.0164,
+   "r1rms": 0.0132,
+   "r2rms": 0.0161,
+   "rWallSphereFit": 1.8577,
+   "wallRms": 0.0172,
+   "wallPlaneRms": 0.0361,
+   "wallPlaneMaxDev": 0.0721,
+   "aProjected": 0.7249,
+   "aFromOuterFits": 0.7207,
+   "length": 2.44,
+   "wallToTip1": 0.876,
+   "wallToTip2": 1.564,
+   "youngLaplaceFromMeasuredR": 2.4954,
+   "sectorsFromFits": {
+    "air": 131.4671,
+    "p1": 116.5373,
+    "p2": 111.9932
+   }
+  },
+  "lambda": {
+   "run": [
+    0.222,
+    0.1556
+   ],
+   "predOuter1": 0.2298,
+   "predOuter2": 0.1585,
+   "diffRun": 0.0664,
+   "predDiffExactWall": 0.0713,
+   "wallRadiusFromLambda": 2.403
+  },
+  "localAngles": [
+   {
+    "slice": 0,
+    "at": [
+     1.1922,
+     0.8317
+    ],
+    "miss": 0.0018,
+    "sectors": {
+     "0": 91.87,
+     "2": 141.62,
+     "3": 126.51
+    },
+    "films": [
+     {
+      "film": "0|2",
+      "fit": "circle",
+      "r": 0.538,
+      "rms": 0.0109,
+      "n": 11
+     },
+     {
+      "film": "2|3",
+      "fit": "line",
+      "rms": 0.0145,
+      "n": 10
+     },
+     {
+      "film": "0|3",
+      "fit": "circle",
+      "r": 0.425,
+      "rms": 0.0102,
+      "n": 10
+     }
+    ]
+   },
+   {
+    "slice": 0,
+    "at": [
+     1.1425,
+     2.2379
+    ],
+    "miss": 0.0035,
+    "sectors": {
+     "0": 130.13,
+     "2": 110.19,
+     "3": 119.68
+    },
+    "films": [
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0.013,
+      "n": 11
+     },
+     {
+      "film": "2|3",
+      "fit": "line",
+      "rms": 0.0141,
+      "n": 9
+     },
+     {
+      "film": "0|3",
+      "fit": "circle",
+      "r": 0.425,
+      "rms": 0.0102,
+      "n": 10
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     2.262,
+     1.1399
+    ],
+    "miss": 0.0161,
+    "sectors": {
+     "0": 164.62,
+     "2": 110.19,
+     "3": 85.19
+    },
+    "films": [
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0.013,
+      "n": 11
+     },
+     {
+      "film": "2|3",
+      "fit": "line",
+      "rms": 0.0141,
+      "n": 9
+     },
+     {
+      "film": "0|3",
+      "fit": "line",
+      "rms": 0.0164,
+      "n": 10
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     0.7993,
+     1.2014
+    ],
+    "miss": 0.0286,
+    "sectors": {
+     "0": 131.32,
+     "2": 105.79,
+     "3": 122.89
+    },
+    "films": [
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0.0172,
+      "n": 11
+     },
+     {
+      "film": "2|3",
+      "fit": "line",
+      "rms": 0.0151,
+      "n": 10
+     },
+     {
+      "film": "0|3",
+      "fit": "circle",
+      "r": 0.425,
+      "rms": 0.0102,
+      "n": 10
+     }
+    ]
+   }
+  ]
+ },
+ "L3-ABA": {
+  "n": 16,
+  "steps": 87,
+  "converged": true,
+  "ms": 3675,
+  "V": [
+   1,
+   2
+  ],
+  "volumes": [
+   1,
+   2
+  ],
+  "exact": {
+   "r1": 0.6737,
+   "r2": 0.8107,
+   "rWall": 3.9875,
+   "a": 0.6293,
+   "length": 2.236,
+   "wallToTip1": 0.9143,
+   "wallToTip2": 1.3217,
+   "sagitta": 0.05
+  },
+  "meas": {
+   "r1": 0.6939,
+   "r2": 0.8206,
+   "r1rms": 0.0129,
+   "r2rms": 0.0137,
+   "rWallSphereFit": 2.5862,
+   "wallRms": 0.0156,
+   "wallPlaneRms": 0.0197,
+   "wallPlaneMaxDev": 0.0324,
+   "aProjected": 0.6702,
+   "aFromOuterFits": 0.6718,
+   "length": 2.108,
+   "wallToTip1": 0.894,
+   "wallToTip2": 1.214,
+   "youngLaplaceFromMeasuredR": 4.4942,
+   "sectorsFromFits": {
+    "air": 130.4307,
+    "p1": 118.5174,
+    "p2": 111.0493
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2283,
+    0.1926
+   ],
+   "predOuter1": 0.2369,
+   "predOuter2": 0.1968,
+   "diffRun": 0.0357,
+   "predDiffExactWall": 0.04,
+   "wallRadiusFromLambda": 4.4645
+  },
+  "localAngles": []
+ },
+ "diag-edge-diff": {
+  "n": 16,
+  "steps": 64,
+  "converged": true,
+  "ms": 1793,
+  "V": [
+   1,
+   1
+  ],
+  "volumes": [
+   1,
+   1
+  ],
+  "exact": {
+   "r1": 0.6565,
+   "r2": 0.6565,
+   "rWall": null,
+   "a": 0.5685,
+   "length": 1.9695,
+   "wallToTip1": 0.9847,
+   "wallToTip2": 0.9847,
+   "sagitta": 0
+  },
+  "meas": {
+   "r1": 0.6584,
+   "r2": 0.6609,
+   "r1rms": 0.014,
+   "r2rms": 0.0131,
+   "rWallSphereFit": 1.0265,
+   "wallRms": 0.0492,
+   "wallPlaneRms": 0,
+   "wallPlaneMaxDev": 0,
+   "aProjected": 0.59,
+   "aFromOuterFits": 0.5778,
+   "length": 1.942,
+   "wallToTip1": 0.972,
+   "wallToTip2": 0.97,
+   "youngLaplaceFromMeasuredR": 174.1746,
+   "sectorsFromFits": {
+    "air": 122.3288,
+    "p1": 150.1006,
+    "p2": 87.5706
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2407,
+    0.2424
+   ],
+   "predOuter1": 0.2431,
+   "predOuter2": 0.2431,
+   "diffRun": -0.0016,
+   "predDiffExactWall": 0,
+   "wallRadiusFromLambda": null
+  },
+  "localAngles": []
+ },
+ "slab-dot": {
+  "n": 16,
+  "steps": 150,
+  "converged": true,
+  "ms": 21963,
+  "V": [
+   1,
+   24
+  ],
+  "volumes": [
+   1,
+   24
+  ],
+  "exact": {
+   "r1": 0.7558,
+   "r2": 1.7985,
+   "rWall": 1.3035,
+   "a": 0.7526,
+   "length": 4.1185,
+   "wallToTip1": 0.6864,
+   "wallToTip2": 3.432,
+   "sagitta": 0.2392
+  },
+  "meas": {
+   "r1": 1.2459,
+   "r2": 1.8811,
+   "r1rms": 0.0116,
+   "r2rms": 0.1711,
+   "rWallSphereFit": 1.0725,
+   "wallRms": 0.0132,
+   "wallPlaneRms": 0.1271,
+   "wallPlaneMaxDev": 0.2232,
+   "aProjected": 0.8811,
+   "aFromOuterFits": 0,
+   "length": 2.672,
+   "wallToTip1": 0.636,
+   "wallToTip2": 2.036,
+   "youngLaplaceFromMeasuredR": 3.6896,
+   "sectorsFromFits": {
+    "air": 180,
+    "p1": 0,
+    "p2": 180
+   }
+  },
+  "lambda": {
+   "run": [
+    0.2497,
+    0.0994
+   ],
+   "predOuter1": 0.2111,
+   "predOuter2": 0.0887,
+   "diffRun": 0.1503,
+   "predDiffExactWall": 0.1224,
+   "wallRadiusFromLambda": 1.0617
+  },
+  "localAngles": []
+ },
+ "ball-AB": {
+  "n": 12,
+  "steps": 64,
+  "converged": true,
+  "ms": 6866,
+  "V": [
+   10,
+   23
+  ],
+  "volumes": [
+   10,
+   23
+  ],
+  "exact": {
+   "r1": 1.4599,
+   "r2": 1.8237,
+   "rWall": 7.3183,
+   "a": 1.3792,
+   "length": 4.9555,
+   "wallToTip1": 1.9385,
+   "wallToTip2": 3.0169,
+   "sagitta": 0.1311
+  },
+  "meas": {
+   "r1": 1.6542,
+   "r2": 1.9231,
+   "r1rms": 0.0302,
+   "r2rms": 0.052,
+   "rWallSphereFit": 6.5351,
+   "wallRms": 0.0286,
+   "wallPlaneRms": 0.049,
+   "wallPlaneMaxDev": 0.1273,
+   "aProjected": 1.6109,
+   "aFromOuterFits": 1.6401,
+   "length": 4.248,
+   "wallToTip1": 1.668,
+   "wallToTip2": 2.58,
+   "youngLaplaceFromMeasuredR": 11.8316,
+   "sectorsFromFits": {
+    "air": 156.017,
+    "p1": 97.2685,
+    "p2": 106.7145
+   }
+  },
+  "lambda": {
+   "run": [
+    0.1154,
+    0.0972
+   ],
+   "predOuter1": 0.1093,
+   "predOuter2": 0.0875,
+   "diffRun": 0.0183,
+   "predDiffExactWall": 0.0218,
+   "wallRadiusFromLambda": 8.7415
+  },
+  "localAngles": [
+   {
+    "slice": 1,
+    "at": [
+     -0.1288,
+     -1.0712
+    ],
+    "miss": 0.0207,
+    "sectors": {
+     "0": 108.5,
+     "1": 145.83,
+     "2": 105.66
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.401,
+      "rms": 0.0139,
+      "n": 8
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0.0216,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 6
+     }
+    ]
+   },
+   {
+    "slice": 1,
+    "at": [
+     -0.1288,
+     2.0712
+    ],
+    "miss": 0.0207,
+    "sectors": {
+     "0": 108.5,
+     "1": 145.83,
+     "2": 105.66
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.401,
+      "rms": 0.0139,
+      "n": 8
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0.0216,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 6
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     -0.1288,
+     -1.0712
+    ],
+    "miss": 0.0207,
+    "sectors": {
+     "0": 108.5,
+     "1": 145.83,
+     "2": 105.66
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.401,
+      "rms": 0.0139,
+      "n": 8
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0.0216,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 6
+     }
+    ]
+   },
+   {
+    "slice": 2,
+    "at": [
+     -0.1288,
+     2.0712
+    ],
+    "miss": 0.0207,
+    "sectors": {
+     "0": 108.5,
+     "1": 145.83,
+     "2": 105.66
+    },
+    "films": [
+     {
+      "film": "0|1",
+      "fit": "circle",
+      "r": 0.401,
+      "rms": 0.0139,
+      "n": 8
+     },
+     {
+      "film": "1|2",
+      "fit": "line",
+      "rms": 0.0216,
+      "n": 8
+     },
+     {
+      "film": "0|2",
+      "fit": "line",
+      "rms": 0,
+      "n": 6
+     }
+    ]
+   }
+  ]
+ }
+}

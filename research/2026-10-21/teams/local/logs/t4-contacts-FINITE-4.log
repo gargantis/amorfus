@@ -1,0 +1,40 @@
+diag-edge j0: 289 ms 4 st NC | A 2->1 B 0->0 | 6:2 lam 0.21458
+diag-edge s1: 183 ms 4 st NC | A 2->1 B 0->0 | 6:2 lam 0.21477
+diag-edge s2: 132 ms 4 st NC | A 2->1 B 0->0 | 6:2 lam 0.21465
+diag-edge s3: 117 ms 4 st NC | A 2->1 B 0->0 | 6:2 lam 0.21467
+diag-edge rev: 84 ms 4 st NC | A 2->1 B 0->0 | 6:2 lam 0.21458
+diag-edge-3v3 j0: 182 ms 4 st NC | A 2->1 B 0->0 | 6:6 lam 0.16758
+diag-edge-3v3 s1: 204 ms 4 st NC | A 2->1 B 0->0 | 6:6 lam 0.16755
+diag-edge-3v3 s2: 225 ms 4 st NC | A 2->1 B 0->0 | 6:6 lam 0.16783
+diag-edge-3v3 s3: 194 ms 4 st NC | A 2->1 B 0->0 | 6:6 lam 0.16748
+diag-edge-3v3 rev: 174 ms 4 st NC | A 2->1 B 0->0 | 6:6 lam 0.16758
+diag-edge-3v1 j0: 115 ms 4 st NC | A 2->1 B 0->0 | 6:4 lam 0.18654
+diag-edge-3v1 s1: 158 ms 4 st NC | A 2->1 B 0->0 | 6:4 lam 0.18652
+diag-edge-3v1 s2: 135 ms 4 st NC | A 2->1 B 0->0 | 6:4 lam 0.18616
+diag-edge-3v1 s3: 169 ms 4 st NC | A 2->1 B 0->0 | 6:4 lam 0.18682
+diag-edge-3v1 rev: 141 ms 4 st NC | A 2->1 B 0->0 | 6:4 lam 0.18654
+diag-corner j0: 96 ms 4 st NC | A 2->2 B 0->0 | 6:1 lam 0.2559 6:1 lam 0.2559
+diag-corner s1: 108 ms 4 st NC | A 2->2 B 0->0 | 6:1 lam 0.25581 6:1 lam 0.25547
+diag-corner s2: 131 ms 4 st NC | A 2->2 B 0->0 | 6:1 lam 0.25502 6:1 lam 0.25486
+diag-corner s3: 114 ms 4 st NC | A 2->2 B 0->0 | 6:1 lam 0.25582 6:1 lam 0.25399
+diag-corner rev: 97 ms 4 st NC | A 2->2 B 0->0 | 6:1 lam 0.2559 6:1 lam 0.2559
+cube2-checker j0: 484 ms 4 st NC | A 4->4 B 4->4 | 6:1 lam 0.2498 7:1 lam 0.2498 7:1 lam 0.2498 6:1 lam 0.2498 7:1 lam 0.2498 6:1 lam 0.2498 6:1 lam 0.2498 7:1 lam 0.2498
+cube2-checker s1: 584 ms 4 st NC | A 4->4 B 4->4 | 6:1 lam 0.25013 7:1 lam 0.25028 7:1 lam 0.25031 6:1 lam 0.24987 7:1 lam 0.25011 6:1 lam 0.24967 6:1 lam 0.24966 7:1 lam 0.24973
+cube2-checker s2: 572 ms 4 st NC | A 4->4 B 4->4 | 6:1 lam 0.25 7:1 lam 0.24956 7:1 lam 0.24932 6:1 lam 0.24953 7:1 lam 0.25019 6:1 lam 0.24993 6:1 lam 0.24954 7:1 lam 0.24981
+cube2-checker s3: 612 ms 4 st NC | A 4->4 B 4->4 | 6:1 lam 0.24973 7:1 lam 0.24871 7:1 lam 0.24959 6:1 lam 0.24965 7:1 lam 0.249 6:1 lam 0.25006 6:1 lam 0.24887 7:1 lam 0.2497
+cube2-checker rev: 482 ms 4 st NC | A 4->4 B 4->4 | 7:1 lam 0.2498 6:1 lam 0.2498 6:1 lam 0.2498 7:1 lam 0.2498 6:1 lam 0.2498 7:1 lam 0.2498 7:1 lam 0.2498 6:1 lam 0.2498
+cube2-cornerA j0: 369 ms 4 st NC | A 2->2 B 1->1 | 6:1 lam 0.22543 7:6 lam 0.1408 6:1 lam 0.22543
+cube2-cornerA s1: 438 ms 4 st NC | A 2->2 B 1->1 | 6:1 lam 0.2247 7:6 lam 0.1397 6:1 lam 0.2246
+cube2-cornerA s2: 401 ms 4 st NC | A 2->2 B 1->1 | 6:1 lam 0.22451 7:6 lam 0.13978 6:1 lam 0.22476
+cube2-cornerA s3: 415 ms 4 st NC | A 2->2 B 1->1 | 6:1 lam 0.22459 7:6 lam 0.13968 6:1 lam 0.2251
+cube2-cornerA rev: 291 ms 4 st NC | A 2->2 B 1->1 | 6:1 lam 0.22543 7:6 lam 0.1408 6:1 lam 0.22543
+cube2-edgeA j0: 336 ms 4 st NC | A 2->1 B 1->1 | 6:2 lam 0.20294 7:6 lam 0.14861
+cube2-edgeA s1: 394 ms 4 st NC | A 2->1 B 1->1 | 6:2 lam 0.20349 7:6 lam 0.14895
+cube2-edgeA s2: 378 ms 4 st NC | A 2->1 B 1->1 | 6:2 lam 0.20277 7:6 lam 0.14844
+cube2-edgeA s3: 377 ms 4 st NC | A 2->1 B 1->1 | 6:2 lam 0.20297 7:6 lam 0.14885
+cube2-edgeA rev: 345 ms 4 st NC | A 2->1 B 1->1 | 7:6 lam 0.14861 6:2 lam 0.20294
+checker-2layer j0: 408 ms 4 st NC | A 2->2 B 2->2 | 6:2 lam 0.17299 6:2 lam 0.17299 7:2 lam 0.17299 7:2 lam 0.17299
+checker-2layer s1: 412 ms 4 st NC | A 2->2 B 2->2 | 6:2 lam 0.17302 6:2 lam 0.173 7:2 lam 0.17307 7:2 lam 0.17295
+checker-2layer s2: 421 ms 4 st NC | A 2->2 B 2->2 | 6:2 lam 0.17316 6:2 lam 0.17308 7:2 lam 0.1731 7:2 lam 0.17308
+checker-2layer s3: 445 ms 4 st NC | A 2->2 B 2->2 | 6:2 lam 0.17343 6:2 lam 0.17316 7:2 lam 0.17329 7:2 lam 0.17265
+checker-2layer rev: 357 ms 4 st NC | A 2->2 B 2->2 | 7:2 lam 0.17299 7:2 lam 0.17299 6:2 lam 0.17299 6:2 lam 0.17299

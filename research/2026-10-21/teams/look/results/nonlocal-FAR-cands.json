@@ -1,0 +1,239 @@
+{
+ "note": "tunnel alone / with an attached 1x3 pillar on the roof corner / with the pillar detached by a 1-block gap",
+ "runs": [
+  {
+   "regime": "BOX0-PAINT-0.1-0.02",
+   "scene": "alone",
+   "vsAlone": null,
+   "steps": 24,
+   "ms": 2456,
+   "cells": 614400,
+   "lambdas": [
+    0.077
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.1-0.02",
+   "scene": "barAttached",
+   "vsAlone": {
+    "cellsChanged": 5905,
+    "volumeChanged": 1.441650390625,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 1.277587890625,
+     "0_5to1_5": 0.044921875,
+     "1_5to2_5": 0.0380859375,
+     "ge2_5": 0.0810546875
+    },
+    "maxDistance": 2.96875
+   },
+   "steps": 85,
+   "ms": 11978,
+   "cells": 1105920,
+   "lambdas": [
+    0.0763
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.1-0.02",
+   "scene": "barDetached",
+   "vsAlone": {
+    "cellsChanged": 0,
+    "volumeChanged": 0,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 0,
+     "0_5to1_5": 0,
+     "1_5to2_5": 0,
+     "ge2_5": 0
+    },
+    "maxDistance": 0
+   },
+   "steps": 24,
+   "ms": 3840,
+   "cells": 1228800,
+   "lambdas": [
+    0.077,
+    0.1302
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.15-0.02",
+   "scene": "alone",
+   "vsAlone": null,
+   "steps": 19,
+   "ms": 1906,
+   "cells": 614400,
+   "lambdas": [
+    0.0851
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.15-0.02",
+   "scene": "barAttached",
+   "vsAlone": {
+    "cellsChanged": 2973,
+    "volumeChanged": 0.725830078125,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 0.681396484375,
+     "0_5to1_5": 0.01708984375,
+     "1_5to2_5": 0.01171875,
+     "ge2_5": 0.015625
+    },
+    "maxDistance": 2.96875
+   },
+   "steps": 25,
+   "ms": 3674,
+   "cells": 1105920,
+   "lambdas": [
+    0.1103
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.15-0.02",
+   "scene": "barDetached",
+   "vsAlone": {
+    "cellsChanged": 0,
+    "volumeChanged": 0,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 0,
+     "0_5to1_5": 0,
+     "1_5to2_5": 0,
+     "ge2_5": 0
+    },
+    "maxDistance": 0
+   },
+   "steps": 19,
+   "ms": 2681,
+   "cells": 1228800,
+   "lambdas": [
+    0.0851,
+    0.1576
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "alone",
+   "vsAlone": null,
+   "steps": 40,
+   "ms": 4851,
+   "cells": 614400,
+   "lambdas": [
+    0.0683
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.375,
+   "roof": 2.625,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "barAttached",
+   "vsAlone": {
+    "cellsChanged": 16805,
+    "volumeChanged": 4.102783203125,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 0.270263671875,
+     "0_5to1_5": 1.886474609375,
+     "1_5to2_5": 1.87646484375,
+     "ge2_5": 0.069580078125
+    },
+    "maxDistance": 2.96875
+   },
+   "steps": 114,
+   "ms": 15828,
+   "cells": 1105920,
+   "lambdas": [
+    0.0725
+   ],
+   "clearCells": {
+    "clearHeightAtW": 0,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": null,
+   "roof": null,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "barDetached",
+   "vsAlone": {
+    "cellsChanged": 0,
+    "volumeChanged": 0,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 0,
+     "0_5to1_5": 0,
+     "1_5to2_5": 0,
+     "ge2_5": 0
+    },
+    "maxDistance": 0
+   },
+   "steps": 40,
+   "ms": 5922,
+   "cells": 1228800,
+   "lambdas": [
+    0.0683,
+    0.1411
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.375,
+   "roof": 2.625,
+   "outerTopY": 4
+  }
+ ]
+}

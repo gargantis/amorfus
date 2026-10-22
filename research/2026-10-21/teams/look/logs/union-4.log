@@ -1,0 +1,17 @@
+FREE diag-edge j0 s1: 724 ms 36 steps, {"6":2}→{"6":1} A
+FREE diag-edge j0.001 s1: 1166 ms 66 steps, {"6":2}→{"6":1} A
+FREE diag-edge j0.001 s2: 1302 ms 74 steps, {"6":2}→{"6":1} A
+FREE diag-edge j0.001 s3: 1100 ms 66 steps, {"6":2}→{"6":1} A
+FREE diag-corner j0 s1: 225 ms 11 steps, {"6":2}→{"6":2} 
+FREE diag-corner j0.001 s1: 305 ms 13 steps, {"6":2}→{"6":2} 
+FREE diag-corner j0.001 s2: 289 ms 13 steps, {"6":2}→{"6":2} 
+FREE diag-corner j0.001 s3: 287 ms 13 steps, {"6":2}→{"6":2} 
+FREE sq2-checker j0 s1: 1352 ms 34 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FREE sq2-checker j0.001 s1: 2203 ms 51 steps, {"6":2,"7":2}→{"6":1,"7":1} -
+FREE sq2-checker j0.001 s2: 5319 ms 138 steps, {"6":2,"7":2}→{"6":1,"7":1} X
+FREE sq2-checker j0.001 s3: 5395 ms 137 steps, {"6":2,"7":2}→{"6":1,"7":1} X
+FREE slab-line j0 s1: 24178 ms 147 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+FREE slab-line j0.001 s1: 40281 ms 196 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+FREE slab-line j0.001 s2: 48208 ms 300 steps, {"6":6,"7":2}→{"6":1,"7":1} -AAA-
+FREE slab-line j0.001 s3: 63080 ms 300 steps, {"6":6,"7":2}→{"6":1,"7":1} --A--
+wall 212.50 s maxrss 199636 KB

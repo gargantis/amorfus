@@ -1,0 +1,55 @@
+{
+ "out": "teams/table/sheets/class-table-FINITE-4.png",
+ "cols": 4,
+ "title": "Top 12 corner classes, FINITE-4, embedding E2c (infinite octants), n=16",
+ "items": [
+  {
+   "path": "teams/table/img/classes/c10-FINITE-4-E2c-n16-clu.png",
+   "label": "c10 00001111 29.8%\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c2-FINITE-4-E2c-n16-clu.png",
+   "label": "c2 00000011 12.3%\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c95-FINITE-4-E2c-n16-clu.png",
+   "label": "c95 00111111 10.9%\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c249-FINITE-4-E2c-n16-clu.png",
+   "label": "c249 01111111 6.5%\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c5-FINITE-4-E2c-n16-clu.png",
+   "label": "c5 00000111 5.9%\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c35-FINITE-4-E2c-n16-clu.png",
+   "label": "c35 00011111 5.8%\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c1-FINITE-4-E2c-n16-clu.png",
+   "label": "c1 00000001 5.7%\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c119-FINITE-4-E2c-n16-clu.png",
+   "label": "c119 00112211 3.0%\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c11-FINITE-4-E2c-n16-clu.png",
+   "label": "c11 00001112 2.1%\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c12-FINITE-4-E2c-n16-clu.png",
+   "label": "c12 00001122 1.7%\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c14-FINITE-4-E2c-n16-clu.png",
+   "label": "c14 00001221 1.6% nonP\nFINITE-4 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c18-FINITE-4-E2c-n16-clu.png",
+   "label": "c18 00010111 1.5%\nFINITE-4 E2c n16"
+  }
+ ]
+}

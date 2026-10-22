@@ -1,0 +1,1 @@
+{"set":"t1","name":"t8s","regime":"FID-0.15","n":12,"ms":60885,"steps":94,"converged":true,"changes":15108,"premerged":0,"alive":2,"lambda":[[2,277,0.0108],[1,98,0.0054]],"phaseMat":[0,2,1],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-2,"oy":5,"oz":-85},"dScale":31658,"origin":[-2,5,-85],"size":[9,8,9],"evalLo":[0,7,-83],"evalHi":[5,11,-78],"blocks":375}

@@ -1,0 +1,5 @@
+t7 u0a FINITE-4 n12: grid 108x96x108, 4 steps (not converged), 1547 ms, rss 178 MB
+t7 u2a FINITE-4 n12: grid 108x96x108, 4 steps (not converged), 1373 ms, rss 213 MB
+t7 u5a FINITE-4 n12: grid 108x96x108, 4 steps (not converged), 3151 ms, rss 233 MB
+t7 u5s FINITE-4 n12: grid 108x96x108, 4 steps (not converged), 2534 ms, rss 247 MB
+t7 u6a FINITE-4 n12: grid 108x96x108, 4 steps (not converged), 1189 ms, rss 247 MB

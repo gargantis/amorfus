@@ -1,0 +1,14 @@
+{"out": "teams/v-look/sheets/quick1.png", "cols": 4, "title": "quick look C15-V0 n20 (paint on 2-thick ground)", "cell": [360, 270], "items": [
+{"path": "teams/v-look/img/C15-V0@n20/slab2-line-view.png", "label": "slab2-line view"},
+{"path": "teams/v-look/img/C15-V0@n20/slab2-line-slice.png", "label": "slab2-line plan y1.5"},
+{"path": "teams/v-look/img/C15-V0@n20/slab2-line-sec.png", "label": "slab2-line sec z2.5"},
+{"path": "teams/v-look/img/C15-V0@n20/checker2-view.png", "label": "checker2 view"},
+{"path": "teams/v-look/img/C15-V0@n20/slab2-dot-view.png", "label": "slab2-dot view"},
+{"path": "teams/v-look/img/C15-V0@n20/slab2-stripe-view.png", "label": "slab2-stripe"},
+{"path": "teams/v-look/img/C15-V0@n20/Lturn-view.png", "label": "Lturn"},
+{"path": "teams/v-look/img/C15-V0@n20/cross-view.png", "label": "cross"},
+{"path": "teams/v-look/img/C15-V0@n20/xdiag-view.png", "label": "xdiag"},
+{"path": "teams/v-look/img/C15-V0@n20/diag2-view.png", "label": "diag2"},
+{"path": "teams/v-look/img/C15-V0@n20/slab-line-view.png", "label": "slab-line (1-thick)"},
+{"path": "teams/v-look/img/C15-V0@n20/checker2-slice.png", "label": "checker2 plan"}
+]}

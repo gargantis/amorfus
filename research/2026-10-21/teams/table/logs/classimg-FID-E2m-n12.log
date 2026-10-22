@@ -1,0 +1,7 @@
+1 00000001 FID-0.15 E2m n12 clu: 228 ms, 7 steps, 864 label changes, alive 1/1, vsn [0.1421,0.1423,0.1421] vseam null
+2 00000011 FID-0.15 E2m n12 clu: 334 ms, 13 steps, 2880 label changes, alive 1/1, vsn [0,0.0754,0.0754] vseam null
+95 00111111 FID-0.15 E2m n12 clu: 789 ms, 16 steps, 2164 label changes, alive 1/1, vsn [0,-0.2863,-0.2863] vseam null
+249 01111111 FID-0.15 E2m n12 clu: 1629 ms, 37 steps, 4192 label changes, alive 1/1, vsn null vseam null
+97 00111122 FID-0.15 E2m n12 clu: 1281 ms, 19 steps, 3486 label changes, alive 2/3, vsn [0,-0.2818,-0.2818] vseam null
+11 00001112 FID-0.15 E2m n12 clu: 848 ms, 13 steps, 866 label changes, alive 2/2, vsn [0,-0.0311,0] vseam [0.1658,0.0059,0.1658]
+done 6 classes in 11.1 s -> teams/table/res/table/FID-0.15_E2m_n12_clu.json

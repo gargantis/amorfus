@@ -1,0 +1,10 @@
+Air opening angle at the A|B junction of pair-diff (top profile on labels, plane z = 0.5), circle fit to each cap over |x - seam| in [0.03, 0.55]; equal double bubble, all tensions 1: theory 120 deg
+FREE n16: flank rises 36.9 / 36.9 deg, opening 106.1 deg, cap R 0.520 / 0.520 (rms 0.016), top next to the seam 1.0625
+FREE n24: flank rises 45.3 / 45.3 deg, opening 89.4 deg, cap R 0.424 / 0.424 (rms 0.011), top next to the seam 1.125
+CAGE-0.25 n16: flank rises 36.9 / 36.9 deg, opening 106.1 deg, cap R 0.520 / 0.520 (rms 0.016), top next to the seam 1.0625
+CAGE-0.25 n24: flank rises 45.3 / 45.3 deg, opening 89.4 deg, cap R 0.424 / 0.424 (rms 0.011), top next to the seam 1.125
+FINITE-4 n16: flank rises 90.0 / 90.0 deg, opening 0.0 deg, cap R 0.254 / 0.254 (rms 0.043), top next to the seam 1.0625
+FINITE-4 n24: flank rises 48.2 / 48.2 deg, opening 83.6 deg, cap R 0.517 / 0.517 (rms 0.014), top next to the seam 1.0417
+FID-0.15 n16: flank rises 90.0 / 90.0 deg, opening 0.0 deg, cap R 0.254 / 0.254 (rms 0.043), top next to the seam 1
+FID-0.15 n24: flank rises 40.5 / 40.5 deg, opening 99.1 deg, cap R 0.537 / 0.537 (rms 0.013), top next to the seam 1
+C15-V0 n24: flank rises 0.0 / 0.0 deg, opening 180.0 deg, cap R Infinity / Infinity (rms 0.000), top next to the seam 1

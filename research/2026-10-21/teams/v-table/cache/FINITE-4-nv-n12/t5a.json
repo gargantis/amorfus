@@ -1,0 +1,1 @@
+{"set":"t1","name":"t5a","regime":"FINITE-4-nv","n":12,"ms":1210,"steps":4,"converged":false,"changes":36666,"premerged":0,"alive":1,"lambda":[[3,563,-0.0238]],"phaseMat":[0,3],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-62,"oy":38,"oz":77},"dScale":32000,"origin":[-62,38,77],"size":[9,8,9],"evalLo":[-60,40,79],"evalHi":[-55,44,84],"blocks":563}

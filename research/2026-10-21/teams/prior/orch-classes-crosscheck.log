@@ -1,0 +1,4 @@
+labellings 21147 classes 738 by #materials {"0":1,"1":21,"2":125,"3":245,"4":223,"5":94,"6":24,"7":4,"8":1}
+Burnside 738 (counts labellings fixed up to relabelling; equals classes only if relabelling commutes — informational)
+solid/air classes 22
+classes with air+solid 551 ; with >=2 materials 716 ; both 531

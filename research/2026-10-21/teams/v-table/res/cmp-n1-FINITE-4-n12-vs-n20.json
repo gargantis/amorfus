@@ -1,0 +1,72 @@
+{
+ "set": "n1",
+ "A": "FINITE-4 n12",
+ "B": "FINITE-4 n20",
+ "scenes": {
+  "k0a": {
+   "corners": 27,
+   "vtxDiff": 0.0267,
+   "surfDist": 0.0174
+  },
+  "k0s": {
+   "corners": 34,
+   "vtxDiff": 0.0079,
+   "surfDist": 0.0047
+  },
+  "k1a": {
+   "corners": 33,
+   "vtxDiff": 0.0086,
+   "surfDist": 0.0068
+  },
+  "k1s": {
+   "corners": 27,
+   "vtxDiff": 0.0025,
+   "surfDist": 0.0033
+  },
+  "k2a": {
+   "corners": 31,
+   "vtxDiff": 0.0074,
+   "surfDist": 0.0047
+  },
+  "k2s": {
+   "corners": 32,
+   "vtxDiff": 0.0076,
+   "surfDist": 0.0064
+  },
+  "k3a": {
+   "corners": 36,
+   "vtxDiff": 0.005,
+   "surfDist": 0.0045
+  },
+  "k3s": {
+   "corners": 36,
+   "vtxDiff": 0.0061,
+   "surfDist": 0.0045
+  },
+  "k4a": {
+   "corners": 35,
+   "vtxDiff": 0.0165,
+   "surfDist": 0.0111
+  },
+  "k4s": {
+   "corners": 35,
+   "vtxDiff": 0.0112,
+   "surfDist": 0.008
+  },
+  "k5a": {
+   "corners": 30,
+   "vtxDiff": 0.0116,
+   "surfDist": 0.0056
+  },
+  "k5s": {
+   "corners": 36,
+   "vtxDiff": 0.0046,
+   "surfDist": 0.0048
+  }
+ },
+ "mean": {
+  "corners": 392,
+  "vtxDiff": 0.0094,
+  "surfDist": 0.0067
+ }
+}

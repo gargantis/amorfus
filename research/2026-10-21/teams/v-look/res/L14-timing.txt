@@ -1,0 +1,8 @@
+FID-0.15 4 ms 89 steps 3 True cells 17920 delta 0 flat 0 0
+FID-0.15 8 ms 1025 steps 26 True cells 143360 delta 0.0185 flat 0 0
+FID-0.15 12 ms 2561 steps 17 True cells 483840 delta 0.023 flat 0 0
+FID-0.15 16 ms 9489 steps 26 True cells 1146880 delta 0.0283 flat 0.0625 0
+C15-V0 4 ms 80 steps 3 True cells 8008 delta 0 flat 0 0
+C15-V0 8 ms 598 steps 13 True cells 64064 delta 0.0194 flat 0 0
+C15-V0 12 ms 2461 steps 20 True cells 216216 delta 0.0282 flat 0 0
+C15-V0 20 ms 12928 steps 26 True cells 1001000 delta 0.0374 flat 0 0

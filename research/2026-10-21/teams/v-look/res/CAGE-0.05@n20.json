@@ -1,0 +1,765 @@
+{
+ "regime": "CAGE-0.05",
+ "n": 20,
+ "runs": {
+  "tunnel": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 35,
+   "converged": true,
+   "ms": 4892,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "cells": 640000,
+   "delta": 0.1099,
+   "geoDelta": 0.1099,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "3": 1
+   },
+   "lambdas": [
+    0.0673
+   ],
+   "open": {
+    "0.75": {
+     "clearH": 1.9,
+     "clearW": 0.9,
+     "pass": true,
+     "floorMid": 1.05,
+     "roofMid": 2.95
+    },
+    "1.5": {
+     "clearH": 1.9,
+     "clearW": 0.9,
+     "pass": true,
+     "floorMid": 1.05,
+     "roofMid": 2.95
+    },
+    "2.25": {
+     "clearH": 1.9,
+     "clearW": 0.9,
+     "pass": true,
+     "floorMid": 1.05,
+     "roofMid": 2.95
+    }
+   },
+   "lookClearCells": {
+    "0.75": {
+     "clearHeightAtW": 1.9,
+     "clearWidthAtH": 0.9,
+     "pass": true
+    },
+    "1.5": {
+     "clearHeightAtW": 1.9,
+     "clearWidthAtH": 0.9,
+     "pass": true
+    },
+    "2.25": {
+     "clearHeightAtW": 1.9,
+     "clearWidthAtH": 0.9,
+     "pass": true
+    }
+   },
+   "flatTop": {
+    "maxUp": 0.05,
+    "maxDown": 0,
+    "maxAbs": 0.05,
+    "colsOff": 900,
+    "cols": 900,
+    "miss": 0
+   }
+  },
+  "room2": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 15,
+   "converged": true,
+   "ms": 2519,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "cells": 800000,
+   "delta": 0.0532,
+   "geoDelta": 0.0532,
+   "vol": {
+    "worstPhaseRel": 0.0105
+   },
+   "phases": {
+    "3": 1
+   },
+   "lambdas": [
+    0.1379
+   ],
+   "open": {
+    "1": {
+     "clearH": 1.9,
+     "clearW": 1.9,
+     "pass": true,
+     "floorMid": 1.05,
+     "roofMid": 2.95
+    },
+    "0.25": {
+     "clearH": 1.9,
+     "clearW": 1.9,
+     "pass": true,
+     "floorMid": 1,
+     "roofMid": 3
+    },
+    "0.5": {
+     "clearH": 1.9,
+     "clearW": 1.9,
+     "pass": true,
+     "floorMid": 1.05,
+     "roofMid": 2.95
+    },
+    "1.5": {
+     "clearH": 1.9,
+     "clearW": 1.9,
+     "pass": true,
+     "floorMid": 1.05,
+     "roofMid": 2.95
+    },
+    "1.75": {
+     "clearH": 1.9,
+     "clearW": 1.9,
+     "pass": true,
+     "floorMid": 1.05,
+     "roofMid": 2.95
+    }
+   },
+   "flatTop": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 1500,
+    "miss": 0
+   }
+  },
+  "trench": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 25,
+   "converged": true,
+   "ms": 5285,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "cells": 960000,
+   "delta": 0.078,
+   "geoDelta": 0.078,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "3": 1
+   },
+   "lambdas": [
+    0.058
+   ],
+   "gap": {
+    "1": {
+     "minW": 0.9,
+     "atY": 1.075
+    },
+    "2": {
+     "minW": 0.9,
+     "atY": 1.075
+    }
+   },
+   "floor": {
+    "maxUp": 0.05,
+    "maxDown": 0,
+    "maxAbs": 0.05,
+    "colsOff": 400,
+    "cols": 400,
+    "miss": 0
+   },
+   "flatL": {
+    "maxUp": 0.05,
+    "maxDown": 0,
+    "maxAbs": 0.05,
+    "colsOff": 1500,
+    "cols": 1500,
+    "miss": 0
+   },
+   "flatR": {
+    "maxUp": 0.05,
+    "maxDown": 0,
+    "maxAbs": 0.05,
+    "colsOff": 1500,
+    "cols": 1500,
+    "miss": 0
+   }
+  },
+  "single": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 5,
+   "converged": true,
+   "ms": 62,
+   "lastChanges": [
+    128,
+    0,
+    0,
+    0
+   ],
+   "cells": 64000,
+   "delta": 0.218,
+   "geoDelta": 0.218,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.175
+   ],
+   "ext": [
+    1.1,
+    1.1,
+    1.1
+   ],
+   "diag": 1.5625,
+   "diagOverAxis": 1.4205,
+   "corner": {
+    "inset": 0.112,
+    "Req": 0.153
+   },
+   "edge": {
+    "faceU": 0.05,
+    "faceV": 0.05,
+    "inset": 0.0854,
+    "Req": 0.2061,
+    "R": 0.2551,
+    "fitRms": 0.0093,
+    "nCurved": 47,
+    "arcDeg": 23
+   }
+  },
+  "pillar3": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 13,
+   "converged": true,
+   "ms": 296,
+   "lastChanges": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "cells": 128000,
+   "delta": 0.1727,
+   "geoDelta": 0.1727,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1546
+   ],
+   "widthMin": 0.5,
+   "widthMid": 1.1,
+   "height": 3,
+   "diagMid": 1.2625
+  },
+  "ring8": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 14,
+   "converged": true,
+   "ms": 682,
+   "lastChanges": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "cells": 256000,
+   "delta": 0.1459,
+   "geoDelta": 0.1459,
+   "vol": {
+    "worstPhaseRel": 0.0001
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.0984
+   ],
+   "holeOpenAtCentre": true,
+   "holeWidthX": 0.85,
+   "flatTop": {
+    "maxUp": 0.05,
+    "maxDown": -0.05,
+    "maxAbs": 0.05,
+    "colsOff": 394,
+    "cols": 500,
+    "miss": 0
+   }
+  },
+  "cube2-same": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 6,
+   "converged": true,
+   "ms": 277,
+   "lastChanges": [
+    96,
+    0,
+    0,
+    0
+   ],
+   "cells": 216000,
+   "delta": 0.1164,
+   "geoDelta": 0.1164,
+   "vol": {
+    "worstPhaseRel": 0.0001
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1069
+   ],
+   "corner": {
+    "inset": 0.112,
+    "Req": 0.153
+   },
+   "edge": {
+    "faceU": 0.05,
+    "faceV": 0.05,
+    "inset": 0.0854,
+    "Req": 0.2061,
+    "R": 0.2789,
+    "fitRms": 0.0158,
+    "nCurved": 51,
+    "arcDeg": 25
+   },
+   "cornerD": {
+    "inset": 0.243,
+    "Req": 0.332
+   },
+   "faceTop": {
+    "maxUp": 0.05,
+    "maxDown": 0,
+    "maxAbs": 0.05,
+    "colsOff": 564,
+    "cols": 576,
+    "miss": 0
+   }
+  },
+  "sq2-same": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 8,
+   "converged": true,
+   "ms": 200,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "cells": 144000,
+   "delta": 0.154,
+   "geoDelta": 0.154,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1426
+   ],
+   "thickness": 1.1,
+   "cornerPlan": {
+    "inset": 0.0854,
+    "Req": 0.1166
+   },
+   "flatTop": {
+    "maxUp": 0.05,
+    "maxDown": 0,
+    "maxAbs": 0.05,
+    "colsOff": 400,
+    "cols": 400,
+    "miss": 0
+   }
+  },
+  "stairs": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 13,
+   "converged": true,
+   "ms": 928,
+   "lastChanges": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "cells": 384000,
+   "delta": 0.1162,
+   "geoDelta": 0.1162,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.0957
+   ],
+   "treads": [
+    {
+     "maxUp": 0.05,
+     "maxDown": 0,
+     "maxAbs": 0.05,
+     "colsOff": 136,
+     "cols": 160,
+     "miss": 0
+    },
+    {
+     "maxUp": 0.05,
+     "maxDown": 0,
+     "maxAbs": 0.05,
+     "colsOff": 136,
+     "cols": 160,
+     "miss": 0
+    },
+    {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "colsOff": 0,
+     "cols": 160,
+     "miss": 0
+    }
+   ]
+  },
+  "slab-line": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 16,
+   "converged": true,
+   "ms": 6325,
+   "lastChanges": [
+    12,
+    0,
+    0,
+    0
+   ],
+   "cells": 784000,
+   "delta": 0.1237,
+   "geoDelta": 0.1035,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1,
+    "7": 2
+   },
+   "lambdas": [
+    0.0963,
+    0.0993,
+    0.0993
+   ],
+   "band": {
+    "mean": 0.7436,
+    "sd": 0.3038,
+    "min": 0.1406,
+    "max": 1.2656
+   },
+   "bandEnd0": {
+    "mean": 0.8888,
+    "sd": 0.3151,
+    "min": 0.2031,
+    "max": 1.3281
+   },
+   "bandEnd1": {
+    "mean": 0.8676,
+    "sd": 0.3348,
+    "min": 0.1406,
+    "max": 1.3281
+   },
+   "lookBandTop": {
+    "mean": 0.7439,
+    "sd": 0.3037,
+    "min": 0.1484,
+    "max": 1.2734
+   },
+   "paint": {
+    "area0": 6,
+    "area": 6.27,
+    "areaRatio": 1.045,
+    "gained": 0.605,
+    "lost": 0.335,
+    "parts0": 6,
+    "parts": 1,
+    "partSizes": [
+     6.27
+    ],
+    "blocksWrong": 0,
+    "blocks": 36
+   },
+   "junctions": "AAAAA",
+   "flatB": [
+    {
+     "maxUp": 0.05,
+     "maxDown": 0,
+     "maxAbs": 0.05,
+     "colsOff": 720,
+     "cols": 720,
+     "miss": 0
+    },
+    {
+     "maxUp": 0.05,
+     "maxDown": 0,
+     "maxAbs": 0.05,
+     "colsOff": 720,
+     "cols": 720,
+     "miss": 0
+    }
+   ],
+   "Abelow": {
+    "start": 0,
+    "end": 0.059
+   }
+  },
+  "slab-dot": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 15,
+   "converged": true,
+   "ms": 2748,
+   "lastChanges": [
+    160,
+    0,
+    0,
+    0
+   ],
+   "cells": 576000,
+   "delta": 0.1258,
+   "geoDelta": 0.1208,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.131,
+    0.1719
+   ],
+   "paint": {
+    "area0": 1,
+    "area": 1.01,
+    "areaRatio": 1.01,
+    "gained": 0.08,
+    "lost": 0.07,
+    "parts0": 1,
+    "parts": 1,
+    "partSizes": [
+     1.01
+    ],
+    "blocksWrong": 0,
+    "blocks": 25
+   },
+   "flat": {
+    "maxUp": 0.05,
+    "maxDown": 0,
+    "maxAbs": 0.05,
+    "colsOff": 1216,
+    "cols": 1216,
+    "miss": 0
+   },
+   "Abelow": {
+    "start": 0,
+    "end": 0.0215
+   }
+  },
+  "terrain-step": {
+   "regime": "CAGE-0.05",
+   "opts": {
+    "anchor": {
+     "kind": "cage",
+     "r": 0.05
+    }
+   },
+   "n": 20,
+   "margin": 0.25,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 43,
+   "converged": true,
+   "ms": 16178,
+   "lastChanges": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "cells": 1001000,
+   "delta": 0.0749,
+   "geoDelta": 0.0673,
+   "vol": {
+    "worstPhaseRel": 0.0001
+   },
+   "phases": {
+    "1": 1,
+    "2": 1
+   },
+   "lambdas": [
+    0.0807,
+    0.0742
+   ],
+   "flatLow": {
+    "maxUp": 0.05,
+    "maxDown": 0,
+    "maxAbs": 0.05,
+    "colsOff": 2100,
+    "cols": 2100,
+    "miss": 0
+   },
+   "flatHigh": {
+    "maxUp": 0.05,
+    "maxDown": 0,
+    "maxAbs": 0.05,
+    "colsOff": 2100,
+    "cols": 2100,
+    "miss": 0
+   },
+   "grass": {
+    "area0": 30,
+    "area": 29.63,
+    "areaRatio": 0.9877,
+    "gained": 0,
+    "lost": 0.37,
+    "parts0": 1,
+    "parts": 1,
+    "partSizes": [
+     29.63
+    ],
+    "blocksWrong": 0,
+    "blocks": 30
+   }
+  }
+ }
+}

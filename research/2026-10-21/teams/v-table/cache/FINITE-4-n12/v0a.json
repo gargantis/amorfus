@@ -1,0 +1,1 @@
+{"set":"t8","name":"v0a","regime":"FINITE-4","n":12,"ms":1136,"steps":4,"converged":false,"changes":36758,"premerged":0,"alive":1,"lambda":[[3,555,-0.0016]],"phaseMat":[0,3],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-1798,"oy":-15,"oz":616},"dScale":32000,"origin":[-1798,-15,616],"size":[9,8,9],"evalLo":[-1796,-13,618],"evalHi":[-1791,-9,623],"blocks":555}

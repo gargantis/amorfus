@@ -1,0 +1,220 @@
+FINITE-4 single Bl-g30: surf mean 0.0247 p95 0.0411 max 0.0547 unm 0 bias -0.025 | seam mean - p95 - n 0 | vol {"6":-0.1214} | lam 0
+FINITE-4 single Bl-g40: surf mean 0.0573 p95 0.0674 max 0.0741 unm 0 bias -0.0575 | seam mean - p95 - n 0 | vol {"6":-0.2536} | lam 0
+FINITE-4 single Bl-b3s40: surf mean 0.0654 p95 0.075 max 0.0811 unm 0 bias -0.0656 | seam mean - p95 - n 0 | vol {"6":-0.2855} | lam 0
+FINITE-4 single Bl-b2s40: surf mean 0.0688 p95 0.0773 max 0.0821 unm 0 bias -0.069 | seam mean - p95 - n 0 | vol {"6":-0.2982} | lam 0
+FINITE-4 single Bx-b3s40: surf mean 0.0038 p95 0.0097 max 0.0166 unm 0 bias 0.0002 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.5264
+  (single 948 ms, rss 93 MB)
+FINITE-4 pair-same Bl-g30: surf mean 0.0281 p95 0.0524 max 0.0539 unm 0 bias -0.0111 | seam mean - p95 - n 0 | vol {"6":-0.0346} | lam 0
+FINITE-4 pair-same Bl-g40: surf mean 0.0221 p95 0.0299 max 0.0317 unm 0 bias -0.0221 | seam mean - p95 - n 0 | vol {"6":-0.0828} | lam 0
+FINITE-4 pair-same Bl-b3s40: surf mean 0.0259 p95 0.0315 max 0.037 unm 0 bias -0.0259 | seam mean - p95 - n 0 | vol {"6":-0.0979} | lam 0
+FINITE-4 pair-same Bl-b2s40: surf mean 0.0272 p95 0.0367 max 0.0406 unm 0 bias -0.0272 | seam mean - p95 - n 0 | vol {"6":-0.103} | lam 0
+FINITE-4 pair-same Bx-b3s40: surf mean 0.0024 p95 0.0042 max 0.0089 unm 0 bias -0.0004 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.4365
+  (pair-same 777 ms, rss 110 MB)
+FINITE-4 pair-diff Bl-g30: surf mean 0.0119 p95 0.0341 max 0.0394 unm 0 bias -0.0089 | seam mean 0 p95 0 n 49 | vol {"6":-0.0367,"7":-0.0367} | lam 0,0
+FINITE-4 pair-diff Bl-g40: surf mean 0.02 p95 0.03 max 0.0343 unm 0 bias -0.0199 | seam mean 0 p95 0 n 49 | vol {"6":-0.0796,"7":-0.0796} | lam 0,0
+FINITE-4 pair-diff Bl-b3s40: surf mean 0.0247 p95 0.0352 max 0.0377 unm 0 bias -0.0249 | seam mean 0 p95 0 n 49 | vol {"6":-0.0986,"7":-0.0986} | lam 0,0
+FINITE-4 pair-diff Bl-b2s40: surf mean 0.0266 p95 0.0386 max 0.0402 unm 0 bias -0.0267 | seam mean 0 p95 0 n 49 | vol {"6":-0.1053,"7":-0.1053} | lam 0,0
+FINITE-4 pair-diff Bx-b3s40: surf mean 0.0088 p95 0.0212 max 0.0301 unm 0 bias -0.0003 | seam mean 0 p95 0 n 54 | vol {"6":0,"7":0} | lam 0.4829,0.4829
+  (pair-diff 816 ms, rss 129 MB)
+FINITE-4 line3-same Bl-g30: surf mean 0.0232 p95 0.0458 max 0.0498 unm 0 bias -0.0008 | seam mean - p95 - n 0 | vol {"6":0.0011} | lam 0
+FINITE-4 line3-same Bl-g40: surf mean 0.0056 p95 0.0205 max 0.025 unm 0 bias -0.0053 | seam mean - p95 - n 0 | vol {"6":-0.0191} | lam 0
+FINITE-4 line3-same Bl-b3s40: surf mean 0.0082 p95 0.0196 max 0.0242 unm 0 bias -0.008 | seam mean - p95 - n 0 | vol {"6":-0.0294} | lam 0
+FINITE-4 line3-same Bl-b2s40: surf mean 0.009 p95 0.0197 max 0.0224 unm 0 bias -0.0087 | seam mean - p95 - n 0 | vol {"6":-0.0322} | lam 0
+FINITE-4 line3-same Bx-b3s40: surf mean 0.0082 p95 0.0163 max 0.0178 unm 0 bias 0.0002 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.3997
+  (line3-same 557 ms, rss 132 MB)
+FINITE-4 line3-ABA Bl-g30: surf mean 0.0113 p95 0.0283 max 0.0417 unm 0 bias -0.0023 | seam mean 0.0062 p95 0.0126 n 73 | vol {"6":-0.0366,"7":0.0475} | lam 0,0,0
+FINITE-4 line3-ABA Bl-g40: surf mean 0.0214 p95 0.0307 max 0.0353 unm 0 bias -0.0058 | seam mean 0.0035 p95 0.0096 n 73 | vol {"6":-0.078,"7":0.0892} | lam 0,0,0
+FINITE-4 line3-ABA Bl-b3s40: surf mean 0.0241 p95 0.0357 max 0.0388 unm 0 bias -0.0099 | seam mean 0.0041 p95 0.0106 n 72 | vol {"6":-0.098,"7":0.0831} | lam 0,0,0
+FINITE-4 line3-ABA Bl-b2s40: surf mean 0.0252 p95 0.0389 max 0.041 unm 0 bias -0.0112 | seam mean 0.0049 p95 0.0113 n 73 | vol {"6":-0.105,"7":0.0827} | lam 0,0,0
+FINITE-4 line3-ABA Bx-b3s40: surf mean 0.0148 p95 0.0265 max 0.0324 unm 0 bias -0.001 | seam mean 0.0253 p95 0.026 n 78 | vol {"6":-0.0041,"7":-0.001} | lam 0.4726,0.4473,0.4726
+  (line3-ABA 972 ms, rss 161 MB)
+FINITE-4 line3-ABC Bl-g30: surf mean 0.0113 p95 0.0283 max 0.0417 unm 0 bias -0.0023 | seam mean 0.0064 p95 0.0128 n 73 | vol {"1":-0.0367,"6":-0.0367,"7":0.0475} | lam 0,0,0
+FINITE-4 line3-ABC Bl-g40: surf mean 0.0214 p95 0.0307 max 0.0354 unm 0 bias -0.006 | seam mean 0.0064 p95 0.0128 n 73 | vol {"1":-0.0788,"6":-0.0788,"7":0.0892} | lam 0,0,0
+FINITE-4 line3-ABC Bl-b3s40: surf mean 0.0241 p95 0.0357 max 0.0388 unm 0 bias -0.0099 | seam mean 0.0064 p95 0.0128 n 73 | vol {"1":-0.0983,"6":-0.0983,"7":0.0831} | lam 0,0,0
+FINITE-4 line3-ABC Bl-b2s40: surf mean 0.0252 p95 0.0389 max 0.041 unm 0 bias -0.0112 | seam mean 0.0064 p95 0.0128 n 73 | vol {"1":-0.1051,"6":-0.1051,"7":0.0827} | lam 0,0,0
+FINITE-4 line3-ABC Bx-b3s40: surf mean 0.0142 p95 0.0253 max 0.0312 unm 0 bias -0.0012 | seam mean 0.0245 p95 0.0252 n 77 | vol {"1":-0.0073,"6":-0.0054,"7":0.0012} | lam 0.4729,0.4459,0.4729
+  (line3-ABC 1000 ms, rss 203 MB)
+FINITE-4 L3-same Bl-g30: surf mean 0.0327 p95 0.0758 max 0.1082 unm 0 bias -0.0107 | seam mean - p95 - n 0 | vol {"6":-0.0331} | lam 0
+FINITE-4 L3-same Bl-g40: surf mean 0.0223 p95 0.0328 max 0.0399 unm 0 bias -0.0222 | seam mean - p95 - n 0 | vol {"6":-0.0744} | lam 0
+FINITE-4 L3-same Bl-b3s40: surf mean 0.0257 p95 0.035 max 0.0374 unm 0 bias -0.0257 | seam mean - p95 - n 0 | vol {"6":-0.0848} | lam 0
+FINITE-4 L3-same Bl-b2s40: surf mean 0.0269 p95 0.0411 max 0.0431 unm 0 bias -0.027 | seam mean - p95 - n 0 | vol {"6":-0.0882} | lam 0
+FINITE-4 L3-same Bx-b3s40: surf mean 0.0049 p95 0.0121 max 0.0193 unm 0 bias -0.0012 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.3918
+  (L3-same 404 ms, rss 191 MB)
+FINITE-4 L3-AAB Bl-g30: surf mean 0.022 p95 0.0496 max 0.0931 unm 0 bias -0.0009 | seam mean 0.0148 p95 0.0199 n 49 | vol {"6":0.0074,"7":-0.024} | lam 0,0
+FINITE-4 L3-AAB Bl-g40: surf mean 0.0086 p95 0.0208 max 0.0237 unm 0 bias -0.0044 | seam mean 0.0195 p95 0.0441 n 51 | vol {"6":-0.007,"7":-0.0325} | lam 0,0
+FINITE-4 L3-AAB Bl-b3s40: surf mean 0.0116 p95 0.0284 max 0.0315 unm 0 bias -0.0078 | seam mean 0.021 p95 0.0479 n 52 | vol {"6":-0.0159,"7":-0.051} | lam 0,0
+FINITE-4 L3-AAB Bl-b2s40: surf mean 0.0132 p95 0.032 max 0.0358 unm 0 bias -0.009 | seam mean 0.0219 p95 0.0502 n 52 | vol {"6":-0.0187,"7":-0.0568} | lam 0,0
+FINITE-4 L3-AAB Bx-b3s40: surf mean 0.0082 p95 0.0195 max 0.034 unm 0 bias -0.0004 | seam mean 0.0245 p95 0.0557 n 56 | vol {"6":0,"7":0} | lam 0.411,0.4675
+  (L3-AAB 717 ms, rss 185 MB)
+FINITE-4 L3-ABC Bl-g30: surf mean 0.0161 p95 0.0379 max 0.0952 unm 0 bias -0.0002 | seam mean 0.0061 p95 0.0227 n 95 | vol {"1":-0.0117,"6":0.0185,"7":-0.0063} | lam 0,0,0
+FINITE-4 L3-ABC Bl-g40: surf mean 0.0102 p95 0.0222 max 0.0357 unm 0 bias -0.0008 | seam mean 0.0063 p95 0.0227 n 97 | vol {"1":-0.0262,"6":0.034,"7":-0.018} | lam 0,0,0
+FINITE-4 L3-ABC Bl-b3s40: surf mean 0.0122 p95 0.0244 max 0.0396 unm 0 bias -0.0045 | seam mean 0.0064 p95 0.0227 n 99 | vol {"1":-0.0418,"6":0.0237,"7":-0.0334} | lam 0,0,0
+FINITE-4 L3-ABC Bl-b2s40: surf mean 0.0136 p95 0.0263 max 0.0421 unm 0 bias -0.0058 | seam mean 0.0064 p95 0.0227 n 99 | vol {"1":-0.0471,"6":0.021,"7":-0.0385} | lam 0,0,0
+FINITE-4 L3-ABC Bx-b3s40: surf mean 0.0094 p95 0.0258 max 0.0476 unm 0 bias -0.0014 | seam mean 0.0171 p95 0.028 n 100 | vol {"1":-0.0097,"6":0.0001,"7":0} | lam 0.4465,0.4641,0.4641
+  (L3-ABC 887 ms, rss 203 MB)
+FINITE-4 sq2-same Bl-g30: surf mean 0.0336 p95 0.0828 max 0.1105 unm 0 bias -0.0047 | seam mean - p95 - n 0 | vol {"6":-0.0212} | lam 0
+FINITE-4 sq2-same Bl-g40: surf mean 0.0155 p95 0.0341 max 0.0499 unm 0 bias -0.0155 | seam mean - p95 - n 0 | vol {"6":-0.0497} | lam 0
+FINITE-4 sq2-same Bl-b3s40: surf mean 0.0186 p95 0.0256 max 0.0393 unm 0 bias -0.0186 | seam mean - p95 - n 0 | vol {"6":-0.0577} | lam 0
+FINITE-4 sq2-same Bl-b2s40: surf mean 0.0197 p95 0.0258 max 0.0337 unm 0 bias -0.0197 | seam mean - p95 - n 0 | vol {"6":-0.0599} | lam 0
+FINITE-4 sq2-same Bx-b3s40: surf mean 0.004 p95 0.0083 max 0.0231 unm 0 bias 0.0002 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.3467
+  (sq2-same 358 ms, rss 194 MB)
+FINITE-4 sq2-AAAB Bl-g30: surf mean 0.0234 p95 0.0574 max 0.0746 unm 0 bias -0.0014 | seam mean 0.0317 p95 0.0651 n 63 | vol {"6":-0.0114,"7":0.0212} | lam 0,0
+FINITE-4 sq2-AAAB Bl-g40: surf mean 0.0108 p95 0.025 max 0.0366 unm 0 bias -0.0044 | seam mean 0.0205 p95 0.0379 n 62 | vol {"6":-0.0308,"7":0.054} | lam 0,0
+FINITE-4 sq2-AAAB Bl-b3s40: surf mean 0.014 p95 0.0241 max 0.0425 unm 0 bias -0.0074 | seam mean 0.0186 p95 0.0398 n 63 | vol {"6":-0.0388,"7":0.0436} | lam 0,0
+FINITE-4 sq2-AAAB Bl-b2s40: surf mean 0.0155 p95 0.0294 max 0.0456 unm 0 bias -0.0084 | seam mean 0.0189 p95 0.0443 n 64 | vol {"6":-0.0401,"7":0.0382} | lam 0,0
+FINITE-4 sq2-AAAB Bx-b3s40: surf mean 0.0098 p95 0.0264 max 0.0403 unm 0 bias -0.0015 | seam mean 0.01 p95 0.0203 n 62 | vol {"6":0,"7":-0.0004} | lam 0.3711,0.4518
+  (sq2-AAAB 818 ms, rss 194 MB)
+FINITE-4 sq2-AABB Bl-g30: surf mean 0.0251 p95 0.0512 max 0.056 unm 0 bias 0.0055 | seam mean 0 p95 0 n 86 | vol {"6":0.0178,"7":0.0178} | lam 0,0
+FINITE-4 sq2-AABB Bl-g40: surf mean 0.0081 p95 0.0194 max 0.0343 unm 0 bias 0.0072 | seam mean 0 p95 0 n 92 | vol {"6":0.0267,"7":0.0267} | lam 0,0
+FINITE-4 sq2-AABB Bl-b3s40: surf mean 0.0065 p95 0.0185 max 0.0299 unm 0 bias 0.0045 | seam mean 0 p95 0 n 91 | vol {"6":0.0186,"7":0.0186} | lam 0,0
+FINITE-4 sq2-AABB Bl-b2s40: surf mean 0.0079 p95 0.0197 max 0.0351 unm 0 bias 0.0036 | seam mean 0 p95 0 n 91 | vol {"6":0.0165,"7":0.0165} | lam 0,0
+FINITE-4 sq2-AABB Bx-b3s40: surf mean 0.0072 p95 0.0154 max 0.0241 unm 0 bias -0.0012 | seam mean 0 p95 0 n 91 | vol {"6":0,"7":0} | lam 0.3963,0.3963
+  (sq2-AABB 589 ms, rss 200 MB)
+FINITE-4 sq2-checker Bl-g30: surf mean 0.0152 p95 0.046 max 0.0526 unm 0 bias -0.0071 | seam mean 0 p95 0 n 160 | vol {"6":-0.0333,"7":-0.0333} | lam 0,0,0,0
+FINITE-4 sq2-checker Bl-g40: surf mean 0.0209 p95 0.0312 max 0.048 unm 0 bias -0.0176 | seam mean 0 p95 0 n 166 | vol {"6":-0.0609,"7":-0.0609} | lam 0,0,0,0
+FINITE-4 sq2-checker Bl-b3s40: surf mean 0.026 p95 0.0368 max 0.0571 unm 0 bias -0.022 | seam mean 0 p95 0 n 167 | vol {"6":-0.0735,"7":-0.0735} | lam 0,0,0,0
+FINITE-4 sq2-checker Bl-b2s40: surf mean 0.0283 p95 0.0408 max 0.0628 unm 0 bias -0.0236 | seam mean 0 p95 0 n 167 | vol {"6":-0.0778,"7":-0.0778} | lam 0,0,0,0
+FINITE-4 sq2-checker Bx-b3s40: surf mean 0.0134 p95 0.0391 max 0.0786 unm 0 bias 0.001 | seam mean 0 p95 0 n 172 | vol {"6":0,"7":0} | lam 0.4323,0.4323,0.4323,0.4323
+  (sq2-checker 1094 ms, rss 182 MB)
+FINITE-4 sq2-AABC Bl-g30: surf mean 0.0213 p95 0.0567 max 0.0649 unm 0 bias 0.0073 | seam mean 0.0107 p95 0.0301 n 117 | vol {"1":0.0146,"6":0.0292,"7":0.0146} | lam 0,0,0
+FINITE-4 sq2-AABC Bl-g40: surf mean 0.0133 p95 0.0346 max 0.0547 unm 0 bias 0.0124 | seam mean 0.0123 p95 0.0387 n 121 | vol {"1":0.0504,"6":0.0307,"7":0.0504} | lam 0,0,0
+FINITE-4 sq2-AABC Bl-b3s40: surf mean 0.0128 p95 0.0378 max 0.0605 unm 0 bias 0.0098 | seam mean 0.013 p95 0.0423 n 120 | vol {"1":0.0377,"6":0.0261,"7":0.0377} | lam 0,0,0
+FINITE-4 sq2-AABC Bl-b2s40: surf mean 0.0129 p95 0.0396 max 0.0639 unm 0 bias 0.009 | seam mean 0.0135 p95 0.0443 n 121 | vol {"1":0.0349,"6":0.0247,"7":0.0349} | lam 0,0,0
+FINITE-4 sq2-AABC Bx-b3s40: surf mean 0.0101 p95 0.0278 max 0.0518 unm 0 bias 0.0001 | seam mean 0.0122 p95 0.0403 n 119 | vol {"1":-0.0005,"6":0.0001,"7":-0.0005} | lam 0.3923,0.4413,0.4413
+  (sq2-AABC 1769 ms, rss 201 MB)
+FINITE-4 sq2-ABCD Bl-g30: surf mean 0.0181 p95 0.0367 max 0.0398 unm 0 bias 0.0091 | seam mean 0 p95 0 n 157 | vol {"1":0.0257,"4":0.0257,"6":0.0257,"7":0.0257} | lam 0,0,0,0
+FINITE-4 sq2-ABCD Bl-g40: surf mean 0.0162 p95 0.0394 max 0.0701 unm 0 bias 0.0164 | seam mean 0 p95 0 n 169 | vol {"1":0.0522,"4":0.0522,"6":0.0522,"7":0.0522} | lam 0,0,0,0
+FINITE-4 sq2-ABCD Bl-b3s40: surf mean 0.0133 p95 0.0424 max 0.0758 unm 0 bias 0.0137 | seam mean 0 p95 0 n 167 | vol {"1":0.0429,"4":0.0429,"6":0.0429,"7":0.0429} | lam 0,0,0,0
+FINITE-4 sq2-ABCD Bl-b2s40: surf mean 0.0134 p95 0.0454 max 0.0805 unm 0 bias 0.0129 | seam mean 0 p95 0 n 168 | vol {"1":0.0406,"4":0.0406,"6":0.0406,"7":0.0406} | lam 0,0,0,0
+FINITE-4 sq2-ABCD Bx-b3s40: surf mean 0.012 p95 0.029 max 0.0676 unm 0 bias 0.0007 | seam mean 0 p95 0 n 165 | vol {"1":0,"4":0,"6":0,"7":0} | lam 0.4386,0.4386,0.4386,0.4386
+  (sq2-ABCD 1408 ms, rss 207 MB)
+FINITE-4 diag-edge Bl-g30: surf mean 0.0308 p95 0.151 max 0.1776 unm 0 bias -0.0263 | seam mean - p95 - n 0 | vol {"6":-0.118} | lam 0,0
+FINITE-4 diag-edge Bl-g40: surf mean 0.061 p95 0.1035 max 0.1105 unm 0 bias -0.0605 | seam mean - p95 - n 0 | vol {"6":-0.2451} | lam 0,0
+FINITE-4 diag-edge Bl-b3s40: surf mean 0.0685 p95 0.1001 max 0.1063 unm 0 bias -0.068 | seam mean - p95 - n 0 | vol {"6":-0.2717} | lam 0,0
+FINITE-4 diag-edge Bl-b2s40: surf mean 0.0717 p95 0.0987 max 0.1049 unm 0 bias -0.0712 | seam mean - p95 - n 0 | vol {"6":-0.2824} | lam 0,0
+FINITE-4 diag-edge Bx-b3s40: surf mean 0.005 p95 0.0205 max 0.025 unm 0 bias -0.0014 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.4757,0.4757
+  (diag-edge 499 ms, rss 204 MB)
+FINITE-4 diag-corner Bl-g30: surf mean 0.0446 p95 0.0653 max 0.0716 unm 0 bias -0.045 | seam mean - p95 - n 0 | vol {"6":-0.1962} | lam 0,0
+FINITE-4 diag-corner Bl-g40: surf mean 0.0958 p95 0.1048 max 0.1088 unm 0 bias -0.0958 | seam mean - p95 - n 0 | vol {"6":-0.3876} | lam 0,0
+FINITE-4 diag-corner Bl-b3s40: surf mean 0.1056 p95 0.1138 max 0.1177 unm 0 bias -0.1056 | seam mean - p95 - n 0 | vol {"6":-0.4218} | lam 0,0
+FINITE-4 diag-corner Bl-b2s40: surf mean 0.1098 p95 0.1172 max 0.12 unm 0 bias -0.1098 | seam mean - p95 - n 0 | vol {"6":-0.4351} | lam 0,0
+FINITE-4 diag-corner Bx-b3s40: surf mean 0.015 p95 0.0549 max 0.1624 unm 0 bias -0.0029 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.5125,0.5125
+  (diag-corner 552 ms, rss 201 MB)
+FINITE-4 diag-edge-diff Bl-g30: surf mean 0.0205 p95 0.0861 max 0.8034 unm 0 bias -0.0151 | seam mean 0.0105 p95 0.0139 n 6 | vol {"6":-0.0773,"7":-0.0792} | lam 0,0
+FINITE-4 diag-edge-diff Bl-g40: surf mean 0.0388 p95 0.0683 max 0.1937 unm 0 bias -0.0376 | seam mean 0.0105 p95 0.0139 n 6 | vol {"6":-0.1627,"7":-0.1668} | lam 0,0
+FINITE-4 diag-edge-diff Bl-b3s40: surf mean 0.0456 p95 0.0695 max 0.1969 unm 0 bias -0.0444 | seam mean 0.0105 p95 0.0139 n 6 | vol {"6":-0.1897,"7":-0.1937} | lam 0,0
+FINITE-4 diag-edge-diff Bl-b2s40: surf mean 0.0482 p95 0.0691 max 0.1827 unm 0 bias -0.0472 | seam mean 0.0105 p95 0.0139 n 6 | vol {"6":-0.1998,"7":-0.204} | lam 0,0
+FINITE-4 diag-edge-diff Bx-b3s40: surf mean 0.0043 p95 0.0163 max 0.045 unm 0 bias -0.0022 | seam mean 0.011 p95 0.0139 n 7 | vol {"6":0.0001,"7":-0.0102} | lam 0.4994,0.4994
+  (diag-edge-diff 566 ms, rss 202 MB)
+FINITE-4 cube2-same Bl-g30: surf mean 0.0324 p95 0.0762 max 0.0783 unm 0 bias -0.0156 | seam mean - p95 - n 0 | vol {"6":-0.0537} | lam 0
+FINITE-4 cube2-same Bl-g40: surf mean 0.0376 p95 0.0479 max 0.0483 unm 0 bias -0.0375 | seam mean - p95 - n 0 | vol {"6":-0.0941} | lam 0
+FINITE-4 cube2-same Bl-b3s40: surf mean 0.0416 p95 0.0472 max 0.0483 unm 0 bias -0.0416 | seam mean - p95 - n 0 | vol {"6":-0.1009} | lam 0
+FINITE-4 cube2-same Bl-b2s40: surf mean 0.0431 p95 0.0505 max 0.052 unm 0 bias -0.0432 | seam mean - p95 - n 0 | vol {"6":-0.1032} | lam 0
+FINITE-4 cube2-same Bx-b3s40: surf mean 0.0031 p95 0.0052 max 0.0059 unm 0 bias 0.0015 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2751
+  (cube2-same 533 ms, rss 193 MB)
+FINITE-4 cube2-oneB Bl-g30: surf mean 0.0281 p95 0.0724 max 0.0798 unm 0 bias -0.0127 | seam mean 0.0472 p95 0.0923 n 85 | vol {"6":-0.053,"7":0.0713} | lam 0,0
+FINITE-4 cube2-oneB Bl-g40: surf mean 0.0311 p95 0.0474 max 0.0581 unm 0 bias -0.0264 | seam mean 0.0693 p95 0.1544 n 84 | vol {"6":-0.0982,"7":0.2165} | lam 0,0
+FINITE-4 cube2-oneB Bl-b3s40: surf mean 0.0348 p95 0.045 max 0.0628 unm 0 bias -0.0301 | seam mean 0.0677 p95 0.1519 n 84 | vol {"6":-0.1048,"7":0.2116} | lam 0,0
+FINITE-4 cube2-oneB Bl-b2s40: surf mean 0.0363 p95 0.0487 max 0.0657 unm 0 bias -0.0314 | seam mean 0.0672 p95 0.1502 n 84 | vol {"6":-0.1067,"7":0.2078} | lam 0,0
+FINITE-4 cube2-oneB Bx-b3s40: surf mean 0.0088 p95 0.0242 max 0.0526 unm 0 bias -0.0022 | seam mean 0.0203 p95 0.0352 n 82 | vol {"6":0,"7":-0.0008} | lam 0.2849,0.4411
+  (cube2-oneB 1153 ms, rss 189 MB)
+FINITE-4 cube2-halves Bl-g30: surf mean 0.0263 p95 0.0611 max 0.1089 unm 0 bias 0.0043 | seam mean 0 p95 0 n 119 | vol {"6":-0.0007,"7":-0.0007} | lam 0,0
+FINITE-4 cube2-halves Bl-g40: surf mean 0.0091 p95 0.023 max 0.0481 unm 0 bias -0.0006 | seam mean 0 p95 0 n 122 | vol {"6":-0.0021,"7":-0.0021} | lam 0,0
+FINITE-4 cube2-halves Bl-b3s40: surf mean 0.0113 p95 0.0218 max 0.0382 unm 0 bias -0.0039 | seam mean 0 p95 0 n 121 | vol {"6":-0.0079,"7":-0.0079} | lam 0,0
+FINITE-4 cube2-halves Bl-b2s40: surf mean 0.0127 p95 0.0233 max 0.0327 unm 0 bias -0.0051 | seam mean 0 p95 0 n 122 | vol {"6":-0.0096,"7":-0.0096} | lam 0,0
+FINITE-4 cube2-halves Bx-b3s40: surf mean 0.01 p95 0.025 max 0.0354 unm 0 bias -0.0007 | seam mean 0 p95 0 n 122 | vol {"6":0,"7":0} | lam 0.3241,0.3241
+  (cube2-halves 1160 ms, rss 211 MB)
+FINITE-4 cube2-checker Bl-g30: surf mean 0.0283 p95 0.0513 max 0.0528 unm 0 bias -0.0281 | seam mean 0 p95 0 n 405 | vol {"6":-0.0699,"7":-0.0699} | lam 0,0,0,0
+FINITE-4 cube2-checker Bl-g40: surf mean 0.0522 p95 0.069 max 0.0701 unm 0 bias -0.0521 | seam mean 0 p95 0 n 407 | vol {"6":-0.1174,"7":-0.1174} | lam 0,0,0,0
+FINITE-4 cube2-checker Bl-b3s40: surf mean 0.058 p95 0.0813 max 0.0832 unm 0 bias -0.0577 | seam mean 0 p95 0 n 407 | vol {"6":-0.128,"7":-0.128} | lam 0,0,0,0
+FINITE-4 cube2-checker Bl-b2s40: surf mean 0.0605 p95 0.0867 max 0.0895 unm 0 bias -0.0601 | seam mean 0 p95 0 n 407 | vol {"6":-0.1321,"7":-0.1321} | lam 0,0,0,0
+FINITE-4 cube2-checker Bx-b3s40: surf mean 0.0269 p95 0.0448 max 0.0608 unm 0 bias -0.0225 | seam mean 0 p95 0 n 420 | vol {"6":-0.045,"7":-0.045} | lam 0.3664,0.3664,0.3664,0.3664
+  (cube2-checker 1809 ms, rss 236 MB)
+FINITE-4 cube2-octants Bl-g30: surf mean 0.0127 p95 0.0275 max 0.0341 unm 0 bias -0.0001 | seam mean 0 p95 0 n 410 | vol {"1":0.0032,"4":0.0032,"6":0.0032,"7":0.0032} | lam 0,0,0,0
+FINITE-4 cube2-octants Bl-g40: surf mean 0.0102 p95 0.0286 max 0.0898 unm 0 bias 0.0023 | seam mean 0 p95 0 n 424 | vol {"1":0.0155,"4":0.0155,"6":0.0155,"7":0.0155} | lam 0,0,0,0
+FINITE-4 cube2-octants Bl-b3s40: surf mean 0.0137 p95 0.0314 max 0.0976 unm 0 bias -0.001 | seam mean 0 p95 0 n 423 | vol {"1":0.008,"4":0.008,"6":0.008,"7":0.008} | lam 0,0,0,0
+FINITE-4 cube2-octants Bl-b2s40: surf mean 0.0154 p95 0.0338 max 0.1027 unm 0 bias -0.0021 | seam mean 0 p95 0 n 422 | vol {"1":0.0056,"4":0.0056,"6":0.0056,"7":0.0056} | lam 0,0,0,0
+FINITE-4 cube2-octants Bx-b3s40: surf mean 0.0163 p95 0.0273 max 0.0913 unm 0 bias -0.0076 | seam mean 0 p95 0 n 420 | vol {"1":-0.0091,"4":-0.0091,"6":-0.0091,"7":-0.0091} | lam 0.3952,0.3952,0.3952,0.3952
+  (cube2-octants 2042 ms, rss 249 MB)
+FINITE-4 plus5 Bl-g30: surf mean 0.0466 p95 0.0783 max 0.1146 unm 0 bias -0.0091 | seam mean - p95 - n 0 | vol {"6":-0.0296} | lam 0
+FINITE-4 plus5 Bl-g40: surf mean 0.0202 p95 0.0357 max 0.0634 unm 0 bias -0.0201 | seam mean - p95 - n 0 | vol {"6":-0.0649} | lam 0
+FINITE-4 plus5 Bl-b3s40: surf mean 0.0228 p95 0.0307 max 0.0579 unm 0 bias -0.0227 | seam mean - p95 - n 0 | vol {"6":-0.0716} | lam 0
+FINITE-4 plus5 Bl-b2s40: surf mean 0.0235 p95 0.0306 max 0.0545 unm 0 bias -0.0235 | seam mean - p95 - n 0 | vol {"6":-0.0731} | lam 0
+FINITE-4 plus5 Bx-b3s40: surf mean 0.0033 p95 0.0085 max 0.0263 unm 0 bias 0.0004 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.3453
+  (plus5 528 ms, rss 246 MB)
+FINITE-4 plus5-mixed Bl-g30: surf mean 0.0384 p95 0.0881 max 0.1103 unm 0 bias -0.0137 | seam mean 0.05 p95 0.0837 n 89 | vol {"6":-0.0649,"7":0.0548} | lam 0,0,0,0
+FINITE-4 plus5-mixed Bl-g40: surf mean 0.0277 p95 0.0467 max 0.0526 unm 0 bias -0.0263 | seam mean 0.0485 p95 0.0677 n 92 | vol {"6":-0.1376,"7":0.1634} | lam 0,0,0,0
+FINITE-4 plus5-mixed Bl-b3s40: surf mean 0.0317 p95 0.0425 max 0.0473 unm 0 bias -0.0301 | seam mean 0.047 p95 0.0651 n 92 | vol {"6":-0.151,"7":0.1661} | lam 0,0,0,0
+FINITE-4 plus5-mixed Bl-b2s40: surf mean 0.0333 p95 0.0429 max 0.0454 unm 0 bias -0.0315 | seam mean 0.0465 p95 0.0634 n 92 | vol {"6":-0.1556,"7":0.1675} | lam 0,0,0,0
+FINITE-4 plus5-mixed Bx-b3s40: surf mean 0.0066 p95 0.0196 max 0.0343 unm 0 bias -0.0019 | seam mean 0.01 p95 0.0168 n 89 | vol {"6":-0.0036,"7":-0.0011} | lam 0.3963,0.3963,0.4555,0.3963
+  (plus5-mixed 1151 ms, rss 239 MB)
+FINITE-4 ring8 Bl-g30: surf mean 0.0374 p95 0.1084 max 0.1193 unm 0 bias 0.0125 | seam mean - p95 - n 0 | vol {"6":0.0437} | lam 0
+FINITE-4 ring8 Bl-g40: surf mean 0.0218 p95 0.0576 max 0.0623 unm 0 bias 0.0207 | seam mean - p95 - n 0 | vol {"6":0.0717} | lam 0
+FINITE-4 ring8 Bl-b3s40: surf mean 0.0209 p95 0.0482 max 0.0628 unm 0 bias 0.0201 | seam mean - p95 - n 0 | vol {"6":0.0698} | lam 0
+FINITE-4 ring8 Bl-b2s40: surf mean 0.0209 p95 0.0442 max 0.07 unm 0 bias 0.0201 | seam mean - p95 - n 0 | vol {"6":0.0704} | lam 0
+FINITE-4 ring8 Bx-b3s40: surf mean 0.0075 p95 0.017 max 0.0564 unm 0 bias -0.0012 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2905
+  (ring8 594 ms, rss 238 MB)
+FINITE-4 T-mixed Bl-g30: surf mean 0.0292 p95 0.0706 max 0.0789 unm 0 bias 0.0067 | seam mean 0.023 p95 0.0351 n 36 | vol {"6":0.0361,"7":0.0159} | lam 0,0
+FINITE-4 T-mixed Bl-g40: surf mean 0.0114 p95 0.0243 max 0.0271 unm 0 bias 0.0092 | seam mean 0.0066 p95 0.0221 n 38 | vol {"6":0.0526,"7":0.0151} | lam 0,0
+FINITE-4 T-mixed Bl-b3s40: surf mean 0.0094 p95 0.0165 max 0.0273 unm 0 bias 0.0069 | seam mean 0.0098 p95 0.0273 n 38 | vol {"6":0.0477,"7":0.0049} | lam 0,0
+FINITE-4 T-mixed Bl-b2s40: surf mean 0.0093 p95 0.0186 max 0.0293 unm 0 bias 0.0065 | seam mean 0.0123 p95 0.0299 n 38 | vol {"6":0.0475,"7":0.0018} | lam 0,0
+FINITE-4 T-mixed Bx-b3s40: surf mean 0.007 p95 0.0155 max 0.0222 unm 0 bias -0.0021 | seam mean 0.0107 p95 0.0307 n 38 | vol {"6":0,"7":0} | lam 0.3718,0.4023
+  (T-mixed 1057 ms, rss 207 MB)
+FINITE-4 pillar3 Bl-g30: surf mean 0.0227 p95 0.046 max 0.05 unm 0 bias -0.0023 | seam mean - p95 - n 0 | vol {"6":0.0011} | lam 0
+FINITE-4 pillar3 Bl-g40: surf mean 0.0061 p95 0.0198 max 0.0254 unm 0 bias -0.0055 | seam mean - p95 - n 0 | vol {"6":-0.0191} | lam 0
+FINITE-4 pillar3 Bl-b3s40: surf mean 0.0084 p95 0.019 max 0.0246 unm 0 bias -0.008 | seam mean - p95 - n 0 | vol {"6":-0.0294} | lam 0
+FINITE-4 pillar3 Bl-b2s40: surf mean 0.0092 p95 0.0207 max 0.0227 unm 0 bias -0.0086 | seam mean - p95 - n 0 | vol {"6":-0.0322} | lam 0
+FINITE-4 pillar3 Bx-b3s40: surf mean 0.0086 p95 0.0174 max 0.0187 unm 0 bias 0.001 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.3997
+  (pillar3 421 ms, rss 204 MB)
+FINITE-4 stairs Bl-g30: surf mean 0.0409 p95 0.0988 max 0.1457 unm 0 bias -0.0162 | seam mean - p95 - n 0 | vol {"6":-0.0295} | lam 0
+FINITE-4 stairs Bl-g40: surf mean 0.0291 p95 0.0597 max 0.0653 unm 0 bias -0.028 | seam mean - p95 - n 0 | vol {"6":-0.0571} | lam 0
+FINITE-4 stairs Bl-b3s40: surf mean 0.0308 p95 0.0668 max 0.0742 unm 0 bias -0.0304 | seam mean - p95 - n 0 | vol {"6":-0.0622} | lam 0
+FINITE-4 stairs Bl-b2s40: surf mean 0.0316 p95 0.0682 max 0.0792 unm 0 bias -0.0314 | seam mean - p95 - n 0 | vol {"6":-0.0638} | lam 0
+FINITE-4 stairs Bx-b3s40: surf mean 0.0077 p95 0.0201 max 0.0336 unm 0 bias -0.0014 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2497
+  (stairs 769 ms, rss 189 MB)
+FINITE-4 ball-r2 Bl-g30: surf mean 0.0508 p95 0.1067 max 0.1236 unm 0 bias -0.0193 | seam mean - p95 - n 0 | vol {"6":-0.0265} | lam 0
+FINITE-4 ball-r2 Bl-g40: surf mean 0.0276 p95 0.0461 max 0.0512 unm 0 bias -0.0278 | seam mean - p95 - n 0 | vol {"6":-0.0439} | lam 0
+FINITE-4 ball-r2 Bl-b3s40: surf mean 0.0288 p95 0.0434 max 0.0445 unm 0 bias -0.0289 | seam mean - p95 - n 0 | vol {"6":-0.0451} | lam 0
+FINITE-4 ball-r2 Bl-b2s40: surf mean 0.0292 p95 0.0473 max 0.0491 unm 0 bias -0.0293 | seam mean - p95 - n 0 | vol {"6":-0.0454} | lam 0
+FINITE-4 ball-r2 Bx-b3s40: surf mean 0.0088 p95 0.0202 max 0.0215 unm 0 bias 0.0001 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.193
+  (ball-r2 1069 ms, rss 222 MB)
+FINITE-4 ball-AB Bl-g30: surf mean 0.0478 p95 0.1075 max 0.1241 unm 0 bias -0.0168 | seam mean 0.0257 p95 0.0434 n 67 | vol {"6":0.0069,"7":-0.0235} | lam 0,0
+FINITE-4 ball-AB Bl-g40: surf mean 0.0259 p95 0.0595 max 0.0743 unm 0 bias -0.0182 | seam mean 0.0378 p95 0.069 n 69 | vol {"6":0.0288,"7":-0.0478} | lam 0,0
+FINITE-4 ball-AB Bl-b3s40: surf mean 0.0256 p95 0.0614 max 0.0959 unm 0 bias -0.019 | seam mean 0.0371 p95 0.0698 n 68 | vol {"6":0.0344,"7":-0.0528} | lam 0,0
+FINITE-4 ball-AB Bl-b2s40: surf mean 0.0256 p95 0.063 max 0.104 unm 0 bias -0.0191 | seam mean 0.0379 p95 0.0724 n 69 | vol {"6":0.0408,"7":-0.0563} | lam 0,0
+FINITE-4 ball-AB Bx-b3s40: surf mean 0.0107 p95 0.0261 max 0.0374 unm 0 bias -0.0011 | seam mean 0.0108 p95 0.0204 n 66 | vol {"6":0,"7":0} | lam 0.2111,0.2486
+  (ball-AB 1781 ms, rss 272 MB)
+FINITE-4 slab-dot Bl-g30: surf mean 0.0307 p95 0.1077 max 0.1383 unm 0 bias 0.0185 | seam mean 0.0576 p95 0.0715 n 47 | vol {"6":0.1999,"7":0.0506} | lam 0,0
+FINITE-4 slab-dot Bl-g40: surf mean 0.0329 p95 0.0642 max 0.0926 unm 0 bias 0.0328 | seam mean 0.0873 p95 0.1513 n 51 | vol {"6":0.4956,"7":0.0752} | lam 0,0
+FINITE-4 slab-dot Bl-b3s40: surf mean 0.0338 p95 0.0569 max 0.0982 unm 0 bias 0.0339 | seam mean 0.0891 p95 0.1536 n 51 | vol {"6":0.5153,"7":0.0773} | lam 0,0
+FINITE-4 slab-dot Bl-b2s40: surf mean 0.0348 p95 0.0599 max 0.1019 unm 0 bias 0.0349 | seam mean 0.0904 p95 0.1551 n 51 | vol {"6":0.5295,"7":0.0795} | lam 0,0
+FINITE-4 slab-dot Bx-b3s40: surf mean 0.0189 p95 0.0351 max 0.0417 unm 0 bias -0.0054 | seam mean 0.0082 p95 0.0188 n 47 | vol {"6":-0.0006,"7":0} | lam 0.1939,0.3635
+  (slab-dot 1963 ms, rss 236 MB)
+FINITE-4 slab-line Bl-g30: surf mean 0.0322 p95 0.097 max 0.1264 unm 0 bias 0.018 | seam mean 0.0591 p95 0.1403 n 178 | vol {"6":0.1051,"7":0.0452} | lam 0,0,0,0
+FINITE-4 slab-line Bl-g40: surf mean 0.0354 p95 0.0724 max 0.0967 unm 0 bias 0.0351 | seam mean 0.0418 p95 0.0944 n 177 | vol {"6":0.2088,"7":0.0735} | lam 0,0,0,0
+FINITE-4 slab-line Bl-b3s40: surf mean 0.0365 p95 0.0751 max 0.1015 unm 0 bias 0.0365 | seam mean 0.0427 p95 0.0989 n 179 | vol {"6":0.2165,"7":0.0758} | lam 0,0,0,0
+FINITE-4 slab-line Bl-b2s40: surf mean 0.0376 p95 0.0781 max 0.1045 unm 0 bias 0.0376 | seam mean 0.0431 p95 0.1026 n 180 | vol {"6":0.2227,"7":0.0782} | lam 0,0,0,0
+FINITE-4 slab-line Bx-b3s40: surf mean 0.0189 p95 0.0388 max 0.0475 unm 0 bias -0.0059 | seam mean 0.0161 p95 0.035 n 164 | vol {"6":-0.0018,"7":-0.0001} | lam 0.2918,0.2017,0.2017,0.2918
+  (slab-line 3630 ms, rss 313 MB)
+FINITE-4 slab-stripe Bl-g30: surf mean 0.0367 p95 0.1117 max 0.1337 unm 0 bias 0.0274 | seam mean 0.0337 p95 0.048 n 115 | vol {"6":0.2196,"7":0.0395} | lam 0,0,0
+FINITE-4 slab-stripe Bl-g40: surf mean 0.0473 p95 0.1054 max 0.1292 unm 0 bias 0.0471 | seam mean 0.0698 p95 0.1039 n 123 | vol {"6":0.352,"7":0.0707} | lam 0,0,0
+FINITE-4 slab-stripe Bl-b3s40: surf mean 0.0488 p95 0.1032 max 0.126 unm 0 bias 0.0486 | seam mean 0.0754 p95 0.1137 n 123 | vol {"6":0.3682,"7":0.0722} | lam 0,0,0
+FINITE-4 slab-stripe Bl-b2s40: surf mean 0.0499 p95 0.1043 max 0.1294 unm 0 bias 0.0498 | seam mean 0.0787 p95 0.1203 n 123 | vol {"6":0.3821,"7":0.0733} | lam 0,0,0
+FINITE-4 slab-stripe Bx-b3s40: surf mean 0.0191 p95 0.038 max 0.0472 unm 0 bias -0.0022 | seam mean 0.0195 p95 0.0259 n 110 | vol {"6":0,"7":0} | lam 0.2006,0.2351,0.2006
+  (slab-stripe 2817 ms, rss 318 MB)
+FINITE-4 terrain-step Bl-g30: surf mean 0.0383 p95 0.0928 max 0.2039 unm 0 bias 0.0138 | seam mean 0.0281 p95 0.083 n 278 | vol {"1":0.0509,"2":0.0067} | lam 0,0,0
+FINITE-4 terrain-step Bl-g40: surf mean 0.0353 p95 0.0824 max 0.105 unm 0 bias 0.0235 | seam mean 0.0287 p95 0.0841 n 265 | vol {"1":0.0932,"2":0.0072} | lam 0,0,0
+FINITE-4 terrain-step Bl-b3s40: surf mean 0.0356 p95 0.0854 max 0.1093 unm 0 bias 0.0232 | seam mean 0.0302 p95 0.0907 n 264 | vol {"1":0.0942,"2":0.0069} | lam 0,0,0
+FINITE-4 terrain-step Bl-b2s40: surf mean 0.0362 p95 0.0867 max 0.1119 unm 0 bias 0.0234 | seam mean 0.0316 p95 0.0959 n 265 | vol {"1":0.0956,"2":0.0072} | lam 0,0,0
+FINITE-4 terrain-step Bx-b3s40: surf mean 0.0272 p95 0.0754 max 0.0863 unm 0 bias -0.0067 | seam mean 0.0166 p95 0.0288 n 266 | vol {"1":0,"2":0} | lam 0.155,0.1865,0.1865
+  (terrain-step 4822 ms, rss 378 MB)
+FINITE-4 tunnel Bl-g30: surf mean 0.0535 p95 0.1305 max 0.2057 unm 0 bias 0.0183 | seam mean - p95 - n 0 | vol {"3":0.0415} | lam 0
+FINITE-4 tunnel Bl-g40: surf mean 0.0347 p95 0.0804 max 0.0876 unm 0 bias 0.0298 | seam mean - p95 - n 0 | vol {"3":0.0711} | lam 0
+FINITE-4 tunnel Bl-b3s40: surf mean 0.0334 p95 0.0856 max 0.094 unm 0 bias 0.0299 | seam mean - p95 - n 0 | vol {"3":0.0716} | lam 0
+FINITE-4 tunnel Bl-b2s40: surf mean 0.0336 p95 0.0891 max 0.098 unm 0 bias 0.0301 | seam mean - p95 - n 0 | vol {"3":0.0725} | lam 0
+FINITE-4 tunnel Bx-b3s40: surf mean 0.0332 p95 0.0686 max 0.0695 unm 0 bias -0.0046 | seam mean - p95 - n 0 | vol {"3":0} | lam 0.1472
+  (tunnel 1126 ms, rss 258 MB)
+
+real	0m45.866s
+user	0m50.293s
+sys	0m1.521s

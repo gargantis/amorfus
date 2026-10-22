@@ -1,0 +1,57 @@
+{
+ "regime": "FINITE-2",
+ "n": 20,
+ "runs": {
+  "single": {
+   "regime": "FINITE-2",
+   "opts": {
+    "maxSteps": 2,
+    "stopAfter": 99
+   },
+   "n": 20,
+   "margin": 1,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 2,
+   "converged": false,
+   "ms": 219,
+   "lastChanges": [
+    1656,
+    552
+   ],
+   "cells": 216000,
+   "delta": 0.276,
+   "geoDelta": 0.276,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1574
+   ],
+   "ext": [
+    1.2,
+    1.2,
+    1.2
+   ],
+   "diag": 1.2125,
+   "diagOverAxis": 1.0104,
+   "corner": {
+    "inset": 0.2344,
+    "Req": 0.3202
+   },
+   "edge": {
+    "faceU": 0.1,
+    "faceV": 0.1,
+    "inset": 0.0854,
+    "Req": 0.2061,
+    "R": 0.3954,
+    "fitRms": 0.0095,
+    "nCurved": 105,
+    "arcDeg": 52
+   }
+  }
+ }
+}

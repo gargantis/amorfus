@@ -1,0 +1,191 @@
+{
+ "out": "teams/phys/sheets/free-catalogue-2.png",
+ "cols": 6,
+ "cell": [
+  270,
+  203
+ ],
+ "title": "free foam: before / after / slice (FREE regime, n16 or n12, jitter 1e-3) - part 2",
+ "items": [
+  {
+   "path": "teams/phys/free/diag-edge-before.png",
+   "label": "diag-edge: before\n2 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/diag-edge-s1-view.png",
+   "label": "diag-edge: FREE n16 j1e-3 seed1\n-> A2"
+  },
+  {
+   "path": "teams/phys/free/diag-edge-s1-slice.png",
+   "label": "diag-edge: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/diag-corner-before.png",
+   "label": "diag-corner: before\n2 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/diag-corner-s1-view.png",
+   "label": "diag-corner: FREE n16 j1e-3 seed1\n-> A1 A1"
+  },
+  {
+   "path": "teams/phys/free/diag-corner-s2-view.png",
+   "label": "diag-corner: FREE n16 j1e-3 seed2\n-> A1 A1"
+  },
+  {
+   "path": "teams/phys/free/diag-edge-diff-before.png",
+   "label": "diag-edge-diff: before\n2 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/diag-edge-diff-s1-view.png",
+   "label": "diag-edge-diff: FREE n16 j1e-3 seed1\n-> A1 B1"
+  },
+  {
+   "path": "teams/phys/free/diag-edge-diff-s1-slice.png",
+   "label": "diag-edge-diff: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/cube2-same-before.png",
+   "label": "cube2-same: before\n8 blocks, 1 clusters"
+  },
+  {
+   "path": "teams/phys/free/cube2-same-s1-view.png",
+   "label": "cube2-same: FREE n16 j1e-3 seed1\n-> A8"
+  },
+  {
+   "path": "teams/phys/free/cube2-same-s2-view.png",
+   "label": "cube2-same: FREE n16 j1e-3 seed2\n-> A8"
+  },
+  {
+   "path": "teams/phys/free/cube2-oneB-before.png",
+   "label": "cube2-oneB: before\n8 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/cube2-oneB-s1-view.png",
+   "label": "cube2-oneB: FREE n16 j1e-3 seed1\n-> A7 B1"
+  },
+  {
+   "path": "teams/phys/free/cube2-oneB-s2-view.png",
+   "label": "cube2-oneB: FREE n16 j1e-3 seed2\n-> A7 B1"
+  },
+  {
+   "path": "teams/phys/free/cube2-halves-before.png",
+   "label": "cube2-halves: before\n8 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/cube2-halves-s1-view.png",
+   "label": "cube2-halves: FREE n16 j1e-3 seed1\n-> A4 B4"
+  },
+  {
+   "path": "teams/phys/free/cube2-halves-s1-slice.png",
+   "label": "cube2-halves: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/cube2-checker-before.png",
+   "label": "cube2-checker: before\n8 blocks, 8 clusters"
+  },
+  {
+   "path": "teams/phys/free/cube2-checker-s1-view.png",
+   "label": "cube2-checker: FREE n16 j1e-3 seed1\n-> A4 B4"
+  },
+  {
+   "path": "teams/phys/free/cube2-checker-s1-slice.png",
+   "label": "cube2-checker: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/cube2-octants-before.png",
+   "label": "cube2-octants: before\n8 blocks, 8 clusters"
+  },
+  {
+   "path": "teams/phys/free/cube2-octants-s1-view.png",
+   "label": "cube2-octants: FREE n16 j1e-3 seed1\n-> A2 B2 C2 D2"
+  },
+  {
+   "path": "teams/phys/free/cube2-octants-s1-slice.png",
+   "label": "cube2-octants: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/plus5-before.png",
+   "label": "plus5: before\n5 blocks, 1 clusters"
+  },
+  {
+   "path": "teams/phys/free/plus5-s1-view.png",
+   "label": "plus5: FREE n16 j1e-3 seed1\n-> A5"
+  },
+  {
+   "path": "teams/phys/free/plus5-s1-slice.png",
+   "label": "plus5: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/plus5-mixed-before.png",
+   "label": "plus5-mixed: before\n5 blocks, 5 clusters"
+  },
+  {
+   "path": "teams/phys/free/plus5-mixed-s1-view.png",
+   "label": "plus5-mixed: FREE n16 j1e-3 seed1\n-> A4 B1"
+  },
+  {
+   "path": "teams/phys/free/plus5-mixed-s1-slice.png",
+   "label": "plus5-mixed: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/ring8-before.png",
+   "label": "ring8: before\n8 blocks, 1 clusters"
+  },
+  {
+   "path": "teams/phys/free/ring8-s1-view.png",
+   "label": "ring8: FREE n16 j1e-3 seed1\n-> A8"
+  },
+  {
+   "path": "teams/phys/free/ring8-s1-slice.png",
+   "label": "ring8: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/T-mixed-before.png",
+   "label": "T-mixed: before\n5 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/T-mixed-s1-view.png",
+   "label": "T-mixed: FREE n16 j1e-3 seed1\n-> A3 B2"
+  },
+  {
+   "path": "teams/phys/free/T-mixed-s1-slice.png",
+   "label": "T-mixed: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/pillar3-before.png",
+   "label": "pillar3: before\n3 blocks, 1 clusters"
+  },
+  {
+   "path": "teams/phys/free/pillar3-s1-view.png",
+   "label": "pillar3: FREE n16 j1e-3 seed1\n-> A3"
+  },
+  {
+   "path": "teams/phys/free/pillar3-s1-slice.png",
+   "label": "pillar3: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/stairs-before.png",
+   "label": "stairs: before\n12 blocks, 1 clusters"
+  },
+  {
+   "path": "teams/phys/free/stairs-s1-view.png",
+   "label": "stairs: FREE n16 j1e-3 seed1\n-> A12"
+  },
+  {
+   "path": "teams/phys/free/stairs-s1-slice.png",
+   "label": "stairs: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/row-AAB-before.png",
+   "label": "row-AAB: before\n3 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/row-AAB-s1-view.png",
+   "label": "row-AAB: FREE n16 j1e-3 seed1\n-> A2 B1"
+  },
+  {
+   "path": "teams/phys/free/row-AAB-s1-slice.png",
+   "label": "row-AAB: slice, seed1"
+  }
+ ]
+}

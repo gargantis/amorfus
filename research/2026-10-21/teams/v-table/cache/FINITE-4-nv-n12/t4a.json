@@ -1,0 +1,1 @@
+{"set":"t1","name":"t4a","regime":"FINITE-4-nv","n":12,"ms":899,"steps":4,"converged":false,"changes":39354,"premerged":0,"alive":1,"lambda":[[3,465,-0.0014]],"phaseMat":[0,3],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-53,"oy":30,"oz":14},"dScale":32000,"origin":[-53,30,14],"size":[9,8,9],"evalLo":[-51,32,16],"evalHi":[-46,36,21],"blocks":465}

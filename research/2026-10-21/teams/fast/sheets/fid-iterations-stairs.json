@@ -1,0 +1,35 @@
+{
+"out": "sheets/fid-iterations-stairs.png",
+"cols": 3,
+"title": "Concave fill in FID-0.15 builds over iterations; one step does not reach it",
+"cell": [
+300,
+225
+],
+"items": [
+{
+"path": "img/stairs__blocks-view.png",
+"label": "stairs\nblocks (start)"
+},
+{
+"path": "img/stairs__FID-0.15-view.png",
+"label": "stairs\nphysics FID-0.15 (21 steps)"
+},
+{
+"path": "img/stairs__Bl-b1s20-view.png",
+"label": "stairs\ncheap 1 step (Bl-b1s20)"
+},
+{
+"path": "img/stairs__I2Fx-g20-view.png",
+"label": "stairs\n2 steps + fidelity"
+},
+{
+"path": "img/stairs__I4Fx-g20-view.png",
+"label": "stairs\n4 steps + fidelity"
+},
+{
+"path": "img/stairs__I10Fx-g20-view.png",
+"label": "stairs\n10 steps + fidelity"
+}
+]
+}

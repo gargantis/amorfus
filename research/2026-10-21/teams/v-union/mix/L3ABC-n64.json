@@ -1,0 +1,491 @@
+{
+ "case": "L3ABC",
+ "n": 64,
+ "engine": [
+  {
+   "g": 0.6,
+   "s_b": 0.1,
+   "jitter": 0,
+   "steps": 102,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.969
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 0.6,
+   "s_b": 0.1,
+   "jitter": 0.001,
+   "steps": 100,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.953
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 0.6,
+   "s_b": 0.2,
+   "jitter": 0,
+   "steps": 88,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 1.203
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 0.6,
+   "s_b": 0.2,
+   "jitter": 0.001,
+   "steps": 81,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 1.203
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 0.9,
+   "s_b": 0.1,
+   "jitter": 0,
+   "steps": 89,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.828
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 0.9,
+   "s_b": 0.1,
+   "jitter": 0.001,
+   "steps": 94,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.859
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 0.9,
+   "s_b": 0.2,
+   "jitter": 0,
+   "steps": 63,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 1.109
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 0.9,
+   "s_b": 0.2,
+   "jitter": 0.001,
+   "steps": 82,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 1.125
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1,
+   "s_b": 0.1,
+   "jitter": 0,
+   "steps": 86,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.797
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1,
+   "s_b": 0.1,
+   "jitter": 0.001,
+   "steps": 79,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.797
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1,
+   "s_b": 0.2,
+   "jitter": 0,
+   "steps": 73,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 1.094
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1,
+   "s_b": 0.2,
+   "jitter": 0.001,
+   "steps": 91,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 1.094
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1.1,
+   "s_b": 0.1,
+   "jitter": 0,
+   "steps": 84,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.75
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1.1,
+   "s_b": 0.1,
+   "jitter": 0.001,
+   "steps": 104,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.781
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1.1,
+   "s_b": 0.2,
+   "jitter": 0,
+   "steps": 76,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 1.063
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1.1,
+   "s_b": 0.2,
+   "jitter": 0.001,
+   "steps": 81,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 1.063
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1.3,
+   "s_b": 0.1,
+   "jitter": 0,
+   "steps": 96,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.672
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1.3,
+   "s_b": 0.1,
+   "jitter": 0.001,
+   "steps": 98,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.641
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1.3,
+   "s_b": 0.2,
+   "jitter": 0,
+   "steps": 76,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.969
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  },
+  {
+   "g": 1.3,
+   "s_b": 0.2,
+   "jitter": 0.001,
+   "steps": 67,
+   "converged": true,
+   "watch": [
+    {
+     "lab": "B|C film",
+     "contactBlocks": 0.984
+    }
+   ],
+   "phases": "6:1 7:1 1:1"
+  }
+ ],
+ "solver": [
+  {
+   "g": 0.6,
+   "decisions": [
+    {
+     "at": [
+      1,
+      1
+     ],
+     "t": 0,
+     "pick": [
+      1,
+      7
+     ],
+     "options": [
+      {
+       "mats": [
+        0,
+        6
+       ],
+       "rate": 0.13137
+      },
+      {
+       "mats": [
+        1,
+        7
+       ],
+       "rate": 0.53137
+      }
+     ]
+    }
+   ],
+   "adjacency": [
+    "0|1",
+    "0|6",
+    "0|7",
+    "1|6",
+    "1|7",
+    "6|7"
+   ],
+   "E": 8.18984
+  },
+  {
+   "g": 0.9,
+   "decisions": [
+    {
+     "at": [
+      1,
+      1
+     ],
+     "t": 0,
+     "pick": [
+      1,
+      7
+     ],
+     "options": [
+      {
+       "mats": [
+        0,
+        6
+       ],
+       "rate": 0.3435
+      },
+      {
+       "mats": [
+        1,
+        7
+       ],
+       "rate": 0.4435
+      }
+     ]
+    }
+   ],
+   "adjacency": [
+    "0|1",
+    "0|6",
+    "0|7",
+    "1|6",
+    "1|7",
+    "6|7"
+   ],
+   "E": 8.86878
+  },
+  {
+   "g": 1,
+   "decisions": [
+    {
+     "at": [
+      1,
+      1
+     ],
+     "t": 0.0061,
+     "pick": [
+      7,
+      1
+     ],
+     "options": [
+      {
+       "mats": [
+        7,
+        1
+       ],
+       "rate": 0.41594
+      },
+      {
+       "mats": [
+        0,
+        6
+       ],
+       "rate": 0.41249
+      }
+     ]
+    }
+   ],
+   "adjacency": [
+    "0|1",
+    "0|6",
+    "0|7",
+    "1|6",
+    "1|7",
+    "6|7"
+   ],
+   "E": 9.08479
+  },
+  {
+   "g": 1.1,
+   "decisions": [
+    {
+     "at": [
+      1,
+      1
+     ],
+     "t": 0,
+     "pick": [
+      0,
+      6
+     ],
+     "options": [
+      {
+       "mats": [
+        0,
+        6
+       ],
+       "rate": 0.48492
+      },
+      {
+       "mats": [
+        1,
+        7
+       ],
+       "rate": 0.38492
+      }
+     ]
+    }
+   ],
+   "adjacency": [
+    "0|1",
+    "0|6",
+    "0|7",
+    "1|6",
+    "6|7"
+   ],
+   "E": 9.42577
+  },
+  {
+   "g": 1.3,
+   "decisions": [
+    {
+     "at": [
+      1,
+      1
+     ],
+     "t": 0,
+     "pick": [
+      0,
+      6
+     ],
+     "options": [
+      {
+       "mats": [
+        0,
+        6
+       ],
+       "rate": 0.62635
+      },
+      {
+       "mats": [
+        1,
+        7
+       ],
+       "rate": 0.32635
+      }
+     ]
+    }
+   ],
+   "adjacency": [
+    "0|1",
+    "0|6",
+    "0|7",
+    "1|6",
+    "6|7"
+   ],
+   "E": 9.79367
+  }
+ ]
+}

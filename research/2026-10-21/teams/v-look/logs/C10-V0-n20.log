@@ -1,0 +1,29 @@
+C10-V0@n20 tunnel: 3982 ms, 29 st, cells 441000, d 0.0874, rss 140 MB
+C10-V0@n20 pillar3: 250 ms, 10 st, cells 63000, d 0.1373, rss 145 MB
+C10-V0@n20 single: 80 ms, 8 st, cells 27000, d 0.133, rss 146 MB
+C10-V0@n20 terrain-step: 27554 ms, 43 st, cells 1001000, d 0.0498, rss 160 MB
+C10-V0@n20 slab-line: 12332 ms, 29 st, cells 507000, d 0.0893, rss 190 MB
+C10-V0@n20 slab-dot: 1931 ms, 17 st, cells 363000, d 0.0374, rss 193 MB
+C10-V0@n20 slab-stripe: 3248 ms, 17 st, cells 507000, d 0.0234, rss 196 MB
+C10-V0@n20 stairs: 1482 ms, 22 st, cells 245000, d 0.1055, rss 185 MB
+C10-V0@n20 ring8: 609 ms, 18 st, cells 147000, d 0.1005, rss 185 MB
+C10-V0@n20 sq2-checker: 383 ms, 8 st, cells 75000, d 0.061, rss 185 MB
+C10-V0@n20 L3-ABC: 1299 ms, 30 st, cells 75000, d 0.1065, rss 170 MB
+C10-V0@n20 cube2-same: 376 ms, 12 st, cells 125000, d 0.0848, rss 171 MB
+C10-V0@n20 sq2-same: 338 ms, 17 st, cells 75000, d 0.0902, rss 176 MB
+C10-V0@n20 slab-halves: 2911 ms, 18 st, cells 507000, d 0.0239, rss 176 MB
+C10-V0@n20 room2: 4771 ms, 31 st, cells 567000, d 0.073, rss 199 MB
+C10-V0@n20 trench: 3638 ms, 19 st, cells 675000, d 0.0269, rss 205 MB
+C10-V0@n20 trench-gd: 10347 ms, 25 st, cells 675000, d 0.0357, rss 189 MB
+C10-V0@n20 checker1: 4557 ms, 8 st, cells 507000, d 0.0193, rss 199 MB
+C10-V0@n20 slab2-line: 52579 ms, 148 st, cells 845000, d 0.1228, rss 184 MB
+C10-V0@n20 slab2-dot: 7620 ms, 32 st, cells 605000, d 0.0506, rss 169 MB
+C10-V0@n20 slab2-stripe: 13938 ms, 35 st, cells 845000, d 0.0586, rss 178 MB
+C10-V0@n20 diag2: 68804 ms, 150 st nc, cells 845000, d 0.2003, rss 203 MB
+C10-V0@n20 checker2: 85278 ms, 150 st nc, cells 845000, d 0.2862, rss 195 MB
+C10-V0@n20 Lturn: 62123 ms, 138 st, cells 845000, d 0.1105, rss 199 MB
+C10-V0@n20 cross: 67429 ms, 125 st, cells 1125000, d 0.1369, rss 188 MB
+C10-V0@n20 xdiag: 89964 ms, 150 st nc, cells 1125000, d 0.204, rss 195 MB
+C10-V0@n20 stripe-alone: 43172 ms, 150 st nc, cells 1045000, d 0.1055, rss 215 MB
+C10-V0@n20 stripe-patch: 74680 ms, 150 st nc, cells 1045000, d 0.1903, rss 228 MB
+C10-V0@n20 step-line: 96786 ms, 150 st nc, cells 1183000, d 0.1069, rss 284 MB

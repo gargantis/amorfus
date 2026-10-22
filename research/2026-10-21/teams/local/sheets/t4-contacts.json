@@ -1,0 +1,59 @@
+{
+ "out": "teams/local/sheets/t4-contacts.png",
+ "cols": 4,
+ "title": "Task 4: ambiguous contacts (3D, n=16), plan at mid-height",
+ "cell": [
+  300,
+  250
+ ],
+ "items": [
+  {
+   "path": "teams/local/img/t4/checker-A1-B4-FREE-s1-plan.png",
+   "label": "checker, A pair 1+1, B pair 4+4\nFREE jitter seed 1: small A unites"
+  },
+  {
+   "path": "teams/local/img/t4/checker-A4-B1-FREE-s1-plan.png",
+   "label": "checker A 4+4, B 1+1\nFREE seed 1: small B unites"
+  },
+  {
+   "path": "teams/local/img/t4/checker-A1-B4-CAGE-0.25-j0-plan.png",
+   "label": "A1/B4, CAGE-0.25: A unites"
+  },
+  {
+   "path": "teams/local/img/t4/checker-A4-B1-CAGE-0.25-j0-plan.png",
+   "label": "A4/B1, CAGE-0.25: B unites"
+  },
+  {
+   "path": "teams/local/img/t4/checker-A1-B1-FREE-s1-plan.png",
+   "label": "A1/B1 tie, FREE seed 1: engine says A\nunited; X still seen at mid-height"
+  },
+  {
+   "path": "teams/local/img/t4/checker-A2-B2-FREE-s1-plan.png",
+   "label": "checker A2/B2 (tie), FREE seed 1"
+  },
+  {
+   "path": "teams/local/img/t4/checker-A1-B4-FID-0.15-j0-plan.png",
+   "label": "checker A1/B4, FID-0.15:\nthe X stays (no union)"
+  },
+  {
+   "path": "teams/local/img/t4/checker-A1-B1-FID-0.15-j0-plan.png",
+   "label": "checker A1/B1, FID-0.15: X stays"
+  },
+  {
+   "path": "teams/local/img/t4/diag-edge-FID-0.15-j0-plan.png",
+   "label": "edge contact, air around, FID-0.15:\nunites (all regimes)"
+  },
+  {
+   "path": "teams/local/img/t4/diag-edge-CAGE-0.25-j0-plan.png",
+   "label": "edge contact, air around, CAGE"
+  },
+  {
+   "path": "teams/local/img/t4/cube2-checker-FID-0.15-j0-view.png",
+   "label": "2x2x2 3D checker, FID-0.15:\nno union"
+  },
+  {
+   "path": "teams/local/img/t4/checker-A1-B4-FREE-s1-view.png",
+   "label": "checker A1/B4, FREE seed 1 (view)"
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"set":"t7","name":"u2a","regime":"FINITE-4","n":12,"ms":1373,"steps":4,"converged":false,"changes":20344,"premerged":0,"alive":1,"lambda":[[3,596,-0.0737]],"phaseMat":[0,3],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":454,"oy":9,"oz":297},"dScale":32000,"origin":[454,9,297],"size":[9,8,9],"evalLo":[456,11,299],"evalHi":[461,15,304],"blocks":596}

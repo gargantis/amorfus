@@ -1,0 +1,123 @@
+{
+ "out": "teams/v-look/sheets/final-1-constraints.png",
+ "cols": 4,
+ "cell": [
+  330,
+  248
+ ],
+ "title": "C15 = BOX0-PAINT-0.15-0.02 at n 20, caps 0.15 / 0. Labels: measured on labels",
+ "items": [
+  {
+   "path": "teams/v-look/img/BLOCKS@n20-img/tunnel-view.png",
+   "label": "tunnel: blocks\nneed 1.90 x 0.70"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/tunnel-view.png",
+   "label": "C15 n20\nclear 2 x 0.7"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/tunnel-slice.png",
+   "label": "C15 n20, section"
+  },
+  {
+   "path": "teams/v-look/img/FREE@n16/tunnel-view.png",
+   "label": "FREE n16"
+  },
+  {
+   "path": "teams/v-look/img/BLOCKS@n20-img/room2-view.png",
+   "label": "room2: blocks\nneed 1.90 x 1.70"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/room2-view.png",
+   "label": "C15 n20\nclear 2 x 1.7"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/room2-slice.png",
+   "label": "C15 n20, section"
+  },
+  {
+   "path": "teams/v-look/img/FREE@n16/room2-view.png",
+   "label": "FREE n16"
+  },
+  {
+   "path": "teams/v-look/img/BLOCKS@n20-img/trench-view.png",
+   "label": "trench: blocks\nneed width 0.70"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/trench-view.png",
+   "label": "C15 n20\nmin width 0.7, floor +0"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/trench-slice.png",
+   "label": "C15 n20, section"
+  },
+  {
+   "path": "teams/v-look/img/blank-FREE_not_run.png",
+   "label": "FREE n16"
+  },
+  {
+   "path": "teams/v-look/img/BLOCKS@n20-img/single-view.png",
+   "label": "single: blocks\ndiag/axis 1.74"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/single-view.png",
+   "label": "C15 n20\ndiag/axis 1.2614, extent 1.1"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/single-slice.png",
+   "label": "C15 n20, section"
+  },
+  {
+   "path": "teams/v-look/img/FREE@n16/single-view.png",
+   "label": "FREE n16"
+  },
+  {
+   "path": "teams/v-look/img/BLOCKS@n20-img/stairs-view.png",
+   "label": "stairs: blocks\ntreads flat"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/stairs-view.png",
+   "label": "C15 n20\ntreads max |dy| 0"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/stairs-slice.png",
+   "label": "C15 n20, section"
+  },
+  {
+   "path": "teams/v-look/img/FREE@n16/stairs-view.png",
+   "label": "FREE n16"
+  },
+  {
+   "path": "teams/v-look/img/BLOCKS@n20-img/terrain-step-view.png",
+   "label": "terrain-step: blocks\nterraces flat"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/terrain-step-view.png",
+   "label": "C15 n20\nterraces |dy| 0 / 0"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/terrain-step-slice.png",
+   "label": "C15 n20, section"
+  },
+  {
+   "path": "teams/look/img/FREE/terrain-step-view.png",
+   "label": "FREE n16\n(look team run, not converged)"
+  },
+  {
+   "path": "teams/v-look/img/BLOCKS@n20-img/ring8-view.png",
+   "label": "ring8: blocks\nhole 1.0"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/ring8-view.png",
+   "label": "C15 n20\nhole about 0.7"
+  },
+  {
+   "path": "teams/v-look/img/C15-V0@n20/ring8-slice.png",
+   "label": "C15 n20, section"
+  },
+  {
+   "path": "teams/v-look/img/FREE@n16/ring8-view.png",
+   "label": "FREE n16"
+  }
+ ]
+}

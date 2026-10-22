@@ -1,0 +1,8 @@
+1,1     rule4 6  size tie   | 6:1+1 vs 7:1+1 | win n 3,4 | engine {"6":12}
+2,2     rule4 6  size tie   | 6:1+1 vs 7:1+1 | win n 4,6 | engine {"6":12}
+3,3     rule4 6  size tie   | 6:1+1 vs 7:1+1 | win n 4,6 | engine {"6":12}
+4,4     rule4 6  size tie   | 6:1+1 vs 7:1+1 | win n 4,6 | engine {"6":12}
+5,5     rule4 6  size tie   | 6:1+1 vs 7:1+1 | win n 4,6 | engine {"6":12}
+6,6     rule4 6  size tie   | 6:1+1 vs 7:1+1 | win n 4,6 | engine {"6":12}
+7,7     rule4 6  size tie   | 6:1+1 vs 7:1+1 | win n 3,4 | engine {"6":12}
+SUMMARY tripleLine FREE {"xs":7,"unanimous":7,"rule4AgreeOnUnanimous":7,"sizeAgreeOnUnanimous":0}

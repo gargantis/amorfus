@@ -1,0 +1,62 @@
+{
+ "b1-1": {
+  "corners": 17284,
+  "meanMaxAxisDiff": 0.04864,
+  "maxAxisDiff": 0.9609,
+  "cornersOffByMoreThanOneQuantum": 8582
+ },
+ "b1-2": {
+  "corners": 17284,
+  "meanMaxAxisDiff": 0.005403,
+  "maxAxisDiff": 0.9609,
+  "cornersOffByMoreThanOneQuantum": 1347
+ },
+ "b1-3": {
+  "corners": 17284,
+  "meanMaxAxisDiff": 0.02762,
+  "maxAxisDiff": 0.9609,
+  "cornersOffByMoreThanOneQuantum": 512
+ },
+ "b1-4": {
+  "corners": 17284,
+  "meanMaxAxisDiff": 0.002382,
+  "maxAxisDiff": 0.9609,
+  "cornersOffByMoreThanOneQuantum": 65
+ },
+ "b1-6": {
+  "corners": 17284,
+  "meanMaxAxisDiff": 0.002475,
+  "maxAxisDiff": 0.9609,
+  "cornersOffByMoreThanOneQuantum": 59
+ },
+ "b3-1": {
+  "corners": 17284,
+  "meanMaxAxisDiff": 0.0571,
+  "maxAxisDiff": 0.9609,
+  "cornersOffByMoreThanOneQuantum": 9210
+ },
+ "b3-2": {
+  "corners": 17284,
+  "meanMaxAxisDiff": 0.005431,
+  "maxAxisDiff": 0.9609,
+  "cornersOffByMoreThanOneQuantum": 2539
+ },
+ "b3-3": {
+  "corners": 17284,
+  "meanMaxAxisDiff": 0.02774,
+  "maxAxisDiff": 0.9609,
+  "cornersOffByMoreThanOneQuantum": 645
+ },
+ "b3-4": {
+  "corners": 17284,
+  "meanMaxAxisDiff": 0.0009144,
+  "maxAxisDiff": 0.8867,
+  "cornersOffByMoreThanOneQuantum": 70
+ },
+ "b3-6": {
+  "corners": 17284,
+  "meanMaxAxisDiff": 0.0004369,
+  "maxAxisDiff": 0.9609,
+  "cornersOffByMoreThanOneQuantum": 46
+ }
+}

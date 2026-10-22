@@ -1,0 +1,79 @@
+{
+ "out": "teams/table/sheets/context-embeddings.png",
+ "cols": 3,
+ "title": "One class, three embeddings (FID-0.15, n=12)",
+ "items": [
+  {
+   "path": "teams/table/img/classes/c1-FID-0.15-E1m-n12-clu.png",
+   "label": "c1 00000001 5.7%\nFID-0.15 n12 E1m: 8 blocks alone"
+  },
+  {
+   "path": "teams/table/img/classes/c1-FID-0.15-E2m-n12-clu.png",
+   "label": "c1 00000001 5.7%\nFID-0.15 n12 E2m: 4^3 object"
+  },
+  {
+   "path": "teams/table/img/classes/c1-FID-0.15-E2c-n12-clu.png",
+   "label": "c1 00000001 5.7%\nFID-0.15 n12 E2c: infinite octants"
+  },
+  {
+   "path": "teams/table/img/classes/c2-FID-0.15-E1m-n12-clu.png",
+   "label": "c2 00000011 12.3%\nFID-0.15 n12 E1m: 8 blocks alone"
+  },
+  {
+   "path": "teams/table/img/classes/c2-FID-0.15-E2m-n12-clu.png",
+   "label": "c2 00000011 12.3%\nFID-0.15 n12 E2m: 4^3 object"
+  },
+  {
+   "path": "teams/table/img/classes/c2-FID-0.15-E2c-n12-clu.png",
+   "label": "c2 00000011 12.3%\nFID-0.15 n12 E2c: infinite octants"
+  },
+  {
+   "path": "teams/table/img/classes/c95-FID-0.15-E1m-n12-clu.png",
+   "label": "c95 00111111 10.9%\nFID-0.15 n12 E1m: 8 blocks alone"
+  },
+  {
+   "path": "teams/table/img/classes/c95-FID-0.15-E2m-n12-clu.png",
+   "label": "c95 00111111 10.9%\nFID-0.15 n12 E2m: 4^3 object"
+  },
+  {
+   "path": "teams/table/img/classes/c95-FID-0.15-E2c-n12-clu.png",
+   "label": "c95 00111111 10.9%\nFID-0.15 n12 E2c: infinite octants"
+  },
+  {
+   "path": "teams/table/img/classes/c249-FID-0.15-E1m-n12-clu.png",
+   "label": "c249 01111111 6.5%\nFID-0.15 n12 E1m: 8 blocks alone"
+  },
+  {
+   "path": "teams/table/img/classes/c249-FID-0.15-E2m-n12-clu.png",
+   "label": "c249 01111111 6.5%\nFID-0.15 n12 E2m: 4^3 object"
+  },
+  {
+   "path": "teams/table/img/classes/c249-FID-0.15-E2c-n12-clu.png",
+   "label": "c249 01111111 6.5%\nFID-0.15 n12 E2c: infinite octants"
+  },
+  {
+   "path": "teams/table/img/classes/c97-FID-0.15-E1m-n12-clu.png",
+   "label": "c97 00111122 1.5% nonP\nFID-0.15 n12 E1m: 8 blocks alone"
+  },
+  {
+   "path": "teams/table/img/classes/c97-FID-0.15-E2m-n12-clu.png",
+   "label": "c97 00111122 1.5% nonP\nFID-0.15 n12 E2m: 4^3 object"
+  },
+  {
+   "path": "teams/table/img/classes/c97-FID-0.15-E2c-n12-clu.png",
+   "label": "c97 00111122 1.5% nonP\nFID-0.15 n12 E2c: infinite octants"
+  },
+  {
+   "path": "teams/table/img/classes/c11-FID-0.15-E1m-n12-clu.png",
+   "label": "c11 00001112 2.1%\nFID-0.15 n12 E1m: 8 blocks alone"
+  },
+  {
+   "path": "teams/table/img/classes/c11-FID-0.15-E2m-n12-clu.png",
+   "label": "c11 00001112 2.1%\nFID-0.15 n12 E2m: 4^3 object"
+  },
+  {
+   "path": "teams/table/img/classes/c11-FID-0.15-E2c-n12-clu.png",
+   "label": "c11 00001112 2.1%\nFID-0.15 n12 E2c: infinite octants"
+  }
+ ]
+}

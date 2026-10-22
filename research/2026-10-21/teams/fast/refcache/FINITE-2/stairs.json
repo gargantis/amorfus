@@ -1,0 +1,1 @@
+{"regime":"FINITE-2","name":"stairs","opts":{"maxSteps":2,"stopAfter":99,"n":16},"ms":117,"steps":2,"converged":false,"lastChanges":[4256,3152],"grid":[80,80,64],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":12,"target":49152,"lambda":0.08440035581588745,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":12,"volume":12}]}

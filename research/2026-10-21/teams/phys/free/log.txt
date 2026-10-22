@@ -1,0 +1,89 @@
+single seed 1: 11 steps 312 ms; phases 6:1->1; quad 0 max ext 0
+single seed 2: 14 steps 185 ms; phases 6:1->1; quad 0 max ext 0
+pair-same seed 1: 38 steps 745 ms; phases 6:2->2; quad 0 max ext 0
+pair-same seed 2: 44 steps 713 ms; phases 6:2->2; quad 0 max ext 0
+pair-diff seed 1: 27 steps 779 ms; phases 6:1->1 7:1->1; quad 0 max ext 0
+pair-diff seed 2: 26 steps 575 ms; phases 6:1->1 7:1->1; quad 0 max ext 0
+line3-same seed 1: 55 steps 1255 ms; phases 6:3->3; quad 0 max ext 0
+line3-same seed 2: 72 steps 1412 ms; phases 6:3->3; quad 0 max ext 0
+line3-ABA seed 1: 42 steps 1798 ms; phases 6:1->1 7:1->1 6:1->1; quad 0 max ext 0
+line3-ABA seed 2: 78 steps 3062 ms; phases 6:1->1 7:1->1 6:1->1; quad 0 max ext 0
+line3-ABC seed 1: 42 steps 1800 ms; phases 6:1->1 7:1->1 1:1->1; quad 0 max ext 0
+line3-ABC seed 2: 78 steps 2886 ms; phases 6:1->1 7:1->1 1:1->1; quad 0 max ext 0
+L3-same seed 1: 56 steps 1272 ms; phases 6:3->3; quad 0 max ext 0
+L3-same seed 2: 46 steps 957 ms; phases 6:3->3; quad 0 max ext 0
+L3-AAB seed 1: 38 steps 1645 ms; phases 6:2->2 7:1->1; quad 0 max ext 0
+L3-AAB seed 2: 39 steps 1412 ms; phases 6:2->2 7:1->1; quad 0 max ext 0
+L3-ABC seed 1: 72 steps 3352 ms; phases 6:1->1 7:1->1 1:1->1; quad 2 max ext 0
+L3-ABC seed 2: 142 steps 6525 ms; phases 6:1->1 7:1->1 1:1->1; quad 2 max ext 0
+sq2-same seed 1: 39 steps 1137 ms; phases 6:4->4; quad 0 max ext 0
+sq2-same seed 2: 41 steps 938 ms; phases 6:4->4; quad 0 max ext 0
+sq2-AAAB seed 1: 48 steps 2136 ms; phases 6:3->3 7:1->1; quad 0 max ext 0
+sq2-AAAB seed 2: 55 steps 2330 ms; phases 6:3->3 7:1->1; quad 0 max ext 0
+sq2-AABB seed 1: 53 steps 1677 ms; phases 6:2->2 7:2->2; quad 0 max ext 0
+sq2-AABB seed 2: 53 steps 1576 ms; phases 6:2->2 7:2->2; quad 0 max ext 0
+sq2-checker seed 1: 51 steps 2570 ms; phases 7:2->2[2 parts!] 6:2->2[2 parts!]; quad 1 max ext 1.375
+sq2-checker seed 2: 138 steps 7015 ms; phases 6:2->2 7:2->2; quad 0 max ext 0
+sq2-AABC seed 1: 47 steps 3479 ms; phases 6:2->2 7:1->1 1:1->1; quad 2 max ext 0
+sq2-AABC seed 2: 54 steps 3386 ms; phases 6:2->2 7:1->1 1:1->1; quad 2 max ext 0
+sq2-ABCD seed 1: 46 steps 2370 ms; phases 6:1->1 7:1->1 1:1->1 4:1->1; quad 1 max ext 1.25
+sq2-ABCD seed 2: 47 steps 2101 ms; phases 6:1->1 7:1->1 1:1->1 4:1->1; quad 1 max ext 1.25
+diag-edge seed 1: 66 steps 1561 ms; phases 6:2->2; quad 0 max ext 0
+diag-edge seed 2: 74 steps 1607 ms; phases 6:2->2; quad 0 max ext 0
+diag-corner seed 1: 13 steps 633 ms; phases 6:1->1 6:1->1; quad 0 max ext 0
+diag-corner seed 2: 13 steps 512 ms; phases 6:1->1 6:1->1; quad 0 max ext 0
+diag-edge-diff seed 1: 64 steps 2220 ms; phases 6:1->1 7:1->1; quad 0 max ext 0
+diag-edge-diff seed 2: 78 steps 2095 ms; phases 6:1->1 7:1->1; quad 0 max ext 0
+cube2-same seed 1: 23 steps 1115 ms; phases 6:8->8; quad 0 max ext 0
+cube2-same seed 2: 26 steps 984 ms; phases 6:8->8; quad 0 max ext 0
+cube2-oneB seed 1: 48 steps 4482 ms; phases 6:7->7 7:1->1; quad 0 max ext 0
+cube2-oneB seed 2: 69 steps 5170 ms; phases 6:7->7 7:1->1; quad 0 max ext 0
+cube2-halves seed 1: 63 steps 3398 ms; phases 6:4->4 7:4->4; quad 0 max ext 0
+cube2-halves seed 2: 52 steps 2683 ms; phases 6:4->4 7:4->4; quad 0 max ext 0
+cube2-checker seed 1: 152 steps 14526 ms; phases 6:4->4 7:4->4; quad 0 max ext 0
+cube2-checker seed 2: 129 steps 13149 ms; phases 6:4->4 7:4->4; quad 0 max ext 0
+cube2-octants seed 1: 365 steps 51973 ms; phases 6:2->2 7:2->2 1:2->2 4:2->2; quad 5 max ext 0.063
+cube2-octants seed 2: 302 steps 46226 ms; phases 6:2->2 7:2->2 1:2->2 4:2->2; quad 5 max ext 0.063
+plus5 seed 1: 48 steps 2186 ms; phases 6:5->5; quad 0 max ext 0
+plus5 seed 2: 47 steps 1733 ms; phases 6:5->5; quad 0 max ext 0
+plus5-mixed seed 1: 118 steps 10038 ms; phases 6:4->4 7:1->1; quad 0 max ext 0
+plus5-mixed seed 2: 108 steps 7789 ms; phases 6:4->4 7:1->1; quad 0 max ext 0
+ring8 seed 1: 109 steps 3859 ms; phases 6:8->8; quad 0 max ext 0
+ring8 seed 2: 132 steps 5307 ms; phases 6:8->8; quad 0 max ext 0
+T-mixed seed 1: 61 steps 3581 ms; phases 6:3->3 7:2->2; quad 0 max ext 0
+T-mixed seed 2: 63 steps 3597 ms; phases 6:3->3 7:2->2; quad 0 max ext 0
+pillar3 seed 1: 69 steps 2195 ms; phases 6:3->3; quad 0 max ext 0
+pillar3 seed 2: 72 steps 2324 ms; phases 6:3->3; quad 0 max ext 0
+stairs seed 1: 105 steps 6874 ms; phases 6:12->12; quad 0 max ext 0
+stairs seed 2: 109 steps 6969 ms; phases 6:12->12; quad 0 max ext 0
+row-AAB seed 1: 84 steps 3607 ms; phases 6:2->2 7:1->1; quad 0 max ext 0
+row-AAB seed 2: 80 steps 3177 ms; phases 6:2->2 7:1->1; quad 0 max ext 0
+row-ABB seed 1: 88 steps 3454 ms; phases 6:1->1 7:2->2; quad 0 max ext 0
+row-ABB seed 2: 84 steps 2832 ms; phases 6:1->1 7:2->2; quad 0 max ext 0
+L-ABB seed 1: 41 steps 2196 ms; phases 6:1->1 7:2->2; quad 0 max ext 0
+L-ABB seed 2: 36 steps 1877 ms; phases 6:1->1 7:2->2; quad 0 max ext 0
+row-AAAB seed 1: 128 steps 6135 ms; phases 6:3->3 7:1->1; quad 0 max ext 0
+row-AAAB seed 2: 92 steps 4604 ms; phases 6:3->3 7:1->1; quad 0 max ext 0
+row-AABB seed 1: 104 steps 4392 ms; phases 6:2->2 7:2->2; quad 0 max ext 0
+row-AABB seed 2: 111 steps 4773 ms; phases 6:2->2 7:2->2; quad 0 max ext 0
+L3-ABA seed 1: 87 steps 5671 ms; phases 7:1->1 6:2->2; quad 0 max ext 0
+L3-ABA seed 2: 60 steps 4235 ms; phases 7:1->1 6:2->2; quad 0 max ext 0
+slab-dot seed 1: 150 steps 25961 ms; phases 7:24->24 6:1->1; quad 0 max ext 0
+slab-dot seed 2: 153 steps 26796 ms; phases 7:24->24 6:1->1; quad 0 max ext 0
+slab-line seed 1: 196 steps 57043 ms; phases 7:15->15 7:15->15 6:6->6; quad 0 max ext 0
+slab-line seed 2: 305 steps 76426 ms; phases 6:6->6 7:30->30[2 parts!]; quad 0 max ext 0
+slab-stripe seed 1: 163 steps 32683 ms; phases 7:12->12 6:6->6 7:18->18; quad 0 max ext 0
+slab-stripe seed 2: 241 steps 58055 ms; phases 7:12->12 6:6->6 7:18->18; quad 0 max ext 0
+tunnel seed 1: 40 steps 4836 ms; phases 3:30->30; quad 0 max ext 0
+tunnel seed 2: 38 steps 4506 ms; phases 3:30->30; quad 0 max ext 0
+ball-r2 seed 1: 26 steps 2141 ms; phases 6:33->33; quad 0 max ext 0
+ball-r2 seed 2: 24 steps 1682 ms; phases 6:33->33; quad 0 max ext 0
+ball-AB seed 1: 64 steps 7939 ms; phases 7:23->23 6:10->10; quad 0 max ext 0
+ball-AB seed 2: 47 steps 6515 ms; phases 7:23->23 6:10->10; quad 0 max ext 0
+terrain-step seed 1: 351 steps 77971 ms; phases 2:45->45 1:30->30; quad 0 max ext 0
+terrain-step seed 2: 370 steps 72313 ms; phases 2:45->45 1:30->30; quad 0 max ext 0
+DONE
+checker-smallA seed 1: 68 steps 5369 ms; phases 6:2->2 7:2->2 7:2->2; quad 0 max ext 0
+checker-smallA seed 2: 53 steps 4938 ms; phases 6:2->2 7:2->2 7:2->2; quad 0 max ext 0
+checker-smallB seed 1: 68 steps 5730 ms; phases 7:2->2 6:2->2 6:2->2; quad 0 max ext 0
+checker-smallB seed 2: 53 steps 4108 ms; phases 7:2->2 6:2->2 6:2->2; quad 0 max ext 0

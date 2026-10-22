@@ -1,0 +1,6 @@
+slab-line CAGE-0.25 physics: 3694 ms 25 st | phases 6:6->6 7:15->14.994 7:15->14.994 | A comps 1 [6] | B comps 2 | A necks at X [0.667,0.667,0.667,0.667,0.667]
+slab-line CAGE-0.25 ruleA: 3949 ms 28 st | phases 6:6->6 7:15->14.995 7:15->14.995 | A comps 1 [6] | B comps 2 | A necks at X [0.667,0.667,0.667,0.667,0.667]
+slab-line CAGE-0.25 ruleB: 3068 ms 26 st | phases 6:6->6 7:30->29.995 | A comps 1 [6] | B comps 2 | A necks at X [0.667,0.667,0.667,0.667,0.667]
+slab-line FINITE-4 physics: 1207 ms 4 st NC | phases 6:6->6.002 7:15->14.999 7:15->14.999 | A comps 1 [6.002] | B comps 2 | A necks at X [0.417,0.417,0.417,0.417,0.417]
+slab-line FINITE-4 ruleA: 915 ms 4 st NC | phases 6:6->5.995 7:15->14.997 7:15->14.997 | A comps 1 [5.995] | B comps 2 | A necks at X [0.417,0.417,0.417,0.417,0.417]
+slab-line FINITE-4 ruleB: 625 ms 4 st NC | phases 6:6->6.005 7:30->29.028 | A comps 1 [6.005] | B comps 2 | A necks at X [0.167,0.167,0.167,0.167,0.167]

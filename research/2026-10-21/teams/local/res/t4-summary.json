@@ -1,0 +1,1286 @@
+{
+ "variants": [
+  "j0",
+  "s1",
+  "s2",
+  "s3",
+  "rev"
+ ],
+ "table": {
+  "diag-edge": {
+   "FID-0.15": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FID-0.05": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FINITE-4": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FREE": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   }
+  },
+  "diag-edge-3v3": {
+   "FID-0.15": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FID-0.05": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FINITE-4": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FREE": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   }
+  },
+  "diag-edge-3v1": {
+   "FID-0.15": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FID-0.05": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FINITE-4": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FREE": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   }
+  },
+  "diag-corner": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FINITE-4": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FREE": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   }
+  },
+  "cube2-checker": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FINITE-4": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "none",
+     "both",
+     "both",
+     "both",
+     "none"
+    ],
+    "agree": false,
+    "verdict": "split:none/both"
+   },
+   "FREE": {
+    "outs": [
+     "both",
+     "both",
+     "both",
+     "both",
+     "both"
+    ],
+    "agree": true,
+    "verdict": "both"
+   }
+  },
+  "cube2-cornerA": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FINITE-4": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FREE": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   }
+  },
+  "cube2-edgeA": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FINITE-4": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FREE": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   }
+  },
+  "checker-2layer": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FINITE-4": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "none",
+     "both",
+     "none",
+     "B",
+     "none"
+    ],
+    "agree": false,
+    "verdict": "split:none/both/B"
+   },
+   "FREE": {
+    "outs": [
+     "none",
+     "both",
+     "none",
+     "A",
+     "none"
+    ],
+    "agree": false,
+    "verdict": "split:none/both/A"
+   }
+  },
+  "slab-line": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "-",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "-",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FINITE-4": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "-",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "-",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FREE": {
+    "outs": [
+     "A",
+     "A",
+     "-",
+     "-",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   }
+  },
+  "slab-line4": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "-",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "-",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FINITE-4": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "-",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "-",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FREE": {
+    "outs": [
+     "A",
+     "A",
+     "-",
+     "-",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   }
+  },
+  "slab-antiline": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "-",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "-",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "FINITE-4": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "-",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "-",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "FREE": {
+    "outs": [
+     "B",
+     "B",
+     "-",
+     "-",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   }
+  },
+  "slab-line-2high": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "-",
+     "-",
+     "-"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "A",
+     "A",
+     "-",
+     "-",
+     "-"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FINITE-4": {
+    "outs": [
+     "A",
+     "A",
+     "-",
+     "-",
+     "-"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "A",
+     "A",
+     "-",
+     "-",
+     "-"
+    ],
+    "agree": true,
+    "verdict": "A"
+   }
+  },
+  "checker-A1-B1": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FINITE-4": {
+    "outs": [
+     "none",
+     "none",
+     "A",
+     "none",
+     "none"
+    ],
+    "agree": false,
+    "verdict": "split:none/A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "none",
+     "none",
+     "B",
+     "both",
+     "none"
+    ],
+    "agree": false,
+    "verdict": "split:none/B/both"
+   },
+   "FREE": {
+    "outs": [
+     "none",
+     "A",
+     "both",
+     "both",
+     "none"
+    ],
+    "agree": false,
+    "verdict": "split:none/A/both"
+   }
+  },
+  "checker-A1-B2": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FINITE-4": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FREE": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   }
+  },
+  "checker-A1-B4": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FINITE-4": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FREE": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   }
+  },
+  "checker-A2-B1": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "FINITE-4": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "FREE": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   }
+  },
+  "checker-A4-B1": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "FINITE-4": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "FREE": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   }
+  },
+  "checker-A2-B2": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "none",
+     "both",
+     "B",
+     "both",
+     "none"
+    ],
+    "agree": false,
+    "verdict": "split:none/both/B"
+   },
+   "FINITE-4": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "both",
+     "both",
+     "both",
+     "both",
+     "both"
+    ],
+    "agree": true,
+    "verdict": "both"
+   },
+   "FREE": {
+    "outs": [
+     "none",
+     "B",
+     "both",
+     "both",
+     "none"
+    ],
+    "agree": false,
+    "verdict": "split:none/B/both"
+   }
+  },
+  "checker-A2-B4": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FINITE-4": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   },
+   "FREE": {
+    "outs": [
+     "A",
+     "A",
+     "A",
+     "A",
+     "A"
+    ],
+    "agree": true,
+    "verdict": "A"
+   }
+  },
+  "checker-A4-B2": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FINITE-4": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   },
+   "FREE": {
+    "outs": [
+     "B",
+     "B",
+     "B",
+     "B",
+     "B"
+    ],
+    "agree": true,
+    "verdict": "B"
+   }
+  },
+  "checker-A4-B4": {
+   "FID-0.15": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FID-0.05": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FINITE-4": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "CAGE-0.25": {
+    "outs": [
+     "none",
+     "none",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": true,
+    "verdict": "none"
+   },
+   "FREE": {
+    "outs": [
+     "none",
+     "B",
+     "none",
+     "none",
+     "none"
+    ],
+    "agree": false,
+    "verdict": "split:none/B"
+   }
+  }
+ },
+ "meta": {
+  "diag-edge": {
+   "nBlocks": 2
+  },
+  "diag-edge-3v3": {
+   "note": "two L-trominoes (3 blocks each) touching along one edge: (1,0)-(2,1)",
+   "nBlocks": 6
+  },
+  "diag-edge-3v1": {
+   "note": "an L-tromino and a single block touching along one edge: (1,0)-(2,1)",
+   "nBlocks": 4
+  },
+  "diag-corner": {
+   "nBlocks": 2
+  },
+  "cube2-checker": {
+   "nBlocks": 8
+  },
+  "cube2-cornerA": {
+   "note": "A at (0,0,0) and (1,1,1), corner contact only; B the other six (one cluster)",
+   "nBlocks": 8
+  },
+  "cube2-edgeA": {
+   "note": "A at (0,0,0) and (1,1,0), edge contact only; B the other six",
+   "nBlocks": 8
+  },
+  "checker-2layer": {
+   "note": "sq2-checker two layers high (the X is a 2-long edge)",
+   "nBlocks": 8
+  },
+  "slab-line": {
+   "nBlocks": 36
+  },
+  "slab-line4": {
+   "nBlocks": 16
+  },
+  "slab-antiline": {
+   "note": "colours swapped: B line in an A field",
+   "nBlocks": 36
+  },
+  "slab-line-2high": {
+   "nBlocks": 72
+  },
+  "checker-A1-B1": {
+   "sa": 1,
+   "sb": 1,
+   "nBlocks": 4
+  },
+  "checker-A1-B2": {
+   "sa": 1,
+   "sb": 2,
+   "nBlocks": 6
+  },
+  "checker-A1-B4": {
+   "sa": 1,
+   "sb": 4,
+   "nBlocks": 10
+  },
+  "checker-A2-B1": {
+   "sa": 2,
+   "sb": 1,
+   "nBlocks": 6
+  },
+  "checker-A4-B1": {
+   "sa": 4,
+   "sb": 1,
+   "nBlocks": 10
+  },
+  "checker-A2-B2": {
+   "sa": 2,
+   "sb": 2,
+   "nBlocks": 8
+  },
+  "checker-A2-B4": {
+   "sa": 2,
+   "sb": 4,
+   "nBlocks": 12
+  },
+  "checker-A4-B2": {
+   "sa": 4,
+   "sb": 2,
+   "nBlocks": 12
+  },
+  "checker-A4-B4": {
+   "sa": 4,
+   "sb": 4,
+   "nBlocks": 16
+  }
+ }
+}

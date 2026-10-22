@@ -1,0 +1,18 @@
+id        verdict 7    rule4 6 size 7 | steps 187 4535ms | [{"mat":6,"united":false,"step":null,"pieces":null},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:12 6:12
+rot90     verdict 7    rule4 6 size 7 | steps 187 4279ms | [{"mat":7,"united":true,"step":1,"pieces":1},{"mat":6,"united":false,"step":null,"pieces":null}] | others  | 7:8 6:12 6:12
+rot180    verdict 7    rule4 6 size 7 | steps 187 4312ms | [{"mat":6,"united":false,"step":null,"pieces":null},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:12 6:12
+rot270    verdict 7    rule4 6 size 7 | steps 187 4732ms | [{"mat":7,"united":true,"step":1,"pieces":1},{"mat":6,"united":false,"step":null,"pieces":null}] | others  | 7:8 6:12 6:12
+mirX      verdict 7    rule4 6 size 7 | steps 187 4365ms | [{"mat":7,"united":true,"step":1,"pieces":1},{"mat":6,"united":false,"step":null,"pieces":null}] | others  | 7:8 6:12 6:12
+mirY      verdict 7    rule4 6 size 7 | steps 187 4417ms | [{"mat":7,"united":true,"step":1,"pieces":1},{"mat":6,"united":false,"step":null,"pieces":null}] | others  | 7:8 6:12 6:12
+diag      verdict 7    rule4 6 size 7 | steps 187 4365ms | [{"mat":6,"united":false,"step":null,"pieces":null},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:12 6:12
+anti      verdict 7    rule4 6 size 7 | steps 187 4583ms | [{"mat":6,"united":false,"step":null,"pieces":null},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:12 6:12
+rev       verdict 7    rule4 6 size 7 | steps 187 4115ms | [{"mat":6,"united":false,"step":null,"pieces":null},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 6:12 6:12 7:8
+j1e-3s1   verdict 7    rule4 6 size 7 | steps 189 4575ms | [{"mat":6,"united":false,"step":null,"pieces":null},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:12 6:12
+j1e-3s2   verdict 7    rule4 6 size 7 | steps 193 4818ms | [{"mat":6,"united":false,"step":null,"pieces":null},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:12 6:12
+j1e-3s3   verdict 7    rule4 6 size 7 | steps 197 5374ms | [{"mat":6,"united":false,"step":null,"pieces":null},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:12 6:12
+ann0.1s1  verdict both rule4 6 size 7 | steps 177 5909ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.1s2  verdict both rule4 6 size 7 | steps 185 5806ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.1s3  verdict both rule4 6 size 7 | steps 209 6098ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.1s4  verdict both rule4 6 size 7 | steps 182 5228ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+ann0.1s5  verdict both rule4 6 size 7 | steps 175 5915ms | [{"mat":6,"united":true,"step":1,"pieces":2},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:24[2pc]
+TALLY W1-FREE-n32-g1-s0.2 {"7":12,"both":5}

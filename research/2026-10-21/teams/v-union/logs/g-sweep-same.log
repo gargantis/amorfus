@@ -1,0 +1,16 @@
+TALLY W1-FREE30-n32-g0.5-s0.2-amp0.1 {"sym/rev:7/7":3}
+   {"t":0.015,"kind":"decide","at":[0,0],"options":[{"mats":[7,7],"rate":0.70765},{"mats":[6,6],"rate":0.70656}],"decided":true,"pick":[7,7]}
+TALLY W1-FREE30-n32-g1.5-s0.2-amp0.1 {"sym/rev:7/7":3}
+   {"t":0.006,"kind":"decide","at":[0,0],"options":[{"mats":[7,7],"rate":2.12214},{"mats":[6,6],"rate":2.1205}],"decided":true,"pick":[7,7]}
+TALLY L2-shortA-FREE30-n32-g0.5-s0.2-amp0.1 {"sym/rev:6/6":3}
+   {"t":0.006,"kind":"decide","at":[2,1],"options":[{"mats":[6,6],"rate":0.70782},{"mats":[7,7],"rate":0.7064}],"decided":true,"pick":[6,6]}
+TALLY L2-shortA-FREE30-n32-g1.5-s0.2-amp0.1 {"sym/rev:6/6":3}
+   {"t":0.006,"kind":"decide","at":[2,1],"options":[{"mats":[7,7],"rate":2.12212},{"mats":[6,6],"rate":2.12052}],"decided":true,"pick":[7,7]}
+TALLY LX-10x4-FREE30-n32-g0.5-s0.2-amp0.1 {"sym/rev:7/7":3}
+   {"t":0.0061,"kind":"decide","at":[0,0],"options":[{"mats":[6,6],"rate":0.70768},{"mats":[7,7],"rate":0.70653}],"decided":true,"pick":[6,6]}
+TALLY LX-10x4-FREE30-n32-g1.5-s0.2-amp0.1 {"sym/rev:7/7":3}
+   {"t":0.0061,"kind":"decide","at":[0,0],"options":[{"mats":[6,6],"rate":2.12221},{"mats":[7,7],"rate":2.12043}],"decided":true,"pick":[6,6]}
+TALLY L2-FREE30-n32-g0.5-s0.2-amp0.1 {"sym/rev:both/7":3}
+   {"t":0.0453,"kind":"decide","at":[2,1],"options":[{"mats":[7,7],"rate":0.70761},{"mats":[6,6],"rate":0.7066}],"decided":true,"pick":[7,7]}
+TALLY L2-FREE30-n32-g1.5-s0.2-amp0.1 {"sym/rev:6/6":3}
+   {"t":0.006,"kind":"decide","at":[2,1],"options":[{"mats":[7,7],"rate":2.12287},{"mats":[6,6],"rate":2.11977}],"decided":true,"pick":[7,7]}

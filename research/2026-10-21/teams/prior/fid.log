@@ -1,0 +1,13 @@
+{"k":0.1,"n":32,"volume":false,"steps":19,"converged":true,"measuredOn":"labels","insetDiag":0.3125,"rMeasured":0.754,"rPredicted":0.798,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[12,8,0,0,0]}
+{"k":0.1,"n":32,"volume":true,"steps":5,"converged":true,"measuredOn":"labels","insetDiag":0.0938,"rMeasured":0.226,"rPredicted":0.798,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[24,16,0,0,0]}
+{"k":0.15,"n":32,"volume":false,"steps":9,"converged":true,"measuredOn":"labels","insetDiag":0.1797,"rMeasured":0.434,"rPredicted":0.532,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[16,16,0,0,0]}
+{"k":0.15,"n":32,"volume":true,"steps":300,"converged":false,"measuredOn":"labels","insetDiag":0.0938,"rMeasured":0.226,"rPredicted":0.532,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[336,336,336,336,336]}
+{"k":0.3,"n":32,"volume":false,"steps":5,"converged":true,"measuredOn":"labels","insetDiag":0.0938,"rMeasured":0.226,"rPredicted":0.266,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[20,4,0,0,0]}
+{"k":0.3,"n":32,"volume":true,"steps":3,"converged":true,"measuredOn":"labels","insetDiag":0.0078,"rMeasured":0.019,"rPredicted":0.266,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[0,0,0]}
+{"k":0.1,"n":64,"volume":false,"steps":24,"converged":true,"measuredOn":"labels","insetDiag":0.3125,"rMeasured":0.754,"rPredicted":0.798,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[24,24,0,0,0]}
+{"k":0.1,"n":64,"volume":true,"steps":9,"converged":true,"measuredOn":"labels","insetDiag":0.1328,"rMeasured":0.321,"rPredicted":0.798,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[24,4,0,0,0]}
+{"k":0.15,"n":64,"volume":false,"steps":15,"converged":true,"measuredOn":"labels","insetDiag":0.1992,"rMeasured":0.481,"rPredicted":0.532,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[16,24,0,0,0]}
+{"k":0.15,"n":64,"volume":true,"steps":300,"converged":false,"measuredOn":"labels","insetDiag":0.0898,"rMeasured":0.217,"rPredicted":0.532,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[680,680,680,680,680]}
+{"k":0.3,"n":64,"volume":false,"steps":7,"converged":true,"measuredOn":"labels","insetDiag":0.0898,"rMeasured":0.217,"rPredicted":0.266,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[12,8,0,0,0]}
+{"k":0.3,"n":64,"volume":true,"steps":3,"converged":true,"measuredOn":"labels","insetDiag":0.0039,"rMeasured":0.009,"rPredicted":0.266,"note":"inset resolution about 0.5 sub-cell along the diagonal","lastChanges":[0,0,0]}
+done 25.3 s

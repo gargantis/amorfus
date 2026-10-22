@@ -1,0 +1,1 @@
+{"set":"t1","name":"t1a-shift","regime":"FINITE-4","n":12,"ms":1581,"steps":4,"converged":false,"changes":28918,"premerged":0,"alive":1,"lambda":[[3,503,0.0374]],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-39,"oy":31,"oz":54},"dScale":30847,"origin":[-39,31,54],"size":[9,8,9],"evalLo":[-37,33,56],"evalHi":[-32,37,61],"blocks":503}

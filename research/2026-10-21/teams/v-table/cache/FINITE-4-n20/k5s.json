@@ -1,0 +1,1 @@
+{"set":"n1","name":"k5s","regime":"FINITE-4","n":20,"ms":3845,"steps":4,"converged":false,"changes":53357,"premerged":2,"alive":2,"lambda":[[2,48,0.0075],[1,33,-0.0001]],"phaseMat":[0,2,1,0,0],"grid":{"NX":120,"NY":100,"NZ":100,"n":20,"ox":1,"oy":55,"oz":77},"dScale":31760,"origin":[1,55,77],"size":[6,5,5],"evalLo":[2,56,78],"evalHi":[6,59,81],"blocks":81}

@@ -1,0 +1,13 @@
+10 00001111 FID-0.15 E2c n16 clu: 278 ms, 3 steps, 0 label changes, alive 1/1, vsn [0,0,0] vseam null
+2 00000011 FID-0.15 E2c n16 clu: 185 ms, 3 steps, 0 label changes, alive 1/1, vsn [0,0.0429,0.0429] vseam null
+95 00111111 FID-0.15 E2c n16 clu: 198 ms, 3 steps, 0 label changes, alive 1/1, vsn [0,-0.0429,-0.0429] vseam null
+249 01111111 FID-0.15 E2c n16 clu: 653 ms, 10 steps, 2944 label changes, alive 1/1, vsn [-0.1716,-0.1716,-0.1716] vseam null
+5 00000111 FID-0.15 E2c n16 clu: 417 ms, 9 steps, 653 label changes, alive 1/1, vsn [-0.0629,0.1325,-0.0629] vseam null
+35 00011111 FID-0.15 E2c n16 clu: 1150 ms, 21 steps, 941 label changes, alive 1/1, vsn [0.0538,-0.146,0.0538] vseam null
+1 00000001 FID-0.15 E2c n16 clu: 168 ms, 9 steps, 2952 label changes, alive 1/1, vsn [0.1716,0.1716,0.1716] vseam null
+119 00112211 FID-0.15 E2c n16 clu: 347 ms, 3 steps, 0 label changes, alive 2/2, vsn [0,0,-0.1086] vseam [0.0094,-0.0056,-0.0352]
+11 00001112 FID-0.15 E2c n16 clu: 543 ms, 5 steps, 28 label changes, alive 2/2, vsn [-0.0022,0.0172,-0.0022] vseam [0.0407,0.0238,0.0086]
+12 00001122 FID-0.15 E2c n16 clu: 240 ms, 3 steps, 0 label changes, alive 2/2, vsn [0,0.0157,0] vseam [0.0094,0.0157,0.0097]
+14 00001221 FID-0.15 E2c n16 clu: 206 ms, 3 steps, 0 label changes, alive 4/4, vsn [0,0.0213,0] vseam [0.0095,0.0213,0.0095]
+18 00010111 FID-0.15 E2c n16 clu: 345 ms, 8 steps, 1284 label changes, alive 1/1, vsn [0,0,0] vseam null
+done 12 classes in 12.1 s -> teams/table/res/table/FID-0.15_E2c_n16_clu.json

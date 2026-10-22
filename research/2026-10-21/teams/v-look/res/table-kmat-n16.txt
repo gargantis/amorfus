@@ -1,0 +1,16 @@
+regime | tunnel clearH/clearW (3 cuts) | room2 clearH/clearW min | trench minW / floor dev | single ext / diag/axis / cornerReq | pillar wMin/height | ring hole | cube2 cornerReq lab | flat max|dy| (terrain lo/hi, stairs, slab-line B, slab-halves, room/tunnel roofs) | delta (single, cube2, tunnel)
+BLOCKS@n16 | - | - | - | - | - | - | None | [None, None, None, None, None, None, None] | [None, None, None]
+C15-V0@n16 | 2/0.75 2/0.75 2/0.75 | - | - | [1.125, 1, 1.125] / 1.3472 / 0.1913 | 0.875/3 | - | None | [None, None, None, 0, None, None, 0] | [0.0625, None, 0.037]
+C15-V0-km05@n16 | - | - | - | - | - | - | None | [None, None, None, 0, None, None, None] | [None, None, None]
+C15-V0-km10@n16 | - | - | - | - | - | - | None | [None, None, None, 0, None, None, None] | [None, None, None]
+
+regime | scene | steps(conv) | A area ratio | A parts start->end | blocks wrong | gained/lost (blocks^2) | line width (mid / ends) | A below top layer (blocks^3) | junctions
+BLOCKS@n16 | text-AZ | 0 | 1 | 5->5 | 0/63 | 0/0 |  | 0 | 
+C15-V0@n16 | slab-line | 34 | 1.0078 | 6->1 | 0/36 | 1.1797/1.1328 | 0.6255±0.0508 / 1.0423 1.0423 | 0 | AAAAA
+C15-V0@n16 | text-AZ | 143 | 1.2619 | 5->2 | 13/63 | 9.1406/4.1641 |  | 0 | 
+C15-V0-km05@n16 | slab-line | 28 | 1.0156 | 6->1 | 0/36 | 0.9766/0.8828 | 0.6687±0.0882 / 0.9458 0.954 | 0 | AAAAA
+C15-V0-km05@n16 | slab2-dot | 24 | 1.6875 | 1->1 | 0/25 | 0.6875/0 |  | 0 | 
+C15-V0-km05@n16 | text-AZ | 92 | 1.2249 | 5->2 | 9/63 | 7.0313/2.7578 |  | 0 | 
+C15-V0-km10@n16 | slab-line | 18 | 0.987 | 6->1 | 0/36 | 0.2344/0.3125 | 0.6859±0.2899 / 0.8814 0.8824 | 0 | AAAAA
+C15-V0-km10@n16 | slab2-dot | 19 | 1.3125 | 1->1 | 0/25 | 0.3125/0 |  | 0 | 
+C15-V0-km10@n16 | text-AZ | 108 | 1.1974 | 5->2 | 4/63 | 5.0156/1.2656 |  | 0 | 

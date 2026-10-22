@@ -1,0 +1,45 @@
+wall8x4x1 Bx-g20: surf mean 0.0141 p95 0.0551 max 0.0551 unm 0 bias -0.008 | volMat {"6":0} | worst cluster {"p":1,"mat":6,"blocks":32,"err":0}
+wall8x4x1 Bl-g20: surf mean 0.0195 p95 0.0525 max 0.0565 unm 0 bias 0.0031 | volMat {"6":0.0281} | worst cluster {"p":1,"mat":6,"blocks":32,"err":0.0281}
+wall8x4x1 Bl-b1s20: surf mean 0.019 p95 0.0523 max 0.0523 unm 0 bias 0.0023 | volMat {"6":0.0259} | worst cluster {"p":1,"mat":6,"blocks":32,"err":0.0259}
+wall8x4x1 A0-g20: surf mean 0.0297 p95 0.0759 max 0.0759 unm 0 bias -0.0297 | volMat {"6":-0.0535} | worst cluster {"p":1,"mat":6,"blocks":32,"err":-0.0535}
+  wall8x4x1: n 16 cells 737280 steps 21 2220 ms, rss 163 MB; physics [{"mat":6,"blocks":32,"volume":32,"lambda":0.0857}]
+wall8x4x1-AB Bx-g20: surf mean 0.0124 p95 0.0531 max 0.0532 unm 0 bias -0.0053 | volMat {"6":0,"7":0} | worst cluster {"p":1,"mat":6,"blocks":16,"err":0}
+wall8x4x1-AB Bl-g20: surf mean 0.0182 p95 0.0529 max 0.056 unm 0 bias 0.0057 | volMat {"6":0.0278,"7":0.0278} | worst cluster {"p":1,"mat":6,"blocks":16,"err":0.0278}
+wall8x4x1-AB Bl-b1s20: surf mean 0.0177 p95 0.0528 max 0.0529 unm 0 bias 0.0048 | volMat {"6":0.0254,"7":0.0254} | worst cluster {"p":1,"mat":6,"blocks":16,"err":0.0254}
+wall8x4x1-AB A0-g20: surf mean 0.0297 p95 0.0763 max 0.0764 unm 0 bias -0.0297 | volMat {"6":-0.0604,"7":-0.0604} | worst cluster {"p":1,"mat":6,"blocks":16,"err":-0.0604}
+  wall8x4x1-AB: n 16 cells 737280 steps 14 1594 ms, rss 258 MB; physics [{"mat":6,"blocks":16,"volume":16.001,"lambda":0.089},{"mat":7,"blocks":16,"volume":16.001,"lambda":0.089}]
+overhang Bx-g20: surf mean 0.0172 p95 0.06 max 0.2248 unm 0 bias -0.0031 | volMat {"3":0} | worst cluster {"p":1,"mat":3,"blocks":39,"err":0}
+overhang Bl-g20: surf mean 0.0211 p95 0.0722 max 0.2272 unm 0 bias 0.0054 | volMat {"3":0.0217} | worst cluster {"p":1,"mat":3,"blocks":39,"err":0.0217}
+overhang Bl-b1s20: surf mean 0.0216 p95 0.0648 max 0.2131 unm 0 bias 0.0046 | volMat {"3":0.0194} | worst cluster {"p":1,"mat":3,"blocks":39,"err":0.0194}
+overhang A0-g20: surf mean 0.0289 p95 0.0773 max 0.2509 unm 0 bias -0.0262 | volMat {"3":-0.0571} | worst cluster {"p":1,"mat":3,"blocks":39,"err":-0.0571}
+  overhang: n 12 cells 423360 steps 17 968 ms, rss 250 MB; physics [{"mat":3,"blocks":39,"volume":39,"lambda":0.0774}]
+floor8x1x8-holes Bx-g20: surf mean 0.0153 p95 0.0522 max 0.1004 unm 0 bias -0.0038 | volMat {"3":0} | worst cluster {"p":1,"mat":3,"blocks":60,"err":0}
+floor8x1x8-holes Bl-g20: surf mean 0.0199 p95 0.0517 max 0.1029 unm 0 bias 0.0086 | volMat {"3":0.0321} | worst cluster {"p":1,"mat":3,"blocks":60,"err":0.0321}
+floor8x1x8-holes Bl-b1s20: surf mean 0.0207 p95 0.0487 max 0.0889 unm 0 bias 0.0078 | volMat {"3":0.0303} | worst cluster {"p":1,"mat":3,"blocks":60,"err":0.0303}
+floor8x1x8-holes A0-g20: surf mean 0.0242 p95 0.069 max 0.1216 unm 0 bias -0.0234 | volMat {"3":-0.0475} | worst cluster {"p":1,"mat":3,"blocks":60,"err":-0.0475}
+  floor8x1x8-holes: n 12 cells 518400 steps 11 775 ms, rss 250 MB; physics [{"mat":3,"blocks":60,"volume":60,"lambda":0.0556}]
+bar1x1x12 Bx-g20: surf mean 0.0158 p95 0.0362 max 0.0385 unm 0 bias -0.0078 | volMat {"6":0} | worst cluster {"p":1,"mat":6,"blocks":12,"err":0}
+bar1x1x12 Bl-g20: surf mean 0.015 p95 0.0286 max 0.0317 unm 0 bias 0.0006 | volMat {"6":0.0313} | worst cluster {"p":1,"mat":6,"blocks":12,"err":0.0313}
+bar1x1x12 Bl-b1s20: surf mean 0.017 p95 0.0318 max 0.0339 unm 0 bias -0.0011 | volMat {"6":0.0256} | worst cluster {"p":1,"mat":6,"blocks":12,"err":0.0256}
+bar1x1x12 A0-g20: surf mean 0.0513 p95 0.08 max 0.085 unm 0 bias -0.0522 | volMat {"6":-0.1545} | worst cluster {"p":1,"mat":6,"blocks":12,"err":-0.1545}
+  bar1x1x12: n 16 cells 516096 steps 47 2814 ms, rss 246 MB; physics [{"mat":6,"blocks":12,"volume":12,"lambda":0.1409}]
+slab8x3x6-groove Bx-g20: surf mean 0.0188 p95 0.0849 max 0.3593 unm 0 bias 0.0017 | volMat {"3":0} | worst cluster {"p":1,"mat":3,"blocks":138,"err":0}
+slab8x3x6-groove Bl-g20: surf mean 0.0223 p95 0.097 max 0.3595 unm 0 bias 0.0051 | volMat {"3":0.0046} | worst cluster {"p":1,"mat":3,"blocks":138,"err":0.0046}
+slab8x3x6-groove Bl-b1s20: surf mean 0.0212 p95 0.0921 max 0.357 unm 0 bias 0.0043 | volMat {"3":0.0033} | worst cluster {"p":1,"mat":3,"blocks":138,"err":0.0033}
+slab8x3x6-groove A0-g20: surf mean 0.0199 p95 0.0797 max 0.3741 unm 0 bias -0.0127 | volMat {"3":-0.0171} | worst cluster {"p":1,"mat":3,"blocks":138,"err":-0.0171}
+  slab8x3x6-groove: n 12 cells 691200 steps 37 3936 ms, rss 249 MB; physics [{"mat":3,"blocks":138,"volume":138,"lambda":0.0452}]
+grass-terrace Bx-g20: surf mean 0.0155 p95 0.0398 max 0.1975 unm 0 bias -0.0129 | volMat {"1":0,"2":0} | worst cluster {"p":3,"mat":1,"blocks":32,"err":-0.0019}
+grass-terrace Bl-g20: surf mean 0.0138 p95 0.0329 max 0.1893 unm 0 bias -0.0052 | volMat {"1":0.0199,"2":0.0036} | worst cluster {"p":2,"mat":1,"blocks":32,"err":0.0204}
+grass-terrace Bl-b1s20: surf mean 0.0145 p95 0.0385 max 0.1817 unm 0 bias -0.0058 | volMat {"1":0.0192,"2":0.0026} | worst cluster {"p":2,"mat":1,"blocks":32,"err":0.0208}
+grass-terrace A0-g20: surf mean 0.0304 p95 0.0568 max 0.2324 unm 0 bias -0.0288 | volMat {"1":-0.0288,"2":-0.0104} | worst cluster {"p":3,"mat":1,"blocks":32,"err":-0.0309}
+  grass-terrace: n 12 cells 1036800 steps 15 3868 ms, rss 311 MB; physics [{"mat":2,"blocks":160,"volume":160.015,"lambda":0.1419},{"mat":1,"blocks":64,"volume":63.941,"lambda":0.0998}]
+terrain-a Bx-g20: surf mean 0.0186 p95 0.082 max 0.5326 unm 0 bias -0.0046 | volMat {"1":0,"2":0,"3":0} | worst cluster {"p":3,"mat":3,"blocks":1,"err":-0.0476}
+terrain-a Bl-g20: surf mean 0.0224 p95 0.0882 max 0.5417 unm 0 bias 0.0022 | volMat {"1":0.0166,"2":0.0062,"3":0.0224} | worst cluster {"p":3,"mat":3,"blocks":1,"err":0.0574}
+terrain-a Bl-b1s20: surf mean 0.0221 p95 0.081 max 0.5331 unm 0 bias 0.0016 | volMat {"1":0.0153,"2":0.0051,"3":0.0204} | worst cluster {"p":3,"mat":3,"blocks":1,"err":0.0588}
+terrain-a A0-g20: surf mean 0.0345 p95 0.0993 max 1 unm 1 bias -0.0264 | volMat {"1":-0.0621,"2":-0.0073,"3":-0.1627} | worst cluster {"p":3,"mat":3,"blocks":1,"err":-0.2405}
+  terrain-a: n 12 cells 839808 steps 73 25822 ms, rss 325 MB; physics [{"mat":2,"blocks":102,"volume":102,"lambda":0.0626},{"mat":3,"blocks":3,"volume":3,"lambda":0.1825},{"mat":3,"blocks":1,"volume":1,"lambda":0.1898},{"mat":1,"blocks":41,"volume":41,"lambda":0.0783}]
+terrain-b Bx-g20: surf mean 0.0234 p95 0.1037 max 0.3786 unm 0 bias -0.0054 | volMat {"1":0,"2":0,"3":0} | worst cluster {"p":7,"mat":1,"blocks":7,"err":-0.0293}
+terrain-b Bl-g20: surf mean 0.0267 p95 0.1061 max 0.3779 unm 0 bias 0.0026 | volMat {"1":0.0231,"2":0.0059,"3":0.0049} | worst cluster {"p":7,"mat":1,"blocks":7,"err":0.0353}
+terrain-b Bl-b1s20: surf mean 0.0264 p95 0.1003 max 0.3728 unm 0 bias 0.0018 | volMat {"1":0.0221,"2":0.0046,"3":0.0048} | worst cluster {"p":7,"mat":1,"blocks":7,"err":0.0318}
+terrain-b A0-g20: surf mean 0.0349 p95 0.1159 max 0.4038 unm 0 bias -0.028 | volMat {"1":-0.0638,"2":-0.007,"3":-0.0612} | worst cluster {"p":7,"mat":1,"blocks":7,"err":-0.103}
+  terrain-b: n 12 cells 979776 steps 86 36007 ms, rss 384 MB; physics [{"mat":2,"blocks":89,"volume":89,"lambda":0.0761},{"mat":3,"blocks":14,"volume":13.9994,"lambda":0.1282},{"mat":1,"blocks":43,"volume":43,"lambda":0.0694}]

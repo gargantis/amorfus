@@ -1,0 +1,13 @@
+cube2-corner4 8 blocks; 0 X edges
+j0      13 st 1694 ms | roots {"1":["1","1"],"4":["1","1"],"6":["1","1"],"7":["1","1"]} | merges at 
+     X verdicts 
+s1      22 st 2391 ms | roots {"1":["1","1"],"4":["1","1"],"6":["1","1"],"7":["1","1"]} | merges at 
+     X verdicts 
+s2      47 st 5094 ms | roots {"1":["1","1"],"4":["1","1"],"6":["2[2pc]"],"7":["1","1"]} | merges at 35
+     X verdicts 
+annNM1  120 st 39813 ms | roots {"1":["2"],"4":["2"],"6":["2"],"7":["2"]} | merges at 101
+     X verdicts 
+annNM2  145 st 31920 ms | roots {"1":["2"],"4":["2"],"6":["2"],"7":["2"]} | merges at 101
+     X verdicts 
+annNM3  196 st 38462 ms | roots {"1":["2"],"4":["2"],"6":["2"],"7":["2"]} | merges at 101
+     X verdicts 

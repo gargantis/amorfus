@@ -1,0 +1,54 @@
+C15-V0 16 g 1 labdepth 0 Dflat 1.0292 model 1.02955 lam [0.18689, 0.18689]
+   x=0.00 meas 0.0318  L11 0.0538  g-model 0.0538  g+lam 0.0428
+   x=0.02 meas 0.0318  L11 0.0447  g-model 0.0447  g+lam 0.0358
+   x=0.04 meas 0.0294  L11 0.0366  g-model 0.0366  g+lam 0.0296
+   x=0.08 meas 0.0192  L11 0.0237  g-model 0.0237  g+lam 0.0194
+   x=0.12 meas 0.0121  L11 0.0144  g-model 0.0144  g+lam 0.0119
+   x=0.16 meas 0.0066  L11 0.0083  g-model 0.0083  g+lam 0.0069
+   x=0.20 meas 0.0038  L11 0.0044  g-model 0.0044  g+lam 0.0037
+   x=0.28 meas 0.0007  L11 0.0010  g-model 0.0010  g+lam 0.0008
+C15-V0 24 g 1 labdepth 0 Dflat 1.0208 model 1.02096 lam [0.13318, 0.13318]
+   x=0.00 meas 0.0375  L11 0.0538  g-model 0.0538  g+lam 0.0455
+   x=0.02 meas 0.0375  L11 0.0447  g-model 0.0447  g+lam 0.0381
+   x=0.04 meas 0.0313  L11 0.0366  g-model 0.0366  g+lam 0.0314
+   x=0.08 meas 0.0205  L11 0.0237  g-model 0.0237  g+lam 0.0205
+   x=0.12 meas 0.0126  L11 0.0144  g-model 0.0144  g+lam 0.0126
+   x=0.16 meas 0.0072  L11 0.0083  g-model 0.0083  g+lam 0.0072
+   x=0.20 meas 0.0039  L11 0.0044  g-model 0.0044  g+lam 0.0039
+   x=0.28 meas 0.0008  L11 0.0010  g-model 0.0010  g+lam 0.0009
+FID-0.15 16 g 1 labdepth 0.0625 Dflat 1.0801 model 1.02194 lam [0.13936, 0.13936]
+   x=0.00 meas 0.0919  L11 0.0538  g-model 0.0538  g+lam 0.0452
+   x=0.02 meas 0.0919  L11 0.0447  g-model 0.0447  g+lam 0.0378
+   x=0.04 meas 0.0894  L11 0.0366  g-model 0.0366  g+lam 0.0312
+   x=0.08 meas 0.0786  L11 0.0237  g-model 0.0237  g+lam 0.0204
+   x=0.12 meas 0.0709  L11 0.0144  g-model 0.0144  g+lam 0.0125
+   x=0.16 meas 0.0651  L11 0.0083  g-model 0.0083  g+lam 0.0072
+   x=0.20 meas 0.0617  L11 0.0044  g-model 0.0044  g+lam 0.0039
+   x=0.28 meas 0.0567  L11 0.0010  g-model 0.0010  g+lam 0.0009
+FID-0.15 24 g 1 labdepth 0.0417 Dflat 1.0564 model 1.01767 lam [0.11243, 0.11243]
+   x=0.00 meas 0.0772  L11 0.0538  g-model 0.0538  g+lam 0.0467
+   x=0.02 meas 0.0772  L11 0.0447  g-model 0.0447  g+lam 0.0390
+   x=0.04 meas 0.0709  L11 0.0366  g-model 0.0366  g+lam 0.0321
+   x=0.08 meas 0.0597  L11 0.0237  g-model 0.0237  g+lam 0.0209
+   x=0.12 meas 0.0513  L11 0.0144  g-model 0.0144  g+lam 0.0129
+   x=0.16 meas 0.0454  L11 0.0083  g-model 0.0083  g+lam 0.0074
+   x=0.20 meas 0.0410  L11 0.0044  g-model 0.0044  g+lam 0.0040
+   x=0.28 meas 0.0338  L11 0.0010  g-model 0.0010  g+lam 0.0009
+FID-0.15 16 g 0.5 labdepth 0.0573 Dflat 1.0771 model 1.02194 lam [0.13936, 0.13936]
+   x=0.00 meas 0.0703  L11 0.0538  g-model 0.0225  g+lam 0.0194
+   x=0.02 meas 0.0703  L11 0.0447  g-model 0.0193  g+lam 0.0166
+   x=0.04 meas 0.0692  L11 0.0366  g-model 0.0162  g+lam 0.0140
+   x=0.08 meas 0.0646  L11 0.0237  g-model 0.0109  g+lam 0.0095
+   x=0.12 meas 0.0610  L11 0.0144  g-model 0.0069  g+lam 0.0060
+   x=0.16 meas 0.0579  L11 0.0083  g-model 0.0040  g+lam 0.0035
+   x=0.20 meas 0.0554  L11 0.0044  g-model 0.0022  g+lam 0.0019
+   x=0.28 meas 0.0494  L11 0.0010  g-model 0.0005  g+lam 0.0004
+FID-0.15 16 g 1.5 labdepth 0.0625 Dflat 1.0802 model 1.02209 lam [0.1403, 0.1403]
+   x=0.00 meas 0.1166  L11 0.0538  g-model 0.1052  g+lam 0.0833
+   x=0.02 meas 0.1166  L11 0.0447  g-model 0.0817  g+lam 0.0666
+   x=0.04 meas 0.1110  L11 0.0366  g-model 0.0639  g+lam 0.0530
+   x=0.08 meas 0.0913  L11 0.0237  g-model 0.0388  g+lam 0.0329
+   x=0.12 meas 0.0783  L11 0.0144  g-model 0.0228  g+lam 0.0196
+   x=0.16 meas 0.0689  L11 0.0083  g-model 0.0128  g+lam 0.0111
+   x=0.20 meas 0.0638  L11 0.0044  g-model 0.0067  g+lam 0.0058
+   x=0.28 meas 0.0571  L11 0.0010  g-model 0.0015  g+lam 0.0013

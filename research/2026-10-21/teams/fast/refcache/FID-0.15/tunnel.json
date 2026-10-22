@@ -1,0 +1,1 @@
+{"regime":"FID-0.15","name":"tunnel","opts":{"anchor":{"kind":"fidelity","k":0.15},"n":16},"ms":3966,"steps":40,"converged":true,"lastChanges":[56,24,0,0,0],"grid":[80,96,80],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":3,"blocks":30,"target":122880,"lambda":0.06833237409591675,"alive":true}],"volumes":[{"p":1,"mat":3,"blocks":30,"volume":30}]}

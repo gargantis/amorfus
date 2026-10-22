@@ -1,0 +1,29 @@
+solid/air masks: 256 -> classes brute 22, Burnside 22
+labellings up to relabelling (RG strings): 21147 (Bell(9) = 21147)
+material-view classes (brute force, canonical min over 48 syms): 738
+de Bruijn N(<=m materials, air allowed): 1 22 147 392 615 709 733 737 738
+de Bruijn N(<=m materials, no air):      0 1 14 58 124 167 182 185 186
+classes by #materials (brute):    {"0":1,"1":21,"2":125,"3":245,"4":223,"5":94,"6":24,"7":4,"8":1}
+classes by #materials (Burnside): {"0":1,"1":21,"2":125,"3":245,"4":223,"5":94,"6":24,"7":4,"8":1}
+classes with no air: brute 186, de Bruijn 186
+mesher surface classes (air + solid): brute 551, de Bruijn 551
+'not all the same' classes: 736
+seam classes (air + >=2 materials): 531
+cluster structures (air set + connected partition): 6153
+cluster-view classes: brute 225, Burnside 225
+cluster-view classes by #clusters (brute):    {"0":1,"1":13,"2":47,"3":67,"4":59,"5":26,"6":9,"7":2,"8":1}
+cluster-view classes by #clusters (Burnside): {"0":1,"1":13,"2":47,"3":67,"4":59,"5":26,"6":9,"7":2,"8":1}
+material-view classes: Burnside fixed points (set-of-sets test) 738
+all classes: {"classes":738,"xEdge":650,"x4Distinct":435,"xAmbigOnly":215,"over4Mat":280,"over4Clu":539,"ambUnion":513,"ambEdge":452,"ambVertexOnly":61,"airSplit":201,"nonPlateau":662,"plateau":76}
+surface (air+solid): {"classes":551,"xEdge":492,"x4Distinct":336,"xAmbigOnly":156,"over4Mat":218,"over4Clu":402,"ambUnion":375,"ambEdge":331,"ambVertexOnly":44,"airSplit":201,"nonPlateau":499,"plateau":52}
+surface, 1 materials: {"classes":20,"xEdge":9,"x4Distinct":0,"xAmbigOnly":9,"over4Mat":0,"over4Clu":1,"ambUnion":8,"ambEdge":7,"ambVertexOnly":1,"airSplit":8,"nonPlateau":10,"plateau":10}
+surface, 2 materials: {"classes":112,"xEdge":83,"x4Distinct":0,"xAmbigOnly":83,"over4Mat":0,"over4Clu":37,"ambUnion":71,"ambEdge":65,"ambVertexOnly":6,"airSplit":50,"nonPlateau":86,"plateau":26}
+surface, 3 materials: {"classes":201,"xEdge":184,"x4Distinct":124,"xAmbigOnly":60,"over4Mat":0,"over4Clu":146,"ambUnion":146,"ambEdge":132,"ambVertexOnly":14,"airSplit":80,"nonPlateau":185,"plateau":16}
+surface, 4 materials: {"classes":157,"xEdge":155,"x4Distinct":151,"xAmbigOnly":4,"over4Mat":157,"over4Clu":157,"ambUnion":112,"ambEdge":96,"ambVertexOnly":16,"airSplit":49,"nonPlateau":157,"plateau":0}
+surface, 5 materials: {"classes":51,"xEdge":51,"x4Distinct":51,"xAmbigOnly":0,"over4Mat":51,"over4Clu":51,"ambUnion":34,"ambEdge":28,"ambVertexOnly":6,"airSplit":12,"nonPlateau":51,"plateau":0}
+surface, 6 materials: {"classes":9,"xEdge":9,"x4Distinct":9,"xAmbigOnly":0,"over4Mat":9,"over4Clu":9,"ambUnion":4,"ambEdge":3,"ambVertexOnly":1,"airSplit":2,"nonPlateau":9,"plateau":0}
+surface, 7 materials: {"classes":1,"xEdge":1,"x4Distinct":1,"xAmbigOnly":0,"over4Mat":1,"over4Clu":1,"ambUnion":0,"ambEdge":0,"ambVertexOnly":0,"airSplit":0,"nonPlateau":1,"plateau":0}
+surface, 8 materials: {"classes":0,"xEdge":0,"x4Distinct":0,"xAmbigOnly":0,"over4Mat":0,"over4Clu":0,"ambUnion":0,"ambEdge":0,"ambVertexOnly":0,"airSplit":0,"nonPlateau":0,"plateau":0}
+cluster-view classes: {"classes":225,"xEdge":146,"x4Distinct":111,"xAmbigOnly":35,"over4Mat":83,"over4Clu":83,"ambUnion":0,"ambEdge":0,"ambVertexOnly":0,"airSplit":54,"nonPlateau":149,"plateau":76}
+cluster-view surface classes: {"classes":176,"xEdge":122,"x4Distinct":90,"xAmbigOnly":32,"over4Mat":68,"over4Clu":68,"ambUnion":0,"ambEdge":0,"ambVertexOnly":0,"airSplit":54,"nonPlateau":124,"plateau":52}
+wrote res/classes.json

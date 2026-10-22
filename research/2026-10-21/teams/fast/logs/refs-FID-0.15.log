@@ -1,0 +1,36 @@
+FID-0.15 single: n 16 grid 48x48x48 286 ms, 8 steps, 6:1->1.002, rss 66 MB
+FID-0.15 pair-same: n 16 grid 64x48x48 263 ms, 9 steps, 6:2->2, rss 73 MB
+FID-0.15 pair-diff: n 16 grid 64x48x48 223 ms, 6 steps, 6:1->1 7:1->1, rss 74 MB
+FID-0.15 line3-same: n 16 grid 80x48x48 257 ms, 11 steps, 6:3->3, rss 88 MB
+FID-0.15 line3-ABA: n 16 grid 80x48x48 247 ms, 6 steps, 6:1->1 7:1->1 6:1->1, rss 99 MB
+FID-0.15 line3-ABC: n 16 grid 80x48x48 219 ms, 6 steps, 6:1->1 7:1->1 1:1->1, rss 111 MB
+FID-0.15 L3-same: n 16 grid 64x48x64 406 ms, 15 steps, 6:3->3, rss 127 MB
+FID-0.15 L3-AAB: n 16 grid 64x48x64 600 ms, 16 steps, 6:2->2 7:1->1, rss 113 MB
+FID-0.15 L3-ABC: n 16 grid 64x48x64 564 ms, 14 steps, 6:1->1 7:1->1 1:1->1, rss 114 MB
+FID-0.15 sq2-same: n 16 grid 64x48x64 316 ms, 12 steps, 6:4->4, rss 122 MB
+FID-0.15 sq2-AAAB: n 16 grid 64x48x64 715 ms, 15 steps, 6:3->3 7:1->1, rss 134 MB
+FID-0.15 sq2-AABB: n 16 grid 64x48x64 372 ms, 11 steps, 6:2->2 7:2->2, rss 134 MB
+FID-0.15 sq2-checker: n 16 grid 64x48x64 537 ms, 11 steps, 6:1->1 7:1->1 7:1->1 6:1->1, rss 135 MB
+FID-0.15 sq2-AABC: n 16 grid 64x48x64 439 ms, 11 steps, 6:2->2 7:1->1 1:1->1, rss 136 MB
+FID-0.15 sq2-ABCD: n 16 grid 64x48x64 579 ms, 12 steps, 6:1->0.9995 7:1->0.9995 1:1->1 4:1->0.9995, rss 140 MB
+FID-0.15 diag-edge: n 16 grid 64x48x64 472 ms, 15 steps, 6:2->2, rss 137 MB
+FID-0.15 diag-corner: n 16 grid 64x64x64 282 ms, 8 steps, 6:1->1 6:1->1, rss 136 MB
+FID-0.15 diag-edge-diff: n 16 grid 64x48x64 564 ms, 18 steps, 6:1->1 7:1->1, rss 136 MB
+FID-0.15 cube2-same: n 16 grid 64x64x64 502 ms, 14 steps, 6:8->8.002, rss 137 MB
+FID-0.15 cube2-oneB: n 16 grid 64x64x64 826 ms, 15 steps, 6:7->6.9995 7:1->1, rss 137 MB
+FID-0.15 cube2-halves: n 16 grid 64x64x64 501 ms, 10 steps, 6:4->4 7:4->4, rss 137 MB
+FID-0.15 cube2-checker: n 16 grid 64x64x64 1158 ms, 12 steps, 6:1->1 7:1->1 7:1->1 6:1->1 7:1->1 6:1->1 6:1->1 7:1->1, rss 143 MB
+FID-0.15 cube2-octants: n 16 grid 64x64x64 1218 ms, 13 steps, 6:1->1 7:1->1 1:1->1 4:1->1 1:1->1 4:1->1 6:1->1 7:1->1, rss 143 MB
+FID-0.15 plus5: n 16 grid 80x48x80 515 ms, 13 steps, 6:5->5, rss 137 MB
+FID-0.15 plus5-mixed: n 16 grid 80x48x80 1330 ms, 17 steps, 6:4->3.998 7:1->1, rss 137 MB
+FID-0.15 ring8: n 16 grid 80x48x80 1800 ms, 41 steps, 6:8->8, rss 145 MB
+FID-0.15 T-mixed: n 16 grid 80x48x80 532 ms, 11 steps, 6:3->3 7:2->2, rss 139 MB
+FID-0.15 pillar3: n 16 grid 48x80x48 297 ms, 11 steps, 6:3->3, rss 139 MB
+FID-0.15 stairs: n 16 grid 80x80x64 1200 ms, 21 steps, 6:12->12, rss 137 MB
+FID-0.15 ball-r2: n 12 grid 84x84x84 1094 ms, 15 steps, 6:33->32.9861, rss 145 MB
+FID-0.15 ball-AB: n 12 grid 84x84x84 1687 ms, 22 steps, 7:23->23 6:10->9.9977, rss 153 MB
+FID-0.15 slab-dot: n 16 grid 112x48x112 1540 ms, 10 steps, 7:24->24 6:1->1, rss 156 MB
+FID-0.15 slab-line: n 16 grid 128x48x128 3497 ms, 12 steps, 6:1->0.9995 7:15->14.9995 7:15->14.9995 6:1->1 6:1->1 6:1->1 6:1->1 6:1->0.9995, rss 158 MB
+FID-0.15 slab-stripe: n 16 grid 128x48x128 5137 ms, 30 steps, 7:12->12 6:6->6 7:18->18, rss 169 MB
+FID-0.15 terrain-step: n 16 grid 128x80x112 10066 ms, 26 steps, 2:45->45 1:30->30, rss 201 MB
+FID-0.15 tunnel: n 16 grid 80x96x80 3966 ms, 40 steps, 3:30->30, rss 177 MB

@@ -1,0 +1,35 @@
+{
+ "experiment": "abcd3d-slices",
+ "date": "2026-10-21",
+ "engine": "lib/mbo.mjs (unchanged)",
+ "runs": [
+  {
+   "dims": 3,
+   "jitter": 0.1,
+   "seed": 1,
+   "annealed": true,
+   "quench": true,
+   "annealSteps": 100,
+   "n": 16,
+   "steps": 80,
+   "converged": true,
+   "start": {
+    "xWindows": 16
+   },
+   "end": {
+    "xWindows": 1,
+    "xLine_blocks": 0.063,
+    "wallAD_blocks2": 0.738,
+    "wallBC_blocks2": 0.758
+   },
+   "lastChanges": [
+    8,
+    2,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "seconds": 24.9
+}

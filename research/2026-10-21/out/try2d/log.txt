@@ -1,0 +1,14 @@
+pair-diff 21 6:1→1.000 7:1→1.000 | fid 5 2 phases
+sq2-checker 12 6:1→0.999 7:1→0.999 7:1→0.999 6:1→0.999 | fid 6 4 phases
+sq2-ABCD 13 6:1→0.999 7:1→0.999 1:1→0.999 4:1→0.999 | fid 6 4 phases
+slab-line 102 6:6→6.000 7:15→14.942 7:15→14.942 | fid 15 3 phases
+sq2-checker jitter 0 seed 1 steps 12 6:1→1.00 7:1→1.00 7:1→1.00 6:1→1.00
+sq2-checker jitter 0.001 seed 1 steps 66 6:2→2.00 7:1→1.00 7:1→1.00
+sq2-checker jitter 0.001 seed 2 steps 83 6:1→1.00 7:2→2.00 6:1→1.00
+sq2-checker jitter 0.001 seed 3 steps 67 6:2→2.00 7:1→1.00 7:1→1.00
+sq2-checker jitter 0.01 seed 4 steps 88 6:2→2.00 7:2→2.00
+sq2-ABCD jitter 0 seed 1 steps 13 6:1→1.00 7:1→1.00 1:1→1.00 4:1→1.00
+sq2-ABCD jitter 0.001 seed 1 steps 16 6:1→1.00 7:1→1.00 1:1→1.00 4:1→1.00
+sq2-ABCD jitter 0.001 seed 2 steps 16 6:1→1.00 7:1→1.00 1:1→1.00 4:1→1.00
+sq2-ABCD jitter 0.001 seed 3 steps 19 6:1→1.00 7:1→1.00 1:1→1.00 4:1→1.00
+sq2-ABCD jitter 0.01 seed 4 steps 17 6:1→1.00 7:1→1.00 1:1→1.00 4:1→1.00

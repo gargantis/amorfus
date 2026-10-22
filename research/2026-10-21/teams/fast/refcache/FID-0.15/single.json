@@ -1,0 +1,1 @@
+{"regime":"FID-0.15","name":"single","opts":{"anchor":{"kind":"fidelity","k":0.15},"n":16},"ms":286,"steps":8,"converged":true,"lastChanges":[32,24,0,0,0],"grid":[48,48,48],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":1,"target":4096,"lambda":0.16638511419296265,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":1,"volume":1.002}]}

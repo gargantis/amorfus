@@ -1,0 +1,6 @@
+id        verdict 7    geo 7    rule4 6 size 7 | steps 4 nc 238ms | [{"mat":6,"united":false,"step":null,"pieces":null},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:12 6:12
+rot90     verdict 7    geo 7    rule4 6 size 7 | steps 4 nc 141ms | [{"mat":7,"united":true,"step":1,"pieces":1},{"mat":6,"united":false,"step":null,"pieces":null}] | others  | 7:8 6:12 6:12
+TALLY W1-FINITE-4-n32-g1-s0.2 {"sym/rev:7/7":9}
+id        verdict 7    geo 7    rule4 6 size 7 | steps 54 1502ms | [{"mat":6,"united":false,"step":null,"pieces":null},{"mat":7,"united":true,"step":1,"pieces":1}] | others  | 7:8 6:12 6:12
+rot90     verdict 7    geo 7    rule4 6 size 7 | steps 54 1444ms | [{"mat":7,"united":true,"step":1,"pieces":1},{"mat":6,"united":false,"step":null,"pieces":null}] | others  | 7:8 6:12 6:12
+TALLY W1-CAGE-0.25-n32-g1-s0.2 {"sym/rev:7/7":9}

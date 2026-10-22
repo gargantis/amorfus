@@ -1,0 +1,7 @@
+{"out": "dbg/abb2d.png", "cols": 3, "items": [
+{"path": "cross2d/row-ABB-n32-s0.2-j0-seed1.png", "label": "n32 s0.2"},
+{"path": "cross2d/row-ABB-n64-s0.2-j0-seed1.png", "label": "n64 s0.2"},
+{"path": "cross2d/row-ABB-n64-s0.1-j0-seed1.png", "label": "n64 s0.1"},
+{"path": "cross2d/line3-ABA-n32-s0.2-j0-seed1.png", "label": "ABA n32"},
+{"path": "cross2d/line3-ABA-n128-s0.2-j0-seed1.png", "label": "ABA n128"},
+{"path": "cross2d/line3-ABA-n64-s0.1-j0-seed1.png", "label": "ABA n64 s0.1"}]}

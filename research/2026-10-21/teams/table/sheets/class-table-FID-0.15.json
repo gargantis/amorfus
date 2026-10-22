@@ -1,0 +1,55 @@
+{
+ "out": "teams/table/sheets/class-table-FID-0.15.png",
+ "cols": 4,
+ "title": "Top 12 corner classes, FID-0.15, embedding E2c (infinite octants), n=16",
+ "items": [
+  {
+   "path": "teams/table/img/classes/c10-FID-0.15-E2c-n16-clu.png",
+   "label": "c10 00001111 29.8%\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c2-FID-0.15-E2c-n16-clu.png",
+   "label": "c2 00000011 12.3%\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c95-FID-0.15-E2c-n16-clu.png",
+   "label": "c95 00111111 10.9%\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c249-FID-0.15-E2c-n16-clu.png",
+   "label": "c249 01111111 6.5%\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c5-FID-0.15-E2c-n16-clu.png",
+   "label": "c5 00000111 5.9%\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c35-FID-0.15-E2c-n16-clu.png",
+   "label": "c35 00011111 5.8%\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c1-FID-0.15-E2c-n16-clu.png",
+   "label": "c1 00000001 5.7%\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c119-FID-0.15-E2c-n16-clu.png",
+   "label": "c119 00112211 3.0%\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c11-FID-0.15-E2c-n16-clu.png",
+   "label": "c11 00001112 2.1%\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c12-FID-0.15-E2c-n16-clu.png",
+   "label": "c12 00001122 1.7%\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c14-FID-0.15-E2c-n16-clu.png",
+   "label": "c14 00001221 1.6% nonP\nFID-0.15 E2c n16"
+  },
+  {
+   "path": "teams/table/img/classes/c18-FID-0.15-E2c-n16-clu.png",
+   "label": "c18 00010111 1.5%\nFID-0.15 E2c n16"
+  }
+ ]
+}

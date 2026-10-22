@@ -1,0 +1,87 @@
+{
+ "FID-0.15": {
+  "n": 16,
+  "linear": {
+   "a": 0.1076,
+   "b": 0.0282,
+   "r2": 0.817,
+   "maxResidual": 0.0322
+  },
+  "proportional": {
+   "c": 0.058,
+   "maxResidual": 0.0908
+  },
+  "lamRange": [
+   0.15435,
+   0.30455
+  ]
+ },
+ "FID-0.05": {
+  "n": 16,
+  "linear": {
+   "a": 0.1756,
+   "b": 0.0105,
+   "r2": 0.151,
+   "maxResidual": 0.0676
+  },
+  "proportional": {
+   "c": 0.0591,
+   "maxResidual": 0.1276
+  },
+  "lamRange": [
+   0.13603,
+   0.28803
+  ]
+ },
+ "FINITE-4": {
+  "n": 16,
+  "linear": {
+   "a": 0.1006,
+   "b": 0.02,
+   "r2": 0.506,
+   "maxResidual": 0.0462
+  },
+  "proportional": {
+   "c": 0.0478,
+   "maxResidual": 0.0945
+  },
+  "lamRange": [
+   0.10105,
+   0.25368
+  ]
+ },
+ "CAGE-0.25": {
+  "n": 16,
+  "linear": {
+   "a": 0.078,
+   "b": 0.0258,
+   "r2": 0.739,
+   "maxResidual": 0.0478
+  },
+  "proportional": {
+   "c": 0.0473,
+   "maxResidual": 0.0919
+  },
+  "lamRange": [
+   0.10159,
+   0.25368
+  ]
+ },
+ "FREE": {
+  "n": 10,
+  "linear": {
+   "a": 0.0634,
+   "b": 0.0273,
+   "r2": 0.779,
+   "maxResidual": 0.0266
+  },
+  "proportional": {
+   "c": 0.0427,
+   "maxResidual": 0.0535
+  },
+  "lamRange": [
+   0.12788,
+   0.25368
+  ]
+ }
+}

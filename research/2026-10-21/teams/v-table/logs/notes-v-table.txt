@@ -1,0 +1,20 @@
+v-table (round 2 verifier) - where each headline number lives. All paths relative to teams/v-table/.
+Metric: surface-nets mesh (repo topology: one vertex per mixed corner, quad per solid/air face pair,
+shorter-diagonal split, 1/256 quantisation) vs the physics zero set, both directions (m2s area-weighted over
+36 pts/triangle; s2m area-weighted over the field's sub-cell crossings), sym = mean of the two, inside the
+scene's evaluation box (2 blocks inside the clamped 9x8x9 window). D = engine render field, L = labels
+blurred 0.75 sub-cell. Sanity: logs/test-metric.log.
+(a) claim 1 re-count: res/freq/*.json, logs/freq-*.log, logs/freq-break.log, logs/freq-mats-*.log, logs/freq-cave-s1-wide.log
+(2)/(3) mesh tables: logs/agg-FINITE-4-fit.log (t1 47 windows + t7 + builds), logs/agg-t8-FINITE-4.log,
+   logs/agg-FID-t1.log (29 windows, before fit), logs/agg-FID-fit.log (17 out-of-sample windows + builds),
+   logs/agg-t8-FID.log, logs/agg-cat-FID.log, logs/agg-cat-FINITE-4.log, logs/cat-FID-configmean.log
+   raw: res/score/*.json
+patch-fit tables: res/fit/fitA-FINITE-4.json fitB-FINITE-4.json fitF-FID.json, logs/patchfit-*.log
+(b) n study: logs/agg-n1.log, logs/cmp-n1-12-20.log, logs/cmp-n1-16-20.log, logs/classtab-ncompare.log, res/table-mine/
+(c) logs/round2d.log, res/round2d.json, img/round2d-chart.png
+T5: logs/lambda-FINITE-4-t1.log, logs/lambda-FID-t1.log, res/cmp-t1-FINITE-4-vol-vs-nv.json, logs/cmp-t1-vol-nv.log
+T7/T8: res/keycv-FINITE-4.json, res/keycv-FID-0.15.json, logs/keycv-summary.log
+T9: logs/classseam-summary.log, res/classseam.jsonl
+T11: logs/lookup-bench-rerun1.log, logs/lookup-bench-rerun2.log
+T12: logs/errshare-FID.log, logs/errshare-FINITE-4.log
+images: sheets/mesh-vs-physics.png (+ img/*.png)

@@ -1,0 +1,1 @@
+{"set":"t1","name":"t8a","regime":"FINITE-4-nv","n":12,"ms":1172,"steps":4,"converged":false,"changes":14545,"premerged":2,"alive":3,"lambda":[[2,184,0],[3,40,0.0286],[1,64,0.0389]],"phaseMat":[0,2,3,1,0,0],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":3,"oy":4,"oz":-97},"dScale":30801,"origin":[3,4,-97],"size":[9,8,9],"evalLo":[5,6,-95],"evalHi":[10,10,-90],"blocks":288}

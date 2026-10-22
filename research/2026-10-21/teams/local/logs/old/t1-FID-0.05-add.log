@@ -1,0 +1,7 @@
+FID-0.05 add base 1157 ms 7 steps  [{"p":1,"mat":6,"blocks":140,"volume":139.241,"lamRun":0.21629,"lamRender":0.26601}]
+d=1: 12721 ms 107 st | label diffs 24140, max dist 10.248 | probe dD 0.49686 dLab 0.5 | lam 0.07718 (base 0.21629)
+d=2: 14395 ms 123 st | label diffs 25276, max dist 9.279 | probe dD 0.30162 dLab 0.33333 | lam 0.07516 (base 0.21629)
+d=3: 9667 ms 88 st | label diffs 24270, max dist 8.318 | probe dD 0.13351 dLab 0.16667 | lam 0.07765 (base 0.21629)
+d=4: 9723 ms 87 st | label diffs 24258, max dist 7.367 | probe dD -0.00269 dLab 0 | lam 0.07765 (base 0.21629)
+d=6: 9563 ms 88 st | label diffs 24270, max dist 8.318 | probe dD -0.03319 dLab 0 | lam 0.07765 (base 0.21629)
+d=8: 12361 ms 107 st | label diffs 24140, max dist 10.248 | probe dD -0.03343 dLab 0 | lam 0.07718 (base 0.21629)

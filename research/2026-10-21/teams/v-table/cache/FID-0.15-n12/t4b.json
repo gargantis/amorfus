@@ -1,0 +1,1 @@
+{"set":"t1","name":"t4b","regime":"FID-0.15","n":12,"ms":14208,"steps":42,"converged":true,"changes":10860,"premerged":1,"alive":1,"lambda":[[3,508,-0.0054]],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-45,"oy":33,"oz":18},"dScale":32000,"origin":[-45,33,18],"size":[9,8,9],"evalLo":[-43,35,20],"evalHi":[-38,39,25],"blocks":508}

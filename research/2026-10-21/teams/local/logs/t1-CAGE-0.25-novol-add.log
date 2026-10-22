@@ -1,0 +1,5 @@
+CAGE-0.25-novol add base 12854 ms 300 steps NOT CONVERGED [{"p":1,"mat":6,"blocks":140,"volume":98.005,"lamRun":0,"lamRender":0.18468}]
+d=1: 15301 ms 300 st NC | label diffs 4588, max dist 3.71 | probe dD 0.23739 dD0 0.25034 dLab 0.25 | lam 0 (base 0)
+d=2: 15329 ms 300 st NC | label diffs 4006, max dist 2.711 | probe dD 0.06918 dD0 0.08262 dLab 0.08334 | lam 0 (base 0)
+d=4: 15093 ms 300 st NC | label diffs 3568, max dist 1.63 | probe dD -0.01328 dD0 0 dLab 0 | lam 0 (base 0)
+d=8: 12230 ms 300 st NC | label diffs 4588, max dist 3.71 | probe dD -0.01398 dD0 0 dLab 0 | lam 0 (base 0)

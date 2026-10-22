@@ -1,0 +1,6 @@
+{"out": "img/sheet-neumann.png", "cols": 3, "title": "2D pair-diff FREE, n=64: A-B tension g sets the junction (Young/Neumann)", "cell": [300, 220],
+ "items": [
+  {"path": "img/pairdiff2d-g0.5-n64.png", "label": "pair-diff 2D FREE g=0.5\nwall half 0.672 (theory 0.674)"},
+  {"path": "img/pairdiff2d-g1-n64.png", "label": "pair-diff 2D FREE g=1\nwall half 0.547 (theory 0.545)"},
+  {"path": "img/pairdiff2d-g1.5-n64.png", "label": "pair-diff 2D FREE g=1.5\nwall half 0.391 (theory 0.387)"}
+ ]}

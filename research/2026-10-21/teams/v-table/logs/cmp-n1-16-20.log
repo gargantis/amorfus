@@ -1,0 +1,13 @@
+k0a {"corners":27,"vtxDiff":0.0232,"surfDist":0.0163}
+k0s {"corners":34,"vtxDiff":0.0064,"surfDist":0.0034}
+k1a {"corners":33,"vtxDiff":0.0071,"surfDist":0.0035}
+k1s {"corners":27,"vtxDiff":0.0026,"surfDist":0.002}
+k2a {"corners":31,"vtxDiff":0.0061,"surfDist":0.0027}
+k2s {"corners":32,"vtxDiff":0.0075,"surfDist":0.0056}
+k3a {"corners":36,"vtxDiff":0.0048,"surfDist":0.0024}
+k3s {"corners":36,"vtxDiff":0.0049,"surfDist":0.0024}
+k4a {"corners":35,"vtxDiff":0.0063,"surfDist":0.0032}
+k4s {"corners":35,"vtxDiff":0.008,"surfDist":0.0034}
+k5a {"corners":30,"vtxDiff":0.0067,"surfDist":0.0028}
+k5s {"corners":36,"vtxDiff":0.0057,"surfDist":0.0037}
+MEAN {"corners":392,"vtxDiff":0.0072,"surfDist":0.0041}

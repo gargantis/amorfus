@@ -1,0 +1,13 @@
+10 00001111 FINITE-4 E2c n16 clu: 300 ms, 4 steps, 0 label changes, alive 1/1, vsn [0,0,0] vseam null
+2 00000011 FINITE-4 E2c n16 clu: 181 ms, 4 steps, 640 label changes, alive 1/1, vsn [0,0.1213,0.1213] vseam null
+95 00111111 FINITE-4 E2c n16 clu: 230 ms, 4 steps, 6080 label changes, alive 1/1, vsn [0,-0.2129,-0.2129] vseam null
+249 01111111 FINITE-4 E2c n16 clu: 288 ms, 4 steps, 3782 label changes, alive 1/1, vsn [-0.29,-0.29,-0.29] vseam null
+5 00000111 FINITE-4 E2c n16 clu: 151 ms, 4 steps, 2218 label changes, alive 1/1, vsn [-0.0448,0.1345,-0.0448] vseam null
+35 00011111 FINITE-4 E2c n16 clu: 263 ms, 4 steps, 2220 label changes, alive 1/1, vsn [0.0424,-0.1367,0.0424] vseam null
+1 00000001 FINITE-4 E2c n16 clu: 78 ms, 4 steps, 2017 label changes, alive 1/1, vsn [0.2434,0.2434,0.2434] vseam null
+119 00112211 FINITE-4 E2c n16 clu: 399 ms, 4 steps, 640 label changes, alive 2/2, vsn [0,-0.0923,-0.0855] vseam [0.0094,-0.0031,-0.1505]
+11 00001112 FINITE-4 E2c n16 clu: 283 ms, 4 steps, 1050 label changes, alive 2/2, vsn [-0.0045,0.0095,-0.0045] vseam [0.136,0.062,0.1042]
+12 00001122 FINITE-4 E2c n16 clu: 212 ms, 4 steps, 0 label changes, alive 2/2, vsn [0,0.0157,0] vseam [0.0094,0.0157,0.0097]
+14 00001221 FINITE-4 E2c n16 clu: 332 ms, 4 steps, 308 label changes, alive 4/4, vsn [0,0.0703,0] vseam [0.0094,0.0703,0.0094]
+18 00010111 FINITE-4 E2c n16 clu: 200 ms, 4 steps, 4404 label changes, alive 1/1, vsn [0,0,0] vseam null
+done 12 classes in 8.5 s -> teams/table/res/table/FINITE-4_E2c_n16_clu.json

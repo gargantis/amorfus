@@ -1,0 +1,8 @@
+CAGE-0.25 remove base 5001 ms 84 steps  [{"p":1,"mat":6,"blocks":140,"volume":136.083,"lamRun":0.16629,"lamRender":0.26601}]
+d=1: 5208 ms 84 st | label diffs 340, max dist 0 | probe dD 0 dD0 0 dLab 0 | lam 0.16629 (base 0.16629)
+d=2: 4897 ms 84 st | label diffs 340, max dist 0 | probe dD 0 dD0 0 dLab 0 | lam 0.16629 (base 0.16629)
+d=3: 4861 ms 84 st | label diffs 340, max dist 0 | probe dD 0 dD0 0 dLab 0 | lam 0.16629 (base 0.16629)
+d=4: 4928 ms 84 st | label diffs 340, max dist 0 | probe dD 0 dD0 0 dLab 0 | lam 0.16629 (base 0.16629)
+d=6: 4947 ms 84 st | label diffs 340, max dist 0 | probe dD 0 dD0 0 dLab 0 | lam 0.16629 (base 0.16629)
+d=8: 5013 ms 84 st | label diffs 340, max dist 0 | probe dD 0 dD0 0 dLab 0 | lam 0.16629 (base 0.16629)
+d=10: 6651 ms 84 st | label diffs 340, max dist 0 | probe dD 0 dD0 0 dLab 0 | lam 0.16629 (base 0.16629)

@@ -1,0 +1,5 @@
+superpos sep 1: residual (D0, blocks) 1.166e-1 at [4.958,1.958,2.042]; single effects up to 2.034e-1; label residual cells 900; NEAR (1.5 blocks) residual 1.166e-1 at [4.958,1.958,2.042] label cells 900; pair lam 6:0.16629 7:0.2465
+superpos sep 2: residual (D0, blocks) 2.074e-8 at [5.458,1.958,2.125]; single effects up to 2.034e-1; label residual cells 0; NEAR (1.5 blocks) residual 2.074e-8 at [5.458,1.958,2.125] label cells 0; pair lam 6:0.16629 7:0.28842 7:0.28842
+superpos sep 3: residual (D0, blocks) 0.000e+0 at null; single effects up to 2.034e-1; label residual cells 0; NEAR (1.5 blocks) residual 0.000e+0 at null label cells 0; pair lam 6:0.16629 7:0.28842 7:0.28842
+superpos sep 4: residual (D0, blocks) 0.000e+0 at null; single effects up to 2.034e-1; label residual cells 0; NEAR (1.5 blocks) residual 0.000e+0 at null label cells 0; pair lam 6:0.16629 7:0.28842 7:0.28842
+superpos sep 6: residual (D0, blocks) 0.000e+0 at null; single effects up to 2.034e-1; label residual cells 0; NEAR (1.5 blocks) residual 0.000e+0 at null label cells 0; pair lam 6:0.16629 7:0.28842 7:0.28842

@@ -1,0 +1,1 @@
+{"regime":"FINITE-4","name":"plus5","opts":{"maxSteps":4,"stopAfter":99,"n":16},"ms":151,"steps":4,"converged":false,"lastChanges":[3264,1912,1608,1344],"grid":[80,48,80],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":5,"target":20480,"lambda":0.09401291608810425,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":5,"volume":5}]}

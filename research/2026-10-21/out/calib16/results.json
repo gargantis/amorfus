@@ -1,0 +1,44 @@
+{
+ "regime": {
+  "maxSteps": 300
+ },
+ "runs": {
+  "pair-diff": {
+   "name": "pair-diff",
+   "desc": "two blocks, different materials (double bubble)",
+   "ms": 532,
+   "steps": 23,
+   "converged": true,
+   "lastChanges": [
+    24,
+    32,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    64,
+    48,
+    48
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1609
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1609
+    }
+   ],
+   "clustersStart": 2
+  }
+ }
+}

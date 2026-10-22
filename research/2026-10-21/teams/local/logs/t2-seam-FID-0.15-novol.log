@@ -1,0 +1,9 @@
+seam-a1b1L4: 1555 ms 128 st | 6:8->0 lam 0 | 7:8->0 lam 0
+seam-a2b2L4: 675 ms 27 st | 6:16->14.444 lam 0 | 7:16->14.444 lam 0
+seam-a3b3L4: 992 ms 26 st | 6:24->22.317 lam 0 | 7:24->22.317 lam 0
+seam-a5b5L4: 1301 ms 26 st | 6:40->37.984 lam 0 | 7:40->37.984 lam 0
+seam-a2b5L4: 947 ms 27 st | 6:16->14.444 lam 0 | 7:40->37.984 lam 0
+seam-a5b2L4: 968 ms 27 st | 6:40->37.984 lam 0 | 7:16->14.444 lam 0
+seam-a2b2L8: 1264 ms 27 st | 6:32->30.111 lam 0 | 7:32->30.111 lam 0
+seam-a3b3L6: 1188 ms 26 st | 6:36->34.15 lam 0 | 7:36->34.15 lam 0
+seam-a2b2L4-Ahook: 1277 ms 27 st | 6:40->36.885 lam 0 | 7:16->14.444 lam 0

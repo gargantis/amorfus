@@ -1,0 +1,1663 @@
+{
+ "note": "FID-0.15 physics vs one-step models on new configurations",
+ "runs": {
+  "wall8x4x1": {
+   "n": 16,
+   "origin": null,
+   "blocks": 32,
+   "blocksByMat": {
+    "6": 32
+   },
+   "cells": 737280,
+   "steps": 21,
+   "converged": true,
+   "ms": 2220,
+   "physics": [
+    {
+     "mat": 6,
+     "blocks": 32,
+     "volume": 32,
+     "lambda": 0.0857
+    }
+   ],
+   "models": {
+    "Bx-g20": {
+     "surf": {
+      "n": 942,
+      "mean": 0.0141,
+      "rms": 0.0221,
+      "p95": 0.0551,
+      "max": 0.0551,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.008
+     },
+     "volErrMat": {
+      "6": 0
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 32,
+      "err": 0
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 32,
+       "err": 0
+      }
+     ]
+    },
+    "Bl-g20": {
+     "surf": {
+      "n": 954,
+      "mean": 0.0195,
+      "rms": 0.0246,
+      "p95": 0.0525,
+      "max": 0.0565,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0031
+     },
+     "volErrMat": {
+      "6": 0.0281
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 32,
+      "err": 0.0281
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 32,
+       "err": 0.0281
+      }
+     ]
+    },
+    "Bl-b1s20": {
+     "surf": {
+      "n": 952,
+      "mean": 0.019,
+      "rms": 0.0244,
+      "p95": 0.0523,
+      "max": 0.0523,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0023
+     },
+     "volErrMat": {
+      "6": 0.0259
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 32,
+      "err": 0.0259
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 32,
+       "err": 0.0259
+      }
+     ]
+    },
+    "A0-g20": {
+     "surf": {
+      "n": 934,
+      "mean": 0.0297,
+      "rms": 0.0362,
+      "p95": 0.0759,
+      "max": 0.0759,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0297
+     },
+     "volErrMat": {
+      "6": -0.0535
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 32,
+      "err": -0.0535
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 32,
+       "err": -0.0535
+      }
+     ]
+    }
+   }
+  },
+  "wall8x4x1-AB": {
+   "n": 16,
+   "origin": null,
+   "blocks": 32,
+   "blocksByMat": {
+    "6": 16,
+    "7": 16
+   },
+   "cells": 737280,
+   "steps": 14,
+   "converged": true,
+   "ms": 1594,
+   "physics": [
+    {
+     "mat": 6,
+     "blocks": 16,
+     "volume": 16.001,
+     "lambda": 0.089
+    },
+    {
+     "mat": 7,
+     "blocks": 16,
+     "volume": 16.001,
+     "lambda": 0.089
+    }
+   ],
+   "models": {
+    "Bx-g20": {
+     "surf": {
+      "n": 946,
+      "mean": 0.0124,
+      "rms": 0.0191,
+      "p95": 0.0531,
+      "max": 0.0532,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0053
+     },
+     "volErrMat": {
+      "6": 0,
+      "7": 0
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 16,
+      "err": 0
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 16,
+       "err": 0
+      },
+      {
+       "p": 2,
+       "mat": 7,
+       "blocks": 16,
+       "err": 0
+      }
+     ]
+    },
+    "Bl-g20": {
+     "surf": {
+      "n": 958,
+      "mean": 0.0182,
+      "rms": 0.0229,
+      "p95": 0.0529,
+      "max": 0.056,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0057
+     },
+     "volErrMat": {
+      "6": 0.0278,
+      "7": 0.0278
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 16,
+      "err": 0.0278
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 16,
+       "err": 0.0278
+      },
+      {
+       "p": 2,
+       "mat": 7,
+       "blocks": 16,
+       "err": 0.0278
+      }
+     ]
+    },
+    "Bl-b1s20": {
+     "surf": {
+      "n": 956,
+      "mean": 0.0177,
+      "rms": 0.0227,
+      "p95": 0.0528,
+      "max": 0.0529,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0048
+     },
+     "volErrMat": {
+      "6": 0.0254,
+      "7": 0.0254
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 16,
+      "err": 0.0254
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 16,
+       "err": 0.0254
+      },
+      {
+       "p": 2,
+       "mat": 7,
+       "blocks": 16,
+       "err": 0.0254
+      }
+     ]
+    },
+    "A0-g20": {
+     "surf": {
+      "n": 938,
+      "mean": 0.0297,
+      "rms": 0.035,
+      "p95": 0.0763,
+      "max": 0.0764,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0297
+     },
+     "volErrMat": {
+      "6": -0.0604,
+      "7": -0.0604
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 16,
+      "err": -0.0604
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 16,
+       "err": -0.0604
+      },
+      {
+       "p": 2,
+       "mat": 7,
+       "blocks": 16,
+       "err": -0.0604
+      }
+     ]
+    }
+   }
+  },
+  "overhang": {
+   "n": 12,
+   "origin": null,
+   "blocks": 39,
+   "blocksByMat": {
+    "3": 39
+   },
+   "cells": 423360,
+   "steps": 17,
+   "converged": true,
+   "ms": 968,
+   "physics": [
+    {
+     "mat": 3,
+     "blocks": 39,
+     "volume": 39,
+     "lambda": 0.0774
+    }
+   ],
+   "models": {
+    "Bx-g20": {
+     "surf": {
+      "n": 1045,
+      "mean": 0.0172,
+      "rms": 0.0339,
+      "p95": 0.06,
+      "max": 0.2248,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0031
+     },
+     "volErrMat": {
+      "3": 0
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 39,
+      "err": 0
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 39,
+       "err": 0
+      }
+     ]
+    },
+    "Bl-g20": {
+     "surf": {
+      "n": 1054,
+      "mean": 0.0211,
+      "rms": 0.0369,
+      "p95": 0.0722,
+      "max": 0.2272,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0054
+     },
+     "volErrMat": {
+      "3": 0.0217
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 39,
+      "err": 0.0217
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 39,
+       "err": 0.0217
+      }
+     ]
+    },
+    "Bl-b1s20": {
+     "surf": {
+      "n": 1053,
+      "mean": 0.0216,
+      "rms": 0.0356,
+      "p95": 0.0648,
+      "max": 0.2131,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0046
+     },
+     "volErrMat": {
+      "3": 0.0194
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 39,
+      "err": 0.0194
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 39,
+       "err": 0.0194
+      }
+     ]
+    },
+    "A0-g20": {
+     "surf": {
+      "n": 1041,
+      "mean": 0.0289,
+      "rms": 0.0444,
+      "p95": 0.0773,
+      "max": 0.2509,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0262
+     },
+     "volErrMat": {
+      "3": -0.0571
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 39,
+      "err": -0.0571
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 39,
+       "err": -0.0571
+      }
+     ]
+    }
+   }
+  },
+  "floor8x1x8-holes": {
+   "n": 12,
+   "origin": null,
+   "blocks": 60,
+   "blocksByMat": {
+    "3": 60
+   },
+   "cells": 518400,
+   "steps": 11,
+   "converged": true,
+   "ms": 775,
+   "physics": [
+    {
+     "mat": 3,
+     "blocks": 60,
+     "volume": 60,
+     "lambda": 0.0556
+    }
+   ],
+   "models": {
+    "Bx-g20": {
+     "surf": {
+      "n": 1074,
+      "mean": 0.0153,
+      "rms": 0.022,
+      "p95": 0.0522,
+      "max": 0.1004,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0038
+     },
+     "volErrMat": {
+      "3": 0
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 60,
+      "err": 0
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 60,
+       "err": 0
+      }
+     ]
+    },
+    "Bl-g20": {
+     "surf": {
+      "n": 1079,
+      "mean": 0.0199,
+      "rms": 0.0246,
+      "p95": 0.0517,
+      "max": 0.1029,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0086
+     },
+     "volErrMat": {
+      "3": 0.0321
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 60,
+      "err": 0.0321
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 60,
+       "err": 0.0321
+      }
+     ]
+    },
+    "Bl-b1s20": {
+     "surf": {
+      "n": 1078,
+      "mean": 0.0207,
+      "rms": 0.0245,
+      "p95": 0.0487,
+      "max": 0.0889,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0078
+     },
+     "volErrMat": {
+      "3": 0.0303
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 60,
+      "err": 0.0303
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 60,
+       "err": 0.0303
+      }
+     ]
+    },
+    "A0-g20": {
+     "surf": {
+      "n": 1068,
+      "mean": 0.0242,
+      "rms": 0.0325,
+      "p95": 0.069,
+      "max": 0.1216,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0234
+     },
+     "volErrMat": {
+      "3": -0.0475
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 60,
+      "err": -0.0475
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 60,
+       "err": -0.0475
+      }
+     ]
+    }
+   }
+  },
+  "bar1x1x12": {
+   "n": 16,
+   "origin": null,
+   "blocks": 12,
+   "blocksByMat": {
+    "6": 12
+   },
+   "cells": 516096,
+   "steps": 47,
+   "converged": true,
+   "ms": 2814,
+   "physics": [
+    {
+     "mat": 6,
+     "blocks": 12,
+     "volume": 12,
+     "lambda": 0.1409
+    }
+   ],
+   "models": {
+    "Bx-g20": {
+     "surf": {
+      "n": 772,
+      "mean": 0.0158,
+      "rms": 0.0185,
+      "p95": 0.0362,
+      "max": 0.0385,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0078
+     },
+     "volErrMat": {
+      "6": 0
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 12,
+      "err": 0
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 12,
+       "err": 0
+      }
+     ]
+    },
+    "Bl-g20": {
+     "surf": {
+      "n": 778,
+      "mean": 0.015,
+      "rms": 0.0172,
+      "p95": 0.0286,
+      "max": 0.0317,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0006
+     },
+     "volErrMat": {
+      "6": 0.0313
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 12,
+      "err": 0.0313
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 12,
+       "err": 0.0313
+      }
+     ]
+    },
+    "Bl-b1s20": {
+     "surf": {
+      "n": 776,
+      "mean": 0.017,
+      "rms": 0.0193,
+      "p95": 0.0318,
+      "max": 0.0339,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0011
+     },
+     "volErrMat": {
+      "6": 0.0256
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 12,
+      "err": 0.0256
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 12,
+       "err": 0.0256
+      }
+     ]
+    },
+    "A0-g20": {
+     "surf": {
+      "n": 728,
+      "mean": 0.0513,
+      "rms": 0.0546,
+      "p95": 0.08,
+      "max": 0.085,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0522
+     },
+     "volErrMat": {
+      "6": -0.1545
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 6,
+      "blocks": 12,
+      "err": -0.1545
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 6,
+       "blocks": 12,
+       "err": -0.1545
+      }
+     ]
+    }
+   }
+  },
+  "slab8x3x6-groove": {
+   "n": 12,
+   "origin": null,
+   "blocks": 138,
+   "blocksByMat": {
+    "3": 138
+   },
+   "cells": 691200,
+   "steps": 37,
+   "converged": true,
+   "ms": 3936,
+   "physics": [
+    {
+     "mat": 3,
+     "blocks": 138,
+     "volume": 138,
+     "lambda": 0.0452
+    }
+   ],
+   "models": {
+    "Bx-g20": {
+     "surf": {
+      "n": 1104,
+      "mean": 0.0188,
+      "rms": 0.0526,
+      "p95": 0.0849,
+      "max": 0.3593,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0017
+     },
+     "volErrMat": {
+      "3": 0
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 138,
+      "err": 0
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 138,
+       "err": 0
+      }
+     ]
+    },
+    "Bl-g20": {
+     "surf": {
+      "n": 1106,
+      "mean": 0.0223,
+      "rms": 0.0543,
+      "p95": 0.097,
+      "max": 0.3595,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0051
+     },
+     "volErrMat": {
+      "3": 0.0046
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 138,
+      "err": 0.0046
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 138,
+       "err": 0.0046
+      }
+     ]
+    },
+    "Bl-b1s20": {
+     "surf": {
+      "n": 1102,
+      "mean": 0.0212,
+      "rms": 0.0529,
+      "p95": 0.0921,
+      "max": 0.357,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0043
+     },
+     "volErrMat": {
+      "3": 0.0033
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 138,
+      "err": 0.0033
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 138,
+       "err": 0.0033
+      }
+     ]
+    },
+    "A0-g20": {
+     "surf": {
+      "n": 1101,
+      "mean": 0.0199,
+      "rms": 0.0548,
+      "p95": 0.0797,
+      "max": 0.3741,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0127
+     },
+     "volErrMat": {
+      "3": -0.0171
+     },
+     "worstCluster": {
+      "p": 1,
+      "mat": 3,
+      "blocks": 138,
+      "err": -0.0171
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 3,
+       "blocks": 138,
+       "err": -0.0171
+      }
+     ]
+    }
+   }
+  },
+  "grass-terrace": {
+   "n": 12,
+   "origin": null,
+   "blocks": 224,
+   "blocksByMat": {
+    "1": 64,
+    "2": 160
+   },
+   "cells": 1036800,
+   "steps": 15,
+   "converged": true,
+   "ms": 3868,
+   "physics": [
+    {
+     "mat": 2,
+     "blocks": 160,
+     "volume": 160.015,
+     "lambda": 0.1419
+    },
+    {
+     "mat": 1,
+     "blocks": 64,
+     "volume": 63.941,
+     "lambda": 0.0998
+    }
+   ],
+   "models": {
+    "Bx-g20": {
+     "surf": {
+      "n": 1080,
+      "mean": 0.0155,
+      "rms": 0.0282,
+      "p95": 0.0398,
+      "max": 0.1975,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0129
+     },
+     "volErrMat": {
+      "1": 0,
+      "2": 0
+     },
+     "worstCluster": {
+      "p": 3,
+      "mat": 1,
+      "blocks": 32,
+      "err": -0.0019
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 160,
+       "err": 0
+      },
+      {
+       "p": 2,
+       "mat": 1,
+       "blocks": 32,
+       "err": 0.0018
+      },
+      {
+       "p": 3,
+       "mat": 1,
+       "blocks": 32,
+       "err": -0.0019
+      }
+     ]
+    },
+    "Bl-g20": {
+     "surf": {
+      "n": 1074,
+      "mean": 0.0138,
+      "rms": 0.024,
+      "p95": 0.0329,
+      "max": 0.1893,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0052
+     },
+     "volErrMat": {
+      "1": 0.0199,
+      "2": 0.0036
+     },
+     "worstCluster": {
+      "p": 2,
+      "mat": 1,
+      "blocks": 32,
+      "err": 0.0204
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 160,
+       "err": 0.0036
+      },
+      {
+       "p": 2,
+       "mat": 1,
+       "blocks": 32,
+       "err": 0.0204
+      },
+      {
+       "p": 3,
+       "mat": 1,
+       "blocks": 32,
+       "err": 0.0194
+      }
+     ]
+    },
+    "Bl-b1s20": {
+     "surf": {
+      "n": 1074,
+      "mean": 0.0145,
+      "rms": 0.0243,
+      "p95": 0.0385,
+      "max": 0.1817,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0058
+     },
+     "volErrMat": {
+      "1": 0.0192,
+      "2": 0.0026
+     },
+     "worstCluster": {
+      "p": 2,
+      "mat": 1,
+      "blocks": 32,
+      "err": 0.0208
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 160,
+       "err": 0.0026
+      },
+      {
+       "p": 2,
+       "mat": 1,
+       "blocks": 32,
+       "err": 0.0208
+      },
+      {
+       "p": 3,
+       "mat": 1,
+       "blocks": 32,
+       "err": 0.0176
+      }
+     ]
+    },
+    "A0-g20": {
+     "surf": {
+      "n": 1072,
+      "mean": 0.0304,
+      "rms": 0.0396,
+      "p95": 0.0568,
+      "max": 0.2324,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0288
+     },
+     "volErrMat": {
+      "1": -0.0288,
+      "2": -0.0104
+     },
+     "worstCluster": {
+      "p": 3,
+      "mat": 1,
+      "blocks": 32,
+      "err": -0.0309
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 160,
+       "err": -0.0104
+      },
+      {
+       "p": 2,
+       "mat": 1,
+       "blocks": 32,
+       "err": -0.0268
+      },
+      {
+       "p": 3,
+       "mat": 1,
+       "blocks": 32,
+       "err": -0.0309
+      }
+     ]
+    }
+   }
+  },
+  "terrain-a": {
+   "n": 12,
+   "origin": [
+    -54,
+    54,
+    37
+   ],
+   "blocks": 147,
+   "blocksByMat": {
+    "1": 41,
+    "2": 102,
+    "3": 4
+   },
+   "cells": 839808,
+   "steps": 73,
+   "converged": true,
+   "ms": 25822,
+   "physics": [
+    {
+     "mat": 2,
+     "blocks": 102,
+     "volume": 102,
+     "lambda": 0.0626
+    },
+    {
+     "mat": 3,
+     "blocks": 3,
+     "volume": 3,
+     "lambda": 0.1825
+    },
+    {
+     "mat": 3,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1898
+    },
+    {
+     "mat": 1,
+     "blocks": 41,
+     "volume": 41,
+     "lambda": 0.0783
+    }
+   ],
+   "models": {
+    "Bx-g20": {
+     "surf": {
+      "n": 1071,
+      "mean": 0.0186,
+      "rms": 0.0498,
+      "p95": 0.082,
+      "max": 0.5326,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0046
+     },
+     "volErrMat": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+     },
+     "worstCluster": {
+      "p": 3,
+      "mat": 3,
+      "blocks": 1,
+      "err": -0.0476
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 102,
+       "err": 0
+      },
+      {
+       "p": 2,
+       "mat": 3,
+       "blocks": 3,
+       "err": 0.0159
+      },
+      {
+       "p": 3,
+       "mat": 3,
+       "blocks": 1,
+       "err": -0.0476
+      },
+      {
+       "p": 4,
+       "mat": 1,
+       "blocks": 7,
+       "err": -0.0275
+      },
+      {
+       "p": 5,
+       "mat": 1,
+       "blocks": 22,
+       "err": 0.0088
+      },
+      {
+       "p": 6,
+       "mat": 1,
+       "blocks": 12,
+       "err": 0
+      }
+     ]
+    },
+    "Bl-g20": {
+     "surf": {
+      "n": 1070,
+      "mean": 0.0224,
+      "rms": 0.0509,
+      "p95": 0.0882,
+      "max": 0.5417,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0022
+     },
+     "volErrMat": {
+      "1": 0.0166,
+      "2": 0.0062,
+      "3": 0.0224
+     },
+     "worstCluster": {
+      "p": 3,
+      "mat": 3,
+      "blocks": 1,
+      "err": 0.0574
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 102,
+       "err": 0.0062
+      },
+      {
+       "p": 2,
+       "mat": 3,
+       "blocks": 3,
+       "err": 0.0107
+      },
+      {
+       "p": 3,
+       "mat": 3,
+       "blocks": 1,
+       "err": 0.0574
+      },
+      {
+       "p": 4,
+       "mat": 1,
+       "blocks": 7,
+       "err": 0.0074
+      },
+      {
+       "p": 5,
+       "mat": 1,
+       "blocks": 22,
+       "err": 0.0146
+      },
+      {
+       "p": 6,
+       "mat": 1,
+       "blocks": 12,
+       "err": 0.0255
+      }
+     ]
+    },
+    "Bl-b1s20": {
+     "surf": {
+      "n": 1068,
+      "mean": 0.0221,
+      "rms": 0.0499,
+      "p95": 0.081,
+      "max": 0.5331,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0016
+     },
+     "volErrMat": {
+      "1": 0.0153,
+      "2": 0.0051,
+      "3": 0.0204
+     },
+     "worstCluster": {
+      "p": 3,
+      "mat": 3,
+      "blocks": 1,
+      "err": 0.0588
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 102,
+       "err": 0.0051
+      },
+      {
+       "p": 2,
+       "mat": 3,
+       "blocks": 3,
+       "err": 0.0076
+      },
+      {
+       "p": 3,
+       "mat": 3,
+       "blocks": 1,
+       "err": 0.0588
+      },
+      {
+       "p": 4,
+       "mat": 1,
+       "blocks": 7,
+       "err": 0.0066
+      },
+      {
+       "p": 5,
+       "mat": 1,
+       "blocks": 22,
+       "err": 0.0139
+      },
+      {
+       "p": 6,
+       "mat": 1,
+       "blocks": 12,
+       "err": 0.0231
+      }
+     ]
+    },
+    "A0-g20": {
+     "surf": {
+      "n": 1083,
+      "mean": 0.0345,
+      "rms": 0.0823,
+      "p95": 0.0993,
+      "max": 1,
+      "unmatched": 1,
+      "unmatchedFrac": 0.0009,
+      "bias": -0.0264
+     },
+     "volErrMat": {
+      "1": -0.0621,
+      "2": -0.0073,
+      "3": -0.1627
+     },
+     "worstCluster": {
+      "p": 3,
+      "mat": 3,
+      "blocks": 1,
+      "err": -0.2405
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 102,
+       "err": -0.0073
+      },
+      {
+       "p": 2,
+       "mat": 3,
+       "blocks": 3,
+       "err": -0.1368
+      },
+      {
+       "p": 3,
+       "mat": 3,
+       "blocks": 1,
+       "err": -0.2405
+      },
+      {
+       "p": 4,
+       "mat": 1,
+       "blocks": 7,
+       "err": -0.0988
+      },
+      {
+       "p": 5,
+       "mat": 1,
+       "blocks": 22,
+       "err": -0.0443
+      },
+      {
+       "p": 6,
+       "mat": 1,
+       "blocks": 12,
+       "err": -0.0732
+      }
+     ]
+    }
+   }
+  },
+  "terrain-b": {
+   "n": 12,
+   "origin": [
+    25,
+    18,
+    10
+   ],
+   "blocks": 146,
+   "blocksByMat": {
+    "1": 43,
+    "2": 89,
+    "3": 14
+   },
+   "cells": 979776,
+   "steps": 86,
+   "converged": true,
+   "ms": 36007,
+   "physics": [
+    {
+     "mat": 2,
+     "blocks": 89,
+     "volume": 89,
+     "lambda": 0.0761
+    },
+    {
+     "mat": 3,
+     "blocks": 14,
+     "volume": 13.9994,
+     "lambda": 0.1282
+    },
+    {
+     "mat": 1,
+     "blocks": 43,
+     "volume": 43,
+     "lambda": 0.0694
+    }
+   ],
+   "models": {
+    "Bx-g20": {
+     "surf": {
+      "n": 1013,
+      "mean": 0.0234,
+      "rms": 0.0491,
+      "p95": 0.1037,
+      "max": 0.3786,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0054
+     },
+     "volErrMat": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+     },
+     "worstCluster": {
+      "p": 7,
+      "mat": 1,
+      "blocks": 7,
+      "err": -0.0293
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 89,
+       "err": 0
+      },
+      {
+       "p": 2,
+       "mat": 1,
+       "blocks": 6,
+       "err": -0.013
+      },
+      {
+       "p": 3,
+       "mat": 3,
+       "blocks": 14,
+       "err": 0
+      },
+      {
+       "p": 4,
+       "mat": 1,
+       "blocks": 12,
+       "err": 0.0137
+      },
+      {
+       "p": 5,
+       "mat": 1,
+       "blocks": 8,
+       "err": 0.0169
+      },
+      {
+       "p": 6,
+       "mat": 1,
+       "blocks": 10,
+       "err": -0.0016
+      },
+      {
+       "p": 7,
+       "mat": 1,
+       "blocks": 7,
+       "err": -0.0293
+      }
+     ]
+    },
+    "Bl-g20": {
+     "surf": {
+      "n": 1009,
+      "mean": 0.0267,
+      "rms": 0.0503,
+      "p95": 0.1061,
+      "max": 0.3779,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0026
+     },
+     "volErrMat": {
+      "1": 0.0231,
+      "2": 0.0059,
+      "3": 0.0049
+     },
+     "worstCluster": {
+      "p": 7,
+      "mat": 1,
+      "blocks": 7,
+      "err": 0.0353
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 89,
+       "err": 0.0059
+      },
+      {
+       "p": 2,
+       "mat": 1,
+       "blocks": 6,
+       "err": 0.0194
+      },
+      {
+       "p": 3,
+       "mat": 3,
+       "blocks": 14,
+       "err": 0.0049
+      },
+      {
+       "p": 4,
+       "mat": 1,
+       "blocks": 12,
+       "err": 0.0229
+      },
+      {
+       "p": 5,
+       "mat": 1,
+       "blocks": 8,
+       "err": 0.0265
+      },
+      {
+       "p": 6,
+       "mat": 1,
+       "blocks": 10,
+       "err": 0.0145
+      },
+      {
+       "p": 7,
+       "mat": 1,
+       "blocks": 7,
+       "err": 0.0353
+      }
+     ]
+    },
+    "Bl-b1s20": {
+     "surf": {
+      "n": 1009,
+      "mean": 0.0264,
+      "rms": 0.0493,
+      "p95": 0.1003,
+      "max": 0.3728,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0018
+     },
+     "volErrMat": {
+      "1": 0.0221,
+      "2": 0.0046,
+      "3": 0.0048
+     },
+     "worstCluster": {
+      "p": 7,
+      "mat": 1,
+      "blocks": 7,
+      "err": 0.0318
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 89,
+       "err": 0.0046
+      },
+      {
+       "p": 2,
+       "mat": 1,
+       "blocks": 6,
+       "err": 0.0197
+      },
+      {
+       "p": 3,
+       "mat": 3,
+       "blocks": 14,
+       "err": 0.0048
+      },
+      {
+       "p": 4,
+       "mat": 1,
+       "blocks": 12,
+       "err": 0.0208
+      },
+      {
+       "p": 5,
+       "mat": 1,
+       "blocks": 8,
+       "err": 0.0293
+      },
+      {
+       "p": 6,
+       "mat": 1,
+       "blocks": 10,
+       "err": 0.0123
+      },
+      {
+       "p": 7,
+       "mat": 1,
+       "blocks": 7,
+       "err": 0.0318
+      }
+     ]
+    },
+    "A0-g20": {
+     "surf": {
+      "n": 1007,
+      "mean": 0.0349,
+      "rms": 0.0586,
+      "p95": 0.1159,
+      "max": 0.4038,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.028
+     },
+     "volErrMat": {
+      "1": -0.0638,
+      "2": -0.007,
+      "3": -0.0612
+     },
+     "worstCluster": {
+      "p": 7,
+      "mat": 1,
+      "blocks": 7,
+      "err": -0.103
+     },
+     "clusters": [
+      {
+       "p": 1,
+       "mat": 2,
+       "blocks": 89,
+       "err": -0.007
+      },
+      {
+       "p": 2,
+       "mat": 1,
+       "blocks": 6,
+       "err": -0.0881
+      },
+      {
+       "p": 3,
+       "mat": 3,
+       "blocks": 14,
+       "err": -0.0612
+      },
+      {
+       "p": 4,
+       "mat": 1,
+       "blocks": 12,
+       "err": -0.0418
+      },
+      {
+       "p": 5,
+       "mat": 1,
+       "blocks": 8,
+       "err": -0.0506
+      },
+      {
+       "p": 6,
+       "mat": 1,
+       "blocks": 10,
+       "err": -0.0585
+      },
+      {
+       "p": 7,
+       "mat": 1,
+       "blocks": 7,
+       "err": -0.103
+      }
+     ]
+    }
+   }
+  }
+ }
+}

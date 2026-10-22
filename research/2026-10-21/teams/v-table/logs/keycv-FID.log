@@ -1,0 +1,72 @@
+{
+ "regime": "FID-0.15",
+ "folds": {
+  "0": {
+   "train": 997,
+   "test": 1027,
+   "tabNV": 0.0623,
+   "K8": {
+    "n": 1027,
+    "coverage": 0.982,
+    "meanWithFallback": 0.0437,
+    "meanCovered": 0.0411,
+    "keysInTrain": 37
+   },
+   "K8bin": {
+    "n": 1027,
+    "coverage": 0.997,
+    "meanWithFallback": 0.0469,
+    "meanCovered": 0.0452,
+    "keysInTrain": 15
+   },
+   "K32": {
+    "n": 1027,
+    "coverage": 0.326,
+    "meanWithFallback": 0.0426,
+    "meanCovered": 0.026,
+    "keysInTrain": 658
+   },
+   "K64": {
+    "n": 1027,
+    "coverage": 0.019,
+    "meanWithFallback": 0.0436,
+    "meanCovered": 0.0222,
+    "keysInTrain": 940
+   }
+  },
+  "1": {
+   "train": 1027,
+   "test": 997,
+   "tabNV": 0.0518,
+   "K8": {
+    "n": 997,
+    "coverage": 0.973,
+    "meanWithFallback": 0.0351,
+    "meanCovered": 0.0327,
+    "keysInTrain": 33
+   },
+   "K8bin": {
+    "n": 997,
+    "coverage": 0.994,
+    "meanWithFallback": 0.0352,
+    "meanCovered": 0.0339,
+    "keysInTrain": 13
+   },
+   "K32": {
+    "n": 997,
+    "coverage": 0.296,
+    "meanWithFallback": 0.0367,
+    "meanCovered": 0.0302,
+    "keysInTrain": 617
+   },
+   "K64": {
+    "n": 997,
+    "coverage": 0.022,
+    "meanWithFallback": 0.035,
+    "meanCovered": 0.0225,
+    "keysInTrain": 889
+   }
+  }
+ },
+ "t7": {}
+}

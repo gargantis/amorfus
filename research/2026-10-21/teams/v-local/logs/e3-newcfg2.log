@@ -1,0 +1,30 @@
+wall-stripes-AB Bx-g20: surf mean 0.0147 p95 0.0372 max 0.0447 unm 0 bias -0.0103 | volMat {"6":0.0001,"7":0.0001} | worst cluster {"p":1,"mat":6,"blocks":4,"err":-0.0186}
+wall-stripes-AB Bl-g20: surf mean 0.0131 p95 0.0279 max 0.0341 unm 0 bias 0.005 | volMat {"6":0.0397,"7":0.0397} | worst cluster {"p":2,"mat":7,"blocks":4,"err":0.0432}
+wall-stripes-AB Bl-b1s20: surf mean 0.0143 p95 0.0302 max 0.0347 unm 0 bias 0.0039 | volMat {"6":0.0369,"7":0.0369} | worst cluster {"p":2,"mat":7,"blocks":4,"err":0.041}
+wall-stripes-AB A0-g20: surf mean 0.0509 p95 0.0812 max 0.1072 unm 0 bias -0.0514 | volMat {"6":-0.1018,"7":-0.1018} | worst cluster {"p":1,"mat":6,"blocks":4,"err":-0.1387}
+  wall-stripes-AB: n 16 cells 737280 steps 12 2405 ms, rss 286 MB; physics [{"mat":6,"blocks":4,"volume":4,"lambda":0.1457},{"mat":7,"blocks":4,"volume":4,"lambda":0.1425},{"mat":6,"blocks":4,"volume":4,"lambda":0.1425},{"mat":7,"blocks":4,"volume":4,"lambda":0.1425},{"mat":6,"blocks":4,"volume":4,"lambda":0.1425},{"mat":7,"blocks":4,"volume":4,"lambda":0.1425}]
+floor-checker-AB Bx-g20: surf mean 0.0246 p95 0.0626 max 0.086 unm 0 bias -0.0252 | volMat {"6":0.0005,"7":0.0005} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.0468}
+floor-checker-AB Bl-g20: surf mean 0.0254 p95 0.0567 max 0.0828 unm 0 bias -0.0259 | volMat {"6":-0.0016,"7":-0.0016} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.0156}
+floor-checker-AB Bl-b1s20: surf mean 0.0273 p95 0.0649 max 0.0927 unm 0 bias -0.0277 | volMat {"6":-0.0052,"7":-0.0052} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.023}
+floor-checker-AB A0-g20: surf mean 0.0767 p95 0.1181 max 0.17 unm 0 bias -0.0775 | volMat {"6":-0.1265,"7":-0.1265} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.2126}
+  floor-checker-AB: n 12 cells 331776 steps 8 1589 ms, rss 263 MB; physics [{"mat":6,"blocks":1,"volume":1,"lambda":0.2328},{"mat":7,"blocks":1,"volume":1,"lambda":0.266},{"mat":6,"blocks":1,"volume":1,"lambda":0.265},{"mat":7,"blocks":1,"volume":1,"lambda":0.265},{"mat":6,"blocks":1,"volume":1,"lambda":0.266},{"mat":7,"blocks":1,"volume":1,"lambda":0.2328}]
+bar-alt-AB Bx-g20: surf mean 0.0125 p95 0.029 max 0.0371 unm 0 bias -0.0057 | volMat {"6":0.0002,"7":0.0002} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.0282}
+bar-alt-AB Bl-g20: surf mean 0.0119 p95 0.0247 max 0.0322 unm 0 bias -0.002 | volMat {"6":0.0146,"7":0.0146} | worst cluster {"p":2,"mat":7,"blocks":1,"err":0.0213}
+bar-alt-AB Bl-b1s20: surf mean 0.0148 p95 0.0319 max 0.0403 unm 0 bias -0.0044 | volMat {"6":0.0061,"7":0.0061} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.0231}
+bar-alt-AB A0-g20: surf mean 0.0716 p95 0.1042 max 0.1349 unm 0 bias -0.0728 | volMat {"6":-0.2301,"7":-0.2301} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.2779}
+  bar-alt-AB: n 16 cells 442368 steps 6 656 ms, rss 285 MB; physics [{"mat":6,"blocks":1,"volume":1,"lambda":0.1572},{"mat":7,"blocks":1,"volume":1,"lambda":0.1639},{"mat":6,"blocks":1,"volume":1,"lambda":0.1639},{"mat":7,"blocks":1,"volume":1,"lambda":0.1639},{"mat":6,"blocks":1,"volume":1,"lambda":0.1639},{"mat":7,"blocks":1,"volume":1,"lambda":0.1639}]
+checker3d-4 Bx-g20: surf mean 0.0268 p95 0.0645 max 0.0877 unm 0 bias -0.0272 | volMat {"6":0.0003,"7":0.0003} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.0256}
+checker3d-4 Bl-g20: surf mean 0.0408 p95 0.075 max 0.1068 unm 0 bias -0.0409 | volMat {"6":-0.0192,"7":-0.0192} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.0342}
+checker3d-4 Bl-b1s20: surf mean 0.0428 p95 0.0822 max 0.1163 unm 0 bias -0.0431 | volMat {"6":-0.0214,"7":-0.0214} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.0399}
+checker3d-4 A0-g20: surf mean 0.0786 p95 0.1196 max 0.1721 unm 0 bias -0.0788 | volMat {"6":-0.0703,"7":-0.0703} | worst cluster {"p":1,"mat":6,"blocks":1,"err":-0.1539}
+  checker3d-4: n 12 cells 373248 steps 4 1404 ms, rss 283 MB; physics [{"mat":6,"blocks":1,"volume":0.9994,"lambda":0.2513},{"mat":7,"blocks":1,"volume":1,"lambda":0.266},{"mat":6,"blocks":1,"volume":1,"lambda":0.266},{"mat":7,"blocks":1,"volume":0.9994,"lambda":0.2513},{"mat":7,"blocks":1,"volume":1,"lambda":0.266},{"mat":6,"blocks":1,"volume":1,"lambda":0.2613}]
+diag-staircase-A Bx-g20: surf mean 0.0389 p95 0.1069 max 0.2495 unm 0 bias 0.005 | volMat {"6":0} | worst cluster {"p":6,"mat":6,"blocks":2,"err":-0.0334}
+diag-staircase-A Bl-g20: surf mean 0.0371 p95 0.1191 max 0.2545 unm 0 bias -0.0013 | volMat {"6":-0.0235} | worst cluster {"p":6,"mat":6,"blocks":2,"err":-0.029}
+diag-staircase-A Bl-b1s20: surf mean 0.0353 p95 0.1151 max 0.2481 unm 0 bias -0.0031 | volMat {"6":-0.0304} | worst cluster {"p":6,"mat":6,"blocks":2,"err":-0.037}
+diag-staircase-A A0-g20: surf mean 0.0583 p95 0.2058 max 1 unm 3 bias -0.0396 | volMat {"6":-0.1957} | worst cluster {"p":1,"mat":6,"blocks":2,"err":-0.212}
+  diag-staircase-A: n 12 cells 442368 steps 24 866 ms, rss 277 MB; physics [{"mat":6,"blocks":12,"volume":12,"lambda":0.078}]
+lattice-frame Bx-g20: surf mean 0.0154 p95 0.0426 max 0.0854 unm 0 bias 0.0006 | volMat {"3":0} | worst cluster {"p":1,"mat":3,"blocks":44,"err":0}
+lattice-frame Bl-g20: surf mean 0.02 p95 0.0408 max 0.0792 unm 0 bias 0.01 | volMat {"3":0.0308} | worst cluster {"p":1,"mat":3,"blocks":44,"err":0.0308}
+lattice-frame Bl-b1s20: surf mean 0.0193 p95 0.0388 max 0.0642 unm 0 bias 0.0089 | volMat {"3":0.0273} | worst cluster {"p":1,"mat":3,"blocks":44,"err":0.0273}
+lattice-frame A0-g20: surf mean 0.0349 p95 0.082 max 0.1242 unm 0 bias -0.0345 | volMat {"3":-0.1117} | worst cluster {"p":1,"mat":3,"blocks":44,"err":-0.1117}
+  lattice-frame: n 12 cells 592704 steps 11 678 ms, rss 265 MB; physics [{"mat":3,"blocks":44,"volume":44.0046,"lambda":0.0584}]

@@ -1,0 +1,1 @@
+{"set":"t1","name":"t10s","regime":"FINITE-4","n":12,"ms":4072,"steps":4,"converged":false,"changes":39375,"premerged":5,"alive":3,"lambda":[[2,156,-0.017],[3,204,-0.0035],[1,63,0.0137]],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":33,"oy":23,"oz":21},"dScale":31568,"origin":[33,23,21],"size":[9,8,9],"evalLo":[35,25,23],"evalHi":[40,29,28],"blocks":423}

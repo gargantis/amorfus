@@ -1,0 +1,42 @@
+{
+ "bisect6": {
+  "corners": 17284,
+  "offByMoreThanOneQuantum": 0,
+  "maxAxisDiff": 0.00390625,
+  "ms_cave_mixed_surface": [
+   18.507,
+   8.094,
+   2.844
+  ]
+ },
+ "bisect7": {
+  "corners": 17284,
+  "offByMoreThanOneQuantum": 0,
+  "maxAxisDiff": 0.00390625,
+  "ms_cave_mixed_surface": [
+   13.463,
+   9.464,
+   2.696
+  ]
+ },
+ "bisect8": {
+  "corners": 17284,
+  "offByMoreThanOneQuantum": 0,
+  "maxAxisDiff": 0.00390625,
+  "ms_cave_mixed_surface": [
+   13.89,
+   9.812,
+   2.642
+  ]
+ },
+ "bisect10": {
+  "corners": 17284,
+  "offByMoreThanOneQuantum": 0,
+  "maxAxisDiff": 0.00390625,
+  "ms_cave_mixed_surface": [
+   16.569,
+   12.189,
+   3.041
+  ]
+ }
+}

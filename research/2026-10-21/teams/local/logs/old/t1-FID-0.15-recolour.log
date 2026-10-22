@@ -1,0 +1,8 @@
+FID-0.15 recolour base 4894 ms 45 steps  [{"p":1,"mat":6,"blocks":140,"volume":140,"lamRun":0.17529,"lamRender":0.07076}]
+d=1: 3064 ms 16 st | label diffs 3920, max dist 10.158 | probe dD 0.021 dLab 0 | lam 0.20705/0.34672 (base 0.17529)
+d=2: 2901 ms 16 st | label diffs 3902, max dist 9.18 | probe dD 0.02102 dLab 0 | lam 0.20705/0.34672 (base 0.17529)
+d=3: 2900 ms 16 st | label diffs 3788, max dist 8.207 | probe dD 0.02102 dLab 0 | lam 0.20705/0.34672 (base 0.17529)
+d=4: 2743 ms 16 st | label diffs 3788, max dist 7.241 | probe dD 0.02102 dLab 0 | lam 0.20705/0.34672 (base 0.17529)
+d=6: 2770 ms 16 st | label diffs 3788, max dist 8.207 | probe dD 0.02102 dLab 0 | lam 0.20705/0.34672 (base 0.17529)
+d=8: 3035 ms 16 st | label diffs 3920, max dist 10.158 | probe dD 0.02102 dLab 0 | lam 0.20705/0.34672 (base 0.17529)
+d=10: 2811 ms 16 st | label diffs 3920, max dist 12.125 | probe dD 0.02102 dLab 0 | lam 0.20705/0.34672 (base 0.17529)

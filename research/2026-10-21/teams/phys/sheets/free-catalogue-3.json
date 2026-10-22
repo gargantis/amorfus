@@ -1,0 +1,179 @@
+{
+ "out": "teams/phys/sheets/free-catalogue-3.png",
+ "cols": 6,
+ "cell": [
+  270,
+  203
+ ],
+ "title": "free foam: before / after / slice (FREE regime, n16 or n12, jitter 1e-3) - part 3",
+ "items": [
+  {
+   "path": "teams/phys/free/row-ABB-before.png",
+   "label": "row-ABB: before\n3 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/row-ABB-s1-view.png",
+   "label": "row-ABB: FREE n16 j1e-3 seed1\n-> A1 B2"
+  },
+  {
+   "path": "teams/phys/free/row-ABB-s1-slice.png",
+   "label": "row-ABB: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/L-ABB-before.png",
+   "label": "L-ABB: before\n3 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/L-ABB-s1-view.png",
+   "label": "L-ABB: FREE n16 j1e-3 seed1\n-> A1 B2"
+  },
+  {
+   "path": "teams/phys/free/L-ABB-s1-slice.png",
+   "label": "L-ABB: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/row-AAAB-before.png",
+   "label": "row-AAAB: before\n4 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/row-AAAB-s1-view.png",
+   "label": "row-AAAB: FREE n16 j1e-3 seed1\n-> A3 B1"
+  },
+  {
+   "path": "teams/phys/free/row-AAAB-s1-slice.png",
+   "label": "row-AAAB: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/row-AABB-before.png",
+   "label": "row-AABB: before\n4 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/row-AABB-s1-view.png",
+   "label": "row-AABB: FREE n16 j1e-3 seed1\n-> A2 B2"
+  },
+  {
+   "path": "teams/phys/free/row-AABB-s1-slice.png",
+   "label": "row-AABB: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/L3-ABA-before.png",
+   "label": "L3-ABA: before\n3 blocks, 3 clusters"
+  },
+  {
+   "path": "teams/phys/free/L3-ABA-s1-view.png",
+   "label": "L3-ABA: FREE n16 j1e-3 seed1\n-> B1 A2"
+  },
+  {
+   "path": "teams/phys/free/L3-ABA-s1-slice.png",
+   "label": "L3-ABA: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/slab-dot-before.png",
+   "label": "slab-dot: before\n25 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/slab-dot-s1-view.png",
+   "label": "slab-dot: FREE n16 j1e-3 seed1\n-> B24 A1"
+  },
+  {
+   "path": "teams/phys/free/slab-dot-s1-slice.png",
+   "label": "slab-dot: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/slab-line-before.png",
+   "label": "slab-line: before\n36 blocks, 8 clusters"
+  },
+  {
+   "path": "teams/phys/free/slab-line-s1-view.png",
+   "label": "slab-line: FREE n16 j1e-3 seed1\n-> B15 B15 A6"
+  },
+  {
+   "path": "teams/phys/free/slab-line-s1-slice.png",
+   "label": "slab-line: slice, seed1\nseed2 -> A6 B30(2 parts!)"
+  },
+  {
+   "path": "teams/phys/free/slab-stripe-before.png",
+   "label": "slab-stripe: before\n36 blocks, 3 clusters"
+  },
+  {
+   "path": "teams/phys/free/slab-stripe-s1-view.png",
+   "label": "slab-stripe: FREE n16 j1e-3 seed1\n-> B12 A6 B18"
+  },
+  {
+   "path": "teams/phys/free/slab-stripe-s1-slice.png",
+   "label": "slab-stripe: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/tunnel-before.png",
+   "label": "tunnel: before\n30 blocks, 1 clusters"
+  },
+  {
+   "path": "teams/phys/free/tunnel-s1-view.png",
+   "label": "tunnel: FREE n16 j1e-3 seed1\n-> stone30"
+  },
+  {
+   "path": "teams/phys/free/tunnel-s1-slice.png",
+   "label": "tunnel: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/ball-r2-before.png",
+   "label": "ball-r2: before\n33 blocks, 1 clusters"
+  },
+  {
+   "path": "teams/phys/free/ball-r2-s1-view.png",
+   "label": "ball-r2: FREE n12 j1e-3 seed1\n-> A33"
+  },
+  {
+   "path": "teams/phys/free/ball-r2-s1-slice.png",
+   "label": "ball-r2: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/ball-AB-before.png",
+   "label": "ball-AB: before\n33 blocks, 2 clusters"
+  },
+  {
+   "path": "teams/phys/free/ball-AB-s1-view.png",
+   "label": "ball-AB: FREE n12 j1e-3 seed1\n-> B23 A10"
+  },
+  {
+   "path": "teams/phys/free/ball-AB-s1-slice.png",
+   "label": "ball-AB: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/terrain-step-before.png",
+   "label": "terrain-step: before\n75 blocks, 3 clusters"
+  },
+  {
+   "path": "teams/phys/free/terrain-step-s1-view.png",
+   "label": "terrain-step: FREE n12 j1e-3 seed1\n-> dirt45 C30"
+  },
+  {
+   "path": "teams/phys/free/terrain-step-s1-slice.png",
+   "label": "terrain-step: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/checker-smallA-before.png",
+   "label": "checker-smallA: before\n6 blocks, 4 clusters"
+  },
+  {
+   "path": "teams/phys/free/checker-smallA-s1-view.png",
+   "label": "checker-smallA: FREE n16 j1e-3 seed1\n-> A2 B2 B2"
+  },
+  {
+   "path": "teams/phys/free/checker-smallA-s1-slice.png",
+   "label": "checker-smallA: slice, seed1"
+  },
+  {
+   "path": "teams/phys/free/checker-smallB-before.png",
+   "label": "checker-smallB: before\n6 blocks, 4 clusters"
+  },
+  {
+   "path": "teams/phys/free/checker-smallB-s1-view.png",
+   "label": "checker-smallB: FREE n16 j1e-3 seed1\n-> B2 A2 A2"
+  },
+  {
+   "path": "teams/phys/free/checker-smallB-s1-slice.png",
+   "label": "checker-smallB: slice, seed1"
+  }
+ ]
+}

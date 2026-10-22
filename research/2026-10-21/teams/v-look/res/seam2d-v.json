@@ -1,0 +1,163 @@
+{
+ "note": "2D cross-section of a straight A|B seam in a 6×1 slab (labels); n sub-cells per block, s = 0.2·n",
+ "runs": [
+  {
+   "regime": "FREE",
+   "g": 1,
+   "n": 64,
+   "steps": 100,
+   "converged": true,
+   "ms": 1903,
+   "neumann": {
+    "phi": 30.000000000000004,
+    "opening": 120
+   },
+   "doubleBubble": {
+    "wallX": 2,
+    "wallLength": 1.53125,
+    "R": 0.8773875274310795,
+    "fitRms": 0.003749016875708171,
+    "c": 0.4698410236542152,
+    "phi": 32.37782674631503,
+    "opening": 115.24434650736994,
+    "wallTilt": 0
+   }
+  },
+  {
+   "regime": "FREE",
+   "g": 1,
+   "n": 128,
+   "steps": 112,
+   "converged": true,
+   "ms": 12077,
+   "neumann": {
+    "phi": 30.000000000000004,
+    "opening": 120
+   },
+   "doubleBubble": {
+    "wallX": 2,
+    "wallLength": 1.546875,
+    "R": 0.8832236223725897,
+    "fitRms": 0.0020876812428963416,
+    "c": 0.45745729944369673,
+    "phi": 31.19420655447463,
+    "opening": 117.61158689105073,
+    "wallTilt": 0
+   }
+  },
+  {
+   "regime": "FREE",
+   "g": 1,
+   "n": 256,
+   "steps": 134,
+   "converged": true,
+   "ms": 73296,
+   "neumann": {
+    "phi": 30.000000000000004,
+    "opening": 120
+   },
+   "doubleBubble": {
+    "wallX": 2,
+    "wallLength": 1.5625,
+    "R": 0.8875328590666688,
+    "fitRms": 0.0010985343900626414,
+    "c": 0.44773863084408894,
+    "phi": 30.296544662123814,
+    "opening": 119.40691067575237,
+    "wallTilt": 0
+   }
+  },
+  {
+   "regime": "FID-0.15",
+   "g": 1,
+   "n": 128,
+   "steps": 12,
+   "converged": true,
+   "ms": 1076,
+   "neumann": {
+    "phi": 30.000000000000004,
+    "opening": 120
+   },
+   "groove": {
+    "flatVsOrig": 0.007080078125,
+    "depth": 0.007080078125,
+    "halfWidth": 0.00390625,
+    "angles": [
+     {
+      "window": [
+       0.03,
+       0.15
+      ],
+      "phiL": 0,
+      "phiR": 0,
+      "opening": 180
+     },
+     {
+      "window": [
+       0.05,
+       0.25
+      ],
+      "phiL": 0,
+      "phiR": 0,
+      "opening": 180
+     },
+     {
+      "window": [
+       0.1,
+       0.4
+      ],
+      "phiL": 0,
+      "phiR": 0,
+      "opening": 180
+     }
+    ]
+   }
+  },
+  {
+   "regime": "FID-0.15",
+   "g": 1,
+   "n": 256,
+   "steps": 11,
+   "converged": true,
+   "ms": 6225,
+   "neumann": {
+    "phi": 30.000000000000004,
+    "opening": 120
+   },
+   "groove": {
+    "flatVsOrig": 0.006937662760416741,
+    "depth": 0.006937662760416741,
+    "halfWidth": 0.427734375,
+    "angles": [
+     {
+      "window": [
+       0.03,
+       0.15
+      ],
+      "phiL": 0,
+      "phiR": 0,
+      "opening": 180
+     },
+     {
+      "window": [
+       0.05,
+       0.25
+      ],
+      "phiL": 0,
+      "phiR": 0,
+      "opening": 180
+     },
+     {
+      "window": [
+       0.1,
+       0.4
+      ],
+      "phiL": 0,
+      "phiR": 0,
+      "opening": 180
+     }
+    ]
+   }
+  }
+ ]
+}

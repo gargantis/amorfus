@@ -1,0 +1,19 @@
+solver [rule (pressure-favoured split; ties -> first option)] E 12.91580 conv true t 95.2 sig 6:2 6:2 7:2 adj 0|6,0|7,6|7 contact null
+solver [forced: 7,7 adjacent] E 12.91580 conv true t 95.2 sig 6:2 6:2 7:2 adj 0|6,0|7,6|7 contact null
+solver [forced: 6,6 adjacent] E 12.24326 conv false t 120.0 sig 6:4 7:1 7:1 adj 0|6,0|7,6|7 contact null
+  dist to each solver outcome: [rule (pressure-favou] 0.0209/0.0496 [forced: 7,7 adjacent] 0.0209/0.0496 [forced: 6,6 adjacent] 0.3274/0.7706
+engine n 32 s 0.2 jit 0 seed 1: 42 steps sig 6:2 6:2 7:2 adj 0|6,0|7,6|7 quad 0 E 13.0471 vs exact-rasterised 13.0888 (-0.32%) [exact 12.9158] p 1.026,1.131,1.131 vs 1.108,1.108,1.017 dist mean 0.0209 max 0.0496
+  dist to each solver outcome: [rule (pressure-favou] 0.0222/0.0547 [forced: 7,7 adjacent] 0.0222/0.0547 [forced: 6,6 adjacent] 0.3272/0.7706
+engine n 32 s 0.2 jit 0.001 seed 1: 47 steps sig 6:2 6:2 7:2 adj 0|6,0|7,6|7 quad 0 E 13.0466 vs exact-rasterised 13.0888 (-0.32%) [exact 12.9158] p 1.047,1.152,1.153 vs 1.108,1.108,1.017 dist mean 0.0222 max 0.0547
+  dist to each solver outcome: [rule (pressure-favou] 0.0244/0.0608 [forced: 7,7 adjacent] 0.0244/0.0608 [forced: 6,6 adjacent] 0.3275/0.7706
+engine n 32 s 0.2 jit 0.001 seed 2: 40 steps sig 6:2 6:2 7:2 adj 0|6,0|7,6|7 quad 0 E 13.0657 vs exact-rasterised 13.0888 (-0.18%) [exact 12.9158] p 1.013,1.137,1.142 vs 1.108,1.108,1.017 dist mean 0.0244 max 0.0608
+  dist to each solver outcome: [rule (pressure-favou] 0.0216/0.0620 [forced: 7,7 adjacent] 0.0216/0.0620 [forced: 6,6 adjacent] 0.3277/0.7706
+engine n 32 s 0.2 jit 0.001 seed 3: 46 steps sig 6:2 6:2 7:2 adj 0|6,0|7,6|7 quad 0 E 13.0553 vs exact-rasterised 13.0888 (-0.26%) [exact 12.9158] p 0.990,1.131,1.141 vs 1.108,1.108,1.017 dist mean 0.0216 max 0.0620
+  dist to each solver outcome: [rule (pressure-favou] 0.0114/0.0277 [forced: 7,7 adjacent] 0.0114/0.0277 [forced: 6,6 adjacent] 0.3239/0.7446
+engine n 64 s 0.2 jit 0 seed 1: 79 steps sig 6:2 6:2 7:2 adj 0|6,0|7,6|7 quad 0 E 13.0796 vs exact-rasterised 13.0733 (0.05%) [exact 12.9158] p 1.018,1.089,1.089 vs 1.108,1.108,1.017 dist mean 0.0114 max 0.0277
+  dist to each solver outcome: [rule (pressure-favou] 0.0121/0.0295 [forced: 7,7 adjacent] 0.0121/0.0295 [forced: 6,6 adjacent] 0.3242/0.7479
+engine n 64 s 0.2 jit 0.001 seed 1: 69 steps sig 6:2 6:2 7:2 adj 0|6,0|7,6|7 quad 0 E 13.0791 vs exact-rasterised 13.0733 (0.04%) [exact 12.9158] p 1.010,1.095,1.099 vs 1.108,1.108,1.017 dist mean 0.0121 max 0.0295
+  dist to each solver outcome: [rule (pressure-favou] 0.0127/0.0335 [forced: 7,7 adjacent] 0.0127/0.0335 [forced: 6,6 adjacent] 0.3241/0.7479
+engine n 64 s 0.2 jit 0.001 seed 2: 67 steps sig 6:2 6:2 7:2 adj 0|6,0|7,6|7 quad 0 E 13.0741 vs exact-rasterised 13.0733 (0.01%) [exact 12.9158] p 1.023,1.110,1.112 vs 1.108,1.108,1.017 dist mean 0.0127 max 0.0335
+  dist to each solver outcome: [rule (pressure-favou] 0.1272/0.3303 [forced: 7,7 adjacent] 0.1272/0.3303 [forced: 6,6 adjacent] 0.3393/0.7748
+engine n 64 s 0.1 jit 0 seed 1: 244 steps sig 6:2 6:2 7:2 adj 0|6,0|7,6|7 quad 0 E 13.1618 vs exact-rasterised 13.0733 (0.68%) [exact 12.9158] p 1.069,1.224,1.224 vs 1.108,1.108,1.017 dist mean 0.1272 max 0.3303

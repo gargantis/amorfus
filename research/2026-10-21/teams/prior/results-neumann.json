@@ -1,0 +1,134 @@
+{
+ "experiment": "neumann",
+ "date": "2026-10-21",
+ "engine": "lib/mbo.mjs (unchanged)",
+ "runs": [
+  {
+   "g": 0.5,
+   "n": 32,
+   "steps": 15,
+   "converged": true,
+   "measuredOn": "labels",
+   "wallX": 1,
+   "wallHalf": 0.625,
+   "tipB": 0.9375,
+   "tipA": 0.9375,
+   "theory": {
+    "R": 0.6958,
+    "wallHalf": 0.6737,
+    "tip": 0.8697,
+    "openingDeg": 151
+   },
+   "volumes": [
+    1,
+    1
+   ]
+  },
+  {
+   "g": 1,
+   "n": 32,
+   "steps": 21,
+   "converged": true,
+   "measuredOn": "labels",
+   "wallX": 1,
+   "wallHalf": 0.5313,
+   "tipB": 0.9688,
+   "tipA": 0.9688,
+   "theory": {
+    "R": 0.629,
+    "wallHalf": 0.5447,
+    "tip": 0.9435,
+    "openingDeg": 120
+   },
+   "volumes": [
+    1,
+    1
+   ]
+  },
+  {
+   "g": 1.5,
+   "n": 32,
+   "steps": 7,
+   "converged": true,
+   "measuredOn": "labels",
+   "wallX": 1,
+   "wallHalf": 0.375,
+   "tipB": 1.0625,
+   "tipA": 1.0625,
+   "theory": {
+    "R": 0.5857,
+    "wallHalf": 0.3874,
+    "tip": 1.025,
+    "openingDeg": 82.8
+   },
+   "volumes": [
+    1,
+    1
+   ]
+  },
+  {
+   "g": 0.5,
+   "n": 64,
+   "steps": 29,
+   "converged": true,
+   "measuredOn": "labels",
+   "wallX": 1,
+   "wallHalf": 0.6719,
+   "tipB": 0.8906,
+   "tipA": 0.8906,
+   "theory": {
+    "R": 0.6958,
+    "wallHalf": 0.6737,
+    "tip": 0.8697,
+    "openingDeg": 151
+   },
+   "volumes": [
+    1,
+    1
+   ]
+  },
+  {
+   "g": 1,
+   "n": 64,
+   "steps": 38,
+   "converged": true,
+   "measuredOn": "labels",
+   "wallX": 1,
+   "wallHalf": 0.5469,
+   "tipB": 0.9531,
+   "tipA": 0.9531,
+   "theory": {
+    "R": 0.629,
+    "wallHalf": 0.5447,
+    "tip": 0.9435,
+    "openingDeg": 120
+   },
+   "volumes": [
+    1,
+    1
+   ]
+  },
+  {
+   "g": 1.5,
+   "n": 64,
+   "steps": 20,
+   "converged": true,
+   "measuredOn": "labels",
+   "wallX": 1,
+   "wallHalf": 0.3906,
+   "tipB": 1.0313,
+   "tipA": 1.0313,
+   "theory": {
+    "R": 0.5857,
+    "wallHalf": 0.3874,
+    "tip": 1.025,
+    "openingDeg": 82.8
+   },
+   "volumes": [
+    1,
+    1
+   ]
+  }
+ ],
+ "seconds": 2.2
+}

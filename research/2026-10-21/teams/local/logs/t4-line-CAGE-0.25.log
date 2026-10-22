@@ -1,0 +1,14 @@
+slab-line j0: 10839 ms 56 st | A 6->1 B 2->2 | 6:6 lam 0.13553 7:15 lam 0.12479 7:15 lam 0.12248
+slab-line s1: 58990 ms 227 st | A 6->1 B 2->2 | 6:6 lam 0.14207 7:15 lam 0.11347 7:15 lam 0.1204
+slab-line s2: 36331 ms 195 st | A 6->1 B 2->2 | 6:6 lam 0.14295 7:15 lam 0.11382 7:15 lam 0.11116
+slab-line rev: 7691 ms 54 st | A 6->1 B 2->2 | 7:15 lam 0.12479 7:15 lam 0.12479 6:6 lam 0.13667
+slab-line4 j0: 4609 ms 55 st | A 4->1 B 2->2 | 6:4 lam 0.13739 7:6 lam 0.13938 7:6 lam 0.13938
+slab-line4 s1: 6859 ms 67 st | A 4->1 B 2->2 | 6:4 lam 0.13957 7:6 lam 0.14028 7:6 lam 0.13986
+slab-line4 s2: 9509 ms 73 st | A 4->1 B 2->2 | 6:4 lam 0.13938 7:6 lam 0.13941 7:6 lam 0.13953
+slab-line4 rev: 5901 ms 55 st | A 4->1 B 2->2 | 7:6 lam 0.13938 7:6 lam 0.13938 6:4 lam 0.13739
+slab-antiline j0: 12878 ms 56 st | A 2->2 B 6->1 | 7:6 lam 0.13553 6:15 lam 0.12479 6:15 lam 0.12248
+slab-antiline s1: 57330 ms 227 st | A 2->2 B 6->1 | 7:6 lam 0.14207 6:15 lam 0.11347 6:15 lam 0.1204
+slab-antiline s2: 46726 ms 195 st | A 2->2 B 6->1 | 7:6 lam 0.14295 6:15 lam 0.11382 6:15 lam 0.11116
+slab-antiline rev: 9862 ms 54 st | A 2->2 B 6->1 | 6:15 lam 0.12479 6:15 lam 0.12479 7:6 lam 0.13667
+slab-line-2high j0: 16365 ms 44 st | A 6->1 B 2->2 | 6:12 lam 0.12952 7:30 lam 0.1194 7:30 lam 0.11893
+slab-line-2high s1: 22277 ms 62 st | A 6->1 B 2->2 | 6:12 lam 0.12704 7:30 lam 0.11741 7:30 lam 0.11469

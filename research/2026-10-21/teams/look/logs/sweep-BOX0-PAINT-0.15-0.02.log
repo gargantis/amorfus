@@ -1,0 +1,18 @@
+BOX0-PAINT-0.15-0.02 single: 193 ms, 6 steps, Δ 0.063, phases {"6":1}→{"6":1}, rss 73 MB
+BOX0-PAINT-0.15-0.02 pair-same: 159 ms, 8 steps, Δ 0.070, phases {"6":1}→{"6":1}, rss 92 MB
+BOX0-PAINT-0.15-0.02 pair-diff: 160 ms, 7 steps, Δ 0.051, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 87 MB
+BOX0-PAINT-0.15-0.02 L3-ABC: 316 ms, 14 steps, Δ 0.050, phases {"1":1,"6":1,"7":1}→{"1":1,"6":1,"7":1}, rss 103 MB
+BOX0-PAINT-0.15-0.02 sq2-AABB: 180 ms, 8 steps, Δ 0.035, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 130 MB
+BOX0-PAINT-0.15-0.02 cube2-same: 250 ms, 10 steps, Δ 0.051, phases {"6":1}→{"6":1}, rss 142 MB
+BOX0-PAINT-0.15-0.02 cube2-oneB: 1655 ms, 34 steps, Δ 0.069, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 136 MB
+BOX0-PAINT-0.15-0.02 stairs: 509 ms, 13 steps, Δ 0.037, phases {"6":1}→{"6":1}, rss 136 MB
+BOX0-PAINT-0.15-0.02 slab-dot: 4045 ms, 42 steps, Δ 0.020, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 158 MB
+BOX0-PAINT-0.15-0.02 slab-line: 8926 ms, 34 steps, Δ 0.077, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 188 MB
+BOX0-PAINT-0.15-0.02 slab-stripe: 3159 ms, 28 steps, Δ 0.011, phases {"6":1,"7":2}→{"6":1,"7":2}, rss 192 MB
+BOX0-PAINT-0.15-0.02 terrain-step: 14129 ms, 38 steps, Δ 0.034, phases {"1":2,"2":1}→{"1":1,"2":1}, rss 215 MB
+BOX0-PAINT-0.15-0.02 tunnel: 1386 ms, 19 steps, Δ 0.037, phases {"3":1}→{"3":1}, rss 221 MB
+BOX0-PAINT-0.15-0.02 pillar3: 179 ms, 11 steps, Δ 0.070, phases {"6":1}→{"6":1}, rss 221 MB
+BOX0-PAINT-0.15-0.02 ring8: 456 ms, 16 steps, Δ 0.070, phases {"6":1}→{"6":1}, rss 221 MB
+BOX0-PAINT-0.15-0.02 sq2-same: 187 ms, 10 steps, Δ 0.043, phases {"6":1}→{"6":1}, rss 221 MB
+BOX0-PAINT-0.15-0.02 slab-halves: 3234 ms, 28 steps, Δ 0.011, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 221 MB
+BOX0-PAINT-0.15-0.02 wall 53.50 s maxrss 216364 KB

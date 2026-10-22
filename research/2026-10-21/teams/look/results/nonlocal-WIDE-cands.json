@@ -1,0 +1,239 @@
+{
+ "note": "tunnel alone / with an attached 1x3 pillar on the roof corner / with the pillar detached by a 1-block gap",
+ "runs": [
+  {
+   "regime": "BOX0-PAINT-0.1-0.02",
+   "scene": "alone",
+   "vsAlone": null,
+   "steps": 43,
+   "ms": 3176,
+   "cells": 414720,
+   "lambdas": [
+    0.0478
+   ],
+   "clearCells": {
+    "clearHeightAtW": 0,
+    "clearWidthAtH": 0.6666666666666666,
+    "pass": false
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.1-0.02",
+   "scene": "barAttached",
+   "vsAlone": {
+    "cellsChanged": 2168,
+    "volumeChanged": 1.2546296296296293,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 1.0555555555555762,
+     "0_5to1_5": 0.01157407407407407,
+     "1_5to2_5": 0,
+     "ge2_5": 0.18749999999999914
+    },
+    "maxDistance": 5.958333333333333
+   },
+   "steps": 61,
+   "ms": 5518,
+   "cells": 622080,
+   "lambdas": [
+    0.0709
+   ],
+   "clearCells": {
+    "clearHeightAtW": 0,
+    "clearWidthAtH": 0.6666666666666666,
+    "pass": false
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.1-0.02",
+   "scene": "barDetached",
+   "vsAlone": {
+    "cellsChanged": 0,
+    "volumeChanged": 0,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 0,
+     "0_5to1_5": 0,
+     "1_5to2_5": 0,
+     "ge2_5": 0
+    },
+    "maxDistance": 0
+   },
+   "steps": 43,
+   "ms": 3642,
+   "cells": 673920,
+   "lambdas": [
+    0.0478,
+    0.1646
+   ],
+   "clearCells": {
+    "clearHeightAtW": 0,
+    "clearWidthAtH": 0.6666666666666666,
+    "pass": false
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.15-0.02",
+   "scene": "alone",
+   "vsAlone": null,
+   "steps": 10,
+   "ms": 768,
+   "cells": 414720,
+   "lambdas": [
+    0.0671
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1.5,
+    "clearWidthAtH": 0.6666666666666666,
+    "pass": false
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.15-0.02",
+   "scene": "barAttached",
+   "vsAlone": {
+    "cellsChanged": 1240,
+    "volumeChanged": 0.7175925925925926,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 0.6712962962963062,
+     "0_5to1_5": 0,
+     "1_5to2_5": 0,
+     "ge2_5": 0.04629629629629633
+    },
+    "maxDistance": 5.958333333333333
+   },
+   "steps": 13,
+   "ms": 1201,
+   "cells": 622080,
+   "lambdas": [
+    0.0671
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1.5,
+    "clearWidthAtH": 0.6666666666666666,
+    "pass": false
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.15-0.02",
+   "scene": "barDetached",
+   "vsAlone": {
+    "cellsChanged": 0,
+    "volumeChanged": 0,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 0,
+     "0_5to1_5": 0,
+     "1_5to2_5": 0,
+     "ge2_5": 0
+    },
+    "maxDistance": 0
+   },
+   "steps": 10,
+   "ms": 944,
+   "cells": 673920,
+   "lambdas": [
+    0.0671,
+    0.1986
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1.5,
+    "clearWidthAtH": 0.6666666666666666,
+    "pass": false
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "alone",
+   "vsAlone": null,
+   "steps": 24,
+   "ms": 2170,
+   "cells": 414720,
+   "lambdas": [
+    0.0422
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1.166666666666667,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.25,
+   "roof": 2.75,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "barAttached",
+   "vsAlone": {
+    "cellsChanged": 7368,
+    "volumeChanged": 4.263888888888888,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 0.262152777777776,
+     "0_5to1_5": 0.013310185185185178,
+     "1_5to2_5": 0,
+     "ge2_5": 3.98842592592603
+    },
+    "maxDistance": 5.958333333333333
+   },
+   "steps": 117,
+   "ms": 9920,
+   "cells": 622080,
+   "lambdas": [
+    0.061
+   ],
+   "clearCells": {
+    "clearHeightAtW": 0,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": null,
+   "roof": null,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "barDetached",
+   "vsAlone": {
+    "cellsChanged": 0,
+    "volumeChanged": 0,
+    "volumeByDistanceFromAttachment": {
+     "lt0_5": 0,
+     "0_5to1_5": 0,
+     "1_5to2_5": 0,
+     "ge2_5": 0
+    },
+    "maxDistance": 0
+   },
+   "steps": 24,
+   "ms": 2422,
+   "cells": 673920,
+   "lambdas": [
+    0.0422,
+    0.1986
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1.166666666666667,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.25,
+   "roof": 2.75,
+   "outerTopY": 4
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+W1-swap-T1-h0.04-g1-hold0.05 206 ms {"converged":false,"t":1.001,"E":42.66061,"contact":null}
+   {"t":0.008,"kind":"decide","at":[0,0],"options":[{"mats":[6,6],"rate":1.41485},{"mats":[7,7],"rate":1.41357}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[0,0],"mats":[6,6],"rate":1.41485}
+W1-bar2-T1-h0.04-g1-hold0.05 163 ms {"converged":false,"t":1.004,"E":38.67056,"contact":null}
+   {"t":0.008,"kind":"decide","at":[0,0],"options":[{"mats":[7,7],"rate":1.41479},{"mats":[6,6],"rate":1.41363}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[0,0],"mats":[7,7],"rate":1.41479}
+W1-blob4-T1-h0.04-g1-hold0.05 191 ms {"converged":false,"t":1.004,"E":50.63406,"contact":null}
+   {"t":0.008,"kind":"decide","at":[0,0],"options":[{"mats":[7,7],"rate":1.41494},{"mats":[6,6],"rate":1.41349}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[0,0],"mats":[7,7],"rate":1.41494}
+L2-T1-h0.04-g1-hold0.05 206 ms {"converged":false,"t":1.004,"E":42.27843,"contact":null}
+   {"t":0.008,"kind":"decide","at":[-2,-1],"options":[{"mats":[6,6],"rate":1.41662},{"mats":[0,0],"rate":1.4118}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[-2,-1],"mats":[6,6],"rate":1.41662}
+   {"t":0.008,"kind":"decide","at":[4,-1],"options":[{"mats":[7,7],"rate":1.41849},{"mats":[0,0],"rate":1.40993}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[4,-1],"mats":[7,7],"rate":1.41849}
+   {"t":0.008,"kind":"decide","at":[2,1],"options":[{"mats":[7,7],"rate":1.41503},{"mats":[6,6],"rate":1.41339}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[2,1],"mats":[7,7],"rate":1.41503}
+   {"t":0.008,"kind":"decide","at":[1,2],"options":[{"mats":[7,7],"rate":1.41599},{"mats":[0,0],"rate":1.41243}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[1,2],"mats":[7,7],"rate":1.41599}
+   {"t":0.008,"kind":"decide","at":[4,2],"options":[{"mats":[6,6],"rate":1.41678},{"mats":[0,0],"rate":1.41164}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[4,2],"mats":[6,6],"rate":1.41678}
+   {"t":0.008,"kind":"decide","at":[0,3],"options":[{"mats":[7,7],"rate":1.41738},{"mats":[0,0],"rate":1.41104}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[0,3],"mats":[7,7],"rate":1.41738}
+L2-swap-T1-h0.04-g1-hold0.05 199 ms {"converged":false,"t":1.004,"E":42.27843,"contact":null}
+   {"t":0.008,"kind":"decide","at":[-2,-1],"options":[{"mats":[7,7],"rate":1.41662},{"mats":[0,0],"rate":1.4118}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[-2,-1],"mats":[7,7],"rate":1.41662}
+   {"t":0.008,"kind":"decide","at":[4,-1],"options":[{"mats":[6,6],"rate":1.41849},{"mats":[0,0],"rate":1.40993}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[4,-1],"mats":[6,6],"rate":1.41849}
+   {"t":0.008,"kind":"decide","at":[2,1],"options":[{"mats":[6,6],"rate":1.41503},{"mats":[7,7],"rate":1.41339}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[2,1],"mats":[6,6],"rate":1.41503}
+   {"t":0.008,"kind":"decide","at":[1,2],"options":[{"mats":[6,6],"rate":1.41599},{"mats":[0,0],"rate":1.41243}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[1,2],"mats":[6,6],"rate":1.41599}
+   {"t":0.008,"kind":"decide","at":[4,2],"options":[{"mats":[7,7],"rate":1.41678},{"mats":[0,0],"rate":1.41164}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[4,2],"mats":[7,7],"rate":1.41678}
+   {"t":0.008,"kind":"decide","at":[0,3],"options":[{"mats":[6,6],"rate":1.41738},{"mats":[0,0],"rate":1.41104}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[0,3],"mats":[6,6],"rate":1.41738}
+L2-shortA-T1-h0.04-g1-hold0.05 214 ms {"converged":false,"t":1.006,"E":40.67746,"contact":null}
+   {"t":0.008,"kind":"decide","at":[7,-4],"options":[{"mats":[7,7],"rate":1.41786},{"mats":[0,0],"rate":1.41056}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[7,-4],"mats":[7,7],"rate":1.41786}
+   {"t":0.008,"kind":"decide","at":[1,2],"options":[{"mats":[7,7],"rate":1.41735},{"mats":[0,0],"rate":1.41107}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[1,2],"mats":[7,7],"rate":1.41735}
+   {"t":0.008,"kind":"decide","at":[2,1],"options":[{"mats":[6,6],"rate":1.41505},{"mats":[7,7],"rate":1.41338}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[2,1],"mats":[6,6],"rate":1.41505}
+   {"t":0.008,"kind":"decide","at":[0,3],"options":[{"mats":[7,7],"rate":1.41682},{"mats":[0,0],"rate":1.41161}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[0,3],"mats":[7,7],"rate":1.41682}
+   {"t":0.008,"kind":"decide","at":[-1,4],"options":[{"mats":[7,7],"rate":1.41762},{"mats":[0,0],"rate":1.4108}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[-1,4],"mats":[7,7],"rate":1.41762}
+LX-6x6-T1-h0.04-g1-hold0.05 184 ms {"converged":false,"t":1.002,"E":36.05047,"contact":null}
+   {"t":0.008,"kind":"decide","at":[-2,-2],"options":[{"mats":[6,6],"rate":1.41786},{"mats":[0,0],"rate":1.41056}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[-2,-2],"mats":[6,6],"rate":1.41786}
+   {"t":0.008,"kind":"decide","at":[2,-2],"options":[{"mats":[7,7],"rate":1.41849},{"mats":[0,0],"rate":1.40992}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[2,-2],"mats":[7,7],"rate":1.41849}
+   {"t":0.008,"kind":"decide","at":[-1,1],"options":[{"mats":[7,7],"rate":1.41741},{"mats":[0,0],"rate":1.41101}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[-1,1],"mats":[7,7],"rate":1.41741}
+   {"t":0.008,"kind":"decide","at":[0,0],"options":[{"mats":[6,6],"rate":1.41502},{"mats":[7,7],"rate":1.41341}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[0,0],"mats":[6,6],"rate":1.41502}
+   {"t":0.008,"kind":"decide","at":[1,1],"options":[{"mats":[6,6],"rate":1.41603},{"mats":[0,0],"rate":1.41239}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[1,1],"mats":[6,6],"rate":1.41603}
+   {"t":0.008,"kind":"decide","at":[-2,2],"options":[{"mats":[7,7],"rate":1.41729},{"mats":[0,0],"rate":1.41113}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[-2,2],"mats":[7,7],"rate":1.41729}
+   {"t":0.008,"kind":"decide","at":[2,2],"options":[{"mats":[6,6],"rate":1.41737},{"mats":[0,0],"rate":1.41105}],"decided":true,"pick":[6,6]}
+LX-8x2-T1-h0.04-g1-hold0.05 153 ms {"converged":false,"t":1.002,"E":30.07701,"contact":null}
+   {"t":0.008,"kind":"decide","at":[-3,-3],"options":[{"mats":[6,6],"rate":1.41786},{"mats":[0,0],"rate":1.41056}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[-3,-3],"mats":[6,6],"rate":1.41786}
+   {"t":0.008,"kind":"decide","at":[0,0],"options":[{"mats":[7,7],"rate":1.41537},{"mats":[6,6],"rate":1.41306}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[0,0],"mats":[7,7],"rate":1.41537}
+   {"t":0.008,"kind":"decide","at":[1,1],"options":[{"mats":[6,6],"rate":1.41882},{"mats":[0,0],"rate":1.40959}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[1,1],"mats":[6,6],"rate":1.41882}
+   {"t":0.008,"kind":"decide","at":[2,2],"options":[{"mats":[6,6],"rate":1.41629},{"mats":[0,0],"rate":1.41213}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[2,2],"mats":[6,6],"rate":1.41629}
+   {"t":0.008,"kind":"decide","at":[3,3],"options":[{"mats":[6,6],"rate":1.4176},{"mats":[0,0],"rate":1.41082}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[3,3],"mats":[6,6],"rate":1.4176}
+LX-10x4-T1-h0.04-g1-hold0.05 205 ms {"converged":false,"t":1.001,"E":42.84654,"contact":null}
+   {"t":0.008,"kind":"decide","at":[-4,-4],"options":[{"mats":[6,6],"rate":1.41786},{"mats":[0,0],"rate":1.41056}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[-4,-4],"mats":[6,6],"rate":1.41786}
+   {"t":0.008,"kind":"decide","at":[1,-1],"options":[{"mats":[7,7],"rate":1.41824},{"mats":[0,0],"rate":1.41018}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[1,-1],"mats":[7,7],"rate":1.41824}
+   {"t":0.008,"kind":"decide","at":[0,0],"options":[{"mats":[6,6],"rate":1.41501},{"mats":[7,7],"rate":1.41342}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[0,0],"mats":[6,6],"rate":1.41501}
+   {"t":0.008,"kind":"decide","at":[-1,1],"options":[{"mats":[7,7],"rate":1.41886},{"mats":[0,0],"rate":1.40956}],"decided":true,"pick":[7,7]}
+   {"t":0.008,"kind":"split","at":[-1,1],"mats":[7,7],"rate":1.41886}
+   {"t":0.008,"kind":"decide","at":[1,1],"options":[{"mats":[6,6],"rate":1.41567},{"mats":[0,0],"rate":1.41275}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[1,1],"mats":[6,6],"rate":1.41567}
+   {"t":0.008,"kind":"decide","at":[2,2],"options":[{"mats":[6,6],"rate":1.41672},{"mats":[0,0],"rate":1.4117}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[2,2],"mats":[6,6],"rate":1.41672}
+   {"t":0.008,"kind":"decide","at":[3,3],"options":[{"mats":[6,6],"rate":1.41698},{"mats":[0,0],"rate":1.41144}],"decided":true,"pick":[6,6]}
+checkerSmallA-T1-h0.04-g1-hold0.05 122 ms {"converged":false,"t":1.008,"E":14.29209,"contact":null}
+   {"t":0.008,"kind":"decide","at":[1,1],"options":[{"mats":[6,6],"rate":1.41568},{"mats":[7,7],"rate":1.41274}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[1,1],"mats":[6,6],"rate":1.41568}
+diagEdge-T1-h0.04-g1-hold0.05 77 ms {"converged":false,"t":1.003,"E":6.4624,"contact":null}
+   {"t":0.008,"kind":"decide","at":[1,1],"options":[{"mats":[6,6],"rate":1.41858},{"mats":[0,0],"rate":1.40983}],"decided":true,"pick":[6,6]}
+   {"t":0.008,"kind":"split","at":[1,1],"mats":[6,6],"rate":1.41858}
+sq2checker-T1-h0.04-g1-hold0.05 97 ms {"converged":false,"t":1.005,"E":10.97673,"contact":null}
+   {"t":0.0504,"kind":"decide","at":[1,1],"options":[{"mats":[7,7],"rate":1.41421},{"mats":[6,6],"rate":1.41421}],"decided":false,"pick":[6,6]}
+   {"t":0.0504,"kind":"split","at":[1,1],"mats":[6,6],"rate":1.41421}

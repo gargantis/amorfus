@@ -1,0 +1,46 @@
+{
+ "cfg": "lineToBlob",
+ "X": [
+  3,
+  3
+ ],
+ "n": 32,
+ "regime": "FREE",
+ "g": 1,
+ "s_b": 0.2,
+ "runs": [
+  {
+   "v": "id",
+   "steps": 130,
+   "converged": true,
+   "ms": 4955,
+   "rule4": 6,
+   "size": 6,
+   "verdict": "both",
+   "geo": "both",
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 42,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-3,-3:6 -2,-2:both -1,-1:both 1,1:both 2,2:both",
+   "phases": "7:30 6:15",
+   "firstMerges": [
+    1,
+    42
+   ]
+  }
+ ],
+ "tally": {
+  "sym/rev:both/both": 1
+ }
+}

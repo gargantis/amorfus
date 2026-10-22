@@ -1,0 +1,8 @@
+FID-0.05 remove base 826 ms 7 steps  [{"p":1,"mat":6,"blocks":140,"volume":139.241,"lamRun":0.21629,"lamRender":0.26601}]
+d=1: 1054 ms 11 st | label diffs 416, max dist 10.144 | probe dD -0.01775 dD0 0 dLab 0 | lam 0.19847 (base 0.21629)
+d=2: 1048 ms 11 st | label diffs 416, max dist 9.164 | probe dD -0.01775 dD0 0 dLab 0 | lam 0.19847 (base 0.21629)
+d=3: 966 ms 11 st | label diffs 416, max dist 8.189 | probe dD -0.01775 dD0 0 dLab 0 | lam 0.19847 (base 0.21629)
+d=4: 991 ms 11 st | label diffs 416, max dist 7.221 | probe dD -0.01775 dD0 0 dLab 0 | lam 0.19847 (base 0.21629)
+d=6: 978 ms 11 st | label diffs 416, max dist 8.189 | probe dD -0.01775 dD0 0 dLab 0 | lam 0.19847 (base 0.21629)
+d=8: 1054 ms 11 st | label diffs 416, max dist 10.144 | probe dD -0.01775 dD0 0 dLab 0 | lam 0.19847 (base 0.21629)
+d=10: 956 ms 11 st | label diffs 416, max dist 12.113 | probe dD -0.01775 dD0 0 dLab 0 | lam 0.19847 (base 0.21629)

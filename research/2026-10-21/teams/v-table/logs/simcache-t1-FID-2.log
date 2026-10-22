@@ -1,0 +1,29 @@
+t0a: cached
+t0b: cached
+t0s: cached
+t1a: cached
+t1b: cached
+t1s: cached
+t2a: cached
+t2b: cached
+t2s: cached
+t3a: cached
+t3b: cached
+t3s: cached
+t4a: cached
+t4b: cached
+t1 t4s FID-0.15 n12: grid 108x96x108, 67 steps, 56537 ms, rss 245 MB
+t1 t5a FID-0.15 n12: grid 108x96x108, 150 steps (not converged), 55546 ms, rss 259 MB
+t1 t5b FID-0.15 n12: grid 108x96x108, 34 steps, 20307 ms, rss 278 MB
+t1 t5s FID-0.15 n12: grid 108x96x108, 80 steps, 51290 ms, rss 249 MB
+t1 t6a FID-0.15 n12: grid 108x96x108, 67 steps, 18793 ms, rss 254 MB
+t1 t6b FID-0.15 n12: grid 108x96x108, 31 steps, 15055 ms, rss 254 MB
+t1 t6s FID-0.15 n12: grid 108x96x108, 34 steps, 19044 ms, rss 250 MB
+t1 t7a FID-0.15 n12: grid 108x96x108, 37 steps, 8044 ms, rss 253 MB
+t1 t7b FID-0.15 n12: grid 108x96x108, 71 steps, 16077 ms, rss 251 MB
+t1 t7s FID-0.15 n12: grid 108x96x108, 87 steps, 69127 ms, rss 251 MB
+t1 t8a FID-0.15 n12: grid 108x96x108, 67 steps, 30795 ms, rss 251 MB
+t1 t8b FID-0.15 n12: grid 108x96x108, 60 steps, 36933 ms, rss 251 MB
+t1 t8s FID-0.15 n12: grid 108x96x108, 94 steps, 60885 ms, rss 252 MB
+t1 t9a FID-0.15 n12: grid 108x96x108, 74 steps, 74166 ms, rss 260 MB
+t1 t9b FID-0.15 n12: grid 108x96x108, 48 steps, 39071 ms, rss 266 MB

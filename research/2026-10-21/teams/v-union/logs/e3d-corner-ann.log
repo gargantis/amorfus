@@ -1,0 +1,8 @@
+diag-corner 2 blocks; 0 X edges
+ann1    118 st 4286 ms | roots {"6":["2"]} | merges at 1
+ann2    113 st 3784 ms | roots {"6":["2"]} | merges at 1
+ann3    110 st 4003 ms | roots {"6":["2"]} | merges at 1
+cube2-cornerA 8 blocks; 0 X edges
+ann1    118 st 13649 ms | roots {"6":["2"],"7":["6"]} | merges at 1
+ann2    113 st 12837 ms | roots {"6":["2"],"7":["6"]} | merges at 1
+ann3    114 st 12197 ms | roots {"6":["2"],"7":["6"]} | merges at 1

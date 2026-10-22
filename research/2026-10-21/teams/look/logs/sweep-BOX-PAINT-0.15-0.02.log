@@ -1,0 +1,10 @@
+BOX-PAINT-0.15-0.02 slab-line: 10099 ms, 45 steps, Δ 0.109, phases {"6":6,"7":2}→{"6":1,"7":2}, rss 161 MB
+BOX-PAINT-0.15-0.02 slab-dot: 1008 ms, 7 steps, Δ 0.011, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 154 MB
+BOX-PAINT-0.15-0.02 slab-stripe: 6368 ms, 32 steps, Δ 0.039, phases {"6":1,"7":2}→{"6":1,"7":2}, rss 176 MB
+BOX-PAINT-0.15-0.02 slab-halves: 3250 ms, 25 steps, Δ 0.040, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 181 MB
+BOX-PAINT-0.15-0.02 pair-diff: 166 ms, 6 steps, Δ 0.055, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 184 MB
+BOX-PAINT-0.15-0.02 L3-ABC: 446 ms, 14 steps, Δ 0.053, phases {"1":1,"6":1,"7":1}→{"1":1,"6":1,"7":1}, rss 184 MB
+BOX-PAINT-0.15-0.02 sq2-AABB: 302 ms, 11 steps, Δ 0.063, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 184 MB
+BOX-PAINT-0.15-0.02 cube2-oneB: 1279 ms, 20 steps, Δ 0.068, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 189 MB
+BOX-PAINT-0.15-0.02 terrain-step: 12733 ms, 27 steps, Δ 0.039, phases {"1":2,"2":1}→{"1":1,"2":1}, rss 217 MB
+BOX-PAINT-0.15-0.02 wall 44.09 s maxrss 212112 KB

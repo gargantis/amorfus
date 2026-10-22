@@ -1,0 +1,20 @@
+pillar-alone: 171 ms 7 st | 6:3->3 lam 0.24182
+pillar-on-plate3: 528 ms 14 st | 6:12->12 lam 0.13066
+pillar-on-plate5: 1212 ms 23 st | 6:28->27.998 lam 0.12863
+pillar-on-plate7: 1438 ms 17 st | 6:52->52 lam 0.1289
+pillar-alone: 143 ms 23 st | 6:3->0 lam 0
+pillar-on-plate3: 614 ms 70 st | 6:12->0 lam 0
+pillar-on-plate5: 2358 ms 177 st | 6:28->0 lam 0
+pillar-on-plate7: 7478 ms 300 st NC | 6:52->4.563 lam 0
+pillar-alone: 223 ms 8 st | 6:3->3 lam 0.21768
+pillar-on-plate3: 1456 ms 56 st | 6:12->12 lam 0.12584
+pillar-on-plate5: 4758 ms 100 st | 6:28->28 lam 0.0999
+pillar-on-plate7: 8967 ms 126 st | 6:52->52 lam 0.10224
+pillar-alone: 152 ms 4 st NC | 6:3->2.995 lam 0.20903
+pillar-on-plate3: 164 ms 4 st NC | 6:12->12 lam 0.13226
+pillar-on-plate5: 218 ms 4 st NC | 6:28->28 lam 0.13039
+pillar-on-plate7: 347 ms 4 st NC | 6:52->52 lam 0.14483
+pillar-alone: 380 ms 32 st | 6:3->3 lam 0.16476
+pillar-on-plate3: 775 ms 31 st | 6:12->12 lam 0.15005
+pillar-on-plate5: 1285 ms 30 st | 6:28->28 lam 0.14192
+pillar-on-plate7: 4040 ms 60 st | 6:52->51.998 lam 0.12977

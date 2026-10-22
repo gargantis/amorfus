@@ -1,0 +1,12 @@
+n1 k0a FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1334 ms, rss 115 MB
+n1 k0s FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1659 ms, rss 156 MB
+n1 k1a FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1365 ms, rss 176 MB
+n1 k1s FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1366 ms, rss 195 MB
+n1 k2a FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 2032 ms, rss 197 MB
+n1 k2s FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1726 ms, rss 197 MB
+n1 k3a FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1641 ms, rss 196 MB
+n1 k3s FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1609 ms, rss 162 MB
+n1 k4a FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1537 ms, rss 172 MB
+n1 k4s FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1720 ms, rss 184 MB
+n1 k5a FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1269 ms, rss 177 MB
+n1 k5s FINITE-4 n16: grid 96x80x80, 4 steps (not converged), 1443 ms, rss 181 MB

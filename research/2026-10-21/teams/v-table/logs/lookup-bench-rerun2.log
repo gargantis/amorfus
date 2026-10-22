@@ -1,0 +1,2 @@
+RG rank + 21147-entry table    best of 6 interleaved rounds: 0.635 ms per chunk (32^3 corners scanned, 2972 surface corners per chunk on average), 213.7 ns per surface corner including the scan
+incremental cost of the RG rank + lookup over reading the blocks: 0.133 ms per chunk

@@ -1,0 +1,32 @@
+{
+ "runs": [
+  {
+   "volume": false,
+   "g": 1,
+   "steps": 5,
+   "changedCellsTotal": 1012,
+   "changedWithin1BlockOfCross": 0
+  },
+  {
+   "volume": false,
+   "g": 0.5,
+   "steps": 5,
+   "changedCellsTotal": 764,
+   "changedWithin1BlockOfCross": 0
+  },
+  {
+   "volume": true,
+   "g": 1,
+   "steps": 5,
+   "changedCellsTotal": 880,
+   "changedWithin1BlockOfCross": 0
+  },
+  {
+   "volume": true,
+   "g": 0.5,
+   "steps": 5,
+   "changedCellsTotal": 704,
+   "changedWithin1BlockOfCross": 0
+  }
+ ]
+}

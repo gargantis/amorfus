@@ -1,0 +1,27 @@
+{
+ "out": "teams/v-local/sheets/membrane.png",
+ "cols": 4,
+ "title": "Framed 1-thick membrane, single-block punctures (plan at y=1.5)",
+ "cell": [
+  300,
+  300
+ ],
+ "items": [
+  {
+   "path": "teams/v-local/img/membrane/membrane-FID-0.15-novol-intact-slice.png",
+   "label": "FID-0.15 volume off: intact"
+  },
+  {
+   "path": "teams/v-local/img/membrane/membrane-FID-0.15-novol-hole1-slice.png",
+   "label": "volume off: 1-block hole\nchange stays <= 0.13 block"
+  },
+  {
+   "path": "teams/v-local/img/membrane/membrane-FID-0.15-novol-hole3x3-slice.png",
+   "label": "volume off: 3x3 hole\nno unzipping (fill 0.974 of blocks)"
+  },
+  {
+   "path": "teams/v-local/img/membrane/membrane-FID-0.15-hole1-slice.png",
+   "label": "FID-0.15 volume on: 1-block hole\nlabels change up to 4.9 blocks away"
+  }
+ ]
+}

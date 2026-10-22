@@ -1,0 +1,1 @@
+{"set":"t1","name":"t11s","regime":"FINITE-4-nv","n":12,"ms":2007,"steps":4,"converged":false,"changes":36057,"premerged":1,"alive":3,"lambda":[[2,282,-0.0027],[3,61,0.0093],[1,90,0.0012]],"phaseMat":[0,2,3,1,0],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":25,"oy":27,"oz":30},"dScale":31704,"origin":[25,27,30],"size":[9,8,9],"evalLo":[27,29,32],"evalHi":[32,33,37],"blocks":433}

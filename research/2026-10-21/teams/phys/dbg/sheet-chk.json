@@ -1,0 +1,7 @@
+{"out": "dbg/chk.png", "cols": 3, "items": [
+{"path": "free/sq2-checker-before.png", "label": "before"},
+{"path": "free/sq2-checker-s1-view.png", "label": "s1"},
+{"path": "free/sq2-checker-s1-slice.png", "label": "s1 slice"},
+{"path": "free/sq2-checker-blocks.png", "label": "blocks"},
+{"path": "free/sq2-checker-s2-view.png", "label": "s2"},
+{"path": "free/sq2-checker-s2-slice.png", "label": "s2 slice"}]}

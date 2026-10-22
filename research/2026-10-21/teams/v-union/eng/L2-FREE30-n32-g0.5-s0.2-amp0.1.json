@@ -1,0 +1,106 @@
+{
+ "cfg": "L2",
+ "X": [
+  2,
+  1
+ ],
+ "n": 32,
+ "regime": "FREE30",
+ "g": 0.5,
+ "s_b": 0.2,
+ "runs": [
+  {
+   "v": "id",
+   "steps": 30,
+   "converged": false,
+   "ms": 1257,
+   "rule4": 0,
+   "size": 7,
+   "verdict": "both",
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 2,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-4,-2:6(split) -2,-1:6(split) -2,2:7 -1,1:7 1,-1:7 2,-2:7 2,1:6(split)",
+   "phases": "6:10[2pc] 7:6",
+   "firstMerges": [
+    1,
+    2
+   ]
+  },
+  {
+   "v": "rot90",
+   "steps": 30,
+   "converged": false,
+   "ms": 1130,
+   "rule4": 0,
+   "size": 7,
+   "verdict": "both",
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    },
+    {
+     "mat": 6,
+     "united": true,
+     "step": 2,
+     "pieces": 2
+    }
+   ],
+   "otherX": "-2,-2:7 -1,-1:7 -1,2:6(split) 1,-2:6(split) 1,1:7 2,-4:6(split) 2,2:7",
+   "phases": "6:10[2pc] 7:6",
+   "firstMerges": [
+    1,
+    2
+   ]
+  },
+  {
+   "v": "rev",
+   "steps": 30,
+   "converged": false,
+   "ms": 901,
+   "rule4": 0,
+   "size": 7,
+   "verdict": "both",
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 2,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-4,-2:6(split) -2,-1:6(split) -2,2:7 -1,1:7 1,-1:7 2,-2:7 2,1:6(split)",
+   "phases": "7:6 6:10[2pc]",
+   "firstMerges": [
+    1,
+    2
+   ]
+  }
+ ],
+ "tally": {
+  "sym/rev:both/7": 3
+ }
+}

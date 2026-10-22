@@ -1,0 +1,1295 @@
+{
+ "regime": {
+  "maxSteps": 2,
+  "stopAfter": 99
+ },
+ "runs": {
+  "single": {
+   "name": "single",
+   "desc": "one block",
+   "ms": 135,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    896,
+    240
+   ],
+   "grid": [
+    48,
+    48,
+    48
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1619
+    }
+   ],
+   "clustersStart": 1
+  },
+  "pair-same": {
+   "name": "pair-same",
+   "desc": "two blocks, same material",
+   "ms": 63,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    1568,
+    496
+   ],
+   "grid": [
+    64,
+    48,
+    48
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 2,
+     "volume": 2,
+     "lambda": 0.1323
+    }
+   ],
+   "clustersStart": 1
+  },
+  "pair-diff": {
+   "name": "pair-diff",
+   "desc": "two blocks, different materials (double bubble)",
+   "ms": 66,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    1392,
+    520
+   ],
+   "grid": [
+    64,
+    48,
+    48
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.999,
+     "lambda": 0.1581
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.999,
+     "lambda": 0.1581
+    }
+   ],
+   "clustersStart": 2
+  },
+  "line3-same": {
+   "name": "line3-same",
+   "desc": "row of three, same",
+   "ms": 52,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    1960,
+    616
+   ],
+   "grid": [
+    80,
+    48,
+    48
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 3,
+     "volume": 3,
+     "lambda": 0.1509
+    }
+   ],
+   "clustersStart": 1
+  },
+  "line3-ABA": {
+   "name": "line3-ABA",
+   "desc": "row A B A",
+   "ms": 76,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    1936,
+    656
+   ],
+   "grid": [
+    80,
+    48,
+    48
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.999,
+     "lambda": 0.1604
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.998,
+     "lambda": 0.1556
+    },
+    {
+     "p": 3,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.999,
+     "lambda": 0.1604
+    }
+   ],
+   "clustersStart": 3
+  },
+  "line3-ABC": {
+   "name": "line3-ABC",
+   "desc": "row A B C",
+   "ms": 62,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    1936,
+    656
+   ],
+   "grid": [
+    80,
+    48,
+    48
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.999,
+     "lambda": 0.1604
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.998,
+     "lambda": 0.1556
+    },
+    {
+     "p": 3,
+     "mat": 1,
+     "blocks": 1,
+     "volume": 0.999,
+     "lambda": 0.1604
+    }
+   ],
+   "clustersStart": 3
+  },
+  "L3-same": {
+   "name": "L3-same",
+   "desc": "L tromino, same",
+   "ms": 45,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2102,
+    902
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 3,
+     "volume": 3,
+     "lambda": 0.1225
+    }
+   ],
+   "clustersStart": 1
+  },
+  "L3-AAB": {
+   "name": "L3-AAB",
+   "desc": "L tromino, two A one B",
+   "ms": 66,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2014,
+    790
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 2,
+     "volume": 2,
+     "lambda": 0.1272
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1589
+    }
+   ],
+   "clustersStart": 2
+  },
+  "L3-ABC": {
+   "name": "L3-ABC",
+   "desc": "L tromino, three materials (triple line + air)",
+   "ms": 94,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2074,
+    574
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1463
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1575
+    },
+    {
+     "p": 3,
+     "mat": 1,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1463
+    }
+   ],
+   "clustersStart": 3
+  },
+  "sq2-same": {
+   "name": "sq2-same",
+   "desc": "2×2 square, same",
+   "ms": 65,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2192,
+    1320
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 4,
+     "volume": 3.998,
+     "lambda": 0.1142
+    }
+   ],
+   "clustersStart": 1
+  },
+  "sq2-AAAB": {
+   "name": "sq2-AAAB",
+   "desc": "2×2, three A one B",
+   "ms": 98,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2322,
+    1042
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 3,
+     "volume": 2.999,
+     "lambda": 0.1116
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1441
+    }
+   ],
+   "clustersStart": 2
+  },
+  "sq2-AABB": {
+   "name": "sq2-AABB",
+   "desc": "2×2, halves",
+   "ms": 63,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2160,
+    960
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 2,
+     "volume": 2,
+     "lambda": 0.12
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 2,
+     "volume": 2,
+     "lambda": 0.12
+    }
+   ],
+   "clustersStart": 2
+  },
+  "sq2-checker": {
+   "name": "sq2-checker",
+   "desc": "2×2 checkerboard (diagonal pairs same: ambiguous edge)",
+   "ms": 121,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    1696,
+    1136
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.982,
+     "lambda": 0.1911
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.982,
+     "lambda": 0.1911
+    },
+    {
+     "p": 3,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.982,
+     "lambda": 0.1911
+    },
+    {
+     "p": 4,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.982,
+     "lambda": 0.1911
+    }
+   ],
+   "clustersStart": 4
+  },
+  "sq2-AABC": {
+   "name": "sq2-AABC",
+   "desc": "2×2, A A / B C",
+   "ms": 79,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2284,
+    784
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 2,
+     "volume": 2,
+     "lambda": 0.1283
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1431
+    },
+    {
+     "p": 3,
+     "mat": 1,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1434
+    }
+   ],
+   "clustersStart": 3
+  },
+  "sq2-ABCD": {
+   "name": "sq2-ABCD",
+   "desc": "2×2, four materials (four films meet at an edge)",
+   "ms": 81,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2192,
+    632
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1489
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1489
+    },
+    {
+     "p": 3,
+     "mat": 1,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1489
+    },
+    {
+     "p": 4,
+     "mat": 4,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1489
+    }
+   ],
+   "clustersStart": 4
+  },
+  "diag-edge": {
+   "name": "diag-edge",
+   "desc": "same material touching along an edge only",
+   "ms": 101,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    1692,
+    828
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 2,
+     "volume": 2,
+     "lambda": 0.1334
+    }
+   ],
+   "clustersStart": 2
+  },
+  "diag-corner": {
+   "name": "diag-corner",
+   "desc": "same material touching at a corner only",
+   "ms": 57,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    1754,
+    504
+   ],
+   "grid": [
+    64,
+    64,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1557
+    },
+    {
+     "p": 2,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1557
+    }
+   ],
+   "clustersStart": 2
+  },
+  "diag-edge-diff": {
+   "name": "diag-edge-diff",
+   "desc": "different materials touching along an edge only",
+   "ms": 55,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    1672,
+    636
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1.002,
+     "lambda": 0.1473
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1.002,
+     "lambda": 0.1473
+    }
+   ],
+   "clustersStart": 2
+  },
+  "cube2-same": {
+   "name": "cube2-same",
+   "desc": "2×2×2, same",
+   "ms": 61,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2584,
+    2360
+   ],
+   "grid": [
+    64,
+    64,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 8,
+     "volume": 8,
+     "lambda": 0.0871
+    }
+   ],
+   "clustersStart": 1
+  },
+  "cube2-oneB": {
+   "name": "cube2-oneB",
+   "desc": "2×2×2, seven A one B",
+   "ms": 126,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    3277,
+    2281
+   ],
+   "grid": [
+    64,
+    64,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 7,
+     "volume": 6.999,
+     "lambda": 0.0874
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1416
+    }
+   ],
+   "clustersStart": 2
+  },
+  "cube2-halves": {
+   "name": "cube2-halves",
+   "desc": "2×2×2, A half and B half",
+   "ms": 86,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    3040,
+    1872
+   ],
+   "grid": [
+    64,
+    64,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 4,
+     "volume": 4,
+     "lambda": 0.1026
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 4,
+     "volume": 4,
+     "lambda": 0.1026
+    }
+   ],
+   "clustersStart": 2
+  },
+  "cube2-checker": {
+   "name": "cube2-checker",
+   "desc": "2×2×2 3D checkerboard",
+   "ms": 230,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2800,
+    1664
+   ],
+   "grid": [
+    64,
+    64,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.918,
+     "lambda": 0.298
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.918,
+     "lambda": 0.298
+    },
+    {
+     "p": 3,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.918,
+     "lambda": 0.298
+    },
+    {
+     "p": 4,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.918,
+     "lambda": 0.298
+    },
+    {
+     "p": 5,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.918,
+     "lambda": 0.298
+    },
+    {
+     "p": 6,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.918,
+     "lambda": 0.298
+    },
+    {
+     "p": 7,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.918,
+     "lambda": 0.298
+    },
+    {
+     "p": 8,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.918,
+     "lambda": 0.298
+    }
+   ],
+   "clustersStart": 8
+  },
+  "cube2-octants": {
+   "name": "cube2-octants",
+   "desc": "2×2×2, four materials, two layers",
+   "ms": 226,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2272,
+    1992
+   ],
+   "grid": [
+    64,
+    64,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.978,
+     "lambda": 0.1805
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.978,
+     "lambda": 0.1805
+    },
+    {
+     "p": 3,
+     "mat": 1,
+     "blocks": 1,
+     "volume": 0.978,
+     "lambda": 0.1805
+    },
+    {
+     "p": 4,
+     "mat": 4,
+     "blocks": 1,
+     "volume": 0.978,
+     "lambda": 0.1805
+    },
+    {
+     "p": 5,
+     "mat": 1,
+     "blocks": 1,
+     "volume": 0.978,
+     "lambda": 0.1805
+    },
+    {
+     "p": 6,
+     "mat": 4,
+     "blocks": 1,
+     "volume": 0.978,
+     "lambda": 0.1805
+    },
+    {
+     "p": 7,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 0.978,
+     "lambda": 0.1805
+    },
+    {
+     "p": 8,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 0.978,
+     "lambda": 0.1805
+    }
+   ],
+   "clustersStart": 8
+  },
+  "plus5": {
+   "name": "plus5",
+   "desc": "plus of five, same",
+   "ms": 67,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    3264,
+    1912
+   ],
+   "grid": [
+    80,
+    48,
+    80
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 5,
+     "volume": 4.998,
+     "lambda": 0.11
+    }
+   ],
+   "clustersStart": 1
+  },
+  "plus5-mixed": {
+   "name": "plus5-mixed",
+   "desc": "plus: B centre, A arms",
+   "ms": 151,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2856,
+    2480
+   ],
+   "grid": [
+    80,
+    48,
+    80
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 4,
+     "volume": 4,
+     "lambda": 0.1116
+    },
+    {
+     "p": 3,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1458
+    }
+   ],
+   "clustersStart": 5
+  },
+  "ring8": {
+   "name": "ring8",
+   "desc": "3×3 ring, same (a torus?)",
+   "ms": 75,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    3712,
+    2696
+   ],
+   "grid": [
+    80,
+    48,
+    80
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 8,
+     "volume": 7.998,
+     "lambda": 0.0823
+    }
+   ],
+   "clustersStart": 1
+  },
+  "T-mixed": {
+   "name": "T-mixed",
+   "desc": "T: A bar, B stem",
+   "ms": 79,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    3152,
+    1204
+   ],
+   "grid": [
+    80,
+    48,
+    80
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 3,
+     "volume": 3,
+     "lambda": 0.1286
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 2,
+     "volume": 2,
+     "lambda": 0.1364
+    }
+   ],
+   "clustersStart": 2
+  },
+  "pillar3": {
+   "name": "pillar3",
+   "desc": "1×1×3 column",
+   "ms": 41,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    1960,
+    616
+   ],
+   "grid": [
+    48,
+    80,
+    48
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 3,
+     "volume": 3,
+     "lambda": 0.1509
+    }
+   ],
+   "clustersStart": 1
+  },
+  "stairs": {
+   "name": "stairs",
+   "desc": "built 1:1 stair, 3 steps, 2 deep",
+   "ms": 91,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    4256,
+    3152
+   ],
+   "grid": [
+    80,
+    80,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 12,
+     "volume": 12,
+     "lambda": 0.0844
+    }
+   ],
+   "clustersStart": 1
+  },
+  "ball-r2": {
+   "name": "ball-r2",
+   "desc": "voxel ball r 2.2, same",
+   "ms": 281,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    11480,
+    8520
+   ],
+   "grid": [
+    112,
+    112,
+    112
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 33,
+     "volume": 33,
+     "lambda": 0.0515
+    }
+   ],
+   "clustersStart": 1
+  },
+  "ball-AB": {
+   "name": "ball-AB",
+   "desc": "voxel ball r 2.2, A half, B half",
+   "ms": 409,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    10936,
+    8564
+   ],
+   "grid": [
+    112,
+    112,
+    112
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 7,
+     "blocks": 23,
+     "volume": 22.999,
+     "lambda": 0.0582
+    },
+    {
+     "p": 2,
+     "mat": 6,
+     "blocks": 10,
+     "volume": 10,
+     "lambda": 0.0738
+    }
+   ],
+   "clustersStart": 2
+  },
+  "slab-dot": {
+   "name": "slab-dot",
+   "desc": "5×5 slab B with one A in the middle",
+   "ms": 177,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    2960,
+    6552
+   ],
+   "grid": [
+    112,
+    48,
+    112
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 7,
+     "blocks": 24,
+     "volume": 23.961,
+     "lambda": 0.0718
+    },
+    {
+     "p": 2,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.124
+    }
+   ],
+   "clustersStart": 2
+  },
+  "slab-line": {
+   "name": "slab-line",
+   "desc": "6×6 slab B with a 1-wide diagonal line of A (painted)",
+   "ms": 569,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    4728,
+    10420
+   ],
+   "grid": [
+    128,
+    48,
+    128
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 6,
+     "volume": 5.925,
+     "lambda": 0.1053
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 15,
+     "volume": 14.983,
+     "lambda": 0.0935
+    },
+    {
+     "p": 3,
+     "mat": 7,
+     "blocks": 15,
+     "volume": 14.983,
+     "lambda": 0.0935
+    }
+   ],
+   "clustersStart": 8
+  },
+  "slab-stripe": {
+   "name": "slab-stripe",
+   "desc": "6×6 slab B with a straight 1-wide line of A",
+   "ms": 394,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    3632,
+    6320
+   ],
+   "grid": [
+    128,
+    48,
+    128
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 7,
+     "blocks": 12,
+     "volume": 12,
+     "lambda": 0.0752
+    },
+    {
+     "p": 2,
+     "mat": 6,
+     "blocks": 6,
+     "volume": 5.949,
+     "lambda": 0.0808
+    },
+    {
+     "p": 3,
+     "mat": 7,
+     "blocks": 18,
+     "volume": 17.291,
+     "lambda": 0.1997
+    }
+   ],
+   "clustersStart": 3
+  },
+  "terrain-step": {
+   "name": "terrain-step",
+   "desc": "grass over dirt, a one-block step",
+   "ms": 599,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    5988,
+    5970
+   ],
+   "grid": [
+    128,
+    80,
+    112
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 2,
+     "blocks": 45,
+     "volume": 44.31,
+     "lambda": 0.1997
+    },
+    {
+     "p": 2,
+     "mat": 1,
+     "blocks": 30,
+     "volume": 29.693,
+     "lambda": 0.1953
+    }
+   ],
+   "clustersStart": 3
+  },
+  "tunnel": {
+   "name": "tunnel",
+   "desc": "1×2 tunnel through stone (clearance check)",
+   "ms": 192,
+   "steps": 2,
+   "converged": false,
+   "lastChanges": [
+    5664,
+    4856
+   ],
+   "grid": [
+    80,
+    96,
+    80
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 3,
+     "blocks": 30,
+     "volume": 29.99,
+     "lambda": 0.0718
+    }
+   ],
+   "clustersStart": 1
+  }
+ }
+}

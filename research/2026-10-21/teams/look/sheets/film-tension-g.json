@@ -1,0 +1,227 @@
+{
+"out": "teams/look/sheets/film-tension-g.png",
+"cols": 6,
+"title": "FID-0.15 with film tension g = 0.5 / 1 / 1.5 (views, then slices)",
+"cell": [
+220,
+165
+],
+"items": [
+{
+"path": "teams/look/img/FID-0.15-g0.5/pair-diff-view.png",
+"label": "pair-diff\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/pair-diff-view.png",
+"label": "pair-diff\nFID-0.15 g1"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/pair-diff-view.png",
+"label": "pair-diff\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/pair-diff-slice.png",
+"label": "pair-diff (slice)\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/pair-diff-slice.png",
+"label": "pair-diff (slice)\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/pair-diff-slice.png",
+"label": "pair-diff (slice)\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/L3-ABC-view.png",
+"label": "L3-ABC\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/L3-ABC-view.png",
+"label": "L3-ABC\nFID-0.15 g1"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/L3-ABC-view.png",
+"label": "L3-ABC\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/L3-ABC-slice.png",
+"label": "L3-ABC (slice)\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/L3-ABC-slice.png",
+"label": "L3-ABC (slice)\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/L3-ABC-slice.png",
+"label": "L3-ABC (slice)\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/sq2-AABB-view.png",
+"label": "sq2-AABB\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/sq2-AABB-view.png",
+"label": "sq2-AABB\nFID-0.15 g1"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/sq2-AABB-view.png",
+"label": "sq2-AABB\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/sq2-AABB-sec.png",
+"label": "sq2-AABB (sec)\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/sq2-AABB-sec.png",
+"label": "sq2-AABB (sec)\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/sq2-AABB-sec.png",
+"label": "sq2-AABB (sec)\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/cube2-oneB-view.png",
+"label": "cube2-oneB\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/cube2-oneB-view.png",
+"label": "cube2-oneB\nFID-0.15 g1"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/cube2-oneB-view.png",
+"label": "cube2-oneB\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/cube2-oneB-sec.png",
+"label": "cube2-oneB (sec)\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/cube2-oneB-sec.png",
+"label": "cube2-oneB (sec)\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/cube2-oneB-sec.png",
+"label": "cube2-oneB (sec)\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/slab-dot-view.png",
+"label": "slab-dot\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-dot-view.png",
+"label": "slab-dot\nFID-0.15 g1"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/slab-dot-view.png",
+"label": "slab-dot\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/slab-dot-sec.png",
+"label": "slab-dot (sec)\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-dot-sec.png",
+"label": "slab-dot (sec)\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/slab-dot-sec.png",
+"label": "slab-dot (sec)\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/slab-line-view.png",
+"label": "slab-line\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-line-view.png",
+"label": "slab-line\nFID-0.15 g1"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/slab-line-view.png",
+"label": "slab-line\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/slab-line-sec.png",
+"label": "slab-line (sec)\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-line-sec.png",
+"label": "slab-line (sec)\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/slab-line-sec.png",
+"label": "slab-line (sec)\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/slab-stripe-view.png",
+"label": "slab-stripe\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-stripe-view.png",
+"label": "slab-stripe\nFID-0.15 g1"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/slab-stripe-view.png",
+"label": "slab-stripe\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/slab-stripe-sec.png",
+"label": "slab-stripe (sec)\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-stripe-sec.png",
+"label": "slab-stripe (sec)\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/slab-stripe-sec.png",
+"label": "slab-stripe (sec)\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/terrain-step-view.png",
+"label": "terrain-step\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/terrain-step-view.png",
+"label": "terrain-step\nFID-0.15 g1"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/terrain-step-view.png",
+"label": "terrain-step\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/terrain-step-slice.png",
+"label": "terrain-step (slice)\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/terrain-step-slice.png",
+"label": "terrain-step (slice)\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/terrain-step-slice.png",
+"label": "terrain-step (slice)\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/slab-halves-view.png",
+"label": "slab-halves\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-halves-view.png",
+"label": "slab-halves\nFID-0.15 g1"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/slab-halves-view.png",
+"label": "slab-halves\nFID-0.15-g1.5"
+},
+{
+"path": "teams/look/img/FID-0.15-g0.5/slab-halves-sec.png",
+"label": "slab-halves (sec)\nFID-0.15-g0.5"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-halves-sec.png",
+"label": "slab-halves (sec)\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.15-g1.5/slab-halves-sec.png",
+"label": "slab-halves (sec)\nFID-0.15-g1.5"
+}
+]
+}

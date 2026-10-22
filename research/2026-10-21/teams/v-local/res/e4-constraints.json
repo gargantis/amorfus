@@ -1,0 +1,473 @@
+{
+ "note": "field = Bl-b1s20 on an n grid; mesh = b1 vertex rule corners + PLAN 7.2 quads (shorter diagonal)",
+ "scenes": {
+  "single": {
+   "field": {
+    "x": 1.126,
+    "y": 1.126,
+    "diagEdgeMid": 1.126
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "x": 0.75,
+     "y": 0.75,
+     "z": 0.75,
+     "corner000": [
+      0.125,
+      0.125,
+      0.125
+     ]
+    },
+    "bub-b1-newton4": {
+     "x": 0.75,
+     "y": 0.75,
+     "z": 0.75,
+     "corner000": [
+      0.125,
+      0.125,
+      0.125
+     ]
+    }
+   }
+  },
+  "bump-on-ground": {
+   "field": {
+    "bumpTop": 3.0206,
+    "bumpWidthAtY2_5": 1.042
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "bumpTop": 2.8438,
+     "bumpWidthAtY2_5": 0.8576,
+     "bumpWidthAtY2_9": null
+    },
+    "bub-b1-newton4": {
+     "bumpTop": 2.8438,
+     "bumpWidthAtY2_5": 0.8576,
+     "bumpWidthAtY2_9": null
+    }
+   }
+  },
+  "pillar3": {
+   "field": {
+    "w@y0.5": 1.11,
+    "w@y1.5": 1.098,
+    "w@y2.5": 1.11
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "w@y0.5": 0.7873,
+     "w@y1.5": 0.8594,
+     "w@y2.5": 0.7873
+    },
+    "bub-b1-newton4": {
+     "w@y0.5": 0.7873,
+     "w@y1.5": 0.8594,
+     "w@y2.5": 0.7873
+    }
+   }
+  },
+  "pillar3-on-floor": {
+   "field": {
+    "w@y1.5": 1.038,
+    "w@y2.5": 1.098,
+    "w@y3.5": 1.11
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "w@y1.5": 0.9583,
+     "w@y2.5": 0.8436,
+     "w@y3.5": 0.7873
+    },
+    "bub-b1-newton4": {
+     "w@y1.5": 0.9583,
+     "w@y2.5": 0.8436,
+     "w@y3.5": 0.7873
+    }
+   }
+  },
+  "pillar-floor-to-ceiling": {
+   "field": {
+    "w@y1.5": 1.038,
+    "w@y2": 1.038,
+    "w@y2.5": 1.038
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "w@y1.5": 0.9469,
+     "w@y2": 0.8047,
+     "w@y2.5": 0.9469
+    },
+    "bub-b1-newton4": {
+     "w@y1.5": 0.9469,
+     "w@y2": 0.8047,
+     "w@y2.5": 0.9469
+    }
+   }
+  },
+  "tunnel": {
+   "field": {
+    "clearH70": 1.75,
+    "widthMid": 0.95,
+    "heightMid": 1.96,
+    "per": [
+     {
+      "z": 0.75,
+      "clearH70": 1.75,
+      "widthMid": 0.95,
+      "heightMid": 1.96
+     },
+     {
+      "z": 1.5,
+      "clearH70": 1.78,
+      "widthMid": 0.97,
+      "heightMid": 1.97
+     },
+     {
+      "z": 2.25,
+      "clearH70": 1.75,
+      "widthMid": 0.95,
+      "heightMid": 1.96
+     }
+    ]
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "clearH70": 1.7344,
+     "widthMid": 0.9531,
+     "heightMid": 1.7344,
+     "per": [
+      {
+       "z": 1.5,
+       "clearH70": 1.7344,
+       "widthMid": 0.9531,
+       "heightMid": 1.7344
+      }
+     ]
+    },
+    "bub-b1-newton4": {
+     "clearH70": 1.7344,
+     "widthMid": 0.9531,
+     "heightMid": 1.7344,
+     "per": [
+      {
+       "z": 1.5,
+       "clearH70": 1.7344,
+       "widthMid": 0.9531,
+       "heightMid": 1.7344
+      }
+     ]
+    }
+   }
+  },
+  "tunnel-thick": {
+   "field": {
+    "clearH70": 1.785,
+    "widthMid": 0.98,
+    "heightMid": 1.975,
+    "per": [
+     {
+      "z": 1,
+      "clearH70": 1.785,
+      "widthMid": 0.98,
+      "heightMid": 1.975
+     },
+     {
+      "z": 2,
+      "clearH70": 1.785,
+      "widthMid": 0.98,
+      "heightMid": 1.975
+     },
+     {
+      "z": 3,
+      "clearH70": 1.785,
+      "widthMid": 0.98,
+      "heightMid": 1.975
+     }
+    ]
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "clearH70": 1.7422,
+     "widthMid": 0.9727,
+     "heightMid": 1.7422,
+     "per": [
+      {
+       "z": 1.5,
+       "clearH70": 1.7422,
+       "widthMid": 0.9727,
+       "heightMid": 1.7422
+      },
+      {
+       "z": 2,
+       "clearH70": 1.7461,
+       "widthMid": 0.9766,
+       "heightMid": 1.7461
+      },
+      {
+       "z": 2.5,
+       "clearH70": 1.7422,
+       "widthMid": 0.9727,
+       "heightMid": 1.7422
+      }
+     ]
+    },
+    "bub-b1-newton4": {
+     "clearH70": 1.7422,
+     "widthMid": 0.9727,
+     "heightMid": 1.7422,
+     "per": [
+      {
+       "z": 1.5,
+       "clearH70": 1.7422,
+       "widthMid": 0.9727,
+       "heightMid": 1.7422
+      },
+      {
+       "z": 2,
+       "clearH70": 1.7461,
+       "widthMid": 0.9766,
+       "heightMid": 1.7461
+      },
+      {
+       "z": 2.5,
+       "clearH70": 1.7422,
+       "widthMid": 0.9727,
+       "heightMid": 1.7422
+      }
+     ]
+    }
+   }
+  },
+  "doorway": {
+   "field": {
+    "clearH70": 1.755,
+    "widthMid": 0.96,
+    "heightMid": 1.955,
+    "per": [
+     {
+      "z": 2.5,
+      "clearH70": 1.755,
+      "widthMid": 0.96,
+      "heightMid": 1.955
+     }
+    ]
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "clearH70": 1.9219,
+     "widthMid": 1.1864,
+     "heightMid": 1.9219,
+     "per": [
+      {
+       "z": 2.5,
+       "clearH70": 1.9219,
+       "widthMid": 1.1864,
+       "heightMid": 1.9219
+      }
+     ]
+    },
+    "bub-b1-newton4": {
+     "clearH70": 1.9219,
+     "widthMid": 1.1864,
+     "heightMid": 1.9219,
+     "per": [
+      {
+       "z": 2.5,
+       "clearH70": 1.9219,
+       "widthMid": 1.1864,
+       "heightMid": 1.9219
+      }
+     ]
+    }
+   }
+  },
+  "doorway-2thick": {
+   "field": {
+    "clearH70": 1.78,
+    "widthMid": 0.98,
+    "heightMid": 1.975,
+    "per": [
+     {
+      "z": 2.5,
+      "clearH70": 1.78,
+      "widthMid": 0.98,
+      "heightMid": 1.975
+     },
+     {
+      "z": 3,
+      "clearH70": 1.78,
+      "widthMid": 0.98,
+      "heightMid": 1.975
+     },
+     {
+      "z": 3.5,
+      "clearH70": 1.78,
+      "widthMid": 0.98,
+      "heightMid": 1.975
+     }
+    ]
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "clearH70": 1.7422,
+     "widthMid": 0.9688,
+     "heightMid": 1.7422,
+     "per": [
+      {
+       "z": 3,
+       "clearH70": 1.7422,
+       "widthMid": 0.9688,
+       "heightMid": 1.7422
+      }
+     ]
+    },
+    "bub-b1-newton4": {
+     "clearH70": 1.7422,
+     "widthMid": 0.9688,
+     "heightMid": 1.7422,
+     "per": [
+      {
+       "z": 3,
+       "clearH70": 1.7422,
+       "widthMid": 0.9688,
+       "heightMid": 1.7422
+      }
+     ]
+    }
+   }
+  },
+  "flat-thick": {
+   "field": {
+    "topMinus": {
+     "min": 0.0134,
+     "max": 0.0135,
+     "mean": 0.0134
+    }
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "yOffsetHistogram": {
+      "3/256": 49
+     },
+     "meshTopMinus": {
+      "min": 0.0117,
+      "max": 0.0156
+     }
+    },
+    "bub-b1-newton4": {
+     "yOffsetHistogram": {
+      "3/256": 49
+     },
+     "meshTopMinus": {
+      "min": 0.0117,
+      "max": 0.0156
+     }
+    }
+   }
+  },
+  "flat-1thick": {
+   "field": {
+    "topMinus": {
+     "min": 0.0238,
+     "max": 0.0238,
+     "mean": 0.0238
+    }
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "yOffsetHistogram": {
+      "6/256": 49
+     },
+     "meshTopMinus": {
+      "min": 0.0234,
+      "max": 0.0273
+     },
+     "meshBottom": {
+      "min": -0.0273,
+      "max": -0.0234
+     }
+    },
+    "bub-b1-newton4": {
+     "yOffsetHistogram": {
+      "6/256": 49
+     },
+     "meshTopMinus": {
+      "min": 0.0234,
+      "max": 0.0273
+     },
+     "meshBottom": {
+      "min": -0.0273,
+      "max": -0.0234
+     }
+    }
+   }
+  },
+  "flat-mixed-patch": {
+   "field": {
+    "topMinus": {
+     "min": -0.0256,
+     "max": 0.0421,
+     "mean": 0.0215
+    }
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "yOffsetHistogram": {
+      "6/256": 17,
+      "7/256": 16,
+      "-1/256": 4,
+      "-8/256": 8,
+      "8/256": 4
+     },
+     "meshTopMinus": {
+      "min": -0.0309,
+      "max": 0.0313
+     }
+    },
+    "bub-b1-newton4": {
+     "yOffsetHistogram": {
+      "6/256": 17,
+      "7/256": 16,
+      "-1/256": 4,
+      "-8/256": 8,
+      "8/256": 4
+     },
+     "meshTopMinus": {
+      "min": -0.0309,
+      "max": 0.0313
+     }
+    }
+   }
+  },
+  "flat-checker-top": {
+   "field": {
+    "topMinus": {
+     "min": -0.0345,
+     "max": 0.037,
+     "mean": -0.006
+    }
+   },
+   "mesh": {
+    "bub-b1-line40": {
+     "yOffsetHistogram": {
+      "-9/256": 49
+     },
+     "meshTopMinus": {
+      "min": -0.0352,
+      "max": -0.0273
+     }
+    },
+    "bub-b1-newton4": {
+     "yOffsetHistogram": {
+      "-9/256": 49
+     },
+     "meshTopMinus": {
+      "min": -0.0352,
+      "max": -0.0273
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,5 @@
+b b-house FINITE-4 n12: grid 108x96x108, 4 steps (not converged), 3861 ms, rss 160 MB
+b b-stairs FINITE-4 n12: grid 108x96x108, 4 steps (not converged), 1559 ms, rss 218 MB
+b b-painted FINITE-4 n12: grid 120x72x120, 4 steps (not converged), 3264 ms, rss 237 MB
+b b-checker FINITE-4 n12: grid 120x84x120, 4 steps (not converged), 5633 ms, rss 240 MB
+b b-walls FINITE-4 n12: grid 108x84x120, 4 steps (not converged), 2140 ms, rss 270 MB

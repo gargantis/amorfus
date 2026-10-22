@@ -1,0 +1,222 @@
+{
+ "cfg": "lineIntoChecker",
+ "regime": "FREE",
+ "n": 32,
+ "variants": 12,
+ "perX": {
+  "1,1": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:24+24",
+   "n": [
+    3,
+    6
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "2,2": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:24+24",
+   "n": [
+    4,
+    12
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "3,3": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:24+24",
+   "n": [
+    4,
+    12
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "4,4": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:24+24",
+   "n": [
+    4,
+    12
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "5,5": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:24+24",
+   "n": [
+    6,
+    10
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "5,6": {
+   "rule4": 6,
+   "size": "mixed",
+   "sizes": "7:24+1 vs 6:1+1",
+   "n": [
+    10,
+    6
+   ],
+   "v": {
+    "both": 12
+   },
+   "majority": "both",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "5,7": {
+   "rule4": 6,
+   "size": "mixed",
+   "sizes": "6:1+1 vs 7:1+24",
+   "n": [
+    4,
+    8
+   ],
+   "v": {
+    "both": 12
+   },
+   "majority": "both",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "6,5": {
+   "rule4": 6,
+   "size": "mixed",
+   "sizes": "7:24+1 vs 6:1+1",
+   "n": [
+    10,
+    6
+   ],
+   "v": {
+    "both": 12
+   },
+   "majority": "both",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "6,6": {
+   "rule4": 0,
+   "size": "tie",
+   "sizes": "6:1+1 vs 7:1+1",
+   "n": [
+    8,
+    8
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "6,7": {
+   "rule4": 0,
+   "size": "tie",
+   "sizes": "7:1+1 vs 6:1+1",
+   "n": [
+    6,
+    6
+   ],
+   "v": {
+    "both": 12
+   },
+   "majority": "both",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "7,5": {
+   "rule4": 6,
+   "size": "mixed",
+   "sizes": "6:1+1 vs 7:24+1",
+   "n": [
+    4,
+    8
+   ],
+   "v": {
+    "both": 12
+   },
+   "majority": "both",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "7,6": {
+   "rule4": 0,
+   "size": "tie",
+   "sizes": "7:1+1 vs 6:1+1",
+   "n": [
+    6,
+    6
+   ],
+   "v": {
+    "both": 12
+   },
+   "majority": "both",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "7,7": {
+   "rule4": 7,
+   "size": "tie",
+   "sizes": "6:1+1 vs 7:1+1",
+   "n": [
+    5,
+    4
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  }
+ },
+ "summary": {
+  "xs": 13,
+  "unanimous": 13,
+  "rule4AgreeOnUnanimous": 0,
+  "sizeAgreeOnUnanimous": 0
+ }
+}

@@ -1,0 +1,13 @@
+BOX-FID-0.15 single: 221 ms, 8 steps, Δ 0.092, phases {"6":1}→{"6":1}, rss 77 MB
+BOX-FID-0.15 cube2-same: 471 ms, 14 steps, Δ 0.057, phases {"6":1}→{"6":1}, rss 98 MB
+BOX-FID-0.15 sq2-same: 226 ms, 12 steps, Δ 0.086, phases {"6":1}→{"6":1}, rss 103 MB
+BOX-FID-0.15 pillar3: 192 ms, 11 steps, Δ 0.070, phases {"6":1}→{"6":1}, rss 106 MB
+BOX-FID-0.15 tunnel: 921 ms, 12 steps, Δ 0.048, phases {"3":1}→{"3":1}, rss 158 MB
+BOX-FID-0.15 ring8: 474 ms, 16 steps, Δ 0.070, phases {"6":1}→{"6":1}, rss 165 MB
+BOX-FID-0.15 stairs: 489 ms, 11 steps, Δ 0.048, phases {"6":1}→{"6":1}, rss 172 MB
+BOX-FID-0.15 terrain-step: 5016 ms, 17 steps, Δ 0.015, phases {"1":2,"2":1}→{"1":1,"2":1}, rss 193 MB
+BOX-FID-0.15 slab-halves: 2570 ms, 25 steps, Δ 0.040, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 185 MB
+BOX-FID-0.15 slab-dot: 1067 ms, 10 steps, Δ 0.007, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 182 MB
+BOX-FID-0.15 slab-line: 2479 ms, 12 steps, Δ 0.016, phases {"6":6,"7":2}→{"6":6,"7":2}, rss 179 MB
+BOX-FID-0.15 pair-diff: 118 ms, 6 steps, Δ 0.055, phases {"6":1,"7":1}→{"6":1,"7":1}, rss 174 MB
+BOX-FID-0.15 wall 21.42 s maxrss 192668 KB

@@ -1,0 +1,6 @@
+pair-same: 215 ms, 6 steps (not converged), phases 6:2→2
+pair-diff: 173 ms, 6 steps (not converged), phases 6:1→1 7:1→1
+sq2-checker: 311 ms, 6 steps (not converged), phases 6:1→1 7:1→1 7:1→1 6:1→1
+slab-line: 1355 ms, 6 steps (not converged), phases 6:6→6 7:15→14.995 7:15→14.995
+stairs: 257 ms, 6 steps (not converged), phases 6:12→12
+terrain-step: 1611 ms, 6 steps (not converged), phases 2:45→45 1:30→30

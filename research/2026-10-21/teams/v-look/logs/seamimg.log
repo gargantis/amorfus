@@ -1,0 +1,6 @@
+FID-0.15 16 20 true
+FID-0.15 24 20 true
+C15-V0 24 10 true
+FINITE-4 24 4 undefined
+CAGE-0.25 24 48 true
+FREE 16 84 true

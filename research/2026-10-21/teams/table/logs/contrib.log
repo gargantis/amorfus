@@ -1,0 +1,22 @@
+== FID-0.15: no-volume E2c table on terrain, 3115 corners, mean ref error 0.0564; classes by share of the total error
+  c2 00000011 nMat 1: n 420 (13.5% of corners), mean error 0.059, 14.2% of total error
+  c1 00000001 nMat 1: n 303 (9.7% of corners), mean error 0.071, 12.2% of total error
+  c97 00111122 nMat 2 ambUnion: n 132 (4.2% of corners), mean error 0.134, 10.1% of total error
+  c95 00111111 nMat 1: n 268 (8.6% of corners), mean error 0.064, 9.8% of total error
+  c249 01111111 nMat 1: n 179 (5.7% of corners), mean error 0.092, 9.4% of total error
+  c27 00011000 nMat 1 ambUnion: n 13 (0.4% of corners), mean error 0.799, 5.9% of total error
+  c35 00011111 nMat 1: n 217 (7.0% of corners), mean error 0.039, 4.8% of total error
+  c5 00000111 nMat 1: n 266 (8.5% of corners), mean error 0.025, 3.9% of total error
+  c92 00111100 nMat 1 ambUnion: n 30 (1.0% of corners), mean error 0.164, 2.8% of total error
+  c11 00001112 nMat 2: n 44 (1.4% of corners), mean error 0.099, 2.5% of total error
+== FINITE-4: no-volume E2c table on terrain, 3132 corners, mean ref error 0.0376; classes by share of the total error
+  c1 00000001 nMat 1: n 306 (9.8% of corners), mean error 0.039, 10.3% of total error
+  c2 00000011 nMat 1: n 420 (13.4% of corners), mean error 0.028, 10.1% of total error
+  c249 01111111 nMat 1: n 190 (6.1% of corners), mean error 0.053, 8.6% of total error
+  c35 00011111 nMat 1: n 217 (6.9% of corners), mean error 0.039, 7.2% of total error
+  c5 00000111 nMat 1: n 266 (8.5% of corners), mean error 0.029, 6.5% of total error
+  c95 00111111 nMat 1: n 270 (8.6% of corners), mean error 0.028, 6.5% of total error
+  c92 00111100 nMat 1 ambUnion: n 30 (1.0% of corners), mean error 0.241, 6.1% of total error
+  c97 00111122 nMat 2 ambUnion: n 132 (4.2% of corners), mean error 0.051, 5.8% of total error
+  c27 00011000 nMat 1 ambUnion: n 13 (0.4% of corners), mean error 0.386, 4.3% of total error
+  c39 00011122 nMat 2 ambUnion: n 32 (1.0% of corners), mean error 0.123, 3.3% of total error

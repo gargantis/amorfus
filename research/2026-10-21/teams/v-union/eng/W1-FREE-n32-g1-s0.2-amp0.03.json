@@ -1,0 +1,156 @@
+{
+ "cfg": "W1",
+ "X": [
+  0,
+  0
+ ],
+ "n": 32,
+ "regime": "FREE",
+ "g": 1,
+ "s_b": 0.2,
+ "runs": [
+  {
+   "v": "ann0.03s1",
+   "steps": 189,
+   "converged": true,
+   "ms": 7419,
+   "rule4": 6,
+   "size": 7,
+   "verdict": "both",
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 1,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "",
+   "phases": "7:8 6:24[2pc]",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "ann0.03s2",
+   "steps": 193,
+   "converged": true,
+   "ms": 5394,
+   "rule4": 6,
+   "size": 7,
+   "verdict": "both",
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 1,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "",
+   "phases": "7:8 6:24[2pc]",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "ann0.03s3",
+   "steps": 182,
+   "converged": true,
+   "ms": 5052,
+   "rule4": 6,
+   "size": 7,
+   "verdict": "both",
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 1,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "",
+   "phases": "7:8 6:24[2pc]",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "ann0.03s4",
+   "steps": 173,
+   "converged": true,
+   "ms": 4891,
+   "rule4": 6,
+   "size": 7,
+   "verdict": "both",
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 1,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "",
+   "phases": "7:8 6:24[2pc]",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "ann0.03s5",
+   "steps": 169,
+   "converged": true,
+   "ms": 5282,
+   "rule4": 6,
+   "size": 7,
+   "verdict": "both",
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 1,
+     "pieces": 2
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "",
+   "phases": "7:8 6:24[2pc]",
+   "firstMerges": [
+    1
+   ]
+  }
+ ],
+ "tally": {
+  "both": 5
+ }
+}

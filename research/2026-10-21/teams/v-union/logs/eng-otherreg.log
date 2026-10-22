@@ -1,0 +1,10 @@
+TALLY L2-FINITE-4-n32-g1-s0.2 {"sym/rev:7/7":9,"frozen:7/7":3}
+TALLY L2-CAGE-0.25-n32-g1-s0.2 {"sym/rev:7/7":9,"frozen:7/7":3}
+TALLY L2-shortA-FINITE-4-n32-g1-s0.2 {"sym/rev:6/6":9,"frozen:6/6":3}
+TALLY L2-shortA-CAGE-0.25-n32-g1-s0.2 {"sym/rev:6/6":9,"frozen:6/6":3}
+TALLY LX-10x4-FINITE-4-n32-g1-s0.2 {"sym/rev:7/7":9,"frozen:7/7":3}
+TALLY LX-10x4-CAGE-0.25-n32-g1-s0.2 {"sym/rev:7/7":9,"frozen:7/7":3}
+TALLY LX-8x2-FINITE-4-n32-g1-s0.2 {"sym/rev:7/7":9,"frozen:7/7":3}
+TALLY LX-8x2-CAGE-0.25-n32-g1-s0.2 {"sym/rev:7/7":9,"frozen:7/7":3}
+TALLY LX-6x6-FINITE-4-n32-g1-s0.2 {"sym/rev:none/none":9,"frozen:none/none":2,"frozen:7/7":1}
+TALLY LX-6x6-CAGE-0.25-n32-g1-s0.2 {"sym/rev:none/none":9,"frozen:none/none":3}

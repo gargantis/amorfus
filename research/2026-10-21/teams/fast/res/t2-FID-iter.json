@@ -1,0 +1,930 @@
+{
+ "regime": "FID-0.15",
+ "lines": 250,
+ "runs": {
+  "single": {
+   "refVolumes": {
+    "6": 1.0045322992080625
+   },
+   "blockVolumes": {
+    "6": 1
+   },
+   "refSteps": 8,
+   "refPhasesAlive": 1,
+   "models": {
+    "I2Fx-g20": {
+     "surf": {
+      "n": 438,
+      "mean": 0.0182,
+      "rms": 0.0216,
+      "p95": 0.0403,
+      "max": 0.0425,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0003
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.2998
+     ],
+     "ms": 444
+    },
+    "I4Fx-g20": {
+     "surf": {
+      "n": 438,
+      "mean": 0.0169,
+      "rms": 0.0199,
+      "p95": 0.0363,
+      "max": 0.0389,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0005
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.2848
+     ],
+     "ms": 491
+    },
+    "I10Fx-g20": {
+     "surf": {
+      "n": 436,
+      "mean": 0.0139,
+      "rms": 0.016,
+      "p95": 0.0275,
+      "max": 0.0342,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0006
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.2761
+     ],
+     "ms": 470
+    }
+   }
+  },
+  "pair-diff": {
+   "refVolumes": {
+    "6": 1.003869883147521,
+    "7": 1.003869883147521
+   },
+   "blockVolumes": {
+    "6": 1,
+    "7": 1
+   },
+   "refSteps": 6,
+   "refPhasesAlive": 2,
+   "models": {
+    "I2Fx-g20": {
+     "surf": {
+      "n": 540,
+      "mean": 0.0131,
+      "rms": 0.0168,
+      "p95": 0.0337,
+      "max": 0.038,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0002
+     },
+     "seam": {
+      "n": 50,
+      "mean": 0,
+      "rms": 0,
+      "p95": 0,
+      "max": 0,
+      "unmatched": 0,
+      "total": 50
+     },
+     "volErr": {
+      "6": 0,
+      "7": 0
+     },
+     "lambdas": [
+      0.2764,
+      0.2764
+     ],
+     "ms": 361
+    },
+    "I4Fx-g20": {
+     "surf": {
+      "n": 538,
+      "mean": 0.0126,
+      "rms": 0.0161,
+      "p95": 0.0324,
+      "max": 0.0392,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0003
+     },
+     "seam": {
+      "n": 50,
+      "mean": 0,
+      "rms": 0,
+      "p95": 0,
+      "max": 0,
+      "unmatched": 0,
+      "total": 50
+     },
+     "volErr": {
+      "6": 0,
+      "7": 0
+     },
+     "lambdas": [
+      0.2833,
+      0.2833
+     ],
+     "ms": 495
+    },
+    "I10Fx-g20": {
+     "surf": {
+      "n": 538,
+      "mean": 0.0126,
+      "rms": 0.0161,
+      "p95": 0.0324,
+      "max": 0.0392,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0003
+     },
+     "seam": {
+      "n": 50,
+      "mean": 0,
+      "rms": 0,
+      "p95": 0,
+      "max": 0,
+      "unmatched": 0,
+      "total": 50
+     },
+     "volErr": {
+      "6": 0,
+      "7": 0
+     },
+     "lambdas": [
+      0.2833,
+      0.2833
+     ],
+     "ms": 933
+    }
+   }
+  },
+  "L3-same": {
+   "refVolumes": {
+    "6": 3.128649540341378
+   },
+   "blockVolumes": {
+    "6": 3
+   },
+   "refSteps": 15,
+   "refPhasesAlive": 1,
+   "models": {
+    "I2Fx-g20": {
+     "surf": {
+      "n": 516,
+      "mean": 0.0176,
+      "rms": 0.0367,
+      "p95": 0.0906,
+      "max": 0.21,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0106
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.2317
+     ],
+     "ms": 276
+    },
+    "I4Fx-g20": {
+     "surf": {
+      "n": 516,
+      "mean": 0.015,
+      "rms": 0.028,
+      "p95": 0.0825,
+      "max": 0.1391,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0105
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.2238
+     ],
+     "ms": 379
+    },
+    "I10Fx-g20": {
+     "surf": {
+      "n": 516,
+      "mean": 0.0125,
+      "rms": 0.018,
+      "p95": 0.0528,
+      "max": 0.0705,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0104
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.206
+     ],
+     "ms": 649
+    }
+   }
+  },
+  "diag-edge": {
+   "refVolumes": {
+    "6": 2.0522316242737717
+   },
+   "blockVolumes": {
+    "6": 2
+   },
+   "refSteps": 15,
+   "refPhasesAlive": 1,
+   "models": {
+    "I2Fx-g20": {
+     "surf": {
+      "n": 446,
+      "mean": 0.0337,
+      "rms": 0.0535,
+      "p95": 0.1402,
+      "max": 0.1914,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.005
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.2594,
+      0.2594
+     ],
+     "ms": 173
+    },
+    "I4Fx-g20": {
+     "surf": {
+      "n": 444,
+      "mean": 0.0237,
+      "rms": 0.0344,
+      "p95": 0.0877,
+      "max": 0.1019,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0054
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.2361,
+      0.2361
+     ],
+     "ms": 262
+    },
+    "I10Fx-g20": {
+     "surf": {
+      "n": 438,
+      "mean": 0.0137,
+      "rms": 0.0161,
+      "p95": 0.0301,
+      "max": 0.0499,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.006
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.2074,
+      0.2074
+     ],
+     "ms": 639
+    }
+   }
+  },
+  "plus5": {
+   "refVolumes": {
+    "6": 5.095794477245596
+   },
+   "blockVolumes": {
+    "6": 5
+   },
+   "refSteps": 13,
+   "refPhasesAlive": 1,
+   "models": {
+    "I2Fx-g20": {
+     "surf": {
+      "n": 522,
+      "mean": 0.0255,
+      "rms": 0.039,
+      "p95": 0.0934,
+      "max": 0.1322,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0043
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.1946
+     ],
+     "ms": 257
+    },
+    "I4Fx-g20": {
+     "surf": {
+      "n": 510,
+      "mean": 0.0178,
+      "rms": 0.0256,
+      "p95": 0.0606,
+      "max": 0.0749,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0047
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.189
+     ],
+     "ms": 407
+    },
+    "I10Fx-g20": {
+     "surf": {
+      "n": 508,
+      "mean": 0.0115,
+      "rms": 0.0148,
+      "p95": 0.0305,
+      "max": 0.0403,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.005
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.1777
+     ],
+     "ms": 1004
+    }
+   }
+  },
+  "ring8": {
+   "refVolumes": {
+    "6": 8.101232983693842
+   },
+   "blockVolumes": {
+    "6": 8
+   },
+   "refSteps": 41,
+   "refPhasesAlive": 1,
+   "models": {
+    "I2Fx-g20": {
+     "surf": {
+      "n": 693,
+      "mean": 0.0548,
+      "rms": 0.1054,
+      "p95": 0.209,
+      "max": 1,
+      "unmatched": 1,
+      "unmatchedFrac": 0.0014,
+      "bias": 0.0136
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.1706
+     ],
+     "ms": 302
+    },
+    "I4Fx-g20": {
+     "surf": {
+      "n": 687,
+      "mean": 0.0506,
+      "rms": 0.104,
+      "p95": 0.1861,
+      "max": 1,
+      "unmatched": 2,
+      "unmatchedFrac": 0.0029,
+      "bias": 0.0125
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.1616
+     ],
+     "ms": 533
+    },
+    "I10Fx-g20": {
+     "surf": {
+      "n": 680,
+      "mean": 0.0411,
+      "rms": 0.0792,
+      "p95": 0.1555,
+      "max": 0.512,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0092
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.1404
+     ],
+     "ms": 1247
+    }
+   }
+  },
+  "stairs": {
+   "refVolumes": {
+    "6": 12.177095116068548
+   },
+   "blockVolumes": {
+    "6": 12
+   },
+   "refSteps": 21,
+   "refPhasesAlive": 1,
+   "models": {
+    "I2Fx-g20": {
+     "surf": {
+      "n": 634,
+      "mean": 0.0263,
+      "rms": 0.051,
+      "p95": 0.1448,
+      "max": 0.2206,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0071
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.1526
+     ],
+     "ms": 353
+    },
+    "I4Fx-g20": {
+     "surf": {
+      "n": 626,
+      "mean": 0.0202,
+      "rms": 0.0375,
+      "p95": 0.1035,
+      "max": 0.1528,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.007
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.1451
+     ],
+     "ms": 619
+    },
+    "I10Fx-g20": {
+     "surf": {
+      "n": 612,
+      "mean": 0.0122,
+      "rms": 0.0185,
+      "p95": 0.0481,
+      "max": 0.0568,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0063
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "6": 0
+     },
+     "lambdas": [
+      0.1325
+     ],
+     "ms": 1605
+    }
+   }
+  },
+  "tunnel": {
+   "refVolumes": {
+    "3": 30.234084226353033
+   },
+   "blockVolumes": {
+    "3": 30
+   },
+   "refSteps": 40,
+   "refPhasesAlive": 1,
+   "models": {
+    "I2Fx-g20": {
+     "surf": {
+      "n": 971,
+      "mean": 0.0471,
+      "rms": 0.0882,
+      "p95": 0.2133,
+      "max": 0.3982,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0027
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "3": 0
+     },
+     "lambdas": [
+      0.0983
+     ],
+     "ms": 658
+    },
+    "I4Fx-g20": {
+     "surf": {
+      "n": 961,
+      "mean": 0.0383,
+      "rms": 0.0724,
+      "p95": 0.1609,
+      "max": 0.3508,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": 0.0011
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "3": 0
+     },
+     "lambdas": [
+      0.0877
+     ],
+     "ms": 1281
+    },
+    "I10Fx-g20": {
+     "surf": {
+      "n": 942,
+      "mean": 0.0252,
+      "rms": 0.0431,
+      "p95": 0.0883,
+      "max": 0.1971,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0021
+     },
+     "seam": {
+      "n": 0,
+      "unmatched": 0,
+      "total": 0
+     },
+     "volErr": {
+      "3": 0
+     },
+     "lambdas": [
+      0.0608
+     ],
+     "ms": 2965
+    }
+   }
+  },
+  "terrain-step": {
+   "refVolumes": {
+    "1": 30.22895119334109,
+    "2": 45.9247585138874
+   },
+   "blockVolumes": {
+    "1": 30,
+    "2": 45
+   },
+   "refSteps": 26,
+   "refPhasesAlive": 2,
+   "models": {
+    "I2Fx-g20": {
+     "surf": {
+      "n": 864,
+      "mean": 0.0176,
+      "rms": 0.0421,
+      "p95": 0.0807,
+      "max": 0.2907,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0062
+     },
+     "seam": {
+      "n": 292,
+      "mean": 0.0197,
+      "rms": 0.0337,
+      "p95": 0.085,
+      "max": 0.2268,
+      "unmatched": 0,
+      "total": 292
+     },
+     "volErr": {
+      "1": 0.0001,
+      "2": 0.0001
+     },
+     "lambdas": [
+      0.1236,
+      0.1353,
+      0.1353
+     ],
+     "ms": 2349
+    },
+    "I4Fx-g20": {
+     "surf": {
+      "n": 856,
+      "mean": 0.0141,
+      "rms": 0.0319,
+      "p95": 0.0571,
+      "max": 0.2163,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0066
+     },
+     "seam": {
+      "n": 292,
+      "mean": 0.0165,
+      "rms": 0.0273,
+      "p95": 0.0774,
+      "max": 0.1424,
+      "unmatched": 0,
+      "total": 292
+     },
+     "volErr": {
+      "1": 0.0001,
+      "2": 0.0001
+     },
+     "lambdas": [
+      0.1282,
+      0.1275,
+      0.1275
+     ],
+     "ms": 5048
+    },
+    "I10Fx-g20": {
+     "surf": {
+      "n": 854,
+      "mean": 0.0107,
+      "rms": 0.0174,
+      "p95": 0.0321,
+      "max": 0.0965,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0074
+     },
+     "seam": {
+      "n": 292,
+      "mean": 0.0114,
+      "rms": 0.0175,
+      "p95": 0.0486,
+      "max": 0.0881,
+      "unmatched": 0,
+      "total": 292
+     },
+     "volErr": {
+      "1": 0.0001,
+      "2": 0.0001
+     },
+     "lambdas": [
+      0.1282,
+      0.1112,
+      0.1112
+     ],
+     "ms": 12716
+    }
+   }
+  },
+  "slab-line": {
+   "refVolumes": {
+    "6": 6.045890924798313,
+    "7": 31.266426903603485
+   },
+   "blockVolumes": {
+    "6": 6,
+    "7": 30
+   },
+   "refSteps": 12,
+   "refPhasesAlive": 8,
+   "models": {
+    "I2Fx-g20": {
+     "surf": {
+      "n": 814,
+      "mean": 0.0124,
+      "rms": 0.0145,
+      "p95": 0.0222,
+      "max": 0.0582,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0111
+     },
+     "seam": {
+      "n": 220,
+      "mean": 0.0221,
+      "rms": 0.0294,
+      "p95": 0.0784,
+      "max": 0.0862,
+      "unmatched": 0,
+      "total": 220
+     },
+     "volErr": {
+      "6": -0.0003,
+      "7": 0.0001
+     },
+     "lambdas": [
+      0.2425,
+      0.1354,
+      0.1354,
+      0.2425,
+      0.2425,
+      0.2425,
+      0.2425,
+      0.2425
+     ],
+     "ms": 1910
+    },
+    "I4Fx-g20": {
+     "surf": {
+      "n": 814,
+      "mean": 0.0127,
+      "rms": 0.015,
+      "p95": 0.0277,
+      "max": 0.0568,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0114
+     },
+     "seam": {
+      "n": 220,
+      "mean": 0.0224,
+      "rms": 0.0285,
+      "p95": 0.0699,
+      "max": 0.0838,
+      "unmatched": 0,
+      "total": 220
+     },
+     "volErr": {
+      "6": 0.0002,
+      "7": -0.0001
+     },
+     "lambdas": [
+      0.255,
+      0.1392,
+      0.1392,
+      0.255,
+      0.255,
+      0.255,
+      0.255,
+      0.255
+     ],
+     "ms": 3814
+    },
+    "I10Fx-g20": {
+     "surf": {
+      "n": 814,
+      "mean": 0.013,
+      "rms": 0.0159,
+      "p95": 0.0336,
+      "max": 0.0632,
+      "unmatched": 0,
+      "unmatchedFrac": 0,
+      "bias": -0.0116
+     },
+     "seam": {
+      "n": 220,
+      "mean": 0.0224,
+      "rms": 0.0285,
+      "p95": 0.0699,
+      "max": 0.0838,
+      "unmatched": 0,
+      "total": 220
+     },
+     "volErr": {
+      "6": 0.0014,
+      "7": -0.0001
+     },
+     "lambdas": [
+      0.2586,
+      0.1428,
+      0.1428,
+      0.2586,
+      0.2586,
+      0.2586,
+      0.2586,
+      0.2586
+     ],
+     "ms": 9106
+    }
+   }
+  }
+ }
+}

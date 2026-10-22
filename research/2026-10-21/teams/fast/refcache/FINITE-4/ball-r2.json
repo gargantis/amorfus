@@ -1,0 +1,1 @@
+{"regime":"FINITE-4","name":"ball-r2","opts":{"maxSteps":4,"stopAfter":99,"n":12},"ms":295,"steps":4,"converged":false,"lastChanges":[4880,3504,2752,1848],"grid":[84,84,84],"n":12,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":33,"target":57024,"lambda":0.04913049936294556,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":33,"volume":32.9861}]}

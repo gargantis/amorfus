@@ -1,0 +1,1 @@
+{"set":"b","name":"b-stairs","regime":"FINITE-4","n":12,"ms":1559,"steps":4,"converged":false,"changes":17518,"premerged":0,"alive":3,"lambda":[[1,81,-0.019],[5,42,0.0704],[3,63,0.0516]],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":2,"oy":3,"oz":1},"dScale":29894,"origin":[2,3,1],"size":[9,8,9],"evalLo":[4,5,3],"evalHi":[9,9,8],"blocks":186}

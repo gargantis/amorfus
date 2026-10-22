@@ -1,0 +1,12 @@
+solver [rule (pressure-favoured split; ties -> first option)] E 8.79446 conv true t 72.1 sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 contact null
+solver [no split (4-fold junction kept)] E 9.13311 conv false t 120.0 sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,6|7 contact null
+engine n 32 s 0.2 jit 0 seed 1: 52 steps sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 quad 0 E 8.8760 vs exact-rasterised 8.8619 (0.16%) [exact 8.7945] p 1.534,1.506,1.447 vs 1.466,1.466,1.466 dist mean 0.0279 max 0.0714
+engine n 32 s 0.2 jit 0.001 seed 1: 41 steps sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 quad 0 E 8.8863 vs exact-rasterised 8.8619 (0.28%) [exact 8.7945] p 1.522,1.415,1.472 vs 1.466,1.466,1.466 dist mean 0.0315 max 0.0763
+engine n 32 s 0.2 jit 0.001 seed 2: 35 steps sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 quad 0 E 8.8975 vs exact-rasterised 8.8619 (0.40%) [exact 8.7945] p 1.539,1.455,1.496 vs 1.466,1.466,1.466 dist mean 0.0362 max 0.0763
+engine n 32 s 0.2 jit 0.001 seed 3: 51 steps sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 quad 0 E 8.8835 vs exact-rasterised 8.8619 (0.24%) [exact 8.7945] p 1.510,1.426,1.423 vs 1.466,1.466,1.466 dist mean 0.0269 max 0.0641
+engine n 64 s 0.2 jit 0 seed 1: 73 steps sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 quad 0 E 8.9066 vs exact-rasterised 8.9176 (-0.12%) [exact 8.7945] p 1.487,1.449,1.462 vs 1.466,1.466,1.466 dist mean 0.0096 max 0.0265
+engine n 64 s 0.2 jit 0.001 seed 1: 91 steps sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 quad 0 E 8.8996 vs exact-rasterised 8.9176 (-0.20%) [exact 8.7945] p 1.479,1.471,1.467 vs 1.466,1.466,1.466 dist mean 0.0067 max 0.0193
+engine n 64 s 0.2 jit 0.001 seed 2: 63 steps sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 quad 0 E 8.9081 vs exact-rasterised 8.9176 (-0.11%) [exact 8.7945] p 1.478,1.444,1.462 vs 1.466,1.466,1.466 dist mean 0.0104 max 0.0265
+engine n 64 s 0.1 jit 0 seed 1: 86 steps sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 quad 0 E 8.9415 vs exact-rasterised 8.9176 (0.27%) [exact 8.7945] p 1.703,1.409,1.454 vs 1.466,1.466,1.466 dist mean 0.0583 max 0.1184
+engine n 128 s 0.2 jit 0 seed 1: 108 steps sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 quad 0 E 8.9205 vs exact-rasterised 8.9221 (-0.02%) [exact 8.7945] p 1.460,1.457,1.455 vs 1.466,1.466,1.466 dist mean 0.0049 max 0.0164
+engine n 128 s 0.2 jit 0.001 seed 1: 99 steps sig 1:1 6:1 7:1 adj 0|1,0|6,0|7,1|6,1|7,6|7 quad 0 E 8.9148 vs exact-rasterised 8.9221 (-0.08%) [exact 8.7945] p 1.482,1.476,1.470 vs 1.466,1.466,1.466 dist mean 0.0061 max 0.0189

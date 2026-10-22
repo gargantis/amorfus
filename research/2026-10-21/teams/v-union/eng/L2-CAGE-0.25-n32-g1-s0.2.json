@@ -1,0 +1,365 @@
+{
+ "cfg": "L2",
+ "X": [
+  2,
+  1
+ ],
+ "n": 32,
+ "regime": "CAGE-0.25",
+ "g": 1,
+ "s_b": 0.2,
+ "runs": [
+  {
+   "v": "id",
+   "steps": 50,
+   "converged": true,
+   "ms": 1725,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-4,-2:6 -2,-1:6 -2,2:7 -1,1:7 1,-1:7 2,-2:7 2,1:6",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "rot90",
+   "steps": 50,
+   "converged": true,
+   "ms": 1610,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    },
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:7 -1,-1:7 -1,2:6 1,-2:6 1,1:7 2,-4:6 2,2:7",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "rot180",
+   "steps": 50,
+   "converged": true,
+   "ms": 1440,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-2,-1:6 -2,2:7 -1,1:7 1,-1:7 2,-2:7 2,1:6 4,2:6",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "rot270",
+   "steps": 50,
+   "converged": true,
+   "ms": 1299,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    },
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:7 -2,4:6 -1,-1:7 -1,2:6 1,-2:6 1,1:7 2,2:7",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "mirX",
+   "steps": 50,
+   "converged": true,
+   "ms": 1297,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    },
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-2,-2:7 -2,1:6 -1,-1:7 1,1:7 2,-1:6 2,2:7 4,-2:6",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "mirY",
+   "steps": 50,
+   "converged": true,
+   "ms": 1277,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    },
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-4,2:6 -2,-2:7 -2,1:6 -1,-1:7 1,1:7 2,-1:6 2,2:7",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "diag",
+   "steps": 50,
+   "converged": true,
+   "ms": 1494,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-2,-4:6 -2,2:7 -1,-2:6 -1,1:7 1,-1:7 1,2:6 2,-2:7",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "anti",
+   "steps": 50,
+   "converged": true,
+   "ms": 1465,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-2,2:7 -1,-2:6 -1,1:7 1,-1:7 1,2:6 2,-2:7 2,4:6",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "rev",
+   "steps": 50,
+   "converged": true,
+   "ms": 1455,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-4,-2:6 -2,-1:6 -2,2:7 -1,1:7 1,-1:7 2,-2:7 2,1:6",
+   "phases": "7:6 6:4 6:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "j1e-3s1",
+   "steps": 45,
+   "converged": true,
+   "ms": 1469,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-4,-2:6 -2,-1:6 -2,2:7 -1,1:7 1,-1:7 2,-2:7 2,1:6",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "j1e-3s2",
+   "steps": 43,
+   "converged": true,
+   "ms": 1374,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-4,-2:6 -2,-1:6 -2,2:7 -1,1:7 1,-1:7 2,-2:7 2,1:6",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "j1e-3s3",
+   "steps": 46,
+   "converged": true,
+   "ms": 1573,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 7,
+   "geo": 7,
+   "detail": [
+    {
+     "mat": 6,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 7,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-4,-2:6 -2,-1:6 -2,2:7 -1,1:7 1,-1:7 2,-2:7 2,1:6",
+   "phases": "6:6 6:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  }
+ ],
+ "tally": {
+  "sym/rev:7/7": 9,
+  "frozen:7/7": 3
+ }
+}

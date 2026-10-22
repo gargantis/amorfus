@@ -1,0 +1,18 @@
+b-house FID-0.15 corners 69 1748 ms
+  D sym/vtx: cube 0.0094/0.0708 | bevel 0.0752/0.104 | bevel-placed 0.0437/0.0623 | tabNV 0.0236/0.0327 | tabNVsn 0.0306/0.02 | tabV 0.0218/0.0364 | tabK8 0.027/0.026 | onD 0.0332/0 | onDx0.5 0.0172/0.0354 | onL 0.0267/0.0252 | onLx0.5 0.0146/0.0434
+  L sym/vtx: cube 0.0051/0.0573 | bevel 0.0755/0.1099 | bevel-placed 0.042/0.0495 | tabNV 0.0214/0.0114 | tabNVsn 0.0279/0.0192 | tabV 0.0194/0.0205 | tabK8 0.0259/0.0113 | onD 0.0331/0.0252 | onDx0.5 0.0164/0.0348 | onL 0.0256/0 | onLx0.5 0.0129/0.0287
+b-stairs FID-0.15 corners 90 1823 ms
+  D sym/vtx: cube 0.0377/0.1278 | bevel 0.0908/0.1125 | bevel-placed 0.1132/0.1192 | tabNV 0.0777/0.0621 | tabNVsn 0.0777/0.0621 | tabV 0.0493/0.0691 | tabK8 0.0772/0.0607 | onD 0.0347/0 | onDx0.5 0.0251/0.0639 | onL 0.0371/0.0148 | onLx0.5 0.0276/0.0701
+  L sym/vtx: cube 0.0264/0.1158 | bevel 0.0895/0.1175 | bevel-placed 0.1069/0.1174 | tabNV 0.071/0.0591 | tabNVsn 0.071/0.0591 | tabV 0.042/0.0571 | tabK8 0.0708/0.0575 | onD 0.0372/0.0148 | onDx0.5 0.0207/0.056 | onL 0.0348/0 | onLx0.5 0.0211/0.0579
+file://teams/v-table/src/meshlib.mjs:294
+    m2sP95: +pctl(m2sAll, 0.95).toFixed(4), s2mP95: +pctl(s2mAll, 0.95).toFixed(4), meshArea: +sa.toFixed(3), simArea: +sw.toFixed(3) };
+                                                                       ^
+
+TypeError: Cannot read properties of null (reading 'toFixed')
+    at scoreMesh (file://teams/v-table/src/meshlib.mjs:294:72)
+    at file://teams/v-table/src/score.mjs:101:19
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.22.1

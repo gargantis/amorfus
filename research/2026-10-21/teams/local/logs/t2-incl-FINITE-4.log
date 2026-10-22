@@ -1,0 +1,4 @@
+incl-slab3: 278 ms 4 st NC | 6:17->16.998 lam 0.12548 | 7:1->1 lam 0.26272
+incl-slab5: 281 ms 4 st NC | 6:49->47.972 lam 0.16629 | 7:1->1 lam 0.28842
+incl-slab7: 298 ms 4 st NC | 6:97->95.639 lam 0.16629 | 7:1->1 lam 0.28842
+incl-bar3x2x9: 192 ms 4 st NC | 6:53->51.806 lam 0.16629 | 7:1->1 lam 0.28842

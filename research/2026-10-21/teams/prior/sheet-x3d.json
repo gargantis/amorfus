@@ -1,0 +1,35 @@
+{
+ "out": "img/sheet-x3d.png",
+ "cols": 3,
+ "title": "3D sq2-ABCD slab (2x1x2), FREE, n=16: plan slices (y=0.5 unless noted)",
+ "cell": [
+  260,
+  260
+ ],
+ "items": [
+  {
+   "path": "img/abcd3d-frozen-j0-s1.png",
+   "label": "sq2-ABCD 3D FREE, jitter 0\n4-film line persists"
+  },
+  {
+   "path": "img/abcd3d-annealed-j0.01-s1.png",
+   "label": "3D annealed 1e-2, 300 steps\n4-film line persists"
+  },
+  {
+   "path": "img/abcd3d-anneal-quench-j0.1-s2.png",
+   "label": "3D anneal 0.1+quench s2\nresolved: B-C wall"
+  },
+  {
+   "path": "img/abcd3d-anneal-quench-j0.1-s1-y0.2.png",
+   "label": "3D anneal 0.1+quench s1, y=0.2\nA-D wall (red-sand) low"
+  },
+  {
+   "path": "img/abcd3d-anneal-quench-j0.1-s1.png",
+   "label": "same run, y=0.5\nnear-X at mid-height"
+  },
+  {
+   "path": "img/abcd3d-anneal-quench-j0.1-s1-y0.8.png",
+   "label": "same run, y=0.8\nB-C wall (blue-green) high"
+  }
+ ]
+}

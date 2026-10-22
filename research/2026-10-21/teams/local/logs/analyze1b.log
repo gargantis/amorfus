@@ -1,0 +1,25 @@
+regime|kind                near d* D0 (1/256 1/64 1/16)   near labels  far |dD0| far |dLab| far cells  lam base -> changed? base vol
+CAGE-0.25|add              12 12 11.25                    11.25       0.2682    0.25      24432     0.16629 true 136.083
+CAGE-0.25-novol|add        2.75 2.5 2.25                  2.5         0.0364    0.0833    202       0 false 98.005
+CAGE-0.25-novol|recolour   0.75 0.75 0.5                  0.5         0.0833    0.0833    144       0 false 98.005
+CAGE-0.25-novol|remove     0.75 0.75 0.5                  0.5         0.0833    0.0833    144       0 false 98.005
+CAGE-0.25|recolour         12 12 11.25                    12          0.1847    0.1667    15804     0.16629 true 136.083
+CAGE-0.25|remove           0 0 0                          0           0         0         0         0.16629 false 136.083
+FID-0.05|add               5 5 4.75                       4.75        0.2797    0.25      11800     0.21629 true 139.241
+FID-0.05-novol|add         0 0 0                          0           0         0         0         0 false 0
+FID-0.05-novol|recolour    0 0 0                          0           0         0         0         0 false 0
+FID-0.05-novol|remove      0 0 0                          0           0         0         0         0 false 0
+FID-0.05|recolour          12 11.5 11.25                  11.5        0.123     0.1667    10176     0.21629 true 139.241
+FID-0.05|remove            0 0 0                          0           0         0         416       0.21629 true 139.241
+FID-0.15|add               5.5 5.25 0.75                  5.25        0.0833    0.0833    1216      0.17529 true 140
+FID-0.15-novol|add         0.25 0.25 0                    0           0         0         0         0 false 135.463
+FID-0.15-novol|recolour    0 0 0                          0           0         0         0         0 false 135.463
+FID-0.15-novol|remove      0.25 0.25 0                    0           0         0         0         0 false 135.463
+FID-0.15|recolour          4.5 4.25 4.25                  4.25        0.0833    0.0833    1876      0.17529 true 140
+FID-0.15|remove            4.5 4.25 4.25                  4.25        0.0833    0.0833    1404      0.17529 true 140
+FINITE-4|add               2.5 2.25 2.25                  2.25        0.0416    0         1458      0.16629 true 138
+FINITE-4-novol|add         0.5 0.5 0.5                    0.5         0         0         0         0 false 130.981
+FINITE-4-novol|recolour    0.5 0.25 0.25                  0.25        0         0         0         0 false 130.981
+FINITE-4-novol|remove      0.5 0.5 0.5                    0.5         0         0         0         0 false 130.981
+FINITE-4|recolour          0.25 0.25 0                    0.25        0         0         0         0.16629 false 138
+FINITE-4|remove            0.25 0.25 0                    0           0         0         0         0.16629 false 138

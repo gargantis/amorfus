@@ -1,0 +1,11 @@
+C10-V05@n24 tunnel: 7042 ms, 35 st, cells 762048, d 0.0866, rss 169 MB
+C10-V05@n24 single: 156 ms, 9 st, cells 46656, d 0.1447, rss 155 MB
+C10-V05@n24 pillar3: 602 ms, 21 st, cells 108864, d 0.1721, rss 155 MB
+C10-V05@n24 cube2-same: 634 ms, 12 st, cells 216000, d 0.0985, rss 155 MB
+C10-V05@n24 sq2-same: 368 ms, 12 st, cells 129600, d 0.1221, rss 156 MB
+C10-V05@n24 stairs: 2264 ms, 25 st, cells 423360, d 0.1136, rss 156 MB
+C10-V05@n24 ring8: 1249 ms, 19 st, cells 254016, d 0.1432, rss 159 MB
+C10-V05@n24 room2: 8635 ms, 30 st, cells 979776, d 0.0728, rss 158 MB
+C10-V05@n24 trench: 5557 ms, 18 st, cells 1166400, d 0.0296, rss 192 MB
+C10-V05@n24 slab-line: 91282 ms, 150 st nc, cells 876096, d 0.2639, rss 195 MB
+C10-V05@n24 slab-dot: 8296 ms, 29 st, cells 627264, d 0.1061, rss 195 MB

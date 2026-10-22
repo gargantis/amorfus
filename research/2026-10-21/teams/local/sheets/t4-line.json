@@ -1,0 +1,59 @@
+{
+ "out": "teams/local/sheets/t4-line.png",
+ "cols": 3,
+ "title": "Task 4: painted diagonal line (6x1x6, n=16), physics vs imposed union",
+ "cell": [
+  330,
+  300
+ ],
+ "items": [
+  {
+   "path": "teams/local/img/t4/slab-line-FID-0.15-physics-plan.png",
+   "label": "FID-0.15 physics: 6 separate dots"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-FID-0.15-ruleA-plan.png",
+   "label": "FID-0.15, A line imposed as one cluster:\nstill 6 pieces, neck 0 at every X"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-FID-0.15-ruleB-plan.png",
+   "label": "FID-0.15, B halves imposed united"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-FID-0.05-physics-plan.png",
+   "label": "FID-0.05 physics: line unites"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-FID-0.05-ruleB-plan.png",
+   "label": "FID-0.05, B halves imposed united:\nline cut into 2 (rule matters)"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-FINITE-4-physics-plan.png",
+   "label": "FINITE-4 physics: line unites, neck 0.5"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-CAGE-0.25-physics-plan.png",
+   "label": "CAGE-0.25 physics: line unites, neck 0.69"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-CAGE-0.25-ruleB-plan.png",
+   "label": "CAGE-0.25, B imposed united:\nA still wins every X"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-FREE-physics-plan.png",
+   "label": "FREE physics: line unites"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-FID-0.15-physics-view.png",
+   "label": "FID-0.15 physics (view)"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-CAGE-0.25-physics-view.png",
+   "label": "CAGE-0.25 physics (view)"
+  },
+  {
+   "path": "teams/local/img/t4/slab-line-FINITE-4-physics-view.png",
+   "label": "FINITE-4 physics (view)"
+  }
+ ]
+}

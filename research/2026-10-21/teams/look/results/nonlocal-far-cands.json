@@ -1,0 +1,203 @@
+{
+ "note": "tunnel alone / with an attached 1x3 pillar on the roof corner / with the pillar detached by a 1-block gap",
+ "runs": [
+  {
+   "regime": "BOX0-PAINT-0.1-0.02",
+   "scene": "alone",
+   "vsAlone": null,
+   "steps": 24,
+   "ms": 2464,
+   "cells": 614400,
+   "lambdas": [
+    0.077
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.1-0.02",
+   "scene": "barAttached",
+   "vsAlone": {
+    "cellsChanged": 5905,
+    "volumeChanged": 1.441650390625,
+    "changedWithinTunnelHalf": 1175
+   },
+   "steps": 85,
+   "ms": 11528,
+   "cells": 1105920,
+   "lambdas": [
+    0.0763
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.1-0.02",
+   "scene": "barDetached",
+   "vsAlone": {
+    "cellsChanged": 0,
+    "volumeChanged": 0,
+    "changedWithinTunnelHalf": 0
+   },
+   "steps": 24,
+   "ms": 3337,
+   "cells": 1228800,
+   "lambdas": [
+    0.077,
+    0.1302
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.15-0.02",
+   "scene": "alone",
+   "vsAlone": null,
+   "steps": 19,
+   "ms": 1514,
+   "cells": 614400,
+   "lambdas": [
+    0.0851
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.15-0.02",
+   "scene": "barAttached",
+   "vsAlone": {
+    "cellsChanged": 2973,
+    "volumeChanged": 0.725830078125,
+    "changedWithinTunnelHalf": 433
+   },
+   "steps": 25,
+   "ms": 2819,
+   "cells": 1105920,
+   "lambdas": [
+    0.1103
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "BOX0-PAINT-0.15-0.02",
+   "scene": "barDetached",
+   "vsAlone": {
+    "cellsChanged": 0,
+    "volumeChanged": 0,
+    "changedWithinTunnelHalf": 0
+   },
+   "steps": 19,
+   "ms": 2051,
+   "cells": 1228800,
+   "lambdas": [
+    0.0851,
+    0.1576
+   ],
+   "clearCells": {
+    "clearHeightAtW": 2,
+    "clearWidthAtH": 0.75,
+    "pass": true
+   },
+   "floor": 1,
+   "roof": 3,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "alone",
+   "vsAlone": null,
+   "steps": 40,
+   "ms": 4411,
+   "cells": 614400,
+   "lambdas": [
+    0.0683
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.375,
+   "roof": 2.625,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "barAttached",
+   "vsAlone": {
+    "cellsChanged": 16805,
+    "volumeChanged": 4.102783203125,
+    "changedWithinTunnelHalf": 16321
+   },
+   "steps": 114,
+   "ms": 15513,
+   "cells": 1105920,
+   "lambdas": [
+    0.0725
+   ],
+   "clearCells": {
+    "clearHeightAtW": 0,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": null,
+   "roof": null,
+   "outerTopY": 4
+  },
+  {
+   "regime": "FID-0.15",
+   "scene": "barDetached",
+   "vsAlone": {
+    "cellsChanged": 0,
+    "volumeChanged": 0,
+    "changedWithinTunnelHalf": 0
+   },
+   "steps": 40,
+   "ms": 6266,
+   "cells": 1228800,
+   "lambdas": [
+    0.0683,
+    0.1411
+   ],
+   "clearCells": {
+    "clearHeightAtW": 1,
+    "clearWidthAtH": 0,
+    "pass": false
+   },
+   "floor": 1.375,
+   "roof": 2.625,
+   "outerTopY": 4
+  }
+ ]
+}

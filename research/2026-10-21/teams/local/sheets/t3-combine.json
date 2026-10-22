@@ -1,0 +1,12 @@
+{"out": "teams/local/sheets/t3-combine.png", "cols": 3, "title": "Task 3: combining clusters (3D, n=12, FID-0.15)", "cell": [420, 300],
+ "items": [
+  {"path": "teams/local/img/bridge/bridge-sep-FID-0.15-view.png", "label": "two 3x2x5 A slabs, one-block gap"},
+  {"path": "teams/local/img/bridge/bridge-A-FID-0.15-view.png", "label": "gap bridged by one A block: one cluster,\nlambda 0.175 -> 0.087"},
+  {"path": "teams/local/img/bridge/bridge-B-FID-0.15-view.png", "label": "gap bridged by one B block:\nseams stay on the block faces"},
+  {"path": "teams/local/img/bridge/bridge-sep-FID-0.15-slice.png", "label": "section z=2.5: separate"},
+  {"path": "teams/local/img/bridge/bridge-A-FID-0.15-slice.png", "label": "section z=2.5: A bridge"},
+  {"path": "teams/local/img/bridge/bridge-B-FID-0.15-slice.png", "label": "section z=2.5: B bridge"},
+  {"path": "teams/local/img/seamend/seamend-sym-FID-0.15-view.png", "label": "8x2x4 A|B slab: seam meets the end edges"},
+  {"path": "teams/local/img/seamend/seamend-sym-FID-0.15-slice.png", "label": "section x=4 across the seam:\nlabels unmoved, groove from render blur"},
+  {"path": "teams/local/img/seamend/incl-slab6-FID-0.15-view.png", "label": "one B inclusion in a 6x2x6 A slab:\nbulges 0.23 above the top"}
+ ]}

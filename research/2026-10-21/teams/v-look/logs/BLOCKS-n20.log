@@ -1,0 +1,5 @@
+BLOCKS@n20 checker2: 406 ms, 0 st, cells 845000, d 0, rss 159 MB
+BLOCKS@n20 checker1: 357 ms, 0 st, cells 507000, d 0, rss 160 MB
+BLOCKS@n20 stripe-alone: 242 ms, 0 st, cells 1045000, d 0, rss 180 MB
+BLOCKS@n20 stripe-patch: 263 ms, 0 st, cells 1045000, d 0, rss 189 MB
+BLOCKS@n20 step-line: 394 ms, 0 st, cells 1183000, d 0, rss 197 MB

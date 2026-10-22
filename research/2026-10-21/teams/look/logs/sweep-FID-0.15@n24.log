@@ -1,0 +1,6 @@
+FID-0.15@n24 single: 447 ms, 7 steps, Δ 0.086, phases {"6":1}→{"6":1}, rss 89 MB
+FID-0.15@n24 cube2-same: 2168 ms, 14 steps, Δ 0.061, phases {"6":1}→{"6":1}, rss 124 MB
+FID-0.15@n24 sq2-same: 821 ms, 11 steps, Δ 0.069, phases {"6":1}→{"6":1}, rss 132 MB
+FID-0.15@n24 pillar3: 675 ms, 10 steps, Δ 0.083, phases {"6":1}→{"6":1}, rss 149 MB
+FID-0.15@n24 pair-same: 616 ms, 12 steps, Δ 0.087, phases {"6":1}→{"6":1}, rss 163 MB
+FID-0.15@n24 wall 11.48 s maxrss 159736 KB

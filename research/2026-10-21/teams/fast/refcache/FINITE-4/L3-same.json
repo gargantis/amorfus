@@ -1,0 +1,1 @@
+{"regime":"FINITE-4","name":"L3-same","opts":{"maxSteps":4,"stopAfter":99,"n":16},"ms":133,"steps":4,"converged":false,"lastChanges":[2102,902,758,666],"grid":[64,48,64],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":3,"target":12288,"lambda":0.11895960569381714,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":3,"volume":3}]}

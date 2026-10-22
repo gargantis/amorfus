@@ -1,0 +1,45 @@
+checker-A1-B1 j0: 701 ms 9 st | A 2->2 B 2->2 | 6:1 lam 0.23387 6:1 lam 0.23387 7:1 lam 0.23387 7:1 lam 0.23387
+checker-A1-B1 s1: 550 ms 10 st | A 2->2 B 2->2 | 6:1 lam 0.23387 6:1 lam 0.23372 7:1 lam 0.23392 7:1 lam 0.234
+checker-A1-B1 s2: 494 ms 11 st | A 2->2 B 2->2 | 6:1 lam 0.23378 6:1 lam 0.23278 7:1 lam 0.23399 7:1 lam 0.2358
+checker-A1-B1 s3: 679 ms 13 st | A 2->2 B 2->2 | 6:1 lam 0.23396 6:1 lam 0.23384 7:1 lam 0.23133 7:1 lam 0.23353
+checker-A1-B1 rev: 362 ms 9 st | A 2->2 B 2->2 | 7:1 lam 0.23387 7:1 lam 0.23387 6:1 lam 0.23387 6:1 lam 0.23387
+checker-A1-B2 j0: 4620 ms 69 st | A 2->1 B 2->2 | 6:2 lam 0.21799 7:2 lam 0.20437 7:2 lam 0.20437
+checker-A1-B2 s1: 8638 ms 115 st | A 2->1 B 2->2 | 6:2 lam 0.21653 7:2 lam 0.20427 7:2 lam 0.20266
+checker-A1-B2 s2: 4994 ms 70 st | A 2->1 B 2->2 | 6:2 lam 0.21835 7:2 lam 0.20445 7:2 lam 0.20368
+checker-A1-B2 s3: 6132 ms 89 st | A 2->1 B 2->2 | 6:2 lam 0.21652 7:2 lam 0.20439 7:2 lam 0.20335
+checker-A1-B2 rev: 4562 ms 69 st | A 2->1 B 2->2 | 7:2 lam 0.20437 7:2 lam 0.20437 6:2 lam 0.21799
+checker-A1-B4 j0: 4255 ms 49 st | A 2->1 B 2->2 | 6:2 lam 0.17988 7:4 lam 0.16157 7:4 lam 0.16157
+checker-A1-B4 s1: 5076 ms 48 st | A 2->1 B 2->2 | 6:2 lam 0.18101 7:4 lam 0.16269 7:4 lam 0.1657
+checker-A1-B4 s2: 6465 ms 64 st | A 2->1 B 2->2 | 6:2 lam 0.18043 7:4 lam 0.16668 7:4 lam 0.16651
+checker-A1-B4 s3: 4494 ms 47 st | A 2->1 B 2->2 | 6:2 lam 0.18002 7:4 lam 0.16642 7:4 lam 0.16208
+checker-A1-B4 rev: 4079 ms 49 st | A 2->1 B 2->2 | 7:4 lam 0.16157 7:4 lam 0.16157 6:2 lam 0.17988
+checker-A2-B1 j0: 4165 ms 69 st | A 2->2 B 2->1 | 6:2 lam 0.20437 6:2 lam 0.20437 7:2 lam 0.21799
+checker-A2-B1 s1: 4189 ms 55 st | A 2->2 B 2->1 | 6:2 lam 0.20482 6:2 lam 0.20484 7:2 lam 0.21758
+checker-A2-B1 s2: 4662 ms 60 st | A 2->2 B 2->1 | 6:2 lam 0.20484 6:2 lam 0.2048 7:2 lam 0.21851
+checker-A2-B1 s3: 4413 ms 56 st | A 2->2 B 2->1 | 6:2 lam 0.20464 6:2 lam 0.20505 7:2 lam 0.21785
+checker-A2-B1 rev: 4445 ms 69 st | A 2->2 B 2->1 | 6:2 lam 0.20437 6:2 lam 0.20437 7:2 lam 0.21799
+checker-A4-B1 j0: 4129 ms 49 st | A 2->2 B 2->1 | 6:4 lam 0.16157 6:4 lam 0.16157 7:2 lam 0.17988
+checker-A4-B1 s1: 4194 ms 43 st | A 2->2 B 2->1 | 6:4 lam 0.16204 6:4 lam 0.16515 7:2 lam 0.18005
+checker-A4-B1 s2: 4087 ms 42 st | A 2->2 B 2->1 | 6:4 lam 0.16239 6:4 lam 0.16716 7:2 lam 0.18029
+checker-A4-B1 s3: 5990 ms 58 st | A 2->2 B 2->1 | 6:4 lam 0.16593 6:4 lam 0.16702 7:2 lam 0.1801
+checker-A4-B1 rev: 4317 ms 49 st | A 2->2 B 2->1 | 6:4 lam 0.16157 6:4 lam 0.16157 7:2 lam 0.17988
+checker-A2-B2 j0: 4710 ms 73 st | A 2->2 B 2->2 | 6:2 lam 0.19504 6:2 lam 0.19504 7:2 lam 0.19504 7:2 lam 0.19504
+checker-A2-B2 s1: 7724 ms 101 st | A 2->1 B 2->1 | 6:4 lam 0.20038 7:4 lam 0.19895
+checker-A2-B2 s2: 6243 ms 81 st | A 2->2 B 2->1 | 6:2 lam 0.199 6:2 lam 0.19945 7:4 lam 0.20157
+checker-A2-B2 s3: 10678 ms 126 st | A 2->1 B 2->1 | 6:4 lam 0.1998 7:4 lam 0.19715
+checker-A2-B2 rev: 4679 ms 73 st | A 2->2 B 2->2 | 7:2 lam 0.19504 7:2 lam 0.19504 6:2 lam 0.19504 6:2 lam 0.19504
+checker-A2-B4 j0: 3816 ms 45 st | A 2->2 B 2->2 | 6:2 lam 0.18602 6:2 lam 0.18602 7:4 lam 0.15841 7:4 lam 0.15841
+checker-A2-B4 s1: 3600 ms 41 st | A 2->2 B 2->2 | 6:2 lam 0.18773 6:2 lam 0.18781 7:4 lam 0.16926 7:4 lam 0.16086
+checker-A2-B4 s2: 4760 ms 60 st | A 2->2 B 2->2 | 6:2 lam 0.19023 6:2 lam 0.18962 7:4 lam 0.16213 7:4 lam 0.16139
+checker-A2-B4 s3: 4446 ms 59 st | A 2->2 B 2->2 | 6:2 lam 0.1915 6:2 lam 0.18921 7:4 lam 0.16159 7:4 lam 0.16015
+checker-A2-B4 rev: 3268 ms 45 st | A 2->2 B 2->2 | 7:4 lam 0.15841 7:4 lam 0.15841 6:2 lam 0.18602 6:2 lam 0.18602
+checker-A4-B2 j0: 3213 ms 45 st | A 2->2 B 2->2 | 6:4 lam 0.15841 6:4 lam 0.15841 7:2 lam 0.18602 7:2 lam 0.18602
+checker-A4-B2 s1: 4527 ms 58 st | A 2->2 B 2->2 | 6:4 lam 0.16204 6:4 lam 0.15852 7:2 lam 0.18875 7:2 lam 0.1911
+checker-A4-B2 s2: 4787 ms 59 st | A 2->2 B 2->2 | 6:4 lam 0.16141 6:4 lam 0.16204 7:2 lam 0.18937 7:2 lam 0.1904
+checker-A4-B2 s3: 3871 ms 39 st | A 2->2 B 2->2 | 6:4 lam 0.16003 6:4 lam 0.15945 7:2 lam 0.19143 7:2 lam 0.18842
+checker-A4-B2 rev: 3280 ms 45 st | A 2->2 B 2->2 | 7:2 lam 0.18602 7:2 lam 0.18602 6:4 lam 0.15841 6:4 lam 0.15841
+checker-A4-B4 j0: 2925 ms 42 st | A 2->2 B 2->2 | 6:4 lam 0.14866 6:4 lam 0.14866 7:4 lam 0.14866 7:4 lam 0.14866
+checker-A4-B4 s1: 3164 ms 39 st | A 2->2 B 2->2 | 6:4 lam 0.16137 6:4 lam 0.16004 7:4 lam 0.16015 7:4 lam 0.16004
+checker-A4-B4 s2: 3508 ms 43 st | A 2->2 B 2->2 | 6:4 lam 0.1615 6:4 lam 0.15981 7:4 lam 0.16186 7:4 lam 0.16115
+checker-A4-B4 s3: 4703 ms 57 st | A 2->2 B 2->2 | 6:4 lam 0.16088 6:4 lam 0.16063 7:4 lam 0.16321 7:4 lam 0.16195
+checker-A4-B4 rev: 3320 ms 42 st | A 2->2 B 2->2 | 7:4 lam 0.14866 7:4 lam 0.14866 6:4 lam 0.14866 6:4 lam 0.14866

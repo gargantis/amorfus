@@ -1,0 +1,20 @@
+solver g 0.25: [1,1] t 0 pick 00 (76:1.16421 00:1.41421) adj 0|6,0|7
+  engine g 0.25 s 0.1 j 0: A|B film 1.844 | 6:1 7:1 | 130 st
+  engine g 0.25 s 0.1 j 0.001: A|B film 1.828 | 6:1 7:1 | 116 st
+  engine g 0.25 s 0.2 j 0: A|B film 2.031 | 6:1 7:1 | 47 st
+  engine g 0.25 s 0.2 j 0.001: A|B film 2.031 | 6:1 7:1 | 47 st
+solver g 0.5: [1,1] t 0 pick 00 (76:0.91421 00:1.41421) adj 0|6,0|7
+  engine g 0.5 s 0.1 j 0: A|B film 1.766 | 6:1 7:1 | 151 st
+  engine g 0.5 s 0.1 j 0.001: A|B film 1.734 | 6:1 7:1 | 162 st
+  engine g 0.5 s 0.2 j 0: A|B film 1.906 | 6:1 7:1 | 64 st
+  engine g 0.5 s 0.2 j 0.001: A|B film 1.906 | 6:1 7:1 | 57 st
+solver g 1: [1,1] t 0 pick 00 (76:0.41421 00:1.41421) adj 0|6,0|7
+  engine g 1 s 0.1 j 0: A|B film 0 | 6:1 7:1 | 22 st
+  engine g 1 s 0.1 j 0.001: A|B film 0 | 6:1 7:1 | 17 st
+  engine g 1 s 0.2 j 0: A|B film 1.563 | 6:1 7:1 | 58 st
+  engine g 1 s 0.2 j 0.001: A|B film 1.563 | 6:1 7:1 | 60 st
+solver g 1.5: [1,1] t 0 pick 00 (76:-0.08579 00:1.41421) adj 0|6,0|7
+  engine g 1.5 s 0.1 j 0: A|B film 0 | 6:1 7:1 | 21 st
+  engine g 1.5 s 0.1 j 0.001: A|B film 0 | 6:1 7:1 | 17 st
+  engine g 1.5 s 0.2 j 0: A|B film 1.094 | 6:1 7:1 | 64 st
+  engine g 1.5 s 0.2 j 0.001: A|B film 1.078 | 6:1 7:1 | 67 st

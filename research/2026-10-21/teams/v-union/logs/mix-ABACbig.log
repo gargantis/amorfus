@@ -1,0 +1,20 @@
+solver g 0.1: [0,0] t 0 pick 66 (17:0.04142 66:0.14142) adj 0|1,0|6,0|7,1|6,6|7
+  engine g 0.1 s 0.1 j 0: B|C film 0, A pair 1517.313 | 7:1 1:1 6:24 | 112 st
+  engine g 0.1 s 0.1 j 0.001: B|C film 0, A pair 1517.344 | 7:1 1:1 6:24 | 125 st
+  engine g 0.1 s 0.2 j 0: B|C film 0, A pair 1523.5 | 7:1 1:1 6:24 | 400 st
+  engine g 0.1 s 0.2 j 0.001: B|C film 0, A pair 1523.781 | 7:1 1:1 6:24 | 390 st
+solver g 0.3: [0,0] t 0 pick 66 (17:0.12426 66:0.42426) adj 0|1,0|6,0|7,1|6,6|7
+  engine g 0.3 s 0.1 j 0: B|C film 0, A pair 1517.375 | 7:1 1:1 6:24 | 98 st
+  engine g 0.3 s 0.1 j 0.001: B|C film 0, A pair 1517.375 | 7:1 1:1 6:24 | 121 st
+  engine g 0.3 s 0.2 j 0: B|C film 0, A pair 1523.813 | 7:1 1:1 6:24 | 400 st
+  engine g 0.3 s 0.2 j 0.001: B|C film 0, A pair 1523.75 | 7:1 1:1 6:24 | 388 st
+solver g 0.6: [0,0] t 0 pick 66 (17:0.24853 66:0.84853) adj 0|1,0|6,0|7,1|6,6|7
+  engine g 0.6 s 0.1 j 0: B|C film 0, A pair 1517.5 | 7:1 1:1 6:24 | 87 st
+  engine g 0.6 s 0.1 j 0.001: B|C film 0, A pair 1517.5 | 7:1 1:1 6:24 | 129 st
+  engine g 0.6 s 0.2 j 0: B|C film 0, A pair 1524.063 | 7:1 1:1 6:24 | 400 st
+  engine g 0.6 s 0.2 j 0.001: B|C film 0, A pair 1524.031 | 7:1 1:1 6:24 | 400 st
+solver g 1: [0,0] t 0 pick 66 (17:0.41421 66:1.41421) adj 0|1,0|6,0|7,1|6,6|7
+  engine g 1 s 0.1 j 0: B|C film 0, A pair 1517.563 | 7:1 1:1 6:24 | 111 st
+  engine g 1 s 0.1 j 0.001: B|C film 0, A pair 1517.563 | 7:1 1:1 6:24 | 124 st
+  engine g 1 s 0.2 j 0: B|C film 0, A pair 1524.188 | 7:1 1:1 6:24 | 400 st
+  engine g 1 s 0.2 j 0.001: B|C film 0, A pair 1524.156 | 7:1 1:1 6:24 | 400 st

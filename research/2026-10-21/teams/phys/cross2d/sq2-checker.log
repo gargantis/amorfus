@@ -1,0 +1,13 @@
+solver [rule (pressure-favoured split; ties -> first option)] E 10.37339 conv true t 104.5 sig 6:1 6:1 7:2 adj 0|6,0|7,6|7 contact null
+solver [forced: 6,6 adjacent] E 10.37339 conv true t 104.5 sig 6:2 7:1 7:1 adj 0|6,0|7,6|7 contact null
+solver [forced: 7,7 adjacent] E 10.37339 conv true t 104.5 sig 6:1 6:1 7:2 adj 0|6,0|7,6|7 contact null
+engine n 32 s 0.2 jit 0 seed 1: 12 steps sig 6:1 6:1 7:1 7:1 adj 0|6,0|7,6|7 quad 1 E 11.3278 (no matching solver outcome)
+engine n 32 s 0.2 jit 0.001 seed 1: 66 steps sig 6:2 7:1 7:1 adj 0|6,0|7,6|7 quad 0 E 10.4812 vs exact-rasterised 10.4768 (0.04%) [exact 10.3734] p 1.120,1.609,1.609 vs 1.499,1.499,1.095 dist mean 0.0495 max 0.0814
+engine n 32 s 0.2 jit 0.001 seed 2: 83 steps sig 6:1 6:1 7:2 adj 0|6,0|7,6|7 quad 0 E 10.4876 vs exact-rasterised 10.4768 (0.10%) [exact 10.3734] p 1.599,1.198,1.606 vs 1.499,1.095,1.499 dist mean 0.0480 max 0.0814
+engine n 32 s 0.2 jit 0.001 seed 3: 67 steps sig 6:2 7:1 7:1 adj 0|6,0|7,6|7 quad 0 E 10.4893 vs exact-rasterised 10.4768 (0.12%) [exact 10.3734] p 1.125,1.569,1.575 vs 1.499,1.499,1.095 dist mean 0.0523 max 0.1203
+engine n 64 s 0.2 jit 0 seed 1: 17 steps sig 6:1 6:1 7:1 7:1 adj 0|6,0|7,6|7 quad 1 E 11.3749 (no matching solver outcome)
+engine n 64 s 0.2 jit 0.001 seed 1: 106 steps sig 6:1 6:1 7:2 adj 0|6,0|7,6|7 quad 0 E 10.4939 vs exact-rasterised 10.5065 (-0.12%) [exact 10.3734] p 1.537,1.131,1.545 vs 1.499,1.095,1.499 dist mean 0.0187 max 0.0429
+engine n 64 s 0.2 jit 0.001 seed 2: 101 steps sig 6:2 7:1 7:1 adj 0|6,0|7,6|7 quad 0 E 10.4989 vs exact-rasterised 10.5065 (-0.07%) [exact 10.3734] p 1.117,1.537,1.535 vs 1.499,1.499,1.095 dist mean 0.0208 max 0.0429
+engine n 64 s 0.1 jit 0 seed 1: 24 steps sig 6:1 6:1 7:1 7:1 adj 0|6,0|7,6|7 quad 1 E 11.3633 (no matching solver outcome)
+engine n 128 s 0.2 jit 0 seed 1: 23 steps sig 6:1 6:1 7:1 7:1 adj 0|6,0|7,6|7 quad 1 E 11.3987 (no matching solver outcome)
+engine n 128 s 0.2 jit 0.001 seed 1: 159 steps sig 6:1 6:1 7:2 adj 0|6,0|7,6|7 quad 0 E 10.5125 vs exact-rasterised 10.5024 (0.10%) [exact 10.3734] p 1.501,1.095,1.503 vs 1.499,1.095,1.499 dist mean 0.0053 max 0.0174

@@ -1,0 +1,1 @@
+{"set":"b","name":"b-painted","regime":"FINITE-4","n":12,"ms":3264,"steps":4,"converged":false,"changes":9428,"premerged":2,"alive":5,"lambda":[[3,200,0.0361],[2,100,0.0139],[6,10,0.0646],[3,79,0.0801],[4,11,0.0838]],"grid":{"NX":120,"NY":72,"NZ":120,"n":12,"ox":3,"oy":0,"oz":3},"dScale":29526,"origin":[3,0,3],"size":[10,6,10],"evalLo":[5,2,5],"evalHi":[11,4,11],"blocks":400}

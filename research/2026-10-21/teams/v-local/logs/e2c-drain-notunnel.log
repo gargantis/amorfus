@@ -1,0 +1,6 @@
+solidHost+lyingBar FID-0.15 {"barRegionVolume":4.4057,"steps":32,"converged":true,"lambda":0.0888}
+solidHost+lyingBar FID-0.25 {"barRegionVolume":4.0411,"steps":12,"converged":true,"lambda":0.1998}
+plate+standingBar FID-0.15 {"barRegionVolume":3.2824,"steps":19,"converged":true,"lambda":0.0796}
+plate+standingBar FID-0.25 {"barRegionVolume":3.4537,"steps":10,"converged":true,"lambda":0.1986}
+tunnelHost+standingBarOnTop FID-0.15 {"barRegionVolume":0,"steps":115,"converged":true,"lambda":0.0648}
+tunnelHost+standingBarOnTop FID-0.25 {"barRegionVolume":3.4306,"steps":9,"converged":true,"lambda":0.1657}

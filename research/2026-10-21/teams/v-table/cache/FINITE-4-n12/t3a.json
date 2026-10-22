@@ -1,0 +1,1 @@
+{"set":"t1","name":"t3a","regime":"FINITE-4","n":12,"ms":4912,"steps":4,"converged":false,"changes":34732,"premerged":1,"alive":3,"lambda":[[3,172,-0.0128],[2,348,-0.0441],[1,48,-0.0038]],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-87,"oy":48,"oz":12},"dScale":32000,"origin":[-87,48,12],"size":[9,8,9],"evalLo":[-85,50,14],"evalHi":[-80,54,19],"blocks":568}

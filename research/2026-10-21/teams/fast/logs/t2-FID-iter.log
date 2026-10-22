@@ -1,0 +1,44 @@
+FID-0.15 single I2Fx-g20: surf mean 0.0182 p95 0.0403 max 0.0425 unm 0 bias -0.0003 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2998
+FID-0.15 single I4Fx-g20: surf mean 0.0169 p95 0.0363 max 0.0389 unm 0 bias -0.0005 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2848
+FID-0.15 single I10Fx-g20: surf mean 0.0139 p95 0.0275 max 0.0342 unm 0 bias -0.0006 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2761
+  (single 1512 ms, rss 111 MB)
+FID-0.15 pair-diff I2Fx-g20: surf mean 0.0131 p95 0.0337 max 0.038 unm 0 bias -0.0002 | seam mean 0 p95 0 n 50 | vol {"6":0,"7":0} | lam 0.2764,0.2764
+FID-0.15 pair-diff I4Fx-g20: surf mean 0.0126 p95 0.0324 max 0.0392 unm 0 bias -0.0003 | seam mean 0 p95 0 n 50 | vol {"6":0,"7":0} | lam 0.2833,0.2833
+FID-0.15 pair-diff I10Fx-g20: surf mean 0.0126 p95 0.0324 max 0.0392 unm 0 bias -0.0003 | seam mean 0 p95 0 n 50 | vol {"6":0,"7":0} | lam 0.2833,0.2833
+  (pair-diff 1854 ms, rss 139 MB)
+FID-0.15 L3-same I2Fx-g20: surf mean 0.0176 p95 0.0906 max 0.21 unm 0 bias -0.0106 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2317
+FID-0.15 L3-same I4Fx-g20: surf mean 0.015 p95 0.0825 max 0.1391 unm 0 bias -0.0105 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2238
+FID-0.15 L3-same I10Fx-g20: surf mean 0.0125 p95 0.0528 max 0.0705 unm 0 bias -0.0104 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.206
+  (L3-same 1376 ms, rss 144 MB)
+FID-0.15 diag-edge I2Fx-g20: surf mean 0.0337 p95 0.1402 max 0.1914 unm 0 bias -0.005 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2594,0.2594
+FID-0.15 diag-edge I4Fx-g20: surf mean 0.0237 p95 0.0877 max 0.1019 unm 0 bias -0.0054 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2361,0.2361
+FID-0.15 diag-edge I10Fx-g20: surf mean 0.0137 p95 0.0301 max 0.0499 unm 0 bias -0.006 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2074,0.2074
+  (diag-edge 1109 ms, rss 146 MB)
+FID-0.15 plus5 I2Fx-g20: surf mean 0.0255 p95 0.0934 max 0.1322 unm 0 bias -0.0043 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.1946
+FID-0.15 plus5 I4Fx-g20: surf mean 0.0178 p95 0.0606 max 0.0749 unm 0 bias -0.0047 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.189
+FID-0.15 plus5 I10Fx-g20: surf mean 0.0115 p95 0.0305 max 0.0403 unm 0 bias -0.005 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.1777
+  (plus5 1759 ms, rss 160 MB)
+FID-0.15 ring8 I2Fx-g20: surf mean 0.0548 p95 0.209 max 1 unm 1 bias 0.0136 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.1706
+FID-0.15 ring8 I4Fx-g20: surf mean 0.0506 p95 0.1861 max 1 unm 2 bias 0.0125 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.1616
+FID-0.15 ring8 I10Fx-g20: surf mean 0.0411 p95 0.1555 max 0.512 unm 0 bias 0.0092 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.1404
+  (ring8 2150 ms, rss 157 MB)
+FID-0.15 stairs I2Fx-g20: surf mean 0.0263 p95 0.1448 max 0.2206 unm 0 bias -0.0071 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.1526
+FID-0.15 stairs I4Fx-g20: surf mean 0.0202 p95 0.1035 max 0.1528 unm 0 bias -0.007 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.1451
+FID-0.15 stairs I10Fx-g20: surf mean 0.0122 p95 0.0481 max 0.0568 unm 0 bias -0.0063 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.1325
+  (stairs 2644 ms, rss 175 MB)
+FID-0.15 tunnel I2Fx-g20: surf mean 0.0471 p95 0.2133 max 0.3982 unm 0 bias 0.0027 | seam mean - p95 - n 0 | vol {"3":0} | lam 0.0983
+FID-0.15 tunnel I4Fx-g20: surf mean 0.0383 p95 0.1609 max 0.3508 unm 0 bias 0.0011 | seam mean - p95 - n 0 | vol {"3":0} | lam 0.0877
+FID-0.15 tunnel I10Fx-g20: surf mean 0.0252 p95 0.0883 max 0.1971 unm 0 bias -0.0021 | seam mean - p95 - n 0 | vol {"3":0} | lam 0.0608
+  (tunnel 4978 ms, rss 205 MB)
+FID-0.15 terrain-step I2Fx-g20: surf mean 0.0176 p95 0.0807 max 0.2907 unm 0 bias -0.0062 | seam mean 0.0197 p95 0.085 n 292 | vol {"1":0.0001,"2":0.0001} | lam 0.1236,0.1353,0.1353
+FID-0.15 terrain-step I4Fx-g20: surf mean 0.0141 p95 0.0571 max 0.2163 unm 0 bias -0.0066 | seam mean 0.0165 p95 0.0774 n 292 | vol {"1":0.0001,"2":0.0001} | lam 0.1282,0.1275,0.1275
+FID-0.15 terrain-step I10Fx-g20: surf mean 0.0107 p95 0.0321 max 0.0965 unm 0 bias -0.0074 | seam mean 0.0114 p95 0.0486 n 292 | vol {"1":0.0001,"2":0.0001} | lam 0.1282,0.1112,0.1112
+  (terrain-step 20288 ms, rss 336 MB)
+FID-0.15 slab-line I2Fx-g20: surf mean 0.0124 p95 0.0222 max 0.0582 unm 0 bias -0.0111 | seam mean 0.0221 p95 0.0784 n 220 | vol {"6":-0.0003,"7":0.0001} | lam 0.2425,0.1354,0.1354,0.2425
+FID-0.15 slab-line I4Fx-g20: surf mean 0.0127 p95 0.0277 max 0.0568 unm 0 bias -0.0114 | seam mean 0.0224 p95 0.0699 n 220 | vol {"6":0.0002,"7":-0.0001} | lam 0.255,0.1392,0.1392,0.255
+FID-0.15 slab-line I10Fx-g20: surf mean 0.013 p95 0.0336 max 0.0632 unm 0 bias -0.0116 | seam mean 0.0224 p95 0.0699 n 220 | vol {"6":0.0014,"7":-0.0001} | lam 0.2586,0.1428,0.1428,0.2586
+  (slab-line 15152 ms, rss 302 MB)
+
+real	0m55.531s
+user	0m59.982s
+sys	0m1.530s

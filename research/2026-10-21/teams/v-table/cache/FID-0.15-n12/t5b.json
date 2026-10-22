@@ -1,0 +1,1 @@
+{"set":"t1","name":"t5b","regime":"FID-0.15","n":12,"ms":20307,"steps":34,"converged":true,"changes":13478,"premerged":1,"alive":3,"lambda":[[2,223,0.0072],[3,25,0.0503],[1,95,0.0054]],"phaseMat":[0,2,3,1,0],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":-40,"oy":57,"oz":78},"dScale":30468,"origin":[-40,57,78],"size":[9,8,9],"evalLo":[-38,59,80],"evalHi":[-33,63,85],"blocks":343}

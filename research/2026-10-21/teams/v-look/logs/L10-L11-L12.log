@@ -1,0 +1,18 @@
+FID-0.15@n24 cube2-same: 1689 ms, 14 st, cells 373248, d 0.0609, rss 128 MB
+FID-0.15@n24 ring8: 5290 ms, 44 st, cells 442368, d 0.22, rss 144 MB
+FID-0.15@n16 tunnel: 4483 ms, 40 st, cells 614400, d 0.1219, rss 144 MB
+FID-0.15@n16 pillar3: 383 ms, 11 st, cells 184320, d 0.0703, rss 135 MB
+FID-0.15@n16 single: 94 ms, 8 st, cells 110592, d 0.0918, rss 135 MB
+FID-0.15@n16 room2: 10145 ms, 81 st, cells 737280, d 0.1459, rss 162 MB
+FID-0.15-g0.5@n16 tunnel: 4735 ms, 40 st, cells 614400, d 0.1219, rss 141 MB
+FID-0.15-g0.5@n16 pillar3: 370 ms, 11 st, cells 184320, d 0.0703, rss 132 MB
+FID-0.15-g0.5@n16 single: 117 ms, 8 st, cells 110592, d 0.0918, rss 132 MB
+FID-0.15-g0.5@n16 room2: 9685 ms, 81 st, cells 737280, d 0.1459, rss 166 MB
+FID-0.15-g1.5@n16 tunnel: 4433 ms, 40 st, cells 614400, d 0.1219, rss 143 MB
+FID-0.15-g1.5@n16 pillar3: 381 ms, 11 st, cells 184320, d 0.0703, rss 107 MB
+FID-0.15-g1.5@n16 single: 120 ms, 8 st, cells 110592, d 0.0918, rss 109 MB
+FID-0.15-g1.5@n16 room2: 9784 ms, 81 st, cells 737280, d 0.1459, rss 155 MB
+FINITE-2@n20 single: 219 ms, 2 st nc, cells 216000, d 0.276, rss 69 MB
+CAGE-0.15@n20 single: 483 ms, 7 st, cells 216000, d 0.306, rss 72 MB
+FINITE-4@n20 single: 319 ms, 4 st nc, cells 216000, d 0.306, rss 70 MB
+CAGE-0.25@n20 single: 508 ms, 7 st, cells 216000, d 0.306, rss 74 MB

@@ -1,0 +1,344 @@
+{
+ "note": "labels: 0 = air, 1.. = distinct materials (equality pattern only); cell index x + 2y (+ 4z)",
+ "d2": {
+  "dim": 2,
+  "labelledConfigs": 52,
+  "groupOrder": 8,
+  "all": {
+   "classes": 17,
+   "configs": 52,
+   "withXLine": 7,
+   "withTiedXLine": 3,
+   "withOnlyDecidedX": 4,
+   "withTiedXLineAtG1": 4,
+   "over4Regions": 0,
+   "plateauLegalTopology": 10,
+   "byRegions": {
+    "1": 2,
+    "2": 7,
+    "3": 6,
+    "4": 2
+   }
+  },
+  "surfaceCorners": {
+   "classes": 9,
+   "configs": 36,
+   "withXLine": 4,
+   "withTiedXLine": 1,
+   "withOnlyDecidedX": 3,
+   "withTiedXLineAtG1": 2,
+   "over4Regions": 0,
+   "plateauLegalTopology": 5,
+   "byRegions": {
+    "2": 4,
+    "3": 4,
+    "4": 1
+   }
+  },
+  "surfaceUpTo1Solid": {
+   "classes": 4,
+   "configs": 14,
+   "withXLine": 1,
+   "withTiedXLine": 1,
+   "withOnlyDecidedX": 0,
+   "withTiedXLineAtG1": 1,
+   "over4Regions": 0,
+   "plateauLegalTopology": 3,
+   "byRegions": {
+    "2": 4
+   }
+  },
+  "surfaceUpTo2Solids": {
+   "classes": 8,
+   "configs": 32,
+   "withXLine": 3,
+   "withTiedXLine": 1,
+   "withOnlyDecidedX": 2,
+   "withTiedXLineAtG1": 1,
+   "over4Regions": 0,
+   "plateauLegalTopology": 5,
+   "byRegions": {
+    "2": 4,
+    "3": 4
+   }
+  },
+  "surfaceUpTo3Solids": {
+   "classes": 9,
+   "configs": 36,
+   "withXLine": 4,
+   "withTiedXLine": 1,
+   "withOnlyDecidedX": 3,
+   "withTiedXLineAtG1": 2,
+   "over4Regions": 0,
+   "plateauLegalTopology": 5,
+   "byRegions": {
+    "2": 4,
+    "3": 4,
+    "4": 1
+   }
+  },
+  "binaryClasses": null,
+  "examples": [
+   {
+    "rep": "1,2,2,1",
+    "xLines": 1,
+    "xTie": 1,
+    "xKinds": {
+     "0|0": 1
+    },
+    "regions": 2
+   },
+   {
+    "rep": "0,1,1,0",
+    "xLines": 1,
+    "xTie": 1,
+    "xKinds": {
+     "0|0": 1
+    },
+    "regions": 2
+   },
+   {
+    "rep": "1,2,2,3",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "0|g": 1
+    },
+    "regions": 3
+   },
+   {
+    "rep": "0,1,1,2",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "0|1": 1
+    },
+    "regions": 3
+   },
+   {
+    "rep": "0,1,2,0",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "0|g": 1
+    },
+    "regions": 3
+   },
+   {
+    "rep": "1,2,3,4",
+    "xLines": 1,
+    "xTie": 1,
+    "xKinds": {
+     "g|g": 1
+    },
+    "regions": 4
+   },
+   {
+    "rep": "0,1,2,3",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "1|g": 1
+    },
+    "regions": 4
+   }
+  ]
+ },
+ "d3": {
+  "dim": 3,
+  "labelledConfigs": 21147,
+  "groupOrder": 48,
+  "all": {
+   "classes": 738,
+   "configs": 21147,
+   "withXLine": 650,
+   "withTiedXLine": 321,
+   "withOnlyDecidedX": 329,
+   "withTiedXLineAtG1": 513,
+   "over4Regions": 280,
+   "plateauLegalTopology": 85,
+   "byRegions": {
+    "1": 2,
+    "2": 33,
+    "3": 156,
+    "4": 267,
+    "5": 200,
+    "6": 66,
+    "7": 12,
+    "8": 2
+   }
+  },
+  "surfaceCorners": {
+   "classes": 551,
+   "configs": 17006,
+   "withXLine": 492,
+   "withTiedXLine": 199,
+   "withOnlyDecidedX": 293,
+   "withTiedXLineAtG1": 391,
+   "over4Regions": 218,
+   "plateauLegalTopology": 57,
+   "byRegions": {
+    "2": 20,
+    "3": 112,
+    "4": 201,
+    "5": 157,
+    "6": 51,
+    "7": 9,
+    "8": 1
+   }
+  },
+  "surfaceUpTo1Solid": {
+   "classes": 20,
+   "configs": 254,
+   "withXLine": 9,
+   "withTiedXLine": 9,
+   "withOnlyDecidedX": 0,
+   "withTiedXLineAtG1": 9,
+   "over4Regions": 0,
+   "plateauLegalTopology": 11,
+   "byRegions": {
+    "2": 20
+   }
+  },
+  "surfaceUpTo2Solids": {
+   "classes": 132,
+   "configs": 3152,
+   "withXLine": 92,
+   "withTiedXLine": 49,
+   "withOnlyDecidedX": 43,
+   "withTiedXLineAtG1": 49,
+   "over4Regions": 0,
+   "plateauLegalTopology": 40,
+   "byRegions": {
+    "2": 20,
+    "3": 112
+   }
+  },
+  "surfaceUpTo3Solids": {
+   "classes": 333,
+   "configs": 9956,
+   "withXLine": 276,
+   "withTiedXLine": 89,
+   "withOnlyDecidedX": 187,
+   "withTiedXLineAtG1": 179,
+   "over4Regions": 0,
+   "plateauLegalTopology": 57,
+   "byRegions": {
+    "2": 20,
+    "3": 112,
+    "4": 201
+   }
+  },
+  "binaryClasses": 22,
+  "examples": [
+   {
+    "rep": "1,1,1,1,1,2,2,1",
+    "xLines": 1,
+    "xTie": 1,
+    "xKinds": {
+     "0|0": 1
+    },
+    "regions": 2
+   },
+   {
+    "rep": "0,0,0,0,0,1,1,0",
+    "xLines": 1,
+    "xTie": 1,
+    "xKinds": {
+     "0|0": 1
+    },
+    "regions": 2
+   },
+   {
+    "rep": "0,1,1,0,1,1,1,1",
+    "xLines": 1,
+    "xTie": 1,
+    "xKinds": {
+     "0|0": 1
+    },
+    "regions": 2
+   },
+   {
+    "rep": "1,1,1,1,1,2,2,3",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "0|g": 1
+    },
+    "regions": 3
+   },
+   {
+    "rep": "0,0,0,0,0,1,1,2",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "0|1": 1
+    },
+    "regions": 3
+   },
+   {
+    "rep": "0,1,1,1,2,0,1,1",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "0|g": 1
+    },
+    "regions": 3
+   },
+   {
+    "rep": "0,1,1,2,2,2,2,2",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "0|1": 1
+    },
+    "regions": 3
+   },
+   {
+    "rep": "1,1,1,1,1,2,3,1",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "0|g": 1
+    },
+    "regions": 3
+   },
+   {
+    "rep": "0,0,0,0,0,1,2,0",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "0|g": 1
+    },
+    "regions": 3
+   },
+   {
+    "rep": "0,1,1,1,1,1,2,1",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "0|1": 1
+    },
+    "regions": 3
+   },
+   {
+    "rep": "1,1,1,1,1,2,3,4",
+    "xLines": 1,
+    "xTie": 1,
+    "xKinds": {
+     "g|g": 1
+    },
+    "regions": 4
+   },
+   {
+    "rep": "0,0,0,0,0,1,2,3",
+    "xLines": 1,
+    "xTie": 0,
+    "xKinds": {
+     "1|g": 1
+    },
+    "regions": 4
+   }
+  ]
+ }
+}

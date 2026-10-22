@@ -1,0 +1,89 @@
+{
+ "experiment": "abcd3d-anneal",
+ "date": "2026-10-21",
+ "engine": "lib/mbo.mjs (unchanged)",
+ "runs": [
+  {
+   "dims": 3,
+   "jitter": 0.1,
+   "seed": 1,
+   "annealed": true,
+   "quench": true,
+   "annealSteps": 100,
+   "n": 16,
+   "steps": 80,
+   "converged": true,
+   "start": {
+    "xWindows": 16
+   },
+   "end": {
+    "xWindows": 1,
+    "xLine_blocks": 0.063,
+    "wallAD_blocks2": 0.738,
+    "wallBC_blocks2": 0.758
+   },
+   "lastChanges": [
+    8,
+    2,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "dims": 3,
+   "jitter": 0.1,
+   "seed": 2,
+   "annealed": true,
+   "quench": true,
+   "annealSteps": 100,
+   "n": 16,
+   "steps": 18,
+   "converged": true,
+   "start": {
+    "xWindows": 16
+   },
+   "end": {
+    "xWindows": 0,
+    "xLine_blocks": 0,
+    "wallAD_blocks2": 0,
+    "wallBC_blocks2": 0.719
+   },
+   "lastChanges": [
+    3,
+    3,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "dims": 3,
+   "jitter": 0.1,
+   "seed": 3,
+   "annealed": true,
+   "quench": true,
+   "annealSteps": 100,
+   "n": 16,
+   "steps": 49,
+   "converged": true,
+   "start": {
+    "xWindows": 16
+   },
+   "end": {
+    "xWindows": 1,
+    "xLine_blocks": 0.063,
+    "wallAD_blocks2": 0.801,
+    "wallBC_blocks2": 0.797
+   },
+   "lastChanges": [
+    9,
+    6,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "seconds": 62.5
+}

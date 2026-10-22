@@ -1,0 +1,72 @@
+{
+ "single-novol": {
+  "blocks": 1,
+  "volume": 0,
+  "ratio": 0,
+  "steps": 11,
+  "converged": true
+ },
+ "single-vol": {
+  "blocks": 1,
+  "volume": 1.002,
+  "ratio": 1.002,
+  "steps": 8,
+  "converged": true
+ },
+ "pillar3-novol": {
+  "blocks": 3,
+  "volume": 0,
+  "ratio": 0,
+  "steps": 23,
+  "converged": true
+ },
+ "pillar3-vol": {
+  "blocks": 3,
+  "volume": 3,
+  "ratio": 1,
+  "steps": 11,
+  "converged": true
+ },
+ "ring8-novol": {
+  "blocks": 8,
+  "volume": 0,
+  "ratio": 0,
+  "steps": 39,
+  "converged": true
+ },
+ "ring8-vol": {
+  "blocks": 8,
+  "volume": 8,
+  "ratio": 1,
+  "steps": 41,
+  "converged": true
+ },
+ "plate5x1x5-novol": {
+  "blocks": 25,
+  "volume": 0,
+  "ratio": 0,
+  "steps": 174,
+  "converged": true
+ },
+ "plate5x1x5-vol": {
+  "blocks": 25,
+  "volume": 25,
+  "ratio": 1,
+  "steps": 28,
+  "converged": true
+ },
+ "slab5x2x5-novol": {
+  "blocks": 50,
+  "volume": 46.963,
+  "ratio": 0.9393,
+  "steps": 26,
+  "converged": true
+ },
+ "slab5x2x5-vol": {
+  "blocks": 50,
+  "volume": 49.9954,
+  "ratio": 0.9999,
+  "steps": 24,
+  "converged": true
+ }
+}

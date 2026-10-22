@@ -1,0 +1,9 @@
+solver [rule (pressure-favoured split; ties -> first option)] E 9.13312 conv true t 77.1 sig 6:1 6:1 7:1 adj 0|6,0|7,6|7 contact null
+engine n 32 s 0.2 jit 0 seed 1: 27 steps sig 6:1 6:1 7:1 adj 0|6,0|7,6|7 quad 0 E 9.2741 vs exact-rasterised 9.1964 (0.85%) [exact 9.1331] p 1.588,1.305,1.588 vs 1.565,1.435,1.565 dist mean 0.0600 max 0.1100
+engine n 32 s 0.2 jit 0.001 seed 1: 41 steps sig 6:1 6:1 7:1 adj 0|6,0|7,6|7 quad 0 E 9.2194 vs exact-rasterised 9.1964 (0.25%) [exact 9.1331] p 1.555,1.147,1.657 vs 1.565,1.435,1.565 dist mean 0.0495 max 0.1100
+engine n 32 s 0.2 jit 0.001 seed 2: 43 steps sig 6:1 6:1 7:1 adj 0|6,0|7,6|7 quad 0 E 9.2194 vs exact-rasterised 9.1964 (0.25%) [exact 9.1331] p 1.660,1.159,1.582 vs 1.565,1.435,1.565 dist mean 0.0495 max 0.1100
+engine n 32 s 0.2 jit 0.001 seed 3: 61 steps sig 6:1 6:1 7:1 adj 0|6,0|7,6|7 quad 0 E 9.1988 vs exact-rasterised 9.1964 (0.03%) [exact 9.1331] p 1.653,1.396,1.538 vs 1.565,1.435,1.565 dist mean 0.0342 max 0.0795
+engine n 64 s 0.2 jit 0 seed 1: 60 steps sig 6:1 6:1 7:1 adj 0|6,0|7,6|7 quad 0 E 9.2196 vs exact-rasterised 9.2430 (-0.25%) [exact 9.1331] p 1.582,1.346,1.582 vs 1.565,1.435,1.565 dist mean 0.0129 max 0.0291
+engine n 64 s 0.2 jit 0.001 seed 1: 66 steps sig 6:1 6:1 7:1 adj 0|6,0|7,6|7 quad 0 E 9.2229 vs exact-rasterised 9.2430 (-0.22%) [exact 9.1331] p 1.599,1.310,1.603 vs 1.565,1.435,1.565 dist mean 0.0190 max 0.0445
+engine n 64 s 0.1 jit 0 seed 1: 16 steps sig 6:1 6:1 7:1 adj 0|6,0|7,6|7 quad 0 E 9.4241 vs exact-rasterised 9.2430 (1.96%) [exact 9.1331] p 1.789,1.420,1.789 vs 1.565,1.435,1.565 dist mean 0.1281 max 0.2320
+engine n 128 s 0.2 jit 0 seed 1: 84 steps sig 6:1 6:1 7:1 adj 0|6,0|7,6|7 quad 0 E 9.2460 vs exact-rasterised 9.2521 (-0.07%) [exact 9.1331] p 1.582,1.392,1.582 vs 1.565,1.435,1.565 dist mean 0.0048 max 0.0144

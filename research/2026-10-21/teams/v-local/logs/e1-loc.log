@@ -1,0 +1,48 @@
+wide-barAttached A0-g20 farthest 0.9583 cells 20151 {"clearH70":1.85,"widthMid":1,"heightMid":2,"per":[{"z":0.75,"clearH70":1.85,"widthMid":1.01,"heightMid":2},{"z":1.5,"clearH70":1.85,"widthMid":1,"heightMid":2},{"z":2.25,"clearH70":1.85,"widthMid":1.01,"heightMid":2}]}
+wide-barAttached Bl-g20 farthest 2.1615 cells 51274 {"clearH70":1.78,"widthMid":0.96,"heightMid":1.96,"per":[{"z":0.75,"clearH70":1.78,"widthMid":0.96,"heightMid":1.96},{"z":1.5,"clearH70":1.8,"widthMid":0.975,"heightMid":1.97},{"z":2.25,"clearH70":1.78,"widthMid":0.96,"heightMid":1.96}]}
+wide-barAttached Bl-b1s20 farthest 2.1902 cells 33692 {"clearH70":1.76,"widthMid":0.96,"heightMid":1.96,"per":[{"z":0.75,"clearH70":1.76,"widthMid":0.96,"heightMid":1.96},{"z":1.5,"clearH70":1.77,"widthMid":0.975,"heightMid":1.97},{"z":2.25,"clearH70":1.76,"widthMid":0.96,"heightMid":1.96}]}
+wide-barAttached Bx-g20 farthest 7.7113 cells 329375 {"clearH70":1.8,"widthMid":0.97,"heightMid":1.96,"per":[{"z":0.75,"clearH70":1.8,"widthMid":0.97,"heightMid":1.96},{"z":1.5,"clearH70":1.8,"widthMid":0.97,"heightMid":1.96},{"z":2.25,"clearH70":1.8,"widthMid":0.97,"heightMid":1.96}]}
+wide-barAttached bub-b1-newton4 {"cornersCompared":138,"cornersDiffering":22,"farthestDifferingCornerDist":1,"farKey":"5,0,0"}
+wide-barAttached bub-b1-line40 {"cornersCompared":138,"cornersDiffering":22,"farthestDifferingCornerDist":1,"farKey":"5,0,0"}
+wide-barDetached A0-g20 farthest 0.9583 cells 7646 {"clearH70":1.85,"widthMid":1,"heightMid":2,"per":[{"z":0.75,"clearH70":1.85,"widthMid":1.01,"heightMid":2},{"z":1.5,"clearH70":1.85,"widthMid":1,"heightMid":2},{"z":2.25,"clearH70":1.85,"widthMid":1.01,"heightMid":2}]}
+wide-barDetached Bl-g20 farthest 1.1807 cells 9052 {"clearH70":1.78,"widthMid":0.96,"heightMid":1.96,"per":[{"z":0.75,"clearH70":1.78,"widthMid":0.96,"heightMid":1.96},{"z":1.5,"clearH70":1.8,"widthMid":0.975,"heightMid":1.97},{"z":2.25,"clearH70":1.78,"widthMid":0.96,"heightMid":1.96}]}
+wide-barDetached Bl-b1s20 farthest 0.6495 cells 3284 {"clearH70":1.76,"widthMid":0.96,"heightMid":1.96,"per":[{"z":0.75,"clearH70":1.76,"widthMid":0.96,"heightMid":1.96},{"z":1.5,"clearH70":1.77,"widthMid":0.975,"heightMid":1.97},{"z":2.25,"clearH70":1.76,"widthMid":0.96,"heightMid":1.96}]}
+wide-barDetached Bx-g20 farthest 8.5954 cells 328420 {"clearH70":1.79,"widthMid":0.97,"heightMid":1.96,"per":[{"z":0.75,"clearH70":1.79,"widthMid":0.97,"heightMid":1.96},{"z":1.5,"clearH70":1.79,"widthMid":0.97,"heightMid":1.96},{"z":2.25,"clearH70":1.79,"widthMid":0.97,"heightMid":1.96}]}
+wide-barDetached bub-b1-newton4 {"cornersCompared":142,"cornersDiffering":20,"farthestDifferingCornerDist":0,"farKey":null}
+wide-barDetached bub-b1-line40 {"cornersCompared":142,"cornersDiffering":20,"farthestDifferingCornerDist":0,"farKey":null}
+slab-add A0-g20 farthest 0.9583 cells 21093 ""
+slab-add Bl-g20 farthest 2.1486 cells 69352 ""
+slab-add Bl-b1s20 farthest 2.1902 cells 55584 ""
+slab-add Bx-g20 farthest 9.2183 cells 628668 ""
+slab-add bub-b1-newton4 {"cornersCompared":222,"cornersDiffering":8,"farthestDifferingCornerDist":0,"farKey":null}
+slab-add bub-b1-line40 {"cornersCompared":222,"cornersDiffering":8,"farthestDifferingCornerDist":0,"farKey":null}
+slab-remove A0-g20 farthest 0.9583 cells 29382 ""
+slab-remove Bl-g20 farthest 2.6467 cells 113520 ""
+slab-remove Bl-b1s20 farthest 2.4306 cells 81648 ""
+slab-remove Bx-g20 farthest 9.0679 cells 626824 ""
+slab-remove bub-b1-newton4 {"cornersCompared":222,"cornersDiffering":8,"farthestDifferingCornerDist":0,"farKey":null}
+slab-remove bub-b1-line40 {"cornersCompared":222,"cornersDiffering":8,"farthestDifferingCornerDist":0,"farKey":null}
+slab-recolour A0-g20 farthest 0.8839 cells 27776 ""
+slab-recolour Bl-g20 farthest 2.6467 cells 113520 ""
+slab-recolour Bl-b1s20 farthest 2.4306 cells 81648 ""
+slab-recolour Bx-g20 farthest 9.0679 cells 626824 ""
+slab-recolour bub-b1-newton4 {"cornersCompared":218,"cornersDiffering":4,"farthestDifferingCornerDist":0,"farKey":null}
+slab-recolour bub-b1-line40 {"cornersCompared":218,"cornersDiffering":4,"farthestDifferingCornerDist":0,"farKey":null}
+floor1-hole A0-g20 farthest 0.9583 cells 28988 ""
+floor1-hole Bl-g20 farthest 2.2123 cells 89596 ""
+floor1-hole Bl-b1s20 farthest 2.0013 cells 55008 ""
+floor1-hole Bx-g20 farthest 12.0797 cells 820168 ""
+floor1-hole bub-b1-newton4 {"cornersCompared":338,"cornersDiffering":8,"farthestDifferingCornerDist":0,"farKey":null}
+floor1-hole bub-b1-line40 {"cornersCompared":338,"cornersDiffering":8,"farthestDifferingCornerDist":0,"farKey":null}
+ground-pillar A0-g20 farthest 0.9583 cells 21141 ""
+ground-pillar Bl-g20 farthest 2.1486 cells 69383 ""
+ground-pillar Bl-b1s20 farthest 2.1902 cells 55572 ""
+ground-pillar Bx-g20 farthest 11.0355 cells 1061768 ""
+ground-pillar bub-b1-newton4 {"cornersCompared":330,"cornersDiffering":12,"farthestDifferingCornerDist":0,"farKey":null}
+ground-pillar bub-b1-line40 {"cornersCompared":330,"cornersDiffering":12,"farthestDifferingCornerDist":0,"farKey":null}
+seamslab-recolour A0-g20 farthest 0.8839 cells 27776 ""
+seamslab-recolour Bl-g20 farthest 2.6467 cells 113520 ""
+seamslab-recolour Bl-b1s20 farthest 2.4306 cells 81648 ""
+seamslab-recolour Bx-g20 farthest 11.0179 cells 626672 ""
+seamslab-recolour bub-b1-newton4 {"cornersCompared":218,"cornersDiffering":4,"farthestDifferingCornerDist":0,"farKey":null}
+seamslab-recolour bub-b1-line40 {"cornersCompared":218,"cornersDiffering":4,"farthestDifferingCornerDist":0,"farKey":null}

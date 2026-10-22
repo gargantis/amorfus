@@ -1,0 +1,71 @@
+{
+ "ms": 77,
+ "res": {
+  "converged": false,
+  "t": 1.003,
+  "E": 6.4624,
+  "contact": null
+ },
+ "events": [
+  {
+   "t": 0.008,
+   "kind": "decide",
+   "at": [
+    1,
+    1
+   ],
+   "options": [
+    {
+     "mats": [
+      6,
+      6
+     ],
+     "rate": 1.41858
+    },
+    {
+     "mats": [
+      0,
+      0
+     ],
+     "rate": 1.40983
+    }
+   ],
+   "decided": true,
+   "pick": [
+    6,
+    6
+   ]
+  },
+  {
+   "t": 0.008,
+   "kind": "split",
+   "at": [
+    1,
+    1
+   ],
+   "mats": [
+    6,
+    6
+   ],
+   "rate": 1.41858
+  },
+  {
+   "t": 0.008,
+   "kind": "merge",
+   "a": 2,
+   "b": 1,
+   "mat": 6
+  }
+ ],
+ "bubbles": [
+  {
+   "r": 2,
+   "mat": 6,
+   "target": 2,
+   "p": 0.9871
+  }
+ ],
+ "adjacency": [
+  "0|6"
+ ]
+}

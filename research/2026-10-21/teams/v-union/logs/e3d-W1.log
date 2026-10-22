@@ -1,0 +1,21 @@
+W1-3d 32 blocks; 1 X edges
+  X {"at":[0,0.5,0],"axis":1,"mats":[6,7],"sizes":[[12,12],[4,4]],"n":[4,8],"rule4":6,"size":7}
+j0      197 st 11640 ms | roots {"6":["12","12"],"7":["8"]} | merges at 7
+     X verdicts 0,0.5,0:7/7
+rev     197 st 10082 ms | roots {"6":["12","12"],"7":["8"]} | merges at 7
+     X verdicts 0,0.5,0:7/7
+s1      185 st 13092 ms | roots {"6":["12","12"],"7":["8"]} | merges at 2
+     X verdicts 0,0.5,0:7/7
+s2      221 st 17560 ms | roots {"6":["12","12"],"7":["8"]} | merges at 2
+     X verdicts 0,0.5,0:7/7
+W1-3d-2high 64 blocks; 2 X edges
+  X {"at":[0,0.5,0],"axis":1,"mats":[6,7],"sizes":[[24,24],[8,8]],"n":[8,16],"rule4":6,"size":7}
+  X {"at":[0,1.5,0],"axis":1,"mats":[6,7],"sizes":[[24,24],[8,8]],"n":[8,16],"rule4":6,"size":7}
+j0      209 st 22524 ms | roots {"6":["24","24"],"7":["16"]} | merges at 10
+     X verdicts 0,0.5,0:7/7 0,1.5,0:7/7
+rev     209 st 23160 ms | roots {"6":["24","24"],"7":["16"]} | merges at 10
+     X verdicts 0,0.5,0:7/7 0,1.5,0:7/7
+s1      203 st 23974 ms | roots {"6":["24","24"],"7":["16"]} | merges at 2
+     X verdicts 0,0.5,0:7/7 0,1.5,0:7/7
+s2      236 st 26989 ms | roots {"6":["24","24"],"7":["16"]} | merges at 2
+     X verdicts 0,0.5,0:7/7 0,1.5,0:7/7

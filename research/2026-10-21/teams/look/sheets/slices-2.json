@@ -1,0 +1,231 @@
+{
+"out": "teams/look/sheets/slices-2.png",
+"cols": 11,
+"title": "Slices across regimes, painted layers (plan at y = 0.5)",
+"cell": [
+200,
+200
+],
+"items": [
+{
+"path": "teams/look/img/BLOCKS/slab-dot-slice.png",
+"label": "slab-dot\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.25/slab-dot-slice.png",
+"label": "slab-dot\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-dot-slice.png",
+"label": "slab-dot\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/slab-dot-slice.png",
+"label": "slab-dot\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/slab-dot-slice.png",
+"label": "slab-dot\nFID-0.05"
+},
+{
+"path": "teams/look/img/CAGE-0.15/slab-dot-slice.png",
+"label": "slab-dot\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/slab-dot-slice.png",
+"label": "slab-dot\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/FINITE-2/slab-dot-slice.png",
+"label": "slab-dot\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/slab-dot-slice.png",
+"label": "slab-dot\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/slab-dot-slice.png",
+"label": "slab-dot\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/slab-dot-slice.png",
+"label": "slab-dot\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/slab-line-slice.png",
+"label": "slab-line\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.25/slab-line-slice.png",
+"label": "slab-line\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-line-slice.png",
+"label": "slab-line\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/slab-line-slice.png",
+"label": "slab-line\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/slab-line-slice.png",
+"label": "slab-line\nFID-0.05"
+},
+{
+"path": "teams/look/img/CAGE-0.15/slab-line-slice.png",
+"label": "slab-line\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/slab-line-slice.png",
+"label": "slab-line\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/FINITE-2/slab-line-slice.png",
+"label": "slab-line\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/slab-line-slice.png",
+"label": "slab-line\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/slab-line-slice.png",
+"label": "slab-line\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/slab-line-slice.png",
+"label": "slab-line\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/slab-stripe-slice.png",
+"label": "slab-stripe\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.25/slab-stripe-slice.png",
+"label": "slab-stripe\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-stripe-slice.png",
+"label": "slab-stripe\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/slab-stripe-slice.png",
+"label": "slab-stripe\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/slab-stripe-slice.png",
+"label": "slab-stripe\nFID-0.05"
+},
+{
+"path": "teams/look/img/CAGE-0.15/slab-stripe-slice.png",
+"label": "slab-stripe\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/slab-stripe-slice.png",
+"label": "slab-stripe\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/FINITE-2/slab-stripe-slice.png",
+"label": "slab-stripe\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/slab-stripe-slice.png",
+"label": "slab-stripe\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/slab-stripe-slice.png",
+"label": "slab-stripe\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/slab-stripe-slice.png",
+"label": "slab-stripe\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/slab-halves-slice.png",
+"label": "slab-halves\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.25/slab-halves-slice.png",
+"label": "slab-halves\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-halves-slice.png",
+"label": "slab-halves\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/slab-halves-slice.png",
+"label": "slab-halves\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/slab-halves-slice.png",
+"label": "slab-halves\nFID-0.05"
+},
+{
+"path": "teams/look/img/CAGE-0.15/slab-halves-slice.png",
+"label": "slab-halves\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/slab-halves-slice.png",
+"label": "slab-halves\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/FINITE-2/slab-halves-slice.png",
+"label": "slab-halves\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/slab-halves-slice.png",
+"label": "slab-halves\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/slab-halves-slice.png",
+"label": "slab-halves\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/slab-halves-slice.png",
+"label": "slab-halves\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/ring8-slice.png",
+"label": "ring8\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.25/ring8-slice.png",
+"label": "ring8\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/ring8-slice.png",
+"label": "ring8\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/ring8-slice.png",
+"label": "ring8\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/ring8-slice.png",
+"label": "ring8\nFID-0.05"
+},
+{
+"path": "teams/look/img/CAGE-0.15/ring8-slice.png",
+"label": "ring8\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/ring8-slice.png",
+"label": "ring8\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/FINITE-2/ring8-slice.png",
+"label": "ring8\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/ring8-slice.png",
+"label": "ring8\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/ring8-slice.png",
+"label": "ring8\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/ring8-slice.png",
+"label": "ring8\nFREE"
+}
+]
+}

@@ -1,0 +1,7 @@
+FID-0.15@n4 terrain-step: 89 ms, 3 st, cells 17920, d 0, rss 63 MB
+C15-V0@n4 terrain-step: 80 ms, 3 st, cells 8008, d 0, rss 63 MB
+FID-0.15@n8 terrain-step: 1025 ms, 26 st, cells 143360, d 0.0185, rss 78 MB
+C15-V0@n8 terrain-step: 598 ms, 13 st, cells 64064, d 0.0194, rss 74 MB
+FID-0.15@n12 terrain-step: 2561 ms, 17 st, cells 483840, d 0.023, rss 135 MB
+C15-V0@n12 terrain-step: 2461 ms, 20 st, cells 216216, d 0.0282, rss 116 MB
+FID-0.15@n16 terrain-step: 9489 ms, 26 st, cells 1146880, d 0.0283, rss 171 MB

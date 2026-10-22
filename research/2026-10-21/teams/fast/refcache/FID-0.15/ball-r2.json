@@ -1,0 +1,1 @@
+{"regime":"FID-0.15","name":"ball-r2","opts":{"anchor":{"kind":"fidelity","k":0.15},"n":12},"ms":1094,"steps":15,"converged":true,"lastChanges":[144,24,0,0,0],"grid":[84,84,84],"n":12,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":33,"target":57024,"lambda":0.0593222975730896,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":33,"volume":32.9861}]}

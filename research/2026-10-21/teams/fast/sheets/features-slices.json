@@ -1,0 +1,71 @@
+{
+"out": "sheets/features-slices.png",
+"cols": 5,
+"title": "Cross-sections: tunnel clearance, diagonal contact of different materials, T-junction (films black, air surface white)",
+"cell": [
+260,
+260
+],
+"items": [
+{
+"path": "img/tunnel__blocks-slice.png",
+"label": "tunnel\nblocks (x-y cut z=1.5)"
+},
+{
+"path": "img/tunnel__FID-0.15-slice.png",
+"label": "tunnel\nphysics FID-0.15"
+},
+{
+"path": "img/tunnel__FINITE-4-slice.png",
+"label": "tunnel\nphysics FINITE-4"
+},
+{
+"path": "img/tunnel__Bl-b1s20-slice.png",
+"label": "tunnel\ncheap Bl-b1s20"
+},
+{
+"path": "img/tunnel__Bl-b3s40-slice.png",
+"label": "tunnel\ncheap Bl-b3s40"
+},
+{
+"path": "img/diag-edge-diff__blocks-slice.png",
+"label": "diag-edge-diff\nblocks (plan y=0.5)"
+},
+{
+"path": "img/diag-edge-diff__FREE-slice.png",
+"label": "diag-edge-diff\nphysics FREE"
+},
+{
+"path": "img/diag-edge-diff__FID-0.15-slice.png",
+"label": "diag-edge-diff\nphysics FID-0.15"
+},
+{
+"path": "img/diag-edge-diff__FINITE-4-slice.png",
+"label": "diag-edge-diff\nphysics FINITE-4"
+},
+{
+"path": "img/diag-edge-diff__Bl-b1s20-slice.png",
+"label": "diag-edge-diff\ncheap Bl-b1s20"
+},
+{
+"path": "img/sq2-AABC__blocks-slice.png",
+"label": "sq2-AABC\nblocks (plan y=0.5)"
+},
+{
+"path": "img/sq2-AABC__FREE-slice.png",
+"label": "sq2-AABC\nphysics FREE"
+},
+{
+"path": "img/sq2-AABC__FID-0.15-slice.png",
+"label": "sq2-AABC\nphysics FID-0.15"
+},
+{
+"path": "img/sq2-AABC__FINITE-4-slice.png",
+"label": "sq2-AABC\nphysics FINITE-4"
+},
+{
+"path": "img/sq2-AABC__Bl-b1s20-slice.png",
+"label": "sq2-AABC\ncheap Bl-b1s20"
+}
+]
+}

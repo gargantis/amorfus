@@ -1,0 +1,31 @@
+{
+ "grid": [
+  96,
+  96,
+  96
+ ],
+ "cells": 884736,
+ "s": 3.2,
+ "gaussTaps": 21,
+ "tentBoxWidth": 7,
+ "tentVariance": 8,
+ "gaussVariance": 10.240000000000002,
+ "gaussMsMedian": 122.2,
+ "tentMsMedian": 59.5,
+ "speedup": 2.05,
+ "gaussMs": [
+  206,
+  107,
+  125.8,
+  122.2,
+  85.9
+ ],
+ "tentMs": [
+  91.7,
+  67.6,
+  59.5,
+  44.4,
+  42.2
+ ],
+ "note": "blur only; the engine also spends time in the volume solve and assignment; node v22.22.1"
+}

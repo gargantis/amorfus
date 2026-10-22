@@ -1,0 +1,110 @@
+{
+ "cfg": "lineToBlob",
+ "regime": "FREE",
+ "n": 32,
+ "variants": 12,
+ "perX": {
+  "0,0": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:9+1 vs 0:0+0",
+   "n": [
+    0,
+    0
+   ],
+   "v": {
+    "6": 12
+   },
+   "majority": "6",
+   "unanimous": true,
+   "ruleAgree": true,
+   "sizeAgree": true
+  },
+  "1,1": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:15+15",
+   "n": [
+    4,
+    6
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "2,2": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:15+15",
+   "n": [
+    4,
+    12
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "3,3": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:15+15",
+   "n": [
+    4,
+    12
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "4,4": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:15+15",
+   "n": [
+    4,
+    12
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  },
+  "5,5": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:15+15",
+   "n": [
+    3,
+    6
+   ],
+   "v": {
+    "6(end both)": 12
+   },
+   "majority": "6(end both)",
+   "unanimous": true,
+   "ruleAgree": false,
+   "sizeAgree": false
+  }
+ },
+ "summary": {
+  "xs": 6,
+  "unanimous": 6,
+  "rule4AgreeOnUnanimous": 1,
+  "sizeAgreeOnUnanimous": 1
+ }
+}

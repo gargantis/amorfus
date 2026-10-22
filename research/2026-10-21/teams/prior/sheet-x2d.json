@@ -1,0 +1,43 @@
+{
+ "out": "img/sheet-x2d.png",
+ "cols": 4,
+ "title": "2D sq2-ABCD (four materials), FREE, n=32: X junction, T1 nucleus, noise",
+ "cell": [
+  260,
+  260
+ ],
+ "items": [
+  {
+   "path": "img/abcd2d-presplit-r0.png",
+   "label": "sq2-ABCD 2D FREE, jitter 0\nX persists (fixed point)"
+  },
+  {
+   "path": "img/abcd2d-presplit-r4.png",
+   "label": "FREE, A-D nucleus r=4 sub\nwall survives, frozen short"
+  },
+  {
+   "path": "img/abcd2d-presplit-r16.png",
+   "label": "FREE, A-D nucleus r=16 sub\nwall survives, frozen longer"
+  },
+  {
+   "path": "img/abcd2d-frozen-j0.01-s1.png",
+   "label": "FREE, frozen jitter 1e-2 s1\nX persists"
+  },
+  {
+   "path": "img/abcd2d-annealed-j0.01-s1.png",
+   "label": "FREE, annealed 1e-2 s1\nX persists"
+  },
+  {
+   "path": "img/abcd2d-anneal-quench-j0.03-s1.png",
+   "label": "anneal 0.03 x100+quench s1\nT1: A-D wall (1 of 5 seeds)"
+  },
+  {
+   "path": "img/abcd2d-anneal-quench-j0.1-s1.png",
+   "label": "anneal 0.1 x100+quench s1\nT1: A-D wall"
+  },
+  {
+   "path": "img/abcd2d-anneal-quench-j0.1-s2.png",
+   "label": "anneal 0.1 x100+quench s2\nT1: B-C wall"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+FREE@n16 tunnel: 2297 ms, 26 st, cells 614400, d 0.4, rss 119 MB
+FREE@n16 single: 168 ms, 8 st, cells 110592, d 0.3203, rss 101 MB
+FREE@n16 stairs: 4620 ms, 86 st, cells 409600, d 0.5205, rss 159 MB
+FREE@n16 ring8: 2681 ms, 70 st, cells 307200, d 1.0537, rss 159 MB
+FREE@n16 room2: 2831 ms, 33 st, cells 737280, d 0.3875, rss 159 MB
+FREE@n16 slab-line: 31877 ms, 147 st, cells 786432, d 0.8956, rss 178 MB
+FREE@n16 slab2-line: 70200 ms, 240 st, cells 1048576, d 0.5233, rss 182 MB
+FREE@n16 checker2: 92870 ms, 300 st nc, cells 1048576, d 0.6662, rss 184 MB

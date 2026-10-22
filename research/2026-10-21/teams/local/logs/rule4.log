@@ -1,0 +1,26 @@
+checker-A1-B1    rule none  | physics {"FID-0.15":"none","FID-0.05":"none","FINITE-4":"split:none/A","CAGE-0.25":"split:none/B/both","FREE":"split:none/A/both"}
+checker-A1-B2    rule A     | physics {"FID-0.15":"none","FID-0.05":"A","FINITE-4":"A","CAGE-0.25":"A","FREE":"A"}
+checker-A1-B4    rule A     | physics {"FID-0.15":"none","FID-0.05":"A","FINITE-4":"A","CAGE-0.25":"A","FREE":"A"}
+checker-A2-B1    rule B     | physics {"FID-0.15":"none","FID-0.05":"B","FINITE-4":"B","CAGE-0.25":"B","FREE":"B"}
+checker-A4-B1    rule B     | physics {"FID-0.15":"none","FID-0.05":"B","FINITE-4":"B","CAGE-0.25":"B","FREE":"B"}
+checker-A2-B2    rule none  | physics {"FID-0.15":"none","FID-0.05":"split:none/both/B","FINITE-4":"none","CAGE-0.25":"both","FREE":"split:none/B/both"}
+checker-A2-B4    rule A     | physics {"FID-0.15":"none","FID-0.05":"none","FINITE-4":"A","CAGE-0.25":"A","FREE":"A"}
+checker-A4-B2    rule B     | physics {"FID-0.15":"none","FID-0.05":"none","FINITE-4":"B","CAGE-0.25":"B","FREE":"B"}
+checker-A4-B4    rule none  | physics {"FID-0.15":"none","FID-0.05":"none","FINITE-4":"none","CAGE-0.25":"none","FREE":"split:none/B"}
+diag-edge        rule A     | physics {"FID-0.15":"A","FID-0.05":"A","FINITE-4":"A","CAGE-0.25":"A","FREE":"A"}
+diag-edge-3v3    rule A     | physics {"FID-0.15":"A","FID-0.05":"A","FINITE-4":"A","CAGE-0.25":"A","FREE":"A"}
+diag-edge-3v1    rule A     | physics {"FID-0.15":"A","FID-0.05":"A","FINITE-4":"A","CAGE-0.25":"A","FREE":"A"}
+diag-corner      rule none  | physics {"FID-0.15":"none","FID-0.05":"none","FINITE-4":"none","CAGE-0.25":"none","FREE":"none"}
+cube2-checker    rule none  | physics {"FID-0.15":"none","FID-0.05":"none","FINITE-4":"none","CAGE-0.25":"split:none/both","FREE":"both"}
+cube2-cornerA    rule none  | physics {"FID-0.15":"none","FID-0.05":"none","FINITE-4":"none","CAGE-0.25":"none","FREE":"none"}
+cube2-edgeA      rule A     | physics {"FID-0.15":"none","FID-0.05":"A","FINITE-4":"A","CAGE-0.25":"A","FREE":"A"}
+checker-2layer   rule none  | physics {"FID-0.15":"none","FID-0.05":"none","FINITE-4":"none","CAGE-0.25":"split:none/both/B","FREE":"split:none/both/A"}
+slab-line        rule A     | physics {"FID-0.15":"none","FID-0.05":"A","FINITE-4":"A","CAGE-0.25":"A","FREE":"A"}
+slab-line4       rule A     | physics {"FID-0.15":"none","FID-0.05":"A","FINITE-4":"A","CAGE-0.25":"A","FREE":"A"}
+slab-antiline    rule B     | physics {"FID-0.15":"none","FID-0.05":"B","FINITE-4":"B","CAGE-0.25":"B","FREE":"B"}
+slab-line-2high  rule A     | physics {"FID-0.15":"none","FID-0.05":"A","FINITE-4":"A","CAGE-0.25":"A"}
+FID-0.15   agree 10 disagree 11 (seed-split configs 0, compared on j0/rev) checker-A1-B2: rule A, physics none; checker-A1-B4: rule A, physics none; checker-A2-B1: rule B, physics none; checker-A4-B1: rule B, physics none; checker-A2-B4: rule A, physics none; checker-A4-B2: rule B, physics none; cube2-edgeA: rule A, physics none; slab-line: rule A, physics none; slab-line4: rule A, physics none; slab-antiline: rule B, physics none; slab-line-2high: rule A, physics none
+FID-0.05   agree 19 disagree 2 (seed-split configs 1, compared on j0/rev) checker-A2-B4: rule A, physics none; checker-A4-B2: rule B, physics none
+FINITE-4   agree 21 disagree 0 (seed-split configs 1, compared on j0/rev) 
+CAGE-0.25  agree 20 disagree 1 (seed-split configs 3, compared on j0/rev) checker-A2-B2: rule none, physics both
+FREE       agree 19 disagree 1 (seed-split configs 4, compared on j0/rev) cube2-checker: rule none, physics both

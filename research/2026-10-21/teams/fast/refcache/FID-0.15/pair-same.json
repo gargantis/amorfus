@@ -1,0 +1,1 @@
+{"regime":"FID-0.15","name":"pair-same","opts":{"anchor":{"kind":"fidelity","k":0.15},"n":16},"ms":263,"steps":9,"converged":true,"lastChanges":[16,24,0,0,0],"grid":[64,48,48],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":2,"target":8192,"lambda":0.14616486430168152,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":2,"volume":2}]}

@@ -1,0 +1,5 @@
+FID-0.15: 10 configs
+model          surfMean p95mean worstP95 bias  unm | seamMean worstSeamP95 | |vol|mean |vol|worst
+I10Fx-g20        0.0166  0.0531    0.155 -0.004    0 |   0.0113    0.070 |    0.000    0.001
+I4Fx-g20         0.0222  0.0835    0.186 -0.003    2 |   0.0130    0.077 |    0.000    0.000
+I2Fx-g20         0.0266  0.1068    0.213 -0.003    1 |   0.0139    0.085 |    0.000    0.000

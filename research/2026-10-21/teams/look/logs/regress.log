@@ -1,0 +1,6 @@
+cube2-same {"anchor":{"kind":"fidelity","k":0.15}} steps 14 14 label diffs 0 max |ΔD| 0
+slab-line {"anchor":{"kind":"fidelity","k":0.1}} steps 20 20 label diffs 0 max |ΔD| 0
+pair-diff {"anchor":{"kind":"cage","r":0.25}} steps 23 23 label diffs 0 max |ΔD| 0
+L3-ABC {"maxSteps":4,"stopAfter":99} steps 4 4 label diffs 0 max |ΔD| 0
+stairs {"maxSteps":300} steps 86 86 label diffs 0 max |ΔD| 0
+slab-dot {"anchor":{"kind":"fidelity","k":0.15,"kMat":0.15}} steps 10 10 label diffs 0 max |ΔD| 0

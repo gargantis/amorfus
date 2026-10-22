@@ -1,0 +1,1828 @@
+{
+ "regime": "BOX0-PAINT-0.15-0.02",
+ "options": {
+  "engine": "look",
+  "anchor": {
+   "kind": "fidelity",
+   "k": 0.15,
+   "kMat": 0.02,
+   "box": {
+    "outH": 0.125,
+    "outV": 0,
+    "inH": 0.25,
+    "inV": 0.25
+   }
+  }
+ },
+ "engine": "src/mbo-look.mjs (copy of lib/mbo.mjs + box/kMat), s 0.2·n, jitter 0",
+ "n": 16,
+ "runs": {
+  "single": {
+   "steps": 6,
+   "converged": true,
+   "ms": 193,
+   "lastChanges": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    48,
+    48,
+    48
+   ],
+   "cells": 110592,
+   "shapeChange": 0.0625,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1
+   },
+   "phasesEnd": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1776
+   ],
+   "msMeasure": 24,
+   "extent": {
+    "lab": [
+     1.125,
+     1,
+     1.125
+    ],
+    "D": [
+     1.1465,
+     1.0556,
+     1.1465
+    ]
+   },
+   "edge": {
+    "lab": {
+     "faceU": 0.0625,
+     "faceV": 0,
+     "inset": 0.0183,
+     "Req": 0.0442,
+     "R": 0.2971,
+     "fitRms": 0.0093,
+     "nCurved": 52,
+     "arcDeg": 25.5
+    },
+    "D": {
+     "faceU": 0.0732,
+     "faceV": 0.0278,
+     "inset": 0.0651,
+     "Req": 0.1572,
+     "R": 0.3143,
+     "fitRms": 0.0043,
+     "nCurved": 72,
+     "arcDeg": 35.5
+    }
+   },
+   "corner": {
+    "lab": {
+     "inset": 0.14,
+     "Req": 0.1913
+    },
+    "D": {
+     "inset": 0.1749,
+     "Req": 0.239
+    }
+   }
+  },
+  "pair-same": {
+   "steps": 8,
+   "converged": true,
+   "ms": 159,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    64,
+    48,
+    48
+   ],
+   "cells": 147456,
+   "shapeChange": 0.0703,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1
+   },
+   "phasesEnd": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1926
+   ],
+   "msMeasure": 9,
+   "extent": {
+    "lab": [
+     2,
+     1,
+     1.125
+    ],
+    "D": [
+     2.0603,
+     1.0603,
+     1.1798
+    ]
+   }
+  },
+  "pair-diff": {
+   "steps": 7,
+   "converged": true,
+   "ms": 160,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    64,
+    48,
+    48
+   ],
+   "cells": 147456,
+   "shapeChange": 0.0508,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1,
+    "7": 1
+   },
+   "phasesEnd": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1715,
+    0.1715
+   ],
+   "msMeasure": 2
+  },
+  "L3-ABC": {
+   "steps": 14,
+   "converged": true,
+   "ms": 316,
+   "lastChanges": [
+    14,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "cells": 196608,
+   "shapeChange": 0.0505,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": -0.0005,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "1": 1,
+    "6": 1,
+    "7": 1
+   },
+   "phasesEnd": {
+    "1": 1,
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1769,
+    0.1997,
+    0.1998
+   ],
+   "msMeasure": 1
+  },
+  "sq2-AABB": {
+   "steps": 8,
+   "converged": true,
+   "ms": 180,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "cells": 196608,
+   "shapeChange": 0.0352,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": -0.0015,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1,
+    "7": 1
+   },
+   "phasesEnd": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1997,
+    0.1997
+   ],
+   "msMeasure": 18,
+   "groove": {
+    "lab": {
+     "flatL": 1,
+     "flatR": 1,
+     "flatVsOrig": 0,
+     "depth": 0,
+     "lowestAt": -0.5,
+     "halfWidth": 0.0156,
+     "angles": [
+      {
+       "window": [
+        0.06,
+        0.25
+       ],
+       "phiL": 0,
+       "phiR": 0,
+       "opening": 180
+      }
+     ]
+    },
+    "D": {
+     "flatL": 1.0312,
+     "flatR": 1.0312,
+     "flatVsOrig": 0.0312,
+     "depth": 0.0313,
+     "lowestAt": -0.0313,
+     "halfWidth": 0.1406,
+     "angles": [
+      {
+       "window": [
+        0.06,
+        0.25
+       ],
+       "phiL": 6.346,
+       "phiR": 6.346,
+       "opening": 167.3079
+      }
+     ]
+    }
+   }
+  },
+  "cube2-same": {
+   "steps": 10,
+   "converged": true,
+   "ms": 250,
+   "lastChanges": [
+    96,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    64,
+    64,
+    64
+   ],
+   "cells": 262144,
+   "shapeChange": 0.0508,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": -0.0007,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1
+   },
+   "phasesEnd": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1394
+   ],
+   "msMeasure": 18,
+   "edge": {
+    "lab": {
+     "faceU": 0.0625,
+     "faceV": 0,
+     "inset": 0.0701,
+     "Req": 0.1692,
+     "R": 0.3173,
+     "fitRms": 0.0275,
+     "nCurved": 42,
+     "arcDeg": 20.5
+    },
+    "D": {
+     "faceU": 0.0843,
+     "faceV": 0.0218,
+     "inset": 0.0857,
+     "Req": 0.2069,
+     "R": 0.5259,
+     "fitRms": 0.0142,
+     "nCurved": 56,
+     "arcDeg": 27.5
+    }
+   },
+   "corner": {
+    "lab": {
+     "inset": 0.2483,
+     "Req": 0.3392
+    },
+    "D": {
+     "inset": 0.2548,
+     "Req": 0.348
+    }
+   }
+  },
+  "cube2-oneB": {
+   "steps": 34,
+   "converged": true,
+   "ms": 1655,
+   "lastChanges": [
+    10,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    64,
+    64,
+    64
+   ],
+   "cells": 262144,
+   "shapeChange": 0.0694,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1,
+    "7": 1
+   },
+   "phasesEnd": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1939,
+    0.2012
+   ],
+   "msMeasure": 10
+  },
+  "stairs": {
+   "steps": 13,
+   "converged": true,
+   "ms": 509,
+   "lastChanges": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    80,
+    80,
+    64
+   ],
+   "cells": 409600,
+   "shapeChange": 0.0372,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1
+   },
+   "phasesEnd": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1409
+   ],
+   "msMeasure": 11,
+   "treads": {
+    "lab": [
+     0,
+     0,
+     0
+    ],
+    "D": [
+     0.0223,
+     0.0223,
+     0.0221
+    ]
+   }
+  },
+  "slab-dot": {
+   "steps": 42,
+   "converged": true,
+   "ms": 4045,
+   "lastChanges": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    112,
+    48,
+    112
+   ],
+   "cells": 602112,
+   "shapeChange": 0.0197,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1,
+    "7": 1
+   },
+   "phasesEnd": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1419,
+    0.1997
+   ],
+   "msMeasure": 29,
+   "flatTop": {
+    "lab": {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "miss": 0,
+     "n": 480
+    },
+    "D": {
+     "maxUp": 0.0222,
+     "maxDown": 0.0222,
+     "maxAbs": 0.0222,
+     "miss": 0,
+     "n": 480
+    }
+   },
+   "flatBot": {
+    "lab": {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "miss": 0,
+     "n": 480
+    },
+    "D": {
+     "maxUp": -0.0222,
+     "maxDown": -0.0222,
+     "maxAbs": 0.0222,
+     "miss": 0,
+     "n": 480
+    }
+   },
+   "dotTopY": {
+    "lab": 0,
+    "D": 0.0313
+   },
+   "dotTopExtentX_lab": 1.125
+  },
+  "slab-line": {
+   "steps": 34,
+   "converged": true,
+   "ms": 8926,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    128,
+    48,
+    128
+   ],
+   "cells": 786432,
+   "shapeChange": 0.0772,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0.0001,
+    "labWorstPhaseRel": 0.0002
+   },
+   "phasesStart": {
+    "6": 6,
+    "7": 2
+   },
+   "phasesEnd": {
+    "6": 1,
+    "7": 2
+   },
+   "lambdas": [
+    0.1743,
+    0.1499,
+    0.1499
+   ],
+   "msMeasure": 84,
+   "bandTop": {
+    "mean": 0.6248,
+    "sd": 0.0504,
+    "min": 0.5391,
+    "max": 0.7109
+   },
+   "bandMid": {
+    "mean": 0.6248,
+    "sd": 0.0504,
+    "min": 0.5391,
+    "max": 0.7109
+   },
+   "flatTopB": {
+    "lab": {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "miss": 0,
+     "n": 342
+    },
+    "D": {
+     "maxUp": 0.0235,
+     "maxDown": 0.0235,
+     "maxAbs": 0.0235,
+     "miss": 0,
+     "n": 342
+    }
+   },
+   "junctions": "AAAAA"
+  },
+  "slab-stripe": {
+   "steps": 28,
+   "converged": true,
+   "ms": 3159,
+   "lastChanges": [
+    28,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    128,
+    48,
+    128
+   ],
+   "cells": 786432,
+   "shapeChange": 0.0106,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1,
+    "7": 2
+   },
+   "phasesEnd": {
+    "6": 1,
+    "7": 2
+   },
+   "lambdas": [
+    0.1564,
+    0.1621,
+    0.1511
+   ],
+   "msMeasure": 49,
+   "flatTopB": {
+    "lab": {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "miss": 0,
+     "n": 481
+    },
+    "D": {
+     "maxUp": 0.0236,
+     "maxDown": 0.0236,
+     "maxAbs": 0.0236,
+     "miss": 0,
+     "n": 481
+    }
+   },
+   "flatBotB": {
+    "lab": {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "miss": 0,
+     "n": 481
+    },
+    "D": {
+     "maxUp": -0.0236,
+     "maxDown": -0.0236,
+     "maxAbs": 0.0236,
+     "miss": 0,
+     "n": 481
+    }
+   },
+   "stripeTop": {
+    "lab": {
+     "min": 0,
+     "max": 0
+    },
+    "D": {
+     "min": 0.0254,
+     "max": 0.0254
+    }
+   },
+   "seamGroove": {
+    "lab": {
+     "flatL": 1,
+     "flatR": 1,
+     "flatVsOrig": 0,
+     "depth": 0,
+     "lowestAt": -0.5,
+     "halfWidth": 0.0156,
+     "angles": [
+      {
+       "window": [
+        0.06,
+        0.25
+       ],
+       "phiL": 0,
+       "phiR": 0,
+       "opening": 180
+      },
+      {
+       "window": [
+        0.1,
+        0.4
+       ],
+       "phiL": 0,
+       "phiR": 0,
+       "opening": 180
+      }
+     ]
+    },
+    "D": {
+     "flatL": 1.0236,
+     "flatR": 1.0236,
+     "flatVsOrig": 0.0236,
+     "depth": 0.0332,
+     "lowestAt": 0.0313,
+     "halfWidth": 0.1406,
+     "angles": [
+      {
+       "window": [
+        0.06,
+        0.25
+       ],
+       "phiL": 6.6412,
+       "phiR": 6.7277,
+       "opening": 166.631
+      },
+      {
+       "window": [
+        0.1,
+        0.4
+       ],
+       "phiL": 2.4741,
+       "phiR": 2.5066,
+       "opening": 175.0192
+      }
+     ]
+    }
+   }
+  },
+  "terrain-step": {
+   "steps": 38,
+   "converged": true,
+   "ms": 14129,
+   "lastChanges": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    128,
+    80,
+    112
+   ],
+   "cells": 1146880,
+   "shapeChange": 0.0337,
+   "vol": {
+    "labTotalRel": 0.0001,
+    "DTotalRel": 0.0006,
+    "labWorstPhaseRel": 0.0003
+   },
+   "phasesStart": {
+    "1": 2,
+    "2": 1
+   },
+   "phasesEnd": {
+    "1": 1,
+    "2": 1
+   },
+   "lambdas": [
+    0.1752,
+    0.1434
+   ],
+   "msMeasure": 39,
+   "topLowCentre": {
+    "lab": 0,
+    "D": 0.0224
+   },
+   "topHighCentre": {
+    "lab": 0,
+    "D": 0.0224
+   },
+   "flatLow": {
+    "lab": {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "miss": 0,
+     "n": 377
+    },
+    "D": {
+     "maxUp": 0.0224,
+     "maxDown": 0.0224,
+     "maxAbs": 0.0224,
+     "miss": 0,
+     "n": 377
+    }
+   },
+   "flatHigh": {
+    "lab": {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "miss": 0,
+     "n": 377
+    },
+    "D": {
+     "maxUp": 0.0224,
+     "maxDown": 0.0224,
+     "maxAbs": 0.0224,
+     "miss": 0,
+     "n": 377
+    }
+   }
+  },
+  "tunnel": {
+   "steps": 19,
+   "converged": true,
+   "ms": 1386,
+   "lastChanges": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    80,
+    96,
+    80
+   ],
+   "cells": 614400,
+   "shapeChange": 0.037,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": -0.0025,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "3": 1
+   },
+   "phasesEnd": {
+    "3": 1
+   },
+   "lambdas": [
+    0.0851
+   ],
+   "msMeasure": 24,
+   "clear": {
+    "lab": {
+     "clearHeightAtW": 1.9792,
+     "clearWidthAtH": 0.75,
+     "heightAtCentre": 2,
+     "pass": true
+    },
+    "D": {
+     "clearHeightAtW": 1.6215,
+     "clearWidthAtH": 0.5,
+     "heightAtCentre": 1.9726,
+     "pass": false
+    }
+   },
+   "clearCells": {
+    "0.75": {
+     "clearHeightAtW": 2,
+     "clearWidthAtH": 0.75,
+     "pass": true
+    },
+    "1.5": {
+     "clearHeightAtW": 2,
+     "clearWidthAtH": 0.75,
+     "pass": true
+    },
+    "2.25": {
+     "clearHeightAtW": 2,
+     "clearWidthAtH": 0.75,
+     "pass": true
+    }
+   },
+   "widthMid": {
+    "lab": 1,
+    "D": 0.9731
+   },
+   "heightMid": {
+    "lab": 2,
+    "D": 1.9726
+   },
+   "floor": {
+    "lab": 1,
+    "D": 1.0137
+   },
+   "roof": {
+    "lab": 3,
+    "D": 2.9863
+   }
+  },
+  "pillar3": {
+   "steps": 11,
+   "converged": true,
+   "ms": 179,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    48,
+    80,
+    48
+   ],
+   "cells": 184320,
+   "shapeChange": 0.0703,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1
+   },
+   "phasesEnd": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1425
+   ],
+   "msMeasure": 2,
+   "widthMid": {
+    "lab": 1.125,
+    "D": 1.1535
+   },
+   "height": {
+    "lab": 3,
+    "D": 3.0445
+   },
+   "widthMin": {
+    "lab": 1,
+    "D": 1.0446
+   }
+  },
+  "ring8": {
+   "steps": 16,
+   "converged": true,
+   "ms": 456,
+   "lastChanges": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    80,
+    48,
+    80
+   ],
+   "cells": 307200,
+   "shapeChange": 0.0698,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": -0.0002,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1
+   },
+   "phasesEnd": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1466
+   ],
+   "msMeasure": 2,
+   "holeAirAtCentre": true,
+   "holeWidthX": {
+    "lab": 0.75,
+    "D": 0.7167
+   },
+   "holeWidthDiag": {
+    "lab": 1.024,
+    "D": 0.82
+   }
+  },
+  "sq2-same": {
+   "steps": 10,
+   "converged": true,
+   "ms": 187,
+   "lastChanges": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "cells": 196608,
+   "shapeChange": 0.043,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1
+   },
+   "phasesEnd": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1529
+   ],
+   "msMeasure": 8,
+   "edgePlan": {
+    "lab": {
+     "faceU": 0.0625,
+     "faceV": 0.0625,
+     "inset": 0.0701,
+     "Req": 0.1692,
+     "R": 0.3295,
+     "fitRms": 0.0267,
+     "nCurved": 79,
+     "arcDeg": 39
+    },
+    "D": {
+     "faceU": 0.0784,
+     "faceV": 0.0784,
+     "inset": 0.085,
+     "Req": 0.2051,
+     "R": 0.4363,
+     "fitRms": 0.018,
+     "nCurved": 91,
+     "arcDeg": 45
+    }
+   },
+   "edgeSection": {
+    "lab": {
+     "faceU": 0.0625,
+     "faceV": 0,
+     "inset": 0.0183,
+     "Req": 0.0442,
+     "R": 0.2971,
+     "fitRms": 0.0093,
+     "nCurved": 52,
+     "arcDeg": 25.5
+    },
+    "D": {
+     "faceU": 0.0784,
+     "faceV": 0.0239,
+     "inset": 0.0686,
+     "Req": 0.1656,
+     "R": 0.3363,
+     "fitRms": 0.0048,
+     "nCurved": 75,
+     "arcDeg": 37
+    }
+   },
+   "corner": {
+    "lab": {
+     "inset": 0.1941,
+     "Req": 0.2651
+    },
+    "D": {
+     "inset": 0.2123,
+     "Req": 0.29
+    }
+   },
+   "thickness": {
+    "lab": 1,
+    "D": 1.0479
+   }
+  },
+  "slab-halves": {
+   "steps": 28,
+   "converged": true,
+   "ms": 3234,
+   "lastChanges": [
+    56,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    128,
+    48,
+    128
+   ],
+   "cells": 786432,
+   "shapeChange": 0.0106,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": 0,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "6": 1,
+    "7": 1
+   },
+   "phasesEnd": {
+    "6": 1,
+    "7": 1
+   },
+   "lambdas": [
+    0.1519,
+    0.1519
+   ],
+   "msMeasure": 53,
+   "groove": {
+    "lab": {
+     "flatL": 1,
+     "flatR": 1,
+     "flatVsOrig": 0,
+     "depth": 0,
+     "lowestAt": -0.5,
+     "halfWidth": 0.0156,
+     "angles": [
+      {
+       "window": [
+        0.06,
+        0.25
+       ],
+       "phiL": 0,
+       "phiR": 0,
+       "opening": 180
+      },
+      {
+       "window": [
+        0.1,
+        0.4
+       ],
+       "phiL": 0,
+       "phiR": 0,
+       "opening": 180
+      }
+     ],
+     "profile": [
+      [
+       0.5,
+       1
+      ],
+      [
+       0.5625,
+       1
+      ],
+      [
+       0.625,
+       1
+      ],
+      [
+       0.6875,
+       1
+      ],
+      [
+       0.75,
+       1
+      ],
+      [
+       0.8125,
+       1
+      ],
+      [
+       0.875,
+       1
+      ],
+      [
+       0.9375,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       1.0625,
+       1
+      ],
+      [
+       1.125,
+       1
+      ],
+      [
+       1.1875,
+       1
+      ],
+      [
+       1.25,
+       1
+      ],
+      [
+       1.3125,
+       1
+      ],
+      [
+       1.375,
+       1
+      ],
+      [
+       1.4375,
+       1
+      ],
+      [
+       1.5,
+       1
+      ],
+      [
+       1.5625,
+       1
+      ],
+      [
+       1.625,
+       1
+      ],
+      [
+       1.6875,
+       1
+      ],
+      [
+       1.75,
+       1
+      ],
+      [
+       1.8125,
+       1
+      ],
+      [
+       1.875,
+       1
+      ],
+      [
+       1.9375,
+       1
+      ],
+      [
+       2,
+       1
+      ],
+      [
+       2.0625,
+       1
+      ],
+      [
+       2.125,
+       1
+      ],
+      [
+       2.1875,
+       1
+      ],
+      [
+       2.25,
+       1
+      ],
+      [
+       2.3125,
+       1
+      ],
+      [
+       2.375,
+       1
+      ],
+      [
+       2.4375,
+       1
+      ],
+      [
+       2.5,
+       1
+      ],
+      [
+       2.5625,
+       1
+      ],
+      [
+       2.625,
+       1
+      ],
+      [
+       2.6875,
+       1
+      ],
+      [
+       2.75,
+       1
+      ],
+      [
+       2.8125,
+       1
+      ],
+      [
+       2.875,
+       1
+      ],
+      [
+       2.9375,
+       1
+      ],
+      [
+       3,
+       1
+      ],
+      [
+       3.0625,
+       1
+      ],
+      [
+       3.125,
+       1
+      ],
+      [
+       3.1875,
+       1
+      ],
+      [
+       3.25,
+       1
+      ],
+      [
+       3.3125,
+       1
+      ],
+      [
+       3.375,
+       1
+      ],
+      [
+       3.4375,
+       1
+      ],
+      [
+       3.5,
+       1
+      ],
+      [
+       3.5625,
+       1
+      ],
+      [
+       3.625,
+       1
+      ],
+      [
+       3.6875,
+       1
+      ],
+      [
+       3.75,
+       1
+      ],
+      [
+       3.8125,
+       1
+      ],
+      [
+       3.875,
+       1
+      ],
+      [
+       3.9375,
+       1
+      ],
+      [
+       4,
+       1
+      ],
+      [
+       4.0625,
+       1
+      ],
+      [
+       4.125,
+       1
+      ],
+      [
+       4.1875,
+       1
+      ],
+      [
+       4.25,
+       1
+      ],
+      [
+       4.3125,
+       1
+      ],
+      [
+       4.375,
+       1
+      ],
+      [
+       4.4375,
+       1
+      ],
+      [
+       4.5,
+       1
+      ],
+      [
+       4.5625,
+       1
+      ],
+      [
+       4.625,
+       1
+      ],
+      [
+       4.6875,
+       1
+      ],
+      [
+       4.75,
+       1
+      ],
+      [
+       4.8125,
+       1
+      ],
+      [
+       4.875,
+       1
+      ],
+      [
+       4.9375,
+       1
+      ],
+      [
+       5,
+       1
+      ],
+      [
+       5.0625,
+       1
+      ],
+      [
+       5.125,
+       1
+      ],
+      [
+       5.1875,
+       1
+      ],
+      [
+       5.25,
+       1
+      ],
+      [
+       5.3125,
+       1
+      ],
+      [
+       5.375,
+       1
+      ],
+      [
+       5.4375,
+       1
+      ],
+      [
+       5.5,
+       1
+      ]
+     ]
+    },
+    "D": {
+     "flatL": 1.0238,
+     "flatR": 1.0238,
+     "flatVsOrig": 0.0238,
+     "depth": 0.0332,
+     "lowestAt": -0.0313,
+     "halfWidth": 0.1406,
+     "angles": [
+      {
+       "window": [
+        0.06,
+        0.25
+       ],
+       "phiL": 6.7217,
+       "phiR": 6.7217,
+       "opening": 166.5567
+      },
+      {
+       "window": [
+        0.1,
+        0.4
+       ],
+       "phiL": 2.5043,
+       "phiR": 2.5043,
+       "opening": 174.9913
+      }
+     ],
+     "profile": [
+      [
+       0.5,
+       1.0238
+      ],
+      [
+       0.5625,
+       1.0238
+      ],
+      [
+       0.625,
+       1.0238
+      ],
+      [
+       0.6875,
+       1.0238
+      ],
+      [
+       0.75,
+       1.0238
+      ],
+      [
+       0.8125,
+       1.0238
+      ],
+      [
+       0.875,
+       1.0238
+      ],
+      [
+       0.9375,
+       1.0238
+      ],
+      [
+       1,
+       1.0238
+      ],
+      [
+       1.0625,
+       1.0238
+      ],
+      [
+       1.125,
+       1.0238
+      ],
+      [
+       1.1875,
+       1.0238
+      ],
+      [
+       1.25,
+       1.0238
+      ],
+      [
+       1.3125,
+       1.0238
+      ],
+      [
+       1.375,
+       1.0238
+      ],
+      [
+       1.4375,
+       1.0238
+      ],
+      [
+       1.5,
+       1.0238
+      ],
+      [
+       1.5625,
+       1.0238
+      ],
+      [
+       1.625,
+       1.0238
+      ],
+      [
+       1.6875,
+       1.0238
+      ],
+      [
+       1.75,
+       1.0238
+      ],
+      [
+       1.8125,
+       1.0238
+      ],
+      [
+       1.875,
+       1.0238
+      ],
+      [
+       1.9375,
+       1.0238
+      ],
+      [
+       2,
+       1.0238
+      ],
+      [
+       2.0625,
+       1.0238
+      ],
+      [
+       2.125,
+       1.0238
+      ],
+      [
+       2.1875,
+       1.0238
+      ],
+      [
+       2.25,
+       1.0238
+      ],
+      [
+       2.3125,
+       1.0238
+      ],
+      [
+       2.375,
+       1.0238
+      ],
+      [
+       2.4375,
+       1.0238
+      ],
+      [
+       2.5,
+       1.0238
+      ],
+      [
+       2.5625,
+       1.0238
+      ],
+      [
+       2.625,
+       1.0237
+      ],
+      [
+       2.6875,
+       1.0233
+      ],
+      [
+       2.75,
+       1.0221
+      ],
+      [
+       2.8125,
+       1.0189
+      ],
+      [
+       2.875,
+       1.012
+      ],
+      [
+       2.9375,
+       0.9992
+      ],
+      [
+       3,
+       0.9906
+      ],
+      [
+       3.0625,
+       0.9992
+      ],
+      [
+       3.125,
+       1.012
+      ],
+      [
+       3.1875,
+       1.0189
+      ],
+      [
+       3.25,
+       1.0221
+      ],
+      [
+       3.3125,
+       1.0233
+      ],
+      [
+       3.375,
+       1.0237
+      ],
+      [
+       3.4375,
+       1.0238
+      ],
+      [
+       3.5,
+       1.0238
+      ],
+      [
+       3.5625,
+       1.0238
+      ],
+      [
+       3.625,
+       1.0238
+      ],
+      [
+       3.6875,
+       1.0238
+      ],
+      [
+       3.75,
+       1.0238
+      ],
+      [
+       3.8125,
+       1.0238
+      ],
+      [
+       3.875,
+       1.0238
+      ],
+      [
+       3.9375,
+       1.0238
+      ],
+      [
+       4,
+       1.0238
+      ],
+      [
+       4.0625,
+       1.0238
+      ],
+      [
+       4.125,
+       1.0238
+      ],
+      [
+       4.1875,
+       1.0238
+      ],
+      [
+       4.25,
+       1.0238
+      ],
+      [
+       4.3125,
+       1.0238
+      ],
+      [
+       4.375,
+       1.0238
+      ],
+      [
+       4.4375,
+       1.0238
+      ],
+      [
+       4.5,
+       1.0238
+      ],
+      [
+       4.5625,
+       1.0238
+      ],
+      [
+       4.625,
+       1.0238
+      ],
+      [
+       4.6875,
+       1.0238
+      ],
+      [
+       4.75,
+       1.0238
+      ],
+      [
+       4.8125,
+       1.0238
+      ],
+      [
+       4.875,
+       1.0238
+      ],
+      [
+       4.9375,
+       1.0238
+      ],
+      [
+       5,
+       1.0238
+      ],
+      [
+       5.0625,
+       1.0238
+      ],
+      [
+       5.125,
+       1.0238
+      ],
+      [
+       5.1875,
+       1.0238
+      ],
+      [
+       5.25,
+       1.0238
+      ],
+      [
+       5.3125,
+       1.0238
+      ],
+      [
+       5.375,
+       1.0238
+      ],
+      [
+       5.4375,
+       1.0238
+      ],
+      [
+       5.5,
+       1.0238
+      ]
+     ]
+    }
+   },
+   "flatTop": {
+    "lab": {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "miss": 0,
+     "n": 814
+    },
+    "D": {
+     "maxUp": 0.0238,
+     "maxDown": 0.0238,
+     "maxAbs": 0.0238,
+     "miss": 0,
+     "n": 814
+    }
+   },
+   "flatBot": {
+    "lab": {
+     "maxUp": 0,
+     "maxDown": 0,
+     "maxAbs": 0,
+     "miss": 0,
+     "n": 814
+    },
+    "D": {
+     "maxUp": -0.0238,
+     "maxDown": -0.0238,
+     "maxAbs": 0.0238,
+     "miss": 0,
+     "n": 814
+    }
+   }
+  }
+ }
+}

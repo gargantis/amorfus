@@ -1,0 +1,1 @@
+{"set":"n1","name":"k5a","regime":"FINITE-4","n":20,"ms":3210,"steps":4,"converged":false,"changes":32134,"premerged":2,"alive":2,"lambda":[[2,44,0.005],[1,22,0.0296]],"phaseMat":[0,2,1,0,0],"grid":{"NX":120,"NY":100,"NZ":100,"n":20,"ox":-3,"oy":60,"oz":92},"dScale":31078,"origin":[-3,60,92],"size":[6,5,5],"evalLo":[-2,61,93],"evalHi":[2,64,96],"blocks":66}

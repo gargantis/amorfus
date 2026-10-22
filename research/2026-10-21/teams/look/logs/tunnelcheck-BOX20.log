@@ -1,0 +1,6 @@
+z 1.475 lab-interp 1.423 D 1.452 cells {"clearHeightAtW":1.9000000000000004,"clearWidthAtH":0.7,"pass":true}
+z 1.5 lab-interp 1.423 D 1.452 cells {"clearHeightAtW":1.9000000000000004,"clearWidthAtH":0.7,"pass":true}
+z 1.525 lab-interp 1.423 D 1.452 cells {"clearHeightAtW":1.9000000000000004,"clearWidthAtH":0.7,"pass":true}
+z 0.775 lab-interp 1.423 D 1.476 cells {"clearHeightAtW":1.9000000000000004,"clearWidthAtH":0.7,"pass":true}
+z 2.275 lab-interp 1.523 D 1.487 cells {"clearHeightAtW":1.9000000000000004,"clearWidthAtH":0.7,"pass":true}
+0.925:solid 0.975:solid 1.025:[1.60,2.40] 1.075:[1.40,2.60] 1.125:[1.30,2.70] 1.175:[1.05,2.95] 1.225:[1.05,2.95] 1.275:[1.05,2.95] 1.325:[1.05,2.95] 1.375:[1.05,2.95] 1.425:[1.05,2.95] 1.475:[1.05,2.95] 1.525:[1.05,2.95] 1.575:[1.05,2.95] 1.625:[1.05,2.95] 1.675:[1.05,2.95] 1.725:[1.05,2.95] 1.775:[1.05,2.95] 1.825:[1.05,2.95] 1.875:[1.30,2.70] 1.925:[1.40,2.60] 1.975:[1.60,2.40] 2.025:solid 2.075:solid

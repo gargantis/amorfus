@@ -1,0 +1,21 @@
+{
+ "chunk": [
+  0,
+  0,
+  0
+ ],
+ "window": [
+  [
+   23,
+   13,
+   0
+  ],
+  [
+   36,
+   23,
+   14
+  ]
+ ],
+ "cornersInWindow": 230,
+ "offSurfaceInWindow": 34
+}

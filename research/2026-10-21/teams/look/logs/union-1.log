@@ -1,0 +1,81 @@
+BLOCKS diag-edge j0 s1: 1309 ms 36 steps, {"6":2}→{"6":1} A
+BLOCKS diag-edge j0.001 s1: 2118 ms 66 steps, {"6":2}→{"6":1} A
+BLOCKS diag-edge j0.001 s2: 2197 ms 74 steps, {"6":2}→{"6":1} A
+BLOCKS diag-edge j0.001 s3: 1662 ms 66 steps, {"6":2}→{"6":1} A
+BLOCKS diag-corner j0 s1: 375 ms 11 steps, {"6":2}→{"6":2} 
+BLOCKS diag-corner j0.001 s1: 504 ms 13 steps, {"6":2}→{"6":2} 
+BLOCKS diag-corner j0.001 s2: 461 ms 13 steps, {"6":2}→{"6":2} 
+BLOCKS diag-corner j0.001 s3: 424 ms 13 steps, {"6":2}→{"6":2} 
+BLOCKS sq2-checker j0 s1: 2154 ms 34 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+BLOCKS sq2-checker j0.001 s1: 3400 ms 51 steps, {"6":2,"7":2}→{"6":1,"7":1} -
+BLOCKS sq2-checker j0.001 s2: 7871 ms 138 steps, {"6":2,"7":2}→{"6":1,"7":1} X
+BLOCKS sq2-checker j0.001 s3: 7741 ms 137 steps, {"6":2,"7":2}→{"6":1,"7":1} X
+BLOCKS slab-line j0 s1: 34117 ms 147 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+BLOCKS slab-line j0.001 s1: 42701 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+BLOCKS slab-line j0.001 s2: 32570 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":1} -AAA-
+BLOCKS slab-line j0.001 s3: 28522 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":1} -AAA-
+FID-0.4 diag-edge j0 s1: 104 ms 3 steps, {"6":2}→{"6":2} -
+FID-0.4 diag-edge j0.001 s1: 73 ms 3 steps, {"6":2}→{"6":2} -
+FID-0.4 diag-edge j0.001 s2: 75 ms 3 steps, {"6":2}→{"6":2} -
+FID-0.4 diag-edge j0.001 s3: 72 ms 3 steps, {"6":2}→{"6":2} -
+FID-0.4 diag-corner j0 s1: 61 ms 3 steps, {"6":2}→{"6":2} 
+FID-0.4 diag-corner j0.001 s1: 68 ms 3 steps, {"6":2}→{"6":2} 
+FID-0.4 diag-corner j0.001 s2: 70 ms 3 steps, {"6":2}→{"6":2} 
+FID-0.4 diag-corner j0.001 s3: 69 ms 3 steps, {"6":2}→{"6":2} 
+FID-0.4 sq2-checker j0 s1: 110 ms 3 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.4 sq2-checker j0.001 s1: 142 ms 3 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.4 sq2-checker j0.001 s2: 129 ms 3 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.4 sq2-checker j0.001 s3: 129 ms 3 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.4 slab-line j0 s1: 1084 ms 3 steps, {"6":6,"7":2}→{"6":6,"7":2} -----
+FID-0.4 slab-line j0.001 s1: 1175 ms 3 steps, {"6":6,"7":2}→{"6":6,"7":2} -----
+FID-0.4 slab-line j0.001 s2: 1266 ms 3 steps, {"6":6,"7":2}→{"6":6,"7":2} -----
+FID-0.4 slab-line j0.001 s3: 1306 ms 3 steps, {"6":6,"7":2}→{"6":6,"7":2} -----
+FID-0.25 diag-edge j0 s1: 167 ms 9 steps, {"6":2}→{"6":1} A
+FID-0.25 diag-edge j0.001 s1: 200 ms 10 steps, {"6":2}→{"6":1} A
+FID-0.25 diag-edge j0.001 s2: 244 ms 10 steps, {"6":2}→{"6":1} A
+FID-0.25 diag-edge j0.001 s3: 209 ms 10 steps, {"6":2}→{"6":1} A
+FID-0.25 diag-corner j0 s1: 63 ms 3 steps, {"6":2}→{"6":2} 
+FID-0.25 diag-corner j0.001 s1: 130 ms 6 steps, {"6":2}→{"6":2} 
+FID-0.25 diag-corner j0.001 s2: 158 ms 7 steps, {"6":2}→{"6":2} 
+FID-0.25 diag-corner j0.001 s3: 170 ms 7 steps, {"6":2}→{"6":2} 
+FID-0.25 sq2-checker j0 s1: 174 ms 4 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.25 sq2-checker j0.001 s1: 199 ms 4 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.25 sq2-checker j0.001 s2: 163 ms 4 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.25 sq2-checker j0.001 s3: 163 ms 4 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.25 slab-line j0 s1: 1775 ms 7 steps, {"6":6,"7":2}→{"6":6,"7":2} -----
+FID-0.25 slab-line j0.001 s1: 5050 ms 14 steps, {"6":6,"7":2}→{"6":5,"7":2} -----
+FID-0.25 slab-line j0.001 s2: 6084 ms 16 steps, {"6":6,"7":2}→{"6":4,"7":2} -----
+FID-0.25 slab-line j0.001 s3: 7304 ms 21 steps, {"6":6,"7":2}→{"6":3,"7":2} -----
+FID-0.15 diag-edge j0 s1: 248 ms 15 steps, {"6":2}→{"6":1} A
+FID-0.15 diag-edge j0.001 s1: 302 ms 16 steps, {"6":2}→{"6":1} A
+FID-0.15 diag-edge j0.001 s2: 313 ms 16 steps, {"6":2}→{"6":1} A
+FID-0.15 diag-edge j0.001 s3: 299 ms 15 steps, {"6":2}→{"6":1} A
+FID-0.15 diag-corner j0 s1: 204 ms 8 steps, {"6":2}→{"6":2} 
+FID-0.15 diag-corner j0.001 s1: 212 ms 9 steps, {"6":2}→{"6":2} 
+FID-0.15 diag-corner j0.001 s2: 272 ms 11 steps, {"6":2}→{"6":2} 
+FID-0.15 diag-corner j0.001 s3: 195 ms 9 steps, {"6":2}→{"6":2} 
+FID-0.15 sq2-checker j0 s1: 368 ms 11 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15 sq2-checker j0.001 s1: 424 ms 11 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15 sq2-checker j0.001 s2: 420 ms 11 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15 sq2-checker j0.001 s3: 452 ms 11 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15 slab-line j0 s1: 2884 ms 12 steps, {"6":6,"7":2}→{"6":6,"7":2} -----
+FID-0.15 slab-line j0.001 s1: 3850 ms 13 steps, {"6":6,"7":2}→{"6":6,"7":2} -----
+FID-0.15 slab-line j0.001 s2: 3794 ms 13 steps, {"6":6,"7":2}→{"6":6,"7":2} -----
+FID-0.15 slab-line j0.001 s3: 3794 ms 13 steps, {"6":6,"7":2}→{"6":6,"7":2} -----
+FID-0.1 diag-edge j0 s1: 391 ms 19 steps, {"6":2}→{"6":1} A
+FID-0.1 diag-edge j0.001 s1: 391 ms 20 steps, {"6":2}→{"6":1} A
+FID-0.1 diag-edge j0.001 s2: 384 ms 21 steps, {"6":2}→{"6":1} A
+FID-0.1 diag-edge j0.001 s3: 408 ms 22 steps, {"6":2}→{"6":1} A
+FID-0.1 diag-corner j0 s1: 152 ms 7 steps, {"6":2}→{"6":2} 
+FID-0.1 diag-corner j0.001 s1: 173 ms 7 steps, {"6":2}→{"6":2} 
+FID-0.1 diag-corner j0.001 s2: 218 ms 8 steps, {"6":2}→{"6":2} 
+FID-0.1 diag-corner j0.001 s3: 168 ms 7 steps, {"6":2}→{"6":2} 
+FID-0.1 sq2-checker j0 s1: 297 ms 7 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.1 sq2-checker j0.001 s1: 569 ms 13 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.1 sq2-checker j0.001 s2: 578 ms 14 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.1 sq2-checker j0.001 s3: 510 ms 11 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.1 slab-line j0 s1: 5302 ms 20 steps, {"6":6,"7":2}→{"6":4,"7":2} -----
+FID-0.1 slab-line j0.001 s1: 30264 ms 104 steps, {"6":6,"7":2}→{"6":2,"7":2} A---A
+FID-0.1 slab-line j0.001 s2: 24954 ms 80 steps, {"6":6,"7":2}→{"6":2,"7":2} A---A
+FID-0.1 slab-line j0.001 s3: 27729 ms 97 steps, {"6":6,"7":2}→{"6":2,"7":2} A---A
+wall 340.17 s maxrss 237792 KB

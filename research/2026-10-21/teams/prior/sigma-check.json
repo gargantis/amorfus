@@ -1,0 +1,325 @@
+{
+ "note": "max eigenvalue of sigma on sum-zero vectors; <= 0 means conditionally negative semi-definite (Esedoglu-Otto Prop. 1 applies)",
+ "rows": [
+  {
+   "g": 0.1,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 1,
+   "phases": 3,
+   "maxEig": -0.1,
+   "cnsd": true,
+   "triangleSlack": 0.1
+  },
+  {
+   "g": 0.1,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 3,
+   "phases": 7,
+   "maxEig": 0,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 0.1,
+   "eps": 0.05,
+   "materials": 4,
+   "clustersEach": 2,
+   "phases": 9,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 0.1,
+   "eps": 0.05,
+   "materials": 7,
+   "clustersEach": 3,
+   "phases": 22,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 0.25,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 1,
+   "phases": 3,
+   "maxEig": 0,
+   "cnsd": true,
+   "triangleSlack": 0.25
+  },
+  {
+   "g": 0.25,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 3,
+   "phases": 7,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 0.25,
+   "eps": 0.05,
+   "materials": 4,
+   "clustersEach": 2,
+   "phases": 9,
+   "maxEig": -0.04999,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 0.25,
+   "eps": 0.05,
+   "materials": 7,
+   "clustersEach": 3,
+   "phases": 22,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 0.5,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 1,
+   "phases": 3,
+   "maxEig": 0,
+   "cnsd": true,
+   "triangleSlack": 0.5
+  },
+  {
+   "g": 0.5,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 3,
+   "phases": 7,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 0.5,
+   "eps": 0.05,
+   "materials": 4,
+   "clustersEach": 2,
+   "phases": 9,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 0.5,
+   "eps": 0.05,
+   "materials": 7,
+   "clustersEach": 3,
+   "phases": 22,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 1,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 1,
+   "phases": 3,
+   "maxEig": -1,
+   "cnsd": true,
+   "triangleSlack": 1
+  },
+  {
+   "g": 1,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 3,
+   "phases": 7,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 1,
+   "eps": 0.05,
+   "materials": 4,
+   "clustersEach": 2,
+   "phases": 9,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 1,
+   "eps": 0.05,
+   "materials": 7,
+   "clustersEach": 3,
+   "phases": 22,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 1.5,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 1,
+   "phases": 3,
+   "maxEig": 0,
+   "cnsd": true,
+   "triangleSlack": 0.5
+  },
+  {
+   "g": 1.5,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 3,
+   "phases": 7,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 1.5,
+   "eps": 0.05,
+   "materials": 4,
+   "clustersEach": 2,
+   "phases": 9,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 1.5,
+   "eps": 0.05,
+   "materials": 7,
+   "clustersEach": 3,
+   "phases": 22,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 1.9,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 1,
+   "phases": 3,
+   "maxEig": 0,
+   "cnsd": true,
+   "triangleSlack": 0.1
+  },
+  {
+   "g": 1.9,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 3,
+   "phases": 7,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 1.9,
+   "eps": 0.05,
+   "materials": 4,
+   "clustersEach": 2,
+   "phases": 9,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 1.9,
+   "eps": 0.05,
+   "materials": 7,
+   "clustersEach": 3,
+   "phases": 22,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0.05
+  },
+  {
+   "g": 2,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 1,
+   "phases": 3,
+   "maxEig": 0,
+   "cnsd": true,
+   "triangleSlack": 0
+  },
+  {
+   "g": 2,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 3,
+   "phases": 7,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0
+  },
+  {
+   "g": 2,
+   "eps": 0.05,
+   "materials": 4,
+   "clustersEach": 2,
+   "phases": 9,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0
+  },
+  {
+   "g": 2,
+   "eps": 0.05,
+   "materials": 7,
+   "clustersEach": 3,
+   "phases": 22,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": 0
+  },
+  {
+   "g": 2.5,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 1,
+   "phases": 3,
+   "maxEig": 0,
+   "cnsd": true,
+   "triangleSlack": -0.5
+  },
+  {
+   "g": 2.5,
+   "eps": 0.05,
+   "materials": 2,
+   "clustersEach": 3,
+   "phases": 7,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": -0.5
+  },
+  {
+   "g": 2.5,
+   "eps": 0.05,
+   "materials": 4,
+   "clustersEach": 2,
+   "phases": 9,
+   "maxEig": -0.05,
+   "cnsd": true,
+   "triangleSlack": -0.5
+  },
+  {
+   "g": 2.5,
+   "eps": 0.05,
+   "materials": 7,
+   "clustersEach": 3,
+   "phases": 22,
+   "maxEig": 0.14091,
+   "cnsd": false,
+   "triangleSlack": -0.5
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+FINITE-4 seam base 680 ms 4 steps NOT CONVERGED [{"p":1,"mat":6,"blocks":56,"volume":54.972,"lamRun":0.16629,"lamRender":0.26601},{"p":2,"mat":7,"blocks":56,"volume":54.972,"lamRun":0.16629,"lamRender":0.26601}] seam z at x=7: y1.5 2 y0.5 2
+d=1: 491 ms 4 st NC | label diffs 1470 max dist 0.458 | probe dseam15 -0.08553 dseam05 -0.00013 dtop 0.0106 | D0: dseam15 -0.08553 dtop 0.01444 | lam 6:0.16629 7:0.16629
+d=2: 481 ms 4 st NC | label diffs 1470 max dist 0.458 | probe dseam15 0 dseam05 0 dtop 0 | D0: dseam15 0 dtop 0 | lam 6:0.16629 7:0.16629
+d=3: 401 ms 4 st NC | label diffs 1470 max dist 0.458 | probe dseam15 0 dseam05 0 dtop 0 | D0: dseam15 0 dtop 0 | lam 6:0.16629 7:0.16629
+d=4: 430 ms 4 st NC | label diffs 1470 max dist 0.458 | probe dseam15 0 dseam05 0 dtop 0 | D0: dseam15 0 dtop 0 | lam 6:0.16629 7:0.16629
+d=6: 386 ms 4 st NC | label diffs 1470 max dist 0.458 | probe dseam15 0 dseam05 0 dtop 0 | D0: dseam15 0 dtop 0 | lam 6:0.16629 7:0.16629
+d=8: 366 ms 4 st NC | label diffs 1470 max dist 0.458 | probe dseam15 0 dseam05 0 dtop 0 | D0: dseam15 0 dtop 0 | lam 6:0.16629 7:0.16629
+d=10: 331 ms 4 st NC | label diffs 1472 max dist 0.625 | probe dseam15 0 dseam05 0 dtop 0 | D0: dseam15 0 dtop 0 | lam 6:0.16629 7:0.16629

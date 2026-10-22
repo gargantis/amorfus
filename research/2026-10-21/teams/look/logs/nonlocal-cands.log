@@ -1,0 +1,18 @@
+FAR BOX0-PAINT-0.1-0.02 alone clear 2 lambda [0.077]
+FAR BOX0-PAINT-0.1-0.02 barAttached clear 2 lambda [0.0763] dV 1.442 {'lt0_5': 1.278, '0_5to1_5': 0.045, '1_5to2_5': 0.038, 'ge2_5': 0.081} maxDist 2.97
+FAR BOX0-PAINT-0.1-0.02 barDetached clear 2 lambda [0.077, 0.1302] dV 0 {'lt0_5': 0, '0_5to1_5': 0, '1_5to2_5': 0, 'ge2_5': 0} maxDist 0
+FAR BOX0-PAINT-0.15-0.02 alone clear 2 lambda [0.0851]
+FAR BOX0-PAINT-0.15-0.02 barAttached clear 2 lambda [0.1103] dV 0.726 {'lt0_5': 0.681, '0_5to1_5': 0.017, '1_5to2_5': 0.012, 'ge2_5': 0.016} maxDist 2.97
+FAR BOX0-PAINT-0.15-0.02 barDetached clear 2 lambda [0.0851, 0.1576] dV 0 {'lt0_5': 0, '0_5to1_5': 0, '1_5to2_5': 0, 'ge2_5': 0} maxDist 0
+FAR FID-0.15 alone clear 1 lambda [0.0683]
+FAR FID-0.15 barAttached clear 0 lambda [0.0725] dV 4.103 {'lt0_5': 0.27, '0_5to1_5': 1.886, '1_5to2_5': 1.876, 'ge2_5': 0.07} maxDist 2.97
+FAR FID-0.15 barDetached clear 1 lambda [0.0683, 0.1411] dV 0 {'lt0_5': 0, '0_5to1_5': 0, '1_5to2_5': 0, 'ge2_5': 0} maxDist 0
+WIDE BOX0-PAINT-0.1-0.02 alone clear 0 lambda [0.0478]
+WIDE BOX0-PAINT-0.1-0.02 barAttached clear 0 lambda [0.0709] dV 1.255 {'lt0_5': 1.056, '0_5to1_5': 0.012, '1_5to2_5': 0, 'ge2_5': 0.187} maxDist 5.96
+WIDE BOX0-PAINT-0.1-0.02 barDetached clear 0 lambda [0.0478, 0.1646] dV 0 {'lt0_5': 0, '0_5to1_5': 0, '1_5to2_5': 0, 'ge2_5': 0} maxDist 0
+WIDE BOX0-PAINT-0.15-0.02 alone clear 1.5 lambda [0.0671]
+WIDE BOX0-PAINT-0.15-0.02 barAttached clear 1.5 lambda [0.0671] dV 0.718 {'lt0_5': 0.671, '0_5to1_5': 0, '1_5to2_5': 0, 'ge2_5': 0.046} maxDist 5.96
+WIDE BOX0-PAINT-0.15-0.02 barDetached clear 1.5 lambda [0.0671, 0.1986] dV 0 {'lt0_5': 0, '0_5to1_5': 0, '1_5to2_5': 0, 'ge2_5': 0} maxDist 0
+WIDE FID-0.15 alone clear 1.166666666666667 lambda [0.0422]
+WIDE FID-0.15 barAttached clear 0 lambda [0.061] dV 4.264 {'lt0_5': 0.262, '0_5to1_5': 0.013, '1_5to2_5': 0, 'ge2_5': 3.988} maxDist 5.96
+WIDE FID-0.15 barDetached clear 1.166666666666667 lambda [0.0422, 0.1986] dV 0 {'lt0_5': 0, '0_5to1_5': 0, '1_5to2_5': 0, 'ge2_5': 0} maxDist 0

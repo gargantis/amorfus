@@ -1,0 +1,5 @@
+FID-0.05-novol recolour base 6032 ms 231 steps  [{"p":1,"mat":6,"blocks":140,"volume":0,"lamRun":0,"lamRender":0}]
+d=1: 6499 ms 230 st | label diffs 0, max dist 0 | probe dD null dD0 null dLab null | lam 0/0 (base 0)
+d=2: 6424 ms 230 st | label diffs 0, max dist 0 | probe dD null dD0 null dLab null | lam 0/0 (base 0)
+d=4: 6466 ms 229 st | label diffs 0, max dist 0 | probe dD null dD0 null dLab null | lam 0/0 (base 0)
+d=8: 6581 ms 230 st | label diffs 0, max dist 0 | probe dD null dD0 null dLab null | lam 0/0 (base 0)

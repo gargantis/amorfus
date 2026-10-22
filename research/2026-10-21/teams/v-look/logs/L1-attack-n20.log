@@ -1,0 +1,12 @@
+NOVOL-1@n20 slab-dot: 337 ms, 1 st nc, cells 576000, d 0.0616, rss 178 MB
+NOVOL-1@n20 terrain-step: 1110 ms, 1 st nc, cells 1001000, d 0.0348, rss 131 MB
+NOVOL-2@n20 slab-dot: 440 ms, 2 st nc, cells 576000, d 0.1224, rss 172 MB
+NOVOL-2@n20 terrain-step: 1362 ms, 2 st nc, cells 1001000, d 0.0699, rss 137 MB
+NOVOL-3@n20 slab-dot: 470 ms, 3 st nc, cells 576000, d 0.174, rss 193 MB
+NOVOL-3@n20 terrain-step: 1695 ms, 3 st nc, cells 1001000, d 0.1017, rss 138 MB
+FINITE-1@n20 slab-dot: 364 ms, 1 st nc, cells 576000, d 0.0406, rss 190 MB
+FINITE-1@n20 terrain-step: 1423 ms, 1 st nc, cells 1001000, d 0.0248, rss 139 MB
+FID-0.2@n20 slab-dot: 3271 ms, 9 st, cells 576000, d 0.0038, rss 206 MB
+FID-0.2@n20 terrain-step: 15509 ms, 28 st, cells 1001000, d 0.0144, rss 194 MB
+CAGE-0.05@n20 slab-dot: 2748 ms, 15 st, cells 576000, d 0.1258, rss 232 MB
+CAGE-0.05@n20 terrain-step: 16178 ms, 43 st, cells 1001000, d 0.0749, rss 193 MB

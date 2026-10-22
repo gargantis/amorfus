@@ -1,0 +1,1 @@
+{"regime":"FID-0.15","name":"cube2-same","opts":{"anchor":{"kind":"fidelity","k":0.15},"n":16},"ms":502,"steps":14,"converged":true,"lastChanges":[32,24,0,0,0],"grid":[64,64,64],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":8,"target":32768,"lambda":0.12959063053131104,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":8,"volume":8.002}]}

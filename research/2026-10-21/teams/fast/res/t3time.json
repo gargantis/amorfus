@@ -1,0 +1,187 @@
+{
+ "N": 9,
+ "seed": [
+  1,
+  1
+ ],
+ "region": "38^3 (apron 3), GEN_MESH input from buildGenMeshInput, no edits",
+ "node": "v22.22.1",
+ "chunks": {
+  "surface (0,0,0)": {
+   "apron": 3,
+   "nx": 38,
+   "mesher_hints_ms": 4.743,
+   "quads": 1235,
+   "vertices": 1409,
+   "mesher_bevel_ms": 4.399,
+   "mesher_hints_pass_ms": {
+    "corners": 7.439,
+    "quads": 2.817,
+    "relax": 0.01,
+    "normals": 0.548,
+    "emit": 1.861
+   },
+   "bub-b1-local_ms": 3.153,
+   "mixedCorners": 1332,
+   "bub-b1-const_ms": 2.508,
+   "bub-b1-local-2it_ms": 1.907,
+   "bub-b3-local_ms": 7.043,
+   "table_ms": 1.124,
+   "multiMaterialCorners": 529
+  },
+  "surface (1,0,0)": {
+   "apron": 3,
+   "nx": 38,
+   "mesher_hints_ms": 7.206,
+   "quads": 1756,
+   "vertices": 2348,
+   "mesher_bevel_ms": 5.59,
+   "mesher_hints_pass_ms": {
+    "corners": 1.778,
+    "quads": 2.513,
+    "relax": 0.007,
+    "normals": 0.435,
+    "emit": 2.315
+   },
+   "bub-b1-local_ms": 2.421,
+   "mixedCorners": 1853,
+   "bub-b1-const_ms": 2.377,
+   "bub-b1-local-2it_ms": 1.856,
+   "bub-b3-local_ms": 8.337,
+   "table_ms": 0.762,
+   "multiMaterialCorners": 900
+  },
+  "surface (0,0,1)": {
+   "apron": 3,
+   "nx": 38,
+   "mesher_hints_ms": 6.245,
+   "quads": 2398,
+   "vertices": 2370,
+   "mesher_bevel_ms": 6.759,
+   "mesher_hints_pass_ms": {
+    "corners": 3.217,
+    "quads": 3.107,
+    "relax": 0.01,
+    "normals": 0.899,
+    "emit": 3.051
+   },
+   "bub-b1-local_ms": 4.462,
+   "mixedCorners": 2509,
+   "bub-b1-const_ms": 4.368,
+   "bub-b1-local-2it_ms": 2.245,
+   "bub-b3-local_ms": 11.558,
+   "table_ms": 0.859,
+   "multiMaterialCorners": 15
+  },
+  "surface-mixed (-2,1,1)": {
+   "apron": 3,
+   "nx": 38,
+   "mesher_hints_ms": 12.705,
+   "quads": 6089,
+   "vertices": 6467,
+   "mesher_bevel_ms": 16.454,
+   "mesher_hints_pass_ms": {
+    "corners": 5.589,
+    "quads": 4.438,
+    "relax": 0.02,
+    "normals": 2.345,
+    "emit": 8.609
+   },
+   "bub-b1-local_ms": 6.018,
+   "mixedCorners": 6215,
+   "bub-b1-const_ms": 5.508,
+   "bub-b1-local-2it_ms": 4.123,
+   "bub-b3-local_ms": 27.185,
+   "table_ms": 0.971,
+   "multiMaterialCorners": 708
+  },
+  "cave (-2,-1,1)": {
+   "apron": 3,
+   "nx": 38,
+   "mesher_hints_ms": 24.535,
+   "quads": 8441,
+   "vertices": 8283,
+   "mesher_bevel_ms": 18.877,
+   "mesher_hints_pass_ms": {
+    "corners": 7.495,
+    "quads": 5.66,
+    "relax": 0.026,
+    "normals": 3.061,
+    "emit": 8.767
+   },
+   "bub-b1-local_ms": 7.784,
+   "mixedCorners": 8540,
+   "bub-b1-const_ms": 7.148,
+   "bub-b1-local-2it_ms": 7.758,
+   "bub-b3-local_ms": 52.449,
+   "table_ms": 0.916,
+   "multiMaterialCorners": 0
+  },
+  "cave (-2,-1,0)": {
+   "apron": 3,
+   "nx": 38,
+   "mesher_hints_ms": 19.781,
+   "quads": 7885,
+   "vertices": 7661,
+   "mesher_bevel_ms": 18.34,
+   "mesher_hints_pass_ms": {
+    "corners": 5.819,
+    "quads": 5.107,
+    "relax": 0.026,
+    "normals": 3.657,
+    "emit": 8.723
+   },
+   "bub-b1-local_ms": 7.919,
+   "mixedCorners": 7782,
+   "bub-b1-const_ms": 7.067,
+   "bub-b1-local-2it_ms": 5.188,
+   "bub-b3-local_ms": 43.966,
+   "table_ms": 1.393,
+   "multiMaterialCorners": 0
+  },
+  "cave (-2,0,1)": {
+   "apron": 3,
+   "nx": 38,
+   "mesher_hints_ms": 16.805,
+   "quads": 7876,
+   "vertices": 7637,
+   "mesher_bevel_ms": 18.121,
+   "mesher_hints_pass_ms": {
+    "corners": 6.26,
+    "quads": 4.895,
+    "relax": 0.022,
+    "normals": 2.595,
+    "emit": 8.905
+   },
+   "bub-b1-local_ms": 6.714,
+   "mixedCorners": 7870,
+   "bub-b1-const_ms": 6.216,
+   "bub-b1-local-2it_ms": 4.805,
+   "bub-b3-local_ms": 47.925,
+   "table_ms": 1.401,
+   "multiMaterialCorners": 0
+  },
+  "solid (0,-1,0)": {
+   "apron": 3,
+   "nx": 38,
+   "mesher_hints_ms": 1.932,
+   "quads": 0,
+   "vertices": 0,
+   "mesher_bevel_ms": 2.021,
+   "mesher_hints_pass_ms": {
+    "corners": 0.711,
+    "quads": 1.332,
+    "relax": 0.001,
+    "normals": 0.01,
+    "emit": 0.002
+   },
+   "bub-b1-local_ms": 0.887,
+   "mixedCorners": 0,
+   "bub-b1-const_ms": 0.918,
+   "bub-b1-local-2it_ms": 1.7,
+   "bub-b3-local_ms": 0.895,
+   "table_ms": 0.751,
+   "multiMaterialCorners": 0
+  }
+ }
+}

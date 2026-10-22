@@ -1,0 +1,35 @@
+{
+ "out": "teams/v-table/sheets/mesh-vs-physics.png",
+ "cols": 3,
+ "cell": [
+  384,
+  336
+ ],
+ "title": "Mesh cut vs physics (grey=physics solid): black cube, cyan bevel, orange table, magenta on-surface, green fit",
+ "items": [
+  {
+   "path": "teams/v-table/img/slice-t13s-FINITE-4-fit-z17.5.png",
+   "label": "t13s terrain FINITE-4 n12 z=17.5: cube .127\nbevel .045 table .028 onD .025 fit .055"
+  },
+  {
+   "path": "teams/v-table/img/slice-t15b-FINITE-4-z-30.5.png",
+   "label": "t15b terrain FINITE-4 n12 z=-30.5: cube .088\nbevel .100 table .091 onD .053 (fit not drawn)"
+  },
+  {
+   "path": "teams/v-table/img/slice-t0a-FINITE-4-z42.5.png",
+   "label": "t0a cave FINITE-4 n12 z=42.5 thin tunnel:\ncube .053 bevel .075 table .119 onD .059"
+  },
+  {
+   "path": "teams/v-table/img/slice-t6s-FID-z51.5.png",
+   "label": "t6s terrain FID-0.15 n12 z=51.5 step: cube .036\nbevel .100 table .041 onD .045 fit .022"
+  },
+  {
+   "path": "teams/v-table/img/slice-b-stairs-FID-z7.5.png",
+   "label": "b-stairs build FID-0.15 n12 z=7.5: cube .038\nbevel .087 table .073 onD .033 fit .042"
+  },
+  {
+   "path": "teams/v-table/img/round2d-chart.png",
+   "label": "2D fillet radius r (x 0-2) vs mesh error (y 0-.04)\nblack cube, magenta on-surface, green best"
+  }
+ ]
+}

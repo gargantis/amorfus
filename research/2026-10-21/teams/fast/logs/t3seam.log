@@ -1,0 +1,10 @@
+bub-b1-local 0,0,0 | 1,0,0 shared 57 mismatches 0 maxdiff 0
+bub-b3-local 0,0,0 | 1,0,0 shared 57 mismatches 0 maxdiff 0
+bub-b1-local 0,0,0 | 0,0,1 shared 16 mismatches 0 maxdiff 0
+bub-b3-local 0,0,0 | 0,0,1 shared 16 mismatches 0 maxdiff 0
+bub-b1-local -2,1,1 | -1,1,1 shared 193 mismatches 0 maxdiff 0
+bub-b3-local -2,1,1 | -1,1,1 shared 193 mismatches 0 maxdiff 0
+bub-b1-local -2,0,1 | -2,1,1 shared 94 mismatches 0 maxdiff 0
+bub-b3-local -2,0,1 | -2,1,1 shared 94 mismatches 0 maxdiff 0
+bub-b1-local -2,-1,1 | -2,-1,2 shared 198 mismatches 0 maxdiff 0
+bub-b3-local -2,-1,1 | -2,-1,2 shared 198 mismatches 0 maxdiff 0

@@ -1,0 +1,6 @@
+RG strings 21147, rank bijective in order: true
+table entries filled 17006 of 21147 (63441 bytes as int8 x3)
+read 8 blocks only             best of 6 interleaved rounds: 0.493 ms per chunk (32^3 corners scanned, 2972 surface corners per chunk on average), 165.7 ns per surface corner including the scan
+256-entry solid/air table      best of 6 interleaved rounds: 0.516 ms per chunk (32^3 corners scanned, 2972 surface corners per chunk on average), 173.6 ns per surface corner including the scan
+RG rank + 21147-entry table    best of 6 interleaved rounds: 0.726 ms per chunk (32^3 corners scanned, 2972 surface corners per chunk on average), 244.1 ns per surface corner including the scan
+incremental cost of the RG rank + lookup over reading the blocks: 0.233 ms per chunk

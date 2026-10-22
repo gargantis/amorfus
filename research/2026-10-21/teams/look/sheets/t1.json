@@ -1,0 +1,10 @@
+{"out": "teams/look/sheets/test1.png", "cols": 4, "title": "test: FID-0.15", "cell": [320, 240], "items": [
+{"path": "teams/look/img/FID-0.15/tunnel-view.png", "label": "tunnel FID-0.15 view"},
+{"path": "teams/look/img/FID-0.15/tunnel-slice.png", "label": "tunnel FID-0.15 slice z=1.5"},
+{"path": "teams/look/img/BLOCKS/tunnel-slice.png", "label": "tunnel BLOCKS slice z=1.5"},
+{"path": "teams/look/img/FID-0.15/slab-halves-slice.png", "label": "slab-halves FID-0.15 section z=3"},
+{"path": "teams/look/img/FID-0.15/cube2-same-slice.png", "label": "cube2-same FID-0.15 slice z=1"},
+{"path": "teams/look/img/FID-0.15/single-slice.png", "label": "single FID-0.15 plan"},
+{"path": "teams/look/img/FID-0.15/slab-halves-view.png", "label": "slab-halves FID-0.15"},
+{"path": "teams/look/img/FID-0.15/sq2-same-sec.png", "label": "sq2-same FID-0.15 section x=1"}
+]}

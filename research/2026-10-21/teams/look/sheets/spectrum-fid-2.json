@@ -1,0 +1,235 @@
+{
+"out": "teams/look/sheets/spectrum-fid-2.png",
+"cols": 7,
+"title": "Spectrum, fidelity family (views; n 16, s 0.2, g 1), continued",
+"cell": [
+240,
+180
+],
+"items": [
+{
+"path": "teams/look/img/BLOCKS/slab-line-view.png",
+"label": "slab-line\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/slab-line-view.png",
+"label": "slab-line\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/slab-line-view.png",
+"label": "slab-line\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-line-view.png",
+"label": "slab-line\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/slab-line-view.png",
+"label": "slab-line\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/slab-line-view.png",
+"label": "slab-line\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/slab-line-view.png",
+"label": "slab-line\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/slab-stripe-view.png",
+"label": "slab-stripe\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/slab-stripe-view.png",
+"label": "slab-stripe\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/slab-stripe-view.png",
+"label": "slab-stripe\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-stripe-view.png",
+"label": "slab-stripe\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/slab-stripe-view.png",
+"label": "slab-stripe\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/slab-stripe-view.png",
+"label": "slab-stripe\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/slab-stripe-view.png",
+"label": "slab-stripe\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/terrain-step-view.png",
+"label": "terrain-step\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/terrain-step-view.png",
+"label": "terrain-step\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/terrain-step-view.png",
+"label": "terrain-step\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/terrain-step-view.png",
+"label": "terrain-step\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/terrain-step-view.png",
+"label": "terrain-step\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/terrain-step-view.png",
+"label": "terrain-step\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/terrain-step-view.png",
+"label": "terrain-step\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/tunnel-view.png",
+"label": "tunnel\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/tunnel-view.png",
+"label": "tunnel\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/tunnel-view.png",
+"label": "tunnel\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/tunnel-view.png",
+"label": "tunnel\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/tunnel-view.png",
+"label": "tunnel\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/tunnel-view.png",
+"label": "tunnel\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/tunnel-view.png",
+"label": "tunnel\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/pillar3-view.png",
+"label": "pillar3\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/pillar3-view.png",
+"label": "pillar3\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/pillar3-view.png",
+"label": "pillar3\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/pillar3-view.png",
+"label": "pillar3\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/pillar3-view.png",
+"label": "pillar3\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/pillar3-view.png",
+"label": "pillar3\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/pillar3-view.png",
+"label": "pillar3\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/ring8-view.png",
+"label": "ring8\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/ring8-view.png",
+"label": "ring8\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/ring8-view.png",
+"label": "ring8\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/ring8-view.png",
+"label": "ring8\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/ring8-view.png",
+"label": "ring8\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/ring8-view.png",
+"label": "ring8\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/ring8-view.png",
+"label": "ring8\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/sq2-same-view.png",
+"label": "sq2-same\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/sq2-same-view.png",
+"label": "sq2-same\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/sq2-same-view.png",
+"label": "sq2-same\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/sq2-same-view.png",
+"label": "sq2-same\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/sq2-same-view.png",
+"label": "sq2-same\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/sq2-same-view.png",
+"label": "sq2-same\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/sq2-same-view.png",
+"label": "sq2-same\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/slab-halves-view.png",
+"label": "slab-halves\nBLOCKS"
+},
+{
+"path": "teams/look/img/FID-0.4/slab-halves-view.png",
+"label": "slab-halves\nFID-0.4"
+},
+{
+"path": "teams/look/img/FID-0.25/slab-halves-view.png",
+"label": "slab-halves\nFID-0.25"
+},
+{
+"path": "teams/look/img/FID-0.15/slab-halves-view.png",
+"label": "slab-halves\nFID-0.15"
+},
+{
+"path": "teams/look/img/FID-0.1/slab-halves-view.png",
+"label": "slab-halves\nFID-0.1"
+},
+{
+"path": "teams/look/img/FID-0.05/slab-halves-view.png",
+"label": "slab-halves\nFID-0.05"
+},
+{
+"path": "teams/look/img/FREE/slab-halves-view.png",
+"label": "slab-halves\nFREE"
+}
+]
+}

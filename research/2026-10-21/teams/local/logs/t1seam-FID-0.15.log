@@ -1,0 +1,8 @@
+FID-0.15 seam base 8765 ms 81 steps  [{"p":1,"mat":6,"blocks":56,"volume":56,"lamRun":0.17624,"lamRender":0.08127},{"p":2,"mat":7,"blocks":56,"volume":56,"lamRun":0.17624,"lamRender":0.08127}] seam z at x=7: y1.5 2 y0.5 2
+d=1: 4890 ms 33 st | label diffs 2720 max dist 10.153 | probe dseam15 -0.00217 dseam05 0.00909 dtop 0.0032 | D0: dseam15 -0.01156 dtop -0.0004 | lam 6:0.14372 7:0.17856
+d=2: 7575 ms 44 st | label diffs 2624 max dist 9.17 | probe dseam15 0.00502 dseam05 0.00502 dtop 0.00106 | D0: dseam15 0 dtop 0 | lam 6:0.1479 7:0.1786
+d=3: 9684 ms 60 st | label diffs 2593 max dist 8.196 | probe dseam15 0.00453 dseam05 0.00453 dtop 0.00094 | D0: dseam15 0 dtop 0 | lam 6:0.14543 7:0.17713
+d=4: 8928 ms 62 st | label diffs 2592 max dist 7.229 | probe dseam15 0.00453 dseam05 0.00453 dtop 0.00089 | D0: dseam15 0 dtop 0 | lam 6:0.14529 7:0.17699
+d=6: 8788 ms 60 st | label diffs 2593 max dist 8.196 | probe dseam15 0.00453 dseam05 0.00453 dtop 0.00094 | D0: dseam15 0 dtop 0 | lam 6:0.14543 7:0.17713
+d=8: 5041 ms 33 st | label diffs 2720 max dist 10.153 | probe dseam15 0.00909 dseam05 0.00909 dtop 0.00355 | D0: dseam15 0 dtop 0 | lam 6:0.14372 7:0.17856
+d=10: 4001 ms 26 st | label diffs 2700 max dist 12.118 | probe dseam15 0.00432 dseam05 0.00432 dtop 0.00063 | D0: dseam15 0 dtop 0 | lam 6:0.14874 7:0.17824

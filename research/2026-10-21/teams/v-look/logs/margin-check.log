@@ -1,0 +1,4 @@
+C15-V0@n16-m025 tunnel: 1201 ms, 19 st, cells 225792, d 0.037, rss 103 MB
+C15-V0@n16-m025 slab-line: 5434 ms, 34 st, cells 259584, d 0.0772, rss 143 MB
+C15-V0@n16-m025 single: 19 ms, 6 st, cells 13824, d 0.0625, rss 140 MB
+C15-V0@n16-m025 pillar3: 57 ms, 11 st, cells 32256, d 0.0703, rss 140 MB

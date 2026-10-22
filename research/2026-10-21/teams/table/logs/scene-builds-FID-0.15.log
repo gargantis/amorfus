@@ -1,0 +1,5 @@
+builds b-house FID-0.15 n12: 330 blocks, grid 108x96x108, 25 steps, sim 11024 ms, total 12482 ms, 69 surface corners
+builds b-stairs FID-0.15 n12: 186 blocks, grid 108x96x108, 15 steps, sim 4698 ms, total 6171 ms, 90 surface corners
+builds b-painted FID-0.15 n12: 400 blocks, grid 120x72x120, 14 steps, sim 12201 ms, total 12873 ms, 49 surface corners
+builds b-checker FID-0.15 n12: 300 blocks, grid 120x84x120, 3 steps, sim 4300 ms, total 4969 ms, 49 surface corners
+builds b-walls FID-0.15 n12: 198 blocks, grid 108x84x120, 29 steps, sim 8144 ms, total 9149 ms, 96 surface corners

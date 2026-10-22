@@ -1,0 +1,35 @@
+{
+ "out": "teams/table/sheets/overlay-builds.png",
+ "cols": 4,
+ "title": "Builds (n12); white = sim vertex, red = table (volume), orange = table (no volume), cyan = bevel",
+ "items": [
+  {
+   "path": "teams/table/img/overlay/builds-b-checker-FID-0.15-z5.png",
+   "label": "b-checker\nFID-0.15-z5"
+  },
+  {
+   "path": "teams/table/img/overlay/builds-b-house-FID-0.15-z7.png",
+   "label": "b-house\nFID-0.15-z7"
+  },
+  {
+   "path": "teams/table/img/overlay/builds-b-painted-FID-0.15-z7.png",
+   "label": "b-painted\nFID-0.15-z7"
+  },
+  {
+   "path": "teams/table/img/overlay/builds-b-painted-FINITE-4-z7.png",
+   "label": "b-painted\nFINITE-4-z7"
+  },
+  {
+   "path": "teams/table/img/overlay/builds-b-stairs-FID-0.15-z3.png",
+   "label": "b-stairs\nFID-0.15-z3"
+  },
+  {
+   "path": "teams/table/img/overlay/builds-b-walls-FID-0.15-z6.png",
+   "label": "b-walls\nFID-0.15-z6"
+  }
+ ],
+ "cell": [
+  432,
+  400
+ ]
+}

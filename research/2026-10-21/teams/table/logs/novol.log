@@ -1,0 +1,34 @@
+FID-0.15 c10 00001111: novol [0,0,0] (3 steps) | terrain K8 [0,0.0002,0] (n 553) | |novol-terrain| 0.000 vs |E2c(volume)-terrain| 0.000
+FID-0.15 c2 00000011: novol [0,0.0969,0.0969] (5 steps) | terrain K8 [0,0.136,0.136] (n 420) | |novol-terrain| 0.055 vs |E2c(volume)-terrain| 0.139
+FID-0.15 c1 00000001: novol [0.3049,0.3049,0.3049] (16 steps) | terrain K8 [0.2724,0.2724,0.2724] (n 303) | |novol-terrain| 0.056 vs |E2c(volume)-terrain| 0.167
+FID-0.15 c95 00111111: novol [0,-0.0969,-0.0969] (5 steps) | terrain K8 [0,-0.1372,-0.1372] (n 268) | |novol-terrain| 0.057 vs |E2c(volume)-terrain| 0.141
+FID-0.15 c5 00000111: novol [-0.0447,0.1594,-0.0447] (6 steps) | terrain K8 [-0.0457,0.1587,-0.0457] (n 266) | |novol-terrain| 0.002 vs |E2c(volume)-terrain| 0.022
+FID-0.15 c35 00011111: novol [0.0447,-0.1594,0.0447] (6 steps) | terrain K8 [0.0469,-0.1482,0.0469] (n 217) | |novol-terrain| 0.012 vs |E2c(volume)-terrain| 0.015
+FID-0.15 c249 01111111: novol [-0.3049,-0.3049,-0.3049] (16 steps) | terrain K8 [-0.2639,-0.2639,-0.2639] (n 179) | |novol-terrain| 0.071 vs |E2c(volume)-terrain| 0.152
+FID-0.15 c97 00111122: novol [0,-0.0444,-0.0444] (3 steps) | terrain K8 [0,-0.1391,-0.1391] (n 132) | |novol-terrain| 0.134 vs |E2c(volume)-terrain| 0.161
+FID-0.15 c18 00010111: novol [0,0,0] (5 steps) | terrain K8 [0.0025,0.0025,0.0025] (n 89) | |novol-terrain| 0.004 vs |E2c(volume)-terrain| 0.004
+FID-0.15 c36 00011112: novol [0.0445,-0.1598,0.0445] (28 steps) | terrain K8 [0.0396,-0.1696,0.0396] (n 60) | |novol-terrain| 0.012 vs |E2c(volume)-terrain| 0.015
+FID-0.15 c257 01111222: novol [-0.31,-0.3096,-0.31] (28 steps) | terrain K8 [-0.2839,-0.2877,-0.2839] (n 59) | |novol-terrain| 0.043 vs |E2c(volume)-terrain| 0.398
+FID-0.15 c96 00111112: novol [0,-0.1112,-0.1112] (24 steps) | terrain K8 [0.0094,-0.1566,-0.1566] (n 56) | |novol-terrain| 0.065 vs |E2c(volume)-terrain| 0.110
+FID-0.15 c250 01111112: novol [-0.3055,-0.3055,-0.3055] (16 steps) | terrain K8 [-0.2729,-0.2729,-0.2729] (n 53) | |novol-terrain| 0.056 vs |E2c(volume)-terrain| 0.005
+FID-0.15 c253 01111122: novol [-0.3037,-0.3034,-0.3034] (24 steps) | terrain K8 [-0.2798,-0.2829,-0.2829] (n 50) | |novol-terrain| 0.038 vs |E2c(volume)-terrain| 0.391
+FID-0.15 c11 00001112: novol [0.1044,0.061,0.0731] (7 steps) | terrain K8 [0.1463,0.0702,0.1463] (n 44) | |novol-terrain| 0.085 vs |E2c(volume)-terrain| 0.179
+FID-0.15 c289 01112222: novol [-0.1198,-0.0888,-0.1198] (7 steps) | terrain K8 [-0.1764,-0.0956,-0.1764] (n 44) | |novol-terrain| 0.080 vs |E2c(volume)-terrain| 0.199
+FID-0.15: terrain-count-weighted mean |novol - terrain| 0.0388, |E2c volume - terrain| 0.0973 over 16 classes, 2793 terrain corners
+FINITE-4 c10 00001111: novol [0,0,0] (4 steps) | terrain K8 [0,0.0001,0] (n 553) | |novol-terrain| 0.000 vs |E2c(volume)-terrain| 0.000
+FINITE-4 c2 00000011: novol [0,0.204,0.204] (4 steps) | terrain K8 [0,0.2008,0.2008] (n 420) | |novol-terrain| 0.005 vs |E2c(volume)-terrain| 0.169
+FINITE-4 c1 00000001: novol [0.3199,0.3199,0.3199] (4 steps) | terrain K8 [0.3033,0.3033,0.3033] (n 306) | |novol-terrain| 0.029 vs |E2c(volume)-terrain| 0.172
+FINITE-4 c95 00111111: novol [0,-0.204,-0.204] (4 steps) | terrain K8 [0,-0.2041,-0.2041] (n 270) | |novol-terrain| 0.000 vs |E2c(volume)-terrain| 0.005
+FINITE-4 c5 00000111: novol [-0.0236,0.17,-0.0236] (4 steps) | terrain K8 [-0.0253,0.1736,-0.0253] (n 266) | |novol-terrain| 0.004 vs |E2c(volume)-terrain| 0.045
+FINITE-4 c35 00011111: novol [0.0236,-0.17,0.0236] (4 steps) | terrain K8 [0.0313,-0.1614,0.0313] (n 217) | |novol-terrain| 0.014 vs |E2c(volume)-terrain| 0.021
+FINITE-4 c249 01111111: novol [-0.3199,-0.3199,-0.3199] (4 steps) | terrain K8 [-0.295,-0.295,-0.295] (n 190) | |novol-terrain| 0.043 vs |E2c(volume)-terrain| 0.008
+FINITE-4 c97 00111122: novol [0,-0.1889,-0.1889] (4 steps) | terrain K8 [0,-0.2236,-0.2236] (n 132) | |novol-terrain| 0.049 vs |E2c(volume)-terrain| 0.095
+FINITE-4 c18 00010111: novol [0,0,0] (4 steps) | terrain K8 [0.0022,0.0022,0.0022] (n 89) | |novol-terrain| 0.004 vs |E2c(volume)-terrain| 0.004
+FINITE-4 c36 00011112: novol [0.0236,-0.1674,0.0236] (4 steps) | terrain K8 [0.0199,-0.1847,0.0199] (n 60) | |novol-terrain| 0.018 vs |E2c(volume)-terrain| 0.043
+FINITE-4 c257 01111222: novol [-0.3105,-0.3126,-0.3105] (4 steps) | terrain K8 [-0.3041,-0.322,-0.3041] (n 59) | |novol-terrain| 0.013 vs |E2c(volume)-terrain| 0.059
+FINITE-4 c96 00111112: novol [-0.0002,-0.2082,-0.2082] (4 steps) | terrain K8 [0.0017,-0.2171,-0.2171] (n 56) | |novol-terrain| 0.013 vs |E2c(volume)-terrain| 0.036
+FINITE-4 c250 01111112: novol [-0.3209,-0.3209,-0.3209] (4 steps) | terrain K8 [-0.3078,-0.3078,-0.3078] (n 53) | |novol-terrain| 0.023 vs |E2c(volume)-terrain| 0.071
+FINITE-4 c253 01111122: novol [-0.32,-0.3178,-0.3178] (4 steps) | terrain K8 [-0.3023,-0.3153,-0.3153] (n 50) | |novol-terrain| 0.018 vs |E2c(volume)-terrain| 0.012
+FINITE-4 c11 00001112: novol [0.1968,0.1661,0.1968] (4 steps) | terrain K8 [0.2371,0.1402,0.2371] (n 44) | |novol-terrain| 0.063 vs |E2c(volume)-terrain| 0.215
+FINITE-4 c289 01112222: novol [-0.2198,-0.1868,-0.2198] (4 steps) | terrain K8 [-0.2694,-0.1579,-0.2694] (n 44) | |novol-terrain| 0.076 vs |E2c(volume)-terrain| 0.145
+FINITE-4: terrain-count-weighted mean |novol - terrain| 0.0145, |E2c volume - terrain| 0.0656 over 16 classes, 2809 terrain corners

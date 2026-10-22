@@ -1,0 +1,3 @@
+slab-line FID-0.05 physics: 38786 ms 157 st | phases 6:6->5.999 7:15->15 7:15->15 | A comps 1 [5.999] | B comps 2 | A necks at X [0,0.875,0.875,0.875,0]
+slab-line FID-0.05 ruleA: 35570 ms 158 st | phases 6:6->6 7:15->15 7:15->15 | A comps 1 [6] | B comps 2 | A necks at X [0,0.875,0.875,0.875,0]
+slab-line FID-0.05 ruleB: 26809 ms 112 st | phases 6:3->3 7:30->30 6:3->3 | A comps 2 [3,3] | B comps 1 | A necks at X [1.938,0,0,0,1.938]

@@ -1,0 +1,91 @@
+{
+"out": "sheets/models-vs-physics-1.png",
+"cols": 5,
+"title": "Physics (engine, n=16) vs one-step local models, same camera - part 1",
+"cell": [
+300,
+225
+],
+"items": [
+{
+"path": "img/pair-same__blocks-view.png",
+"label": "pair-same\nblocks (start)"
+},
+{
+"path": "img/pair-same__FID-0.15-view.png",
+"label": "pair-same\nphysics FID-0.15"
+},
+{
+"path": "img/pair-same__Bl-b1s20-view.png",
+"label": "pair-same\ncheap Bl-b1s20 (1 step)"
+},
+{
+"path": "img/pair-same__FINITE-4-view.png",
+"label": "pair-same\nphysics FINITE-4"
+},
+{
+"path": "img/pair-same__Bl-b3s40-view.png",
+"label": "pair-same\ncheap Bl-b3s40 (1 step)"
+},
+{
+"path": "img/pair-diff__blocks-view.png",
+"label": "pair-diff\nblocks (start)"
+},
+{
+"path": "img/pair-diff__FID-0.15-view.png",
+"label": "pair-diff\nphysics FID-0.15"
+},
+{
+"path": "img/pair-diff__Bl-b1s20-view.png",
+"label": "pair-diff\ncheap Bl-b1s20 (1 step)"
+},
+{
+"path": "img/pair-diff__FINITE-4-view.png",
+"label": "pair-diff\nphysics FINITE-4"
+},
+{
+"path": "img/pair-diff__Bl-b3s40-view.png",
+"label": "pair-diff\ncheap Bl-b3s40 (1 step)"
+},
+{
+"path": "img/L3-ABC__blocks-view.png",
+"label": "L3-ABC\nblocks (start)"
+},
+{
+"path": "img/L3-ABC__FID-0.15-view.png",
+"label": "L3-ABC\nphysics FID-0.15"
+},
+{
+"path": "img/L3-ABC__Bl-b1s20-view.png",
+"label": "L3-ABC\ncheap Bl-b1s20 (1 step)"
+},
+{
+"path": "img/L3-ABC__FINITE-4-view.png",
+"label": "L3-ABC\nphysics FINITE-4"
+},
+{
+"path": "img/L3-ABC__Bl-b3s40-view.png",
+"label": "L3-ABC\ncheap Bl-b3s40 (1 step)"
+},
+{
+"path": "img/sq2-checker__blocks-view.png",
+"label": "sq2-checker\nblocks (start)"
+},
+{
+"path": "img/sq2-checker__FID-0.15-view.png",
+"label": "sq2-checker\nphysics FID-0.15"
+},
+{
+"path": "img/sq2-checker__Bl-b1s20-view.png",
+"label": "sq2-checker\ncheap Bl-b1s20 (1 step)"
+},
+{
+"path": "img/sq2-checker__FINITE-4-view.png",
+"label": "sq2-checker\nphysics FINITE-4"
+},
+{
+"path": "img/sq2-checker__Bl-b3s40-view.png",
+"label": "sq2-checker\ncheap Bl-b3s40 (1 step)"
+}
+]
+}

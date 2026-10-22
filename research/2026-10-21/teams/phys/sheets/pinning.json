@@ -1,0 +1,75 @@
+{
+ "out": "teams/phys/sheets/pinning.png",
+ "cols": 5,
+ "cell": [
+  240,
+  240
+ ],
+ "title": "Pinning law: FREE cubes stall as rounded boxes when R > Rpin = 2 s_b^2 n (mid slices)",
+ "items": [
+  {
+   "path": "teams/phys/pinning/cube2-n12-s0.2-slice.png",
+   "label": "cube2 FREE n12 s0.2\nR 1.24 > Rpin 0.96, spread 0.094"
+  },
+  {
+   "path": "teams/phys/pinning/cube2-n12-s0.3-slice.png",
+   "label": "cube2 FREE n12 s0.3\nR 1.24 < Rpin 2.16, spread 0.063"
+  },
+  {
+   "path": "teams/phys/pinning/cube2-n16-s0.2-slice.png",
+   "label": "cube2 FREE n16 s0.2\nR 1.24 < Rpin 1.28, spread 0.071"
+  },
+  {
+   "path": "teams/phys/pinning/cube2-n16-s0.3-slice.png",
+   "label": "cube2 FREE n16 s0.3\nR 1.24 < Rpin 2.88, spread 0.046"
+  },
+  {
+   "path": "teams/phys/pinning/cube2-n24-s0.2-slice.png",
+   "label": "cube2 FREE n24 s0.2 m0.5\nR 1.24 < Rpin 1.92, spread 0.043"
+  },
+  {
+   "path": "teams/phys/pinning/cube3-n12-s0.2-slice.png",
+   "label": "cube3 FREE n12 s0.2\nR 1.86 > Rpin 0.96, spread 0.267"
+  },
+  {
+   "path": "teams/phys/pinning/cube3-n12-s0.3-slice.png",
+   "label": "cube3 FREE n12 s0.3\nR 1.86 < Rpin 2.16, spread 0.049"
+  },
+  {
+   "path": "teams/phys/pinning/cube3-n16-s0.2-slice.png",
+   "label": "cube3 FREE n16 s0.2\nR 1.86 > Rpin 1.28, spread 0.203"
+  },
+  {
+   "path": "teams/phys/pinning/cube3-n16-s0.3-slice.png",
+   "label": "cube3 FREE n16 s0.3\nR 1.86 < Rpin 2.88, spread 0.043"
+  },
+  {
+   "path": "teams/phys/pinning/cube3-n24-s0.2-slice.png",
+   "label": "cube3 FREE n24 s0.2 m0.5\nR 1.86 < Rpin 1.92, spread 0.053"
+  },
+  {
+   "path": "teams/phys/pinning/cube4-n12-s0.2-slice.png",
+   "label": "cube4 FREE n12 s0.2\nR 2.48 > Rpin 0.96, spread 0.307"
+  },
+  {
+   "path": "teams/phys/pinning/cube4-n12-s0.3-slice.png",
+   "label": "cube4 FREE n12 s0.3\nR 2.48 > Rpin 2.16, spread 0.089"
+  },
+  {
+   "path": "teams/phys/pinning/cube4-n16-s0.2-slice.png",
+   "label": "cube4 FREE n16 s0.2\nR 2.48 > Rpin 1.28, spread 0.241"
+  },
+  {
+   "path": "teams/phys/pinning/cube4-n16-s0.3-slice.png",
+   "label": "cube4 FREE n16 s0.3\nR 2.48 < Rpin 2.88, spread 0.030"
+  },
+  {
+   "path": "teams/phys/pinning/tunnel-n12-s0.3-slice.png",
+   "label": "tunnel FREE n12 s0.3\nR 1.93 < Rpin 2.16, spread 0.110"
+  },
+  {
+   "path": "teams/phys/pinning/tunnel-n16-s0.3-slice.png",
+   "label": "tunnel FREE n16 s0.3\nR 1.93 < Rpin 2.88, spread 0.061"
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+locality [{"sigma":0.15,"support":0.8674,"trials":4000,"maxDiff":0,"trialsWithDiff":0,"worstPoint":null},{"sigma":0.2,"support":0.9899,"trials":4000,"maxDiff":0,"trialsWithDiff":0,"worstPoint":null},{"sigma":0.204,"support":0.9997,"trials":4000,"maxDiff":0,"trialsWithDiff":0,"worstPoint":null},{"sigma":0.21,"support":1.0144,"trials":4000,"maxDiff":0.0009875855190127592,"trialsWithDiff":2574,"worstPoint":[-0.4978,-0.4995,0.4991]},{"sigma":0.25,"support":1.1124,"trials":4000,"maxDiff":0.04631988597342388,"trialsWithDiff":3083,"worstPoint":[-0.4992,0.4986,-0.4944]}]
+bub-b1-newton4 {"corners":33592,"clampHits":1121,"residD_p50":0.00446,"residD_p999":1.07,"residD_max":1.08,"distErr_p99":9.4686,"distErr_max":108128.8659,"cornersDistErrOver0_02":1252,"worst":{"chunk":[-2,-1,1],"corner":[30,6,11],"s":[-0.48046875,-0.48046875,-0.48046875],"D":1.0499,"distErr":108128.8659}}
+bub-b1-newton16 {"corners":33592,"clampHits":1098,"residD_p50":0.00444,"residD_p999":1.06,"residD_max":1.08,"distErr_p99":9.4686,"distErr_max":108128.8659,"cornersDistErrOver0_02":1213,"worst":{"chunk":[-2,-1,1],"corner":[30,6,11],"s":[-0.48046875,-0.48046875,-0.48046875],"D":1.0499,"distErr":108128.8659}}
+bub-b1-line {"corners":33592,"clampHits":1045,"residD_p50":0.0045,"residD_p999":1.09,"residD_max":1.11,"distErr_p99":9.4503,"distErr_max":1290.8041,"cornersDistErrOver0_02":1270,"worst":{"chunk":[-2,1,1],"corner":[11,9,22],"s":[-0.48046875,0,0],"D":0.0515,"distErr":1290.8041}}
+bub-b1-line40 {"corners":33592,"clampHits":1045,"residD_p50":0.00449,"residD_p999":1.09,"residD_max":1.11,"distErr_p99":9.4503,"distErr_max":1290.8041,"cornersDistErrOver0_02":1270,"worst":{"chunk":[-2,1,1],"corner":[11,9,22],"s":[-0.48046875,0,0],"D":0.0515,"distErr":1290.8041}}
+disagree {"n4_vs_line40":1714,"n16_vs_line40":1714,"line14_vs_line40":0,"maxN4":0.9609,"maxN16":0.9609}
+apron 2 0,0,0 mismatches 0 of 1332 max 0
+apron 1 0,0,0 mismatches 149 of 1332 max 0.0703
+apron 2 -2,1,1 mismatches 0 of 6215 max 0
+apron 1 -2,1,1 mismatches 337 of 6215 max 0.9609
+apron 2 -2,-1,1 mismatches 0 of 8540 max 0
+apron 1 -2,-1,1 mismatches 512 of 8540 max 0.9609

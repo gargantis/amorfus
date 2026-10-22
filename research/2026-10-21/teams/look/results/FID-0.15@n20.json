@@ -1,0 +1,94 @@
+{
+ "regime": "FID-0.15@n20",
+ "options": {
+  "n": 20,
+  "anchor": {
+   "kind": "fidelity",
+   "k": 0.15
+  }
+ },
+ "engine": "lib/mbo.mjs (unchanged), s 0.2·n, jitter 0",
+ "n": 20,
+ "runs": {
+  "tunnel": {
+   "steps": 52,
+   "converged": true,
+   "ms": 8569,
+   "lastChanges": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "grid": [
+    100,
+    120,
+    100
+   ],
+   "cells": 1200000,
+   "shapeChange": 0.1401,
+   "vol": {
+    "labTotalRel": 0,
+    "DTotalRel": -0.0001,
+    "labWorstPhaseRel": 0
+   },
+   "phasesStart": {
+    "3": 1
+   },
+   "phasesEnd": {
+    "3": 1
+   },
+   "lambdas": [
+    0.0562
+   ],
+   "msMeasure": 47,
+   "clear": {
+    "lab": {
+     "clearHeightAtW": 0.7227,
+     "clearWidthAtH": 0,
+     "heightAtCentre": 1.1,
+     "pass": false
+    },
+    "D": {
+     "clearHeightAtW": 0.6823,
+     "clearWidthAtH": 0,
+     "heightAtCentre": 1.0379,
+     "pass": false
+    }
+   },
+   "clearCells": {
+    "0.75": {
+     "clearHeightAtW": 1.1,
+     "clearWidthAtH": 0,
+     "pass": false
+    },
+    "1.5": {
+     "clearHeightAtW": 0.8,
+     "clearWidthAtH": 0,
+     "pass": false
+    },
+    "2.25": {
+     "clearHeightAtW": 1.2,
+     "clearWidthAtH": 0,
+     "pass": false
+    }
+   },
+   "widthMid": {
+    "lab": 1,
+    "D": 0.9693
+   },
+   "heightMid": {
+    "lab": 1.1,
+    "D": 1.0379
+   },
+   "floor": {
+    "lab": 1.45,
+    "D": 1.4811
+   },
+   "roof": {
+    "lab": 2.55,
+    "D": 2.5189
+   }
+  }
+ }
+}

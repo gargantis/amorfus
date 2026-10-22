@@ -1,0 +1,59 @@
+{
+ "out": "teams/v-local/sheets/farbar.png",
+ "cols": 4,
+ "title": "Far bar (look WIDE host, tunnel at x=1): physics FID-0.15 vs cheap Bl-b1s20 (sections z=1.5)",
+ "cell": [
+  360,
+  260
+ ],
+ "items": [
+  {
+   "path": "teams/v-local/img/farbar/farbar-FID-0.15-n12-alone-view.png",
+   "label": "physics FID-0.15 n12, host alone\nclear h@0.70 = 1.21 (labels)"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-FID-0.15-n12-barAttached-view.png",
+   "label": "physics FID-0.15 n12, bar attached 4+ away\ntunnel closed (0)"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-Bl-b1s20-alone-view.png",
+   "label": "cheap Bl-b1s20 (1 step, local lambda), alone\nclear h@0.70 = 1.76"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-Bl-b1s20-barAttached-view.png",
+   "label": "cheap Bl-b1s20, bar attached\nunchanged: 1.76"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-FID-0.15-n12-alone-slice.png",
+   "label": "FID-0.15 n12 alone, section"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-FID-0.15-n12-barAttached-slice.png",
+   "label": "FID-0.15 n12 bar attached, section"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-Bl-b1s20-alone-slice.png",
+   "label": "Bl-b1s20 alone, section"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-Bl-b1s20-barAttached-slice.png",
+   "label": "Bl-b1s20 bar attached, section"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-FID-0.15-n16-alone-slice.png",
+   "label": "FID-0.15 n16 (margin 0.75) alone\nclear h 0.87"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-FID-0.15-n16-barAttached-slice.png",
+   "label": "FID-0.15 n16 bar attached\nclosed (0)"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-FINITE-4-n12-alone-slice.png",
+   "label": "FINITE-4 n12 alone: 0.54"
+  },
+  {
+   "path": "teams/v-local/img/farbar/farbar-FINITE-4-n12-barAttached-slice.png",
+   "label": "FINITE-4 n12 bar attached: 0.37"
+  }
+ ]
+}

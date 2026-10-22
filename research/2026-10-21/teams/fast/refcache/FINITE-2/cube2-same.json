@@ -1,0 +1,1 @@
+{"regime":"FINITE-2","name":"cube2-same","opts":{"maxSteps":2,"stopAfter":99,"n":16},"ms":86,"steps":2,"converged":false,"lastChanges":[2584,2360],"grid":[64,64,64],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":8,"target":32768,"lambda":0.08707135915756226,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":8,"volume":8}]}

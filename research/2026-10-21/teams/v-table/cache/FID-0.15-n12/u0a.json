@@ -1,0 +1,1 @@
+{"set":"t7","name":"u0a","regime":"FID-0.15","n":12,"ms":22313,"steps":81,"converged":true,"changes":11600,"premerged":0,"alive":1,"lambda":[[3,567,-0.01]],"phaseMat":[0,3],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":163,"oy":57,"oz":-222},"dScale":32000,"origin":[163,57,-222],"size":[9,8,9],"evalLo":[165,59,-220],"evalHi":[170,63,-215],"blocks":567}

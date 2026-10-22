@@ -1,0 +1,337 @@
+{
+ "total": 33592,
+ "offSurface": 1270,
+ "offSurfaceShare": 0.0378,
+ "noSignChangeInBox": 0,
+ "offWithNoCrossing": 0,
+ "offDespiteCrossing": 1270,
+ "offSingleMaterial": 806,
+ "classes": {
+  "4s-1m": {
+   "corners": 8846,
+   "off": 635,
+   "noCross": 0
+  },
+  "7s-2m": {
+   "corners": 616,
+   "off": 461,
+   "noCross": 0
+  },
+  "2s-1m": {
+   "corners": 4104,
+   "off": 108,
+   "noCross": 0
+  },
+  "6s-1m": {
+   "corners": 5369,
+   "off": 40,
+   "noCross": 0
+  },
+  "5s-1m": {
+   "corners": 3591,
+   "off": 23,
+   "noCross": 0
+  },
+  "6s-2m": {
+   "corners": 775,
+   "off": 3,
+   "noCross": 0
+  },
+  "3s-1m": {
+   "corners": 3354,
+   "off": 0,
+   "noCross": 0
+  },
+  "5s-2m": {
+   "corners": 355,
+   "off": 0,
+   "noCross": 0
+  },
+  "1s-1m": {
+   "corners": 2175,
+   "off": 0,
+   "noCross": 0
+  },
+  "4s-2m": {
+   "corners": 379,
+   "off": 0,
+   "noCross": 0
+  },
+  "7s-1m": {
+   "corners": 4016,
+   "off": 0,
+   "noCross": 0
+  },
+  "3s-2m": {
+   "corners": 12,
+   "off": 0,
+   "noCross": 0
+  }
+ },
+ "examples": [
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    35,
+    17,
+    5
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.09765625,
+    0.48046875,
+    -0.09375
+   ],
+   "D": 0.1939,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    32,
+    18,
+    4
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    -0.0078125,
+    0.0078125,
+    -0.48046875
+   ],
+   "D": 0.3279,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    33,
+    18,
+    7
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.46484375,
+    -0.47265625,
+    -0.48046875
+   ],
+   "D": 1.0904,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    34,
+    18,
+    8
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.48046875,
+    -0.48046875,
+    -0.48046875
+   ],
+   "D": 1.0924,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    35,
+    18,
+    9
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.48046875,
+    -0.48046875,
+    -0.48046875
+   ],
+   "D": 1.0924,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    31,
+    19,
+    6
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.01171875,
+    -0.0078125,
+    -0.48046875
+   ],
+   "D": 0.3316,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    32,
+    19,
+    8
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.4453125,
+    -0.4609375,
+    -0.48046875
+   ],
+   "D": 1.0765,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    33,
+    19,
+    9
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.48046875,
+    -0.48046875,
+    -0.48046875
+   ],
+   "D": 1.0924,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    34,
+    19,
+    10
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.48046875,
+    -0.48046875,
+    -0.48046875
+   ],
+   "D": 1.0924,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    35,
+    19,
+    11
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.48046875,
+    -0.46875,
+    -0.4609375
+   ],
+   "D": 1.0893,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    28,
+    20,
+    3
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.09375,
+    0.48046875,
+    -0.09375
+   ],
+   "D": 0.228,
+   "signChangeInBox": true
+  },
+  {
+   "chunk": [
+    0,
+    0,
+    0
+   ],
+   "corner": [
+    29,
+    20,
+    6
+   ],
+   "solid": 7,
+   "nmat": 2,
+   "mask": 223,
+   "s": [
+    0.09375,
+    0.48046875,
+    -0.09375
+   ],
+   "D": 0.2105,
+   "signChangeInBox": true
+  }
+ ]
+}

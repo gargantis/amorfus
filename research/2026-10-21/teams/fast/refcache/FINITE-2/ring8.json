@@ -1,0 +1,1 @@
+{"regime":"FINITE-2","name":"ring8","opts":{"maxSteps":2,"stopAfter":99,"n":16},"ms":76,"steps":2,"converged":false,"lastChanges":[3712,2696],"grid":[80,48,80],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":8,"target":32768,"lambda":0.08227077126502991,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":8,"volume":7.998}]}

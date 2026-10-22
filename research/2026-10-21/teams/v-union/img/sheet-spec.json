@@ -1,0 +1,75 @@
+{
+ "out": "teams/v-union/img/v-union-sheet.png",
+ "cols": 4,
+ "title": "v-union: X-junction union attacks (colours = engine labels; white = exact 2D solver films)",
+ "cell": [
+  300,
+  300
+ ],
+ "items": [
+  {
+   "path": "teams/v-union/img/W1-blocks.png",
+   "label": "W1 blocks, X at centre\nrule4: A (A4<B8); size: B"
+  },
+  {
+   "path": "teams/v-union/img/W1-engine12.png",
+   "label": "W1, engine FREE 12 st: B unites\n12/12; exact (white): B 64/64"
+  },
+  {
+   "path": "teams/v-union/img/L2-blocks.png",
+   "label": "L2: A domino line x B singles\nrule4: none (4 v 4); size: B"
+  },
+  {
+   "path": "teams/v-union/img/L2-engine12.png",
+   "label": "L2, engine FREE 12 st: B cuts\nthe A line 12/12; exact: B"
+  },
+  {
+   "path": "teams/v-union/img/L2shortA-blocks.png",
+   "label": "L2-shortA: 2 A dominoes x 10 B\nrule4: none; size: B"
+  },
+  {
+   "path": "teams/v-union/img/L2shortA-engine12.png",
+   "label": "L2-shortA, engine 12 st: the A\ndominoes (larger) unite 12/12"
+  },
+  {
+   "path": "teams/v-union/img/LX104-blocks.png",
+   "label": "LX-10x4: single-block lines\nrule4: none; sizes tie"
+  },
+  {
+   "path": "teams/v-union/img/LX104-engine12.png",
+   "label": "LX-10x4: engine B 12/12;\nexact (white) A: method-dependent"
+  },
+  {
+   "path": "teams/v-union/img/dediff-g1.5-s0.2.png",
+   "label": "diag-edge-diff g 1.5, s 0.2:\nengine adheres; exact: apart"
+  },
+  {
+   "path": "teams/v-union/img/L3ABC-g1.3-s0.1.png",
+   "label": "L3-ABC g 1.3, s 0.1: engine B|C\nfilm; exact: B, C apart"
+  },
+  {
+   "path": "teams/v-union/img/W1-ann0.1.png",
+   "label": "W1, prior anneal 0.1 + quench:\nboth merged at step 1, A in 2 pcs"
+  },
+  {
+   "path": "teams/v-union/img/cube2chk-s4.png",
+   "label": "cube2-checker j 1e-3 seed 4\nfrozen, X lines kept (y 0.5)"
+  },
+  {
+   "path": "teams/v-union/img/cube2chk-j0.png",
+   "label": "cube2-checker jitter 0 (y 0.5)\nboth pairs united (A4, B4)"
+  },
+  {
+   "path": "teams/v-union/img/sq2chk3d-s2-0.png",
+   "label": "sq2-checker 3D seed 2, y 0.15\nB connected across the X"
+  },
+  {
+   "path": "teams/v-union/img/sq2chk3d-s2-1.png",
+   "label": "same run, y 0.85: A connected\n(both unite by layering)"
+  },
+  {
+   "path": "teams/v-union/img/diagcorner-ann.png",
+   "label": "diag-corner, prior anneal 0.1\nmerged at step 1 (3/3 seeds)"
+  }
+ ]
+}

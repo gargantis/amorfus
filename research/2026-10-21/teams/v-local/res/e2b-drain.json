@@ -1,0 +1,22 @@
+{
+ "FID-0.15": {
+  "bar": 0.1447,
+  "tunnelHole": 5.3981,
+  "host": 64.4537
+ },
+ "FINITE-4": {
+  "bar": 3.6123,
+  "tunnelHole": 2.6343,
+  "host": 63.7535
+ },
+ "Bl-b1s20 (D>0 cells)": {
+  "bar": 4.1343,
+  "tunnelHole": 0.5023,
+  "host": 64.7731
+ },
+ "blocks": {
+  "bar": 4,
+  "tunnelHole": 0,
+  "host": 66
+ }
+}

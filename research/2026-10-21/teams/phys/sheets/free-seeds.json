@@ -1,0 +1,43 @@
+{
+ "out": "teams/phys/sheets/free-seeds.png",
+ "cols": 4,
+ "cell": [
+  300,
+  225
+ ],
+ "title": "FREE: same configuration, two noise seeds (jitter 1e-3), different outcomes",
+ "items": [
+  {
+   "path": "teams/phys/free/sq2-checker-s1-view.png",
+   "label": "sq2-checker: FREE n16 seed1\n-> B2(2 parts!) A2(2 parts!)"
+  },
+  {
+   "path": "teams/phys/free/sq2-checker-s1-slice.png",
+   "label": "sq2-checker: slice seed1"
+  },
+  {
+   "path": "teams/phys/free/sq2-checker-s2-view.png",
+   "label": "sq2-checker: FREE n16 seed2\n-> A2 B2"
+  },
+  {
+   "path": "teams/phys/free/sq2-checker-s2-slice.png",
+   "label": "sq2-checker: slice seed2"
+  },
+  {
+   "path": "teams/phys/free/slab-line-s1-view.png",
+   "label": "slab-line: FREE n16 seed1\n-> B15 B15 A6"
+  },
+  {
+   "path": "teams/phys/free/slab-line-s1-slice.png",
+   "label": "slab-line: slice seed1"
+  },
+  {
+   "path": "teams/phys/free/slab-line-s2-view.png",
+   "label": "slab-line: FREE n16 seed2\n-> A6 B30(2 parts!)"
+  },
+  {
+   "path": "teams/phys/free/slab-line-s2-slice.png",
+   "label": "slab-line: slice seed2"
+  }
+ ]
+}

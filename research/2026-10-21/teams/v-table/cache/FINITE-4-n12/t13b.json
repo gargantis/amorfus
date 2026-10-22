@@ -1,0 +1,1 @@
+{"set":"t1","name":"t13b","regime":"FINITE-4","n":12,"ms":2690,"steps":4,"converged":false,"changes":31826,"premerged":1,"alive":2,"lambda":[[1,81,0.0153],[2,104,0.0356]],"grid":{"NX":108,"NY":96,"NZ":108,"n":12,"ox":17,"oy":31,"oz":19},"dScale":30898,"origin":[17,31,19],"size":[9,8,9],"evalLo":[19,33,21],"evalHi":[24,37,26],"blocks":185}

@@ -1,0 +1,2 @@
+FID-0.25@n32 single: 996 ms, 5 st, cells 884736, d 0.0098, rss 98 MB
+FID-0.25@n32 cube2-same: 1966 ms, 5 st, cells 884736, d 0.0009, rss 157 MB

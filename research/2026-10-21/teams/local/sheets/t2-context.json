@@ -1,0 +1,19 @@
+{"out": "teams/local/sheets/t2-context.png", "cols": 4, "title": "Task 2: one neighbourhood in clusters of different sizes (3D, n=12; cross-sections through the feature)", "cell": [300, 220],
+ "items": [
+  {"path": "teams/local/img/seam/seam-a1b1L4-FID-0.15-slice.png", "label": "straight A|B seam, widths 1|1, FID-0.15"},
+  {"path": "teams/local/img/seam/seam-a2b2L4-FID-0.15-slice.png", "label": "seam 2|2, FID-0.15 (seam does not move)"},
+  {"path": "teams/local/img/seam/seam-a5b5L4-FID-0.15-slice.png", "label": "seam 5|5, FID-0.15"},
+  {"path": "teams/local/img/seam/seam-a2b5L4-FID-0.15-slice.png", "label": "seam 2|5, FID-0.15"},
+  {"path": "teams/local/img/seam/seam-a1b1L4-CAGE-0.25-slice.png", "label": "seam 1|1, CAGE-0.25"},
+  {"path": "teams/local/img/seam/seam-a2b2L4-CAGE-0.25-slice.png", "label": "seam 2|2, CAGE-0.25"},
+  {"path": "teams/local/img/seam/seam-a5b5L4-CAGE-0.25-slice.png", "label": "seam 5|5, CAGE-0.25 (1-sub-cell notch)"},
+  {"path": "teams/local/img/seam/seam-a2b5L4-CAGE-0.25-slice.png", "label": "seam 2|5, CAGE-0.25"},
+  {"path": "teams/local/img/pit/pit-slab3-FID-0.15-slice.png", "label": "pit in 3x2x3 slab, FID-0.15 (0.164 deep)"},
+  {"path": "teams/local/img/pit/pit-slab7-FID-0.15-slice.png", "label": "pit in 7x2x7 slab, FID-0.15 (0.083 deep)"},
+  {"path": "teams/local/img/pit/pit-slab3-FID-0.05-slice.png", "label": "pit in 3x2x3, FID-0.05 (filled)"},
+  {"path": "teams/local/img/pit/pit-slab7-CAGE-0.25-slice.png", "label": "pit in 7x2x7, CAGE-0.25 (cage limit)"},
+  {"path": "teams/local/img/pit/bump-slab3-FID-0.15-slice.png", "label": "bump on 3x2x3, FID-0.15"},
+  {"path": "teams/local/img/pit/bump-slab7-FID-0.15-slice.png", "label": "bump on 7x2x7, FID-0.15 (same shape)"},
+  {"path": "teams/local/img/pit/bump-slab3-FID-0.05-slice.png", "label": "bump on 3x2x3, FID-0.05 (top 2.83)"},
+  {"path": "teams/local/img/pit/bump-slab7-FID-0.05-slice.png", "label": "bump on 7x2x7, FID-0.05 (top 2.75)"}
+ ]}

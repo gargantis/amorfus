@@ -1,0 +1,2045 @@
+{
+  "summary": "Bubble-physics study round 1 (relaunch): six teams, at most three at a time, on a shared MBO engine",
+  "agentCount": 6,
+  "logs": [
+    "Six teams, three at a time, on the shared engine; each writes only to teams/<id>/",
+    "team phys starts",
+    "team look starts",
+    "team prior starts",
+    "team prior returned",
+    "team local starts",
+    "team phys returned",
+    "team table starts",
+    "team look returned",
+    "team fast starts",
+    "team fast returned",
+    "team local returned",
+    "team table returned",
+    "6 of 6 teams returned"
+  ],
+  "result": {
+    "results": [
+      {
+        "team": "prior",
+        "summary": "I checked about 50 sources online. The verification log, with URLs and what each check confirmed, is teams/prior/citations-log.md; UNVERIFIED items are marked there and nothing relies on them. In literature terms the model is a multiphase minimal partition with an air reservoir: same material means zero tension, so one phase; different materials meet across a film of tension g; equilibria obey Plateau's laws (Plateau 1873, Taylor 1976, Morgan 1994). The engine reproduces the Young/Neumann closed form for a 2D double bubble: wall within 0.004 blocks and tip within 0.021 blocks at n=64, for g = 0.5, 1 and 1.5. A block lattice is almost never a Plateau configuration. Of 738 corner classes, only 85 pass Plateau's necessary checks and 650 have a four-film lattice line, so on blocks bubble physics is first a set of T1/pop decisions. The lower-tension diagonal wins; ties are common, and the owner's painted diagonal line is a chain of ties that physics does not decide. The persistent four-way junction in the README has an exact cause: with equal tensions the Gaussian-thresholded axis-aligned cross is a fixed point (0 changes within 1 block over 5 steps), and a T1 nucleus of 2 sub-cells or less collapses back. The engine's jitter is frozen per cell, phase and seed. Re-drawing it every step (auction dynamics' 'temperature', Jacobs et al. 2018) at 0.1 for 100 steps, then quenching, resolved the junction in 5/5 2D and 3/3 3D runs; frozen or 1e-2 noise never did. Pinning (Esedoglu-Ruuth-Tsai; Misiats-Yip 2016) is real but narrower than the README's half-sub-cell rule: plain-MBO disks shrink at the theoretical rate up to R=2 at n=16 and R=6 at n=32. The FID regime is TV-L1 (Chan-Esedoglu 2005): without volume the corner radius follows r = s/(k*sqrt(2*pi)) at 82-95 %, but with volume rounding nearly vanishes and k=0.15 oscillates. Volume preservation makes the model non-local (106 cells differ 4 blocks from an edit after 6 steps, 0 without volume). Seam grooves are Mullins thermal grooves with opening angle 2*acos(g/2). REPORT.md was NOT written: the harness refused report files from subagents, so the full report content is in this structured result. Everything else is in teams/prior/ and was backed up with rsync.",
+        "claims": [
+          {
+            "id": "corner-classes",
+            "kind": "pattern",
+            "statement": "A 2x2x2 lattice corner has 21,147 equality patterns (materials compared only for equality; air distinguished), falling into 738 classes under the 48 cube symmetries. Only 85 classes pass Plateau's two necessary checks: no lattice line with four films around it, and at most 4 regions meeting at the point. 650 classes contain a four-film line and 280 have more than 4 regions. Restricted to surface corners with at most 2 solid materials: 132 classes, 92 with a four-film line, 49 of them with a tension tie. Binary solid/air (today's mesher): 20 classes; 9 have a four-film line, all ties, and these are PLAN 7.2's pinched diagonal-only contacts. Under bubble physics most corners therefore need a topological decision (T1/pop, as in the Surface Evolver's 'O'/'o'/'pop' commands) before any smoothing.",
+            "evidence": [
+              "teams/prior/corner-classes.json",
+              "teams/prior/corner-classes.mjs",
+              "teams/prior/orch-classes-crosscheck.log",
+              "teams/prior/citations-log.md"
+            ],
+            "confidence": "measured",
+            "numbers": "738 classes / 21147 labelled; 85 Plateau-passing; 650 with X-line; 280 >4 regions; surface<=2 solids 132/92/49; binary 20 classes, 9 with X-line; orchestrator cross-check 738/551/22",
+            "refuteBy": "Enumerate independently and get different counts. Or anneal and quench a configuration (several seeds) and show that a four-film line, or a point where more than 4 regions meet, survives as a stable equilibrium."
+          },
+          {
+            "id": "x-rule-per-edge",
+            "kind": "pattern",
+            "statement": "A four-way (X) junction on a lattice edge with unit outer films at 90 degrees, split by a central film of tension tau and length L, changes energy by (tau - sqrt2)*L to first order. The outer-film term is the same for both splits, so the diagonal pair with the lower film tension gets the central film. Engine tensions: same material 0 (unites), air-air 0, solid-air 1, solid-solid g. Decided cases: ABAC and ABA-air (the A pair unites), air-A-air-B (A and B stay apart). Ties: ABAB (checkerboard), A-air-A-air (diagonal-only contact), ABCD, plus ABC-air at the default g=1. The decision lives on the 4 blocks around one lattice edge: 52 labelled patterns, 17 classes, 7 with an X, 3 tied at generic g and 4 at g=1. The owner's painted 1-wide diagonal line of A in B is a chain of AB/BA ties, so physics does not decide whether it connects; a tie policy must (cf. the asymptotic decider, Nielson-Hamann 1991; (8,4) connectivity, Kong-Rosenfeld 1989).",
+            "evidence": [
+              "teams/prior/corner-classes.json",
+              "teams/prior/corner-classes.mjs"
+            ],
+            "confidence": "inferred",
+            "numbers": "dE = (tau - 1.414) L; per-edge table 52 patterns / 17 classes / 7 X / 3 ties (4 at g=1)",
+            "refuteBy": "Run 2D FREE on ABA-air or ABAC 2x2 configurations with annealed noise 0.1 and a quench, over 10 seeds. If the higher-tension diagonal (B-air or B-C) gets the central wall in most seeds, the rule is wrong."
+          },
+          {
+            "id": "x-fixed-point",
+            "kind": "limitation",
+            "statement": "With equal tensions among the four phases, the axis-aligned four-phase cross is an exact fixed point of the engine's Gaussian threshold step. The blurred quadrant indicators are products Phi(x/s)Phi(y/s), so each cell's lowest cost is its own quadrant. This is the cause of README limit 2 (a persistent X), rather than generic pinning. No paper found states this for threshold dynamics; the derivation is this team's.",
+            "evidence": [
+              "teams/prior/results-xfixed.json",
+              "teams/prior/xfixed.mjs",
+              "teams/prior/citations-log.md"
+            ],
+            "confidence": "measured",
+            "numbers": "0 label changes within 1 block of the cross over 5 steps, for g=1 and g=0.5, with and without the volume solve (n=32, four 2x2-block quadrants)",
+            "refuteBy": "With jitter 0 and equal tensions, find any label change within 1 block of an axis-aligned four-phase cross."
+          },
+          {
+            "id": "t1-nucleus-critical",
+            "kind": "limitation",
+            "statement": "In 2D sq2-ABCD FREE (n=32, s=6.4 sub-cells, jitter 0), a seeded A-D T1 nucleus of radius 1 or 2 sub-cells collapses back to the X. Radius 3 to 16 survives, but the final wall freezes at a length that depends on the seed instead of reaching one equilibrium. So the X is stable at sub-kernel scale, and walls are pinned once formed.",
+            "evidence": [
+              "teams/prior/results-presplit.json",
+              "teams/prior/presplit.log",
+              "teams/prior/img/sheet-x2d.png"
+            ],
+            "confidence": "measured",
+            "numbers": "r=1,2: X restored; r=3,4,6,8,12,16: final A-D contact 2,6,12,12,14,16 face-adjacent sub-cell pairs",
+            "refuteBy": "Rerun xjunc.mjs presplit. A wall surviving at r<=2, or final wall lengths that do not depend on r (one equilibrium), refutes it."
+          },
+          {
+            "id": "annealed-noise-fix",
+            "kind": "engine",
+            "statement": "The engine's jitter is a frozen function of (cell, phase, seed). Re-drawing it every step, as in auction dynamics' temperature (Jacobs-Merkurjev-Esedoglu 2018, sec. 3.4), at amplitude 0.1 for 100 steps followed by a jitter-0 quench resolves the four-material X in 2D and the four-film line in 3D. Frozen noise at 1e-3 or 1e-2, and re-drawn noise at 1e-2, do not.",
+            "evidence": [
+              "teams/prior/results-noise.json",
+              "teams/prior/results-anneal.json",
+              "teams/prior/results-abcd3d.json",
+              "teams/prior/results-abcd3d-anneal.json",
+              "teams/prior/img/sheet-x2d.png",
+              "teams/prior/img/sheet-x3d.png"
+            ],
+            "confidence": "measured",
+            "numbers": "2D: frozen 1e-3 and 1e-2 X persists 6/6; annealed 1e-2 3/3 persist; anneal 0.03 x100 + quench 1/5 resolved; anneal 0.1 x100 + quench 5/5 resolved (1 A-D, 4 B-C). 3D (n=16): persists at jitter 0, frozen 1e-3, annealed 1e-2; anneal 0.1 + quench 3/3 resolved (seed 2 one B-C wall 0.719 blocks^2; seeds 1 and 3 both walls ~0.74-0.80 blocks^2)",
+            "refuteBy": "Run anneal 0.1 + quench on seeds 6-20. Persisting Xs in more than a few seeds refute it. So does frozen jitter of amplitude 0.1 resolving the X equally often, which would show that re-drawing is not what matters."
+          },
+          {
+            "id": "young-neumann-engine",
+            "kind": "physics",
+            "statement": "For the 2D equal double bubble with A-B tension g, the engine (FREE, measured on labels) matches the Young/Neumann closed form: R^2[pi - acos(g/2) + (g/2)sqrt(1-g^2/4)] = 1, wall half-length R*sqrt(1-g^2/4), wall-to-tip R(1+g/2).",
+            "evidence": [
+              "teams/prior/results-neumann.json",
+              "teams/prior/img/sheet-neumann.png"
+            ],
+            "confidence": "measured",
+            "numbers": "n=64: wall half 0.6719/0.5469/0.3906 vs theory 0.6737/0.5447/0.3874 (g=0.5/1/1.5); tips 0.8906/0.9531/1.0313 vs 0.8697/0.9435/1.025. n=32 errors up to 0.049 (wall, g=0.5) and 0.068 (tip, g=0.5)",
+            "refuteBy": "Rerun at n=128. Diverging from the closed form refutes it, as does an independent solver (e.g. Surface Evolver string model) giving different junction geometry for g=0.5."
+          },
+          {
+            "id": "seam-groove",
+            "kind": "look",
+            "statement": "Where an A-B wall meets air, Young's balance (Mullins 1957, thermal grooving) sets the opening angle of the air surface at 2*acos(g/2): 120 deg at g=1, 151 deg at g=0.5, 83 deg at g=1.5. So the grooves at different-material seams in the orchestrator's FID images are the expected geometry, not an artefact. A small g (<=0.25 gives >=166 deg) nearly removes the groove, but the same tension is what straightens a jagged seam, so smoothness of boundaries trades off against seam flatness (inference).",
+            "evidence": [
+              "teams/prior/results-neumann.json",
+              "teams/prior/citations-log.md"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "opening 151.0 / 120 / 82.8 deg (theory, results-neumann.json); junction geometry matched at n=64 (claim young-neumann-engine)",
+            "refuteBy": "Measure the groove angle on labels in 3D FID seam runs at g in {0.25, 1, 1.5}. An angle that does not depend on g, or does not follow 2acos(g/2) within the resolution, refutes it."
+          },
+          {
+            "id": "fid-is-tvl1",
+            "kind": "physics",
+            "statement": "The FID-k regime is the TV-L1 / flat-norm problem min Per + lambda*|symmetric difference| (Chan-Esedoglu 2005). From the engine's costs a boundary cell keeps its phase while |kappa| <= k*sqrt(2*pi)/s, so convex block corners round to r = s/(k*sqrt(2*pi)), with s in blocks and kappa the sum of principal curvatures in 3D. Without the volume solve this holds at 82-95 %. With the volume solve on (the study's FID regime) corners barely round, and k=0.15 never converges (a 2-cycle).",
+            "evidence": [
+              "teams/prior/results-fid.json",
+              "teams/prior/fid.log",
+              "teams/prior/img/sheet-fid-tvl1.png"
+            ],
+            "confidence": "measured",
+            "numbers": "4x4 square, no volume, n=64: r = 0.754/0.481/0.217 vs predicted 0.798/0.532/0.266 for k=0.1/0.15/0.3 (n=32: 0.754/0.434/0.226). With volume: 0.321/0.217/0.009 at n=64; k=0.15 flips 336 (n=32) / 680 (n=64) cells every step for 300 steps",
+            "refuteBy": "Change s at fixed k without the volume solve; r not scaling linearly with s refutes it. Showing that the volume-on 2-cycle disappears with an exact (auction) volume solve would make that part a solver artefact, not inherent."
+          },
+          {
+            "id": "pinning-disks",
+            "kind": "limitation",
+            "statement": "Plain MBO (no volume, s=0.2 blocks) shrinks disks at the curve-shortening rate pi*s^2 = 0.126 blocks^2/step up to R=2 blocks at n=16 and R=6 at n=32. At n=16 it slows from R=2.25 and freezes at R=3-4. The half-sub-cell estimate R_pin ~ s^2*n (0.64 / 1.28 blocks) is at least 3.5x too pessimistic for curved boundaries. Inference: pinning in the study mostly comes from grid-aligned flats (block faces) and from volume-constrained runs near equilibrium, where the driving force is only a curvature difference. Literature: MBO 'gets stuck' (Esedoglu-Ruuth-Tsai citing MBO 1994); orientation-dependent pinning regimes (Misiats-Yip 2016).",
+            "evidence": [
+              "teams/prior/results-pin.json",
+              "teams/prior/pin.log",
+              "teams/prior/citations-log.md"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "n=16: loss/step 0.1302 at R=2, 0.1081 (R 2.25), 0.0924 (2.5), 0.0677 (2.75), 0.0234 (3), 0 (4); n=32: >=0.1068 for all R<=6; theory 0.1257",
+            "refuteBy": "Repeat with disk centres at random sub-cell offsets. Pinning at R<=1.28 for n=32 refutes the measured part. An axis-aligned flat with small imposed curvature that moves freely refutes the inference."
+          },
+          {
+            "id": "volume-nonlocal",
+            "kind": "limitation",
+            "statement": "Without volume the engine has a hard reach of ceil(3s) = 20 sub-cells = 0.625 blocks per step (n=32 2D, n=16 3D). With volume, each bubble's pressure lambda is global (Young-Laplace), so an edit changes the shape far away. Inference for amorfus: apron 3 can host NOVOL-T for T<=4; volume-preserving regimes need the per-cluster pressure computed outside the chunk job.",
+            "evidence": [
+              "teams/prior/results-locality.json",
+              "teams/prior/locality.log"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "A bar grown from 6 to 10 blocks, labels compared at x<2 (4 blocks away): NOVOL-6 0 differing cells, FINITE-6 (volume) 106 of 9216, FID-0.15 0 (not converged in 200 steps), FID-0.15 without volume 0",
+            "refuteBy": "Find NOVOL-T differences beyond T*0.625 blocks. Or find volume-on FINITE runs with zero differences at the same distance across several geometries, which would mean the lambda coupling is negligible in practice."
+          },
+          {
+            "id": "sigma-stability-class",
+            "kind": "engine",
+            "statement": "The engine's tension matrix (solid-air 1, different materials g, same material separate clusters 0.05) is conditionally negative semi-definite in every tested phase set for g <= 2. That puts it inside Esedoglu-Otto's Proposition 1 class: each step dissipates the nonlocal energy, given a kernel with G >= 0 and Fourier transform >= 0. For g > 2 the triangle inequality fails, because an air film is cheaper than an A-B wall (dewetting); at g=2.5 with 22 phases the matrix also leaves the stability class.",
+            "evidence": [
+              "teams/prior/sigma-check.json",
+              "teams/prior/sigma-check.mjs",
+              "teams/prior/citations-log.md"
+            ],
+            "confidence": "measured",
+            "numbers": "g in {0.1,...,2}, 3-22 phases: max projected eigenvalue <= 0; g=2.5: triangle slack -0.5, max eigenvalue +0.141 with 7 materials x 3 clusters",
+            "refuteBy": "Find a phase set with g <= 2 and eps 0.05 whose largest eigenvalue on sum-zero vectors is positive."
+          },
+          {
+            "id": "tent-kernel",
+            "kind": "optimization",
+            "statement": "A separable tent kernel (box*box, two running sums per axis) satisfies Esedoglu-Otto's kernel conditions (G >= 0, Fourier transform sinc^2 >= 0). It blurs about 2x faster than the engine's truncated Gaussian at the same scale. It is anisotropic, and the gain for a whole step was not measured.",
+            "evidence": [
+              "teams/prior/results-blurbench.json",
+              "teams/prior/blurbench.mjs"
+            ],
+            "confidence": "measured",
+            "numbers": "96^3 = 884,736 cells, s=3.2 sub-cells: Gaussian 21 taps median 122.2 ms vs tent (box 7, variance 8) median 59.5 ms, speed-up 2.05 (runs 86-206 vs 42-92 ms; noisy)",
+            "refuteBy": "Repeat the benchmark with a variance-matched tent (box 9) and whole-step timing. A speed-up below 1.2x refutes the optimization's value."
+          },
+          {
+            "id": "one-step-is-blobby",
+            "kind": "pattern",
+            "statement": "At g=1 with one cluster per material, the engine's costs reduce to psi_i = 1 - u_i for solids and Sall = 1 - u_air for air. One unconstrained threshold step is then exactly the argmax of the per-material Gaussian-blurred block indicators, air included. That is a multi-material blobby/convolution surface (Blinn 1982; Bloomenthal-Shoemake 1991) with selective blending by group (Kacic-Alesic and Wyvill 1991, citing Beier 1990): same material blends (unites), different materials do not. At s=0.2 blocks a lone block keeps about 0.96 of its centre density, so it survives, unlike PLAN 7.7's rejected wide blur.",
+            "evidence": [
+              "lib/mbo.mjs",
+              "teams/prior/citations-log.md"
+            ],
+            "confidence": "inferred",
+            "numbers": "psi_i = (1-Sall) + g(Sall - sm) + eps(sm - u_i) = 1 - u_i at g=1, sm=u_i; lone-block centre u ~ erf(0.5/(0.2*sqrt2))^3 ~ 0.96",
+            "refuteBy": "Run one engine step (volume false, g=1, one cluster per material) and find a cell whose new label differs from the argmax of the blurred indicators including air."
+          },
+          {
+            "id": "power-diagram-no-smoothing",
+            "kind": "limitation",
+            "statement": "Power-diagram foam models (Busaryev-Dey-Wang-Ren 2012) place walls on radical planes between weighted sites. With one site per block and equal weights (unit volumes) the power diagram is the Voronoi diagram of the lattice, i.e. the block faces themselves, so it adds no smoothing of material walls. It helps only at cluster level, for FREE-like spheres.",
+            "evidence": [
+              "teams/prior/citations-log.md"
+            ],
+            "confidence": "inferred",
+            "refuteBy": "Show a per-block weighting that respects the blocks' unit volumes and yields walls that are not lattice planes."
+          }
+        ],
+        "images": [
+          {
+            "path": "teams/prior/img/sheet-x2d.png",
+            "caption": "2D sq2-ABCD (four materials), FREE regime, n=32. The X persists at jitter 0 and under frozen or re-drawn 1e-2 jitter. A seeded T1 nucleus of radius 4 or 16 sub-cells survives as a short wall whose length depends on the nucleus (pinning). Re-drawn jitter 0.1 for 100 steps plus a quench gives an A-D or a B-C wall."
+          },
+          {
+            "path": "teams/prior/img/sheet-x3d.png",
+            "caption": "3D sq2-ABCD slab (2x1x2), FREE regime, n=16, plan slices. The four-film line persists at jitter 0 and with re-drawn 1e-2 jitter. Re-drawn 0.1 plus a quench resolves it: seed 2 has a single B-C wall; seed 1 has an A-D wall low (y=0.2) and a B-C wall high (y=0.8), so all pairs touch."
+          },
+          {
+            "path": "teams/prior/img/sheet-neumann.png",
+            "caption": "2D pair-diff, FREE regime, n=64, A-B tension g = 0.5 / 1 / 1.5. The neck narrows as g grows; wall half-lengths 0.672 / 0.547 / 0.391 against Young/Neumann theory 0.674 / 0.545 / 0.387."
+          },
+          {
+            "path": "teams/prior/img/sheet-fid-tvl1.png",
+            "caption": "2D 4x4-block square, FID-k regime without the volume solve (the TV-L1 analogue), n=64, k = 0.1 / 0.15 / 0.3. Corner radius 0.75 / 0.48 / 0.22 blocks against the derived s/(k*sqrt(2*pi)) = 0.80 / 0.53 / 0.27."
+          }
+        ],
+        "optimizations": [
+          {
+            "idea": "Decide T1s per lattice edge with a small table over the equality pattern of the 4 blocks around the edge (52 patterns, 17 classes, 7 with an X). Give the central film to the lower-tension diagonal, break ties with an explicit policy (e.g. connect the locally minority material so painted lines stay whole; that is the owner's call), and check corners only for more than 4 regions. Keep geometry separate from this topology step.",
+            "basis": [
+              "Lorensen & Cline 1987 (case table)",
+              "Hege et al. 1997 ZIB SC-97-05 and Wu & Sullivan 2003 IJNME 58 (multi-material MC)",
+              "Nielson & Hamann 1991 (asymptotic decider)",
+              "Brakke 1992 Surface Evolver pop / t1_edgeswap",
+              "Kong & Rosenfeld 1989 (connectivity pairs)",
+              "Taylor 1976; Morgan 1994 (Plateau)",
+              "this team's corner-classes.json and the (tau - sqrt2)L derivation"
+            ],
+            "gain": "Replaces the random noise the engine needs to escape X junctions with a deterministic, local, integer decision that fits the golden-hash rule. The table is tiny (52 entries per edge; 21,147 / 738 classes if indexed per corner).",
+            "risks": "The tie policy is taste, not physics. Decisions on the edges of one corner must be mutually consistent. A tie-break that favours thin painted lines may fill dither and checker patterns."
+          },
+          {
+            "idea": "Junction-line fairing as in Frisken 2022: vertices on lines where three or more phases meet (the A|B|air seams on the surface) are smoothed along the line only, other vertices over the surface, all inside a cell-bounded range (the repo's 7.4 constraint box).",
+            "basis": [
+              "Frisken 2022 JCGT 11(1) (EdgeVertex vs SurfaceVertex fairing, AllowedRange)",
+              "Gibson 1998 MICCAI (constrained surface nets)",
+              "Plateau-border / triple-line straightening by wall tension (Young; Mullins 1957)"
+            ],
+            "gain": "Straight, smooth material seams on the surface at surface-nets cost, local and deterministic: the closest existing algorithm to 'smoothness of boundaries'.",
+            "risks": "Does not decide X junctions (needs the per-edge table). Frisken uses one vertex per cell, while amorfus splits vertices per (corner, material), so it must be adapted. Painted lines still need the tie policy."
+          },
+          {
+            "idea": "Set the FID strength from the TV-L1 scale law: without volume, convex corners round to r = s/(k*sqrt(2*pi)); features below radius 2/lambda_eff (lambda_eff = k*sqrt(2*pi)/s) vanish in the global minimizer.",
+            "basis": [
+              "Chan & Esedoglu 2005 SIAM J. Appl. Math. 65 (TV-L1 geometry, disk threshold 2/r)",
+              "results-fid.json (82-95 % agreement)"
+            ],
+            "gain": "Pick k for a target rounding radius and predict which features disappear, without parameter sweeps.",
+            "risks": "The volume solve breaks the law (rounding suppressed; k=0.15 oscillates). Without volume a lone block may vanish at k=0.15 (inferred, not run). 3D corners follow sum-of-curvatures, so a sphere corner rounds twice as wide as a cylinder edge."
+          },
+          {
+            "idea": "Replace the truncated Gaussian blur by a separable tent kernel (box*box via running sums), or design the anisotropy deliberately to keep a blocky-but-soft look.",
+            "basis": [
+              "Esedoglu & Otto 2015 CPAM 68, condition (49): G >= 0 and Fourier transform >= 0",
+              "Esedoglu, Jacobs & Zhang 2017 JCP (kernel to anisotropic tension)",
+              "Ishii, Pires & Souganidis 1999 (general kernels)",
+              "Kacic-Alesic & Wyvill 1991 (compact radius of influence)",
+              "results-blurbench.json"
+            ],
+            "gain": "Measured 2.05x faster blur at s=3.2 on 885k cells (blur only); compact support by construction.",
+            "risks": "Anisotropic surface tension changes the look. Whole-step speed-up not measured; the volume solve and assignment may dominate. Timings were noisy."
+          },
+          {
+            "idea": "Budget locality explicitly: NOVOL-T reaches T*0.625 blocks, so T<=4 fits the 3-block apron. Volume-preserving regimes need a global per-cluster pressure computed outside the chunk mesh job.",
+            "basis": [
+              "Young-Laplace (one pressure per bubble)",
+              "results-locality.json",
+              "lib/mbo.mjs gaussKernel truncation at ceil(3s)"
+            ],
+            "gain": "Seam-safe chunk meshing with a known apron.",
+            "risks": "NOVOL is mean-curvature flow: small features shrink and vanish (PLAN 7.4 guards apply). Computing a global pressure per cluster does not fit the current per-chunk job model."
+          },
+          {
+            "idea": "In the research engine only: re-draw the jitter every step (temperature), then quench, to escape symmetric X junctions and local minima.",
+            "basis": [
+              "Jacobs, Merkurjev & Esedoglu 2018 JCP 354, sec. 3.4 (temperature; Weaire-Phelan from a shifted cubic lattice)",
+              "results-anneal.json, results-abcd3d-anneal.json"
+            ],
+            "gain": "X resolved in 5/5 (2D) and 3/3 (3D) runs, where frozen noise failed in 6/6.",
+            "risks": "Random, so not for the game. Results vary with seed (A-D vs B-C wall; one wall vs both)."
+          },
+          {
+            "idea": "Use a sub-cell representation in the research engine (signed distance, or area fractions interpolated from psi - lambda) to remove pinning from study results.",
+            "basis": [
+              "Esedoglu, Ruuth & Tsai 2010 JCP 229",
+              "Ruuth 1998 JCP 144",
+              "Jacobs et al. 2018 sec. 4 sub-pixel trick",
+              "Misiats & Yip 2016"
+            ],
+            "gain": "Equilibrium shapes that do not depend on the seed (fixes the frozen T1 wall lengths and part of the Neumann error at n=32).",
+            "risks": "Improves the research, not the game. Signed-distance variants need redistancing every step."
+          },
+          {
+            "idea": "Power-diagram walls (radical planes) for bubble walls.",
+            "basis": [
+              "Busaryev, Dey, Wang & Ren 2012 TOG 31(4)"
+            ],
+            "gain": "Closed-form walls for cluster-level spheres (FREE-like scenes only).",
+            "risks": "With equal block weights the power diagram is the block grid, so no smoothing of material walls. Low value for amorfus."
+          }
+        ],
+        "openQuestions": [
+          "Tie policy for A B / B A lattice edges (the owner's painted diagonal line): should the line or the background connect? Physics does not decide; prior art offers only conventions ((8,4) connectivity, the asymptotic decider).",
+          "Should volume conservation be part of any game rule at all? It makes the model non-local (106 cells changed 4 blocks from an edit) and suppresses or destabilises FID rounding.",
+          "Is the FID + volume 2-cycle (k=0.15, 336/680 cells flipping every step) an artefact of the engine's Jacobi quantile volume solve or inherent? Test with an exact auction-dynamics volume solve on the same 4x4 square.",
+          "In 3D sq2-ABCD, which has lower energy: the pairwise-touching (tetrahedral-cone) cluster of seeds 1 and 3, or the single wall of seed 2? A Surface Evolver run would settle it.",
+          "How strong is pinning on grid-aligned flat faces and on volume-constrained shapes near equilibrium, which the disk test does not cover?",
+          "What A-B tension g gives the preferred balance between seam groove depth (opening angle 2acos(g/2)) and seam straightening? This needs a 3D seam test across g under FID.",
+          "REPORT.md could not be written: the harness refused report files from subagents. Should the orchestrator write it from this structured result?"
+        ],
+        "reportPath": "NOT WRITTEN: the harness refused REPORT.md from this subagent ('Subagents should return findings as text'). The report content is in this structured result. Citation evidence: teams/prior/citations-log.md; results and scripts are in teams/prior/"
+      },
+      {
+        "team": "phys",
+        "summary": "I tested lib/mbo.mjs (FREE regime) three ways: against closed-form bubble geometry (exact.mjs), against an independent 2D foam solver I wrote (foam2d.mjs), and over the whole catalogue plus 8 extra configurations, with jitter 1e-3 and seeds 1 and 2. The solver uses polyline films, Lagrange-multiplier area constraints and T1 splits. Against the closed forms it reaches 2e-4 relative energy at h 0.04 and 5e-5 at h 0.02, junction angles of 120 ± 0.09°, and pressures within 0.03 % (cross2d/solvercheck.json).\n\nThe engine is trustworthy for single bubbles and small clusters:\n- Sphere radii are within 0.2 %, and its pressure follows Young–Laplace, λ = (2/R)·s_b/√(2π), to 1–3 %.\n- Two-cluster results match the exact double bubble to a few percent.\n- 2D interfaces converge to the exact films (mean 0.002 blocks at n 128).\n- Bubble–bubble–bubble junctions measure 120.0 ± 0.6°.\n\nIt is not trustworthy in five places:\n- **Blur width:** its limit at fixed blur s is a slightly different model. The junction circle is +6 % at n 32 and s 0.2, and +10–12 % at s 0.3. Junctions involving air are too wide: about +9° at s 0.2 and about +20° at s 0.3.\n- **Pinning:** it stalls whenever a bubble's radius exceeds R_pin = 2·s_b²·n (1.28 blocks at the default n 16, about 9 blocks of volume). Large clusters stay as rounded boxes, and walls with a radius above R_pin stay flat on lattice planes.\n- **Exact ties:** it keeps unstable four-fold junctions, always for four materials and for a symmetric checkerboard without jitter.\n- **Merges:** a merged phase can split into disconnected parts that share one pressure.\n- **Contact rule:** for two materials touching along an edge it adheres at s 0.2 and separates at s 0.1.\n\nOn the physics:\n- Lattice four-fold junctions always split at once, and the diagonal pair with the higher pressure (the smaller cluster; air counts as 0) becomes connected. The engine follows this in every unequal case: 16 of 16 runs in 2D and 4 of 4 in 3D.\n- This local rule can pick a higher-energy end state than the global minimum: 12.916 against 12.243 in checker-smallA.\n- Chains of three bubbles have a neutral bending mode.\n\nWith these corrections, pattern (a) holds: cluster graph plus volumes decides, once lattice junctions are resolved by the pressure rule, up to that bending mode and exact ties. Pattern (b) holds except at engine-pinned exact ties. Pattern (c) holds: sphere, double-bubble and triple-bubble formulas predict the small results without simulating.\n\nThe deliverable REPORT.md was not written: the harness refused writing a report .md file, so the full report is carried in this result. All data, scripts and images are in teams/phys/, backed up to <backup>/teams/phys/.\n\nMethod notes:\n- lib/ was not edited.\n- One heavy node process ran at a time, with --max-old-space-size=700.\n- Grids stayed at or below 1.15 M cells. Three big scenes ran at n 12: ball-r2, ball-AB and terrain-step.\n- 361 raw renders were deleted to keep 22 images; the scripts regenerate them with fixed seeds.",
+        "claims": [
+          {
+            "id": "C1",
+            "kind": "engine",
+            "statement": "Single bubbles are right: the radius fitted to the final labels of a 1-, 2- and 8-block FREE bubble is within 0.2% of (3V/4π)^(1/3) at every tested setting with s_b ≥ 0.2 (n 12–32). The engine's pressure (volume multiplier λ during the run) obeys Young–Laplace in engine units, λ = (2/R)·s_b/√(2π), to within 1% for V ≤ 3 and 3.2% for V ≤ 8.",
+            "evidence": [
+              "teams/phys/val3d/n16-s0.2.json",
+              "teams/phys/val3d/n32-s0.2-m0.5.json",
+              "teams/phys/laws/sphere-lambda.json"
+            ],
+            "confidence": "measured",
+            "numbers": "V1 at n16: R fit 0.6205 vs 0.6204, λ 0.2575 vs 0.2572. V8 at n32: R 1.2411 vs 1.2407. Catalogue λ errors: single −0.9%, pair-same +0.6%, line3 −0.3%, sq2-same +2.4%, plus5 +3.2%, cube2 +1.2%, ring8 −0.5%.",
+            "refuteBy": "A FREE bubble with V ≤ 8, s_b ≥ 0.2 and n ≥ 12 whose fitted radius is off by more than 1%, or whose λ is off by more than 5% from (2/R)·s_b/√(2π)."
+          },
+          {
+            "id": "C2",
+            "kind": "limitation",
+            "statement": "At fixed blur the engine converges to a slightly wrong model, not to exact physics. Holding s_b = 0.2 and raising n, the equal double bubble's junction circle moves further from the exact value (+3.0% at n16, +6.4% at n32). At s_b = 0.3 it is +10–12%. Away from junctions the 2D shapes do converge to the exact films.",
+            "evidence": [
+              "teams/phys/val3d/n16-s0.2.json",
+              "teams/phys/val3d/n24-s0.2-m0.5.json",
+              "teams/phys/val3d/n32-s0.2-m0.5.json",
+              "teams/phys/val3d/n16-s0.3.json",
+              "teams/phys/val3d/n24-s0.3-m0.5.json",
+              "teams/phys/cross2d/pair-diff.json"
+            ],
+            "confidence": "measured",
+            "numbers": "pair-diff junction radius a (exact 0.5685): 0.586 (n16, s.2), 0.602 (n24, s.2), 0.605 (n32, s.2), 0.627 (n16, s.3), 0.636 (n24, s.3). Wall-to-tip (exact 0.9847): 1.000 / 0.958 / 0.968 / 0.938 / 0.958. 2D mean / max distance to the exact films: 0.018/0.040 (n32), 0.0037/0.013 (n64), 0.0020/0.014 (n128).",
+            "refuteBy": "An n ≥ 48 FREE pair-diff run at s_b 0.2 whose label-measured junction radius is within 2% of 0.5685."
+          },
+          {
+            "id": "C3",
+            "kind": "limitation",
+            "statement": "Junction angles are right where three bubbles meet (120.0 ± 0.6°). Where air is one of the three phases, the engine's air sector is too wide, and the excess grows with the blur: about +9° at s_b 0.2, +20° at s_b 0.3 and +3° at s_b 0.1, judged against the same tool applied to the rasterised exact solution. The distortion is confined to a zone of about s around the junction.",
+            "evidence": [
+              "teams/phys/val3d/n32-s0.2-m0.5.json",
+              "teams/phys/cross2d/L3-ABC.json",
+              "teams/phys/cross2d/pair-diff.json",
+              "teams/phys/cross2d/anglecal-r0.35.json",
+              "teams/phys/cross2d/anglecal-r0.5.json"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "3D L3-ABC A|B|C junction at n32: 119.97 / 120.62 / 119.41°. 2D pair-diff air sector: 128° (n128, s.2) against an exact-raster reading of 117.9°; 130° (n64, s.3) against 110.0°; 121° (n128, s.1) against 117.9°. 3D fitted-sphere air sector: 117–125° at s.2, 129–133° at s.3. At n ≤ 32 the measuring tool is biased −8 to −25° on air sectors.",
+            "refuteBy": "An n128 s_b 0.2 2D engine run whose air sector, measured with labtools.anglesAt (rOut 0.35), is within ±3° of the calibrated exact reading of 117.9°."
+          },
+          {
+            "id": "C4",
+            "kind": "physics",
+            "statement": "Where four bubbles meet at a point, the engine forms isolated tetrahedral vertices as Plateau requires. L3-ABC becomes the standard triple bubble with exactly two compact 4-phase points. The 109.47° angle is consistent only on average and is not resolved at affordable n.",
+            "evidence": [
+              "teams/phys/val3d/n32-s0.2-m0.5.json",
+              "teams/phys/val3d/n24-s0.2-m0.5.json"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "Angles between triple lines at n32: 113.7, 116.1, 96.2, 121.5, 102, 101.3 (mean 108.5°). At n24: 90–124° (mean 107.9°).",
+            "refuteBy": "A higher-resolution measurement (n ≥ 48, cropped box, or a 3D surface solver) whose mean differs from 109.47° by more than 5°, or one showing a 4-phase line instead of points."
+          },
+          {
+            "id": "C5",
+            "kind": "engine",
+            "statement": "Pinning law: one MBO step moves an interface by about κ·s²/2 and stalls below a sub-cell of motion. A flat face therefore advances only if 2/R > 1/(s_b²·n). Bubbles with R > R_pin = 2·s_b²·n blocks (2D: s_b²·n) end as rounded boxes and are reported as converged. At default settings (n16, s 0.2) R_pin is 1.28, roughly 9 blocks of volume. Walls whose exact radius exceeds R_pin stay exactly planar on a lattice plane.",
+            "evidence": [
+              "teams/phys/pinning/results.json",
+              "teams/phys/laws/sphere-lambda.json",
+              "teams/phys/val3d/n32-s0.2-m0.5.json",
+              "teams/phys/cross2d/slab-line.json"
+            ],
+            "confidence": "measured",
+            "numbers": "Radial spread/R: runs with R/R_pin ≥ 1.45 give 0.20–0.31 (cube3 n16 s.2 0.203; cube4 0.241; n12 s.2 0.267 / 0.307). Runs with R/R_pin ≤ 0.97 give 0.03–0.07 (cube4 n16 s.3 0.030; cube3 n24 s.2 0.053). Runs at 1.15–1.29 give 0.089–0.094. Catalogue: tunnel V30 λ +43.6%, stairs V12 λ +5.9%. The 1:2 wall (exact radius 3.99 > 2.56) has plane rms 0 at n12–32. 2D slab-line at n32: mean / max 0.56/1.24 blocks from equilibrium, energy +7.0%.",
+            "refuteBy": "A FREE cube with R/R_pin ≥ 1.45 that reaches radial spread < 0.10, or one with R/R_pin ≤ 0.95 that stalls with spread > 0.15."
+          },
+          {
+            "id": "C6",
+            "kind": "physics",
+            "statement": "Lattice four-fold junctions (a 2D corner or a 3D edge with four regions) are never equilibria. They split immediately, and the diagonal pair with the higher pressure (the smaller cluster; air counts as 0) becomes connected. This covers: same material across an air diagonal unites (diag-edge); three bubbles around air form a film between the corner-touching pair (L3-ABC); the slab-line A's unite into a band; the single-block pair unites in unequal checkerboards, whatever its material. The engine agrees whenever the pressures differ.",
+            "evidence": [
+              "teams/phys/cross2d/checker-smallA.json",
+              "teams/phys/cross2d/checker-smallB.json",
+              "teams/phys/cross2d/diag-edge.json",
+              "teams/phys/cross2d/L3-ABC.json",
+              "teams/phys/cross2d/slab-line.json",
+              "teams/phys/free/results.json"
+            ],
+            "confidence": "measured",
+            "numbers": "The solver's split decision comes one step after the hold, e.g. slab-line A-A rate 1.4174 against B-B 1.4110; L3-ABC B|C 0.4171 against A|air 0.4113. The engine picks the same pair in checker-smallA and checker-smallB: 16 of 16 2D runs (n32 and n64, jitter 0 and 1e-3) and 4 of 4 3D runs. Also diag-edge 10/10, L3-ABC 10/10, and slab-line 2D 5/5 and 3D 2/2 (A band). Exact-film distance at n64 for checker-smallA: 0.011/0.028.",
+            "refuteBy": "Any exact-solver or engine run without an exact pressure tie in which the lower-pressure diagonal pair of a lattice four-fold junction becomes connected."
+          },
+          {
+            "id": "C7",
+            "kind": "limitation",
+            "statement": "At exact pressure ties the engine keeps the non-physical four-fold junction. sq2-checker with jitter 0 keeps its X at every n (32–128) and s_b (0.1–0.2). sq2-ABCD keeps it at every n and jitter tried, sitting on the unstable X-constrained stationary state. The true minimum has a film about 0.46 blocks long between one diagonal pair and different pressures. In 3D the X persists as a 4-fold line.",
+            "evidence": [
+              "teams/phys/cross2d/sq2-ABCD.json",
+              "teams/phys/cross2d/sq2-checker.json",
+              "teams/phys/free/results.json"
+            ],
+            "confidence": "measured",
+            "numbers": "sq2-ABCD solver energies: split 11.1884, X kept 11.2916 (+0.92%). Engine distance to the X state: 0.0022/0.0106 (n64), 0.0018/0.0125 (n128). Distance to the true minimum: 0.067/0.143. Engine pressures are uniform at 1.400 (n128); exact are 1.441 (B, C) and 1.357 (A, D). In 3D the 4-fold line has extent 1.25 blocks (both seeds), plus sq2-checker seed 1 at 1.375. With jitter 1e-3 the 2D checker unites one pair: A in 2 of 3 runs at n32, then B and A at n64, B at n128.",
+            "refuteBy": "An engine FREE run of sq2-ABCD (any n, jitter ≤ 1e-2) that ends with a film between a diagonal pair, or a jitter-0 sq2-checker run that unites a pair."
+          },
+          {
+            "id": "C8",
+            "kind": "physics",
+            "statement": "Uniting is decided locally by pressures at lattice junctions, not by the global energy. In checker-smallA, physics and the engine both unite the single-block pair, giving energy 12.916, although uniting the two 2-block clusters would give 12.243. A 'minimise energy over cluster graphs' predictor would therefore be wrong.",
+            "evidence": [
+              "teams/phys/cross2d/checker-smallA.json",
+              "teams/phys/cross2d/checker-smallB.json",
+              "teams/phys/cross2d/slab-line.json"
+            ],
+            "confidence": "measured",
+            "numbers": "checker-smallA: rule outcome E 12.9158, forced B-union E 12.2433 (5.2% lower). In slab-line the rule outcome is also the lower one: 31.5168 against 39.5767.",
+            "refuteBy": "A time-dependent run (solver or engine at n ≥ 64) without an exact tie that reaches the B4 state from the checker-smallA blocks."
+          },
+          {
+            "id": "C9",
+            "kind": "engine",
+            "statement": "The engine has two merge artefacts. (1) A merged phase can come apart into disconnected parts that share one volume and pressure, and is still counted as one united bubble. (2) Sub-cell noise can unite both diagonal pairs of a 2D checkerboard in a single step, which is impossible in a plane.",
+            "evidence": [
+              "teams/phys/free/results.json",
+              "teams/phys/free/merge-timing.log",
+              "teams/phys/free/log.txt"
+            ],
+            "confidence": "measured",
+            "numbers": "sq2-checker 3D seed 1 merged at steps 24 and 27 and ended with both phases in 2 parts, a 4-fold line of extent 1.375 and 5-phase corners. slab-line 3D seed 2: B30 in 2 parts (B merge at step 34). 2D sq2-checker with jitter 1e-2, seed 4: 2 merges at step 1.",
+            "refuteBy": "Re-run sq2-checker 3D seed 1 and slab-line 3D seed 2 with a connected-components check after every merge: if no phase ever has more than one part, the claim is wrong."
+          },
+          {
+            "id": "C10",
+            "kind": "physics",
+            "statement": "A chain of three bubbles (A|B|A) has a neutral mode. Both outer arcs of the middle bubble lie on one circle, so rotating an end bubble about that circle's centre changes neither length nor any area. Chain shapes form a one-parameter family; bending is free until the ends touch and could then unite.",
+            "evidence": [
+              "teams/phys/cross2d/line3-ABA.json"
+            ],
+            "confidence": "measured",
+            "numbers": "From the solver polylines: B's outer arcs have centres (1.5, 0.502) and (1.5, 0.498), radius 0.69810 and 0.69808. Pressures are A 1.5650 and B 1.4345; 1/R_B = 1.4325. The wall radius fits 7.73 against 1/(pA − pB) = 7.66.",
+            "refuteBy": "A solver or engine run started from a bent A|B|A chain that returns to straight, or one whose energy depends on the bend angle by more than the discretisation error (about 1e-4)."
+          },
+          {
+            "id": "C11",
+            "kind": "limitation",
+            "statement": "Two different materials touching only along an edge (diag-edge-diff) is not decided by physics: both separating and adhering lower the energy. Steepest descent separates; adhesion leads to the lower-energy double bubble. The engine's choice depends on the blur: it adheres at s_b 0.2 and separates at s_b 0.1.",
+            "evidence": [
+              "teams/phys/cross2d/diag-edge-diff.json",
+              "teams/phys/free/results.json"
+            ],
+            "confidence": "measured",
+            "numbers": "Solver: separate, E 7.0907. Equal double bubble: 6.359 (exact.mjs). Split rates at the X: separate 1.414, adhere 0.414. Engine at s_b 0.2: adheres in 2D (n32, n64, n128; jitter 0 and 1e-3: 9/9) and in 3D (n16, 2/2). At s_b 0.1, n64: separates, distance 0.0066/0.019 to the separated solution.",
+            "refuteBy": "An s_b 0.2 engine run that separates diag-edge-diff, or an s_b 0.1 run that adheres."
+          },
+          {
+            "id": "C12",
+            "kind": "pattern",
+            "statement": "Pattern (a) holds for physics, with qualifications: the free equilibrium is set by the contact graph after lattice junctions are resolved by the pressure rule (C6, C11) and by the volumes, up to neutral modes (C10). It is not unique at exact ties. The face-contact graph alone does not decide. The engine adds about 5% dependence on block arrangement through pinning.",
+            "evidence": [
+              "teams/phys/doubles/results.json",
+              "teams/phys/free/results.json",
+              "teams/phys/cross2d/L3-ABA.json",
+              "teams/phys/cross2d/line3-ABA.json"
+            ],
+            "confidence": "measured",
+            "numbers": "Same volumes 1:2 in four arrangements (row-ABB, L-ABB, L3-AAB, row-AAB): r1 0.670–0.676, r2 0.805–0.810, a 0.640–0.652. V3 spheres (line3, L3, pillar3): λ 0.1778 / 0.1778 / 0.1789. Counterexamples to the face graph alone: line3-ABA stays a chain while L3-ABA unites its A's (A2|B1); line3-ABC is a chain while L3-ABC is a triple bubble. Engine arrangement dependence: sq2-AABB against row-AABB, a 0.768 / 0.746 and length 2.372 / 2.498.",
+            "refuteBy": "Two block arrangements with the same contact graph after junction resolution and the same volumes whose exact (solver) equilibria differ by more than the neutral modes."
+          },
+          {
+            "id": "C13",
+            "kind": "pattern",
+            "statement": "Pattern (c): for small clusters the free result is predictable without simulating. One cluster becomes a sphere of radius (3V/4π)^(1/3). Two face-touching clusters become the standard double bubble of the two volumes (exact.mjs: outer radii meeting at 120°, wall radius r1·r2/(r2 − r1) bulging into the larger bubble). Pressure goes as 1/R, and the smaller bubble has the higher pressure. This prediction fails for clusters beyond the pinning radius.",
+            "evidence": [
+              "teams/phys/doubles/results.json",
+              "teams/phys/exact.mjs",
+              "teams/phys/laws/sphere-lambda.json"
+            ],
+            "confidence": "measured",
+            "numbers": "For 15 two-cluster configurations with V ≤ 8 (n16): outer radii within −0.7% to +5.5% of exact, junction radius within +1.6% to +10.2%, λ within 4% of 2/r·s_b/√(2π). Pinned outliers: slab-dot (B24) r1 +65%; ball-AB at n12 r1 +13%.",
+            "refuteBy": "A two-cluster configuration with V ≤ 7 whose engine (n16, s 0.2) outer radii differ from the exact double bubble of the same volumes by more than 6%."
+          },
+          {
+            "id": "C14",
+            "kind": "pattern",
+            "statement": "Pattern (b): in the FREE engine results, Plateau structure (sheets, triple lines, isolated 4-phase points) holds for 42 of 44 configurations. Junctions of four or more bodies appear as 4-fold lines and 5-phase corners only where four bodies sat symmetrically around a lattice edge (sq2-ABCD in both seeds, sq2-checker in seed 1). Eight blocks around a lattice vertex (cube2-checker, cube2-octants) always resolved.",
+            "evidence": [
+              "teams/phys/free/results.json"
+            ],
+            "confidence": "measured",
+            "numbers": "The census counts by connected component. Isolated points: L3-ABC 2, sq2-AABC 2, cube2-octants 5 (extent ≤ 0.063). Lines: sq2-ABCD extent 1.25 with hist[5] = 2; sq2-checker seed 1 extent 1.375. All other configurations have no corner with ≥ 4 bodies.",
+            "refuteBy": "Re-run the census (freecat.mjs) on any of the 42 'clean' configurations and find a 4-body component with extent > 0.25 block, or find a 4-fold line in the exact solver."
+          },
+          {
+            "id": "C15",
+            "kind": "look",
+            "statement": "Seams between different materials stay on block faces in the engine at its default resolution, even where physics moves them by about 0.1 block. Examples: in 2D at n32 the A|B wall of a 1:2 double bubble and both walls of A|B|A stay on lattice lines, and in 3D the 1:2 wall stays exactly planar. This is pinning (C5), not physics, so 'boundaries stay on the lattice' in engine pictures must not be read as a bubble law.",
+            "evidence": [
+              "teams/phys/cross2d/row-ABB.json",
+              "teams/phys/cross2d/line3-ABA.json",
+              "teams/phys/val3d/n32-s0.2-m0.5.json"
+            ],
+            "confidence": "measured",
+            "numbers": "row-ABB 2D n32: mean / max 0.059/0.154 from exact, against 0.003/0.011 at n128. line3-ABA: 0.060/0.110 at n32, 0.005/0.014 at n128. Exact walls sit at x = 1.107 and 1.893 (solver junctions). 3D row-ABB wall plane rms 0 at n12, 16, 24 and 32.",
+            "refuteBy": "A 2D n32 s_b 0.2 run of row-ABB whose A|B wall is off the lattice line x = 1 by at least 0.1 block, matching the exact wall."
+          }
+        ],
+        "images": [
+          {
+            "path": "teams/phys/sheets/free-catalogue-1.png",
+            "caption": "Free foam, part 1: before / after / slice for single through sq2-AABC (FREE n16, jitter 1e-3, seed 1; the seed-2 outcome is in the label when it differs)."
+          },
+          {
+            "path": "teams/phys/sheets/free-catalogue-2.png",
+            "caption": "Free foam, part 2: sq2-ABCD through stairs (FREE n16). It shows the persisting 4-fold X of sq2-ABCD, diag-edge uniting against diag-corner separating, cube2-octants as a 4-bubble cluster, and ring8 closing to a sphere."
+          },
+          {
+            "path": "teams/phys/sheets/free-catalogue-3.png",
+            "caption": "Free foam, part 3: row/L variants, L3-ABA, slab-dot/-line/-stripe, tunnel, ball-r2 and ball-AB (n12), terrain-step (n12), and checker-smallA/B (FREE). Pinned big clusters (tunnel box, lumpy terrain) and the pressure rule (the single pair unites) are visible."
+          },
+          {
+            "path": "teams/phys/sheets/free-seeds.png",
+            "caption": "FREE n16, seed 1 against seed 2. sq2-checker: four-lobe artefact with merged-but-split phases against an A2|B2 double bubble. slab-line: the same shape, but B is one phase in two parts in seed 2."
+          },
+          {
+            "path": "teams/phys/sheets/cross2d.png",
+            "caption": "2D engine labels (colours) against exact solver films (white), FREE at n32/64/128, s 0.1/0.2, jitter 0 or 1e-3. It shows: walls stuck on lattice lines at n32; the persisting X of sq2-ABCD up to n128; random checker union; adhesion against separation in diag-edge-diff; the pressure rule in checker-small; pinned slab-line lobes."
+          },
+          {
+            "path": "teams/phys/sheets/pinning.png",
+            "caption": "Pinning law: mid-slices of FREE cubes of 8, 27 and 64 blocks and the tunnel at (n, s_b) = (12, .2), (16, .2), (24, .2), (12, .3), (16, .3). Each is labelled with R, R_pin = 2·s_b²·n and radial spread; when R > R_pin the cubes stall as rounded boxes."
+          },
+          {
+            "path": "teams/phys/free/sq2-ABCD-s1-view.png",
+            "caption": "sq2-ABCD, FREE n16 seed 1: four bubbles around a persisting 4-fold line junction (non-Plateau; exact physics splits it)."
+          },
+          {
+            "path": "teams/phys/free/sq2-ABCD-s1-slice.png",
+            "caption": "sq2-ABCD, FREE n16 seed 1, plan slice: an X where four films meet at 90°."
+          },
+          {
+            "path": "teams/phys/free/sq2-checker-s1-view.png",
+            "caption": "sq2-checker, FREE n16 seed 1: four lobes remain although the engine merged both pairs (each phase in 2 parts), an artefact."
+          },
+          {
+            "path": "teams/phys/free/sq2-checker-s2-view.png",
+            "caption": "sq2-checker, FREE n16 seed 2: both pairs united (possible in 3D), giving an A2|B2 double bubble."
+          },
+          {
+            "path": "teams/phys/free/tunnel-s1-view.png",
+            "caption": "tunnel (stone 30), FREE n16 seed 1: stalls as a rounded box (R 1.93 > R_pin 1.28) instead of a sphere."
+          },
+          {
+            "path": "teams/phys/free/L3-ABC-s1-slice.png",
+            "caption": "L3-ABC, FREE n16 seed 1, plan slice: a B|C film forms at the edge contact, giving the standard triple bubble (pressure rule with air)."
+          },
+          {
+            "path": "teams/phys/free/cube2-octants-s1-view.png",
+            "caption": "cube2-octants, FREE n16 seed 1: each same-material edge-diagonal pair unites, giving a 4-bubble cluster in which all six pairs touch."
+          },
+          {
+            "path": "teams/phys/free/checker-smallA-s1-slice.png",
+            "caption": "checker-smallA, FREE n16 seed 1, plan slice: the two single A blocks (higher pressure) unite between two 2-block B bubbles."
+          },
+          {
+            "path": "teams/phys/free/slab-line-s1-slice.png",
+            "caption": "slab-line, FREE n16 seed 1, plan slice: the six diagonal A blocks unite into one band between two B15 lobes."
+          },
+          {
+            "path": "teams/phys/cross2d/sq2-ABCD-n128-s0.2-j0-seed1.png",
+            "caption": "sq2-ABCD, 2D FREE n128 s0.2: engine labels keep the X; the white exact films show the true minimum with an A|D film."
+          },
+          {
+            "path": "teams/phys/cross2d/slab-line-n32-s0.2-j0-seed1.png",
+            "caption": "slab-line, 2D FREE n32 s0.2: same topology as exact (A band), but the B lobes are pinned boxy, mean / max 0.56/1.24 blocks from the exact films (white)."
+          },
+          {
+            "path": "teams/phys/cross2d/diag-edge-diff-n32-s0.2-j0-seed1.png",
+            "caption": "diag-edge-diff, 2D FREE n32 s0.2: the engine adheres A and B; the solver's steepest descent separates them (white circles)."
+          },
+          {
+            "path": "teams/phys/cross2d/checker-smallA-n64-s0.2-j0-seed1.png",
+            "caption": "checker-smallA, 2D FREE n64 s0.2: engine and exact films agree (0.011/0.028) on the single-block pair uniting."
+          },
+          {
+            "path": "teams/phys/cross2d/row-ABB-n32-s0.2-j0-seed1.png",
+            "caption": "row-ABB (1:2), 2D FREE n32 s0.2: the engine's wall is stuck on the lattice line x = 1; the exact wall (white) sits right of it and curves into B."
+          },
+          {
+            "path": "teams/phys/pinning/cube3-n16-s0.2-slice.png",
+            "caption": "cube3 (27 blocks), FREE n16 s0.2: R 1.86 > R_pin 1.28, stalls as a rounded box (spread 0.203)."
+          },
+          {
+            "path": "teams/phys/pinning/cube3-n16-s0.3-slice.png",
+            "caption": "cube3 (27 blocks), FREE n16 s0.3: R 1.86 < R_pin 2.88, rounds to a sphere (spread 0.043) at the same grid cost."
+          }
+        ],
+        "optimizations": [
+          {
+            "idea": "Skip simulation for small free clusters: compute the cluster graph and volumes, then place closed-form shapes (a sphere for one cluster, the standard double bubble from exact.mjs for two face-touching clusters).",
+            "basis": [
+              "teams/phys/doubles/results.json",
+              "teams/phys/laws/sphere-lambda.json",
+              "teams/phys/exact.mjs"
+            ],
+            "gain": "A 1-D root find replaces 20–130 MBO steps (0.5–7 s per configuration at n16, doubles/results.json 'ms'). It is at least as accurate as the engine for V ≤ 8 and better beyond the pinning radius, where the engine is wrong by 13–65%.",
+            "risks": "Valid only for the FREE regime, which destroys block shapes and is not a terrain look. Three or more clusters need the triple-bubble and chain solutions; chains have a neutral bending mode (C10). Lattice four-fold junctions must be resolved first (C6)."
+          },
+          {
+            "idea": "Resolve every lattice four-fold junction before any smoothing with the pressure rule: connect the diagonal pair with the higher pressure (the smaller cluster; air = 0). Same material therefore always connects across an air diagonal at a shared edge. Same-material vertex-only contact separates. Exact ties get an explicit, deterministic design choice, such as the lower material id. This could be a per-corner table in the style of the bevel rule (PLAN.md 7.9) with a cluster-size comparison.",
+            "basis": [
+              "teams/phys/cross2d/checker-smallA.json",
+              "teams/phys/cross2d/sq2-ABCD.json",
+              "teams/phys/free/results.json"
+            ],
+            "gain": "It removes the engine's persisting X junctions (C7) and its seed dependence at ties (C9), and it matches exact physics in every unequal case tested (16/16 2D and 4/4 3D runs, plus diag-edge, L3-ABC and slab-line). For the owner's painted-diagonal case it decides deterministically whether the line stays continuous.",
+            "risks": "Pressure needs cluster size, which is non-local; a mesher job only sees a 38³ or 52³ region, so a local proxy (inference) would be needed and is untested. The rule can pick a higher-energy end state than the global minimum (C8), but that is what physics does. Ties and the different-material edge contact (C11) are design decisions, not physics."
+          },
+          {
+            "idea": "Choose engine settings by the pinning law. R_pin = 2·s_b²·n must exceed the radius of the largest bubble that should round. Raising s_b from 0.2 to 0.3 at n 16 raises R_pin from 1.28 to 2.88 at no extra grid cost. A stall detector should flag runs that stop with changes = 0 while some bubble has R > R_pin.",
+            "basis": [
+              "teams/phys/pinning/results.json",
+              "teams/phys/val3d/n16-s0.3.json"
+            ],
+            "gain": "For the 64-block cube at n16, radial spread falls from 0.241 to 0.030 by changing s_b from 0.2 to 0.3. This avoids raising n, where cost grows as n³ (1.2 M cell cap).",
+            "risks": "A larger s_b widens the junction error: the junction circle grows to +10–12% and the air angle to about 130° (C2, C3). A smaller s_b pins earlier. There is no setting that is both unpinned and junction-exact at affordable n."
+          },
+          {
+            "idea": "Two small engine fixes. After every merge, run a connected-components pass and re-split any phase that has come apart. Break exact symmetric X junctions deliberately, either by applying the pressure rule or by flipping one sub-cell toward the higher-pressure pair, instead of relying on jitter.",
+            "basis": [
+              "teams/phys/free/merge-timing.log",
+              "teams/phys/cross2d/sq2-ABCD.json"
+            ],
+            "gain": "It removes the non-physical states seen in sq2-checker seed 1, slab-line seed 2 and sq2-ABCD (both seeds, 2D up to n128), making FREE results Plateau-clean.",
+            "risks": "Re-splitting changes phase bookkeeping (targets, λ). A forced X split must choose an option at exact ties, which is a design choice."
+          },
+          {
+            "idea": "Use the independent 2D solver (foam2d.mjs) as ground truth for regression tests of any smoothing or seam rule evaluated on 2D slices.",
+            "basis": [
+              "teams/phys/cross2d/solvercheck.json",
+              "teams/phys/foam2d.mjs"
+            ],
+            "gain": "Energy error 5e-5 at h 0.02, junction angles of 120 ± 0.09°, pressures within 0.03%, and 1–7 s per small case. It decides lattice-junction topology explicitly and reports both options.",
+            "risks": "2D only. Merging through an air gap (bubbles approaching without a shared film) is detected but not performed. It is research code, not deterministic across browsers."
+          }
+        ],
+        "openQuestions": [
+          "Is the too-wide air angle (C3) intrinsic to volume-constrained threshold dynamics with an unconstrained air phase? A 2D run at s_b 0.05 with n ≥ 256 would separate the blur effect from pinning.",
+          "Would a one-sub-cell seed toward either diagonal pair let the engine relax sq2-ABCD to its true minimum, and does it then reproduce the exact pressures (1.441 / 1.357)?",
+          "Physics does not decide two cases: different materials touching only along an edge (separate or adhere), and exact checkerboard ties. Which choice does the owner want for painted seams? It must be stated as a rule.",
+          "How should the pressure rule (C6) be approximated locally inside a mesher job, which sees only a 38³ or 52³ region, when the deciding cluster sizes are non-local?",
+          "3D neutral modes: does a slightly bent line3-ABA chain stay bent in the engine, and does a bend that lets the end bubbles touch make them unite?",
+          "The tetrahedral 109.47° angle needs a better 3D measurement (n ≥ 48 in a cropped box, or a 3D surface solver) to test it to ±2°.",
+          "REPORT.md was not written because the harness refused report .md files from this agent. If the orchestrator needs the file, it must be written from this structured result by an agent that is allowed to write it."
+        ],
+        "reportPath": "NOT WRITTEN: the harness refused REPORT.md (subagents may not write report .md files), so the full report is in this structured result. Data, scripts and images: teams/phys/ (backup: <backup>/teams/phys/)."
+      },
+      {
+        "team": "look",
+        "summary": "I swept 17 configurations: the 15 in the mission, sq2-same, and a new slab-halves with one straight A|B seam. They ran under 15 regimes (BLOCKS, FID-k ×5, FID-0.15 with g 0.5 and 1.5, CAGE-r ×3, FINITE-T ×3, FREE) on the unchanged engine at n 16. I measured rounding, seam grooves, flatness, volume, convergence, the constraint scenes and diagonal-contact union, and checked key numbers at n 12/20/24 and in 2D at n 32/64/128. No regime on the mission's list is both visibly rounder than the blocks and keeps the 1×2 tunnel's 0.70 × 1.90 opening (cell-exact on labels). FID-0.25 and FID-0.4 keep it but do not change the blocks at all (Δ ≤ 0.006); every moving regime closes it, partly or fully. The cause is the per-cluster volume constraint: volume freed by rounding convex edges goes into concavities and faces. It is non-local: attaching a bar 4 or more blocks away closes the FID-0.15 tunnel (clear height 1.17 → 0), while the same bar detached changes nothing. Turning volume off instead deletes single blocks, pillars and rings. An engine copy (src/mbo-look.mjs, beyond the mission's list) keeps volume and fidelity, bounds the solid/air surface with a PLAN §7.4-style box (0.125 horizontal, 0 vertical, eroded core 0.25), and lets paint move almost freely (kMat 0.02). That gives two candidates, BOX0-PAINT-0.1-0.02 and BOX0-PAINT-0.15-0.02. Both pass every constraint scene, are visibly rounded, and turn the owner's hard case (a painted 1-wide diagonal) into one straight band while flat ground stays exactly flat. In anchored regimes, seams between materials stay colour, not grooves: Neumann's angles appear only in free or caged runs at fine resolution (2D double bubble 90.6° / 107.1° / 116.9° at n 32/64/128 against 120°). On union: diagonal edge contacts in air unite in every moving regime, corner-only contacts never do, and painted diagonals end connected only where the paint can move. The harness refused to write REPORT.md, so the full report is this structured result. The evidence is in results/*.json, results/table-*.md, results/union-table.md, logs/ and sheets/ under the team folder.",
+        "claims": [
+          {
+            "id": "L1",
+            "statement": "No regime on the mission's list is both visibly rounded and keeps the 1×2 tunnel clearance. Cell-exact clear height at width 0.70 on the labels (n 16, cuts z = 0.75 / 1.5 / 2.25) passes only in BLOCKS and FID-0.4 (2.000), whose shape change is ≤ 0.002. FID-0.25 gives 1.875 (fails by one sub-cell at n 16, exactly 1.900 at n 20) with Δ mean 0.005, i.e. it looks like the blocks. Every moving regime fails.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/look/results/table-tunnel-cells.md",
+              "teams/look/results/table-main.md",
+              "teams/look/results/FID-0.25@n20.json"
+            ],
+            "confidence": "measured",
+            "numbers": "Clear height at width 0.70: FID-0.15 1.125/1.000/1.250; CAGE-0.15 1.75; FINITE-2 1.5; FINITE-4 1.0; FID-0.1, FID-0.05, CAGE-0.25, CAGE-0.4, FINITE-8 and FREE 0. FID-0.25 1.875 (n 16), 1.900 (n 20).",
+            "refuteBy": "Run any listed regime whose Δ mean exceeds 0.02 on the tunnel scene (src/sweep.mjs <REGIME> tunnel) at n 16 or n 20. If it gives cell-exact clearCells height ≥ 1.90 at width 0.70 at all three cuts, this is refuted."
+          },
+          {
+            "id": "L2",
+            "statement": "In volume-preserving regimes the shape is non-local within a cluster. A 6×4×3 stone host has a 1×2 tunnel at x = 1; a 1×1×4 bar is attached at the far side x = 6, at least 4 blocks from the tunnel (n 12). With the bar attached, the FID-0.15 tunnel closes and the FINITE-4 tunnel narrows. The same bar detached by a 1-block gap (a separate cluster) changes 0 sub-cells of the host.",
+            "kind": "physics",
+            "evidence": [
+              "teams/look/results/nonlocal-wide-n12.json",
+              "teams/look/results/nonlocal-WIDE-cands.json",
+              "teams/look/results/nonlocal-far.json",
+              "teams/look/sheets/nonlocal.png"
+            ],
+            "confidence": "measured",
+            "numbers": "FID-0.15: clear height 1.167 → 0, λ 0.0422 → 0.061, host volume changed 4.26 block³ (3.99 of it ≥ 2.5 blocks from the attachment). FINITE-4: 0.50 → 0.33, λ 0.0296 → 0.0409. Detached: 0 cells changed in every regime.",
+            "refuteBy": "Rerun WIDE=1 node src/nonlocal.mjs FID-0.15 (or at n 16 with a host up to 1.2 M cells). If the attached-bar tunnel matches the alone tunnel within one sub-cell, or a detached bar also changes it, this is refuted."
+          },
+          {
+            "id": "L3",
+            "statement": "Dropping the volume constraint does not fix the problem: isolated features vanish. NV-FID-0.15 removes a single block, the 1×3 pillar, ring8, slab-dot and slab-line completely (Δ = 1.000). With the eroded core forced solid (BOX-NV-FID-0.15), a single block shrinks to its 0.5-wide core (Δ 0.875, extent 0.500).",
+            "kind": "limitation",
+            "evidence": [
+              "teams/look/results/NV-FID-0.15.json",
+              "teams/look/results/BOX-NV-FID-0.15.json",
+              "teams/look/results/table-variants.md"
+            ],
+            "confidence": "measured",
+            "numbers": "NV-FID-0.15: Δ single / pillar3 / ring8 / slab-dot = 1.000. BOX-NV-FID-0.15: single extent (labels) 0.500, Δ 0.875.",
+            "refuteBy": "Run NV-FID-k for k in 0.15–0.4 on single and pillar3. A k at which the block keeps extent ≥ 0.9 while cube2-same corners still round (corner Req > 0.15) would refute the claim that volume-off cannot give the look."
+          },
+          {
+            "id": "L4",
+            "statement": "Two candidate regimes from the engine copy (beyond the mission's list) pass every constraint scene and are visibly rounded: BOX0-PAINT-0.1-0.02 and BOX0-PAINT-0.15-0.02. Both keep volume, use fidelity k 0.1 or 0.15 for solid↔air and kMat 0.02 for paint, and box the surface: growth into air at most 0.125 horizontally and 0 vertically; blocks eroded by 0.25 stay solid.",
+            "kind": "look",
+            "evidence": [
+              "teams/look/results/BOX0-PAINT-0.1-0.02.json",
+              "teams/look/results/BOX0-PAINT-0.15-0.02.json",
+              "teams/look/results/table-variants.md",
+              "teams/look/results/table-tunnel-cells.md",
+              "teams/look/src/mbo-look.mjs",
+              "teams/look/sheets/candidates-1.png",
+              "teams/look/sheets/candidates-2.png"
+            ],
+            "confidence": "measured",
+            "numbers": "Tunnel clear 2.000 × 0.750 (cell-exact, three cuts). Flat ground, slab tops and stair treads: max |dy| 0.000. Single-block extent ≥ 1.0; pillar width 1.0 / 1.125 and height 3.0. cube2-same corner Req (labels) 0.40 (k 0.1) / 0.34 (k 0.15), against 0.04 for blocks. Render-field edge R 0.44 / 0.53, against 0.20 for blocks. Δ mean 0.080 / 0.047. All at n 16, where the box is quantised to 0.125 / 0.",
+            "refuteBy": "Run the two regimes over the catalogue at n 20 with the exact PLAN caps (outH 0.15, outV 0.05). Any constraint failure (tunnel clearCells < 1.90 × 0.70, flat |dy| > 0.05, single extent < 0.40, pillar width < 0.40), or corner Req ≤ 0.1, refutes it."
+          },
+          {
+            "id": "L5",
+            "statement": "Letting paint relax inside a held surface solves the owner's hard case. In slab-line (a painted 1-wide diagonal A line in a B slab), the candidates turn the zigzag into one straight band, unite all six A blocks, and keep the slab top exactly flat. FID-0.15 keeps the staircase.",
+            "kind": "look",
+            "evidence": [
+              "teams/look/results/BOX0-PAINT-0.15-0.02.json",
+              "teams/look/results/FID-0.15.json",
+              "teams/look/results/BLOCKS.json",
+              "teams/look/sheets/paint-test.png"
+            ],
+            "confidence": "measured",
+            "numbers": "Band-width SD on the top surface over the middle 3√2 of the diagonal: 0.050 (both candidates), 0.385 (FID-0.15), 0.409 (blocks). Mean band width 0.625 (blocks 0.708). Junctions AAAAA; slab-line B top max |dy| 0.000.",
+            "refuteBy": "Recompute bandWidth from the saved labels (labels/BOX0-PAINT-0.15-0.02/slab-line.bin.gz) or rerun. SD > 0.15, or any slab-top deviation > 0.0625 away from the line, refutes it."
+          },
+          {
+            "id": "L6",
+            "statement": "FID-k at k ≥ 0.25 does not move the blocks at n 12, 16 or 24, so its look is only the renderer's blur. The render field rounds raw blocks itself (edge R 0.20, faces out 0.03), so 'blocks' pictures already look rounded, and D-field constraint checks fail for reasons unrelated to the physics.",
+            "kind": "engine",
+            "evidence": [
+              "teams/look/results/FID-0.25.json",
+              "teams/look/results/FID-0.25@n24.json",
+              "teams/look/results/FID-0.25@n12.json",
+              "teams/look/results/BLOCKS.json"
+            ],
+            "confidence": "measured",
+            "numbers": "FID-0.25 Δ single 0.000 / 0.000 / 0.004 (n 12/16/24); FID-0.4 Δ max 0.002. BLOCKS on D: edge R 0.20, single extent 1.064, tunnel D clear height 1.899.",
+            "refuteBy": "Run FID-0.25 at n 32 on single and cube2-same (small grids). Δ > 0.05 would show the freeze is resolution-limited."
+          },
+          {
+            "id": "L7",
+            "statement": "The engine reproduces Neumann's triple-junction angle, 180° − 2·asin(g/2), only at fine resolution and only where the anchor lets a groove form. In anchored FID regimes (k ≥ 0.1), a flat A|B seam stays flat: depth ≤ 0.0625 on the labels in 3D at n 16, and 0.006 in 2D at n 64/128 for FID-0.15. Material seams remain colour, not geometry.",
+            "kind": "physics",
+            "evidence": [
+              "teams/look/results/seam2d.json",
+              "teams/look/results/table-main.md",
+              "teams/look/sheets/seam2d.png"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "Neumann: 151.0° / 120.0° / 82.8° for g 0.5 / 1 / 1.5. FREE 2D double bubble at n 64: 143.2° / 107.1° / 63.5°; at g 1 over n 32/64/128: 90.6° / 107.1° / 116.9°. CAGE-0.25 at n 64, window 0.03–0.15: 154.5° (g 0.5), 129.1° (g 1). FINITE-4: 159.8° / 132.5° / 98.8°. 2D groove depth: FID-0.15 0.006, FID-0.05 0.139 (g 1).",
+            "refuteBy": "Run src/seam2d.mjs at n 256 (2D, ≈ 1.5 M cells for the slab; shrink the slab if needed). A FREE angle that moves away from 120°, or an FID-0.15 groove deeper than 0.05, refutes the respective part."
+          },
+          {
+            "id": "L8",
+            "statement": "Union of same-material diagonal contacts (jitter 0, and jitter 1e-3 with seeds 1–3), stated as final connectivity:\n- Edge contact in air (diag-edge) unites in every regime that moves (4/4 runs in each of 14 regimes), but not in FID-0.4.\n- Corner-only contact (diag-corner) never unites (0 of 60 runs).\n- The 2×2 checkerboard never unites under FID or FINITE; under CAGE and FREE it unites only with jitter.\n- A painted diagonal inside solid (slab-line) ends connected only where paint can move: CAGE, FINITE, FID-0.05, FREE, and the paint candidates.",
+            "kind": "pattern",
+            "evidence": [
+              "teams/look/results/union-table.md",
+              "teams/look/sheets/union.png"
+            ],
+            "confidence": "measured",
+            "numbers": "slab-line junctions:\n- FID-0.25 / FID-0.15: -----\n- FID-0.1: A---A in 3 of 4 runs\n- FID-0.05: -AAA-\n- CAGE-0.15, FINITE-2/4/8: AAAAA\n- FREE: -AAA- (or --A-- in seed 3)\nUnder FID-0.15-g1.5 the engine merged the A phases transiently (6 → 2) but none stayed connected.",
+            "refuteBy": "Rerun src/union.mjs with more seeds (4–10) or at n 24 for the small cases. Any diag-corner union, or a diag-edge non-union in a moving regime, refutes the corresponding part."
+          },
+          {
+            "id": "L9",
+            "statement": "In 3D, a 2×2 checkerboard X junction can resolve with both diagonal pairs united by layering: all A on top and all B below, a stacked double bubble. This is impossible in 2D. It happens in FREE seed 2 (jitter 1e-3) and in some CAGE seeds.",
+            "kind": "pattern",
+            "evidence": [
+              "teams/look/logs/checker-x.log",
+              "teams/look/sheets/checker-x.png",
+              "teams/look/results/union-FREE.json"
+            ],
+            "confidence": "measured",
+            "numbers": "FREE seed 2: B connected across the junction in layers y < 0.49 and A in layers y > 0.55. Both-pairs outcome ('X') in FREE seeds 2 and 3, CAGE-0.15 seed 2, CAGE-0.25 seed 3, CAGE-0.4 seed 2.",
+            "refuteBy": "Re-render FREE sq2-checker seed 2 (src/checkerx.mjs). If the plan cuts at y 0.15 and 0.85 do not show one material each, it is refuted."
+          },
+          {
+            "id": "L10",
+            "statement": "Under FID-0.15 the volume constraint shows up as artefacts:\n- one-sub-cell (0.0625) pillow bulges with visible terrace rings on flat faces of cube2-same, slab-halves and slab-stripe;\n- the 1-wide hole of ring8 closes;\n- the tunnel floor rises by 0.375.\nThe box with vertical cap 0 (BOX0) removes the top-face bulges; vertical faces still bulge by up to 0.125.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/look/results/table-main.md",
+              "<session>/sheets/spectrum-fid-2.png",
+              "teams/look/results/table-variants.md"
+            ],
+            "confidence": "measured",
+            "numbers": "FID-0.15: cube2 face bulge 0.062; slab-halves top +0.062 at the centre of each half; ring8 hole width 1.0 → 0; tunnel floor 1.375. BOX0 variants: slab tops 0.000; cube2 horizontal face bulge 0.062.",
+            "refuteBy": "At n 24 (cube2-same, ring8), the FID-0.15 bulge should shrink to one sub-cell (0.042) or vanish, while the ring hole stays closed. An open ring hole refutes the volume-into-concavity part."
+          },
+          {
+            "id": "L11",
+            "statement": "CAGE-r and FINITE-T turn every isolated single block into a sphere: label extent 1.25, the dilated-cage limit; a volume-1 sphere has diameter 1.24. FREE balls up all clusters, does not converge on terrain-step in 300 steps, and its terrace tops move by 1.0. These regimes cannot keep block identity for small builds.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/look/results/table-main.md",
+              "teams/look/sheets/spectrum-cage-finite-1.png"
+            ],
+            "confidence": "measured",
+            "numbers": "Single extent (labels) 1.250 in CAGE-0.15/0.25/0.4, FINITE-2/4/8 and FREE. FREE terrain-step: 300 steps, 127.5 s, low terrace +1.0. Effective cage radii after rounding to sub-cells: 0.125 / 0.25 / 0.375.",
+            "refuteBy": "Measure the single block's corner Req: a sphere gives about 1.0 relative to the cube corner. If CAGE-0.15 or FINITE-2 keeps a single-block corner Req < 0.2, it is refuted."
+          },
+          {
+            "id": "L12",
+            "statement": "At n 16, film tension g barely changes FID-0.15. Constraint numbers are identical for g 0.5, 1 and 1.5; the render-field seam opening at slab-halves narrows as g rises. g 1.5 lens-shapes the slab-dot dot and pulls apart the B and C blocks of L3-ABC, which touch only along an edge.",
+            "kind": "look",
+            "evidence": [
+              "teams/look/results/table-main.md",
+              "teams/look/sheets/film-tension-g.png"
+            ],
+            "confidence": "measured",
+            "numbers": "Render-field opening (window 0.06–0.25): 173.3° / 165.6° / 157.1° for g 0.5 / 1 / 1.5. Tunnel clear height 1.0 in all three. slab-line A phases at the end (engine merge count): 4 / 6 / 2.",
+            "refuteBy": "Compare FID-0.15-g0.5 and -g1.5 tunnel and pillar numbers. Any constraint value differing by more than one sub-cell refutes 'identical constraints'."
+          },
+          {
+            "id": "L13",
+            "statement": "In slab-line, the small A bubbles (one block each) win the X junctions against the large B halves (15 blocks each) whenever paint can move. A connects and B never does (B phases stay 2), in contrast to the symmetric 2×2 checkerboard. This fits the higher Laplace pressure of smaller bubbles.",
+            "kind": "pattern",
+            "evidence": [
+              "teams/look/results/union-table.md"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "CAGE-0.15 and FINITE-2/4/8: AAAAA in 4 of 4 runs, B phases 2. sq2-checker under FINITE: no union in 4 of 4 runs. The Laplace-pressure reading is inference.",
+            "refuteBy": "A checker variant with large A clusters and single-block B blocks: if B does not win the junctions, the pressure reading is refuted."
+          },
+          {
+            "id": "L14",
+            "statement": "MBO at this resolution is far too slow to run in the mesher. A look must be baked into a local rule.",
+            "kind": "engine",
+            "evidence": [
+              "teams/look/results/table-main.md",
+              "teams/look/results/table-variants.md"
+            ],
+            "confidence": "measured",
+            "numbers": "terrain-step (75 blocks, about 1.1 M cells): FID-0.15 10.8 s, BOX0-PAINT-0.15-0.02 14.1 s, FREE 127.5 s. Median steps 12–14 for the FID and BOX0 regimes. The mesher budget (single-digit ms per chunk) is from PLAN §7.6.",
+            "refuteBy": "A timing of the same engine at n 8 on terrain-step reaching under 100 ms with the same shape would weaken it."
+          }
+        ],
+        "images": [
+          {
+            "path": "teams/look/sheets/spectrum-fid-1.png",
+            "caption": "Spectrum, fidelity family (part 1): rows are single through slab-dot; columns are BLOCKS, FID-0.4, 0.25, 0.15, 0.1, 0.05, FREE (views, n 16, g 1). FID ≥ 0.25 looks like the blocks; from FID-0.15 the look rounds, with pillow terraces."
+          },
+          {
+            "path": "teams/look/sheets/spectrum-fid-2.png",
+            "caption": "Spectrum, fidelity family (part 2): slab-line through slab-halves. The tunnel and ring hole close from FID-0.1; slab-line straightens only at FID-0.05, where the slab pillows."
+          },
+          {
+            "path": "teams/look/sheets/spectrum-cage-finite-1.png",
+            "caption": "Spectrum, cage and finite-time families (part 1): BLOCKS, CAGE-0.15/0.25/0.4, FINITE-2/4/8, FREE. Single blocks become spheres in every column."
+          },
+          {
+            "path": "teams/look/sheets/spectrum-cage-finite-2.png",
+            "caption": "Spectrum, cage and finite-time families (part 2): beaded A line in FINITE-2/4, ripple terraces in FINITE-8, tunnels closing, pillar becoming a lemon or a ball."
+          },
+          {
+            "path": "teams/look/sheets/slices-1.png",
+            "caption": "Slices across 11 regimes for cube2-same, sq2-same, tunnel (z = 1.5), terrain-step, stairs and pillar3. Black = film between bubbles; white = air surface."
+          },
+          {
+            "path": "teams/look/sheets/slices-2.png",
+            "caption": "Slices across 11 regimes for painted layers: slab-dot, slab-line and slab-stripe plans at y = 0.5, slab-halves section z = 3, ring8 plan."
+          },
+          {
+            "path": "teams/look/sheets/film-tension-g.png",
+            "caption": "FID-0.15 with film tension g = 0.5 / 1 / 1.5 on the nine multi-material configurations (views, then sections)."
+          },
+          {
+            "path": "teams/look/sheets/seam2d.png",
+            "caption": "2D cross-section of a straight A|B seam in a 1-thick slab, n 64: FREE, FID-0.15, FID-0.05, FINITE-4 and CAGE-0.25 at g 0.5 / 1 / 1.5. FID-0.15 leaves the seam flat; CAGE-0.25 at g 1.5 detaches (unexplained)."
+          },
+          {
+            "path": "teams/look/sheets/union.png",
+            "caption": "Union of diagonal contacts under 7 regimes (jitter 1e-3, seed 1): diag-edge (plan), diag-corner (view), sq2-checker (plan), slab-line (plan)."
+          },
+          {
+            "path": "teams/look/sheets/checker-x.png",
+            "caption": "sq2-checker, FREE, jitter 1e-3, seed 2: both diagonal pairs unite by stacking A over B (view, plan cuts at y = 0.15 / 0.5 / 0.85, section)."
+          },
+          {
+            "path": "teams/look/sheets/nonlocal.png",
+            "caption": "Locality test, n 12: a 6×4×3 host with a tunnel, alone / with a bar attached at least 4 blocks away / with the bar detached, under FID-0.15, FINITE-4 and BOX0-PAINT-0.1. The FID-0.15 tunnel closes only when the bar is attached."
+          },
+          {
+            "path": "teams/look/sheets/paint-test.png",
+            "caption": "Paint relaxing inside a held surface: slab-line, slab-dot, slab-stripe and terrain-step under BLOCKS, FID-0.15, BOX-PAINT-0.15-0.02 and BOX-PAINT-0.15-0 (box vertical cap 0.0625, so pillow rings remain)."
+          },
+          {
+            "path": "teams/look/sheets/candidates-1.png",
+            "caption": "Candidates over the catalogue (1/2): for single through slab-dot, BLOCKS, BOX0-PAINT-0.15-0.02 and BOX0-PAINT-0.1-0.02 views, then the same three as slices (engine copy, n 16)."
+          },
+          {
+            "path": "teams/look/sheets/candidates-2.png",
+            "caption": "Candidates over the catalogue (2/2): slab-line becomes a straight band, terrain-step's grass/dirt seam follows the step as an S-curve, the tunnel keeps its opening, flat tops stay flat."
+          }
+        ],
+        "optimizations": [
+          {
+            "idea": "Bound the solid/air surface with a PLAN §7.4-style per-axis box (growth into air ≤ 0.15 horizontally, ≤ 0.05 or 0 vertically; eroded core always solid) instead of a soft anchor. Keep volume per cluster so small features keep their size.",
+            "basis": [
+              "teams/look/results/table-tunnel-cells.md",
+              "teams/look/results/table-variants.md"
+            ],
+            "gain": "The constraints hold by construction (tunnel 2.0 × 0.75 at n 16 and 1.90 × 0.70 with the exact caps at n 20; flat ground exact) while the rounding stays at the FID-0.1/0.15 level. The candidates' Δ mean (0.047–0.080) is close to plain FID-0.15 (0.067).",
+            "risks": "Measured at n 16 (box quantised) except the tunnel at n 20. Vertical faces still bulge up to 0.125. Per-cluster volume coupling remains (bounded by the box)."
+          },
+          {
+            "idea": "Solve paint and shape separately. With a low paint fidelity (kMat ≈ 0.02) the material partition relaxes into smooth films (straight diagonal bands, round dots, S-curved seams on steps) while the surface stays held. Paint could be computed as a surface-confined 2D problem on the top-surface material map (inference).",
+            "basis": [
+              "teams/look/results/BOX0-PAINT-0.15-0.02.json",
+              "teams/look/sheets/paint-test.png"
+            ],
+            "gain": "Solves the painted-diagonal hard case (band SD 0.409 → 0.050) with no geometric change to flat ground. A 2D paint solve would touch only surface cells (inference).",
+            "risks": "The mesh needs a way to represent sub-quad material boundaries; today vertices split per (corner, material). Paint volume is still a per-cluster constraint."
+          },
+          {
+            "idea": "Replace per-cluster volume conservation with a local one (per block or per neighbourhood), so the result depends only on a bounded apron and can be meshed chunk by chunk or baked into a per-corner table, as the bevel's 256-entry table is.",
+            "basis": [
+              "teams/look/results/nonlocal-wide-n12.json",
+              "teams/look/results/nonlocal-WIDE-cands.json",
+              "teams/look/results/NV-FID-0.15.json"
+            ],
+            "gain": "Removes the measured non-local coupling (4.3 block³ change from a bar at least 4 blocks away under FID-0.15; 0.05–0.19 block³ at 2.5 or more blocks for the candidates). Makes a deterministic, apron-bounded rule possible.",
+            "risks": "Untested. Dropping volume entirely makes features vanish (NV-FID-0.15 Δ 1.0), so the local substitute must still protect small features."
+          },
+          {
+            "idea": "Use the union pattern as a topology rule: same-material edge contacts in air connect (a neck); corner-only contacts stay separate; painted diagonals inside solid connect when paint is free; symmetric X junctions need a deterministic tie rule.",
+            "basis": [
+              "teams/look/results/union-table.md"
+            ],
+            "gain": "A table-friendly rule that matches the bubble model in every moving regime tested. It differs from the current mesher, where diagonal-only contacts stay pinched (PLAN §7.2).",
+            "risks": "The checkerboard outcome depends on the seed in CAGE and FREE (and layered in 3D), so any game rule is a choice, not physics. Changing pinching changes mesh topology and the goldens."
+          }
+        ],
+        "openQuestions": [
+          "Can BOX0-PAINT be baked into a local per-corner rule? The surface changes sit within about 0.5 block of edges and seams (Δ mean 0.047–0.080), but λ couples the whole cluster; a local volume substitute is untested.",
+          "How should smooth paint boundaries (straight diagonal bands, round dots) be represented in the mesh, given vertices split per (corner, material)?",
+          "Does the owner want grooves at material seams? Anchored regimes give colour-only seams; grooves need FID ≤ 0.05, FINITE or a cage, all of which break constraints unless the groove is added inside a box (untested).",
+          "3D checkerboard X junctions can unite both pairs by layering (FREE seed 2). Which outcome should a game rule pick, given it depends on the seed?",
+          "Why does CAGE-0.25 with g 1.5 separate A from B with an air gap in 2D (n 64), when g < 2 should keep the film? Pinning, or a real instability of a squeezed contact?",
+          "All scenes float in air (no ground or periodic boundary). The FREE and terrain-step numbers are partly artefacts of that; the tunnel and locality results come from inside one cluster and should not depend on it (inference).",
+          "The candidates were swept over the catalogue only at n 16, where the box is quantised to 0.125 / 0. Only the tunnel was checked at n 20 with the exact 0.15 / 0.05 caps. Do the looks and constraints hold at finer n?",
+          "The FID-k look is set by MBO pinning at s 0.2, not by k alone: a continuum estimate gives a fillet radius of about 0.53 at k 0.15 against an edge Req of 0.17 measured (inference). Another solver given the same k would give a different look.",
+          "The REPORT.md write was refused by the harness, so the report is this structured result; tables are in results/table-main.md, table-variants.md, table-tunnel-cells.md and union-table.md."
+        ],
+        "reportPath": "teams/look/results/table-main.md"
+      },
+      {
+        "team": "fast",
+        "summary": "I couldn't write REPORT.md: the harness refuses report .md files from subagents. This result is the report. Everything else is saved and backed up: scripts in src/, numbers in res/ and logs/, 58 images in img/, 4 contact sheets in sheets/, and a reference cache in refcache/.\n\nWhat I did:\n- Checked the engine's first MBO step against an analytic sum of per-block kernels.\n- Ran the physics references FID-0.15, FINITE-4 and FINITE-2 on all 36 catalogue configurations, plus FREE on 7 small ones. n = 16, except n = 12 for ball-r2 and ball-AB.\n- Built local one-step models on the same grids and measured surface distance, seam distance and volume error against those references.\n- Turned the best model into a deterministic vertex-placement rule for surface-nets corners, using only + - * /. Timed it on generated chunks next to the repo mesher, bundled from HEAD c27fa8b.\n\nHeadline findings:\n1. One MBO step from the blocks is exactly a metaball sum, to 8e-8.\n2. Threshold 1/2 shrinks small clusters: one block keeps 0.665 of its volume at sigma 0.2 and vanishes only above sigma 0.40. Restoring volume with a per-material shift (lambda) gives a mean surface distance to FID-0.15 of 0.018 blocks. A purely local lambda rule (count of same-material blocks in the 3x3x3) gives 0.019, with 1.6 % mean volume error.\n3. T engine steps behave like one step at sigma*sqrt(T); the evidence is T = 2 and T = 4.\n4. Compact polynomial kernels cost almost no accuracy. With the box*tent kernel at sigma 0.2, a corner's vertex depends only on its 8 blocks (plus n27 for lambda).\n5. The vertex rule costs about 2–8 ms per chunk, against 4–25 ms for the whole repo mesher on the same 38^3 inputs. It is seam-exact, but plain Newton fails to converge at 0.4 % of corners.\n\nMain caveat: one vertex per lattice corner cannot hold 'flat face plus rounded edge'. Placing vertices on the physical surface (0.032 from it, against 0.15 for cubes) drags the flat quads inward, so against FID plain cubes give the smaller mesh error (0.034 against 0.113). The rule only wins on large or strongly rounded shapes.\n\nFeature checks:\n- Survive in the cheap model: seamless union, groove depth at material seams, and short-time junction angles.\n- Lost or changed: FID's concave fill, which needs about 10 iterations; diagonal union in the mesh (topology keeps it pinched); and the physics' wall between diagonal different-material blocks.\n- The physics itself closes the 1x2 tunnel to 1.21–1.43 blocks high, and the vertex rule gives 1.73. Both are below the required 1.90, so the existing §7.4 constraint box would have to apply after the rule.",
+        "claims": [
+          {
+            "id": "C1",
+            "statement": "One MBO step from the blocks is a metaball model. In the engine's first step, each cluster's blurred indicator P.u equals the sum over its blocks of the separable kernel built from the engine's discrete Gaussian, to float32 precision. It differs from the continuum erf kernel k(t) = (erf((t+1/2)/(sqrt2 sigma)) - erf((t-1/2)/(sqrt2 sigma)))/2, sigma = s/n = 0.2, only by discretisation.",
+            "kind": "physics",
+            "evidence": [
+              "teams/fast/res/t1-metaball.json",
+              "teams/fast/logs/t1-metaball.log",
+              "teams/fast/src/t1.mjs"
+            ],
+            "confidence": "measured",
+            "numbers": "10 configurations, up to 1.09 M cells. Engine against discrete kernel in f64: max 8.1e-8. Engine against erf continuum: max 0.0044, rms at most 0.0010. Step-1 labels rebuilt from the analytic fields with the engine's lambdas differ only where the two best costs are within 0.0029 (0–96 cells; 5,292 of 143,712 in slab-line; 9,496 of 304,724 in terrain-step).",
+            "refuteBy": "Run t1.mjs on any configuration at n = 16, s = 3.2 and find max |P.u - discrete sum| > 1e-6, or max |P.u - erf sum| > 0.01."
+          },
+          {
+            "id": "C2",
+            "statement": "In the engine's per-step volume solve, large flat clusters settle on lambda = 0.12479. That value puts the threshold exactly on the first outside sub-cell layer of a flat face, so whole face layers become near-ties. This is a numerical property of the cell-quantile volume solve, not physics.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/fast/res/t1-metaball.json"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "lambda = 0.12479 for slab-line's B clusters and all three terrain-step clusters at step 1. The outside-cell value of u at a face is about 0.4378, and (1 - 0.12479)/2 = 0.4376 (inference). The label mismatches cluster there.",
+            "refuteBy": "Print the step-1 margins per cell for terrain-step and show that the mismatching cells are not in the first sub-cell layer outside flat faces, or that lambda does not jump in steps when the flat-face area changes."
+          },
+          {
+            "id": "C3",
+            "statement": "One blur of the blocks thresholded at 1/2 (lambda 0) shrinks small clusters and makes single blocks vanish only above sigma about 0.40. At the engine's sigma 0.2 a single block keeps two thirds of its volume.",
+            "kind": "physics",
+            "evidence": [
+              "teams/fast/res/t2a-shrink.json",
+              "teams/fast/logs/t2a-shrink.log"
+            ],
+            "confidence": "measured",
+            "numbers": "Fraction of volume kept at sigma 0.2: single 0.665, pair 0.764, line of 3 0.796, 2x2 0.848, 2x2x2 0.907, ball r 2.2 0.948. At sigma 0.40: single 0, pair 0.17, 2x2x2 0.66. Analytic vanishing sigma 0.3956.",
+            "refuteBy": "Compute the {2u > 1} volume of one block's erf-kernel field at sigma 0.2 on a fine grid and get a fraction outside 0.64–0.69, or find the block still present at sigma 0.41."
+          },
+          {
+            "id": "C4",
+            "statement": "A one-step metaball model with volume restored by one lambda per material reproduces the FID-0.15 physics surface to a mean distance of about 0.02 blocks over the 36-configuration catalogue. Restoring volume is what matters: lambda 0 is 3.5 times worse.",
+            "kind": "optimization",
+            "evidence": [
+              "teams/fast/res/t2-FID.json",
+              "teams/fast/logs/summ-t2-FID.log"
+            ],
+            "confidence": "measured",
+            "numbers": "Surface mean / mean p95 / worst p95, with mean and worst |volume error|:\n- Bx-g20: 0.0180 / 0.056 / 0.203; volume 0.000 / 0.003\n- A0-g20: 0.0622 / 0.112 / 0.259; volume 0.185 / 0.338\n- Bc15-g20: 0.0278; volume 0.067 / 0.166\nSeam mean 0.006–0.009.",
+            "refuteBy": "Re-run refs.mjs FID-0.15 and t2.mjs with Bx-g20 on the catalogue (250 lines, seed 7), or with another line seed, and get a surface mean above 0.03."
+          },
+          {
+            "id": "C5",
+            "statement": "T engine steps from the blocks (FINITE-T) are approximated by a single volume-kept step at sigma about 0.2*sqrt(T).",
+            "kind": "pattern",
+            "evidence": [
+              "teams/fast/logs/summ-t2-FINITE4.log",
+              "teams/fast/logs/summ-t2-FINITE2.log",
+              "teams/fast/res/t2-FINITE4.json",
+              "teams/fast/res/t2-FINITE2.json"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "Surface mean against FINITE-4, by one-step sigma: 0.30 → 0.0244, 0.35 → 0.0141, 0.40 → 0.0101 (best), 0.45 → 0.0184, 0.50 → 0.0317.\nAgainst FINITE-2: 0.20 → 0.0255, 0.25 → 0.0144, 0.30 → 0.0072 (best tested), 0.35 → 0.0137.\nCode check: 4 iterated steps reproduce FINITE-4 to 0.0067.",
+            "refuteBy": "Run FINITE-8 references and find the best one-step sigma outside 0.5–0.65, or find that FINITE-2's optimum is clearly above 0.32 after a finer sigma grid."
+          },
+          {
+            "id": "C6",
+            "statement": "The volume shift can be estimated locally. Each block gets lambda_b = a + b((27 - n27_b)/26)^4, where n27_b is the count of same-material blocks in its 3x3x3; the values are blended by the same kernel. At sigma 0.2 this keeps volume to about 2 % and gives nearly the oracle's surface accuracy, including on held-out larger configurations. At sigma 0.4 it does not.",
+            "kind": "optimization",
+            "evidence": [
+              "teams/fast/res/fitlam-g20.json",
+              "teams/fast/res/fitlam-g20-small.json",
+              "teams/fast/logs/holdout-summary.log",
+              "teams/fast/logs/summ-t2-FID.log",
+              "teams/fast/logs/summ-t2-FINITE4.log"
+            ],
+            "confidence": "measured",
+            "numbers": "Fit: a = 0.0498, b = 0.1883, rmse 0.022 over 65 per-material lambdas in the range 0.071–0.271.\nBl-g20 against FID: surface mean 0.0192, volume error mean 1.6 %, worst 8.2 %.\nHoldout (fitted on configurations of at most 12 blocks, tested on the 7 larger ones): volume 2.4 % mean, 5.2 % worst; surface 0.0266 against 0.0258 for the exact oracle.\nBl-g40 against FINITE-4: volume 8.6 % mean, 50 % worst.",
+            "refuteBy": "Apply the g20 rule to generated terrain or new configurations (overhangs, thin walls, mixed slabs) and find volume errors above 10 % for clusters of more than 12 blocks."
+          },
+          {
+            "id": "C7",
+            "statement": "The concave fillets of FID-0.15 come from iterating to its fixed point. One step does not reproduce them; repeated fidelity steps converge toward them.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/fast/logs/summ-t2-FID-iter.log",
+              "teams/fast/logs/iter-subset-compare.log",
+              "teams/fast/res/t2-FID-iter.json",
+              "teams/fast/sheets/fid-iterations-stairs.png"
+            ],
+            "confidence": "measured",
+            "numbers": "Same 10 configurations, surface mean / mean p95: 2 steps 0.0266 / 0.107; 4 steps 0.0222 / 0.084; 10 steps 0.0166 / 0.053; one step (Bx-g20) 0.0246 / 0.098. On stairs alone, p95 goes 0.145 → 0.048 from 2 to 10 steps. The FID references took 8–41 steps.",
+            "refuteBy": "Find a one-step local model whose p95 against FID on stairs, tunnel and ring8 is at most 0.06."
+          },
+          {
+            "id": "C8",
+            "statement": "Compact piecewise-polynomial kernels (box convolved with a B-spline of the same variance) replace the erf kernel at almost no cost in accuracy. With the box*tent kernel at sigma <= 0.204, the field inside a lattice corner's cell depends only on that corner's 8 blocks: it is trilinear interpolation of the 8 occupancies in coordinates warped by the quadratic smoothstep w(s) over [-h, h], h = sigma*sqrt6.",
+            "kind": "optimization",
+            "evidence": [
+              "teams/fast/logs/summ-t2-FID.log",
+              "teams/fast/logs/summ-t2-FINITE4.log",
+              "teams/fast/src/kern.mjs",
+              "teams/fast/src/vrule.mjs"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "Against FID with local lambda, surface mean: Gaussian 0.0192, b3 0.0201, b2 0.0206, b1 0.0208. Against FINITE-4 with exact lambda: Gaussian 0.0101, b3 0.0111.\nb1 support at sigma 0.2 is 0.990 blocks (computed). The 8-block property follows from support < 1 (derivation).",
+            "refuteBy": "Evaluate the b1 field at points inside a corner cell with and without blocks outside the 2x2x2 and find any difference at sigma 0.2; or find a configuration where b1's surface mean against FID exceeds the Gaussian's by more than 0.01."
+          },
+          {
+            "id": "C9",
+            "statement": "The one-step model as a surface-nets vertex rule (b1 kernel, local lambda, 4 Newton steps, quantised to 1/256) costs about the same per chunk as the repo mesher's vertex work. It needs an apron of 2, so it fits the 38³ region. With a constant lambda, single-material corners reduce to a 256-entry table.",
+            "kind": "optimization",
+            "evidence": [
+              "teams/fast/logs/summ-t3time.log",
+              "teams/fast/res/t3time-run2.json",
+              "teams/fast/res/t3time-run3.json",
+              "teams/fast/src/t3time.mjs"
+            ],
+            "confidence": "measured",
+            "numbers": "Minimum time per chunk, two runs on a loaded machine:\n- bub-b1 local: 2.1–3.2 ms on surface chunks (1.3k–2.5k corners), 5.6–7.8 ms on mixed and cave chunks (6.2k–8.5k corners), with one outlier at 11.4.\n- b3 (64 blocks): 7–52 ms.\n- Table floor (scanning 33³ corners): 0.7–1.5 ms.\n- Repo mesher, whole mesh, same inputs: 4.1–24.5 ms.\n- Multi-material corners per chunk: 0–900.\n- Physics engine step at 1.09 M cells: 427 ms (t1 log).",
+            "refuteBy": "Time bubbleVertices (b1, local lambda) on the same chunks in a quiet Node session and get more than 10 ms on the cave chunks, or show that shared corners differ when the apron is 2."
+          },
+          {
+            "id": "C10",
+            "statement": "The vertex rule gives identical offsets on both sides of a chunk seam because it reads only blocks within the 38³ region. Plain Newton does not converge at a small set of corners, mostly two-material corners with 7 solid blocks. A safeguarded line search along the corner gradient always converges, at about 2.5 times the cost.",
+            "kind": "engine",
+            "evidence": [
+              "teams/fast/res/t3seam.json",
+              "teams/fast/res/t3newton.json",
+              "teams/fast/logs/t3newton-bad.log",
+              "teams/fast/logs/t3line-converge.log",
+              "teams/fast/res/t3line-bisect.json"
+            ],
+            "confidence": "measured",
+            "numbers": "Seams: 558 shared corners over 5 chunk pairs, 0 mismatches, for b1 and b3; same machine and JS engine only.\nNewton: 4 against 16 iterations differ by more than 1/256 at 65 of 17,284 corners, max 0.96 block. 51 of those are 7-solid two-material corners.\nLine search: 14 against 40 bisections, 0 corners differ by more than 1/256. Cost 13–19 ms on cave chunks.",
+            "refuteBy": "Find a shared corner with different offsets in two adjacent chunks, or a corner where the line solver at 14 bisections differs from 40 by more than 1/256."
+          },
+          {
+            "id": "C11",
+            "statement": "With one vertex per lattice corner, putting vertices on the physical surface does not minimise mesh error. Against FID-0.15, plain cube corners give the smallest quad-surface error, because flat quads between on-surface vertices cut through flat faces that have rounded edges. On-surface vertices win only for large or strongly rounded shapes.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/fast/logs/summ-t3acc-FID.log",
+              "teams/fast/logs/summ-t3acc-FINITE4.log",
+              "teams/fast/logs/summ-t3acc-FINITE4-big8.log",
+              "teams/fast/res/t3acc-FID.json",
+              "teams/fast/res/t3acc-FINITE4.json"
+            ],
+            "confidence": "measured",
+            "numbers": "Mean distance over 36 configurations, vertex / quad patch:\n- Against FID-0.15: bub-b1 0.032 / 0.113; cube 0.150 / 0.034; bevel 0.187 / 0.230; hints (binary placed blocks) 0.294 / 0.329.\n- Against FINITE-4: bub-b1 0.068 / 0.105; cube 0.223 / 0.078; bub-b1 with offsets x 0.5: 0.144 / 0.072.\n- The 8 large configurations against FINITE-4, patch only: bub-b1 0.062, cube 0.097, bevel 0.173.",
+            "refuteBy": "Run t3acc.mjs with a finer patch sampling or another distance method and find bub-b1's patch error below the cube's against FID-0.15."
+          },
+          {
+            "id": "C12",
+            "statement": "Seamless union of same-material blocks and the groove at different-material seams both survive in the cheap model, with the groove's depth close to the physics. In a surface-nets mesh the groove can only be one quad wide on each side of the seam.",
+            "kind": "pattern",
+            "evidence": [
+              "teams/fast/res/t4feat.json"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "pair-same dip at the joint: models 0.000; references -0.002 (FID), -0.006 (FINITE-4), -0.028 (FREE), all ridges rather than grooves.\npair-diff dip: FID 0.050, FINITE-4 0.068, FREE 0.052; models 0.042–0.058.\nVertex level: the seam corner sits 0.043 lower than the same-material joint corner (0.891 against 0.934).\nThe groove width follows from the topology (inference).",
+            "refuteBy": "Measure the pair-diff dip on the engine's labels instead of the D field and find it outside 0.03–0.09, or find a model dip below 0.03."
+          },
+          {
+            "id": "C13",
+            "statement": "Junction geometry in the cheap model follows the short-time references, not equilibrium. A T-junction of three materials stays close to a T: about 165/97/97° at sigma 0.2 and about 151/104/104° at sigma 0.4. FREE bends it toward a Y.",
+            "kind": "pattern",
+            "evidence": [
+              "teams/fast/res/t4feat.json",
+              "teams/fast/sheets/features-slices.png"
+            ],
+            "confidence": "measured",
+            "numbers": "sq2-AABC seam angles at y = 0.5, measured 0.15–0.4 blocks from the junction:\n- FID 175.4 / 92.3 / 92.3\n- FINITE-4 152.1 / 103.9 / 103.9\n- FREE 133.3 / 139.3 / 87.4\n- A0-g20 166.3 / 96.8 / 96.8\n- Bl-b1s20 165.4 / 97.3 / 97.3\n- Bl-b3s40 150.4 / 104.8 / 104.8\n- Bx-g40 152.1 / 103.9 / 103.9",
+            "refuteBy": "Measure the same angles on the engine's labels at n = 32 and find FID or FINITE-4 more than 10° away from these values."
+          },
+          {
+            "id": "C14",
+            "statement": "Diagonal union is partly lost. Two same-material blocks touching along an edge unite in every physics regime. They unite in the one-step field only when lambda > 0, and then through a thinner neck. They can never unite in the surface-nets mesh, because its topology keeps diagonal contacts pinched. Between different materials, the physics presses the blocks into a shared wall that the sigma-0.2 model barely forms.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/fast/res/t4feat.json",
+              "teams/fast/sheets/features-slices.png",
+              "teams/fast/sheets/models-vs-physics-2.png"
+            ],
+            "confidence": "measured",
+            "numbers": "diag-edge neck width at the shared edge: FID 0.74, FINITE-4 0.90, FREE 1.50, Bl-b1s20 0.36, Bx-g40 0.82, A0 0 (D = -0.024).\ndiag-edge-diff wall: FID 0.38, FINITE-4 0.62, FREE 1.18, Bl-b1s20 0.056, Bl-b3s40 0.37.\nslab-line edge contacts that are solid and A-owned: FID 4/5, FINITE-4 5/5, models with lambda > 0 5/5, A0 0/5.",
+            "refuteBy": "Find the diag-edge neck below 0.3 in any physics reference, or a lambda-0 one-step model with D > 0 at the shared edge."
+          },
+          {
+            "id": "C15",
+            "statement": "The bubble physics closes 1x2 tunnels below the game's 1.90 clearance. The sigma-0.2 one-step field keeps the tunnel, but the b1 vertex rule alone lowers the clearance to 1.73, so the §7.4 constraint box would still have to apply after it. Floating-block and pillar minimums pass comfortably.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/fast/res/t4feat.json",
+              "teams/fast/sheets/features-slices.png"
+            ],
+            "confidence": "measured",
+            "numbers": "Tunnel clear width x height at mid-section: FID 0.98 x 1.21; FINITE-4 0.85 x 1.43; Bl-b1s20 field 0.97 x 1.97; Bl-b3s40 field 0.81 x 1.47.\nVertex rules: bub-b1 height between edge corners 1.73, width 0.95 at the wall middle and 0.73 at the floor edge; bevel 1.90 / 1.00 / 0.70.\nSingle block, corner-to-corner extent: bub-b1 1.30, bevel 1.04. Pillar width: bub-b1 0.86, bevel 0.50.",
+            "refuteBy": "Measure FID-0.15's tunnel height on the engine's labels and find it at least 1.90, or find b1 tunnel corner vertices giving at least 1.90 without caps."
+          }
+        ],
+        "images": [
+          {
+            "path": "teams/fast/sheets/models-vs-physics-1.png",
+            "caption": "pair-same, pair-diff, L3-ABC, sq2-checker. Columns: blocks | physics FID-0.15 | cheap Bl-b1s20 (1 step, b1 kernel, sigma 0.2, local lambda) | physics FINITE-4 | cheap Bl-b3s40 (1 step, sigma 0.4). Same camera throughout. The cheap models track their references, including the groove at seams and the seamless union."
+          },
+          {
+            "path": "teams/fast/sheets/models-vs-physics-2.png",
+            "caption": "diag-edge, slab-line, stairs, terrain-step; same columns. FINITE-4 has pinning texture on terrain-step that the one-step model lacks. Bl-b3s40 makes diag-edge too small because the local lambda under-shoots at sigma 0.4."
+          },
+          {
+            "path": "teams/fast/sheets/features-slices.png",
+            "caption": "Cross-sections. Tunnel (x-y cut): the physics (FID-0.15, FINITE-4) closes the 1x2 tunnel to a small hole; the sigma-0.2 cheap model keeps it. diag-edge-diff (plan): the physics forms a wall between the diagonal A and B blocks; the cheap model barely touches. sq2-AABC (plan): FREE bends the T toward a Y; FID, FINITE-4 and the cheap model keep a T."
+          },
+          {
+            "path": "teams/fast/sheets/fid-iterations-stairs.png",
+            "caption": "Stairs: blocks, physics FID-0.15 (21 steps), cheap one step (Bl-b1s20), and 2, 4 and 10 local steps with the fidelity term. The concave fillet grows with iteration; one step does not reach it."
+          },
+          {
+            "path": "teams/fast/img/tunnel__FID-0.15-slice.png",
+            "caption": "tunnel, physics FID-0.15, x-y cut at z = 1.5: the 1x2 tunnel closes to about 0.98 x 1.21."
+          },
+          {
+            "path": "teams/fast/img/slab-line__Bl-b1s20-view.png",
+            "caption": "slab-line (painted diagonal A line in a B slab), cheap model Bl-b1s20: the A blocks join through thin necks and grooves run along the seams."
+          }
+        ],
+        "optimizations": [
+          {
+            "idea": "Replace the multi-step physics with one blur of the blocks: a separable sum of per-block kernels with per-material sums and the engine's least-psi rule, plus a volume shift lambda. For shape-keeping use sigma 0.2. For a T-step relaxation look use sigma 0.2*sqrt(T).",
+            "basis": [
+              "teams/fast/logs/summ-t2-FID.log",
+              "teams/fast/logs/summ-t2-FINITE4.log",
+              "teams/fast/res/t1-metaball.json"
+            ],
+            "gain": "Surface within 0.018–0.021 mean of FID-0.15, and within 0.010 of FINITE-4 at sigma 0.4. No iteration, no global solve if the local lambda is used. An engine step costs 427 ms at 1.09 M cells; the model is a few kernel evaluations per point.",
+            "risks": "No concave fill (FID's fixed point), so worst p95 is 0.13–0.20 on concave shapes. The local lambda fails at sigma 0.4 (50 % worst volume error). Fitted on the 36-configuration catalogue only."
+          },
+          {
+            "idea": "Use the box*tent (b1) kernel at sigma 0.2 as a surface-nets vertex rule. Inside each corner's cell the field is warped trilinear interpolation of its 8 blocks, plus a local lambda from n27, so only + - * / are needed and the apron is 2.",
+            "basis": [
+              "teams/fast/src/vrule.mjs",
+              "teams/fast/logs/summ-t3time.log",
+              "teams/fast/res/t3seam.json"
+            ],
+            "gain": "2–8 ms per 38³ chunk in Node, compared with 4–25 ms for the whole repo mesher. Seam-exact (0 of 558 shared corners differ). Vertices sit 0.032 mean from the FID surface, against 0.187 for bevel.",
+            "risks": "Flat quads between on-surface vertices give a larger patch error than plain cubes against FID (0.113 against 0.034). Newton fails to converge at 0.4 % of corners; the line solver fixes that at about 2.5x the cost. Tunnel height drops to 1.73, so the §7.4 constraint box is still needed."
+          },
+          {
+            "idea": "Precompute the vertex offsets as tables. With a constant lambda: 256 entries for single-material corners, and a material-partition table of at most Bell(9) = 21,147 patterns (about 63 KB as int8) for mixed corners. The tables can be built offline with the robust line solver.",
+            "basis": [
+              "teams/fast/res/t3time-run3.json"
+            ],
+            "gain": "0.7–1.5 ms per chunk (measured scan-plus-lookup floor). Removes the convergence problem from runtime.",
+            "risks": "A constant lambda gives 4–7 % mean volume error on the catalogue (Bc12/Bc15 rows). The partition table is inferred, not built or timed; multi-material corners are up to 900 per surface chunk."
+          },
+          {
+            "idea": "Scale the vertex offsets (alpha about 0.5) to trade vertex accuracy for quad-surface accuracy on strongly rounded targets.",
+            "basis": [
+              "teams/fast/logs/summ-t3acc-FINITE4.log"
+            ],
+            "gain": "Against FINITE-4, patch error 0.072, against 0.078 for cubes and 0.105 for unscaled offsets.",
+            "risks": "Only three alpha values were tried. A per-mask optimised table might do better. Against FID, cubes still win."
+          }
+        ],
+        "openQuestions": [
+          "REPORT.md was not written. The harness refused report .md files from subagents, so this structured result is the report. Could the orchestrator write REPORT.md from it, or allow the file?",
+          "Which vertex placement minimises the quad-patch error rather than the vertex error? A per-mask table fitted to the physics might beat both cubes and on-surface vertices.",
+          "Which physics regime should the game target? FID-0.15 keeps block shapes but closes 1x2 tunnels to 1.21 high; FINITE-4 rounds strongly. sigma in the cheap model is the dial (sigma*sqrt(T)). This is the owner's look decision.",
+          "Can a local term reproduce FID's concave fill, for example the max of two one-step fields at different sigma? Not tried.",
+          "Cross-browser determinism of the vertex rule was not tested; only same-engine seams were. The lambda table and b1 constants would need to be frozen as rationals.",
+          "Timing ran on a machine shared with other runs, with up to 50 % spread between runs. The repo mesher itself measured 14–25 ms on heavy cave chunks here. Production timing belongs in the repo's own profile test.",
+          "The sigma*sqrt(T) scaling rests on T = 2 and T = 4 only.",
+          "The groove depth and junction angles were measured on the engine's D field, which rounds creases by about 0.1. They should be re-measured on labels at n = 32."
+        ],
+        "reportPath": "NOT WRITTEN: the harness refused report .md files from subagents; this structured result is the report. Intended location: teams/fast/REPORT.md"
+      },
+      {
+        "team": "local",
+        "summary": "Team 'local' measured how block clusters combine in the shared MBO bubble engine. The work used about 900 3D runs: n = 12 for 14×2×5 slabs, n = 16 for the Task 4 contact scenes. It covered FID-0.15, FID-0.05, FINITE-4, CAGE-0.25, FREE and volume:false controls. Each run records three measures: labels (quantised at 1/n), D0 (the labels re-blurred with λ = 0, a purely local smooth field) and the renderer's own field D.\n\nHeadline: the bubble pressure λ (the volume constraint) is the only long-range carrier. Without it, a one-block add, remove, recolour or bridge changes labels only within 0–0.475 block of that block, and a probe 2 or more blocks away does not change at all. With it, the response reaches the whole cluster whenever λ changes. In this engine that response comes as whole sub-cell terraces (multiples of 1/12 block), placed where flat-face cells tie, rather than as a decaying tail. In three regimes it releases volume deficits the bases had stored (CAGE-0.25: the top face rises 0.25 at every distance).\n\nThe local near field has compact support: a FID-0.15 bump's skirt ends by 1.0 block, pits and inclusions by 0.25, the seam position by 0.5. Convex edges, inclusions and straight seams take the same shape in every cluster tested. A straight seam does not move at all in FID/FINITE (labels flat at n = 12 and 16); its groove is the renderer's blur of the unmoved blocks, which I give in closed form and which matches a discrete model to 4.75e-6 block. Concave features and thin attached features do depend on the whole cluster: under CAGE a 1×1 pillar's width falls 1.06 → 0.69 → 0.49 as the plate it stands on grows, and FID-0.05 drains an attached pillar completely. Superposition is exact only where λ stays fixed (FINITE-4, features 2 or more blocks apart).\n\nAt ambiguous contacts the smaller pair unites (FINITE-4, CAGE, FREE, and FID-0.05 for large size ratios). Equal sizes give no union with jitter 0 and with reversed block order, so there is no tie-break bias. Edge contacts with air always unite, corner-only contacts never do, and FID-0.15 never resolves an X. A local rule, \"minority in a 4×4×3 window connects; ties none; air-X connects; corner never\", matches the physics in 21/21 configurations for FINITE-4, 20/21 CAGE, 19/20 FREE, 19/21 FID-0.05 and 10/21 FID-0.15. It keeps the painted diagonal line continuous, as every regime except FID-0.15 does.\n\nREPORT.md was not written: the harness blocks report files from subagents. The full report is this structured result. Every number is in results JSON and logs under teams/local/ (backed up to <backup>/teams/local/). The engine copy lib/mbo-box.mjs adds a shared-grid bbox, records the dynamics λ before finish(), adds a forced-union option and adds finishLocal(); the README is followed otherwise.",
+        "claims": [
+          {
+            "id": "L1",
+            "kind": "pattern",
+            "statement": "Without the volume constraint (volume:false), a one-block change is strictly local, and that includes a bridging block. Label changes stay within 0 to 0.475 block of the changed block, and D0 at a probe 2 or more blocks away changes by exactly 0.",
+            "evidence": [
+              "teams/local/res/t1-nearfar.json",
+              "teams/local/res/t1-summary.json",
+              "teams/local/logs/t1-FID-0.15-novol-add.log",
+              "teams/local/logs/t1-FINITE-4-novol-add.log",
+              "teams/local/logs/t3-bridge-FID-0.15-novol.log",
+              "teams/local/sheets/t1-maps.png"
+            ],
+            "confidence": "measured",
+            "numbers": "14x2x5 A slab, n=12. FID-0.15-novol add/remove: 328 cells change, all inside the changed block (max distance 0); recolour: the B inclusion is erased (0 diffs). FINITE-4-novol: max distance 0.375 (add/remove), 0.208 (recolour). D0 probe change at d=2,4,8: 0 in every novol run. Bridge, FID-0.15-novol: max distance 0.475 (A bridge), 0.243 (B bridge); far dTop0 = 0. CAGE-0.25-novol did not converge in 300 steps (excluded). FID-0.05-novol erases the whole slab, so it is no control.",
+            "refuteBy": "Repeat any converged volume:false perturbation on this slab or a larger one (n=12 or 16). A label change more than 0.5 block from the changed block, or a non-zero D0 change at a probe 2 or more blocks away, refutes it."
+          },
+          {
+            "id": "L2",
+            "kind": "engine",
+            "statement": "With volume:true, λ carries influence across the whole cluster, and only when the perturbation changes λ. Far from the change the response is quantised into whole sub-cell terraces (multiples of 1/n block) on flat faces; there is no smooth decaying tail. FID-0.15 converges by placing its rounding loss in a one-layer plateau patch on the top and bottom faces. Any bump removes that patch, wherever the bump is.",
+            "evidence": [
+              "teams/local/res/t1-nearfar.json",
+              "teams/local/logs/terrace-FID-0.15-base.log",
+              "teams/local/logs/terrace-FID-0.15-add3.log",
+              "teams/local/res/t1/FID-0.15-add.json",
+              "teams/local/sheets/t1-maps.png",
+              "teams/local/sheets/t1-views.png"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "FID-0.15 base: volume exactly 140, λ 0.17529, 45 steps; plateau +1/12 on the centre line from x = 4.875 to 9.125, on top and bottom. A bump at any d moves λ to 0.13277 and removes the plateau; far label change 0.083 (1216 cells beyond 2.5 blocks). Remove: λ → 0.1078, 1404 far cells. Recolour: λ_A → 0.20705, 1876 far cells. Changes reach up to 12 blocks away. Far amplitudes seen: 0.083, 0.167, 0.25 (= 1, 2, 3 × 1/12). Where λ is unchanged the response is local: FINITE-4 remove/recolour keep λ 0.16629 and change labels ≤ 0.208 block; CAGE remove changes only pit cells. The tie mechanism is an inference from the equal margins of flat faces.",
+            "refuteBy": "Re-run the base and the d=6 bump at n=16 and n=24 on the same blocks. If the far-field amplitude stays 0.083 block instead of 1/n, or changes in sub-layer amounts, the quantisation explanation fails. A perturbation that changes λ with no label change beyond 2.5 blocks also refutes it."
+          },
+          {
+            "id": "L3",
+            "kind": "limitation",
+            "statement": "FID-0.05, FINITE-4 and CAGE-0.25 bases stop with a volume deficit, λ pinned at a tie. One new concave site (a bump) releases the stored deficit across the whole cluster. In a continuum model the same deficit would shift the surface only about ΔV/area.",
+            "evidence": [
+              "teams/local/res/t1-nearfar.json",
+              "teams/local/res/t1/CAGE-0.25-add.json",
+              "teams/local/res/t1/FID-0.05-add.json",
+              "teams/local/sheets/t1-views.png"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "Base volumes of 140: FID-0.05 139.241 (λ 0.21629, 7 steps), FINITE-4 138 (λ 0.16629), CAGE-0.25 136.083 (λ 0.16629, 84 steps). One bump: CAGE top face +0.25 (the cage limit) at every d, 24432 cells changed beyond 2.5 blocks; FID-0.05 mound with a 3.5–5 block skirt, 11800 far cells; probe D0 0.53/0.34/0.17/0.03/0 at d = 1/2/3/4/≥6. Continuum estimate for the CAGE base, 3.92/216 ≈ 0.018 block, is inference.",
+            "refuteBy": "Use a volume solver that splits tied flat-face layers (a partial layer) so the bases reach 140. If the bump response is then still cluster-wide at more than 1/64, the deficit-release mechanism is wrong."
+          },
+          {
+            "id": "L4",
+            "kind": "pattern",
+            "statement": "With volume on, the near-field response to one block has compact support (exactly zero past a cutoff), so d* hardly depends on the tolerance. Radii are measured contiguously from the changed block along the slab's centre line in D0, in runs where no terrace touches the change.",
+            "evidence": [
+              "teams/local/res/t1-nearfar.json",
+              "teams/local/res/t1/FID-0.15-add.json",
+              "teams/local/logs/analyze1b.log"
+            ],
+            "confidence": "measured",
+            "numbers": "d* at 1/256 · 1/64 · 1/16 (0.25-block sampling, +0.125). FID-0.15: bump 1.0 · 0.75 · 0.75; pit 0.25 · 0 · 0; inclusion 0.25 · 0 · 0. FINITE-4: bump 2.25 · 2.0 · 2.0 (a terrace ring); pit and inclusion 0.25 · 0.25 · 0. FID-0.05 bump ≥ 3.5. CAGE add/recolour: whole cluster. FID-0.15 bump skirt in D0 at 0.125/0.375/0.625/0.875/1.125 block from its face: 0.370/0.187/0.084/0.012/0.",
+            "refuteBy": "Sample the same runs on a 2D grid of probes, or repeat at n=16. A terrace-free D0 change above 1/256 more than 1.125 block from a FID-0.15 bump, or more than 0.375 from a FID-0.15 pit or inclusion, refutes it."
+          },
+          {
+            "id": "L5",
+            "kind": "pattern",
+            "statement": "The position of a straight A|B seam is local. Recolouring one block to touch the seam moves the seam within 0.5 block (FID-0.15) or 0.75 (FID-0.05, FINITE-4). CAGE-0.25 is the exception: there the whole seam shifts one sub-cell.",
+            "evidence": [
+              "teams/local/res/t1-seam-summary.json",
+              "teams/local/logs/analyze1seam.log"
+            ],
+            "confidence": "measured",
+            "numbers": "14x2x4 A|B slab, seam z at y=1.5 in D0. d* at 1/256 · 1/64 · 1/16: FID-0.15 0.5 · 0.25 · 0.25; FID-0.05 0.75 · 0.5 · 0.5; FINITE-4 0.75 · 0.5 · 0.5 (FINITE-4-novol the same); FID-0.15-novol 0.25 · 0.25 · 0.25; CAGE-0.25 11.75 (global, 0.083 shift). Probe shift for d ≥ 2: 0 in every regime except CAGE.",
+            "refuteBy": "Recolour blocks at d ≥ 1 along a seam in a longer slab or at n=16. A FID-0.15 seam shift above 1/256 at a probe more than 0.5 block from the recoloured block refutes it."
+          },
+          {
+            "id": "L6",
+            "kind": "engine",
+            "statement": "The render step finish() re-solves λ over each whole cluster. That shifts the rendered surface D uniformly by up to 0.021 block in response to a block change anywhere in the cluster, even where labels and D0 do not change.",
+            "evidence": [
+              "teams/local/res/t1-summary.json",
+              "teams/local/res/t1/FID-0.15-recolour.json"
+            ],
+            "confidence": "measured",
+            "numbers": "FID-0.15, Dfull shift at the probe for every d from 2 to 10: 0.00155 (add), 0.0094 (remove), 0.021 (recolour); D0 0 and labels 0 at the same points. The render λ goes 0.07076 → 0.08064 / 0.13104 / 0.20492.",
+            "refuteBy": "Compare Dfull with D0 at probes more than 2 blocks from the change. If Dfull − D0 is not uniform, or is below 1e-4, the claim fails."
+          },
+          {
+            "id": "L7",
+            "kind": "physics",
+            "statement": "Under FREE, influence is global: one block added at one end of a small cluster moves the far end by almost half a block.",
+            "evidence": [
+              "teams/local/res/t1-free.json",
+              "teams/local/logs/t1-free.log"
+            ],
+            "confidence": "measured",
+            "numbers": "1x1x6 A bar, n=16. The base ends as a rounded blob (far-end ray 1.179, side rays 1.062), not a perfect sphere. Shifts along rays from the base centroid, far end / sides: add −0.437 / −0.017; remove +0.441 / −0.152; recolour (end block to B) −0.375 / −0.082.",
+            "refuteBy": "Re-run with maxSteps 1000 and a longer bar. A far-end shift below 1/64 would refute global influence."
+          },
+          {
+            "id": "L8",
+            "kind": "pattern",
+            "statement": "λ tracks surface/volume only loosely. Under FID-0.15 a linear fit with an offset explains 82 % of the variance, but λ ∝ S/V fails. λ depends on cross-section and feature class: 1×1 bars have the same λ at every length, and one inclusion fixes λ_A and λ_B regardless of host size. FREE follows the sphere law λ ≈ 0.2537·V^(−1/3) only where the cluster actually becomes a sphere.",
+            "evidence": [
+              "teams/local/res/lam-fit.json",
+              "teams/local/res/t2-summary.json",
+              "teams/local/res/t2/lam-FID-0.15.json",
+              "teams/local/res/t2/lam-FREE.json",
+              "teams/local/res/t2/incl-FID-0.15.json"
+            ],
+            "confidence": "measured",
+            "numbers": "FID-0.15 over 16 clusters: λ = 0.1076 + 0.0282·S/V, R² 0.817, max residual 0.032; proportional fit max residual 0.091; λ ranges 0.154–0.305. Bars 1x1xL for L = 2, 4, 8: 0.23879 / 0.23917 / 0.23917. At S/V = 3: cube 2³ 0.19297 vs plate 4x1x4 0.1601. Inclusion λ_A 0.20705, λ_B 0.34672 in slabs 3, 5, 7 and a 3x2x9 bar. R² for the other regimes: FID-0.05 0.151, FINITE-4 0.506, CAGE 0.739, FREE 0.779. FREE: cube 2³ 0.12788 vs 0.1268 predicted, bar 1x1x2 0.20039 vs 0.2014; V=4 off by 4–6 %; bar 1x1x8 off by 27 % and cube 3³ by 63 % (pinned before becoming spheres).",
+            "refuteBy": "Build clusters at fixed S/V with different cross-sections. Equal λ (within 0.005) would refute the cross-section dependence; a change of λ with length for 1×1 bars would also refute it."
+          },
+          {
+            "id": "L9",
+            "kind": "pattern",
+            "statement": "Under FID-0.15, convex features are context-free. A convex edge's rounding, a one-block inclusion and the top of a bump take the same shape in every cluster tested; the remaining differences are one-layer terraces. Pits are the exception: depth depends on the smallest host.",
+            "evidence": [
+              "teams/local/res/t2-summary.json",
+              "teams/local/res/t2/edge-FID-0.15.json",
+              "teams/local/res/t2/edge-FID-0.15-n16.json",
+              "teams/local/res/t2/incl-FID-0.15.json",
+              "teams/local/res/t2/pit-FID-0.15.json",
+              "teams/local/sheets/t2-context.png"
+            ],
+            "confidence": "measured",
+            "numbers": "Edge: the top surface has dropped 0.05 at 0.15 block from the edge and 0.25 at 0.025, for slab widths k = 1, 2, 3, 5, 8, a long slab, a hook and a 3³ cube (n=16: 0.125 / 0.025); profile difference from the k=8 reference ≤ 1e-5 beyond the terrace region. Inclusion: top 2.2325 (bulges 0.23) and profile difference 0 in slabs 3, 5, 7 and a bar. Bump top 2.995–2.997 in all hosts; profiles differ by ≤ 0.083 (one terrace). Pit centre: 1.836 in the 3x2x3 slab vs 1.917 in 5x2x5, 7x2x7, the bar and slab 5 with a far bump.",
+            "refuteBy": "Embed the same edge or inclusion in a new shape (a ring, a long L, a 3-thick slab). A D0 difference above 1/64 within 0.5 block of the feature that is not a whole-layer terrace refutes it."
+          },
+          {
+            "id": "L10",
+            "kind": "limitation",
+            "statement": "Thin attached features depend on the whole cluster through λ: a pillar thins, or drains completely, into the plate it stands on as the plate grows. Removing the pressure is worse: under FID-0.15 with volume:false, mean-curvature flow deletes thin features entirely.",
+            "evidence": [
+              "teams/local/res/t2/pillar-CAGE-0.25.json",
+              "teams/local/res/t2/pillar-FID-0.05.json",
+              "teams/local/res/t2/pillar-FID-0.15.json",
+              "teams/local/res/t2/pillar-FID-0.15-novol.json",
+              "teams/local/res/t2/edge-FID-0.15-novol.json",
+              "teams/local/logs/t2-pillar.log"
+            ],
+            "confidence": "measured",
+            "numbers": "1x1x3 pillar, width at mid-height (D0). CAGE-0.25: alone 1.496; on plates 3/5/7: 1.056 / 0.688 / 0.488. FID-0.05: alone 1.152; on any plate 0 (drained, the top falls to 2.08–2.33). FID-0.15: alone 1.128; on plates 0.992. FID-0.15-novol: pillar and plates vanish (12→0, 28→0; 52→4.56 at 300 steps); also a 1x2x4 bar 8→0 and one-block inclusions erased.",
+            "refuteBy": "Repeat at n=16. A CAGE pillar width that does not fall with plate size, or a FID-0.15-novol pillar that survives, refutes it."
+          },
+          {
+            "id": "L11",
+            "kind": "look",
+            "statement": "In the anchored regimes a straight seam does not move: labels are flat across it. The visible groove is the renderer's Gaussian blur of the unmoved blocks. It is universal, with depth g(x) = σ·Φ⁻¹(1/(1+Φ(|x|/σ))) for σ = renderS = 0.125 block. Under CAGE-0.25 the labels do form a groove: a one-sub-cell notch, identical in every embedding at least 3 blocks wide.",
+            "evidence": [
+              "teams/local/res/groovefit.json",
+              "teams/local/res/t2/seam-FID-0.15.json",
+              "teams/local/res/t2/seam-FID-0.15-n16.json",
+              "teams/local/res/t2/seam-CAGE-0.25.json",
+              "teams/local/res/t2-summary.json",
+              "teams/local/sheets/t2-context.png"
+            ],
+            "confidence": "measured",
+            "numbers": "The discrete blur of unmoved blocks matches the measured D0 groove to 4.75e-6 block. Continuous g matches to ≤ 0.0014 for |x| ≥ 0.04 (0.0538 at x=0, where grid sampling flattens the bottom to 0.0352). Measured groove (n=12): 0.0352 for |x| ≤ 0.04, 0.0243 at 0.08, 0.0143 at 0.12, 0.0045 at 0.20, under 0.001 beyond 0.28. Groove minimum 1.9648 in all 8 FID-0.15 embeddings with widths ≥ 2 (2|2, 3|3, 5|5, 2|5, 5|2, L8, L6, L-hook); also in FID-0.05 and FID-0.15-novol, and 1.9648–1.9656 in FINITE-4. n=16: labels flat, minimum 1.9598. CAGE: notch 1/12 deep and 0.36 wide; profile difference 0 for 3|3, 5|5, 3|3L6 and 2|2L8.",
+            "refuteBy": "Run FID-0.15 on a straight seam at n=24, or with k between 0.05 and 0.15. A label groove deeper than one sub-cell refutes the 'seam does not move' part. A D0 profile that differs from the discrete blur model by more than 1e-4 refutes the formula part."
+          },
+          {
+            "id": "L12",
+            "kind": "pattern",
+            "statement": "Where a seam meets a convex edge (the slab's end face), the groove deepens beyond plain edge-plus-seam addition. The effect dies out within 0.5 block in FID-0.15 and FID-0.05, 1.0 in FINITE-4 and 1.0–1.5 in CAGE-0.25.",
+            "evidence": [
+              "teams/local/res/t3-summary.json",
+              "teams/local/logs/analyze3.log",
+              "teams/local/sheets/t3-combine.png"
+            ],
+            "confidence": "measured",
+            "numbers": "8x2x4 A|B slab, top height at the seam vs its far value 1.9648. FID-0.15, deviation at x = 0.5/0.4/0.3/0.2/0.1 from the end: 0.0002 / 0.0018 / 0.0099 / 0.040 / 0.124. Groove depth below the local edge height: 0.0866 at 0.1 block vs 0.0352 far away. FID-0.05: 0.0014 at 0.5. FINITE-4: 0.001 at 1.0, 0.022 at 0.75. CAGE: 0.0024 at 1.0, 0.046 at 0.75. End-face notch at mid-height 0.036 (FID-0.15).",
+            "refuteBy": "Measure on a longer slab, at n=16, or where the seam meets a convex corner. A FID-0.15 deviation above 1/256 more than 0.6 block from the edge refutes it."
+          },
+          {
+            "id": "L13",
+            "kind": "pattern",
+            "statement": "Two features superpose exactly (the pair's shape equals the sum of the single-feature changes) only when λ does not change: under FINITE-4, for inclusions 2 or more blocks apart. Under FID-0.15, FID-0.05 and CAGE-0.25 superposition fails by about one sub-cell, because λ shifts.",
+            "evidence": [
+              "teams/local/res/t3/superpos-FINITE-4.json",
+              "teams/local/res/t3/superpos-FID-0.15.json",
+              "teams/local/res/t3/superpos-CAGE-0.25.json",
+              "teams/local/logs/t3-superpos-FINITE-4.log",
+              "teams/local/logs/t3-superpos-redo.log"
+            ],
+            "confidence": "measured",
+            "numbers": "B inclusions at x=4 and 4+s in a 14x2x5 A slab, residual (D0) within 1.5 blocks. FINITE-4: s = 2, 3, 4, 6 → ≤ 2.1e-8 with 0 label cells; s = 1 (the inclusions unite) → 0.117. FID-0.15: 0.0926 for s = 2–6 (0.23 at s = 1). FID-0.05: 0.093–0.116 (0.188 at s = 1). CAGE-0.25: 0.098–0.175.",
+            "refuteBy": "Repeat with bumps, pits, or inclusions next to a seam. A FINITE-4 pair 2 or more blocks apart with a residual above 1/256 refutes it."
+          },
+          {
+            "id": "L14",
+            "kind": "pattern",
+            "statement": "Bridging two same-material clusters with one block changes λ for the whole union and re-places its terraces. Near the bridge, labels change within 1.5 blocks. A different-material bridge leaves the two seams on the block faces.",
+            "evidence": [
+              "teams/local/res/t3/bridge-FID-0.15.json",
+              "teams/local/res/t3-summary.json",
+              "teams/local/logs/t3-bridge-FINITE-4.log",
+              "teams/local/sheets/t3-combine.png"
+            ],
+            "confidence": "measured",
+            "numbers": "FID-0.15, two 3x2x5 slabs: λ 0.17529 → 0.08687 (A bridge); 3x2x5 + 6x2x5: 0.17529 / 0.15919 → 0.08983. Label cells within 1.5 blocks 4908, beyond 2340 (one-sub-cell terraces up to 6.3 blocks away). D0 shift up to 0.23 next to the bridge. B bridge: seams at x = 3.0009 and 3.9991; λ_A 0.17295, λ_B 0.19123. The volume:false control changes nothing beyond 0.475 block.",
+            "refuteBy": "A volume:true bridge with no label change beyond 1.5 blocks, or a volume:false bridge with far changes, refutes it."
+          },
+          {
+            "id": "L15",
+            "kind": "pattern",
+            "statement": "At an ambiguous checkerboard X, the smaller pair unites. This holds in FINITE-4, CAGE-0.25 and FREE, and in FID-0.05 when the size ratio is large. With equal sizes, jitter 0 and the reversed block order both give no union, so there is no tie-break bias; jitter alone then decides. FID-0.15 never resolves an X. The painted diagonal line (the thin pair) unites in every regime except FID-0.15.",
+            "evidence": [
+              "teams/local/res/t4-summary.json",
+              "teams/local/logs/analyze4.log",
+              "teams/local/sheets/t4-contacts.png",
+              "teams/local/sheets/t4-line.png"
+            ],
+            "confidence": "measured",
+            "numbers": "2x2 checker with each pair grown to clusters of 1, 2 or 4 blocks; n=16; variants jitter 0, jitter 1e-3 seeds 1–3, reversed order. Smaller pair unites in all asymmetric cases: FINITE-4 6/6, CAGE 6/6, FREE 6/6 (A1-B4 on 3 variants only). FID-0.05: 4/6 (none at 2v4 and 4v2). FID-0.15: 0/6, and none in all 9 sizes × 5 variants. Equal sizes 1v1, 2v2, 4v4 with jitter 0 or reversed: none in every regime. Seeds split, e.g. FREE 1v1: none / A / both / both / none; CAGE 2v2 gives 'both' in all 5 variants (3D crossing). Painted lines (slab-line, a 4x4 line, colours swapped, 2-high) unite in all variants run under FID-0.05, FINITE-4, CAGE and FREE; FID-0.15 leaves 6 separate dots.",
+            "refuteBy": "A checkerboard where the larger pair unites under FINITE-4 or CAGE with jitter 0 and reversed order, or an equal-size case that unites with jitter 0, refutes it."
+          },
+          {
+            "id": "L16",
+            "kind": "pattern",
+            "statement": "Contact type alone decides some cases. Same-material blocks touching along an edge with air in the other two quadrants always unite; blocks touching only at a corner never do, in every regime.",
+            "evidence": [
+              "teams/local/res/t4-summary.json",
+              "teams/local/res/t4/contacts-FID-0.15-n16.json",
+              "teams/local/res/t4/contacts-FREE-n16.json"
+            ],
+            "confidence": "measured",
+            "numbers": "diag-edge, diag-edge-3v3 and diag-edge-3v1: A unites in 5/5 variants in all 5 regimes. diag-corner and cube2-cornerA: no union in 5/5 variants in all 5 regimes. cube2-edgeA (an edge contact inside B): unites in FID-0.05, FINITE-4, CAGE and FREE, not in FID-0.15.",
+            "refuteBy": "Any regime and variant where an edge-with-air contact stays separate, or a corner-only contact unites."
+          },
+          {
+            "id": "L17",
+            "kind": "pattern",
+            "statement": "A deterministic local rule reproduces the union outcome. At a lattice edge whose four surrounding blocks form an X: if the other diagonal pair is air, the solid pair connects. Otherwise count the two materials in a window 4×4 across the edge and 3 layers along it; the strictly smaller count connects, and a tie connects nothing. Corner-only contacts never connect. On the painted diagonal line the rule connects the line.",
+            "evidence": [
+              "teams/local/res/t4-rule-score.json",
+              "teams/local/rule4.mjs",
+              "teams/local/logs/rule4.log"
+            ],
+            "confidence": "measured",
+            "numbers": "Agreement with physics over 21 configurations (deterministic variants used where seeds split): FINITE-4 21/21; CAGE 20/21 (misses 'both' in 2v2); FREE 19/20 (misses 'both' in the 3D 2x2x2 checker); FID-0.05 19/21 (2v4 and 4v2: physics none); FID-0.15 10/21 (FID-0.15 never connects an X). slab-line: the rule says A connects, matching FID-0.05, FINITE-4, CAGE and FREE. The rule is Kopf–Lischinski's 'sparse pixels' heuristic for pixel art, cited from memory (inference).",
+            "refuteBy": "Build configurations where the window count and the true cluster sizes disagree, e.g. a thin line attached to a large blob outside the window. If the physics follows cluster size, the window rule fails."
+          },
+          {
+            "id": "L18",
+            "kind": "look",
+            "statement": "Under FID-0.15, declaring the line's blocks one cluster does not make a painted line continuous: the X junctions stay pinned with zero neck. The regimes that unite the line give it a neck of 0.5–1.0 block at each X, and under CAGE, FINITE-4 and FREE the line wins even when the opposite union is imposed.",
+            "evidence": [
+              "teams/local/res/t4/rule-slab-line-FID-0.15-n16.json",
+              "teams/local/res/t4/rule-slab-line-CAGE-0.25-n16.json",
+              "teams/local/res/t4/rule-slab-line-FID-0.05-n16.json",
+              "teams/local/sheets/t4-line.png"
+            ],
+            "confidence": "measured",
+            "numbers": "slab-line, A neck at the 5 X junctions at y=0.5. FID-0.15: physics and imposed union both give 6 components, necks [0,0,0,0,0]. CAGE 0.688 at all 5, also with the B halves imposed united. FINITE-4 0.5 at all 5, also with B imposed. FREE [0,1,1,1,0] in all three. FID-0.05 physics [0,0.875,0.875,0.875,0]; with B imposed, A splits into 2 pieces of 3 blocks.",
+            "refuteBy": "Re-run at n=12 and n=24. A FID-0.15 imposed union that forms a neck above 0.1 block at the X refutes the first part."
+          },
+          {
+            "id": "L19",
+            "kind": "engine",
+            "statement": "In 2D, FID-0.15 on a flat bar never converges: it locks into an exact 2-cycle in which a whole flat-face layer flips on and off. At n=16 nothing moves at all.",
+            "evidence": [
+              "teams/local/res/osc2d.json",
+              "teams/local/logs/osc2d.log"
+            ],
+            "confidence": "measured",
+            "numbers": "24x2 and 8x2 bars, n=32: λ alternates 0.08758 / 0.21242 (= 0.15 ∓ 0.06242), volume 47.96 / 49.41 of 48, 1488 label changes every step for 60 steps. FID-0.05 converges with volume 47.836. FID-0.15-novol converges to 47.836. At n=16: 0 changes from step 1.",
+            "refuteBy": "Run the 24x2 bar at n=32 for 1000 steps. Convergence, or any cycle other than period 2, refutes it."
+          }
+        ],
+        "images": [
+          {
+            "path": "teams/local/sheets/t1-maps.png",
+            "caption": "Task 1, 14x2x5 A slab, n=12, one block changed at x=8..9: plan maps of the label height change (top face above, bottom face below; red outward, blue inward). FID-0.15 add, remove and recolour: a local change plus a one-layer terrace that relocates several blocks away. FID-0.15 and FINITE-4 with volume:false: only the changed block's own cells. FID-0.05 add: a mound across the slab. FINITE-4 add: a terrace ring about 2 blocks wide. FINITE-4 recolour: local. CAGE-0.25 add: the whole top face rises 0.25. CAGE-0.25 remove: pit cells only."
+          },
+          {
+            "path": "teams/local/sheets/t1-views.png",
+            "caption": "Task 1 views, same slab and change. FID-0.15 base, showing its own terrace patch (a raised oval), and with a bump (skirt ≤ 1 block). FID-0.05 base (139.24 of 140) and with a bump (a stepped mound). CAGE-0.25 base (136.08 of 140) and with a bump (top +0.25). FINITE-4 bump (a terrace ring). FID-0.15 B inclusion (bulges 0.23)."
+          },
+          {
+            "path": "teams/local/sheets/t2-context.png",
+            "caption": "Task 2, cross-sections, n=12. Straight A|B seams at widths 1|1, 2|2, 5|5, 2|5 under FID-0.15 (seam unmoved; bumps on top are terraces) and CAGE-0.25 (one-sub-cell notch). A pit in 3x2x3 vs 7x2x7 hosts under FID-0.15 (0.164 vs 0.083 deep), FID-0.05 (filled) and CAGE-0.25 (cage limit). A bump on 3x2x3 vs 7x2x7 under FID-0.15 (same shape) and FID-0.05 (spreads into a tent)."
+          },
+          {
+            "path": "teams/local/sheets/t3-combine.png",
+            "caption": "Task 3, FID-0.15, n=12. Two 3x2x5 A slabs with a one-block gap: separate, bridged by A (one cluster, λ 0.175 → 0.087), bridged by B (seams stay on the block faces), with sections at z=2.5. An 8x2x4 A|B slab where the seam meets the end edges, with its section (labels unmoved, groove from the render blur). One B inclusion in a 6x2x6 slab."
+          },
+          {
+            "path": "teams/local/sheets/t4-contacts.png",
+            "caption": "Task 4, n=16, plans at mid-height. Checkerboards with unequal cluster sizes: the small pair unites (FREE seed 1, CAGE-0.25). Equal-size ties (FREE seed 1; the engine reports A united in A1/B1 although the X is still visible at mid-height). FID-0.15: the X stays. Edge contacts with air unite (FID-0.15, CAGE). 2x2x2 3D checker under FID-0.15: no union."
+          },
+          {
+            "path": "teams/local/sheets/t4-line.png",
+            "caption": "Task 4, painted diagonal line (slab-line, 6x1x6, n=16). FID-0.15 physics, with the A line imposed united, and with the B halves imposed united: 6 dots, neck 0. FID-0.05 physics: the line unites; with B imposed it is cut into 2. FINITE-4 (neck 0.5), CAGE-0.25 (neck 0.69; it wins even with B imposed) and FREE: the line unites. 3D views for FID-0.15, CAGE and FINITE-4."
+          }
+        ],
+        "optimizations": [
+          {
+            "idea": "Run the bubble shape pass as a purely local rule with no global λ, so its reach is under 0.5 block and fits inside the mesher's existing 38³ region (apron 3). Pair it with an explicit thin-feature guard (the PLAN §7.4 kind), because without pressure the dynamics delete thin features.",
+            "basis": [
+              "L1",
+              "L4",
+              "L10",
+              "L14"
+            ],
+            "gain": "No cross-chunk solve. An edit dirties only blocks within about 1 block of it. Far terraces and the renderer offset disappear by construction. Shape matches the novol controls: changes within 0–0.475 block.",
+            "risks": "Measured: FID-0.15 with volume:false erases 1-wide bars, pillars, 1-thick plates and one-block inclusions. Pressure-driven looks (inclusion bulge +0.23, bump fillets) also go. The guard is untested in combination with this rule."
+          },
+          {
+            "idea": "Keep pressure, but as one scalar per cluster updated by a reduction (union-find over the cluster, or a table by feature class), not a quantile solve over every cell. Possibly apply it only to clusters smaller than the apron.",
+            "basis": [
+              "L2",
+              "L3",
+              "L8",
+              "L14"
+            ],
+            "gain": "Removes terrace jumps and the stored-deficit floods (CAGE +0.25, FID-0.05 mounds). An edit updates one number per touched cluster. Small isolated clusters, where pressure shapes the result, fit inside the apron and can be solved exactly.",
+            "risks": "Inference only, not implemented or tested. λ varies 0.15–0.30 under FID-0.15 and is only roughly predicted by S/V (R² 0.82, ±0.03). Clusters that cross chunks need a shared union-find, and thin attached features still drain (L10)."
+          },
+          {
+            "idea": "Produce straight seams, convex edges and seam–edge corners from closed forms or small per-corner tables instead of simulating. Skip all work on flat faces more than about 0.5 block from a feature.",
+            "basis": [
+              "L9",
+              "L11",
+              "L12",
+              "L4"
+            ],
+            "gain": "Under FID-0.15 most surface vertices never move: flat faces are pinned, seams keep their labels, and the edge inset is 0.15/0.025 everywhere. The seam groove is one known function, g(x) = σΦ⁻¹(1/(1+Φ(|x|/σ))). Seam–edge junctions need a reach of ≤ 0.5 block (FID-0.15), at most 1.5 (CAGE). This is the same mechanism as the existing bevel table.",
+            "risks": "The FID/FINITE groove is the renderer's blur, i.e. a look choice, not physics. Pits and thin attached features are context-dependent and cannot be tabulated (L9, L10). CAGE and FINITE-4 junctions reach 1–1.5 blocks."
+          },
+          {
+            "idea": "Resolve ambiguous checkerboard and edge contacts with the deterministic 'minority connects' rule (4×4 across the edge, 3 layers along it; ties connect nothing; air-X connects; corner-only never), stored per lattice edge like the bevel table. Where the rule connects, emit a neck about 0.5–0.7 block wide.",
+            "basis": [
+              "L15",
+              "L16",
+              "L17",
+              "L18"
+            ],
+            "gain": "Deterministic, reads within 2 blocks, needs no simulation, and matches the physics in 21/21 cases (FINITE-4) and 19–20 of 20–21 (CAGE, FREE, FID-0.05). It keeps the painted diagonal line continuous, the owner's hard case. Ties are explicit, so jitter or phase-order dependence is avoided.",
+            "risks": "The tested set cannot tell the window count apart from true cluster size. FID-0.15 physics never connects, so under that regime the rule must also move geometry, because declaring a union alone left neck 0. The 3D 'both' outcomes (CAGE 2v2, FREE 3D checker) are not reproduced."
+          },
+          {
+            "idea": "Do not copy finish()'s cluster-wide volume re-solve into any mesh or render path; use a local re-blur (D0, λ = 0) instead.",
+            "basis": [
+              "L6"
+            ],
+            "gain": "Removes a uniform surface offset of up to 0.021 block (≈ 5/256) that depends on blocks anywhere in the cluster, so chunk seams cannot disagree because of it.",
+            "risks": "The local re-blur loses a little volume at rounded edges, at render level only (FID-0.15 slab: 135.46 vs 140 in novol labels; the render-level loss was not separately measured)."
+          },
+          {
+            "idea": "Where λ is pinned (FINITE-4-like dynamics), cache per-feature corrections and add them, since features 2 or more blocks apart superpose exactly.",
+            "basis": [
+              "L13",
+              "L1"
+            ],
+            "gain": "Shape = base + Σ cached corrections for inclusions 2 or more blocks apart (residual ≤ 2.1e-8 with 0 label cells). Only pairs closer than 2 blocks need joint evaluation.",
+            "risks": "Fails by one sub-cell (0.093) in FID-0.15, FID-0.05 and CAGE, where λ moves. Tested only for inclusions."
+          }
+        ],
+        "openQuestions": [
+          "Does the far-field terrace amplitude scale as 1/n? Re-running the 14x2x5 bump at n=24 (or on a smaller slab) would separate discretisation from physics. A continuum model predicts a uniform ΔV/area shift (≈ 0.018 block for the CAGE base, inference).",
+          "Would a volume solver that splits tied flat-face layers make FID-0.05, FINITE-4 and CAGE-0.25 local, removing the stored deficits (139.24, 138, 136.08 of 140) and their cluster-wide release?",
+          "At a weaker anchor (k between 0.05 and 0.15) or higher n, do straight seams form a real 120° Plateau groove in the labels, and is it still local and universal? At n=12 and 16 the FID-0.15 seam does not move at all.",
+          "The ambiguity rule's window count and true cluster size agree on every configuration tested. Which does the physics follow when they disagree (a thin line attached to a large blob outside the window)?",
+          "Superposition was tested only for B inclusions. Do bumps, pits and features next to seams or edges also superpose under FINITE-4, and at what separation?",
+          "For FREE checker A1/B1 with jitter seed 1 the engine reports A united, yet the plan at mid-height still shows the X. Where is the A link in 3D, and do the 'both' outcomes (CAGE 2v2, FREE 3D checker) mean two pairs crossing at different heights?",
+          "What cluster-size threshold would let a game drop the volume constraint (purely local dynamics) while keeping thin features (pillars, 1-thick plates) alive, given that FID-0.15 without pressure erases them?"
+        ],
+        "reportPath": "teams/local/"
+      },
+      {
+        "team": "table",
+        "summary": "I did not write REPORT.md: this harness refuses report .md files from subagents. This structured result is the report, and every number in it cites a log or JSON in teams/table/ (backed up with rsync).\n\n**Corner classes.** I enumerated the 2x2x2 neighbourhoods of a lattice corner and checked the counts several ways. Brute force, de Bruijn/Burnside and a fixed-point Burnside agree, and so does team prior's independent count:\n- With materials as the unit there are 738 classes. 551 of them are surface classes.\n- With clusters as the unit there are 225 classes.\n- With solid/air only there are 22 classes.\n- Only 76 of the 738 classes (52 of the 551 surface classes) obey Plateau's laws.\n\n**Generated terrain is very concentrated.** Over 448 chunks of seed [1,1] there are 384,419 surface corners:\n- 32 classes cover 99% and 62 cover 99.9%.\n- 88.8% of surface corners have a single material.\n- 12.3% are non-Plateau, almost all same-material diagonal contacts. True four-material X edges are 0.031%.\n\n**Tables from simulated classes.** I simulated all tabulated classes in canonical embeddings (FID-0.15 and FINITE-4, n=12). I then compared those tables against full simulations of 51 terrain windows, 5 build windows and the 36 catalogue configurations.\n- A table that keeps the per-bubble volume constraint misses terrain by 0.107 block on average (FID). The cause is that straight edges stay pinned in the embedding but round in real terrain.\n- Dropping the volume constraint gives 0.059 (FID) and 0.038 (FINITE). A table learned from terrain gives 0.035–0.040 (2-fold cross-validation). The floor is 0.023: the same corner measured in two shifted windows differs by that much.\n- The repo's bevel rule scores 0.136 and unmoved block corners 0.208 on the same terrain corners.\n- Larger keys do not help. Keys of 32 or 64 blocks cover only 31% or 5% of held-out terrain corners, and with fallback they score the same 0.040.\n- No single 2x2x2 table fits both terrain and small isolated objects. On the catalogue the no-volume table scores 0.153 and the volume table 0.067. What the table lacks is the size or pressure of the bubble, not more neighbours.\n\n**Verdict.** A precomputed table is viable for the mesher on cost and coverage. It is 63 KB, adds 0.14 ms per chunk in Node, and can hold all 551 surface classes. For terrain it stands in for the physics to about 0.04–0.06 block mean. It does not stand in for the physics on small objects or on same-material diagonal contacts, which need connectivity beyond the 2x2x2.\n\n**Changes to the shared engine.** I used a copy of lib/mbo.mjs, src/mbo-clamp.mjs, with two marked changes:\n- A clamp-to-edge blur at the grid boundary, so a window cut is not a surface. With a margin of at least 1 block it gives the same result as lib.\n- A `bbox` option that fixes the grid bounds.",
+        "claims": [
+          {
+            "id": "T1",
+            "statement": "With materials as the unit, the 2x2x2 neighbourhood of a lattice corner has 21,147 labellings up to material renaming. Up to the 48 cube symmetries (air fixed) these form 738 classes. By number of distinct materials: 0:1, 1:21, 2:125, 3:245, 4:223, 5:94, 6:24, 7:4, 8:1. Of these, 551 contain both air and solid (mesher surface corners), 531 contain air and at least 2 materials, and 186 have no air. Solid/air only gives 22 classes. With clusters as the unit (same material but not face-connected inside the 2x2x2 counts as separate bubbles) there are 6,153 structures and 225 classes. By number of clusters: 0:1, 1:13, 2:47, 3:67, 4:59, 5:26, 6:9, 7:2, 8:1. The 8-material class cannot occur in the game, which has 7 solid materials.",
+            "kind": "pattern",
+            "evidence": [
+              "teams/table/logs/enum.log",
+              "teams/table/res/classes.json",
+              "teams/table/logs/crosscheck-prior.log",
+              "teams/table/src/enum.mjs"
+            ],
+            "confidence": "measured",
+            "numbers": "738 / 551 / 531 / 186 / 22 / 225 classes; three counting methods agree (brute force, de Bruijn power-group Burnside, fixed-point Burnside); team prior's independent count also agrees",
+            "refuteBy": "An independent enumeration, e.g. Polya with a different encoding, that gives any different class count."
+          },
+          {
+            "id": "T2",
+            "statement": "Non-Plateau junctions are the rule among classes but the exception on terrain. 662 of 738 classes (499 of 551 surface classes) contain at least one of: a lattice edge with 4 films around it (650 classes; 435 with 4 distinct phases), more than 4 bubbles at the corner (280 counting materials, 539 counting clusters), or a same-material diagonal-only contact (513). Only 52 surface classes are Plateau-legal. On generated terrain (wide sample, 384,419 surface corners) 12.26% of surface corners are non-Plateau, almost all ambiguous same-material diagonal contacts. Four-distinct-phase X edges are 0.031%, and corners with more than 4 bubbles counting materials are 0. A terrain surface corner has at most 3 materials.",
+            "kind": "pattern",
+            "evidence": [
+              "teams/table/logs/enum.log",
+              "teams/table/logs/freq.log",
+              "teams/table/logs/freqq.log"
+            ],
+            "confidence": "measured",
+            "numbers": "Terrain wide sample: ambiguous union 10.84% (single-material 5.90%, multi-material 4.94%); X edges with no solid ambiguity 1.42%; more than 4 bubbles counting clusters 0.37%. bench16: non-Plateau 14.8%. Builds: 6.26% non-Plateau (checker class 14 at 4.65%; house 4-distinct X at 1.61%).",
+            "refuteBy": "Re-sample other seeds or chunks and find 4-distinct-phase X edges or more than 4 materials at a corner well above 0.1% of terrain surface corners."
+          },
+          {
+            "id": "T3",
+            "statement": "Terrain surface corners concentrate in very few classes. In 448 chunks (8x8 chunk columns, cy -2..4, seed [1,1]) there are 384,419 surface corners. They fall into 131 classes; 32 classes cover 99% and 62 cover 99.9%. The top 7 classes are all single-material and cover 79.7%: flat 20.1%, concave edge 14.8%, convex edge 10.9%, concave corner 10.9%, two step classes 9.0% and 7.5%, convex corner 6.5%. Single-material corners are 88.8%. bench16 gives 96 classes, with 33 for 99% and 62 for 99.9%. The synthetic builds give 18 classes, with 15 for 99%.",
+            "kind": "pattern",
+            "evidence": [
+              "teams/table/logs/freq.log",
+              "teams/table/logs/cumshare.log",
+              "teams/table/res/freq.json"
+            ],
+            "confidence": "measured",
+            "numbers": "Surface corners: wide 384,419; bench16 47,554; builds 2,235. Classes covering 99% / 99.9%: 32 / 62 (wide), 33 / 62 (bench16), 15 / 17 (builds).",
+            "refuteBy": "Count classes on another seed or a larger chunk sample and find that more than about 50 classes are needed for 99%."
+          },
+          {
+            "id": "T4",
+            "statement": "A class table built from canonical embeddings that keep the per-bubble volume constraint is biased against real terrain. The embedding (E2c) extrudes each octant block to 2^3 and continues it past the box with a clamp blur. Measured against full simulations of 51 terrain windows, its vertex lies 0.107 block from the measured vertex on average (FID-0.15) and 0.082 (FINITE-4). The reason is that straight edges and corners stay pinned or under-rounded in the embedding but round in terrain. For the convex edge (class 2) the table gives 0.0375 per axis against a terrain mean of 0.136; the convex corner (class 1) 0.176 against 0.272; the concave corner (class 249) -0.176 against -0.264.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/table/logs/evaltab.log",
+              "teams/table/res/table/FID-0.15_E2c_n12_clu.json",
+              "teams/table/res/table-K8-terrain-FID-0.15.json",
+              "teams/table/res/scenes/terrain_FID-0.15_n12.json"
+            ],
+            "confidence": "measured",
+            "numbers": "Mean distance from the measured vertex on terrain-random corners (n 2,260), FID / FINITE: volume E2c table 0.107 / 0.082; bevel 0.136 / 0.121; blocks 0.208 / 0.256. All at n=12.",
+            "refuteBy": "Repeat at n=16 or 20 and find that edges round in E2c with the volume constraint and the bias falls below about 0.05."
+          },
+          {
+            "id": "T5",
+            "statement": "The per-bubble volume constraint (pressure) is what makes the canonical table depend on context. The same E2c embedding run with volume:false reproduces terrain closely. On terrain-random corners the mean distance from the measured vertex is 0.059 (FID-0.15) and 0.038 (FINITE-4); on terrain-seam windows it is 0.049 and 0.037. Weighted by count over the 16 most frequent terrain classes, the gap between canonical and terrain-mean vertex falls from 0.097 to 0.039 (FID) and from 0.066 to 0.0145 (FINITE).",
+            "kind": "physics",
+            "evidence": [
+              "teams/table/logs/novol.log",
+              "teams/table/res/novol.json",
+              "teams/table/logs/evaltab.log",
+              "teams/table/res/table/FID-0.15_E2c_n12_clu-novol.json"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "No-volume table on terrain-random: p90 0.120 / 0.073, p99 0.319 / 0.235 (FID / FINITE). Inference, not measured: the bubble pressures in the terrain windows were not recorded, so 'huge terrain bubbles behave as pressure ~ 0' is an interpretation.",
+            "refuteBy": "Record the lambda of each bubble in the terrain windows. If they are far from 0, or if a no-volume terrain run differs from the volume run by about 0.05 or more, the mechanism is wrong."
+          },
+          {
+            "id": "T6",
+            "statement": "No single 2x2x2 table fits all contexts. The missing input is the bubble's size or pressure, not more neighbours. On the shared catalogue (isolated objects of 1 to 75 blocks) both the no-volume table and the terrain-trained table do badly, while the volume E2c table and the 8-blocks-alone embedding do much better. On builds the volume table is best.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/table/logs/evaltab.log",
+              "teams/table/logs/analyze.log"
+            ],
+            "confidence": "measured",
+            "numbers": "Catalogue, FID / FINITE: no-volume 0.153 / 0.168; terrain K8 0.151 / 0.151; volume E2c 0.067 / 0.070; E1m 0.079 / 0.098. Builds: volume E2c 0.044 / 0.044; no-volume 0.049 / 0.084. Embedding differences: E1m vs E2c tables differ by a frequency-weighted 0.199 / 0.194; E2c vs E3c (box size) by only 0.0013 / 0.012.",
+            "refuteBy": "Find a single table, for example keyed on K8 alone with any embedding, that scores below 0.07 on terrain, builds and catalogue together."
+          },
+          {
+            "id": "T7",
+            "statement": "Larger keys do not pay on terrain. In 2-fold cross-validation by bench chunk over 3,115 terrain corners (FID-0.15), the 2x2x2 class key K8 covers 97.2% of held-out corners with mean error 0.035 (0.040 including corners that fall back to the E2c table). The other keys add no accuracy once a fallback is included: K32 (2x2x2 plus 24 face neighbours) covers 30.6%, K32eq (face neighbours reduced to 3 states) 33.0%, and K64 (4x4x4) 5.0%, and with fallback to K8 then E2c each scores 0.040 to 0.041. The terrain sample holds 49 distinct K8 keys, 1,602 K32 keys and 2,723 K64 keys among 3,115 corners. Under FINITE-4 K8 scores 0.031 on covered corners and 0.036 with fallback, and the larger keys add nothing either.",
+            "kind": "optimization",
+            "evidence": [
+              "teams/table/logs/analyze.log",
+              "teams/table/res/analysis.json"
+            ],
+            "confidence": "measured",
+            "numbers": "Covered-corner error K32 0.033, K64 0.017 (on 155 corners). Twin-window floor 0.023.",
+            "refuteBy": "Train on many more windows, for example 500, and show that K32 coverage rises above about 80% with error clearly below K8's 0.035."
+          },
+          {
+            "id": "T8",
+            "statement": "Material identity barely moves the vertex on terrain except at seams. A solid/air-only key (K8bin, 13 to 17 entries) scores 0.047 in cross-validation against 0.035 for the full K8 (FID). Multi-material edge and corner classes take the vertex of their single-material counterpart. Examples (terrain means, canonical frame): the grass/dirt slope class 97 is [0,-0.139,-0.139] against concave edge class 95 at [0,-0.137,-0.137]; classes 250, 253 and 257 sit at -0.27 to -0.29 per axis against class 249 at -0.264.",
+            "kind": "pattern",
+            "evidence": [
+              "teams/table/res/table-K8-terrain-FID-0.15.json",
+              "teams/table/logs/analyze.log"
+            ],
+            "confidence": "measured",
+            "numbers": "K8bin trained on terrain and applied to builds: 0.064 (100% coverage); K8: 0.055 (84.1% coverage).",
+            "refuteBy": "Show terrain seam-free multi-material classes whose mean vertex differs from the single-material class with the same solid mask by more than 0.05."
+          },
+          {
+            "id": "T9",
+            "statement": "The physics moves seam vertices in the same direction as the repo's bevel seam shift but by a different amount, and adds a groove. For the flat half with one odd block (class 11, the bevel seam case) the terrain-trained vertex in canonical frame is [0.146, 0.070, 0.146] under FID-0.15 and [0.237, 0.140, 0.237] under FINITE-4. That is an in-plane shift toward the odd block of 0.146 / 0.237 per axis (bevel uses 0.25), plus a dip into the solid of 0.07 / 0.14. On terrain seam corners the bevel rule lies further from the measured vertex than unmoved block corners do; the no-volume table is closest.",
+            "kind": "look",
+            "evidence": [
+              "teams/table/res/table-K8-terrain-FID-0.15.json",
+              "teams/table/res/table-K8-terrain-FINITE-4.json",
+              "teams/table/logs/evaltab.log"
+            ],
+            "confidence": "measured",
+            "numbers": "Terrain-random seam corners (n 149), FID: bevel 0.240, blocks 0.157, volume table 0.111, no-volume table 0.068, terrain K8 0.039. Under FINITE: bevel 0.226, blocks 0.263, no-volume 0.077. Seam points are grid-limited to about ±0.02.",
+            "refuteBy": "Measure seams on labels instead of the render field D, at n=16 or more, and find the class-11 in-plane shift outside 0.1–0.25 per axis."
+          },
+          {
+            "id": "T10",
+            "statement": "Giving each (corner, material) its own vertex position is not a viable layout. The per-material surface-nets vertices at a seam corner sit far apart, so splitting positions by material would open cracks. The per-material information belongs in where the single shared vertex sits, namely on the seam (triple line). That is what the mesher's shared-position split already assumes. The class table does predict the per-material vertices well.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/table/logs/analyze.log",
+              "../../src/core/mesh/mesher.ts"
+            ],
+            "confidence": "partly-measured",
+            "numbers": "Mean separation of per-material vertices: terrain 0.806 block (FID, n 275), catalogue 0.907. E2c table vs measured per-material vertex: 0.041 (terrain FID). Inference, not measured: the claim that the cracks would show is not rendered.",
+            "refuteBy": "Show a per-material vertex definition that is local to the seam and keeps the vertices within about 0.1 of each other while staying on the surface."
+          },
+          {
+            "id": "T11",
+            "statement": "At mesh time, a direct table indexed by the rank of the corner's restricted-growth string costs 63,441 bytes and adds about 0.14 ms per 32^3 chunk. The table has 21,147 entries of 3 int8 offsets in 1/256 block, already transformed so no symmetry runs at mesh time. In Node on this machine, over the 16 bench chunks (2,972 surface corners per chunk on average), reading the 8 blocks only takes 0.425 ms per chunk and rank plus lookup takes 0.562 ms, i.e. +0.137 ms. The complete no-volume table (all 551 surface classes) computed in 107 s (FID) and 51 s (FINITE) at n=12. Of those entries, 7 (FID) and 6 (FINITE) are clamped to the cell boundary; they account for 0.09% of sampled corners. An offset of 0.5 does not fit int8 at 1/256, so offsets clamp at ±0.496.",
+            "kind": "optimization",
+            "evidence": [
+              "teams/table/logs/lookup-bench.log",
+              "teams/table/logs/tablesize.log",
+              "teams/table/logs/table-clamp.log",
+              "teams/table/res/table/FID-0.15_E2c_n12_clu-novol.json",
+              "teams/table/logs/classsim-FID-0.15-E2c-n12-clu-novol-allsurf.log"
+            ],
+            "confidence": "measured",
+            "numbers": "A per-material layout would need 56,674 material slots on surface patterns, 170,022 bytes.",
+            "refuteBy": "Port the lookup into the repo mesher and measure more than about 1 ms per chunk on the bench chunks."
+          },
+          {
+            "id": "T12",
+            "statement": "Same-material diagonal contacts carry a disproportionate share of the table's error, because the union decision depends on connectivity outside the 2x2x2. Under FID-0.15, classes 97, 27 and 92 make up 5.6% of terrain corners but 18.8% of the no-volume table's total error. Class 27 (two blocks touching along an edge, the rest air) has mean error 0.80. Uniting same-material bubbles in the embedding ('mat' semantics) does not fix class 97 under FID: it gives -0.027 per axis against a terrain mean of -0.139.",
+            "kind": "limitation",
+            "evidence": [
+              "teams/table/logs/contrib.log",
+              "teams/table/res/table/FID-0.15_E2c_n12_mat-novol.json",
+              "teams/table/logs/analyze.log"
+            ],
+            "confidence": "measured",
+            "numbers": "'mat' vs 'clu' table entries: mean difference 0.029 over 65 ambiguous classes (FID), frequency-weighted 0.010. Under FINITE-4 classes 92 and 27 have errors 0.241 and 0.386.",
+            "refuteBy": "Add a union bit computed from connectivity in the mesh apron and show the ambiguous-class error falls to the level of the other classes (about 0.06)."
+          },
+          {
+            "id": "T13",
+            "statement": "Engine resolution limits. FID-0.15 is fully pinned at n=8: E2c runs show zero label changes for classes 1, 2 and 10, so the vertex comes only from the render blur. n=12 and n=16 move. For FID, E2c tables at n=12 and n=16 differ by a mean of 0.006 over the top 12 classes. FINITE-4 vertices grow with n and have not converged by n=20: the convex corner (class 1) moves 0.133 / 0.204 / 0.243 / 0.261 per axis at n=8 / 12 / 16 / 20, and n=12 vs n=16 tables differ by 0.030 on average (max 0.128). All comparisons here are at a fixed n=12, the largest that fits 9x8x9 terrain windows in the memory limit.",
+            "kind": "engine",
+            "evidence": [
+              "teams/table/logs/conv-fid-e2.log",
+              "teams/table/logs/conv-finite-e2.log",
+              "teams/table/logs/conv-fid.log",
+              "teams/table/logs/analyze.log"
+            ],
+            "confidence": "measured",
+            "numbers": "Convex edge (class 2) under FINITE-4: 0.040 / 0.081 / 0.121 / 0.138 per axis at n=8 / 12 / 16 / 20.",
+            "refuteBy": "Run the same classes at n=24 or more (on a smaller box) and show that FINITE-4 converges by n=16."
+          },
+          {
+            "id": "T14",
+            "statement": "Measurement floor: the same world corner measured in two terrain windows shifted by (2,0,2) gives reference vertices 0.023 apart on average (FID-0.15) and 0.022 (FINITE-4), over 128 corners. Table errors below about 0.02–0.03 cannot be resolved with 9x8x9 clamped windows and a 2-block guard.",
+            "kind": "engine",
+            "evidence": [
+              "teams/table/logs/analyze.log",
+              "teams/table/res/scenes/terrain_FID-0.15_n12.json"
+            ],
+            "confidence": "measured",
+            "numbers": "FID: p90 0.053, max 0.089. FINITE: p90 0.044, max 0.430.",
+            "refuteBy": "Repeat with larger guards or windows; if the twin difference rises well above 0.03, the window floor is underestimated."
+          }
+        ],
+        "images": [
+          {
+            "path": "teams/table/sheets/class-table-FID-0.15.png",
+            "caption": "The 12 most frequent surface corner classes (key = canonical RG string; share = mean of the terrain-wide, bench16 and builds samples), each simulated in the infinite-octant embedding E2c, FID-0.15, n=16, turned air side up. Straight edges stay nearly sharp; corners round."
+          },
+          {
+            "path": "teams/table/sheets/class-table-FINITE-4.png",
+            "caption": "The same 12 classes under FINITE-4 (E2c, n=16): edges round within 4 steps; two-material seams (classes 11, 12, 14, 119) shown in blue/red."
+          },
+          {
+            "path": "teams/table/sheets/context-embeddings.png",
+            "caption": "Context dependence: classes 1, 2, 95, 249, 97 and 11 under FID-0.15 n=12 in three embeddings: the 8 blocks alone (E1m), a 4^3 object in air (E2m), infinite octants (E2c). The same 2x2x2 gives very different corners (frequency-weighted table difference E1m vs E2c 0.199 block)."
+          },
+          {
+            "path": "teams/table/sheets/overlay-terrain.png",
+            "caption": "Terrain windows (seed [1,1], n=12, FID-0.15 and FINITE-4): sim cross-section at a lattice z plane, with corner vertices from the sim (white), the volume table (red), the no-volume table (orange) and the bevel rule (cyan). On grass staircases the no-volume table follows the rounded sim surface; the volume table keeps sharper corners."
+          },
+          {
+            "path": "teams/table/sheets/overlay-builds.png",
+            "caption": "Builds (checker floor, house wall with window, painted 1-wide diagonal line, 1:1 stairs, stone wall) under FID-0.15 and FINITE-4 at n=12, same colour key. The bevel rule (cyan) turns stairs into a slope; the sim and the tables keep the steps."
+          },
+          {
+            "path": "teams/table/sheets/overlay-cat.png",
+            "caption": "Catalogue configurations (stairs, terrain-step, ball-AB, tunnel) under FID-0.15 and FINITE-4 at n=12, same colour key: on small isolated objects the no-volume table (orange) is the worst rule (mean 0.153 / 0.168)."
+          },
+          {
+            "path": "teams/table/img/overlay/terrain-t0s-FID-0.15-z55.png",
+            "caption": "Terrain window t0s (seam window: grass over dirt over stone, 1:1 staircase slope), FID-0.15, n=12, z=55: white sim vertices, red/orange table vertices, cyan bevel."
+          },
+          {
+            "path": "teams/table/img/overlay/builds-b-painted-FINITE-4-z7.png",
+            "caption": "The owner's hard case, a painted 1-wide diagonal brick line in a stone floor, sliced across the line, FINITE-4, n=12: the sim puts a groove at the seams, which the table vertices follow."
+          }
+        ],
+        "optimizations": [
+          {
+            "idea": "For terrain, replace physics with a per-corner table: no-volume canonical-embedding offsets for all 551 surface classes, indexed directly by the rank of the corner's restricted-growth string, with offsets pre-transformed (21,147 x 3 int8, 63 KB).",
+            "basis": [
+              "T3",
+              "T5",
+              "T7",
+              "T11"
+            ],
+            "gain": "Terrain vertices within 0.059 (FID) / 0.038 (FINITE) block mean of the full simulation, against 0.136 / 0.121 for the current bevel rule and 0.208 / 0.256 for blocks. Cost about +0.14 ms per chunk; no simulation at mesh time.",
+            "risks": "Wrong for small isolated objects (catalogue error 0.153 / 0.168) and for ambiguous diagonal unions (T12). FINITE-4 absolute values depend on n (T13). The table must be frozen for golden hashes, so whatever n and regime it is built at becomes permanent."
+          },
+          {
+            "idea": "A two-level table: a 22-entry solid/air table for single-material corners, plus a material-aware table only for seam classes.",
+            "basis": [
+              "T3",
+              "T8"
+            ],
+            "gain": "88.8% of terrain surface corners need only the 22-entry table. In cross-validation K8bin costs only +0.012 mean error over K8 (0.047 vs 0.035).",
+            "risks": "Seam grooves and seam position come only from the seam table. Builds have 25.7% multi-material corners, so they lean on it more."
+          },
+          {
+            "idea": "Key the table on K8 plus a bubble-size or pressure bucket (size of the face-connected cluster within the mesh region, saturating), not on a larger neighbourhood.",
+            "basis": [
+              "T6",
+              "T7",
+              "T5"
+            ],
+            "gain": "Could close the gap between terrain (no-volume table best) and small objects (volume or E1m table best): catalogue error 0.15 down toward about 0.07. Untested; inference.",
+            "risks": "Needs a flood fill per mesh job; the 38^3 or 52^3 region bounds the size measure; the extra key multiplies table size by the number of buckets."
+          },
+          {
+            "idea": "Do not pursue 32- or 64-block keys or hashed window keys.",
+            "basis": [
+              "T7"
+            ],
+            "gain": "Avoids tables that cover 5–33% of new corners for no gain once a fallback is used.",
+            "risks": "Based on 3,115 corners from 51 windows of one seed; a much larger training set could raise coverage."
+          },
+          {
+            "idea": "Resolve same-material diagonal contacts with an explicit union bit, computed from connectivity in the apron, then look up the table.",
+            "basis": [
+              "T2",
+              "T12"
+            ],
+            "gain": "Targets the classes carrying 18.8% of the no-volume table's FID error on 5.6% of corners; non-Plateau corners are 12.3% of terrain surface corners.",
+            "risks": "The 'mat' experiment shows uniting in the embedding alone does not reproduce terrain for class 97 under FID; the bit must select a separately simulated or learned entry."
+          }
+        ],
+        "openQuestions": [
+          "Is pressure about 0 the right model for huge terrain bubbles? The per-bubble lambda in the terrain windows was not recorded (T5 is partly inference).",
+          "Would a size or pressure bucket in the key close the catalogue gap without hurting terrain? (optimization 3, untested)",
+          "FINITE-4 vertices have not converged in n by n=20. At what n should a frozen table be built, and how much would entries move?",
+          "Seam distances for the data-driven tables were not measured: seam points were not stored per corner, so only the reference-vertex error bounds them.",
+          "All geometry is on the render field D (re-blurred labels, which rounds creases by about 0.1 block). Would label-based geometry change the class-11 seam numbers?",
+          "'World' clusters use a 12-block apron around each window. Are there same-material bubbles connected only further away that would change the union in ambiguous classes?",
+          "Only seed [1,1]: 448 chunks for frequencies, 51 windows (3,115 corners) for simulations. Do other seeds or biomes (beaches, sand) shift the class shares?",
+          "Three FID terrain windows (t1a-shift, t11b, t5a) reached 150 steps without converging; their vertices may be slightly off equilibrium."
+        ],
+        "reportPath": "teams/table/logs/analyze.log"
+      }
+    ],
+    "missing": []
+  },
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Explore"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "team:phys",
+      "phaseIndex": 1,
+      "phaseTitle": "Explore",
+      "agentId": "a03bfbc4de618c3f1",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1792650380330,
+      "queuedAt": 1792650380259,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "phys",
+      "promptPreview": "You are team 'phys' in a research study for amorfus, a browser voxel game (public repo at ../..). The owner asked:\n  \"I want to experiment with bubble physics. Basically, each block acts like a bubble. Neighboring bubbles of differing material stay separate, neighboring bubbles of the same type unite. Investigate how different clusters combine to see if there are pattern…",
+      "promptFramed": true,
+      "lastProgressAt": 1792653395084,
+      "tokens": 416087,
+      "toolCalls": 109,
+      "durationMs": 3014752,
+      "resultPreview": "{\"team\":\"phys\",\"summary\":\"I tested lib/mbo.mjs (FREE regime) three ways: against closed-form bubble geometry (exact.mjs), against an independent 2D foam solver I wrote (foam2d.mjs), and over the whole catalogue plus 8 extra configurations, with jitter 1e-3 and seeds 1 and 2. The solver uses polyline films, Lagrange-multiplier area constraints and T1 splits. Against the closed forms it reaches 2e-4…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "team:look",
+      "phaseIndex": 1,
+      "phaseTitle": "Explore",
+      "agentId": "a7b31552ae571f227",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1792650380331,
+      "queuedAt": 1792650380259,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "look",
+      "promptPreview": "You are team 'look' in a research study for amorfus, a browser voxel game (public repo at ../..). The owner asked:\n  \"I want to experiment with bubble physics. Basically, each block acts like a bubble. Neighboring bubbles of differing material stay separate, neighboring bubbles of the same type unite. Investigate how different clusters combine to see if there are pattern…",
+      "promptFramed": true,
+      "lastProgressAt": 1792655560270,
+      "tokens": 384853,
+      "toolCalls": 86,
+      "durationMs": 5179236,
+      "resultPreview": "{\"team\":\"look\",\"summary\":\"I swept 17 configurations: the 15 in the mission, sq2-same, and a new slab-halves with one straight A|B seam. They ran under 15 regimes (BLOCKS, FID-k ×5, FID-0.15 with g 0.5 and 1.5, CAGE-r ×3, FINITE-T ×3, FREE) on the unchanged engine at n 16. I measured rounding, seam grooves, flatness, volume, convergence, the constraint scenes and diagonal-contact union, and checked…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "team:prior",
+      "phaseIndex": 1,
+      "phaseTitle": "Explore",
+      "agentId": "a3f78ee6d46aac6bf",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1792650380331,
+      "queuedAt": 1792650380259,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "prior",
+      "promptPreview": "You are team 'prior' in a research study for amorfus, a browser voxel game (public repo at ../..). The owner asked:\n  \"I want to experiment with bubble physics. Basically, each block acts like a bubble. Neighboring bubbles of differing material stay separate, neighboring bubbles of the same type unite. Investigate how different clusters combine to see if there are patter…",
+      "promptFramed": true,
+      "lastProgressAt": 1792652606276,
+      "tokens": 374013,
+      "toolCalls": 167,
+      "durationMs": 2225241,
+      "resultPreview": "{\"team\":\"prior\",\"summary\":\"I checked about 50 sources online. The verification log, with URLs and what each check confirmed, is teams/prior/citations-log.md; UNVERIFIED items are marked there and nothing relies on them. In literature terms the model is a multiphase minimal partition with an ai…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 4,
+      "label": "team:local",
+      "phaseIndex": 1,
+      "phaseTitle": "Explore",
+      "agentId": "a163f3968aeca254e",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1792652609046,
+      "queuedAt": 1792652609043,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "local",
+      "promptPreview": "You are team 'local' in a research study for amorfus, a browser voxel game (public repo at ../..). The owner asked:\n  \"I want to experiment with bubble physics. Basically, each block acts like a bubble. Neighboring bubbles of differing material stay separate, neighboring bubbles of the same type unite. Investigate how different clusters combine to see if there are patter…",
+      "promptFramed": true,
+      "lastProgressAt": 1792658804650,
+      "tokens": 433939,
+      "toolCalls": 129,
+      "durationMs": 6195603,
+      "resultPreview": "{\"team\":\"local\",\"summary\":\"Team 'local' measured how block clusters combine in the shared MBO bubble engine. The work used about 900 3D runs: n = 12 for 14×2×5 slabs, n = 16 for the Task 4 contact scenes. It covered FID-0.15, FID-0.05, FINITE-4, CAGE-0.25, FREE and volume:false controls. Each run records three measures: labels (quantised at 1/n), D0 (the labels re-blurred with λ = 0, a purely loca…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 5,
+      "label": "team:table",
+      "phaseIndex": 1,
+      "phaseTitle": "Explore",
+      "agentId": "a4914ddfcfaf902a2",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1792653397957,
+      "queuedAt": 1792653397953,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "table",
+      "promptPreview": "You are team 'table' in a research study for amorfus, a browser voxel game (public repo at ../..). The owner asked:\n  \"I want to experiment with bubble physics. Basically, each block acts like a bubble. Neighboring bubbles of differing material stay separate, neighboring bubbles of the same type unite. Investigate how different clusters combine to see if there are patter…",
+      "promptFramed": true,
+      "lastProgressAt": 1792659050053,
+      "tokens": 426611,
+      "toolCalls": 153,
+      "durationMs": 5652096,
+      "resultPreview": "{\"team\":\"table\",\"summary\":\"I did not write REPORT.md: this harness refuses report .md files from subagents. This structured result is the report, and every number in it cites a log or JSON in teams/table/ (backed up with rsync).\\n\\n**Corner classes.** I enumerated the 2x2x2 neighbourhoods of a…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 6,
+      "label": "team:fast",
+      "phaseIndex": 1,
+      "phaseTitle": "Explore",
+      "agentId": "aac5cf16019464efa",
+      "model": "claude-opus-5-5",
+      "state": "done",
+      "startedAt": 1792655567666,
+      "queuedAt": 1792655567662,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "fast",
+      "promptPreview": "You are team 'fast' in a research study for amorfus, a browser voxel game (public repo at ../..). The owner asked:\n  \"I want to experiment with bubble physics. Basically, each block acts like a bubble. Neighboring bubbles of differing material stay separate, neighboring bubbles of the same type unite. Investigate how different clusters combine to see if there are pattern…",
+      "promptFramed": true,
+      "lastProgressAt": 1792658469780,
+      "tokens": 364296,
+      "toolCalls": 98,
+      "durationMs": 2902114,
+      "resultPreview": "{\"team\":\"fast\",\"summary\":\"I couldn't write REPORT.md: the harness refuses report .md files from subagents. This result is the report. Everything else is saved and backed up: scripts in src/, numbers in res/ and logs/, 58 images in img/, 4 contact sheets in sheets/, and a reference cache in refcache/.\\n\\nWhat I did:\\n- Checked the engine's first MBO step against an analytic sum of per-block kernels…"
+    }
+  ],
+  "totalTokens": 2399799,
+  "totalToolCalls": 742
+}

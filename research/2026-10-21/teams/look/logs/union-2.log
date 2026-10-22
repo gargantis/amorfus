@@ -1,0 +1,97 @@
+FID-0.05 diag-edge j0 s1: 876 ms 38 steps, {"6":2}→{"6":1} A
+FID-0.05 diag-edge j0.001 s1: 975 ms 48 steps, {"6":2}→{"6":1} A
+FID-0.05 diag-edge j0.001 s2: 888 ms 46 steps, {"6":2}→{"6":1} A
+FID-0.05 diag-edge j0.001 s3: 876 ms 46 steps, {"6":2}→{"6":1} A
+FID-0.05 diag-corner j0 s1: 167 ms 8 steps, {"6":2}→{"6":2} 
+FID-0.05 diag-corner j0.001 s1: 231 ms 10 steps, {"6":2}→{"6":2} 
+FID-0.05 diag-corner j0.001 s2: 231 ms 10 steps, {"6":2}→{"6":2} 
+FID-0.05 diag-corner j0.001 s3: 211 ms 8 steps, {"6":2}→{"6":2} 
+FID-0.05 sq2-checker j0 s1: 343 ms 9 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.05 sq2-checker j0.001 s1: 589 ms 14 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.05 sq2-checker j0.001 s2: 481 ms 12 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.05 sq2-checker j0.001 s3: 433 ms 10 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.05 slab-line j0 s1: 28830 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+FID-0.05 slab-line j0.001 s1: 48910 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+FID-0.05 slab-line j0.001 s2: 51824 ms 150 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+FID-0.05 slab-line j0.001 s3: 40204 ms 135 steps, {"6":6,"7":2}→{"6":1,"7":2} -AAA-
+FID-0.15-g0.5 diag-edge j0 s1: 273 ms 15 steps, {"6":2}→{"6":1} A
+FID-0.15-g0.5 diag-edge j0.001 s1: 285 ms 16 steps, {"6":2}→{"6":1} A
+FID-0.15-g0.5 diag-edge j0.001 s2: 311 ms 16 steps, {"6":2}→{"6":1} A
+FID-0.15-g0.5 diag-edge j0.001 s3: 284 ms 15 steps, {"6":2}→{"6":1} A
+FID-0.15-g0.5 diag-corner j0 s1: 156 ms 8 steps, {"6":2}→{"6":2} 
+FID-0.15-g0.5 diag-corner j0.001 s1: 274 ms 9 steps, {"6":2}→{"6":2} 
+FID-0.15-g0.5 diag-corner j0.001 s2: 273 ms 11 steps, {"6":2}→{"6":2} 
+FID-0.15-g0.5 diag-corner j0.001 s3: 202 ms 9 steps, {"6":2}→{"6":2} 
+FID-0.15-g0.5 sq2-checker j0 s1: 375 ms 11 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15-g0.5 sq2-checker j0.001 s1: 747 ms 20 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15-g0.5 sq2-checker j0.001 s2: 836 ms 22 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15-g0.5 sq2-checker j0.001 s3: 676 ms 18 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15-g0.5 slab-line j0 s1: 3742 ms 17 steps, {"6":6,"7":2}→{"6":4,"7":2} -----
+FID-0.15-g0.5 slab-line j0.001 s1: 10855 ms 33 steps, {"6":6,"7":2}→{"6":3,"7":2} -----
+FID-0.15-g0.5 slab-line j0.001 s2: 8367 ms 26 steps, {"6":6,"7":2}→{"6":2,"7":2} -----
+FID-0.15-g0.5 slab-line j0.001 s3: 9421 ms 28 steps, {"6":6,"7":2}→{"6":3,"7":2} -----
+FID-0.15-g1.5 diag-edge j0 s1: 245 ms 15 steps, {"6":2}→{"6":1} A
+FID-0.15-g1.5 diag-edge j0.001 s1: 292 ms 16 steps, {"6":2}→{"6":1} A
+FID-0.15-g1.5 diag-edge j0.001 s2: 301 ms 16 steps, {"6":2}→{"6":1} A
+FID-0.15-g1.5 diag-edge j0.001 s3: 269 ms 15 steps, {"6":2}→{"6":1} A
+FID-0.15-g1.5 diag-corner j0 s1: 153 ms 8 steps, {"6":2}→{"6":2} 
+FID-0.15-g1.5 diag-corner j0.001 s1: 245 ms 9 steps, {"6":2}→{"6":2} 
+FID-0.15-g1.5 diag-corner j0.001 s2: 243 ms 11 steps, {"6":2}→{"6":2} 
+FID-0.15-g1.5 diag-corner j0.001 s3: 197 ms 9 steps, {"6":2}→{"6":2} 
+FID-0.15-g1.5 sq2-checker j0 s1: 278 ms 8 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15-g1.5 sq2-checker j0.001 s1: 544 ms 14 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15-g1.5 sq2-checker j0.001 s2: 515 ms 13 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15-g1.5 sq2-checker j0.001 s3: 422 ms 11 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FID-0.15-g1.5 slab-line j0 s1: 2324 ms 10 steps, {"6":6,"7":2}→{"6":2,"7":2} -----
+FID-0.15-g1.5 slab-line j0.001 s1: 3344 ms 11 steps, {"6":6,"7":2}→{"6":2,"7":2} -----
+FID-0.15-g1.5 slab-line j0.001 s2: 3490 ms 11 steps, {"6":6,"7":2}→{"6":2,"7":2} -----
+FID-0.15-g1.5 slab-line j0.001 s3: 3358 ms 11 steps, {"6":6,"7":2}→{"6":2,"7":2} -----
+FINITE-2 diag-edge j0 s1: 57 ms 2 steps, {"6":2}→{"6":1} A
+FINITE-2 diag-edge j0.001 s1: 58 ms 2 steps, {"6":2}→{"6":1} A
+FINITE-2 diag-edge j0.001 s2: 58 ms 2 steps, {"6":2}→{"6":1} A
+FINITE-2 diag-edge j0.001 s3: 57 ms 2 steps, {"6":2}→{"6":1} A
+FINITE-2 diag-corner j0 s1: 54 ms 2 steps, {"6":2}→{"6":2} 
+FINITE-2 diag-corner j0.001 s1: 65 ms 2 steps, {"6":2}→{"6":2} 
+FINITE-2 diag-corner j0.001 s2: 61 ms 2 steps, {"6":2}→{"6":2} 
+FINITE-2 diag-corner j0.001 s3: 63 ms 2 steps, {"6":2}→{"6":2} 
+FINITE-2 sq2-checker j0 s1: 130 ms 2 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-2 sq2-checker j0.001 s1: 149 ms 2 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-2 sq2-checker j0.001 s2: 141 ms 2 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-2 sq2-checker j0.001 s3: 143 ms 2 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-2 slab-line j0 s1: 658 ms 2 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-2 slab-line j0.001 s1: 737 ms 2 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-2 slab-line j0.001 s2: 735 ms 2 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-2 slab-line j0.001 s3: 775 ms 2 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-4 diag-edge j0 s1: 75 ms 4 steps, {"6":2}→{"6":1} A
+FINITE-4 diag-edge j0.001 s1: 85 ms 4 steps, {"6":2}→{"6":1} A
+FINITE-4 diag-edge j0.001 s2: 84 ms 4 steps, {"6":2}→{"6":1} A
+FINITE-4 diag-edge j0.001 s3: 84 ms 4 steps, {"6":2}→{"6":1} A
+FINITE-4 diag-corner j0 s1: 86 ms 4 steps, {"6":2}→{"6":2} 
+FINITE-4 diag-corner j0.001 s1: 101 ms 4 steps, {"6":2}→{"6":2} 
+FINITE-4 diag-corner j0.001 s2: 95 ms 4 steps, {"6":2}→{"6":2} 
+FINITE-4 diag-corner j0.001 s3: 102 ms 4 steps, {"6":2}→{"6":2} 
+FINITE-4 sq2-checker j0 s1: 229 ms 4 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-4 sq2-checker j0.001 s1: 255 ms 4 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-4 sq2-checker j0.001 s2: 276 ms 4 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-4 sq2-checker j0.001 s3: 290 ms 4 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-4 slab-line j0 s1: 1109 ms 4 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-4 slab-line j0.001 s1: 1386 ms 4 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-4 slab-line j0.001 s2: 1415 ms 4 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-4 slab-line j0.001 s3: 1409 ms 4 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-8 diag-edge j0 s1: 136 ms 8 steps, {"6":2}→{"6":1} A
+FINITE-8 diag-edge j0.001 s1: 172 ms 8 steps, {"6":2}→{"6":1} A
+FINITE-8 diag-edge j0.001 s2: 144 ms 8 steps, {"6":2}→{"6":1} A
+FINITE-8 diag-edge j0.001 s3: 159 ms 8 steps, {"6":2}→{"6":1} A
+FINITE-8 diag-corner j0 s1: 159 ms 8 steps, {"6":2}→{"6":2} 
+FINITE-8 diag-corner j0.001 s1: 208 ms 8 steps, {"6":2}→{"6":2} 
+FINITE-8 diag-corner j0.001 s2: 185 ms 8 steps, {"6":2}→{"6":2} 
+FINITE-8 diag-corner j0.001 s3: 182 ms 8 steps, {"6":2}→{"6":2} 
+FINITE-8 sq2-checker j0 s1: 370 ms 8 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-8 sq2-checker j0.001 s1: 438 ms 8 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-8 sq2-checker j0.001 s2: 410 ms 8 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-8 sq2-checker j0.001 s3: 428 ms 8 steps, {"6":2,"7":2}→{"6":2,"7":2} -
+FINITE-8 slab-line j0 s1: 1956 ms 8 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-8 slab-line j0.001 s1: 2523 ms 8 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-8 slab-line j0.001 s2: 2296 ms 8 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+FINITE-8 slab-line j0.001 s3: 2302 ms 8 steps, {"6":6,"7":2}→{"6":1,"7":2} AAAAA
+wall 284.72 s maxrss 210652 KB

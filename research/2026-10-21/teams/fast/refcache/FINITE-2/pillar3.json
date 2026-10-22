@@ -1,0 +1,1 @@
+{"regime":"FINITE-2","name":"pillar3","opts":{"maxSteps":2,"stopAfter":99,"n":16},"ms":51,"steps":2,"converged":false,"lastChanges":[1960,616],"grid":[48,80,48],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":3,"target":12288,"lambda":0.15093034505844116,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":3,"volume":3}]}

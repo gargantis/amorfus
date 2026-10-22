@@ -1,0 +1,4 @@
+C15-V0 n24 steps 52 True band {'mean': 0.5701, 'sd': 0.061, 'min': 0.4219, 'max': 0.7031} ends 1.1333 1.1406 parts 1 wrong 0 AAAAA
+C10-V0 n24 steps 48 True band {'mean': 0.5903, 'sd': 0.0483, 'min': 0.4844, 'max': 0.7031} ends 1.1425 1.1489 parts 1 wrong 0 AAAAA
+C15-V05 n24 steps 150 False band {'mean': 0.0092, 'sd': 0.0621, 'min': 0, 'max': 0.5781} ends 1.7151 1.7638 parts 2 wrong 8 XBBBX
+C10-V05 n24 steps 150 False band {'mean': 0.0329, 'sd': 0.1477, 'min': 0, 'max': 0.9531} ends 1.7142 1.7665 parts 2 wrong 6 XBBBA

@@ -1,0 +1,22 @@
+config               FID-0.15                  FID-0.05                  FINITE-4                  CAGE-0.25                 FREE                      
+diag-edge            A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             
+diag-edge-3v3        A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             
+diag-edge-3v1        A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             
+diag-corner          none [none,none,none,none none [none,none,none,none none [none,none,none,none none [none,none,none,none none [none,none,none,none 
+cube2-checker        none [none,none,none,none none [none,none,none,none none [none,none,none,none split:none/both [none,bot both [both,both,both,both 
+cube2-cornerA        none [none,none,none,none none [none,none,none,none none [none,none,none,none none [none,none,none,none none [none,none,none,none 
+cube2-edgeA          none [none,none,none,none A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             
+checker-2layer       none [none,none,none,none none [none,none,none,none none [none,none,none,none split:none/both/B [none,b split:none/both/A [none,b 
+slab-line            none [none,none,none,-,no A [A,A,A,-,A]             A [A,A,A,-,A]             A [A,A,A,-,A]             A [A,A,-,-,A]             
+slab-line4           none [none,none,none,-,no A [A,A,A,-,A]             A [A,A,A,-,A]             A [A,A,A,-,A]             A [A,A,-,-,A]             
+slab-antiline        none [none,none,none,-,no B [B,B,B,-,B]             B [B,B,B,-,B]             B [B,B,B,-,B]             B [B,B,-,-,B]             
+slab-line-2high      none [none,none,-,-,-]    A [A,A,-,-,-]             A [A,A,-,-,-]             A [A,A,-,-,-]             -                         
+checker-A1-B1        none [none,none,none,none none [none,none,none,none split:none/A [none,none,A split:none/B/both [none,n split:none/A/both [none,A 
+checker-A1-B2        none [none,none,none,none A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             
+checker-A1-B4        none [none,none,none,none A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             
+checker-A2-B1        none [none,none,none,none B [B,B,B,B,B]             B [B,B,B,B,B]             B [B,B,B,B,B]             B [B,B,B,B,B]             
+checker-A4-B1        none [none,none,none,none B [B,B,B,B,B]             B [B,B,B,B,B]             B [B,B,B,B,B]             B [B,B,B,B,B]             
+checker-A2-B2        none [none,none,none,none split:none/both/B [none,b none [none,none,none,none both [both,both,both,both split:none/B/both [none,B 
+checker-A2-B4        none [none,none,none,none none [none,none,none,none A [A,A,A,A,A]             A [A,A,A,A,A]             A [A,A,A,A,A]             
+checker-A4-B2        none [none,none,none,none none [none,none,none,none B [B,B,B,B,B]             B [B,B,B,B,B]             B [B,B,B,B,B]             
+checker-A4-B4        none [none,none,none,none none [none,none,none,none none [none,none,none,none none [none,none,none,none split:none/B [none,B,none 

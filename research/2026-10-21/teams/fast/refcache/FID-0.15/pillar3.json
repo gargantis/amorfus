@@ -1,0 +1,1 @@
+{"regime":"FID-0.15","name":"pillar3","opts":{"anchor":{"kind":"fidelity","k":0.15},"n":16},"ms":297,"steps":11,"converged":true,"lastChanges":[32,16,0,0,0],"grid":[48,80,48],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":3,"target":12288,"lambda":0.1424849033355713,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":3,"volume":3}]}

@@ -1,0 +1,94 @@
+{
+ "cfg": "slabLine",
+ "regime": "FREE",
+ "n": 32,
+ "variants": 12,
+ "perX": {
+  "1,1": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:15+15",
+   "n": [
+    3,
+    6
+   ],
+   "v": {
+    "6": 12
+   },
+   "majority": "6",
+   "unanimous": true,
+   "ruleAgree": true,
+   "sizeAgree": true
+  },
+  "2,2": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:15+15",
+   "n": [
+    4,
+    12
+   ],
+   "v": {
+    "6": 12
+   },
+   "majority": "6",
+   "unanimous": true,
+   "ruleAgree": true,
+   "sizeAgree": true
+  },
+  "3,3": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:15+15",
+   "n": [
+    4,
+    12
+   ],
+   "v": {
+    "6": 12
+   },
+   "majority": "6",
+   "unanimous": true,
+   "ruleAgree": true,
+   "sizeAgree": true
+  },
+  "4,4": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:15+15",
+   "n": [
+    4,
+    12
+   ],
+   "v": {
+    "6": 12
+   },
+   "majority": "6",
+   "unanimous": true,
+   "ruleAgree": true,
+   "sizeAgree": true
+  },
+  "5,5": {
+   "rule4": 6,
+   "size": 6,
+   "sizes": "6:1+1 vs 7:15+15",
+   "n": [
+    3,
+    6
+   ],
+   "v": {
+    "6": 12
+   },
+   "majority": "6",
+   "unanimous": true,
+   "ruleAgree": true,
+   "sizeAgree": true
+  }
+ },
+ "summary": {
+  "xs": 5,
+  "unanimous": 5,
+  "rule4AgreeOnUnanimous": 5,
+  "sizeAgreeOnUnanimous": 5
+ }
+}

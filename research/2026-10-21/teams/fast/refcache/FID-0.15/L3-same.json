@@ -1,0 +1,1 @@
+{"regime":"FID-0.15","name":"L3-same","opts":{"anchor":{"kind":"fidelity","k":0.15},"n":16},"ms":406,"steps":15,"converged":true,"lastChanges":[8,8,0,0,0],"grid":[64,48,64],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":6,"blocks":3,"target":12288,"lambda":0.18240869045257568,"alive":true}],"volumes":[{"p":1,"mat":6,"blocks":3,"volume":3}]}

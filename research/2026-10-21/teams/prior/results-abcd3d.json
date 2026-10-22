@@ -1,0 +1,108 @@
+{
+ "experiment": "abcd3d",
+ "date": "2026-10-21",
+ "engine": "lib/mbo.mjs (unchanged)",
+ "runs": [
+  {
+   "dims": 3,
+   "jitter": 0,
+   "seed": 1,
+   "annealed": false,
+   "n": 16,
+   "steps": 31,
+   "converged": true,
+   "start": {
+    "xWindows": 16
+   },
+   "end": {
+    "xWindows": 20,
+    "xLine_blocks": 1.25,
+    "wallAD_blocks2": 0,
+    "wallBC_blocks2": 0
+   },
+   "lastChanges": [
+    48,
+    32,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "dims": 3,
+   "jitter": 0.001,
+   "seed": 1,
+   "annealed": false,
+   "n": 16,
+   "steps": 46,
+   "converged": true,
+   "start": {
+    "xWindows": 16
+   },
+   "end": {
+    "xWindows": 20,
+    "xLine_blocks": 1.25,
+    "wallAD_blocks2": 0,
+    "wallBC_blocks2": 0
+   },
+   "lastChanges": [
+    2,
+    2,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "dims": 3,
+   "jitter": 0.01,
+   "seed": 1,
+   "annealed": true,
+   "n": 16,
+   "steps": 300,
+   "converged": false,
+   "start": {
+    "xWindows": 16
+   },
+   "end": {
+    "xWindows": 21,
+    "xLine_blocks": 1.313,
+    "wallAD_blocks2": 0,
+    "wallBC_blocks2": 0
+   },
+   "lastChanges": [
+    76,
+    62,
+    62,
+    78,
+    86
+   ]
+  },
+  {
+   "dims": 3,
+   "jitter": 0.01,
+   "seed": 2,
+   "annealed": true,
+   "n": 16,
+   "steps": 300,
+   "converged": false,
+   "start": {
+    "xWindows": 16
+   },
+   "end": {
+    "xWindows": 21,
+    "xLine_blocks": 1.313,
+    "wallAD_blocks2": 0,
+    "wallBC_blocks2": 0
+   },
+   "lastChanges": [
+    58,
+    50,
+    70,
+    66,
+    70
+   ]
+  }
+ ],
+ "seconds": 39.2
+}

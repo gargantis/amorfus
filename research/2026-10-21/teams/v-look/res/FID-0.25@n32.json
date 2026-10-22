@@ -1,0 +1,121 @@
+{
+ "regime": "FID-0.25",
+ "n": 32,
+ "runs": {
+  "single": {
+   "regime": "FID-0.25",
+   "opts": {
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.25
+    }
+   },
+   "n": 32,
+   "margin": 1,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 5,
+   "converged": true,
+   "ms": 996,
+   "lastChanges": [
+    120,
+    0,
+    0,
+    0
+   ],
+   "cells": 884736,
+   "delta": 0.0098,
+   "geoDelta": 0.0098,
+   "vol": {
+    "worstPhaseRel": 0
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.1639
+   ],
+   "ext": [
+    1.0625,
+    1.0625,
+    1.0625
+   ],
+   "diag": 1.5078,
+   "diagOverAxis": 1.4191,
+   "corner": {
+    "inset": 0.0924,
+    "Req": 0.1262
+   },
+   "edge": {
+    "faceU": 0.0312,
+    "faceV": 0.0312,
+    "inset": 0.0092,
+    "Req": 0.0221,
+    "R": 0.2418,
+    "fitRms": 0.0243,
+    "nCurved": 137,
+    "arcDeg": 68
+   }
+  },
+  "cube2-same": {
+   "regime": "FID-0.25",
+   "opts": {
+    "anchor": {
+     "kind": "fidelity",
+     "k": 0.25
+    }
+   },
+   "n": 32,
+   "margin": 0.5,
+   "jitter": 0,
+   "seed": 1,
+   "steps": 5,
+   "converged": true,
+   "ms": 1966,
+   "lastChanges": [
+    48,
+    0,
+    0,
+    0
+   ],
+   "cells": 884736,
+   "delta": 0.0009,
+   "geoDelta": 0.0009,
+   "vol": {
+    "worstPhaseRel": 0.0009
+   },
+   "phases": {
+    "6": 1
+   },
+   "lambdas": [
+    0.0999
+   ],
+   "corner": {
+    "inset": 0.0924,
+    "Req": 0.1262
+   },
+   "edge": {
+    "faceU": 0,
+    "faceV": 0,
+    "inset": 0.0092,
+    "Req": 0.0221,
+    "R": null,
+    "fitRms": null,
+    "nCurved": 0,
+    "arcDeg": 0
+   },
+   "cornerD": {
+    "inset": 0.1657,
+    "Req": 0.2264
+   },
+   "faceTop": {
+    "maxUp": 0,
+    "maxDown": 0,
+    "maxAbs": 0,
+    "colsOff": 0,
+    "cols": 1600,
+    "miss": 0
+   }
+  }
+ }
+}

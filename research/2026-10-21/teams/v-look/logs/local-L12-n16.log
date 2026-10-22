@@ -1,0 +1,26 @@
+slab8x2x4 11 far seam 1.9598 far A 2.0625
+  d 0.05 seam dev 0.32117 A-face dev 0.21509 extra 0.10608 lab seam/away 1.75 1.875
+  d 0.1 seam dev 0.16474 A-face dev 0.15071 extra 0.01403 lab seam/away 1.875 1.9375
+  d 0.2 seam dev 0.06339 A-face dev 0.09124 extra -0.02785 lab seam/away 1.9375 2
+  d 0.3 seam dev 0.02176 A-face dev 0.06938 extra -0.04763 lab seam/away 2 2
+  d 0.4 seam dev 0.0053 A-face dev 0.06346 extra -0.05816 lab seam/away 2 2
+  d 0.5 seam dev 0.00089 A-face dev 0.06257 extra -0.06167 lab seam/away 2 2
+  d 0.6 seam dev 0.00005 A-face dev 0.0625 extra -0.06245 lab seam/away 2 2
+  d 0.75 seam dev 0 A-face dev 0.06212 extra -0.06212 lab seam/away 2 2
+  d 1 seam dev 0 A-face dev 0.04357 extra -0.04357 lab seam/away 2 2
+  d 1.25 seam dev 0 A-face dev 0.00425 extra -0.00425 lab seam/away 2 2.0625
+  d 1.5 seam dev 0 A-face dev 0 extra -0 lab seam/away 2 2.0625
+  d 2 seam dev 0 A-face dev 0 extra 0 lab seam/away 2 2.0625
+slab8x2x8 22 far seam 1.9598 far A 2.0625
+  d 0.05 seam dev 0.32117 A-face dev 0.21509 extra 0.10608 lab seam/away 1.75 1.875
+  d 0.1 seam dev 0.16474 A-face dev 0.15071 extra 0.01403 lab seam/away 1.875 1.9375
+  d 0.2 seam dev 0.06339 A-face dev 0.09124 extra -0.02785 lab seam/away 1.9375 2
+  d 0.3 seam dev 0.02176 A-face dev 0.06938 extra -0.04763 lab seam/away 2 2
+  d 0.4 seam dev 0.0053 A-face dev 0.06346 extra -0.05816 lab seam/away 2 2
+  d 0.5 seam dev 0.00089 A-face dev 0.06257 extra -0.06167 lab seam/away 2 2
+  d 0.6 seam dev 0.00005 A-face dev 0.0625 extra -0.06245 lab seam/away 2 2
+  d 0.75 seam dev 0 A-face dev 0.0625 extra -0.0625 lab seam/away 2 2
+  d 1 seam dev 0 A-face dev 0.0625 extra -0.0625 lab seam/away 2 2
+  d 1.25 seam dev 0 A-face dev 0.0625 extra -0.0625 lab seam/away 2 2
+  d 1.5 seam dev 0 A-face dev 0.0625 extra -0.0625 lab seam/away 2 2
+  d 2 seam dev 0 A-face dev 0.05872 extra -0.05872 lab seam/away 2 2

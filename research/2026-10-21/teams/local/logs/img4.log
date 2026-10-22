@@ -1,0 +1,12 @@
+checker-A1-B1 FREE s1 45 steps 6,7,7
+checker-A1-B4 FREE s1 113 steps 6,7,7
+checker-A4-B1 FREE s1 104 steps 6,6,7
+checker-A2-B2 FREE s1 124 steps 6,6,7
+checker-A1-B1 FID-0.15 j0 11 steps 6,6,7,7
+checker-A1-B4 FID-0.15 j0 11 steps 6,6,7,7
+checker-A4-B1 FID-0.15 j0 11 steps 6,6,7,7
+diag-edge FID-0.15 j0 15 steps 6
+cube2-checker FID-0.15 j0 12 steps 6,7,7,6,7,6,6,7
+checker-A1-B4 CAGE-0.25 j0 34 steps 6,7,7
+checker-A4-B1 CAGE-0.25 j0 33 steps 6,6,7
+diag-edge CAGE-0.25 j0 35 steps 6

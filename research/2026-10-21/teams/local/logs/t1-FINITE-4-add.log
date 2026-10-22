@@ -1,0 +1,8 @@
+FINITE-4 add base 552 ms 4 steps NOT CONVERGED [{"p":1,"mat":6,"blocks":140,"volume":138,"lamRun":0.16629,"lamRender":0.26601}]
+d=1: 504 ms 4 st NC | label diffs 7430, max dist 10.221 | probe dD 0.27691 dD0 0.28687 dLab 0.25 | lam 0.13064 (base 0.16629)
+d=2: 418 ms 4 st NC | label diffs 7408, max dist 9.249 | probe dD 0.06793 dD0 0.08395 dLab 0.08333 | lam 0.13064 (base 0.16629)
+d=3: 381 ms 4 st NC | label diffs 7408, max dist 8.284 | probe dD -0.01598 dD0 0.00008 dLab 0 | lam 0.13064 (base 0.16629)
+d=4: 387 ms 4 st NC | label diffs 7408, max dist 7.329 | probe dD -0.01606 dD0 0 dLab 0 | lam 0.13064 (base 0.16629)
+d=6: 437 ms 4 st NC | label diffs 7408, max dist 8.284 | probe dD -0.01606 dD0 0 dLab 0 | lam 0.13064 (base 0.16629)
+d=8: 390 ms 4 st NC | label diffs 7430, max dist 10.221 | probe dD -0.0157 dD0 0 dLab 0 | lam 0.13064 (base 0.16629)
+d=10: 437 ms 4 st NC | label diffs 5466, max dist 12.161 | probe dD -0.02989 dD0 0 dLab 0 | lam 0.13387 (base 0.16629)

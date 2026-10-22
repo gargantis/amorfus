@@ -1,0 +1,91 @@
+{
+"out": "sheets/models-vs-physics-2.png",
+"cols": 5,
+"title": "Physics (engine, n=16) vs one-step local models, same camera - part 2",
+"cell": [
+300,
+225
+],
+"items": [
+{
+"path": "img/diag-edge__blocks-view.png",
+"label": "diag-edge\nblocks (start)"
+},
+{
+"path": "img/diag-edge__FID-0.15-view.png",
+"label": "diag-edge\nphysics FID-0.15"
+},
+{
+"path": "img/diag-edge__Bl-b1s20-view.png",
+"label": "diag-edge\ncheap Bl-b1s20 (1 step)"
+},
+{
+"path": "img/diag-edge__FINITE-4-view.png",
+"label": "diag-edge\nphysics FINITE-4"
+},
+{
+"path": "img/diag-edge__Bl-b3s40-view.png",
+"label": "diag-edge\ncheap Bl-b3s40 (1 step)"
+},
+{
+"path": "img/slab-line__blocks-view.png",
+"label": "slab-line\nblocks (start)"
+},
+{
+"path": "img/slab-line__FID-0.15-view.png",
+"label": "slab-line\nphysics FID-0.15"
+},
+{
+"path": "img/slab-line__Bl-b1s20-view.png",
+"label": "slab-line\ncheap Bl-b1s20 (1 step)"
+},
+{
+"path": "img/slab-line__FINITE-4-view.png",
+"label": "slab-line\nphysics FINITE-4"
+},
+{
+"path": "img/slab-line__Bl-b3s40-view.png",
+"label": "slab-line\ncheap Bl-b3s40 (1 step)"
+},
+{
+"path": "img/stairs__blocks-view.png",
+"label": "stairs\nblocks (start)"
+},
+{
+"path": "img/stairs__FID-0.15-view.png",
+"label": "stairs\nphysics FID-0.15"
+},
+{
+"path": "img/stairs__Bl-b1s20-view.png",
+"label": "stairs\ncheap Bl-b1s20 (1 step)"
+},
+{
+"path": "img/stairs__FINITE-4-view.png",
+"label": "stairs\nphysics FINITE-4"
+},
+{
+"path": "img/stairs__Bl-b3s40-view.png",
+"label": "stairs\ncheap Bl-b3s40 (1 step)"
+},
+{
+"path": "img/terrain-step__blocks-view.png",
+"label": "terrain-step\nblocks (start)"
+},
+{
+"path": "img/terrain-step__FID-0.15-view.png",
+"label": "terrain-step\nphysics FID-0.15"
+},
+{
+"path": "img/terrain-step__Bl-b1s20-view.png",
+"label": "terrain-step\ncheap Bl-b1s20 (1 step)"
+},
+{
+"path": "img/terrain-step__FINITE-4-view.png",
+"label": "terrain-step\nphysics FINITE-4"
+},
+{
+"path": "img/terrain-step__Bl-b3s40-view.png",
+"label": "terrain-step\ncheap Bl-b3s40 (1 step)"
+}
+]
+}

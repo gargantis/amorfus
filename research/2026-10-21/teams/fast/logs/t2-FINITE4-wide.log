@@ -1,0 +1,108 @@
+FINITE-4 single Bx-g45: surf mean 0.0036 p95 0.009 max 0.0152 unm 0 bias 0 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.579
+FINITE-4 single Bx-g50: surf mean 0.0036 p95 0.0086 max 0.014 unm 0 bias -0.0001 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.6326
+  (single 485 ms, rss 94 MB)
+FINITE-4 pair-same Bx-g45: surf mean 0.0071 p95 0.0169 max 0.0231 unm 0 bias -0.0003 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.4846
+FINITE-4 pair-same Bx-g50: surf mean 0.0177 p95 0.038 max 0.0459 unm 0 bias -0.0003 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.5346
+  (pair-same 538 ms, rss 103 MB)
+FINITE-4 pair-diff Bx-g45: surf mean 0.0127 p95 0.0282 max 0.0372 unm 0 bias -0.0003 | seam mean 0 p95 0 n 54 | vol {"6":0,"7":0} | lam 0.5332,0.5332
+FINITE-4 pair-diff Bx-g50: surf mean 0.0191 p95 0.0393 max 0.0487 unm 0 bias -0.0002 | seam mean 0 p95 0 n 54 | vol {"6":0,"7":0} | lam 0.5851,0.5851
+  (pair-diff 654 ms, rss 121 MB)
+FINITE-4 line3-same Bx-g45: surf mean 0.0177 p95 0.0364 max 0.0384 unm 0 bias 0.0001 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.4468
+FINITE-4 line3-same Bx-g50: surf mean 0.0316 p95 0.0698 max 0.0722 unm 0 bias -0.0012 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.4953
+  (line3-same 270 ms, rss 141 MB)
+FINITE-4 line3-ABA Bx-g45: surf mean 0.0222 p95 0.0346 max 0.0427 unm 0 bias -0.0009 | seam mean 0.0284 p95 0.0292 n 78 | vol {"6":-0.002,"7":-0.0023} | lam 0.5198,0.502,0.5198
+FINITE-4 line3-ABA Bx-g50: surf mean 0.0299 p95 0.0497 max 0.0599 unm 0 bias -0.0005 | seam mean 0.0508 p95 0.0522 n 82 | vol {"6":0,"7":0} | lam 0.5712,0.5521,0.5712
+  (line3-ABA 795 ms, rss 148 MB)
+FINITE-4 line3-ABC Bx-g45: surf mean 0.0198 p95 0.032 max 0.04 unm 0 bias -0.001 | seam mean 0.0278 p95 0.0286 n 77 | vol {"1":-0.0039,"6":-0.0019,"7":-0.0019} | lam 0.5219,0.4979,0.5219
+FINITE-4 line3-ABC Bx-g50: surf mean 0.0284 p95 0.046 max 0.0523 unm 0 bias -0.0005 | seam mean 0.0324 p95 0.0331 n 78 | vol {"1":0.0001,"6":0.0001,"7":0} | lam 0.5726,0.5521,0.5726
+  (line3-ABC 1057 ms, rss 165 MB)
+FINITE-4 L3-same Bx-g45: surf mean 0.012 p95 0.0289 max 0.0338 unm 0 bias -0.0017 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.4361
+FINITE-4 L3-same Bx-g50: surf mean 0.0258 p95 0.0603 max 0.0713 unm 0 bias -0.0029 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.4824
+  (L3-same 272 ms, rss 161 MB)
+FINITE-4 L3-AAB Bx-g45: surf mean 0.0142 p95 0.0291 max 0.0435 unm 0 bias -0.0008 | seam mean 0.0298 p95 0.0748 n 57 | vol {"6":0,"7":0} | lam 0.4573,0.5162
+FINITE-4 L3-AAB Bx-g50: surf mean 0.0254 p95 0.0488 max 0.0645 unm 0 bias -0.0018 | seam mean 0.0341 p95 0.0866 n 58 | vol {"6":0,"7":0} | lam 0.5059,0.5653
+  (L3-AAB 1041 ms, rss 149 MB)
+FINITE-4 L3-ABC Bx-g45: surf mean 0.0146 p95 0.0348 max 0.0593 unm 0 bias -0.0017 | seam mean 0.0202 p95 0.032 n 100 | vol {"1":-0.012,"6":0.0001,"7":-0.0004} | lam 0.4957,0.5122,0.5122
+FINITE-4 L3-ABC Bx-g50: surf mean 0.024 p95 0.0511 max 0.082 unm 0 bias -0.0033 | seam mean 0.0223 p95 0.0343 n 101 | vol {"1":-0.0141,"6":-0.0115,"7":0} | lam 0.5468,0.5607,0.5607
+  (L3-ABC 1301 ms, rss 161 MB)
+FINITE-4 sq2-same Bx-g45: surf mean 0.0055 p95 0.011 max 0.0123 unm 0 bias -0.0005 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.3869
+FINITE-4 sq2-same Bx-g50: surf mean 0.0165 p95 0.034 max 0.0368 unm 0 bias -0.0021 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.4295
+  (sq2-same 289 ms, rss 162 MB)
+FINITE-4 sq2-AAAB Bx-g45: surf mean 0.0152 p95 0.0384 max 0.0573 unm 0 bias -0.0021 | seam mean 0.0174 p95 0.0347 n 63 | vol {"6":0,"7":0} | lam 0.4135,0.4968
+FINITE-4 sq2-AAAB Bx-g50: surf mean 0.0257 p95 0.062 max 0.0849 unm 0 bias -0.0033 | seam mean 0.031 p95 0.0604 n 65 | vol {"6":0.0001,"7":-0.0009} | lam 0.4576,0.5443
+  (sq2-AAAB 982 ms, rss 153 MB)
+FINITE-4 sq2-AABB Bx-g45: surf mean 0.0127 p95 0.0259 max 0.043 unm 0 bias -0.0018 | seam mean 0 p95 0 n 91 | vol {"6":0,"7":0} | lam 0.4403,0.4403
+FINITE-4 sq2-AABB Bx-g50: surf mean 0.0229 p95 0.047 max 0.071 unm 0 bias -0.003 | seam mean 0 p95 0 n 91 | vol {"6":0,"7":0} | lam 0.4866,0.4866
+  (sq2-AABB 648 ms, rss 159 MB)
+FINITE-4 sq2-checker Bx-g45: surf mean 0.0201 p95 0.0554 max 0.1024 unm 0 bias 0 | seam mean 0 p95 0 n 172 | vol {"6":-0.0008,"7":-0.0008} | lam 0.4766,0.4766,0.4766,0.4766
+FINITE-4 sq2-checker Bx-g50: surf mean 0.0312 p95 0.0783 max 0.1368 unm 0 bias -0.0029 | seam mean 0 p95 0 n 175 | vol {"6":-0.0056,"7":-0.0056} | lam 0.5215,0.5215,0.5215,0.5215
+  (sq2-checker 1142 ms, rss 160 MB)
+FINITE-4 sq2-AABC Bx-g45: surf mean 0.0158 p95 0.0349 max 0.0669 unm 0 bias -0.0003 | seam mean 0.0145 p95 0.0484 n 120 | vol {"1":-0.0005,"6":0,"7":-0.0005} | lam 0.4364,0.4873,0.4873
+FINITE-4 sq2-AABC Bx-g50: surf mean 0.0253 p95 0.054 max 0.0959 unm 0 bias -0.0012 | seam mean 0.0193 p95 0.0614 n 121 | vol {"1":-0.0005,"6":-0.0005,"7":-0.0005} | lam 0.4826,0.535,0.535
+  (sq2-AABC 1346 ms, rss 165 MB)
+FINITE-4 sq2-ABCD Bx-g45: surf mean 0.0169 p95 0.0428 max 0.082 unm 0 bias 0.0003 | seam mean 0 p95 0 n 167 | vol {"1":0,"4":0,"6":0,"7":0} | lam 0.4848,0.4848,0.4848,0.4848
+FINITE-4 sq2-ABCD Bx-g50: surf mean 0.0255 p95 0.0634 max 0.1115 unm 0 bias -0.0003 | seam mean 0 p95 0 n 169 | vol {"1":0,"4":0,"6":0,"7":0} | lam 0.5328,0.5328,0.5328,0.5328
+  (sq2-ABCD 1602 ms, rss 179 MB)
+FINITE-4 diag-edge Bx-g45: surf mean 0.0073 p95 0.0129 max 0.0149 unm 0 bias -0.0022 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.5256,0.5256
+FINITE-4 diag-edge Bx-g50: surf mean 0.0242 p95 0.0456 max 0.0494 unm 0 bias -0.0043 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.5765,0.5765
+  (diag-edge 251 ms, rss 178 MB)
+FINITE-4 diag-corner Bx-g45: surf mean 0.0297 p95 0.1024 max 1 unm 2 bias -0.0082 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.5599,0.5599
+FINITE-4 diag-corner Bx-g50: surf mean 0.0488 p95 0.1662 max 1 unm 4 bias -0.0156 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.6078,0.6078
+  (diag-corner 346 ms, rss 153 MB)
+FINITE-4 diag-edge-diff Bx-g45: surf mean 0.0054 p95 0.01 max 0.0158 unm 0 bias -0.0031 | seam mean 0.011 p95 0.0139 n 7 | vol {"6":0,"7":-0.0123} | lam 0.5506,0.5506
+FINITE-4 diag-edge-diff Bx-g50: surf mean 0.0143 p95 0.0245 max 0.0319 unm 0 bias -0.0051 | seam mean 0.0099 p95 0.0139 n 9 | vol {"6":0,"7":-0.0153} | lam 0.6026,0.6026
+  (diag-edge-diff 486 ms, rss 163 MB)
+FINITE-4 cube2-same Bx-g45: surf mean 0.0049 p95 0.0101 max 0.0156 unm 0 bias 0.0003 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.3042
+FINITE-4 cube2-same Bx-g50: surf mean 0.0133 p95 0.0288 max 0.0357 unm 0 bias -0.0016 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.336
+  (cube2-same 407 ms, rss 163 MB)
+FINITE-4 cube2-oneB Bx-g45: surf mean 0.0126 p95 0.0334 max 0.0678 unm 0 bias -0.0034 | seam mean 0.0347 p95 0.0667 n 79 | vol {"6":-0.0002,"7":0.0001} | lam 0.3154,0.4799
+FINITE-4 cube2-oneB Bx-g50: surf mean 0.0202 p95 0.0455 max 0.0895 unm 0 bias -0.0052 | seam mean 0.0538 p95 0.1134 n 80 | vol {"6":0,"7":-0.0002} | lam 0.3486,0.5197
+  (cube2-oneB 1296 ms, rss 161 MB)
+FINITE-4 cube2-halves Bx-g45: surf mean 0.0129 p95 0.0297 max 0.042 unm 0 bias -0.002 | seam mean 0 p95 0 n 122 | vol {"6":0,"7":0} | lam 0.3586,0.3586
+FINITE-4 cube2-halves Bx-g50: surf mean 0.0192 p95 0.0408 max 0.0575 unm 0 bias -0.0042 | seam mean 0 p95 0 n 122 | vol {"6":0,"7":0} | lam 0.3956,0.3956
+  (cube2-halves 1074 ms, rss 175 MB)
+FINITE-4 cube2-checker Bx-g45: surf mean 0.041 p95 0.0729 max 0.0757 unm 0 bias -0.0362 | seam mean 0 p95 0 n 419 | vol {"6":-0.0745,"7":-0.0745} | lam 0.3916,0.3916,0.3916,0.3916
+FINITE-4 cube2-checker Bx-g50: surf mean 0.0607 p95 0.1124 max 0.118 unm 0 bias -0.0555 | seam mean 0 p95 0 n 419 | vol {"6":-0.1127,"7":-0.1127} | lam 0.4176,0.4176,0.4176,0.4176
+  (cube2-checker 1768 ms, rss 197 MB)
+FINITE-4 cube2-octants Bx-g45: surf mean 0.026 p95 0.0478 max 0.104 unm 0 bias -0.0164 | seam mean 0 p95 0 n 419 | vol {"1":-0.0285,"4":-0.0285,"6":-0.0285,"7":-0.0285} | lam 0.4261,0.4261,0.4261,0.4261
+FINITE-4 cube2-octants Bx-g50: surf mean 0.0428 p95 0.0825 max 0.1191 unm 0 bias -0.0328 | seam mean 0 p95 0 n 417 | vol {"1":-0.064,"4":-0.064,"6":-0.064,"7":-0.064} | lam 0.455,0.455,0.455,0.455
+  (cube2-octants 2755 ms, rss 228 MB)
+FINITE-4 plus5 Bx-g45: surf mean 0.0145 p95 0.0284 max 0.0393 unm 0 bias -0.0007 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.3857
+FINITE-4 plus5 Bx-g50: surf mean 0.0331 p95 0.0697 max 0.0901 unm 0 bias -0.0033 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.427
+  (plus5 446 ms, rss 195 MB)
+FINITE-4 plus5-mixed Bx-g45: surf mean 0.0165 p95 0.0373 max 0.0555 unm 0 bias -0.0027 | seam mean 0.0148 p95 0.0272 n 92 | vol {"6":-0.0029,"7":-0.0004} | lam 0.4389,0.4389,0.5093,0.4389
+FINITE-4 plus5-mixed Bx-g50: surf mean 0.0355 p95 0.0744 max 0.083 unm 0 bias -0.006 | seam mean 0.0364 p95 0.0535 n 92 | vol {"6":-0.005,"7":-0.0015} | lam 0.4819,0.4819,0.5594,0.4819
+  (plus5-mixed 1498 ms, rss 187 MB)
+FINITE-4 ring8 Bx-g45: surf mean 0.0219 p95 0.0479 max 1 unm 1 bias -0.0023 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.3254
+FINITE-4 ring8 Bx-g50: surf mean 0.0451 p95 0.0993 max 1 unm 5 bias -0.006 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.3656
+  (ring8 423 ms, rss 165 MB)
+FINITE-4 T-mixed Bx-g45: surf mean 0.0158 p95 0.0361 max 0.0454 unm 0 bias -0.0032 | seam mean 0.0181 p95 0.043 n 38 | vol {"6":0,"7":0} | lam 0.4169,0.4475
+FINITE-4 T-mixed Bx-g50: surf mean 0.0315 p95 0.0715 max 0.0897 unm 0 bias -0.0057 | seam mean 0.0337 p95 0.0617 n 38 | vol {"6":0,"7":0} | lam 0.4638,0.4937
+  (T-mixed 1056 ms, rss 174 MB)
+FINITE-4 pillar3 Bx-g45: surf mean 0.0177 p95 0.0375 max 0.0389 unm 0 bias 0.0016 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.4468
+FINITE-4 pillar3 Bx-g50: surf mean 0.0313 p95 0.0701 max 0.0726 unm 0 bias 0.0015 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.4953
+  (pillar3 274 ms, rss 177 MB)
+FINITE-4 stairs Bx-g45: surf mean 0.0151 p95 0.0349 max 0.0465 unm 0 bias -0.0012 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2784
+FINITE-4 stairs Bx-g50: surf mean 0.0289 p95 0.0657 max 0.091 unm 0 bias -0.0016 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.309
+  (stairs 561 ms, rss 175 MB)
+FINITE-4 ball-r2 Bx-g45: surf mean 0.0178 p95 0.0549 max 0.0756 unm 0 bias -0.0004 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.2127
+FINITE-4 ball-r2 Bx-g50: surf mean 0.0321 p95 0.0928 max 0.1518 unm 0 bias -0.0016 | seam mean - p95 - n 0 | vol {"6":0} | lam 0.232
+  (ball-r2 769 ms, rss 195 MB)
+FINITE-4 ball-AB Bx-g45: surf mean 0.0186 p95 0.0471 max 0.0886 unm 0 bias -0.0005 | seam mean 0.0108 p95 0.0258 n 66 | vol {"6":-0.0001,"7":0} | lam 0.2333,0.2752
+FINITE-4 ball-AB Bx-g50: surf mean 0.0323 p95 0.0779 max 0.156 unm 0 bias -0.0001 | seam mean 0.0121 p95 0.0317 n 66 | vol {"6":0,"7":0} | lam 0.2555,0.3031
+  (ball-AB 2621 ms, rss 212 MB)
+FINITE-4 slab-dot Bx-g45: surf mean 0.0326 p95 0.068 max 0.0865 unm 0 bias -0.0073 | seam mean 0.0178 p95 0.028 n 48 | vol {"6":-0.0038,"7":0} | lam 0.2233,0.4109
+FINITE-4 slab-dot Bx-g50: surf mean 0.053 p95 0.1141 max 0.1519 unm 0 bias -0.0097 | seam mean 0.0335 p95 0.0605 n 49 | vol {"6":-0.0022,"7":0} | lam 0.2555,0.4573
+  (slab-dot 2252 ms, rss 242 MB)
+FINITE-4 slab-line Bx-g45: surf mean 0.031 p95 0.0768 max 0.0922 unm 0 bias -0.0072 | seam mean 0.0154 p95 0.0558 n 161 | vol {"6":-0.001,"7":-0.0004} | lam 0.331,0.2308,0.2308,0.331
+FINITE-4 slab-line Bx-g50: surf mean 0.0516 p95 0.1279 max 0.1587 unm 0 bias -0.0096 | seam mean 0.0348 p95 0.1086 n 159 | vol {"6":-0.0013,"7":-0.0005} | lam 0.371,0.2616,0.2616,0.371
+  (slab-line 4131 ms, rss 299 MB)
+FINITE-4 slab-stripe Bx-g45: surf mean 0.0309 p95 0.0669 max 0.0912 unm 0 bias -0.0039 | seam mean 0.0179 p95 0.0265 n 110 | vol {"6":-0.0012,"7":-0.0004} | lam 0.2305,0.2698,0.2305
+FINITE-4 slab-stripe Bx-g50: surf mean 0.0505 p95 0.1099 max 0.1557 unm 0 bias -0.0061 | seam mean 0.0163 p95 0.0267 n 110 | vol {"6":-0.0002,"7":0} | lam 0.2632,0.3069,0.2632
+  (slab-stripe 4419 ms, rss 301 MB)
+FINITE-4 terrain-step Bx-g45: surf mean 0.0352 p95 0.0831 max 0.1106 unm 0 bias -0.0081 | seam mean 0.0196 p95 0.0299 n 263 | vol {"1":0,"2":0} | lam 0.1752,0.2087,0.2087
+FINITE-4 terrain-step Bx-g50: surf mean 0.0478 p95 0.1176 max 0.1681 unm 0 bias -0.0105 | seam mean 0.0266 p95 0.0528 n 259 | vol {"1":-0.0001,"2":-0.0003} | lam 0.1968,0.2324,0.2324
+  (terrain-step 8186 ms, rss 344 MB)
+FINITE-4 tunnel Bx-g45: surf mean 0.0444 p95 0.0761 max 0.0805 unm 0 bias -0.0049 | seam mean - p95 - n 0 | vol {"3":0} | lam 0.1659
+FINITE-4 tunnel Bx-g50: surf mean 0.0717 p95 0.1421 max 0.2494 unm 0 bias -0.0033 | seam mean - p95 - n 0 | vol {"3":0} | lam 0.1858
+  (tunnel 982 ms, rss 281 MB)

@@ -1,0 +1,4 @@
+FID fold 0 test 1027 tabNV 0.0623 K8 cov 0.982 fb 0.0437 cov-only 0.0411 | K8bin cov 0.997 fb 0.0469 cov-only 0.0452 | K32 cov 0.326 fb 0.0426 cov-only 0.026 | K64 cov 0.019 fb 0.0436 cov-only 0.0222
+FID fold 1 test 997 tabNV 0.0518 K8 cov 0.973 fb 0.0351 cov-only 0.0327 | K8bin cov 0.994 fb 0.0352 cov-only 0.0339 | K32 cov 0.296 fb 0.0367 cov-only 0.0302 | K64 cov 0.022 fb 0.035 cov-only 0.0225
+FINITE-4 fold 0 test 1488 tabNV 0.048 K8 cov 0.994 fb 0.0292 cov-only 0.0283 | K8bin cov 0.998 fb 0.0369 cov-only 0.0368 | K32 cov 0.39 fb 0.0274 cov-only 0.0193 | K64 cov 0.042 fb 0.0291 cov-only 0.0108
+FINITE-4 fold 1 test 1644 tabNV 0.0423 K8 cov 0.991 fb 0.0307 cov-only 0.0292 | K8bin cov 0.998 fb 0.0347 cov-only 0.0343 | K32 cov 0.361 fb 0.0292 cov-only 0.0206 | K64 cov 0.022 fb 0.0305 cov-only 0.0161

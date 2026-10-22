@@ -1,0 +1,237 @@
+{
+ "regime": {
+  "maxSteps": 6,
+  "stopAfter": 99
+ },
+ "runs": {
+  "pair-same": {
+   "name": "pair-same",
+   "desc": "two blocks, same material",
+   "ms": 215,
+   "steps": 6,
+   "converged": false,
+   "lastChanges": [
+    496,
+    480,
+    464,
+    336,
+    304
+   ],
+   "grid": [
+    64,
+    48,
+    48
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 2,
+     "volume": 2,
+     "lambda": 0.1235
+    }
+   ],
+   "clustersStart": 1
+  },
+  "pair-diff": {
+   "name": "pair-diff",
+   "desc": "two blocks, different materials (double bubble)",
+   "ms": 173,
+   "steps": 6,
+   "converged": false,
+   "lastChanges": [
+    520,
+    192,
+    192,
+    152,
+    96
+   ],
+   "grid": [
+    64,
+    48,
+    48
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1477
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1477
+    }
+   ],
+   "clustersStart": 2
+  },
+  "sq2-checker": {
+   "name": "sq2-checker",
+   "desc": "2×2 checkerboard (diagonal pairs same: ambiguous edge)",
+   "ms": 311,
+   "steps": 6,
+   "converged": false,
+   "lastChanges": [
+    1136,
+    512,
+    400,
+    336,
+    240
+   ],
+   "grid": [
+    64,
+    48,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1334
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1334
+    },
+    {
+     "p": 3,
+     "mat": 7,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1334
+    },
+    {
+     "p": 4,
+     "mat": 6,
+     "blocks": 1,
+     "volume": 1,
+     "lambda": 0.1334
+    }
+   ],
+   "clustersStart": 4
+  },
+  "slab-line": {
+   "name": "slab-line",
+   "desc": "6×6 slab B with a 1-wide diagonal line of A (painted)",
+   "ms": 1355,
+   "steps": 6,
+   "converged": false,
+   "lastChanges": [
+    10420,
+    7172,
+    5344,
+    3892,
+    4680
+   ],
+   "grid": [
+    128,
+    48,
+    128
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 6,
+     "volume": 6,
+     "lambda": 0.0895
+    },
+    {
+     "p": 2,
+     "mat": 7,
+     "blocks": 15,
+     "volume": 14.995,
+     "lambda": 0.0785
+    },
+    {
+     "p": 3,
+     "mat": 7,
+     "blocks": 15,
+     "volume": 14.995,
+     "lambda": 0.0785
+    }
+   ],
+   "clustersStart": 8
+  },
+  "stairs": {
+   "name": "stairs",
+   "desc": "built 1:1 stair, 3 steps, 2 deep",
+   "ms": 257,
+   "steps": 6,
+   "converged": false,
+   "lastChanges": [
+    3152,
+    1942,
+    1782,
+    1648,
+    1320
+   ],
+   "grid": [
+    80,
+    80,
+    64
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 6,
+     "blocks": 12,
+     "volume": 12,
+     "lambda": 0.076
+    }
+   ],
+   "clustersStart": 1
+  },
+  "terrain-step": {
+   "name": "terrain-step",
+   "desc": "grass over dirt, a one-block step",
+   "ms": 1611,
+   "steps": 6,
+   "converged": false,
+   "lastChanges": [
+    5970,
+    5128,
+    9966,
+    6288,
+    4440
+   ],
+   "grid": [
+    128,
+    80,
+    112
+   ],
+   "n": 16,
+   "phases": [
+    {
+     "p": 1,
+     "mat": 2,
+     "blocks": 45,
+     "volume": 45,
+     "lambda": 0.0745
+    },
+    {
+     "p": 2,
+     "mat": 1,
+     "blocks": 30,
+     "volume": 30,
+     "lambda": 0.0652
+    }
+   ],
+   "clustersStart": 3
+  }
+ }
+}

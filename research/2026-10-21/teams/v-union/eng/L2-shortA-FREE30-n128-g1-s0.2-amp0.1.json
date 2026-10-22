@@ -1,0 +1,104 @@
+{
+ "cfg": "L2-shortA",
+ "X": [
+  2,
+  1
+ ],
+ "n": 128,
+ "regime": "FREE30",
+ "g": 1,
+ "s_b": 0.2,
+ "runs": [
+  {
+   "v": "id",
+   "steps": 30,
+   "converged": false,
+   "ms": 18480,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 6,
+   "geo": 6,
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    },
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-3,3:7 -2,2:7 -1,1:7 1,-1:7 2,-2:7 3,-3:7 4,-4:7 5,-5:7",
+   "phases": "6:4 7:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "rot90",
+   "steps": 30,
+   "converged": false,
+   "ms": 19718,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 6,
+   "geo": 6,
+   "detail": [
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    },
+    {
+     "mat": 6,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    }
+   ],
+   "otherX": "-3,-3:7 -2,-2:7 -1,-1:7 1,1:7 2,2:7 3,3:7 4,4:7 5,5:7",
+   "phases": "6:4 7:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  },
+  {
+   "v": "j1e-3s1",
+   "steps": 30,
+   "converged": false,
+   "ms": 20986,
+   "rule4": 0,
+   "size": 7,
+   "verdict": 6,
+   "geo": 6,
+   "detail": [
+    {
+     "mat": 6,
+     "united": true,
+     "step": 1,
+     "pieces": 1
+    },
+    {
+     "mat": 7,
+     "united": false,
+     "step": null,
+     "pieces": null
+    }
+   ],
+   "otherX": "-3,3:7 -2,2:7 -1,1:7 1,-1:7 2,-2:7 3,-3:7 4,-4:7 5,-5:7",
+   "phases": "6:4 7:4 7:6",
+   "firstMerges": [
+    1
+   ]
+  }
+ ],
+ "tally": {
+  "sym/rev:6/6": 2,
+  "frozen:6/6": 1
+ }
+}

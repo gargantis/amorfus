@@ -1,0 +1,8 @@
+edge-k1L4: 135 ms 4 st NC | 6:8->7.986 lam 0.16648
+edge-k2L4: 150 ms 4 st NC | 6:16->16 lam 0.13234
+edge-k3L4: 109 ms 4 st NC | 6:24->24 lam 0.1254
+edge-k5L4: 116 ms 4 st NC | 6:40->38.833 lam 0.16629
+edge-k8L4: 169 ms 4 st NC | 6:64->62.583 lam 0.16629
+edge-k3L8: 173 ms 4 st NC | 6:48->46.667 lam 0.16629
+edge-k3L4-hook: 168 ms 4 st NC | 6:48->47.999 lam 0.16629
+edge-cube3: 82 ms 4 st NC | 6:27->26.986 lam 0.12187

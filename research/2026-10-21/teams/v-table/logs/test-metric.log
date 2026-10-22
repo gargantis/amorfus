@@ -1,0 +1,4 @@
+flat, physics 0.3 above blocks (expect 0.3/0.3, bias -0.3) {"m2s":0.3,"s2m":0.3,"sym":0.3,"bias":-0.3,"m2sP95":0.3,"s2mP95":0.3,"meshArea":25,"simArea":25}
+flat, physics at blocks (expect ~0) {"m2s":0,"s2m":0,"sym":0,"bias":0,"m2sP95":0,"s2mP95":0,"meshArea":25,"simArea":25}
+flat, physics 0.1 below, vertices moved -0.1 (expect ~0) {"m2s":0.0016,"s2m":0.0016,"sym":0.0016,"bias":-0.0016,"m2sP95":0.0016,"s2mP95":0.0016,"meshArea":25,"simArea":25}
+tilted plane slope 0.25 vs flat mesh (expect mean |0.25(x-4.5)|cos ~ 0.24*1.25=0.30?) {"m2s":0.3032,"s2m":0.3169,"sym":0.31,"bias":0,"m2sP95":0.5794,"s2mP95":0.6146,"meshArea":25,"simArea":26.113}

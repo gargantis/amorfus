@@ -1,0 +1,8 @@
+eq-sep: 1252 ms 10 st | 6:30 lam 0.17529 | 6:30 lam 0.17529
+eq-bridgeA: 4247 ms 55 st | 6:61 lam 0.08687 | label diffs 7248 max dist 3.544 | dTop0 far [0,-0.08333,-0.04167,0,-0.00035] dTopFull [0.00008,-0.08325,-0.04299,0.00008,-0.00025]
+eq-bridgeAcol: 2602 ms 35 st | 6:62 lam 0.08663 | label diffs 9152 max dist 3.502 | dTop0 far [0,-0.08333,-0.04167,0,-0.00035] dTopFull [0.00008,-0.08325,-0.04299,0.00008,-0.00025]
+eq-bridgeB: 3508 ms 29 st | 6:30 lam 0.17295 | 6:30 lam 0.17295 | 7:1 lam 0.19123 | label diffs 4480 max dist 3.558 | dTop0 far [0,-0.08333,-0.04167,0,0] dTopFull [0.00156,-0.08177,-0.04151,0.00156,0.00156]
+uneq-sep: 2556 ms 27 st | 6:30 lam 0.17529 | 6:60 lam 0.15919
+uneq-bridgeA: 5420 ms 53 st | 6:91 lam 0.08983 | label diffs 7280 max dist 6.263 | dTop0 far [0,-0.08333,0,0,-0.00002] dTopFull [0.00012,-0.08321,-0.00145,-0.00145,0.0001]
+uneq-bridgeAcol: 6060 ms 60 st | 6:92 lam 0.07196 | label diffs 10400 max dist 6.246 | dTop0 far [-0.00035,-0.08333,0,-0.00035,-0.00035] dTopFull [-0.00042,-0.08342,-0.00166,-0.00199,-0.00042]
+uneq-bridgeB: 4802 ms 29 st | 6:30 lam 0.17185 | 6:60 lam 0.17219 | 7:1 lam 0.18802 | label diffs 4960 max dist 6.278 | dTop0 far [0,-0.08333,0,0,0] dTopFull [0.00276,-0.08057,0,0,0.00276]

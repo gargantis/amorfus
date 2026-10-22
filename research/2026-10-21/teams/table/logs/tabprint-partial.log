@@ -1,0 +1,168 @@
+class 10 00001111 share 29.81% nMat 1 plateau
+   FID-0.15_E1m_n12_clu     vsn [0.000,-0.108,0.000] vseam - steps 11 changes 544 alive 1/1
+   FID-0.15_E2c_n12_clu     vsn [0.000,0.000,0.000] vseam - steps 3 changes 0 alive 1/1
+   FID-0.15_E3c_n12_clu     vsn [0.000,0.000,0.000] vseam - steps 3 changes 0 alive 1/1
+   FINITE-4_E1m_n12_clu     vsn [0.000,-0.185,0.000] vseam - steps 4 changes 2032 alive 1/1
+   FINITE-4_E2c_n12_clu     vsn [0.000,0.000,0.000] vseam - steps 4 changes 0 alive 1/1
+   FINITE-4_E3c_n12_clu     vsn [0.000,0.000,0.000] vseam - steps 4 changes 0 alive 1/1
+class 2 00000011 share 12.30% nMat 1 plateau
+   FID-0.15_E1m_n12_clu     vsn [0.000,0.077,0.016] vseam - steps 7 changes 208 alive 1/1
+   FID-0.15_E2c_n12_clu     vsn [0.000,0.037,0.037] vseam - steps 3 changes 0 alive 1/1
+   FID-0.15_E3c_n12_clu     vsn [0.000,0.037,0.037] vseam - steps 3 changes 0 alive 1/1
+   FINITE-4_E1m_n12_clu     vsn [0.000,0.041,0.041] vseam - steps 4 changes 1104 alive 1/1
+   FINITE-4_E2c_n12_clu     vsn [0.000,0.081,0.081] vseam - steps 4 changes 144 alive 1/1
+   FINITE-4_E3c_n12_clu     vsn [0.000,0.081,0.081] vseam - steps 4 changes 216 alive 1/1
+class 95 00111111 share 10.91% nMat 1 plateau
+   FID-0.15_E1m_n12_clu     vsn [0.000,-0.332,-0.332] vseam - steps 26 changes 1116 alive 1/1
+   FID-0.15_E2c_n12_clu     vsn [0.000,-0.037,-0.037] vseam - steps 3 changes 0 alive 1/1
+   FID-0.15_E3c_n12_clu     vsn [0.000,-0.037,-0.037] vseam - steps 3 changes 0 alive 1/1
+   FINITE-4_E1m_n12_clu     vsn [0.000,-0.364,-0.364] vseam - steps 4 changes 2648 alive 1/1
+   FINITE-4_E2c_n12_clu     vsn [0.000,-0.208,-0.208] vseam - steps 4 changes 3264 alive 1/1
+   FINITE-4_E3c_n12_clu     vsn [0.000,-0.249,-0.249] vseam - steps 4 changes 8280 alive 1/1
+class 249 01111111 share 6.53% nMat 1 plateau
+   FID-0.15_E1m_n12_clu     vsn [-0.430,-0.430,-0.430] vseam - steps 14 changes 1078 alive 1/1
+   FID-0.15_E2c_n12_clu     vsn [-0.176,-0.176,-0.176] vseam - steps 17 changes 1756 alive 1/1
+   FID-0.15_E3c_n12_clu     vsn [-0.176,-0.176,-0.176] vseam - steps 24 changes 5141 alive 1/1
+   FINITE-4_E1m_n12_clu     vsn [-0.426,-0.426,-0.426] vseam - steps 4 changes 2814 alive 1/1
+   FINITE-4_E2c_n12_clu     vsn [-0.300,-0.300,-0.300] vseam - steps 4 changes 1875 alive 1/1
+   FINITE-4_E3c_n12_clu     vsn [-0.319,-0.319,-0.319] vseam - steps 4 changes 5035 alive 1/1
+class 5 00000111 share 5.88% nMat 1 plateau
+   FID-0.15_E1m_n12_clu     vsn [-0.085,0.023,-0.085] vseam - steps 12 changes 404 alive 1/1
+   FID-0.15_E2c_n12_clu     vsn [-0.057,0.144,-0.057] vseam - steps 9 changes 248 alive 1/1
+   FID-0.15_E3c_n12_clu     vsn [-0.057,0.144,-0.057] vseam - steps 9 changes 392 alive 1/1
+   FINITE-4_E1m_n12_clu     vsn [-0.105,-0.006,-0.105] vseam - steps 4 changes 1808 alive 1/1
+   FINITE-4_E2c_n12_clu     vsn [-0.045,0.138,-0.045] vseam - steps 4 changes 920 alive 1/1
+   FINITE-4_E3c_n12_clu     vsn [-0.041,0.143,-0.040] vseam - steps 4 changes 1504 alive 1/1
+class 35 00011111 share 5.80% nMat 1 plateau
+   FID-0.15_E1m_n12_clu     vsn [-0.073,-0.349,-0.073] vseam - steps 34 changes 1066 alive 1/1
+   FID-0.15_E2c_n12_clu     vsn [0.057,-0.144,0.057] vseam - steps 8 changes 256 alive 1/1
+   FID-0.15_E3c_n12_clu     vsn [0.053,-0.153,0.053] vseam - steps 9 changes 426 alive 1/1
+   FINITE-4_E1m_n12_clu     vsn [-0.065,-0.357,-0.065] vseam - steps 4 changes 2666 alive 1/1
+   FINITE-4_E2c_n12_clu     vsn [0.040,-0.144,0.040] vseam - steps 4 changes 868 alive 1/1
+   FINITE-4_E3c_n12_clu     vsn [0.035,-0.146,0.035] vseam - steps 4 changes 1406 alive 1/1
+class 1 00000001 share 5.70% nMat 1 plateau
+   FID-0.15_E1m_n12_clu     vsn [0.042,0.119,0.119] vseam - steps 7 changes 144 alive 1/1
+   FID-0.15_E2c_n12_clu     vsn [0.176,0.176,0.176] vseam - steps 14 changes 1754 alive 1/1
+   FID-0.15_E3c_n12_clu     vsn [0.176,0.176,0.176] vseam - steps 23 changes 5138 alive 1/1
+   FINITE-4_E1m_n12_clu     vsn [0.142,0.139,0.140] vseam - steps 4 changes 512 alive 1/1
+   FINITE-4_E2c_n12_clu     vsn [0.204,0.204,0.204] vseam - steps 4 changes 270 alive 1/1
+   FINITE-4_E3c_n12_clu     vsn [0.204,0.204,0.204] vseam - steps 4 changes 378 alive 1/1
+class 119 00112211 share 2.99% nMat 2 plateau
+   FID-0.15_E1m_n12_clu     vsn [0.000,-0.222,-0.230] vseam [0.009,-0.211,-0.242] steps 17 changes 644 alive 2/2
+   FID-0.15_E2c_n12_clu     vsn [0.000,-0.001,-0.103] vseam [0.009,-0.024,-0.024] steps 3 changes 0 alive 2/2
+   FID-0.15_E3c_n12_clu     vsn [0.000,-0.001,-0.103] vseam [0.009,-0.024,-0.024] steps 3 changes 0 alive 2/2
+   FINITE-4_E1m_n12_clu     vsn [0.000,-0.290,-0.277] vseam [0.009,-0.282,-0.283] steps 4 changes 2686 alive 2/2
+   FINITE-4_E2c_n12_clu     vsn [0.000,-0.001,-0.103] vseam [0.009,-0.024,-0.024] steps 4 changes 0 alive 2/2
+   FINITE-4_E3c_n12_clu     vsn [0.000,-0.001,-0.103] vseam [0.009,-0.024,-0.024] steps 4 changes 0 alive 2/2
+class 11 00001112 share 2.10% nMat 2 plateau
+   FID-0.15_E1m_n12_clu     vsn [-0.005,-0.031,-0.005] vseam [0.104,-0.001,0.072] steps 9 changes 316 alive 2/2
+   FID-0.15_E2c_n12_clu     vsn [-0.001,0.019,-0.001] vseam [0.041,0.025,0.009] steps 5 changes 20 alive 2/2
+   FID-0.15_E3c_n12_clu     vsn [-0.001,0.019,-0.001] vseam [0.041,0.025,0.009] steps 5 changes 32 alive 2/2
+   FINITE-4_E1m_n12_clu     vsn [0.003,-0.109,0.003] vseam [0.167,-0.067,0.135] steps 4 changes 1850 alive 2/2
+   FINITE-4_E2c_n12_clu     vsn [-0.002,0.002,-0.002] vseam [0.103,0.038,0.103] steps 4 changes 389 alive 2/2
+   FINITE-4_E3c_n12_clu     vsn [-0.002,-0.001,-0.002] vseam [0.104,0.035,0.104] steps 4 changes 622 alive 2/2
+class 12 00001122 share 1.67% nMat 2 plateau
+   FID-0.15_E1m_n12_clu     vsn [0.000,-0.007,0.000] vseam [0.009,-0.007,0.010] steps 9 changes 304 alive 2/2
+   FID-0.15_E2c_n12_clu     vsn [0.000,0.013,0.000] vseam [0.009,0.013,0.009] steps 3 changes 0 alive 2/2
+   FID-0.15_E3c_n12_clu     vsn [0.000,0.013,0.000] vseam [0.009,0.013,0.009] steps 3 changes 0 alive 2/2
+   FINITE-4_E1m_n12_clu     vsn [0.000,-0.073,0.000] vseam [0.009,-0.073,0.010] steps 4 changes 1744 alive 2/2
+   FINITE-4_E2c_n12_clu     vsn [0.000,0.013,0.000] vseam [0.009,0.013,0.009] steps 4 changes 0 alive 2/2
+   FINITE-4_E3c_n12_clu     vsn [0.000,0.013,0.000] vseam [0.009,0.013,0.009] steps 4 changes 0 alive 2/2
+class 14 00001221 share 1.55% nMat 2 NON-plateau ambUnion X
+   FID-0.15_E1m_n12_clu     vsn [0.000,0.006,0.000] vseam [0.009,0.006,0.009] steps 8 changes 160 alive 4/4
+   FID-0.15_E2c_n12_clu     vsn [0.000,0.022,0.000] vseam [0.009,0.022,0.009] steps 3 changes 0 alive 4/4
+   FID-0.15_E3c_n12_clu     vsn [0.000,0.022,0.000] vseam [0.009,0.022,0.009] steps 3 changes 0 alive 4/4
+   FINITE-4_E1m_n12_clu     vsn [0.000,-0.005,0.000] vseam [0.009,-0.005,0.009] steps 4 changes 1520 alive 4/4
+   FINITE-4_E2c_n12_clu     vsn [0.000,0.045,0.000] vseam [0.009,0.045,0.009] steps 4 changes 36 alive 4/4
+   FINITE-4_E3c_n12_clu     vsn [0.000,0.045,0.000] vseam [0.009,0.045,0.009] steps 4 changes 36 alive 4/4
+class 18 00010111 share 1.55% nMat 1 plateau
+   FID-0.15_E1m_n12_clu     vsn [-0.098,-0.097,-0.097] vseam - steps 16 changes 850 alive 1/1
+   FID-0.15_E2c_n12_clu     vsn [0.000,0.000,0.000] vseam - steps 5 changes 372 alive 1/1
+   FID-0.15_E3c_n12_clu     vsn [0.000,0.000,0.000] vseam - steps 5 changes 588 alive 1/1
+   FINITE-4_E1m_n12_clu     vsn [-0.120,-0.121,-0.121] vseam - steps 4 changes 2499 alive 1/1
+   FINITE-4_E2c_n12_clu     vsn [0.000,0.000,0.000] vseam - steps 4 changes 1836 alive 1/1
+   FINITE-4_E3c_n12_clu     vsn [0.000,0.000,0.000] vseam - steps 4 changes 2988 alive 1/1
+class 97 00111122 share 1.47% nMat 2 NON-plateau ambUnion X
+   FID-0.15_E1m_n12_clu     vsn [0.000,-0.326,-0.326] vseam - steps 16 changes 1050 alive 2/3
+   FID-0.15_E2c_n12_clu     vsn [0.000,-0.026,-0.026] vseam - steps 3 changes 0 alive 3/3
+   FID-0.15_E3c_n12_clu     vsn [0.000,-0.026,-0.026] vseam - steps 3 changes 0 alive 3/3
+   FINITE-4_E1m_n12_clu     vsn [0.000,-0.336,-0.336] vseam - steps 4 changes 2896 alive 2/3
+   FINITE-4_E2c_n12_clu     vsn [0.000,-0.157,-0.157] vseam - steps 4 changes 432 alive 2/3
+   FINITE-4_E3c_n12_clu     vsn [0.000,-0.157,-0.157] vseam - steps 4 changes 648 alive 2/3
+class 92 00111100 share 1.07% nMat 1 NON-plateau ambUnion X
+   FID-0.15_E1m_n12_clu     vsn [-0.006,-0.287,-0.287] vseam - steps 16 changes 1520 alive 1/2
+   FID-0.15_E2c_n12_clu     vsn [-0.006,0.025,-0.009] vseam - steps 3 changes 0 alive 2/2
+   FID-0.15_E3c_n12_clu     vsn [-0.006,0.025,-0.009] vseam - steps 3 changes 0 alive 2/2
+   FINITE-4_E1m_n12_clu     vsn [-0.006,0.369,0.352] vseam - steps 4 changes 2892 alive 1/2
+   FINITE-4_E2c_n12_clu     vsn [-0.006,0.025,-0.009] vseam - steps 4 changes 0 alive 2/2
+   FINITE-4_E3c_n12_clu     vsn [-0.006,0.025,-0.009] vseam - steps 4 changes 0 alive 2/2
+class 28 00011001 share 1.00% nMat 1 NON-plateau ambUnion X
+   FID-0.15_E1m_n12_clu     vsn [-0.065,-0.063,-0.065] vseam - steps 22 changes 864 alive 1/2
+   FID-0.15_E2c_n12_clu     vsn [-0.035,0.064,-0.035] vseam - steps 3 changes 0 alive 2/2
+   FID-0.15_E3c_n12_clu     vsn [-0.035,0.064,-0.035] vseam - steps 3 changes 0 alive 2/2
+   FINITE-4_E1m_n12_clu     vsn [-0.114,-0.114,-0.114] vseam - steps 4 changes 2183 alive 1/2
+   FINITE-4_E2c_n12_clu     vsn [0.029,0.223,0.029] vseam - steps 4 changes 1486 alive 1/2
+   FINITE-4_E3c_n12_clu     vsn [0.035,0.227,0.035] vseam - steps 4 changes 2366 alive 1/2
+class 289 01112222 share 0.89% nMat 2 plateau
+   FID-0.15_E1m_n12_clu     vsn [-0.337,-0.361,-0.337] vseam [-0.346,-0.310,-0.346] steps 15 changes 789 alive 2/2
+   FID-0.15_E2c_n12_clu     vsn [-0.037,-0.036,-0.037] vseam [-0.029,-0.032,-0.059] steps 3 changes 0 alive 2/2
+   FID-0.15_E3c_n12_clu     vsn [-0.037,-0.036,-0.037] vseam [-0.029,-0.032,-0.059] steps 3 changes 0 alive 2/2
+   FINITE-4_E1m_n12_clu     vsn [-0.364,-0.374,-0.364] vseam [-0.378,-0.283,-0.378] steps 4 changes 2898 alive 2/2
+   FINITE-4_E2c_n12_clu     vsn [-0.156,-0.265,-0.156] vseam [-0.152,-0.152,-0.183] steps 4 changes 946 alive 2/2
+   FINITE-4_E3c_n12_clu     vsn [-0.185,-0.256,-0.185] vseam [-0.192,-0.192,-0.192] steps 4 changes 2324 alive 2/2
+class 75 00012222 share 0.83% nMat 2 plateau
+   FID-0.15_E1m_n12_clu     vsn [-0.003,-0.220,-0.003] vseam [-0.000,-0.224,-0.000] steps 17 changes 619 alive 2/2
+   FID-0.15_E2c_n12_clu     vsn [0.044,-0.187,0.044] vseam [0.031,-0.040,0.031] steps 3 changes 0 alive 2/2
+   FID-0.15_E3c_n12_clu     vsn [0.044,-0.187,0.044] vseam [0.031,-0.040,0.031] steps 3 changes 0 alive 2/2
+   FINITE-4_E1m_n12_clu     vsn [-0.036,-0.285,-0.036] vseam [-0.029,-0.290,-0.029] steps 4 changes 2473 alive 2/2
+   FINITE-4_E2c_n12_clu     vsn [0.075,-0.070,0.075] vseam [0.162,-0.120,0.131] steps 4 changes 379 alive 2/2
+   FINITE-4_E3c_n12_clu     vsn [0.079,-0.067,0.079] vseam [0.163,-0.118,0.132] steps 4 changes 565 alive 2/2
+class 257 01111222 share 0.66% nMat 2 NON-plateau ambUnion X
+   FID-0.15_E1m_n12_clu     vsn [-0.430,-0.430,-0.430] vseam - steps 21 changes 1157 alive 2/3
+   FID-0.15_E2c_n12_clu     vsn [-0.055,-0.055,-0.055] vseam - steps 9 changes 267 alive 2/3
+   FID-0.15_E3c_n12_clu     vsn [-0.055,-0.055,-0.055] vseam - steps 9 changes 399 alive 2/3
+   FINITE-4_E1m_n12_clu     vsn [-0.426,-0.426,-0.426] vseam - steps 4 changes 3182 alive 2/3
+   FINITE-4_E2c_n12_clu     vsn [-0.276,-0.277,-0.277] vseam - steps 4 changes 2127 alive 2/3
+   FINITE-4_E3c_n12_clu     vsn [-0.303,-0.304,-0.303] vseam - steps 4 changes 5643 alive 2/3
+class 36 00011112 share 0.64% nMat 2 NON-plateau ambUnion X
+   FID-0.15_E1m_n12_clu     vsn [-0.066,-0.326,-0.065] vseam - steps 41 changes 1148 alive 2/3
+   FID-0.15_E2c_n12_clu     vsn [0.050,-0.172,0.050] vseam - steps 8 changes 105 alive 2/3
+   FID-0.15_E3c_n12_clu     vsn [0.050,-0.172,0.050] vseam - steps 8 changes 165 alive 2/3
+   FINITE-4_E1m_n12_clu     vsn [-0.065,-0.355,-0.065] vseam - steps 4 changes 2802 alive 2/3
+   FINITE-4_E2c_n12_clu     vsn [0.034,-0.147,0.034] vseam - steps 4 changes 1012 alive 2/3
+   FINITE-4_E3c_n12_clu     vsn [0.034,-0.147,0.034] vseam - steps 4 changes 1552 alive 2/3
+class 34 00011110 share 0.63% nMat 1 NON-plateau ambUnion X
+   FID-0.15_E1m_n12_clu     vsn [-0.047,-0.273,-0.047] vseam - steps 24 changes 1534 alive 1/2
+   FID-0.15_E2c_n12_clu     vsn [0.125,0.000,0.125] vseam - steps 6 changes 134 alive 1/2
+   FID-0.15_E3c_n12_clu     vsn [0.125,0.000,0.125] vseam - steps 6 changes 212 alive 1/2
+   FINITE-4_E1m_n12_clu     vsn [-0.050,-0.376,-0.050] vseam - steps 4 changes 2873 alive 1/2
+   FINITE-4_E2c_n12_clu     vsn [0.104,0.092,0.104] vseam - steps 4 changes 815 alive 2/2
+   FINITE-4_E3c_n12_clu     vsn [0.103,0.093,0.103] vseam - steps 4 changes 1211 alive 2/2
+class 27 00011000 share 0.61% nMat 1 NON-plateau ambUnion
+   FID-0.15_E1m_n12_clu     vsn [-0.069,0.087,-0.076] vseam - steps 12 changes 204 alive 2/2
+   FID-0.15_E2c_n12_clu     vsn [-0.069,0.064,-0.069] vseam - steps 3 changes 0 alive 2/2
+   FID-0.15_E3c_n12_clu     vsn [-0.069,0.064,-0.069] vseam - steps 3 changes 0 alive 2/2
+   FINITE-4_E1m_n12_clu     vsn [-0.131,0.129,-0.131] vseam - steps 4 changes 1016 alive 2/2
+   FINITE-4_E2c_n12_clu     vsn [0.212,-0.194,0.206] vseam - steps 4 changes 540 alive 2/2
+   FINITE-4_E3c_n12_clu     vsn [0.212,-0.194,0.206] vseam - steps 4 changes 756 alive 2/2
+class 3 00000012 share 0.55% nMat 2 plateau
+   FID-0.15_E1m_n12_clu     vsn [0.000,0.066,0.066] vseam [0.009,0.066,0.066] steps 4 changes 64 alive 2/2
+   FID-0.15_E2c_n12_clu     vsn [0.000,0.056,0.056] vseam [0.009,0.056,0.056] steps 3 changes 0 alive 2/2
+   FID-0.15_E3c_n12_clu     vsn [0.000,0.056,0.056] vseam [0.009,0.056,0.056] steps 3 changes 0 alive 2/2
+   FINITE-4_E1m_n12_clu     vsn [0.000,0.122,0.122] vseam [0.009,0.122,0.122] steps 4 changes 848 alive 2/2
+   FINITE-4_E2c_n12_clu     vsn [0.000,0.173,0.173] vseam [0.010,0.173,0.173] steps 4 changes 204 alive 2/2
+   FINITE-4_E3c_n12_clu     vsn [0.000,0.173,0.173] vseam [0.010,0.173,0.173] steps 4 changes 276 alive 2/2
+class 122 00112233 share 0.45% nMat 3 NON-plateau X
+   FID-0.15_E1m_n12_clu     vsn [0.000,-0.217,-0.211] vseam [0.009,-0.214,-0.214] steps 20 changes 638 alive 3/3
+   FID-0.15_E2c_n12_clu     vsn [0.000,-0.019,-0.019] vseam [0.009,-0.008,-0.030] steps 3 changes 0 alive 3/3
+   FID-0.15_E3c_n12_clu     vsn [0.000,-0.019,-0.019] vseam [0.009,-0.008,-0.030] steps 3 changes 0 alive 3/3
+   FINITE-4_E1m_n12_clu     vsn [0.000,-0.288,-0.282] vseam [0.009,-0.283,-0.286] steps 4 changes 2534 alive 3/3
+   FINITE-4_E2c_n12_clu     vsn [0.000,-0.019,-0.019] vseam [0.009,-0.008,-0.030] steps 4 changes 0 alive 3/3
+   FINITE-4_E3c_n12_clu     vsn [0.000,-0.019,-0.019] vseam [0.009,-0.008,-0.030] steps 4 changes 0 alive 3/3
+class 13 00001123 share 0.45% nMat 3 plateau
+   FID-0.15_E1m_n12_clu     vsn [0.000,0.002,-0.013] vseam [0.010,0.020,0.040] steps 9 changes 232 alive 3/3
+   FID-0.15_E2c_n12_clu     vsn [0.000,0.018,-0.003] vseam [0.009,0.019,0.008] steps 3 changes 0 alive 3/3
+   FID-0.15_E3c_n12_clu     vsn [0.000,0.018,-0.003] vseam [0.009,0.019,0.008] steps 3 changes 0 alive 3/3
+   FINITE-4_E1m_n12_clu     vsn [0.000,-0.056,-0.015] vseam [0.072,-0.022,0.072] steps 4 changes 1624 alive 3/3
+   FINITE-4_E2c_n12_clu     vsn [0.000,0.058,0.002] vseam [-0.021,0.061,0.012] steps 4 changes 52 alive 3/3
+   FINITE-4_E3c_n12_clu     vsn [0.000,0.058,0.002] vseam [-0.021,0.061,0.012] steps 4 changes 52 alive 3/3

@@ -1,0 +1,10 @@
+C15-V0-km05@n16 slab-line: 5330 ms, 28 st, cells 259584, d 0.0641, rss 104 MB
+C15-V0-km05@n16 big2-line: 37024 ms, 99 st, cells 1128960, d 0.0389, rss 210 MB
+C15-V0-km05@n16 big2-checker: 49336 ms, 98 st, cells 1128960, d 0.0385, rss 220 MB
+C15-V0-km05@n16 text-AZ: 29257 ms, 92 st, cells 729600, d 0.0931, rss 208 MB
+C15-V0-km05@n16 slab2-dot: 3229 ms, 24 st, cells 309760, d 0.0216, rss 208 MB
+C15-V0-km10@n16 slab-line: 3307 ms, 18 st, cells 259584, d 0.0216, rss 102 MB
+C15-V0-km10@n16 big2-line: 57946 ms, 150 st nc, cells 1128960, d 0.0334, rss 186 MB
+C15-V0-km10@n16 big2-checker: 33411 ms, 78 st, cells 1128960, d 0.0395, rss 220 MB
+C15-V0-km10@n16 text-AZ: 51922 ms, 108 st, cells 729600, d 0.0719, rss 213 MB
+C15-V0-km10@n16 slab2-dot: 3703 ms, 19 st, cells 309760, d 0.0171, rss 203 MB

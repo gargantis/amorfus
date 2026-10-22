@@ -1,0 +1,299 @@
+{
+"out": "teams/look/sheets/spectrum-cage-finite-1.png",
+"cols": 8,
+"title": "Spectrum, cage and finite-time families (views; n 16, s 0.2, g 1)",
+"cell": [
+240,
+180
+],
+"items": [
+{
+"path": "teams/look/img/BLOCKS/single-view.png",
+"label": "single\nBLOCKS"
+},
+{
+"path": "teams/look/img/CAGE-0.15/single-view.png",
+"label": "single\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/single-view.png",
+"label": "single\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/CAGE-0.4/single-view.png",
+"label": "single\nCAGE-0.4"
+},
+{
+"path": "teams/look/img/FINITE-2/single-view.png",
+"label": "single\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/single-view.png",
+"label": "single\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/single-view.png",
+"label": "single\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/single-view.png",
+"label": "single\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/pair-same-view.png",
+"label": "pair-same\nBLOCKS"
+},
+{
+"path": "teams/look/img/CAGE-0.15/pair-same-view.png",
+"label": "pair-same\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/pair-same-view.png",
+"label": "pair-same\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/CAGE-0.4/pair-same-view.png",
+"label": "pair-same\nCAGE-0.4"
+},
+{
+"path": "teams/look/img/FINITE-2/pair-same-view.png",
+"label": "pair-same\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/pair-same-view.png",
+"label": "pair-same\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/pair-same-view.png",
+"label": "pair-same\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/pair-same-view.png",
+"label": "pair-same\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/pair-diff-view.png",
+"label": "pair-diff\nBLOCKS"
+},
+{
+"path": "teams/look/img/CAGE-0.15/pair-diff-view.png",
+"label": "pair-diff\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/pair-diff-view.png",
+"label": "pair-diff\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/CAGE-0.4/pair-diff-view.png",
+"label": "pair-diff\nCAGE-0.4"
+},
+{
+"path": "teams/look/img/FINITE-2/pair-diff-view.png",
+"label": "pair-diff\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/pair-diff-view.png",
+"label": "pair-diff\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/pair-diff-view.png",
+"label": "pair-diff\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/pair-diff-view.png",
+"label": "pair-diff\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/L3-ABC-view.png",
+"label": "L3-ABC\nBLOCKS"
+},
+{
+"path": "teams/look/img/CAGE-0.15/L3-ABC-view.png",
+"label": "L3-ABC\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/L3-ABC-view.png",
+"label": "L3-ABC\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/CAGE-0.4/L3-ABC-view.png",
+"label": "L3-ABC\nCAGE-0.4"
+},
+{
+"path": "teams/look/img/FINITE-2/L3-ABC-view.png",
+"label": "L3-ABC\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/L3-ABC-view.png",
+"label": "L3-ABC\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/L3-ABC-view.png",
+"label": "L3-ABC\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/L3-ABC-view.png",
+"label": "L3-ABC\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/sq2-AABB-view.png",
+"label": "sq2-AABB\nBLOCKS"
+},
+{
+"path": "teams/look/img/CAGE-0.15/sq2-AABB-view.png",
+"label": "sq2-AABB\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/sq2-AABB-view.png",
+"label": "sq2-AABB\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/CAGE-0.4/sq2-AABB-view.png",
+"label": "sq2-AABB\nCAGE-0.4"
+},
+{
+"path": "teams/look/img/FINITE-2/sq2-AABB-view.png",
+"label": "sq2-AABB\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/sq2-AABB-view.png",
+"label": "sq2-AABB\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/sq2-AABB-view.png",
+"label": "sq2-AABB\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/sq2-AABB-view.png",
+"label": "sq2-AABB\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/cube2-same-view.png",
+"label": "cube2-same\nBLOCKS"
+},
+{
+"path": "teams/look/img/CAGE-0.15/cube2-same-view.png",
+"label": "cube2-same\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/cube2-same-view.png",
+"label": "cube2-same\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/CAGE-0.4/cube2-same-view.png",
+"label": "cube2-same\nCAGE-0.4"
+},
+{
+"path": "teams/look/img/FINITE-2/cube2-same-view.png",
+"label": "cube2-same\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/cube2-same-view.png",
+"label": "cube2-same\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/cube2-same-view.png",
+"label": "cube2-same\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/cube2-same-view.png",
+"label": "cube2-same\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/cube2-oneB-view.png",
+"label": "cube2-oneB\nBLOCKS"
+},
+{
+"path": "teams/look/img/CAGE-0.15/cube2-oneB-view.png",
+"label": "cube2-oneB\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/cube2-oneB-view.png",
+"label": "cube2-oneB\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/CAGE-0.4/cube2-oneB-view.png",
+"label": "cube2-oneB\nCAGE-0.4"
+},
+{
+"path": "teams/look/img/FINITE-2/cube2-oneB-view.png",
+"label": "cube2-oneB\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/cube2-oneB-view.png",
+"label": "cube2-oneB\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/cube2-oneB-view.png",
+"label": "cube2-oneB\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/cube2-oneB-view.png",
+"label": "cube2-oneB\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/stairs-view.png",
+"label": "stairs\nBLOCKS"
+},
+{
+"path": "teams/look/img/CAGE-0.15/stairs-view.png",
+"label": "stairs\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/stairs-view.png",
+"label": "stairs\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/CAGE-0.4/stairs-view.png",
+"label": "stairs\nCAGE-0.4"
+},
+{
+"path": "teams/look/img/FINITE-2/stairs-view.png",
+"label": "stairs\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/stairs-view.png",
+"label": "stairs\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/stairs-view.png",
+"label": "stairs\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/stairs-view.png",
+"label": "stairs\nFREE"
+},
+{
+"path": "teams/look/img/BLOCKS/slab-dot-view.png",
+"label": "slab-dot\nBLOCKS"
+},
+{
+"path": "teams/look/img/CAGE-0.15/slab-dot-view.png",
+"label": "slab-dot\nCAGE-0.15"
+},
+{
+"path": "teams/look/img/CAGE-0.25/slab-dot-view.png",
+"label": "slab-dot\nCAGE-0.25"
+},
+{
+"path": "teams/look/img/CAGE-0.4/slab-dot-view.png",
+"label": "slab-dot\nCAGE-0.4"
+},
+{
+"path": "teams/look/img/FINITE-2/slab-dot-view.png",
+"label": "slab-dot\nFINITE-2"
+},
+{
+"path": "teams/look/img/FINITE-4/slab-dot-view.png",
+"label": "slab-dot\nFINITE-4"
+},
+{
+"path": "teams/look/img/FINITE-8/slab-dot-view.png",
+"label": "slab-dot\nFINITE-8"
+},
+{
+"path": "teams/look/img/FREE/slab-dot-view.png",
+"label": "slab-dot\nFREE"
+}
+]
+}

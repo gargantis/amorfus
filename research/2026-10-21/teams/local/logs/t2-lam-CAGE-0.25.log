@@ -1,0 +1,17 @@
+cube1: 144 ms 5 st | 6:1->1 lam 0.25368
+cube2: 217 ms 15 st | 6:8->8 lam 0.12788
+cube3: 344 ms 13 st | 6:27->27 lam 0.13468
+cube4: 1053 ms 25 st | 6:64->64 lam 0.10159
+slab2x2x2: 177 ms 15 st | 6:8->8 lam 0.12788
+slab3x2x3: 187 ms 10 st | 6:18->17.972 lam 0.15732
+slab5x2x5: 1248 ms 29 st | 6:50->50 lam 0.1035
+slab7x2x7: 2817 ms 42 st | 6:98->94.917 lam 0.16629
+plate2x1x2: 232 ms 23 st | 6:4->4 lam 0.17413
+plate4x1x4: 417 ms 19 st | 6:16->15.894 lam 0.16629
+plate6x1x6: 1211 ms 32 st | 6:36->36 lam 0.1438
+bar1x1x2: 125 ms 21 st | 6:2->1.995 lam 0.20039
+bar1x1x4: 178 ms 19 st | 6:4->3.995 lam 0.17943
+bar1x1x8: 315 ms 20 st | 6:8->8 lam 0.20064
+bar2x2x3: 223 ms 11 st | 6:12->12 lam 0.15497
+bar2x2x6: 336 ms 12 st | 6:24->24 lam 0.13433
+L-slab: 1506 ms 34 st | 6:32->31.999 lam 0.11272

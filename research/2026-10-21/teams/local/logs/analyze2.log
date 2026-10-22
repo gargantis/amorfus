@@ -1,0 +1,294 @@
+
+== bump-CAGE-0.25
+bump-slab3             {"k":3,"steps":18,"converged":true,"lam":[0.16629],"vol":["19->18.942"],"centre0":2.83077,"centreLab":2.83333,"diffVsRef_D0":null,"diffVsRef_labels":null}
+bump-slab5             {"k":5,"steps":25,"converged":true,"lam":[0.12366],"vol":["51->50.998"],"centre0":2.7419,"centreLab":2.75,"diffVsRef_D0":0.08999,"diffVsRef_labels":0.08334}
+bump-slab7             {"k":7,"steps":48,"converged":true,"lam":[0.08398],"vol":["99->99"],"centre0":2.74089,"centreLab":2.75,"diffVsRef_D0":0,"diffVsRef_labels":0}
+bump-bar3x2x9          {"k":3,"steps":37,"converged":true,"lam":[0.12404],"vol":["55->55"],"centre0":2.7419,"centreLab":2.75,"diffVsRef_D0":null,"diffVsRef_labels":null}
+bump-slab5-pit         {"k":5,"steps":37,"converged":true,"lam":[0.13161],"vol":["50->49.998"],"centre0":2.7419,"centreLab":2.75,"diffVsRef_D0":0.08999,"diffVsRef_labels":0.08334}
+
+== bump-FID-0.05
+bump-slab3             {"k":3,"steps":25,"converged":true,"lam":[0.11652],"vol":["19->19"],"centre0":2.83077,"centreLab":2.83333,"diffVsRef_D0":null,"diffVsRef_labels":null}
+bump-slab5             {"k":5,"steps":82,"converged":true,"lam":[0.08103],"vol":["51->50.998"],"centre0":2.74978,"centreLab":2.75,"diffVsRef_D0":0.12513,"diffVsRef_labels":0.16667}
+bump-slab7             {"k":7,"steps":84,"converged":true,"lam":[0.07564],"vol":["99->99"],"centre0":2.74841,"centreLab":2.75,"diffVsRef_D0":0,"diffVsRef_labels":0}
+bump-bar3x2x9          {"k":3,"steps":62,"converged":true,"lam":[0.08781],"vol":["55->55"],"centre0":2.74969,"centreLab":2.75,"diffVsRef_D0":null,"diffVsRef_labels":null}
+bump-slab5-pit         {"k":5,"steps":81,"converged":true,"lam":[0.08703],"vol":["50->49.999"],"centre0":2.74841,"centreLab":2.75,"diffVsRef_D0":0.16108,"diffVsRef_labels":0.16667}
+
+== bump-FID-0.15
+bump-slab3             {"k":3,"steps":15,"converged":true,"lam":[0.11885],"vol":["19->18.998"],"centre0":2.995,"centreLab":3,"diffVsRef_D0":null,"diffVsRef_labels":null}
+bump-slab5             {"k":5,"steps":15,"converged":true,"lam":[0.12533],"vol":["51->51"],"centre0":2.99729,"centreLab":3,"diffVsRef_D0":0.06548,"diffVsRef_labels":0.08334}
+bump-slab7             {"k":7,"steps":19,"converged":true,"lam":[0.12216],"vol":["99->99"],"centre0":2.99729,"centreLab":3,"diffVsRef_D0":0,"diffVsRef_labels":0}
+bump-bar3x2x9          {"k":3,"steps":22,"converged":true,"lam":[0.12189],"vol":["55->55"],"centre0":2.99729,"centreLab":3,"diffVsRef_D0":null,"diffVsRef_labels":null}
+bump-slab5-pit         {"k":5,"steps":23,"converged":true,"lam":[0.1154],"vol":["50->50"],"centre0":2.98913,"centreLab":3,"diffVsRef_D0":0.08209,"diffVsRef_labels":0.08334}
+
+== bump-FINITE-4
+bump-slab3             {"k":3,"steps":4,"converged":false,"lam":[0.16629],"vol":["19->18.984"],"centre0":2.95697,"centreLab":3,"diffVsRef_D0":null,"diffVsRef_labels":null}
+bump-slab5             {"k":5,"steps":4,"converged":false,"lam":[0.13445],"vol":["51->50.998"],"centre0":2.90629,"centreLab":2.91667,"diffVsRef_D0":0.0228,"diffVsRef_labels":0.08334}
+bump-slab7             {"k":7,"steps":4,"converged":false,"lam":[0.15655],"vol":["99->99"],"centre0":2.90661,"centreLab":2.91667,"diffVsRef_D0":0,"diffVsRef_labels":0}
+bump-bar3x2x9          {"k":3,"steps":4,"converged":false,"lam":[0.13092],"vol":["55->54.995"],"centre0":2.92962,"centreLab":3,"diffVsRef_D0":null,"diffVsRef_labels":null}
+bump-slab5-pit         {"k":5,"steps":4,"converged":false,"lam":[0.12734],"vol":["50->49.999"],"centre0":2.90627,"centreLab":2.91667,"diffVsRef_D0":0.04368,"diffVsRef_labels":0.08334}
+
+== edge-CAGE-0.25
+edge-k1L4              {"k":1,"L":4,"steps":30,"converged":true,"lam":[0.14194],"vol":["8->8"],"heightAtKminus1":1.85426,"insetDrop005":0.175,"insetDrop025":-0.1,"side0":["0.25:1.106","0.5:1.226","1:1.25","1.5:1.226","1.75:1.106"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-k2L4              {"k":2,"L":4,"steps":8,"converged":true,"lam":[0.15732],"vol":["16->15.986"],"heightAtKminus1":2.08333,"insetDrop005":0.275,"insetDrop025":0.075,"side0":["0.25:1.938","0.5:2.062","1:2.082","1.5:2.062","1.75:1.938"],"diffVsRef_D0":0.08321,"diffVsRef_D0_lastHalf":0.08321,"diffVsRef_labels":0.08333}
+edge-k3L4              {"k":3,"L":4,"steps":14,"converged":true,"lam":[0.14438],"vol":["24->24"],"heightAtKminus1":2.08333,"insetDrop005":0.275,"insetDrop025":0.075,"side0":["0.25:2.938","0.5:3.062","1:3.082","1.5:3.062","1.75:2.938"],"diffVsRef_D0":0.08321,"diffVsRef_D0_lastHalf":0.08321,"diffVsRef_labels":0.08333}
+edge-k5L4              {"k":5,"L":4,"steps":20,"converged":true,"lam":[0.11434],"vol":["40->40"],"heightAtKminus1":2.08333,"insetDrop005":0.275,"insetDrop025":0.075,"side0":["0.25:4.938","0.5:5.062","1:5.082","1.5:5.062","1.75:4.938"],"diffVsRef_D0":0.08321,"diffVsRef_D0_lastHalf":0.08321,"diffVsRef_labels":0.08333}
+edge-k8L4              {"k":8,"L":4,"steps":40,"converged":true,"lam":[0.11049],"vol":["64->64"],"heightAtKminus1":2.08333,"insetDrop005":0.325,"insetDrop025":0.1,"side0":["0.25:7.906","0.5:8.034","1:8.082","1.5:8.034","1.75:7.906"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k3L8              {"k":3,"L":8,"steps":23,"converged":true,"lam":[0.12206],"vol":["48->48"],"heightAtKminus1":2.08333,"insetDrop005":0.275,"insetDrop025":0.075,"side0":["0.25:2.938","0.5:3.062","1:3.082","1.5:3.062","1.75:2.938"],"diffVsRef_D0":0.08321,"diffVsRef_D0_lastHalf":0.08321,"diffVsRef_labels":0.08333}
+edge-k3L4-hook         {"k":3,"L":4,"steps":36,"converged":true,"lam":[0.13897],"vol":["48->48"],"heightAtKminus1":2,"insetDrop005":0.3,"insetDrop025":0.075,"side0":["0.25:2.93","0.5:2.998","1:2.998","1.5:2.998","1.75:2.93"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-cube3             {"k":3,"L":3,"steps":13,"converged":true,"lam":[0.13468],"vol":["27->27"],"heightAtKminus1":3.08333,"insetDrop005":0.275,"insetDrop025":0.075,"side0":["0.25:3.014","0.5:3.082","1:3.082","1.5:3.082","1.75:3.014"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+
+== edge-FID-0.05
+edge-k1L4              {"k":1,"L":4,"steps":15,"converged":true,"lam":[0.17376],"vol":["8->8"],"heightAtKminus1":1.81682,"insetDrop005":0.125,"insetDrop025":-0.025,"side0":["0.25:1.034","0.5:1.082","1:1.082","1.5:1.082","1.75:1.034"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-k2L4              {"k":2,"L":4,"steps":17,"converged":true,"lam":[0.13215],"vol":["16->16"],"heightAtKminus1":2.08333,"insetDrop005":0.2,"insetDrop025":0.025,"side0":["0.25:1.978","0.5:2.062","1:2.082","1.5:2.062","1.75:1.978"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-k3L4              {"k":3,"L":4,"steps":7,"converged":true,"lam":[0.21629],"vol":["24->23.574"],"heightAtKminus1":2,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:2.99","0.5:2.998","1:2.998","1.5:2.998","1.75:2.99"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k5L4              {"k":5,"L":4,"steps":7,"converged":true,"lam":[0.21629],"vol":["40->39.519"],"heightAtKminus1":2,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:4.99","0.5:4.998","1:5.002","1.5:4.998","1.75:4.99"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k8L4              {"k":8,"L":4,"steps":7,"converged":true,"lam":[0.21629],"vol":["64->63.435"],"heightAtKminus1":2,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:7.99","0.5:7.998","1:8.002","1.5:7.998","1.75:7.99"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k3L8              {"k":3,"L":8,"steps":7,"converged":true,"lam":[0.21629],"vol":["48->47.463"],"heightAtKminus1":2,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:2.99","0.5:2.998","1:2.998","1.5:2.998","1.75:2.99"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k3L4-hook         {"k":3,"L":4,"steps":60,"converged":true,"lam":[0.09678],"vol":["48->48"],"heightAtKminus1":2,"insetDrop005":0.3,"insetDrop025":0.075,"side0":["0.25:2.93","0.5:2.998","1:2.998","1.5:2.998","1.75:2.93"],"diffVsRef_D0":0.15808,"diffVsRef_D0_lastHalf":0.15808,"diffVsRef_labels":0.16667}
+edge-cube3             {"k":3,"L":3,"steps":7,"converged":true,"lam":[0.21629],"vol":["27->26.574"],"heightAtKminus1":3,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:2.998","0.5:2.998","1:2.998","1.5:2.998","1.75:2.998"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+
+== edge-FID-0.15-n16
+edge-k2L4              {"k":2,"L":4,"steps":16,"converged":true,"lam":[0.17177],"vol":["16->16"],"heightAtKminus1":2.0625,"insetDrop005":0.125,"insetDrop025":0.025,"side0":["0.25:1.994","0.5:2.018","1:2.062","1.5:2.018","1.75:1.994"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-k3L4              {"k":3,"L":4,"steps":20,"converged":true,"lam":[0.16056],"vol":["24->24"],"heightAtKminus1":2.06243,"insetDrop005":0.125,"insetDrop025":0.025,"side0":["0.25:2.994","0.5:3.002","1:3.002","1.5:3.002","1.75:2.994"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+
+== edge-FID-0.15-novol
+edge-k1L4              {"k":1,"L":4,"steps":58,"converged":true,"lam":[0],"vol":["8->0"],"heightAtKminus1":null,"insetDrop005":null,"insetDrop025":null,"side0":["0.25:null","0.5:null","1:null","1.5:null","1.75:null"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-k2L4              {"k":2,"L":4,"steps":27,"converged":true,"lam":[0],"vol":["16->13.56"],"heightAtKminus1":2,"insetDrop005":0.3,"insetDrop025":0.075,"side0":["0.25:1.93","0.5:1.998","1:1.998","1.5:1.998","1.75:1.93"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k3L4              {"k":3,"L":4,"steps":26,"converged":true,"lam":[0],"vol":["24->21.463"],"heightAtKminus1":2,"insetDrop005":0.3,"insetDrop025":0.075,"side0":["0.25:2.93","0.5:2.998","1:2.998","1.5:2.998","1.75:2.93"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k5L4              {"k":5,"L":4,"steps":26,"converged":true,"lam":[0],"vol":["40->37.13"],"heightAtKminus1":2,"insetDrop005":0.3,"insetDrop025":0.075,"side0":["0.25:4.93","0.5:4.998","1:5.002","1.5:4.998","1.75:4.93"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k8L4              {"k":8,"L":4,"steps":27,"converged":true,"lam":[0],"vol":["64->60.63"],"heightAtKminus1":2,"insetDrop005":0.3,"insetDrop025":0.075,"side0":["0.25:7.93","0.5:7.998","1:8.002","1.5:7.998","1.75:7.93"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k3L8              {"k":3,"L":8,"steps":27,"converged":true,"lam":[0],"vol":["48->44.796"],"heightAtKminus1":2,"insetDrop005":0.3,"insetDrop025":0.075,"side0":["0.25:2.93","0.5:2.998","1:2.998","1.5:2.998","1.75:2.93"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k3L4-hook         {"k":3,"L":4,"steps":27,"converged":true,"lam":[0],"vol":["48->43.884"],"heightAtKminus1":2,"insetDrop005":0.3,"insetDrop025":0.075,"side0":["0.25:2.93","0.5:2.998","1:2.998","1.5:2.998","1.75:2.93"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-cube3             {"k":3,"L":3,"steps":16,"converged":true,"lam":[0],"vol":["27->24.759"],"heightAtKminus1":3,"insetDrop005":0.3,"insetDrop025":0.075,"side0":["0.25:2.986","0.5:2.998","1:2.998","1.5:2.998","1.75:2.986"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+
+== edge-FID-0.15
+edge-k1L4              {"k":1,"L":4,"steps":11,"converged":true,"lam":[0.17969],"vol":["8->8"],"heightAtKminus1":1.66122,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:0.99","0.5:1.022","1:1.082","1.5:1.022","1.75:0.99"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-k2L4              {"k":2,"L":4,"steps":13,"converged":true,"lam":[0.17969],"vol":["16->16"],"heightAtKminus1":2.08325,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:1.99","0.5:2.022","1:2.082","1.5:2.022","1.75:1.99"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-k3L4              {"k":3,"L":4,"steps":9,"converged":true,"lam":[0.1738],"vol":["24->24"],"heightAtKminus1":2.04167,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:2.99","0.5:2.998","1:2.998","1.5:2.998","1.75:2.99"],"diffVsRef_D0":0.04167,"diffVsRef_D0_lastHalf":0.00001,"diffVsRef_labels":0}
+edge-k5L4              {"k":5,"L":4,"steps":19,"converged":true,"lam":[0.15839],"vol":["40->40"],"heightAtKminus1":2.00004,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:4.99","0.5:4.998","1:5.002","1.5:4.998","1.75:4.99"],"diffVsRef_D0":0.00004,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k8L4              {"k":8,"L":4,"steps":34,"converged":true,"lam":[0.16855],"vol":["64->64"],"heightAtKminus1":2,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:7.99","0.5:7.998","1:8.002","1.5:7.998","1.75:7.99"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k3L8              {"k":3,"L":8,"steps":18,"converged":true,"lam":[0.1758],"vol":["48->48"],"heightAtKminus1":2.02061,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:2.99","0.5:2.998","1:2.998","1.5:2.998","1.75:2.99"],"diffVsRef_D0":0.02061,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k3L4-hook         {"k":3,"L":4,"steps":19,"converged":true,"lam":[0.13065],"vol":["48->48"],"heightAtKminus1":2,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:2.99","0.5:2.998","1:2.998","1.5:2.998","1.75:2.99"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-cube3             {"k":3,"L":3,"steps":6,"converged":true,"lam":[0.17528],"vol":["27->27"],"heightAtKminus1":3.03028,"insetDrop005":0.15,"insetDrop025":0.025,"side0":["0.25:2.998","0.5:3.002","1:3.082","1.5:3.002","1.75:2.998"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+
+== edge-FINITE-4
+edge-k1L4              {"k":1,"L":4,"steps":4,"converged":false,"lam":[0.16648],"vol":["8->7.986"],"heightAtKminus1":1.77373,"insetDrop005":0.2,"insetDrop025":0,"side0":["0.25:1.014","0.5:1.082","1:1.082","1.5:1.082","1.75:1.014"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-k2L4              {"k":2,"L":4,"steps":4,"converged":false,"lam":[0.13234],"vol":["16->16"],"heightAtKminus1":2.08333,"insetDrop005":0.275,"insetDrop025":0.075,"side0":["0.25:1.938","0.5:2.062","1:2.082","1.5:2.062","1.75:1.938"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-k3L4              {"k":3,"L":4,"steps":4,"converged":false,"lam":[0.1254],"vol":["24->24"],"heightAtKminus1":2.08329,"insetDrop005":0.275,"insetDrop025":0.075,"side0":["0.25:2.946","0.5:3.018","1:3.082","1.5:3.018","1.75:2.946"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+edge-k5L4              {"k":5,"L":4,"steps":4,"converged":false,"lam":[0.16629],"vol":["40->38.833"],"heightAtKminus1":2,"insetDrop005":0.2,"insetDrop025":0.05,"side0":["0.25:4.97","0.5:4.998","1:5.002","1.5:4.998","1.75:4.97"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k8L4              {"k":8,"L":4,"steps":4,"converged":false,"lam":[0.16629],"vol":["64->62.583"],"heightAtKminus1":2,"insetDrop005":0.2,"insetDrop025":0.05,"side0":["0.25:7.97","0.5:7.998","1:8.002","1.5:7.998","1.75:7.97"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k3L8              {"k":3,"L":8,"steps":4,"converged":false,"lam":[0.16629],"vol":["48->46.667"],"heightAtKminus1":2,"insetDrop005":0.2,"insetDrop025":0.05,"side0":["0.25:2.97","0.5:2.998","1:2.998","1.5:2.998","1.75:2.97"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-k3L4-hook         {"k":3,"L":4,"steps":4,"converged":false,"lam":[0.16629],"vol":["48->47.999"],"heightAtKminus1":2,"insetDrop005":0.2,"insetDrop025":0.05,"side0":["0.25:2.97","0.5:2.998","1:2.998","1.5:2.998","1.75:2.97"],"diffVsRef_D0":0,"diffVsRef_D0_lastHalf":0,"diffVsRef_labels":0}
+edge-cube3             {"k":3,"L":3,"steps":4,"converged":false,"lam":[0.12187],"vol":["27->26.986"],"heightAtKminus1":3.08297,"insetDrop005":0.275,"insetDrop025":0.075,"side0":["0.25:2.986","0.5:3.062","1:3.082","1.5:3.062","1.75:2.986"],"diffVsRef_D0":null,"diffVsRef_D0_lastHalf":null,"diffVsRef_labels":null}
+
+== incl-CAGE-0.25
+incl-slab3             {"k":3,"steps":23,"converged":true,"lam":{"A":0.13594,"B":0.26534},"vol":["6:17->17","7:1->0.998"],"topCentre0":2.25,"seams15_0":[1.19138,1.80862],"seams19_0":[0.84337,2.15663],"seamsDepth0":[1.26709],"diffVsRef_D0":0.5123}
+incl-slab5             {"k":5,"steps":29,"converged":true,"lam":{"A":0.13715,"B":0.28648},"vol":["6:49->49","7:1->1"],"topCentre0":2.25,"seams15_0":[2.16867,2.83133],"seams19_0":[1.8686,3.1314],"seamsDepth0":[1.26577],"diffVsRef_D0":0.00108}
+incl-slab7             {"k":7,"steps":43,"converged":true,"lam":{"A":0.10152,"B":0.25718},"vol":["6:97->97","7:1->1"],"topCentre0":2.25,"seams15_0":[3.16857,3.83143],"seams19_0":[2.85747,4.14253],"seamsDepth0":[1.26577],"diffVsRef_D0":0}
+incl-bar3x2x9          {"k":3,"steps":31,"converged":true,"lam":{"A":0.13936,"B":0.2892},"vol":["6:53->53","7:1->1"],"topCentre0":2.25,"seams15_0":[1.16867,1.83133],"seams19_0":[0.86863,2.13137],"seamsDepth0":[1.26577],"diffVsRef_D0":null}
+
+== incl-FID-0.05
+incl-slab3             {"k":3,"steps":54,"converged":true,"lam":{"A":0.12502,"B":0.24445},"vol":["6:17->17","7:1->1"],"topCentre0":2.66507,"seams15_0":[],"seams19_0":[1.0869,1.9131],"seamsDepth0":[1.77939],"diffVsRef_D0":null}
+incl-slab5             {"k":5,"steps":40,"converged":true,"lam":{"A":0.12148,"B":0.242},"vol":["6:49->49","7:1->0.998"],"topCentre0":2.57362,"seams15_0":[],"seams19_0":[1.97341,3.02659],"seamsDepth0":[1.67643],"diffVsRef_D0":0.08397}
+incl-slab7             {"k":7,"steps":43,"converged":true,"lam":{"A":0.11423,"B":0.2541},"vol":["6:97->96.998","7:1->1"],"topCentre0":2.49903,"seams15_0":[],"seams19_0":[2.89925,4.10075],"seamsDepth0":[1.59324],"diffVsRef_D0":0}
+incl-bar3x2x9          {"k":3,"steps":90,"converged":true,"lam":{"A":0.1086,"B":0.24707},"vol":["6:53->53","7:1->1"],"topCentre0":2.58205,"seams15_0":[],"seams19_0":[0.98383,2.01617],"seamsDepth0":[1.67657],"diffVsRef_D0":null}
+
+== incl-FID-0.15
+incl-slab3             {"k":3,"steps":16,"converged":true,"lam":{"A":0.20705,"B":0.34672},"vol":["6:17->16.998","7:1->1"],"topCentre0":2.23253,"seams15_0":[1.00139,1.99861],"seams19_0":[0.98507,2.01493],"seamsDepth0":[1.00271],"diffVsRef_D0":null}
+incl-slab5             {"k":5,"steps":16,"converged":true,"lam":{"A":0.20705,"B":0.34672},"vol":["6:49->48.998","7:1->1"],"topCentre0":2.23253,"seams15_0":[2.00139,2.99861],"seams19_0":[1.98507,3.01493],"seamsDepth0":[1.00271],"diffVsRef_D0":0}
+incl-slab7             {"k":7,"steps":16,"converged":true,"lam":{"A":0.20705,"B":0.34672},"vol":["6:97->96.998","7:1->1"],"topCentre0":2.23253,"seams15_0":[3.00139,3.99861],"seams19_0":[2.98507,4.01493],"seamsDepth0":[1.00271],"diffVsRef_D0":0}
+incl-bar3x2x9          {"k":3,"steps":16,"converged":true,"lam":{"A":0.20705,"B":0.34672},"vol":["6:53->52.998","7:1->1"],"topCentre0":2.23253,"seams15_0":[1.00139,1.99861],"seams19_0":[0.98507,2.01493],"seamsDepth0":[1.00271],"diffVsRef_D0":null}
+
+== incl-FINITE-4
+incl-slab3             {"k":3,"steps":4,"converged":false,"lam":{"A":0.12548,"B":0.26272},"vol":["6:17->16.998","7:1->1"],"topCentre0":2.24203,"seams15_0":[0.99668,2.00332],"seams19_0":[0.86527,2.13473],"seamsDepth0":[1.0942],"diffVsRef_D0":0.34222}
+incl-slab5             {"k":5,"steps":4,"converged":false,"lam":{"A":0.16629,"B":0.28842},"vol":["6:49->47.972","7:1->1"],"topCentre0":2.24744,"seams15_0":[2.00511,2.99489],"seams19_0":[1.86394,3.13606],"seamsDepth0":[1.095],"diffVsRef_D0":0}
+incl-slab7             {"k":7,"steps":4,"converged":false,"lam":{"A":0.16629,"B":0.28842},"vol":["6:97->95.639","7:1->1"],"topCentre0":2.24744,"seams15_0":[3.00511,3.99489],"seams19_0":[2.86394,4.13606],"seamsDepth0":[1.095],"diffVsRef_D0":0}
+incl-bar3x2x9          {"k":3,"steps":4,"converged":false,"lam":{"A":0.16629,"B":0.28842},"vol":["6:53->51.806","7:1->1"],"topCentre0":2.24744,"seams15_0":[1.00511,1.99489],"seams19_0":[0.86394,2.13606],"seamsDepth0":[1.095],"diffVsRef_D0":null}
+
+== lam-CAGE-0.25
+cube1                  {"V":1,"S":6,"SV":6,"convexEdgeLen":12,"steps":5,"converged":true,"lam":0.25368,"lamRender":0.16223,"vol":1}
+cube2                  {"V":8,"S":24,"SV":3,"convexEdgeLen":24,"steps":15,"converged":true,"lam":0.12788,"lamRender":0.06958,"vol":8}
+cube3                  {"V":27,"S":54,"SV":2,"convexEdgeLen":36,"steps":13,"converged":true,"lam":0.13468,"lamRender":0.08854,"vol":27}
+cube4                  {"V":64,"S":96,"SV":1.5,"convexEdgeLen":48,"steps":25,"converged":true,"lam":0.10159,"lamRender":0.07625,"vol":64}
+slab2x2x2              {"V":8,"S":24,"SV":3,"convexEdgeLen":24,"steps":15,"converged":true,"lam":0.12788,"lamRender":0.06958,"vol":8}
+slab3x2x3              {"V":18,"S":42,"SV":2.3333,"convexEdgeLen":32,"steps":10,"converged":true,"lam":0.15732,"lamRender":0.1381,"vol":17.972}
+slab5x2x5              {"V":50,"S":90,"SV":1.8,"convexEdgeLen":48,"steps":29,"converged":true,"lam":0.1035,"lamRender":0.07691,"vol":50}
+slab7x2x7              {"V":98,"S":154,"SV":1.5714,"convexEdgeLen":64,"steps":42,"converged":true,"lam":0.16629,"lamRender":0.26601,"vol":94.917}
+plate2x1x2             {"V":4,"S":16,"SV":4,"convexEdgeLen":20,"steps":23,"converged":true,"lam":0.17413,"lamRender":0.10084,"vol":4}
+plate4x1x4             {"V":16,"S":48,"SV":3,"convexEdgeLen":36,"steps":19,"converged":true,"lam":0.16629,"lamRender":0.14949,"vol":15.894}
+plate6x1x6             {"V":36,"S":96,"SV":2.6667,"convexEdgeLen":52,"steps":32,"converged":true,"lam":0.1438,"lamRender":0.11321,"vol":36}
+bar1x1x2               {"V":2,"S":10,"SV":5,"convexEdgeLen":16,"steps":21,"converged":true,"lam":0.20039,"lamRender":0.1402,"vol":1.995}
+bar1x1x4               {"V":4,"S":18,"SV":4.5,"convexEdgeLen":24,"steps":19,"converged":true,"lam":0.17943,"lamRender":0.14838,"vol":3.995}
+bar1x1x8               {"V":8,"S":34,"SV":4.25,"convexEdgeLen":40,"steps":20,"converged":true,"lam":0.20064,"lamRender":0.15888,"vol":8}
+bar2x2x3               {"V":12,"S":32,"SV":2.6667,"convexEdgeLen":28,"steps":11,"converged":true,"lam":0.15497,"lamRender":0.10386,"vol":12}
+bar2x2x6               {"V":24,"S":56,"SV":2.3333,"convexEdgeLen":40,"steps":12,"converged":true,"lam":0.13433,"lamRender":0.08568,"vol":24}
+L-slab                 {"V":32,"S":null,"SV":null,"convexEdgeLen":null,"steps":34,"converged":true,"lam":0.11272,"lamRender":0.07198,"vol":31.999}
+
+== lam-FID-0.05
+cube1                  {"V":1,"S":6,"SV":6,"convexEdgeLen":12,"steps":6,"converged":true,"lam":0.28803,"lamRender":0.12612,"vol":1.009}
+cube2                  {"V":8,"S":24,"SV":3,"convexEdgeLen":24,"steps":11,"converged":true,"lam":0.15279,"lamRender":0.0706,"vol":8}
+cube3                  {"V":27,"S":54,"SV":2,"convexEdgeLen":36,"steps":7,"converged":true,"lam":0.21629,"lamRender":0.26601,"vol":26.574}
+cube4                  {"V":64,"S":96,"SV":1.5,"convexEdgeLen":48,"steps":7,"converged":true,"lam":0.21629,"lamRender":0.26601,"vol":63.491}
+slab2x2x2              {"V":8,"S":24,"SV":3,"convexEdgeLen":24,"steps":11,"converged":true,"lam":0.15279,"lamRender":0.0706,"vol":8}
+slab3x2x3              {"V":18,"S":42,"SV":2.3333,"convexEdgeLen":32,"steps":7,"converged":true,"lam":0.21629,"lamRender":0.26601,"vol":17.602}
+slab5x2x5              {"V":50,"S":90,"SV":1.8,"convexEdgeLen":48,"steps":7,"converged":true,"lam":0.21629,"lamRender":0.26601,"vol":49.491}
+slab7x2x7              {"V":98,"S":154,"SV":1.5714,"convexEdgeLen":64,"steps":7,"converged":true,"lam":0.21629,"lamRender":0.26601,"vol":97.38}
+plate2x1x2             {"V":4,"S":16,"SV":4,"convexEdgeLen":20,"steps":9,"converged":true,"lam":0.21596,"lamRender":0.14248,"vol":4}
+plate4x1x4             {"V":16,"S":48,"SV":3,"convexEdgeLen":36,"steps":13,"converged":true,"lam":0.21629,"lamRender":0.26601,"vol":15.472}
+plate6x1x6             {"V":36,"S":96,"SV":2.6667,"convexEdgeLen":52,"steps":13,"converged":true,"lam":0.21629,"lamRender":0.26601,"vol":35.361}
+bar1x1x2               {"V":2,"S":10,"SV":5,"convexEdgeLen":16,"steps":10,"converged":true,"lam":0.22414,"lamRender":0.13014,"vol":2}
+bar1x1x4               {"V":4,"S":18,"SV":4.5,"convexEdgeLen":24,"steps":14,"converged":true,"lam":0.21303,"lamRender":0.13386,"vol":4}
+bar1x1x8               {"V":8,"S":34,"SV":4.25,"convexEdgeLen":40,"steps":9,"converged":true,"lam":0.21868,"lamRender":0.12662,"vol":8}
+bar2x2x3               {"V":12,"S":32,"SV":2.6667,"convexEdgeLen":28,"steps":13,"converged":true,"lam":0.13603,"lamRender":0.08264,"vol":12}
+bar2x2x6               {"V":24,"S":56,"SV":2.3333,"convexEdgeLen":40,"steps":7,"converged":true,"lam":0.21629,"lamRender":0.26601,"vol":23.546}
+L-slab                 {"V":32,"S":null,"SV":null,"convexEdgeLen":null,"steps":70,"converged":true,"lam":0.10985,"lamRender":0.06792,"vol":32}
+
+== lam-FID-0.15
+cube1                  {"V":1,"S":6,"SV":6,"convexEdgeLen":12,"steps":7,"converged":true,"lam":0.30455,"lamRender":0.23291,"vol":1}
+cube2                  {"V":8,"S":24,"SV":3,"convexEdgeLen":24,"steps":7,"converged":true,"lam":0.19297,"lamRender":0.09259,"vol":8}
+cube3                  {"V":27,"S":54,"SV":2,"convexEdgeLen":36,"steps":6,"converged":true,"lam":0.17528,"lamRender":0.08852,"vol":27}
+cube4                  {"V":64,"S":96,"SV":1.5,"convexEdgeLen":48,"steps":14,"converged":true,"lam":0.17776,"lamRender":0.089,"vol":64}
+slab2x2x2              {"V":8,"S":24,"SV":3,"convexEdgeLen":24,"steps":7,"converged":true,"lam":0.19297,"lamRender":0.09259,"vol":8}
+slab3x2x3              {"V":18,"S":42,"SV":2.3333,"convexEdgeLen":32,"steps":10,"converged":true,"lam":0.1716,"lamRender":0.08991,"vol":18}
+slab5x2x5              {"V":50,"S":90,"SV":1.8,"convexEdgeLen":48,"steps":24,"converged":true,"lam":0.1596,"lamRender":0.09065,"vol":49.995}
+slab7x2x7              {"V":98,"S":154,"SV":1.5714,"convexEdgeLen":64,"steps":37,"converged":true,"lam":0.1596,"lamRender":0.09065,"vol":97.991}
+plate2x1x2             {"V":4,"S":16,"SV":4,"convexEdgeLen":20,"steps":11,"converged":true,"lam":0.19448,"lamRender":0.15933,"vol":4}
+plate4x1x4             {"V":16,"S":48,"SV":3,"convexEdgeLen":36,"steps":13,"converged":true,"lam":0.1601,"lamRender":0.10041,"vol":15.995}
+plate6x1x6             {"V":36,"S":96,"SV":2.6667,"convexEdgeLen":52,"steps":33,"converged":true,"lam":0.15435,"lamRender":0.08968,"vol":36.005}
+bar1x1x2               {"V":2,"S":10,"SV":5,"convexEdgeLen":16,"steps":7,"converged":true,"lam":0.23879,"lamRender":0.19258,"vol":2}
+bar1x1x4               {"V":4,"S":18,"SV":4.5,"convexEdgeLen":24,"steps":8,"converged":true,"lam":0.23917,"lamRender":0.19858,"vol":4}
+bar1x1x8               {"V":8,"S":34,"SV":4.25,"convexEdgeLen":40,"steps":14,"converged":true,"lam":0.23917,"lamRender":0.19861,"vol":8}
+bar2x2x3               {"V":12,"S":32,"SV":2.6667,"convexEdgeLen":28,"steps":10,"converged":true,"lam":0.18227,"lamRender":0.09259,"vol":12}
+bar2x2x6               {"V":24,"S":56,"SV":2.3333,"convexEdgeLen":40,"steps":40,"converged":true,"lam":0.17943,"lamRender":0.09259,"vol":24}
+L-slab                 {"V":32,"S":null,"SV":null,"convexEdgeLen":null,"steps":19,"converged":true,"lam":0.13717,"lamRender":0.13158,"vol":32.001}
+
+== lam-FINITE-4
+cube1                  {"V":1,"S":6,"SV":6,"convexEdgeLen":12,"steps":4,"converged":false,"lam":0.25368,"lamRender":0.16223,"vol":1}
+cube2                  {"V":8,"S":24,"SV":3,"convexEdgeLen":24,"steps":4,"converged":false,"lam":0.1592,"lamRender":0.08894,"vol":7.995}
+cube3                  {"V":27,"S":54,"SV":2,"convexEdgeLen":36,"steps":4,"converged":false,"lam":0.12187,"lamRender":0.07126,"vol":26.986}
+cube4                  {"V":64,"S":96,"SV":1.5,"convexEdgeLen":48,"steps":4,"converged":false,"lam":0.16629,"lamRender":0.26601,"vol":62.75}
+slab2x2x2              {"V":8,"S":24,"SV":3,"convexEdgeLen":24,"steps":4,"converged":false,"lam":0.1592,"lamRender":0.08894,"vol":7.995}
+slab3x2x3              {"V":18,"S":42,"SV":2.3333,"convexEdgeLen":32,"steps":4,"converged":false,"lam":0.11891,"lamRender":0.08649,"vol":18}
+slab5x2x5              {"V":50,"S":90,"SV":1.8,"convexEdgeLen":48,"steps":4,"converged":false,"lam":0.16629,"lamRender":0.26601,"vol":48.75}
+slab7x2x7              {"V":98,"S":154,"SV":1.5714,"convexEdgeLen":64,"steps":4,"converged":false,"lam":0.16629,"lamRender":0.26601,"vol":96.417}
+plate2x1x2             {"V":4,"S":16,"SV":4,"convexEdgeLen":20,"steps":4,"converged":false,"lam":0.17521,"lamRender":0.11867,"vol":4}
+plate4x1x4             {"V":16,"S":48,"SV":3,"convexEdgeLen":36,"steps":4,"converged":false,"lam":0.16648,"lamRender":0.08969,"vol":15.917}
+plate6x1x6             {"V":36,"S":96,"SV":2.6667,"convexEdgeLen":52,"steps":4,"converged":false,"lam":0.16629,"lamRender":0.26601,"vol":34.676}
+bar1x1x2               {"V":2,"S":10,"SV":5,"convexEdgeLen":16,"steps":4,"converged":false,"lam":0.21848,"lamRender":0.14875,"vol":2}
+bar1x1x4               {"V":4,"S":18,"SV":4.5,"convexEdgeLen":24,"steps":4,"converged":false,"lam":0.1764,"lamRender":0.12745,"vol":4}
+bar1x1x8               {"V":8,"S":34,"SV":4.25,"convexEdgeLen":40,"steps":4,"converged":false,"lam":0.15267,"lamRender":0.14731,"vol":7.875}
+bar2x2x3               {"V":12,"S":32,"SV":2.6667,"convexEdgeLen":28,"steps":4,"converged":false,"lam":0.1338,"lamRender":0.10178,"vol":11.995}
+bar2x2x6               {"V":24,"S":56,"SV":2.3333,"convexEdgeLen":40,"steps":4,"converged":false,"lam":0.10105,"lamRender":0.07733,"vol":24}
+L-slab                 {"V":32,"S":null,"SV":null,"convexEdgeLen":null,"steps":4,"converged":false,"lam":0.099,"lamRender":0.0712,"vol":31.986}
+
+== lam-FREE
+cube1                  {"V":1,"S":6,"SV":6,"convexEdgeLen":12,"steps":5,"converged":true,"lam":0.25368,"lamRender":0.16223,"vol":1}
+cube2                  {"V":8,"S":24,"SV":3,"convexEdgeLen":24,"steps":15,"converged":true,"lam":0.12788,"lamRender":0.06958,"vol":8}
+cube3                  {"V":27,"S":54,"SV":2,"convexEdgeLen":36,"steps":13,"converged":true,"lam":0.13902,"lamRender":0.08854,"vol":26.995}
+slab2x2x2              {"V":8,"S":24,"SV":3,"convexEdgeLen":24,"steps":15,"converged":true,"lam":0.12788,"lamRender":0.06958,"vol":8}
+plate2x1x2             {"V":4,"S":16,"SV":4,"convexEdgeLen":20,"steps":29,"converged":true,"lam":0.16558,"lamRender":0.11098,"vol":3.995}
+plate4x1x4             {"V":16,"S":48,"SV":3,"convexEdgeLen":36,"steps":41,"converged":true,"lam":0.15414,"lamRender":0.08953,"vol":16}
+bar1x1x2               {"V":2,"S":10,"SV":5,"convexEdgeLen":16,"steps":21,"converged":true,"lam":0.20039,"lamRender":0.1402,"vol":1.995}
+bar1x1x4               {"V":4,"S":18,"SV":4.5,"convexEdgeLen":24,"steps":53,"converged":true,"lam":0.17013,"lamRender":0.11085,"vol":3.995}
+bar1x1x8               {"V":8,"S":34,"SV":4.25,"convexEdgeLen":40,"steps":91,"converged":true,"lam":0.16115,"lamRender":0.12786,"vol":7.991}
+bar2x2x3               {"V":12,"S":32,"SV":2.6667,"convexEdgeLen":28,"steps":11,"converged":true,"lam":0.15497,"lamRender":0.10386,"vol":12}
+
+== pillar-CAGE-0.25
+
+== pillar-FID-0.05
+
+== pillar-FID-0.15-novol
+
+== pillar-FID-0.15
+
+== pillar-FINITE-4
+
+== pit-CAGE-0.25
+pit-slab3              {"k":3,"steps":16,"converged":true,"lam":[0.14308],"vol":["17->17"],"centre0":1.26812,"centreLab":1.25,"diffVsRef_D0":null,"diffVsRef_labels":null}
+pit-slab5              {"k":5,"steps":36,"converged":true,"lam":[0.11273],"vol":["49->48.998"],"centre0":1.26812,"centreLab":1.25,"diffVsRef_D0":0.08333,"diffVsRef_labels":0.08333}
+pit-slab7              {"k":7,"steps":42,"converged":true,"lam":[0.16629],"vol":["97->94.72"],"centre0":1.26812,"centreLab":1.25,"diffVsRef_D0":0,"diffVsRef_labels":0}
+pit-bar3x2x9           {"k":3,"steps":45,"converged":true,"lam":[0.10109],"vol":["53->52.998"],"centre0":1.26812,"centreLab":1.25,"diffVsRef_D0":null,"diffVsRef_labels":null}
+pit-slab5-bump         {"k":5,"steps":42,"converged":true,"lam":[0.10521],"vol":["50->50"],"centre0":1.26812,"centreLab":1.25,"diffVsRef_D0":0.25,"diffVsRef_labels":0.25}
+
+== pit-FID-0.05
+pit-slab3              {"k":3,"steps":12,"converged":true,"lam":[0.17789],"vol":["17->17"],"centre0":2,"centreLab":2,"diffVsRef_D0":null,"diffVsRef_labels":null}
+pit-slab5              {"k":5,"steps":12,"converged":true,"lam":[0.19368],"vol":["49->49"],"centre0":2,"centreLab":2,"diffVsRef_D0":0.00004,"diffVsRef_labels":0}
+pit-slab7              {"k":7,"steps":12,"converged":true,"lam":[0.19368],"vol":["97->97"],"centre0":2,"centreLab":2,"diffVsRef_D0":0,"diffVsRef_labels":0}
+pit-bar3x2x9           {"k":3,"steps":12,"converged":true,"lam":[0.19556],"vol":["53->53"],"centre0":2,"centreLab":2,"diffVsRef_D0":null,"diffVsRef_labels":null}
+pit-slab5-bump         {"k":5,"steps":77,"converged":true,"lam":[0.08375],"vol":["50->50"],"centre0":2.33333,"centreLab":2.33333,"diffVsRef_D0":0.33333,"diffVsRef_labels":0.33333}
+
+== pit-FID-0.15
+pit-slab3              {"k":3,"steps":18,"converged":true,"lam":[0.06862],"vol":["17->16.998"],"centre0":1.83589,"centreLab":1.83333,"diffVsRef_D0":null,"diffVsRef_labels":null}
+pit-slab5              {"k":5,"steps":22,"converged":true,"lam":[0.09101],"vol":["49->49"],"centre0":1.91667,"centreLab":1.91667,"diffVsRef_D0":0.00004,"diffVsRef_labels":0}
+pit-slab7              {"k":7,"steps":22,"converged":true,"lam":[0.09104],"vol":["97->97"],"centre0":1.91667,"centreLab":1.91667,"diffVsRef_D0":0,"diffVsRef_labels":0}
+pit-bar3x2x9           {"k":3,"steps":20,"converged":true,"lam":[0.09101],"vol":["53->53"],"centre0":1.91667,"centreLab":1.91667,"diffVsRef_D0":null,"diffVsRef_labels":null}
+pit-slab5-bump         {"k":5,"steps":38,"converged":true,"lam":[0.11468],"vol":["50->50"],"centre0":1.91667,"centreLab":1.91667,"diffVsRef_D0":0.00004,"diffVsRef_labels":0}
+
+== pit-FINITE-4
+pit-slab3              {"k":3,"steps":4,"converged":false,"lam":[0.16629],"vol":["17->16.905"],"centre0":1.66779,"centreLab":1.58333,"diffVsRef_D0":null,"diffVsRef_labels":null}
+pit-slab5              {"k":5,"steps":4,"converged":false,"lam":[0.16629],"vol":["49->48.572"],"centre0":1.66779,"centreLab":1.58333,"diffVsRef_D0":0.00039,"diffVsRef_labels":0}
+pit-slab7              {"k":7,"steps":4,"converged":false,"lam":[0.16629],"vol":["97->96.238"],"centre0":1.66779,"centreLab":1.58333,"diffVsRef_D0":0,"diffVsRef_labels":0}
+pit-bar3x2x9           {"k":3,"steps":4,"converged":false,"lam":[0.16629],"vol":["53->52.405"],"centre0":1.66779,"centreLab":1.58333,"diffVsRef_D0":null,"diffVsRef_labels":null}
+pit-slab5-bump         {"k":5,"steps":4,"converged":false,"lam":[0.13326],"vol":["50->49.993"],"centre0":1.63241,"centreLab":1.58333,"diffVsRef_D0":0.08333,"diffVsRef_labels":0.08334}
+
+== seam-CAGE-0.25-n16
+seam-a3b3L4            {"a":3,"b":3,"L":4,"steps":41,"converged":true,"lam":{"A":0.11067,"B":0.11067},"vol":["6:24->24","7:24->24"],"grooveMin0":2.0428,"grooveAtSeam0":2.04281,"flatMax0":2.125,"diffVsRef_D0_halfBlock":null,"diffVsRef_D0_oneBlock":null,"diffVsRef_full_halfBlock":null,"diffVsRef_labels_halfBlock":null,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:-0.025","1:-0.025","0.5:-0.025"]}
+
+== seam-CAGE-0.25
+seam-a1b1L4            {"a":1,"b":1,"L":4,"steps":34,"converged":true,"lam":{"A":0.16087,"B":0.16087},"vol":["6:8->8","7:8->8"],"grooveMin0":1.8593,"grooveAtSeam0":2.04813,"flatMax0":2.08308,"diffVsRef_D0_halfBlock":0.06798,"diffVsRef_D0_oneBlock":0.22407,"diffVsRef_full_halfBlock":0.07272,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L4            {"a":2,"b":2,"L":4,"steps":15,"converged":true,"lam":{"A":0.13312,"B":0.13312},"vol":["6:16->16","7:16->16"],"grooveMin0":2.0063,"grooveAtSeam0":2.00628,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0.02785,"diffVsRef_D0_oneBlock":0.02785,"diffVsRef_full_halfBlock":0.03079,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a3b3L4            {"a":3,"b":3,"L":4,"steps":27,"converged":true,"lam":{"A":0.122,"B":0.122},"vol":["6:24->24","7:24->24"],"grooveMin0":1.9802,"grooveAtSeam0":1.98015,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0.00073,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a5b5L4            {"a":5,"b":5,"L":4,"steps":32,"converged":true,"lam":{"A":0.10039,"B":0.10039},"vol":["6:40->40","7:40->40"],"grooveMin0":1.9802,"grooveAtSeam0":1.98015,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b5L4            {"a":2,"b":5,"L":4,"steps":35,"converged":true,"lam":{"A":0.14019,"B":0.09518},"vol":["6:16->16","7:40->40"],"grooveMin0":1.9855,"grooveAtSeam0":1.99275,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0.02591,"diffVsRef_D0_oneBlock":0.02591,"diffVsRef_full_halfBlock":0.02777,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:0.00409","1.5:0","1:0","0.5:0","0.1:0.00409"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a5b2L4            {"a":5,"b":2,"L":4,"steps":35,"converged":true,"lam":{"A":0.09518,"B":0.14019},"vol":["6:40->40","7:16->16"],"grooveMin0":1.9855,"grooveAtSeam0":1.99275,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0.02591,"diffVsRef_D0_oneBlock":0.02591,"diffVsRef_full_halfBlock":0.02777,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:-0.00409","1.5:0","1:0","0.5:0","0.1:-0.00409"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L8            {"a":2,"b":2,"L":8,"steps":26,"converged":true,"lam":{"A":0.12153,"B":0.12153},"vol":["6:32->32","7:32->32"],"grooveMin0":1.9802,"grooveAtSeam0":1.98015,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0.00108,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a3b3L6            {"a":3,"b":3,"L":6,"steps":28,"converged":true,"lam":{"A":0.10768,"B":0.10768},"vol":["6:36->36","7:36->36"],"grooveMin0":1.9802,"grooveAtSeam0":1.98015,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0.00023,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L4-Ahook      {"a":2,"b":2,"L":4,"steps":44,"converged":true,"lam":{"A":0.12784,"B":0.13738},"vol":["6:40->40","7:16->16"],"grooveMin0":1.9718,"grooveAtSeam0":1.98435,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0.08311,"diffVsRef_D0_oneBlock":0.08333,"diffVsRef_full_halfBlock":0.08599,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:-0.00684","1.5:0","1:0","0.5:0","0.1:-0.00684"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+
+== seam-FID-0.05
+seam-a1b1L4            {"a":1,"b":1,"L":4,"steps":13,"converged":true,"lam":{"A":0.18606,"B":0.18606},"vol":["6:8->8","7:8->8"],"grooveMin0":1.8168,"grooveAtSeam0":1.9648,"flatMax0":1.99998,"diffVsRef_D0_halfBlock":0.00006,"diffVsRef_D0_oneBlock":0.18318,"diffVsRef_full_halfBlock":0.02775,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L4            {"a":2,"b":2,"L":4,"steps":8,"converged":true,"lam":{"A":0.21629,"B":0.21629},"vol":["6:16->15.748","7:16->15.748"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a3b3L4            {"a":3,"b":3,"L":4,"steps":8,"converged":true,"lam":{"A":0.21629,"B":0.21629},"vol":["6:24->23.72","7:24->23.72"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a5b5L4            {"a":5,"b":5,"L":4,"steps":8,"converged":true,"lam":{"A":0.21629,"B":0.21629},"vol":["6:40->39.664","7:40->39.664"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b5L4            {"a":2,"b":5,"L":4,"steps":8,"converged":true,"lam":{"A":0.21629,"B":0.21629},"vol":["6:16->15.748","7:40->39.664"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a5b2L4            {"a":5,"b":2,"L":4,"steps":8,"converged":true,"lam":{"A":0.21629,"B":0.21629},"vol":["6:40->39.664","7:16->15.748"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L8            {"a":2,"b":2,"L":8,"steps":8,"converged":true,"lam":{"A":0.21629,"B":0.21629},"vol":["6:32->31.692","7:32->31.692"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a3b3L6            {"a":3,"b":3,"L":6,"steps":8,"converged":true,"lam":{"A":0.21629,"B":0.21629},"vol":["6:36->35.692","7:36->35.692"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L4-Ahook      {"a":2,"b":2,"L":4,"steps":85,"converged":true,"lam":{"A":0.09689,"B":0.17471},"vol":["6:40->40","7:16->15.999"],"grooveMin0":1.9648,"grooveAtSeam0":1.97654,"flatMax0":2,"diffVsRef_D0_halfBlock":0.02174,"diffVsRef_D0_oneBlock":0.02174,"diffVsRef_full_halfBlock":0.05393,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:-0.08333","1.5:-0.08333","1:-0.08333","0.5:-0.08333","0.1:-0.08333"],"seamXLab":["1.5:-0.06667","1:-0.06667","0.5:-0.06667"]}
+
+== seam-FID-0.15-n16
+seam-a2b2L4            {"a":2,"b":2,"L":4,"steps":17,"converged":true,"lam":{"A":0.16912,"B":0.16912},"vol":["6:16->16","7:16->16"],"grooveMin0":1.9598,"grooveAtSeam0":1.9598,"flatMax0":2.0625,"diffVsRef_D0_halfBlock":null,"diffVsRef_D0_oneBlock":null,"diffVsRef_full_halfBlock":null,"diffVsRef_labels_halfBlock":null,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:-0.025","1:-0.025","0.5:-0.025"]}
+seam-a3b3L4            {"a":3,"b":3,"L":4,"steps":8,"converged":true,"lam":{"A":0.16541,"B":0.16541},"vol":["6:24->24","7:24->24"],"grooveMin0":1.9598,"grooveAtSeam0":1.9598,"flatMax0":2.0527,"diffVsRef_D0_halfBlock":null,"diffVsRef_D0_oneBlock":null,"diffVsRef_full_halfBlock":null,"diffVsRef_labels_halfBlock":null,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:-0.025","1:-0.025","0.5:-0.025"]}
+
+== seam-FID-0.15-novol
+seam-a1b1L4            {"a":1,"b":1,"L":4,"steps":128,"converged":true,"lam":{"A":0,"B":0},"vol":["6:8->0","7:8->0"],"grooveMin0":null,"grooveAtSeam0":null,"flatMax0":null,"diffVsRef_D0_halfBlock":null,"diffVsRef_D0_oneBlock":null,"diffVsRef_full_halfBlock":null,"diffVsRef_labels_halfBlock":null,"seamX0":["1.9:","1.5:","1:","0.5:","0.1:"],"seamXLab":["1.5:null","1:null","0.5:null"]}
+seam-a2b2L4            {"a":2,"b":2,"L":4,"steps":27,"converged":true,"lam":{"A":0,"B":0},"vol":["6:16->14.444","7:16->14.444"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0.0003,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a3b3L4            {"a":3,"b":3,"L":4,"steps":26,"converged":true,"lam":{"A":0,"B":0},"vol":["6:24->22.317","7:24->22.317"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a5b5L4            {"a":5,"b":5,"L":4,"steps":26,"converged":true,"lam":{"A":0,"B":0},"vol":["6:40->37.984","7:40->37.984"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b5L4            {"a":2,"b":5,"L":4,"steps":27,"converged":true,"lam":{"A":0,"B":0},"vol":["6:16->14.444","7:40->37.984"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0.0003,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a5b2L4            {"a":5,"b":2,"L":4,"steps":27,"converged":true,"lam":{"A":0,"B":0},"vol":["6:40->37.984","7:16->14.444"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0.0003,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L8            {"a":2,"b":2,"L":8,"steps":27,"converged":true,"lam":{"A":0,"B":0},"vol":["6:32->30.111","7:32->30.111"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0.0003,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a3b3L6            {"a":3,"b":3,"L":6,"steps":26,"converged":true,"lam":{"A":0,"B":0},"vol":["6:36->34.15","7:36->34.15"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L4-Ahook      {"a":2,"b":2,"L":4,"steps":27,"converged":true,"lam":{"A":0,"B":0},"vol":["6:40->36.885","7:16->14.444"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0.00444,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+
+== seam-FID-0.15
+seam-a1b1L4            {"a":1,"b":1,"L":4,"steps":9,"converged":true,"lam":{"A":0.17817,"B":0.17817},"vol":["6:8->8","7:8->8"],"grooveMin0":1.6612,"grooveAtSeam0":1.9648,"flatMax0":1.99998,"diffVsRef_D0_halfBlock":0.00006,"diffVsRef_D0_oneBlock":0.33878,"diffVsRef_full_halfBlock":0.00069,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L4            {"a":2,"b":2,"L":4,"steps":13,"converged":true,"lam":{"A":0.17928,"B":0.17928},"vol":["6:16->16","7:16->16"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2.08322,"diffVsRef_D0_halfBlock":0.02408,"diffVsRef_D0_oneBlock":0.08322,"diffVsRef_full_halfBlock":0.02458,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a3b3L4            {"a":3,"b":3,"L":4,"steps":8,"converged":true,"lam":{"A":0.17704,"B":0.17704},"vol":["6:24->24","7:24->24"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2.02061,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0.02061,"diffVsRef_full_halfBlock":0.00153,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a5b5L4            {"a":5,"b":5,"L":4,"steps":23,"converged":true,"lam":{"A":0.16865,"B":0.16865},"vol":["6:40->40","7:40->40"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b5L4            {"a":2,"b":5,"L":4,"steps":20,"converged":true,"lam":{"A":0.17928,"B":0.1596},"vol":["6:16->16","7:40->39.995"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2.08322,"diffVsRef_D0_halfBlock":0.02408,"diffVsRef_D0_oneBlock":0.08322,"diffVsRef_full_halfBlock":0.02458,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a5b2L4            {"a":5,"b":2,"L":4,"steps":20,"converged":true,"lam":{"A":0.1596,"B":0.17928},"vol":["6:40->39.995","7:16->16"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2.08322,"diffVsRef_D0_halfBlock":0.0158,"diffVsRef_D0_oneBlock":0.08322,"diffVsRef_full_halfBlock":0.016,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L8            {"a":2,"b":2,"L":8,"steps":55,"converged":true,"lam":{"A":0.18471,"B":0.18471},"vol":["6:32->32","7:32->32"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0.00337,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a3b3L6            {"a":3,"b":3,"L":6,"steps":23,"converged":true,"lam":{"A":0.17173,"B":0.17173},"vol":["6:36->36","7:36->36"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2.04167,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0.04167,"diffVsRef_full_halfBlock":0.00101,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L4-Ahook      {"a":2,"b":2,"L":4,"steps":13,"converged":true,"lam":{"A":0.12003,"B":0.17928},"vol":["6:40->39.998","7:16->16"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2.08322,"diffVsRef_D0_halfBlock":0.0158,"diffVsRef_D0_oneBlock":0.08322,"diffVsRef_full_halfBlock":0.016,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+
+== seam-FINITE-4
+seam-a1b1L4            {"a":1,"b":1,"L":4,"steps":4,"converged":false,"lam":{"A":0.13849,"B":0.13849},"vol":["6:8->8","7:8->8"],"grooveMin0":1.7374,"grooveAtSeam0":1.96892,"flatMax0":2.06776,"diffVsRef_D0_halfBlock":0.06782,"diffVsRef_D0_oneBlock":0.26261,"diffVsRef_full_halfBlock":0.04052,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L4            {"a":2,"b":2,"L":4,"steps":4,"converged":false,"lam":{"A":0.10144,"B":0.10144},"vol":["6:16->16","7:16->16"],"grooveMin0":1.9656,"grooveAtSeam0":1.96556,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0.07777,"diffVsRef_D0_oneBlock":0.08333,"diffVsRef_full_halfBlock":0.04774,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a3b3L4            {"a":3,"b":3,"L":4,"steps":4,"converged":false,"lam":{"A":0.16629,"B":0.16629},"vol":["6:24->24","7:24->24"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2.08297,"diffVsRef_D0_halfBlock":0.00966,"diffVsRef_D0_oneBlock":0.08297,"diffVsRef_full_halfBlock":0.03743,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a5b5L4            {"a":5,"b":5,"L":4,"steps":4,"converged":false,"lam":{"A":0.16629,"B":0.16629},"vol":["6:40->39.139","7:40->39.139"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b5L4            {"a":2,"b":5,"L":4,"steps":4,"converged":false,"lam":{"A":0.10144,"B":0.16629},"vol":["6:16->16","7:40->39.134"],"grooveMin0":1.9649,"grooveAtSeam0":1.96518,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0.07777,"diffVsRef_D0_oneBlock":0.08333,"diffVsRef_full_halfBlock":0.05063,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:0.00014","1.5:0","1:0","0.5:0","0.1:0.00014"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a5b2L4            {"a":5,"b":2,"L":4,"steps":4,"converged":false,"lam":{"A":0.16629,"B":0.10144},"vol":["6:40->39.134","7:16->16"],"grooveMin0":1.9649,"grooveAtSeam0":1.96518,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0.07367,"diffVsRef_D0_oneBlock":0.08333,"diffVsRef_full_halfBlock":0.04669,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:-0.00014","1.5:0","1:0","0.5:0","0.1:-0.00014"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L8            {"a":2,"b":2,"L":8,"steps":4,"converged":false,"lam":{"A":0.08285,"B":0.08285},"vol":["6:32->31.958","7:32->31.958"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2.08326,"diffVsRef_D0_halfBlock":0.04749,"diffVsRef_D0_oneBlock":0.08326,"diffVsRef_full_halfBlock":0.03746,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a3b3L6            {"a":3,"b":3,"L":6,"steps":4,"converged":false,"lam":{"A":0.16629,"B":0.16629},"vol":["6:36->35.222","7:36->35.222"],"grooveMin0":1.9648,"grooveAtSeam0":1.9648,"flatMax0":2,"diffVsRef_D0_halfBlock":0,"diffVsRef_D0_oneBlock":0,"diffVsRef_full_halfBlock":0,"diffVsRef_labels_halfBlock":0,"seamX0":["1.9:0","1.5:0","1:0","0.5:0","0.1:0"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}
+seam-a2b2L4-Ahook      {"a":2,"b":2,"L":4,"steps":4,"converged":false,"lam":{"A":0.13326,"B":0.10144},"vol":["6:40->40","7:16->16"],"grooveMin0":1.9649,"grooveAtSeam0":1.96518,"flatMax0":2.08333,"diffVsRef_D0_halfBlock":0.07367,"diffVsRef_D0_oneBlock":0.08333,"diffVsRef_full_halfBlock":0.04377,"diffVsRef_labels_halfBlock":0.08333,"seamX0":["1.9:-0.00014","1.5:0","1:0","0.5:0","0.1:-0.00014"],"seamXLab":["1.5:0.01667","1:0.01667","0.5:0.01667"]}

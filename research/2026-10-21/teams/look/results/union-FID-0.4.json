@@ -1,0 +1,287 @@
+{
+ "regime": "FID-0.4",
+ "options": {
+  "anchor": {
+   "kind": "fidelity",
+   "k": 0.4
+  }
+ },
+ "runs": {
+  "diag-edge": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 3,
+    "converged": true,
+    "ms": 104,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 3,
+    "converged": true,
+    "ms": 73,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 3,
+    "converged": true,
+    "ms": 75,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 3,
+    "converged": true,
+    "ms": 72,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   }
+  ],
+  "diag-corner": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 3,
+    "converged": true,
+    "ms": 61,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 3,
+    "converged": true,
+    "ms": 68,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 3,
+    "converged": true,
+    "ms": 70,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 3,
+    "converged": true,
+    "ms": 69,
+    "start": {
+     "6": 2
+    },
+    "end": {
+     "6": 2
+    },
+    "unitedA": false,
+    "unitedB": false
+   }
+  ],
+  "sq2-checker": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 3,
+    "converged": true,
+    "ms": 110,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 2,
+     "7": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 3,
+    "converged": true,
+    "ms": 142,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 2,
+     "7": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 3,
+    "converged": true,
+    "ms": 129,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 2,
+     "7": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 3,
+    "converged": true,
+    "ms": 129,
+    "start": {
+     "6": 2,
+     "7": 2
+    },
+    "end": {
+     "6": 2,
+     "7": 2
+    },
+    "junction": "-",
+    "unitedA": false,
+    "unitedB": false
+   }
+  ],
+  "slab-line": [
+   {
+    "jitter": 0,
+    "seed": 1,
+    "steps": 3,
+    "converged": true,
+    "ms": 1084,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 6,
+     "7": 2
+    },
+    "junctions": "-----",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 1,
+    "steps": 3,
+    "converged": true,
+    "ms": 1175,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 6,
+     "7": 2
+    },
+    "junctions": "-----",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 2,
+    "steps": 3,
+    "converged": true,
+    "ms": 1266,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 6,
+     "7": 2
+    },
+    "junctions": "-----",
+    "unitedA": false,
+    "unitedB": false
+   },
+   {
+    "jitter": 0.001,
+    "seed": 3,
+    "steps": 3,
+    "converged": true,
+    "ms": 1306,
+    "start": {
+     "6": 6,
+     "7": 2
+    },
+    "end": {
+     "6": 6,
+     "7": 2
+    },
+    "junctions": "-----",
+    "unitedA": false,
+    "unitedB": false
+   }
+  ]
+ }
+}

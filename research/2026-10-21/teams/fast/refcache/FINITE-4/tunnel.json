@@ -1,0 +1,1 @@
+{"regime":"FINITE-4","name":"tunnel","opts":{"maxSteps":4,"stopAfter":99,"n":16},"ms":470,"steps":4,"converged":false,"lastChanges":[5664,4856,4360,4104],"grid":[80,96,80],"n":16,"root":[0,1],"phases":[{"mat":0,"alive":true},{"mat":3,"blocks":30,"target":122880,"lambda":0.03969624638557434,"alive":true}],"volumes":[{"p":1,"mat":3,"blocks":30,"volume":29.9941}]}

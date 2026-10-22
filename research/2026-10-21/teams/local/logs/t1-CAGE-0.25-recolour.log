@@ -1,0 +1,8 @@
+CAGE-0.25 recolour base 6390 ms 84 steps  [{"p":1,"mat":6,"blocks":140,"volume":136.083,"lamRun":0.16629,"lamRender":0.26601}]
+d=1: 7031 ms 52 st | label diffs 12308, max dist 10.105 | probe dD 0.0565 dD0 0.08147 dLab 0.08333 | lam 0.13633/0.28352 (base 0.16629)
+d=2: 6393 ms 56 st | label diffs 12252, max dist 9.121 | probe dD 0.05698 dD0 0.08333 dLab 0.08333 | lam 0.13641/0.28361 (base 0.16629)
+d=3: 5801 ms 57 st | label diffs 12170, max dist 8.141 | probe dD 0.05805 dD0 0.08333 dLab 0.08333 | lam 0.1367/0.28389 (base 0.16629)
+d=4: 11070 ms 95 st | label diffs 24500, max dist 7.166 | probe dD 0.13724 dD0 0.16667 dLab 0.16667 | lam 0.098/0.25557 (base 0.16629)
+d=6: 7329 ms 57 st | label diffs 12170, max dist 8.141 | probe dD 0.05805 dD0 0.08333 dLab 0.08333 | lam 0.1367/0.28389 (base 0.16629)
+d=8: 6504 ms 52 st | label diffs 12308, max dist 10.105 | probe dD 0.05729 dD0 0.08333 dLab 0.08333 | lam 0.13633/0.28352 (base 0.16629)
+d=10: 13435 ms 114 st | label diffs 24642, max dist 12.08 | probe dD 0.13712 dD0 0.16667 dLab 0.16667 | lam 0.09747/0.25592 (base 0.16629)
