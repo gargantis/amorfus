@@ -4,7 +4,7 @@ import { writeFile, mkdir, access } from 'node:fs/promises';
 import { join } from 'node:path';
 import { packDirToCar } from '../scripts/lib/cid-core.mjs';
 import { startGateway } from './lib/serve-gateway.mjs';
-import { startNostrRelay } from './lib/nostr-relay.mjs';
+import { startNostrRelay } from '../vendor/hermet/nostr-relay.mjs';
 
 const PORTS = { plain: 4731, csp: 4732, headers: 4733 };
 

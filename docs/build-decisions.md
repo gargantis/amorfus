@@ -374,3 +374,29 @@ retries never give up; non-minimal varints are accepted on decode.
   from the generator's continuous fields, and synthetic crossings for edited
   geometry; smoothing painted player content stays open. The bevel rule stays
   selectable with `#rule=bevel`. *Cost if wrong:* none; no code changed.
+
+## After M8 — shared gate tooling (2026-10-30)
+
+- **The gate's tooling moved to `vendor/hermet`** at the owner's request:
+  a submodule of gargantis/hermet that roslambo mounts too, holding
+  public-scan, the dist audit, the licence notices, the exact-ops rule,
+  the local Nostr relay, and the ESLint and tsconfig bases. roslambo had
+  ported them from here and improved its copies; the shared code starts
+  from the better copy of each. amorfus's own rules stay in `scripts/`
+  and the configs: the `ipfs-sw-*` and `_redirects` bans, `_headers` and
+  `boot.js`'s loopback host (§13.3, §13.4, §8.2) are now options
+  `scripts/audit-dist.mjs` passes. The gate runs the shared tests under
+  amorfus's own ESLint, ws and vitest. *Cost if wrong:* a submodule to
+  fetch after cloning, and a pin to move when the shared code changes.
+- **What the move changed for amorfus.** The audit now finds JS strings
+  with roslambo's tokenizer: the old regular expression lost its place in
+  this bundle and never saw `'/ipfs/'`, `'/ipns/'` and `'/'`, which are
+  compared with a pathname (§12.4, §12.5) and now listed as
+  `ignoredPaths`. It reads `stun:` and `turn:` URLs, so Trystero's unused
+  default STUN template (`stun`) and the TURN field's hint
+  (`turn:host:…`) are listed as `ignoredHosts`. Source maps are
+  forbidden; the licence notices are required, and no longer scanned for
+  hosts. The exact-ops rule bans `Intl` as well, and its id is now
+  `exact-ops`. *Cost if wrong:* an exception that hides a real
+  root-absolute string; ESLint's source rules (§13.3) still catch one in
+  amorfus's own code.

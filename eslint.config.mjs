@@ -1,46 +1,16 @@
-import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import genExactOps from './scripts/eslint/gen-exact-ops.mjs';
+import { baseConfig } from './vendor/hermet/eslint/base.mjs';
+import exactOps from './vendor/hermet/eslint/exact-ops.mjs';
 
 const local = {
-  rules: { 'gen-exact-ops': genExactOps },
+  rules: { 'exact-ops': exactOps },
 };
 
-const NODE_GLOBALS = Object.fromEntries(
-  [
-    'process', 'console', 'Buffer', 'URL', 'URLSearchParams', 'TextEncoder',
-    'TextDecoder', 'fetch', 'crypto', 'setTimeout', 'clearTimeout',
-    'setInterval', 'clearInterval', 'queueMicrotask', 'structuredClone',
-    'AbortController', 'WebSocket', 'performance', 'Blob', 'Response', 'Request',
-  ].map((n) => [n, 'readonly']),
-);
-
-// §14 Lint. The generator allowlist guards determinism (C-10); the global
-// bans guard the IPFS-subpath contract (§13.3) and the storage rules (§12.1).
+// §14 Lint, on the shared base (vendor/hermet). The generator allowlist
+// guards determinism (C-10); the global bans guard the IPFS-subpath
+// contract (§13.3) and the storage rules (§12.1).
 export default tseslint.config(
-  {
-    ignores: [
-      'node_modules/**',
-      'dist/**',
-      '.cache/**',
-      '.superpowers/**',
-      'research/**',
-      'test-results/**',
-      'playwright-report/**',
-      'scripts/eslint/fixtures/**',
-    ],
-  },
-  js.configs.recommended,
-  ...tseslint.configs.recommended.map((c) => ({
-    ...c,
-    files: ['**/*.ts'],
-  })),
-  {
-    files: ['**/*.ts'],
-    rules: {
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-    },
-  },
+  ...baseConfig({ ignores: ['.superpowers/**'] }),
   {
     files: ['**/*.ts', '**/*.mjs', '**/*.js'],
     rules: {
@@ -75,10 +45,6 @@ export default tseslint.config(
     },
   },
   {
-    files: ['scripts/**', 'e2e/**', '*.config.ts', '*.config.mjs', 'playwright.config.ts'],
-    languageOptions: { globals: NODE_GLOBALS },
-  },
-  {
     // boot.js is a classic pre-module script running in the browser only.
     files: ['public/boot.js'],
     languageOptions: {
@@ -111,12 +77,12 @@ export default tseslint.config(
     ignores: ['src/core/gen/**/*.test.ts'],
     plugins: { local },
     rules: {
-      'local/gen-exact-ops': 'error',
+      'local/exact-ops': 'error',
     },
   },
   {
-    // Vendored FastNoiseLite stays byte-pristine (C-10). gen-exact-ops
-    // still applies above; only stylistic rules are relaxed. Its
+    // Vendored FastNoiseLite stays byte-pristine (C-10). exact-ops still
+    // applies above; only stylistic rules are relaxed. Its
     // precision-losing literals parse to the same f64 in every engine —
     // literal parsing is exactly specified by ECMA-262.
     files: ['src/core/gen/v1/vendor/FastNoiseLite.js'],

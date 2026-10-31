@@ -15,6 +15,7 @@ build made that the plan had not settled.
 ## Run
 
 ```sh
+git submodule update --init   # vendor/hermet, the gate tooling shared with roslambo
 npm install
 npm run dev          # http://localhost:5173
 npm run dev:lan      # https on your LAN IP (self-signed) for a second machine

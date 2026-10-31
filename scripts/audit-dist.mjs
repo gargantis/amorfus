@@ -1,23 +1,22 @@
 #!/usr/bin/env node
-// CLI for the §14 dist audit; the logic and its planted-failure self-test
-// live in scripts/lib/audit-dist-core.mjs.
-import { readFile } from 'node:fs/promises';
-import { join } from 'node:path';
-import { auditDist } from './lib/audit-dist-core.mjs';
+// The §14 dist audit. The logic and its planted-failure self-test are
+// shared, in vendor/hermet/audit-dist.mjs; amorfus's exceptions are here.
+import { runAuditDist } from '../vendor/hermet/audit-dist.mjs';
 
-const root = process.cwd();
-const thirdParty = JSON.parse(await readFile(join(root, 'third-party.json'), 'utf8'));
-const expected = JSON.parse(await readFile(join(root, 'scripts/expected-licenses.json'), 'utf8'));
-
-const { findings } = await auditDist(join(root, 'dist'), {
-  allowedHosts: thirdParty.map((e) => e.host),
-  expectedLicensePackages: expected,
+await runAuditDist({
+  // §13.3: gateway-owned names and host-specific routing never ship.
+  forbiddenFiles: [/^ipfs-sw-/, /^_redirects$/],
+  // §13.4: amorf.us's response headers ship, and are scanned as text.
+  textFiles: ['_headers'],
+  // §8.2: the boot message tells the user how to serve the folder locally.
+  loopbackFiles: ['boot.js'],
+  // Trystero's built-in STUN list is a template literal,
+  // `stun:stun${i}.l.google.com:19302`, whose prefix the scan reads as a
+  // host named "stun". amorfus always passes its own iceServers, so the
+  // defaults are never used (src/net/room-config.test.ts). The TURN
+  // field's hint, `turn:host:port,user,credential`, names no real host.
+  ignoredHosts: ['stun', 'host'],
+  // Compared with a URL's pathname, never requested: the gateway prefixes
+  // of §12.4's origin classifier and the handoff target's root (§12.5).
+  ignoredPaths: ['/', '/ipfs/', '/ipns/'],
 });
-
-if (findings.length > 0) {
-  for (const f of findings) {
-    console.error(`audit-dist: ${f.file}: ${f.why}${f.detail ? ` (${f.detail})` : ''}`);
-  }
-  process.exit(1);
-}
-console.log('audit-dist: dist/ is clean');

@@ -1,0 +1,3 @@
+[submodule "vendor/hermet"]
+	path = vendor/hermet
+	url = https://github.com/gargantis/hermet.git

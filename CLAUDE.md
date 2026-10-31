@@ -37,6 +37,13 @@ already refuses to emit a folder that breaks under an IPFS subpath
 - `src/core` is pure TypeScript: no DOM, no GPU (lint enforces it).
 - `src/core/gen/**` may use only the exact-ops allowlist; golden hashes pin
   every released generator forever (C-10).
+- `vendor/hermet` is the gate tooling shared with roslambo: public-scan,
+  the dist audit, the licence notices, the exact-ops rule, the local Nostr
+  relay and the ESLint and tsconfig bases. It is a pinned submodule of
+  gargantis/hermet; amorfus's own rules (the IPFS file rules, the audit's
+  exceptions, the denylist variable) stay in `scripts/` and the configs.
+  Change shared code in gargantis/hermet, then move the pin. Never edit
+  `vendor/hermet` in place.
 - External actions — Filebase pin, amorf.us deploy, DNSLink — each need the
   owner's explicit go-ahead. `npm run deploy` and `npm run publish:ipfs`
   assume that go-ahead was given for this run.
