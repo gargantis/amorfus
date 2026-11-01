@@ -400,3 +400,33 @@ retries never give up; non-minimal varints are accepted on decode.
   `exact-ops`. *Cost if wrong:* an exception that hides a real
   root-absolute string; ESLint's source rules (§13.3) still catch one in
   amorfus's own code.
+
+## After M8 — Trystero 0.26.0 (2026-10-31)
+
+- **Trystero 0.26.0, unpatched,** at the owner's request: the version
+  roslambo runs, so the two can share the room config. 0.26.0 has the
+  receive limits the patch added (roslambo D-13, confirmed by its M0 flood
+  run), and closed #195 and #196. `maxReceiveBytes` is 64 KiB, four
+  16 KiB messages. The patch, patch-package and the patched-module tests
+  are gone; `src/net/receive-limits.test.ts` pins 0.26.0's limits
+  instead: a payload over the budget is refused before any of it is
+  buffered, a transfer for an unregistered action is never accepted and a
+  peer that sends one anyway is dropped, and transfers in flight stay
+  within the budget across peers. *Cost if wrong:* the bounds are not the
+  patch's. Small messages for an unregistered action now wait up to 120 s,
+  up to 64 per peer and 1024 per room, each under 16 KiB, where the patch
+  dropped them at once.
+- **0.26.0 speaks a new action wire** and drops a peer on the old one, so
+  a build from before this change cannot play with one after it, and the
+  handshake's readable refusal (C-14) never gets through. No public
+  release exists yet (generator v1 is not frozen, D-24), so no released
+  build is left behind. *Cost if wrong:* none now; after M8 the same bump
+  would strand every released build.
+- **Rejoining in place works, and is tested:** the e2e leaves and rejoins
+  without reloading, keeping the same Trystero peer id, which the M7 entry
+  above could not. A rejoined room gets the connection Trystero already
+  shares with that peer, where the transport opened its negotiated
+  channels a second time and the browser refused. Each connection now has
+  one pair, opened by the first room on it and reused by every later one,
+  told apart by the room epoch as §10.3 says. *Cost if wrong:* none; a
+  reload still rejoins too.

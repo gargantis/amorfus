@@ -1,9 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { buildRoomConfig } from './room-config';
+import { buildRoomConfig, RECEIVE_BUDGET_BYTES } from './room-config';
+import { MAX_MESSAGE_BYTES } from '../core/sync/messages';
 import thirdParty from '../../third-party.json';
 
 // Found by the WebSocket-aware e2e guard in the final review: Trystero
-// 0.25 reads `relayConfig.urls`; an unknown `relayUrls` key is silently
+// reads `relayConfig.urls`; an unknown `relayUrls` key is silently
 // ignored and the library falls back to its OWN default public relays —
 // not the six the plan curates and the privacy sheet discloses.
 describe('buildRoomConfig', () => {
@@ -11,7 +12,7 @@ describe('buildRoomConfig', () => {
     .filter((e) => e.kind === 'signaling')
     .map((e) => e.url);
 
-  it('puts the relay list where Trystero 0.25 reads it', () => {
+  it('puts the relay list where Trystero reads it', () => {
     const c = buildRoomConfig({ appId: 'x', relayUrls: ['ws://127.0.0.1:1'], iceServers: [] });
     expect(c.relayConfig?.urls).toEqual(['ws://127.0.0.1:1']);
     expect(Object.keys(c)).not.toContain('relayUrls');
@@ -29,5 +30,12 @@ describe('buildRoomConfig', () => {
     expect(buildRoomConfig({ appId: 'x', relayUrls: curated, iceServers: ice }).rtcConfig).toEqual({
       iceServers: ice,
     });
+  });
+
+  it('sets the receive budget to four messages, not the library default of 256 MiB', () => {
+    expect(buildRoomConfig({ appId: 'x', relayUrls: curated, iceServers: [] }).maxReceiveBytes).toBe(
+      RECEIVE_BUDGET_BYTES,
+    );
+    expect(RECEIVE_BUDGET_BYTES).toBe(4 * MAX_MESSAGE_BYTES);
   });
 });

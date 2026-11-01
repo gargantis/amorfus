@@ -395,7 +395,6 @@ src/game/, src/ui/         scheduler, input, player, editing; menus, hotbar, ban
 e2e/                       Playwright specs, serve-gateway.mjs, local Nostr-compatible relay
 scripts/                   audit-dist, licenses, public-scan, wgsl-check (Dawn for Node), cid, kubo-smoke,
                            swg-smoke, publish-ipfs, verify-live, probe-relays
-patches/                   the patch-package patch for Trystero (§10.1)
 third-party.json           every external host: kind, purpose, operator, what it sees (machine-checked)
 docs/acceptance.md         reference device, scenarios, network matrix (agreed at M2)
 docs/conflicts.md          the living C-register (from M0)
@@ -766,12 +765,12 @@ All keys use `KeyboardEvent.code`, so WASD is independent of keyboard layout.
 
 ### 10.1 Stack
 
-- **Trystero `@trystero-p2p/nostr` 0.25.4**, pinned exactly (0.25.5 once #195's rejoin fix ships).
-  - MIT, 22.6 KB gzipped. SDP is AES-GCM encrypted end to end. A single, active maintainer.
+- **Trystero `@trystero-p2p/nostr` 0.26.0**, pinned exactly and unpatched: the version roslambo runs.
+  - MIT, 22.6 KB gzipped at 0.25.4. SDP is AES-GCM encrypted end to end. A single, active maintainer.
   - Wrapped behind our own `Transport`; only `src/net/trystero-transport.ts` imports it.
-  - **Patched with patch-package:** Trystero reassembles action payloads with no size limit and keeps payloads of unregistered types forever. The patch drops unregistered types and caps pending reassembly at about 64 KiB per peer.
-- **Measured on one machine only** (signaling, not NAT traversal): 21 of 22 two-context joins, 0.77–1.1 s with the chosen relays; 8 of 8 four-context meshes in 3.8–6.4 s. The one failure was an ICE failure after the SDP exchange.
-  - Open issues: #196 (slower joins), #161 (partial meshes).
+  - **Receive limits:** `maxReceiveBytes` is 64 KiB, four messages. Trystero refuses a larger payload before buffering any of it, accepts a transfer only for a registered action and within that budget, and drops pending data after 120 s. `src/net/receive-limits.test.ts` pins these limits. 0.25.4 had none, so amorfus patched it until the upgrade (docs/build-decisions.md).
+- **Measured on one machine only, on 0.25.4** (signaling, not NAT traversal): 21 of 22 two-context joins, 0.77–1.1 s with the chosen relays; 8 of 8 four-context meshes in 3.8–6.4 s. The one failure was an ICE failure after the SDP exchange.
+  - Open issue: #161 (partial meshes). #195 (rejoin) and #196 (slower joins) were closed with 0.26.0.
   - Cross-network success is unmeasured; the M0 spike measures it.
 - **Relays:** six curated Nostr relays, used all at once: relay.damus.io, relay.primal.net, nos.lol, offchain.pub, nostr.bitcoiner.social, yabu.me/v2.
   - The library's default pick for our appId had 3 of 5 working. Only 17 of its 28 defaults passed an ephemeral round-trip.
@@ -875,7 +874,7 @@ All keys use `KeyboardEvent.code`, so WASD is independent of keyboard layout.
   - a total decoder;
   - live EDITS limited to 50/s with bursts of 500 **per (connection, origin session)**;
   - bulk transfers ≤ 4e6 entries or 64 MB (D-23).
-- **A peer cannot:** crash others; exhaust their memory (given the Trystero patch); make honest peers diverge (given SHA-256 digests, §11.4); push clocks more than 60 s ahead; inject markup.
+- **A peer cannot:** crash others; exhaust their memory (given Trystero's receive limits, §10.1); make honest peers diverge (given SHA-256 digests, §11.4); push clocks more than 60 s ahead; inject markup.
 - **A peer can:** overwrite any cell up to the rate limit, lie about its own position, and withhold data.
 - **Eviction** follows D-9. Signed ops are post-MVP.
 
@@ -1507,7 +1506,7 @@ An uppercase tag is critical, so a reader that doesn't know it rejects the file.
 | ipfs-car | 3.1.0 (exact) | its maintainer organisation appears wound down |
 | kubo | 0.43.1 | `npx`, release scripts only |
 | wrangler | ^4.137 | |
-| @trystero-p2p/nostr | 0.25.4 (exact) + patch | |
+| @trystero-p2p/nostr | 0.26.0 (exact) | unpatched; the version roslambo runs |
 | wgpu-matrix | 3.4.2 | |
 | idb | 8.0.3 | |
 | fake-indexeddb | 6.2 | |

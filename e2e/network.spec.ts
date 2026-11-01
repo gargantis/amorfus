@@ -52,14 +52,10 @@ test('two pages join by code and exchange edits both ways', async ({ context }) 
   // positions flow on the pos channel (§11.6)
   await a.waitForFunction(() => window.__amorfusNet!.avatars() >= 1, undefined, { timeout: 15_000 });
 
-  // Leave and rejoin within 5 s (§14). In-place rejoin with the same
-  // trystero selfId hits upstream #195 (the plan pins 0.25.4 and notes
-  // the fix lands in 0.25.5); a player's real rejoin is a page (re)load,
-  // which is what we test until the pinned bump.
+  // Leave and rejoin within 5 s (§14), in place, on the same Trystero
+  // selfId: upstream #195 broke this until 0.26.0.
   await b.evaluate(() => window.__amorfusNet!.leave());
   await a.waitForFunction(() => window.__amorfusNet!.connected() === 0, undefined, { timeout: 20_000 });
-  await b.reload();
-  await b.waitForFunction(() => window.__amorfusNet !== undefined);
   await b.evaluate((s) => window.__amorfusNet!.join(s), secret);
   await a.waitForFunction(() => window.__amorfusNet!.connected() === 1, undefined, { timeout: 30_000 });
   // Trystero logs the EXPECTED user-initiated close when a peer leaves;

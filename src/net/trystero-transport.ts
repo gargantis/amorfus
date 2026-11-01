@@ -37,6 +37,30 @@ interface ChannelPair {
   pos: RTCDataChannel;
 }
 
+/** A negotiated channel id opens only once per connection, and Trystero
+ *  hands a rejoined or rekeyed room the connection it already shares with
+ *  that peer. So the first room on a connection opens the pair and every
+ *  later room reuses it (§10.3). */
+const pairs = new WeakMap<RTCPeerConnection, ChannelPair>();
+
+function channelPair(pc: RTCPeerConnection): ChannelPair {
+  let pair = pairs.get(pc);
+  if (pair === undefined) {
+    const bulk = pc.createDataChannel('amf-bulk', { negotiated: true, id: BULK_ID });
+    const pos = pc.createDataChannel('amf-pos', {
+      negotiated: true,
+      id: POS_ID,
+      ordered: false,
+      maxRetransmits: 0,
+    });
+    bulk.binaryType = 'arraybuffer';
+    pos.binaryType = 'arraybuffer';
+    pair = { bulk, pos };
+    pairs.set(pc, pair);
+  }
+  return pair;
+}
+
 export class TrysteroTransport implements Transport {
   readonly id: string = selfId;
   private room: RoomLike;
@@ -46,6 +70,8 @@ export class TrysteroTransport implements Transport {
   private joinCbs: Array<(p: string) => void> = [];
   private leaveCbs: Array<(p: string) => void> = [];
   private channels = new Map<string, ChannelPair>();
+  /** per peer: removes this room's listeners from the shared pair */
+  private detachers = new Map<string, () => void>();
   private peerList = new Set<string>();
 
   constructor(opts: TrysteroOptions) {
@@ -73,7 +99,7 @@ export class TrysteroTransport implements Transport {
     };
     this.room.onPeerLeave = (peerId: string) => {
       this.peerList.delete(peerId);
-      this.channels.delete(peerId);
+      this.detach(peerId);
       for (const cb of this.leaveCbs) cb(peerId);
     };
   }
@@ -83,26 +109,37 @@ export class TrysteroTransport implements Transport {
   private setupChannels(peerId: string): void {
     const pc = this.room.getPeers()[peerId];
     if (pc === undefined) return;
-    const bulk = pc.createDataChannel('amf-bulk', { negotiated: true, id: BULK_ID });
-    const pos = pc.createDataChannel('amf-pos', {
-      negotiated: true,
-      id: POS_ID,
-      ordered: false,
-      maxRetransmits: 0,
-    });
-    bulk.binaryType = 'arraybuffer';
-    pos.binaryType = 'arraybuffer';
-    const handler = (channel: Channel) => (ev: MessageEvent) => {
-      const bytes = new Uint8Array(ev.data as ArrayBuffer);
-      if (bytes.byteLength < 4) return;
-      const epoch =
-        (bytes[0]! | (bytes[1]! << 8) | (bytes[2]! << 16) | (bytes[3]! << 24)) >>> 0;
-      if (epoch !== this.epoch) return; // another room's traffic
-      for (const cb of this.messageCbs) cb(peerId, bytes.subarray(4), channel);
+    this.detach(peerId);
+    const pair = channelPair(pc);
+    const listen = (dc: RTCDataChannel, channel: Channel): (() => void) => {
+      const onMessage = (ev: MessageEvent): void => {
+        const bytes = new Uint8Array(ev.data as ArrayBuffer);
+        if (bytes.byteLength < 4) return;
+        const epoch =
+          (bytes[0]! | (bytes[1]! << 8) | (bytes[2]! << 16) | (bytes[3]! << 24)) >>> 0;
+        if (epoch !== this.epoch) return; // another room's traffic
+        for (const cb of this.messageCbs) cb(peerId, bytes.subarray(4), channel);
+      };
+      dc.addEventListener('message', onMessage);
+      return () => dc.removeEventListener('message', onMessage);
     };
-    bulk.onmessage = handler('bulk');
-    pos.onmessage = handler('pos');
-    this.channels.set(peerId, { bulk, pos });
+    const stopBulk = listen(pair.bulk, 'bulk');
+    const stopPos = listen(pair.pos, 'pos');
+    this.detachers.set(peerId, () => {
+      stopBulk();
+      stopPos();
+    });
+    this.channels.set(peerId, pair);
+  }
+
+  private detach(peerId: string): void {
+    this.detachers.get(peerId)?.();
+    this.detachers.delete(peerId);
+    this.channels.delete(peerId);
+  }
+
+  private detachAll(): void {
+    for (const peerId of [...this.detachers.keys()]) this.detach(peerId);
   }
 
   send(peerId: string, bytes: Uint8Array, channel: Channel): void {
@@ -153,6 +190,7 @@ export class TrysteroTransport implements Transport {
   }
 
   leave(): void {
+    this.detachAll();
     void this.room.leave();
   }
 
@@ -160,6 +198,7 @@ export class TrysteroTransport implements Transport {
    *  promptly instead of waiting out an ICE timeout — used right before a
    *  reload. */
   async leaveAndFlush(maxMs = 600): Promise<void> {
+    this.detachAll();
     await Promise.race([
       this.room.leave().catch(() => void 0),
       new Promise<void>((resolve) => setTimeout(resolve, maxMs)),
