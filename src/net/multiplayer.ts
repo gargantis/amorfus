@@ -2,7 +2,8 @@
 // SessionWorld adapter onto the streamed caches, POS timers (20 Hz
 // moving / 4 Hz idle, on a timer — never rAF, which stops in hidden
 // tabs), remote avatars, REKEY, and relay health.
-import { TrysteroTransport, CURATED_RELAYS, STUN_SERVERS } from './trystero-transport';
+import { TrysteroTransport } from './trystero-transport';
+import { CURATED_RELAYS, STUN_SERVERS } from './room-config';
 import { Session, type SessionWorld } from '../core/sync/session';
 import type { Entry, LwwStore } from '../core/sync/lww';
 import type { Hlc } from '../core/sync/hlc';

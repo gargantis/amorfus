@@ -6,8 +6,7 @@
 // across rooms and keeps it ~123 s after leaving.
 import { joinRoom, getRelaySockets, selfId } from '@trystero-p2p/nostr';
 import type { Transport, Channel } from './transport';
-import { buildRoomConfig } from './room-config';
-import thirdParty from '../../third-party.json';
+import { buildRoomConfig, CURATED_RELAYS, STUN_SERVERS } from './room-config';
 
 export interface TrysteroOptions {
   appId: string;
@@ -21,14 +20,6 @@ export interface TrysteroOptions {
 
 const BULK_ID = 43;
 const POS_ID = 42;
-
-export const CURATED_RELAYS: string[] = (thirdParty as Array<{ kind: string; url: string }>)
-  .filter((e) => e.kind === 'signaling')
-  .map((e) => e.url);
-
-export const STUN_SERVERS: RTCIceServer[] = [
-  { urls: (thirdParty as Array<{ kind: string; url: string }>).filter((e) => e.kind === 'stun').map((e) => e.url) },
-];
 
 type RoomLike = ReturnType<typeof joinRoom>;
 

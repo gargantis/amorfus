@@ -767,7 +767,7 @@ All keys use `KeyboardEvent.code`, so WASD is independent of keyboard layout.
 
 - **Trystero `@trystero-p2p/nostr` 0.26.0**, pinned exactly and unpatched: the version roslambo runs.
   - MIT, 22.6 KB gzipped at 0.25.4. SDP is AES-GCM encrypted end to end. A single, active maintainer.
-  - Wrapped behind our own `Transport`; only `src/net/trystero-transport.ts` imports it.
+  - Wrapped behind our own `Transport`; only `src/net/trystero-transport.ts` imports it. `src/net/room-config.ts` builds its room config with `vendor/hermet/room-config.ts`, shared with roslambo, from the hosts `third-party.json` declares.
   - **Receive limits:** `maxReceiveBytes` is 64 KiB, four messages. Trystero refuses a larger payload before buffering any of it, accepts a transfer only for a registered action and within that budget, and drops pending data after 120 s. `src/net/receive-limits.test.ts` pins these limits. 0.25.4 had none, so amorfus patched it until the upgrade (docs/build-decisions.md).
 - **Measured on one machine only, on 0.25.4** (signaling, not NAT traversal): 21 of 22 two-context joins, 0.77–1.1 s with the chosen relays; 8 of 8 four-context meshes in 3.8–6.4 s. The one failure was an ICE failure after the SDP exchange.
   - Open issue: #161 (partial meshes). #195 (rejoin) and #196 (slower joins) were closed with 0.26.0.

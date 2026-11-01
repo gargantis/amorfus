@@ -401,7 +401,7 @@ retries never give up; non-minimal varints are accepted on decode.
   root-absolute string; ESLint's source rules (§13.3) still catch one in
   amorfus's own code.
 
-## After M8 — Trystero 0.26.0 (2026-10-31)
+## After M8 — Trystero 0.26.0 and the shared room config (2026-10-31)
 
 - **Trystero 0.26.0, unpatched,** at the owner's request: the version
   roslambo runs, so the two can share the room config. 0.26.0 has the
@@ -430,3 +430,9 @@ retries never give up; non-minimal varints are accepted on decode.
   one pair, opened by the first room on it and reused by every later one,
   told apart by the room epoch as §10.3 says. *Cost if wrong:* none; a
   reload still rejoins too.
+- **The room config is built by `vendor/hermet/room-config.ts`,** shared
+  with roslambo now that both run 0.26.0. `src/net/room-config.ts` keeps
+  amorfus's policy: the relays and STUN servers `third-party.json`
+  declares, which move there from the transport as in roslambo, and the
+  64 KiB budget. The config gains `passive: false`, the library's
+  default. *Cost if wrong:* a pin to move when the builder changes.
