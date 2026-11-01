@@ -6,15 +6,15 @@ import thirdParty from '../../third-party.json';
 const KINDS = new Set(['signaling', 'stun', 'hosting', 'gateway', 'routing', 'link']);
 
 describe('third-party.json', () => {
-  it('names exactly the six curated relays', () => {
+  it('names exactly the six curated relays, the six roslambo uses', () => {
     const relays = thirdParty.filter((e) => e.kind === 'signaling');
     expect(relays.map((e) => e.url).sort()).toEqual(
       [
         'wss://nos.lol',
-        'wss://nostr.bitcoiner.social',
-        'wss://offchain.pub',
+        'wss://nostr-pub.wellorder.net',
         'wss://relay.damus.io',
         'wss://relay.primal.net',
+        'wss://relay.snort.social',
         'wss://yabu.me/v2',
       ].sort(),
     );

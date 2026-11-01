@@ -436,3 +436,16 @@ retries never give up; non-minimal varints are accepted on decode.
   declares, which move there from the transport as in roslambo, and the
   64 KiB budget. The config gains `passive: false`, the library's
   default. *Cost if wrong:* a pin to move when the builder changes.
+
+## After M8 — roslambo's relays (2026-10-31)
+
+- **relay.snort.social and nostr-pub.wellorder.net replace offchain.pub
+  and nostr.bitcoiner.social,** at the owner's request, so amorfus
+  signals through the six relays roslambo uses. The two accept only keys
+  in their web of trust, and Trystero signs with a new random key on every
+  load, so they refused every join and signalling depended on the other
+  four. roslambo found this at its first deploy and played a three-engine
+  round through each replacement alone (its C-22). `probe:relays` never
+  saw it: it only reads from each relay, and these two refuse writes.
+  *Cost if wrong:* none for joins, which already ran without the two; the
+  privacy sheet names the two new operators.

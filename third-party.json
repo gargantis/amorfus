@@ -24,19 +24,19 @@
     "sees": "IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes"
   },
   {
-    "host": "offchain.pub",
-    "url": "wss://offchain.pub",
+    "host": "relay.snort.social",
+    "url": "wss://relay.snort.social",
     "kind": "signaling",
     "purpose": "Nostr relay used by Trystero to exchange encrypted WebRTC offers",
-    "operator": "independent relay operator",
+    "operator": "Snort (independent relay operator); runs memlay, an in-memory relay",
     "sees": "IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes"
   },
   {
-    "host": "nostr.bitcoiner.social",
-    "url": "wss://nostr.bitcoiner.social",
+    "host": "nostr-pub.wellorder.net",
+    "url": "wss://nostr-pub.wellorder.net",
     "kind": "signaling",
     "purpose": "Nostr relay used by Trystero to exchange encrypted WebRTC offers",
-    "operator": "independent relay operator",
+    "operator": "wellorder.net (independent relay operator); runs nostr-rs-relay",
     "sees": "IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes"
   },
   {

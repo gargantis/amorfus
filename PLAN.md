@@ -769,10 +769,11 @@ All keys use `KeyboardEvent.code`, so WASD is independent of keyboard layout.
   - MIT, 22.6 KB gzipped at 0.25.4. SDP is AES-GCM encrypted end to end. A single, active maintainer.
   - Wrapped behind our own `Transport`; only `src/net/trystero-transport.ts` imports it. `src/net/room-config.ts` builds its room config with `vendor/hermet/room-config.ts`, shared with roslambo, from the hosts `third-party.json` declares.
   - **Receive limits:** `maxReceiveBytes` is 64 KiB, four messages. Trystero refuses a larger payload before buffering any of it, accepts a transfer only for a registered action and within that budget, and drops pending data after 120 s. `src/net/receive-limits.test.ts` pins these limits. 0.25.4 had none, so amorfus patched it until the upgrade (docs/build-decisions.md).
-- **Measured on one machine only, on 0.25.4** (signaling, not NAT traversal): 21 of 22 two-context joins, 0.77–1.1 s with the chosen relays; 8 of 8 four-context meshes in 3.8–6.4 s. The one failure was an ICE failure after the SDP exchange.
+- **Measured on one machine only, on 0.25.4** (signaling, not NAT traversal): 21 of 22 two-context joins, 0.77–1.1 s with the relays chosen then; 8 of 8 four-context meshes in 3.8–6.4 s. The one failure was an ICE failure after the SDP exchange.
   - Open issue: #161 (partial meshes). #195 (rejoin) and #196 (slower joins) were closed with 0.26.0.
   - Cross-network success is unmeasured; the M0 spike measures it.
-- **Relays:** six curated Nostr relays, used all at once: relay.damus.io, relay.primal.net, nos.lol, offchain.pub, nostr.bitcoiner.social, yabu.me/v2.
+- **Relays:** six curated Nostr relays, used all at once, the six roslambo uses: relay.damus.io, relay.primal.net, nos.lol, relay.snort.social, nostr-pub.wellorder.net, yabu.me/v2.
+  - relay.snort.social and nostr-pub.wellorder.net replaced offchain.pub and nostr.bitcoiner.social, which accept only keys in their web of trust and so refuse Trystero's per-load key (roslambo C-22; docs/build-decisions.md).
   - The library's default pick for our appId had 3 of 5 working. Only 17 of its 28 defaults passed an ephemeral round-trip.
   - The list lives in `third-party.json`, which drives the runtime, the privacy sheet and a unit test.
 - **STUN:** exactly `stun.cloudflare.com:3478` and `stun.l.google.com:19302` (D-25).
@@ -1386,7 +1387,7 @@ Verified: the build loads through the Service Worker Gateway 3.4.15 built locall
 
 | Dependency | Operator | Role | Sees |
 |---|---|---|---|
-| relay.damus.io, relay.primal.net, nos.lol, offchain.pub, nostr.bitcoiner.social, yabu.me/v2 | independent relay operators (nos.lol's operator unverified) | signaling | IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes |
+| relay.damus.io, relay.primal.net, nos.lol, relay.snort.social, nostr-pub.wellorder.net, yabu.me/v2 | independent relay operators (nos.lol's operator unverified) | signaling | IP, Origin, User-Agent, timing, SHA-1 room topic, per-load Nostr key, per-load Trystero peer id, encrypted SDP sizes |
 | Relays from Settings or a link (`&r=`) | chosen by the user or the inviter; confirmed before use | signaling | as above |
 | stun.cloudflare.com, stun.l.google.com | Cloudflare, Google | STUN | IP and port; about 40 binding requests per join |
 | User-supplied TURN (optional) | the user's choice | relay for blocked pairs | IP, traffic volume |
