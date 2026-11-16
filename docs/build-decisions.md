@@ -449,3 +449,23 @@ retries never give up; non-minimal varints are accepted on decode.
   saw it: it only reads from each relay, and these two refuse writes.
   *Cost if wrong:* none for joins, which already ran without the two; the
   privacy sheet names the two new operators.
+
+## After M8 — licence texts (2026-11-15)
+
+- **The licence notices carry their texts, and FastNoiseLite's ships,**
+  at the owner's request. Since M0 the writer read `license` and
+  `licenseText`, but Vite 8 writes `identifier` and `text`, so every npm
+  notice shipped as a bare `## name@version` heading, and the dist audit,
+  which read only the headings, passed it. `vendor/hermet` moves to
+  11283ca, whose writer reads Vite 8's names and whose audit fails a
+  notice without its text. FastNoiseLite, vendored in M1, never had a
+  notice, though §13.2 and §17 say it ships one. It is now an `extra` in
+  `scripts/licenses.mjs` and on the expected list, so the audit fails a
+  build without it. *Cost if wrong:* a dependency that ships no LICENSE
+  file now fails the build until its text is added by hand. The live
+  amorf.us build keeps the bare notices until the owner redeploys.
+- **FastNoiseLite's notice is headed 1.1.1,** the npm release §6.4 names.
+  The vendored file is fastnoise-lite 1.1.1 byte for byte, though its
+  header reads `VERSION: 1.1.0`. That package ships no LICENSE, and the
+  vendored one is the upstream repository's. *Cost if wrong:* one wrong
+  version in a heading; the licence text is the same.
